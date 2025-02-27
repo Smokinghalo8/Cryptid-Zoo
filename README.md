@@ -1,5 +1,4 @@
 # Cryptid-Zoo
 
 - Website to use when updating the readme.md
-- https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/ui-features.html
-{: .prereq}
+- https://yushi95.medium.com/how-to-create-a-beautiful-readme-for-your-github-profile-36957caa711c
