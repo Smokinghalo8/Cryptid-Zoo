@@ -7,6 +7,9 @@
 - [Git LFS](https://www.youtube.com/watch?v=jXsvFfksvd0&ab_channel=GitKraken)
 
 
+- [How to transfer Github Desktop to another drive](https://github.com/orgs/community/discussions/66767)
+
+
 
 ## Tools and Links for Collaborator
 - Drive
