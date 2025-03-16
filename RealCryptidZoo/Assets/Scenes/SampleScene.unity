@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 840812191}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 10, z: -10}
   smoothTime: 0.25
 --- !u!1 &410087039
 GameObject:
