@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bf4vgu7u0t3ri"]
 
-[ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_udh1d"]
+[ext_resource type="Script" path="res://Assets/Scripts/PlayerController.gd" id="1_47cka"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_j7v16"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_yihyx"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
@@ -42,7 +42,7 @@ shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_udh1d")
+script = ExtResource("1_47cka")
 
 [node name="ZColl" type="CollisionShape3D" parent="Z"]
 shape = SubResource("CapsuleShape3D_j5e41")
