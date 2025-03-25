@@ -5,7 +5,19 @@
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_yihyx"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
-[ext_resource type="Material" uid="uid://diycl1rchl5ww" path="res://Assets/Materials/fakeMothmanHighlight.tres" id="6_5mesu"]
+[ext_resource type="Material" uid="uid://c24ja6ql5sqp7" path="res://Assets/Materials/fakeMothman.tres" id="5_qvig0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uk4m8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
+radius = 13.4247
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -22,26 +34,11 @@ ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_uk4m8"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
-radius = 13.4247
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7k3xn"]
 
 [node name="City" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yhbei")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.8529, 0, 0, 0, 0.224776, 0, 0, 0, 24.367, 0, 0, 0)
@@ -76,9 +73,6 @@ script = ExtResource("3_yihyx")
 [node name="SenseCol" type="CollisionShape3D" parent="Z/SenseArea"]
 shape = SubResource("SphereShape3D_18rv6")
 
-[node name="HighlightTimer" type="Timer" parent="Z/SenseArea"]
-wait_time = 3.0
-
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -101,6 +95,9 @@ script = ExtResource("4_gkunu")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yhbei")
+
 [node name="FakeMothman" type="RigidBody3D" parent="." groups=["Living"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14066, -8.64865)
 script = ExtResource("5_o75r0")
@@ -109,13 +106,7 @@ script = ExtResource("5_o75r0")
 shape = SubResource("CylinderShape3D_66xu5")
 
 [node name="FakemothmanMesh" type="MeshInstance3D" parent="FakeMothman/FakemothmanCol"]
+material_override = ExtResource("5_qvig0")
 mesh = SubResource("CylinderMesh_7k3xn")
-surface_material_override/0 = ExtResource("6_5mesu")
 
-[node name="HighlightTimer" type="Timer" parent="FakeMothman"]
-wait_time = 3.0
-one_shot = true
-
-[connection signal="timeout" from="Z/SenseArea/HighlightTimer" to="Z" method="_on_highlight_timer_timeout"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="FakeMothman/HighlightTimer" to="FakeMothman" method="_on_highlight_timer_timeout"]

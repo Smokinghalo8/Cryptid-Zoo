@@ -15,6 +15,12 @@ func _process(delta):
 	#ExitTheGame
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if Input.is_action_just_pressed("sense"):
+		for body in $SenseArea.get_overlapping_bodies():
+			if body.is_in_group("Living"):
+				print("Body name: " + body.name)
+				body.highlight()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
