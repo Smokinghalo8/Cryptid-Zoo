@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+@export var lightOn = false
 
 func _unhandled_input(event: InputEvent):
 	#BodyMovement
@@ -21,6 +22,10 @@ func _process(delta):
 			if body.is_in_group("Living"):
 				print("Body name: " + body.name)
 				body.highlight()
+	
+	if Input.is_action_just_pressed("flashLight"):
+		$Head/FlashLight.visible = not $Head/FlashLight.visible
+		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
