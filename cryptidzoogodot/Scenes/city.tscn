@@ -1,18 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=22 format=3 uid="uid://bf4vgu7u0t3ri"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/PlayerController.gd" id="1_47cka"]
+[ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_udh1d"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_j7v16"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_yihyx"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_uk4m8"]
+[ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
+[ext_resource type="Material" uid="uid://diycl1rchl5ww" path="res://Assets/Materials/fakeMothmanHighlight.tres" id="6_5mesu"]
+[ext_resource type="PackedScene" uid="uid://cjpbc8tu0w3a8" path="res://Scenes/Case_David_Cryptid_Zoo.dae" id="7_mlacd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -23,16 +17,94 @@ sky_material = SubResource("PhysicalSkyMaterial_vum21")
 background_mode = 2
 sky = SubResource("Sky_g280x")
 ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.13
+
+[sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uk4m8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
+radius = 13.4247
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7k3xn"]
+
+[sub_resource type="Animation" id="Animation_ryhqn"]
+resource_name = "move1"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.43675, -8.64865), Vector3(-0.209495, 1.43675, -26.2719)]
+}
+
+[sub_resource type="Animation" id="Animation_xhvoi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.43675, -8.64865)]
+}
+
+[sub_resource type="Animation" id="Animation_gohpg"]
+resource_name = "move2"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(-40.8661, 1.4903, -41.1396)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]
+_data = {
+"RESET": SubResource("Animation_xhvoi"),
+"move1": SubResource("Animation_ryhqn"),
+"move2": SubResource("Animation_gohpg")
+}
 
 [node name="City" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yhbei")
+
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.8529, 0, 0, 0, 0.224776, 0, 0, 0, 24.367, 0, 0, 0)
+transform = Transform3D(104.55, 0, 0, 0, 0.512695, 0, 0, 0, 168.124, -14.7063, 0, 0)
 mesh = SubResource("BoxMesh_2b0a1")
 
 [node name="FloorBody" type="StaticBody3D" parent="Floor"]
@@ -41,8 +113,8 @@ mesh = SubResource("BoxMesh_2b0a1")
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_47cka")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28263, 0)
+script = ExtResource("1_udh1d")
 
 [node name="ZColl" type="CollisionShape3D" parent="Z"]
 shape = SubResource("CapsuleShape3D_j5e41")
@@ -59,6 +131,22 @@ script = ExtResource("2_j7v16")
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
 script = ExtResource("3_yihyx")
 
+[node name="FlashLight" type="SpotLight3D" parent="Z/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
+visible = false
+light_energy = 8.415
+light_volumetric_fog_energy = 1.5
+spot_range = 13.7568
+spot_angle = 25.3125
+
+[node name="SenseArea" type="Area3D" parent="Z"]
+
+[node name="SenseCol" type="CollisionShape3D" parent="Z/SenseArea"]
+shape = SubResource("SphereShape3D_18rv6")
+
+[node name="HighlightTimer" type="Timer" parent="Z/SenseArea"]
+wait_time = 3.0
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -73,7 +161,7 @@ offset_bottom = 71.0
 text = "Press E to interact"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.878975, 0.476867, 0, -0.476867, 0.878975, 0, 7.15633, 6.1564)
+transform = Transform3D(1, 0, 0, 0, 0.443963, -0.896045, 0, 0.896045, 0.443963, 0, 48.2719, 68.9948)
 light_energy = 2.5
 shadow_enabled = true
 script = ExtResource("4_gkunu")
@@ -81,7 +169,29 @@ script = ExtResource("4_gkunu")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yhbei")
+[node name="FakeMothman" type="RigidBody3D" parent="." groups=["Living"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
+script = ExtResource("5_o75r0")
 
+[node name="FakemothmanCol" type="CollisionShape3D" parent="FakeMothman"]
+shape = SubResource("CylinderShape3D_66xu5")
+
+[node name="FakemothmanMesh" type="MeshInstance3D" parent="FakeMothman/FakemothmanCol"]
+mesh = SubResource("CylinderMesh_7k3xn")
+surface_material_override/0 = ExtResource("6_5mesu")
+
+[node name="HighlightTimer" type="Timer" parent="FakeMothman"]
+wait_time = 3.0
+one_shot = true
+
+[node name="MothManAnims" type="AnimationPlayer" parent="FakeMothman"]
+libraries = {
+"": SubResource("AnimationLibrary_l0gj0")
+}
+
+[node name="Case_David_Cryptid_Zoo" parent="." instance=ExtResource("7_mlacd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0667, -9.53674e-07, -24.9428)
+
+[connection signal="timeout" from="Z/SenseArea/HighlightTimer" to="Z" method="_on_highlight_timer_timeout"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="timeout" from="FakeMothman/HighlightTimer" to="FakeMothman" method="_on_highlight_timer_timeout"]
