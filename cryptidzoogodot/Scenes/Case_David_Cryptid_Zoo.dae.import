@@ -31,4 +31,25 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:bottom": {
+"import/skip_import": true
+},
+"PATH:directionalLight1": {
+"import/skip_import": true
+},
+"PATH:front": {
+"import/skip_import": true
+},
+"PATH:persp": {
+"import/skip_import": true
+},
+"PATH:side": {
+"import/skip_import": true
+},
+"PATH:top": {
+"import/skip_import": true
+}
+}
+}
