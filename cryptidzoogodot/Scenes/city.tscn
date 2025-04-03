@@ -24,6 +24,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.13
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]

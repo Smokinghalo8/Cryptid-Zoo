@@ -33,6 +33,9 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
+	
+	update_animation_parameters()
+
 		
 
 func _physics_process(delta: float) -> void:
@@ -56,26 +59,26 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
-	if(velocity != Vector3.ZERO):
-		walk = true
-		idle = false
-		run = false
-		#$animPlayer.play("Walk")
-	
-	if(velocity == Vector3.ZERO):
+	#idle
+	if(velocity.length() <= 1 && is_on_floor()):
 		idle = true
 		walk = false
 		run = false
-		#$animPlayer.play("Idle")
+	#walk
+	elif(velocity.length() == 5 && is_on_floor()):
+		walk = true
+		idle = false
+		run = false
+	#run
+	elif(velocity.length() == 10 && is_on_floor()):
+		print("Running")
+		run = true
+		walk = false
+		idle = false
 	
 	#Sprint
 	if Input.is_action_pressed("shift"):
 		SPEED = 10
-		run = true
-		walk = false
-		idle = false
-		#$animPlayer.play("Run")
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
 	
@@ -86,18 +89,20 @@ func _physics_process(delta: float) -> void:
 		$ZColl.scale = Vector3(1, 1, 1)
 		SPEED = 5
 	
-	update_animation_parameters()
+	
 
 func update_animation_parameters():
 	if(idle == true):
 		animTree["parameters/conditions/idle"] = true
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = false
+	elif(walk == true):
+		print("in walk")
+		animTree["parameters/conditions/idle"] = false
+		animTree["parameters/conditions/walk"] = true
+		animTree["parameters/conditions/run"] = false
 	elif(run == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = true
-	elif(walk == true):
-		animTree["parameters/conditions/idle"] = false
-		animTree["parameters/conditions/walk"] = true
-		animTree["parameters/conditions/walk"] = false
+	
