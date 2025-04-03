@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csarvwlxt3yk1"
+path="res://.godot/imported/Dungeon_Shop.obj-e16eb51d256545a57cea7d1ea1dc81b3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dungeon_Shop.obj-e16eb51d256545a57cea7d1ea1dc81b3.mesh"]
+
+source_file="res://Assets/Buildings/assets/Dungeon_Shop.obj"
+dest_files=["res://.godot/imported/Dungeon_Shop.obj-e16eb51d256545a57cea7d1ea1dc81b3.mesh", "res://.godot/imported/Dungeon_Shop.obj-e16eb51d256545a57cea7d1ea1dc81b3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

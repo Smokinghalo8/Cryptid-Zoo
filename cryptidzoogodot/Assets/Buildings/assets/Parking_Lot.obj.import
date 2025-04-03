@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfbi3f1jdsfyc"
+path="res://.godot/imported/Parking_Lot.obj-5ee4d8057148842ce678a67642d1ceca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Parking_Lot.obj-5ee4d8057148842ce678a67642d1ceca.mesh"]
+
+source_file="res://Assets/Buildings/assets/Parking_Lot.obj"
+dest_files=["res://.godot/imported/Parking_Lot.obj-5ee4d8057148842ce678a67642d1ceca.mesh", "res://.godot/imported/Parking_Lot.obj-5ee4d8057148842ce678a67642d1ceca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

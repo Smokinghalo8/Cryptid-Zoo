@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnh5un6avn3w8"
+path="res://.godot/imported/Trash_Can.obj-145b7a4dc9ecce53ef3f15a05aa0671a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Trash_Can.obj-145b7a4dc9ecce53ef3f15a05aa0671a.mesh"]
+
+source_file="res://Assets/Buildings/assets/Trash_Can.obj"
+dest_files=["res://.godot/imported/Trash_Can.obj-145b7a4dc9ecce53ef3f15a05aa0671a.mesh", "res://.godot/imported/Trash_Can.obj-145b7a4dc9ecce53ef3f15a05aa0671a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

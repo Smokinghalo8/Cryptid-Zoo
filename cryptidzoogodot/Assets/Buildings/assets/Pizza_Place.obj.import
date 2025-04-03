@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqumfrgf1bc3"
+path="res://.godot/imported/Pizza_Place.obj-8aaaf61ea81df849e726a441c2744839.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pizza_Place.obj-8aaaf61ea81df849e726a441c2744839.mesh"]
+
+source_file="res://Assets/Buildings/assets/Pizza_Place.obj"
+dest_files=["res://.godot/imported/Pizza_Place.obj-8aaaf61ea81df849e726a441c2744839.mesh", "res://.godot/imported/Pizza_Place.obj-8aaaf61ea81df849e726a441c2744839.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

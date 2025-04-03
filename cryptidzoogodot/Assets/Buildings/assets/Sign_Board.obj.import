@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bidgowsm484hg"
+path="res://.godot/imported/Sign_Board.obj-032f6d5e68da05ca1cf7e06ce78ac094.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sign_Board.obj-032f6d5e68da05ca1cf7e06ce78ac094.mesh"]
+
+source_file="res://Assets/Buildings/assets/Sign_Board.obj"
+dest_files=["res://.godot/imported/Sign_Board.obj-032f6d5e68da05ca1cf7e06ce78ac094.mesh", "res://.godot/imported/Sign_Board.obj-032f6d5e68da05ca1cf7e06ce78ac094.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
