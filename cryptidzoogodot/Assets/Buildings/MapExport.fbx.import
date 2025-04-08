@@ -1,0 +1,308 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dibmb2hr3hcyl"
+path="res://.godot/imported/MapExport.fbx-ce9d739d2f62dabf53b10113fd7e851b.scn"
+
+[deps]
+
+source_file="res://Assets/Buildings/MapExport.fbx"
+dest_files=["res://.godot/imported/MapExport.fbx-ce9d739d2f62dabf53b10113fd7e851b.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"BrickWall2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/BrickWall2.tres"
+},
+"Brick_Red": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Brick_Red.tres"
+},
+"Brick_Wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Brick_Wall.tres"
+},
+"Cat:standardSurface2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Cat_standardSurface2.tres"
+},
+"Concrete": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Concrete.tres"
+},
+"FireExit": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/FireExit.tres"
+},
+"Glass1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Glass1.tres"
+},
+"Gold": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Gold.tres"
+},
+"Gold1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Gold1.tres"
+},
+"GreenLight": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/GreenLight.tres"
+},
+"LeaflessTree:standardSurface2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/LeaflessTree_standardSurface2.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Metal.tres"
+},
+"Metal_Light": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Metal_Light.tres"
+},
+"ParkingLot": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/ParkingLot.tres"
+},
+"PizzaSign": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/PizzaSign.tres"
+},
+"Red": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Red.tres"
+},
+"RedLight": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/RedLight.tres"
+},
+"ShovelSign": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/ShovelSign.tres"
+},
+"Sidewalk1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Sidewalk1.tres"
+},
+"TinyShop": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/TinyShop.tres"
+},
+"TreeStump1:standardSurface2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/TreeStump1_standardSurface2.tres"
+},
+"TreeStump:standardSurface2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/TreeStump_standardSurface2.tres"
+},
+"WareSign": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/WareSign.tres"
+},
+"Warehouse1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Warehouse1.tres"
+},
+"WhiteWood": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/WhiteWood.tres"
+},
+"Wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Wood.tres"
+},
+"Wood_Pole": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Wood_Pole.tres"
+},
+"Wood_panel": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/Wood_panel.tres"
+},
+"aiStandardSurface1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/aiStandardSurface1.tres"
+},
+"birchBlowing10LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing10LeafShader.tres"
+},
+"birchBlowing10Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing10Shader.tres"
+},
+"birchBlowing11LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing11LeafShader.tres"
+},
+"birchBlowing11Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing11Shader.tres"
+},
+"birchBlowing12LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing12LeafShader.tres"
+},
+"birchBlowing12Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing12Shader.tres"
+},
+"birchBlowing13LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing13LeafShader.tres"
+},
+"birchBlowing13Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing13Shader.tres"
+},
+"birchBlowing14LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing14LeafShader.tres"
+},
+"birchBlowing14Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing14Shader.tres"
+},
+"birchBlowing15LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing15LeafShader.tres"
+},
+"birchBlowing15Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing15Shader.tres"
+},
+"birchBlowing3LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing3LeafShader.tres"
+},
+"birchBlowing3Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing3Shader.tres"
+},
+"birchBlowing4LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing4LeafShader.tres"
+},
+"birchBlowing4Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing4Shader.tres"
+},
+"birchBlowing5LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing5LeafShader.tres"
+},
+"birchBlowing5Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing5Shader.tres"
+},
+"birchBlowing6LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing6LeafShader.tres"
+},
+"birchBlowing6Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing6Shader.tres"
+},
+"birchBlowing7LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing7LeafShader.tres"
+},
+"birchBlowing7Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing7Shader.tres"
+},
+"birchBlowing8LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing8LeafShader.tres"
+},
+"birchBlowing8Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing8Shader.tres"
+},
+"birchBlowing9LeafShader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing9LeafShader.tres"
+},
+"birchBlowing9Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchBlowing9Shader.tres"
+},
+"birchDead1Shader": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/birchDead1Shader.tres"
+},
+"blue": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/blue.tres"
+},
+"brown": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/brown.tres"
+},
+"convenienceSign": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/convenienceSign.tres"
+},
+"cyan": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/cyan.tres"
+},
+"gray": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/gray.tres"
+},
+"maroon": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/maroon.tres"
+},
+"moss_wall": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/moss_wall.tres"
+},
+"road": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/road.tres"
+},
+"slightlylessmetal": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/slightlylessmetal.tres"
+},
+"standardSurface1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/standardSurface1.tres"
+},
+"tinySign": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Materials/tinySign.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
