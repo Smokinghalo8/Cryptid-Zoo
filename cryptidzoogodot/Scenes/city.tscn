@@ -153,7 +153,7 @@ libraries = {
 }
 
 [node name="BenchPark" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4418, 0.271057, -15.0063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9471, 0.271057, -15.0063)
 mesh = ExtResource("5_p8ipa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BenchPark"]
