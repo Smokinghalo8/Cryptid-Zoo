@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
-[ext_resource type="PackedScene" uid="uid://dibmb2hr3hcyl" path="res://Assets/Buildings/MapExport.fbx" id="5_140rf"]
+[ext_resource type="PackedScene" uid="uid://b6w406uv5mfb4" path="res://Map.tscn" id="5_c4r7w"]
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
 [ext_resource type="Material" uid="uid://diycl1rchl5ww" path="res://Assets/Materials/fakeMothmanHighlight.tres" id="6_5mesu"]
 
@@ -23,6 +23,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.13
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
@@ -149,7 +150,7 @@ libraries = {
 "": SubResource("AnimationLibrary_l0gj0")
 }
 
-[node name="MapExport" parent="." instance=ExtResource("5_140rf")]
+[node name="MapExport" parent="." instance=ExtResource("5_c4r7w")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
