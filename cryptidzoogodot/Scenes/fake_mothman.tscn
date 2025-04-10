@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://drjilaesiq5nx"]
+[gd_scene load_steps=12 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="1_8idsb"]
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_gmu72"]
+[ext_resource type="AudioStream" uid="uid://fnaf25a1atlt" path="res://Assets/SFX/2025-04-10 11-41-52.mp3" id="3_p8vn3"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 
@@ -37,21 +38,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.43675, -8.64865), Vector3(-0.209495, 1.43675, -26.2719)]
 }
 
-[sub_resource type="Animation" id="Animation_b3osi"]
-resource_name = "move1.5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-0.209495, 1.43675, -26.2719)]
-}
-
 [sub_resource type="Animation" id="Animation_gohpg"]
 resource_name = "move2"
 length = 0.5
@@ -69,12 +55,43 @@ tracks/0/keys = {
 "values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(-40.8661, 1.4903, -41.1396)]
 }
 
+[sub_resource type="Animation" id="Animation_b3osi"]
+resource_name = "move2.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-0.209495, 1.43675, -26.2719)]
+}
+
+[sub_resource type="Animation" id="Animation_npvue"]
+resource_name = "move1.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(0, 1.43675, -8.64865)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]
 _data = {
 "RESET": SubResource("Animation_xhvoi"),
 "move1": SubResource("Animation_ryhqn"),
-"move1.5": SubResource("Animation_b3osi"),
-"move2": SubResource("Animation_gohpg")
+"move1.5": SubResource("Animation_npvue"),
+"move2": SubResource("Animation_gohpg"),
+"move2.5": SubResource("Animation_b3osi")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5c6p8"]
@@ -87,10 +104,11 @@ script = ExtResource("1_8idsb")
 [node name="FakemothmanCol" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_66xu5")
 
-[node name="FakemothmanMesh" type="MeshInstance3D" parent="FakemothmanCol"]
-
 [node name="MothmanFBX" parent="FakemothmanCol" instance=ExtResource("2_gmu72")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.16167, -1.79867, 0.233979)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.16167, -1.79867, 0.252059)
+
+[node name="FakemothmanMesh" type="MeshInstance3D" parent="FakemothmanCol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 9.53674e-07)
 
 [node name="HighlightTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -106,6 +124,12 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningRadius"]
 transform = Transform3D(1.00031, 0, 0, 0, 1.00031, 0, 0, 0, 1.00031, 0, 0, 0)
 shape = SubResource("SphereShape3D_5c6p8")
+
+[node name="MothManNoises" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_p8vn3")
+volume_db = -22.326
+autoplay = true
+max_distance = 20.0
 
 [connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]
 [connection signal="body_entered" from="ListeningRadius" to="." method="_on_listening_radius_body_entered"]
