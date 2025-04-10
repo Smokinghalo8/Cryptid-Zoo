@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://drjilaesiq5nx"]
+[gd_scene load_steps=13 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="1_8idsb"]
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_gmu72"]
@@ -85,13 +85,30 @@ tracks/0/keys = {
 "values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(0, 1.43675, -8.64865)]
 }
 
+[sub_resource type="Animation" id="Animation_oas03"]
+resource_name = "move3"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-25.0567, 1.43675, -8.64865)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]
 _data = {
 "RESET": SubResource("Animation_xhvoi"),
 "move1": SubResource("Animation_ryhqn"),
 "move1.5": SubResource("Animation_npvue"),
 "move2": SubResource("Animation_gohpg"),
-"move2.5": SubResource("Animation_b3osi")
+"move2.5": SubResource("Animation_b3osi"),
+"move3": SubResource("Animation_oas03")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5c6p8"]
