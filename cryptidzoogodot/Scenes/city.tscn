@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
-[ext_resource type="ArrayMesh" uid="uid://dh8sbfmxloxj" path="res://Assets/Models/Mothman/mothman.obj" id="4_3fwwp"]
+[ext_resource type="ArrayMesh" path="res://Assets/Models/Mothman/mothman.obj" id="4_3fwwp"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="5_c4r7w"]
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
