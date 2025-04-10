@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=15 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
-[ext_resource type="ArrayMesh" path="res://Assets/Models/Mothman/mothman.obj" id="4_3fwwp"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="5_c4r7w"]
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
@@ -95,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127682, -1.32342, 3.71978)
 environment = SubResource("Environment_yhbei")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(104.55, 0, 0, 0, 0.512695, 0, 0, 0, 168.124, -14.7063, 0, 0)
+transform = Transform3D(104.55, 0, 0, 0, 0.512695, 0, 0, 0, 168.124, -14.7063, -0.349081, 0)
 mesh = SubResource("BoxMesh_2b0a1")
 
 [node name="FloorBody" type="StaticBody3D" parent="Floor"]
@@ -137,7 +136,6 @@ shape = SubResource("CylinderShape3D_66xu5")
 
 [node name="FakemothmanMesh" type="MeshInstance3D" parent="FakeMothman/FakemothmanCol"]
 transform = Transform3D(0.31608, 0, -0.948733, 0, 1, 0, 0.948733, 0, 0.31608, -7.02525, -15.8705, -23.0334)
-mesh = ExtResource("4_3fwwp")
 
 [node name="HighlightTimer" type="Timer" parent="FakeMothman"]
 wait_time = 3.0
