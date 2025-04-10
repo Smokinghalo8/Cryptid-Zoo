@@ -39,6 +39,21 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.43675, -8.64865), Vector3(-0.209495, 1.43675, -26.2719)]
 }
 
+[sub_resource type="Animation" id="Animation_b3osi"]
+resource_name = "move1.5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-0.209495, 1.43675, -26.2719)]
+}
+
 [sub_resource type="Animation" id="Animation_gohpg"]
 resource_name = "move2"
 length = 0.5
@@ -54,21 +69,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(-40.8661, 1.4903, -41.1396)]
-}
-
-[sub_resource type="Animation" id="Animation_b3osi"]
-resource_name = "move1.5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-0.209495, 1.43675, -26.2719)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]

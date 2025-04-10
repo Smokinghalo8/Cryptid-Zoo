@@ -1,21 +1,19 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://bf4vgu7u0t3ri"]
+[node name="City" type="Node3D"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="ArrayMesh" uid="uid://dh8sbfmxloxj" path="res://Assets/Models/Mothman/mothman.obj" id="4_3fwwp"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://b6w406uv5mfb4" path="res://Map.tscn" id="5_c4r7w"]
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
-=======
+
 [gd_scene load_steps=10 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://Scenes/fake_mothman.tscn" id="3_abty3"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://b6w406uv5mfb4" path="res://Scenes/Map.tscn" id="5_c4r7w"]
->>>>>>> Stashed changes
-=======
+
 [gd_scene load_steps=10 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -48,8 +46,7 @@ volumetric_fog_density = 0.13
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 
 [sub_resource type="Animation" id="Animation_xhvoi"]
@@ -108,10 +105,7 @@ _data = {
 "move2": SubResource("Animation_gohpg")
 }
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127682, -1.32342, 3.71978)
 
@@ -151,8 +145,7 @@ script = ExtResource("4_gkunu")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 [node name="FakeMothman" type="RigidBody3D" parent="." groups=["Living"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
 script = ExtResource("5_o75r0")
@@ -173,12 +166,11 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_l0gj0")
 }
-=======
+
 [node name="FakeMothman" parent="." instance=ExtResource("3_abty3")]
->>>>>>> Stashed changes
-=======
+
 [node name="FakeMothman" parent="." instance=ExtResource("3_abty3")]
->>>>>>> Stashed changes
+
 
 [node name="MapExport" parent="." instance=ExtResource("5_c4r7w")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_6mksa"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
-[ext_resource type="ArrayMesh" uid="uid://s5f3hvyx6pvj" path="res://Assets/Models/Player/player.obj" id="2_b62bj"]
+[ext_resource type="ArrayMesh" uid="uid://cmfmt0vb4iq5e" path="res://Assets/Models/Player/player.obj" id="2_b62bj"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
@@ -105,7 +105,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
+tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -120,7 +120,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
+tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -137,7 +137,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
+tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -154,7 +154,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
+tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -179,20 +179,19 @@ script = ExtResource("1_6mksa")
 [node name="ZColl" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_j5e41")
 
-[node name="ZMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0108949, -0.0680727, -0.0448542)
+[node name="ZMesh" type="MeshInstance3D" parent="ZColl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0253466, -0.0680727, -0.0448542)
 mesh = ExtResource("2_b62bj")
-skeleton = NodePath("../ZColl")
 
-[node name="Head" type="Camera3D" parent="."]
+[node name="Head" type="Camera3D" parent="ZColl/ZMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("2_1nxij")
 
-[node name="Loooky" type="RayCast3D" parent="Head"]
+[node name="Loooky" type="RayCast3D" parent="ZColl/ZMesh/Head"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
 script = ExtResource("3_wpofk")
 
-[node name="FlashLight" type="SpotLight3D" parent="Head"]
+[node name="FlashLight" type="SpotLight3D" parent="ZColl/ZMesh/Head"]
 transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
 visible = false
 light_energy = 8.415
