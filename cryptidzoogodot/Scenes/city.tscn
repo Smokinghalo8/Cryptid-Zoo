@@ -49,6 +49,7 @@ mesh = SubResource("BoxMesh_2b0a1")
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.28263, 0)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -59,12 +60,15 @@ offset_bottom = 40.0
 [node name="intText" type="Label" parent="UI"]
 visible = false
 layout_mode = 0
-offset_right = 274.0
-offset_bottom = 71.0
+offset_left = 358.0
+offset_top = 46.0
+offset_right = 777.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 48
 text = "Press E to interact"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.371789, 0.928317, 0, -0.928317, 0.371789, 0, 40.9059, 123.29)
+transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 123.29)
 light_energy = 0.399
 shadow_enabled = true
 script = ExtResource("4_gkunu")
@@ -99,6 +103,5 @@ libraries = {
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.0825647, 0, -0.996586, 0, 1, 0, 0.996586, 0, 0.0825647, 0, 1.43675, -8.64865)
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]

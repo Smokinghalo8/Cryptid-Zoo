@@ -2,11 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_6mksa"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
+[ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_871vb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
 radius = 22.0386
@@ -106,7 +103,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
+tracks/0/path = NodePath("Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -121,7 +118,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
+tracks/0/path = NodePath("Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -138,7 +135,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
+tracks/0/path = NodePath("Head:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -155,7 +152,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ZColl/ZMesh/Head:position")
+tracks/0/path = NodePath("Head:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -173,32 +170,11 @@ _data = {
 "Walk": SubResource("Animation_ri5ux")
 }
 
-[node name="Z" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+
+[node name="Z" type="CharacterBody3D" groups=["Character"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28263, 0)
 script = ExtResource("1_6mksa")
-
-[node name="ZColl" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_j5e41")
-
-[node name="ZMesh" type="MeshInstance3D" parent="ZColl"]
-mesh = SubResource("CapsuleMesh_871vb")
-
-[node name="Head" type="Camera3D" parent="ZColl/ZMesh"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.5, 0)
-script = ExtResource("2_1nxij")
-
-[node name="Loooky" type="RayCast3D" parent="ZColl/ZMesh/Head"]
-transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
-script = ExtResource("3_wpofk")
-
-[node name="FlashLight" type="SpotLight3D" parent="ZColl/ZMesh/Head"]
-transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
-visible = false
-light_energy = 8.415
-light_volumetric_fog_energy = 1.5
-shadow_enabled = true
-spot_range = 13.7568
-spot_angle = 25.3125
 
 [node name="SenseArea" type="Area3D" parent="."]
 
@@ -222,5 +198,30 @@ parameters/Walk/blend_position = Vector2(-1, 0.0212766)
 libraries = {
 "": SubResource("AnimationLibrary_kgv2e")
 }
+
+[node name="Head" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_1nxij")
+
+[node name="Loooky" type="RayCast3D" parent="Head"]
+transform = Transform3D(2, 0, 0, 0, -1.46959e-07, -2, 0, 3.36204, -8.74228e-08, 0, 0.016004, 0)
+script = ExtResource("3_wpofk")
+
+[node name="FlashLight" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
+visible = false
+light_energy = 8.415
+light_volumetric_fog_energy = 1.5
+shadow_enabled = true
+spot_range = 13.7568
+spot_angle = 25.3125
+
+[node name="ZColl" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.069485, -0.280481, 0.0684296)
+shape = SubResource("CapsuleShape3D_j5e41")
+
+[node name="ZMesh" type="MeshInstance3D" parent="ZColl"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.207406, -0.317895)
+mesh = ExtResource("2_2mclm")
 
 [connection signal="timeout" from="SenseArea/HighlightTimer" to="." method="_on_highlight_timer_timeout"]
