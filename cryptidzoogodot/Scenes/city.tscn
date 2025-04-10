@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=15 format=3 uid="uid://bf4vgu7u0t3ri"]
-=======
 [gd_scene load_steps=10 format=3 uid="uid://bf4vgu7u0t3ri"]
->>>>>>> edd0f9984f5d15964c0d1c00daebb10f3bfa1483
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://Scenes/fake_mothman.tscn" id="4_ijpq5"]
-[ext_resource type="PackedScene" path="res://Map.tscn" id="5_c4r7w"]
+[ext_resource type="PackedScene" uid="uid://b6w406uv5mfb4" path="res://Scenes/Map.tscn" id="5_c4r7w"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -34,7 +30,7 @@ volumetric_fog_density = 0.13
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="City" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127682, -1.32342, 3.71978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yhbei")
@@ -76,29 +72,6 @@ script = ExtResource("4_gkunu")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-<<<<<<< HEAD
-[node name="FakeMothman" type="RigidBody3D" parent="." groups=["Living"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
-script = ExtResource("5_o75r0")
-
-[node name="FakemothmanCol" type="CollisionShape3D" parent="FakeMothman"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0862911, -0.0696259, 0.0452952)
-shape = SubResource("CylinderShape3D_66xu5")
-
-[node name="FakemothmanMesh" type="MeshInstance3D" parent="FakeMothman/FakemothmanCol"]
-transform = Transform3D(0.31608, 0, -0.948733, 0, 1, 0, 0.948733, 0, 0.31608, -7.02525, -15.8705, -23.0334)
-
-[node name="HighlightTimer" type="Timer" parent="FakeMothman"]
-wait_time = 3.0
-one_shot = true
-
-[node name="MothManAnims" type="AnimationPlayer" parent="FakeMothman"]
-libraries = {
-"": SubResource("AnimationLibrary_l0gj0")
-}
-
-=======
->>>>>>> edd0f9984f5d15964c0d1c00daebb10f3bfa1483
 [node name="MapExport" parent="." instance=ExtResource("5_c4r7w")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
