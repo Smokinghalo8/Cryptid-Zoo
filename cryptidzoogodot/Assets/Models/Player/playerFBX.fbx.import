@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://btyycouvrmm81"
-path="res://.godot/imported/playerFBX.fbx-1e5a81936b926b908ccc915f483d0d09.scn"
+uid="uid://bluimua2fabgf"
+valid=false
 
 [deps]
 
 source_file="res://Assets/Models/Player/playerFBX.fbx"
-dest_files=["res://.godot/imported/playerFBX.fbx-1e5a81936b926b908ccc915f483d0d09.scn"]
 
 [params]
 
@@ -32,6 +31,6 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
+fbx/importer=1
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
