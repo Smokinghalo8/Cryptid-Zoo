@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=10 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
-[ext_resource type="ArrayMesh" path="res://Assets/Models/Mothman/mothman.obj" id="4_3fwwp"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
-[ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="5_c4r7w"]
-[ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="5_o75r0"]
+[ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://Scenes/fake_mothman.tscn" id="4_ijpq5"]
+[ext_resource type="PackedScene" path="res://Map.tscn" id="5_c4r7w"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -29,64 +28,6 @@ volumetric_fog_density = 0.13
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
-
-[sub_resource type="Animation" id="Animation_xhvoi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.43675, -8.64865)]
-}
-
-[sub_resource type="Animation" id="Animation_ryhqn"]
-resource_name = "move1"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.43675, -8.64865), Vector3(-0.209495, 1.43675, -26.2719)]
-}
-
-[sub_resource type="Animation" id="Animation_gohpg"]
-resource_name = "move2"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(-40.8661, 1.4903, -41.1396)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]
-_data = {
-"RESET": SubResource("Animation_xhvoi"),
-"move1": SubResource("Animation_ryhqn"),
-"move2": SubResource("Animation_gohpg")
-}
 
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127682, -1.32342, 3.71978)
@@ -127,29 +68,10 @@ script = ExtResource("4_gkunu")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-[node name="FakeMothman" type="RigidBody3D" parent="." groups=["Living"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
-script = ExtResource("5_o75r0")
-
-[node name="FakemothmanCol" type="CollisionShape3D" parent="FakeMothman"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0862911, -0.0696259, 0.0452952)
-shape = SubResource("CylinderShape3D_66xu5")
-
-[node name="FakemothmanMesh" type="MeshInstance3D" parent="FakeMothman/FakemothmanCol"]
-transform = Transform3D(0.31608, 0, -0.948733, 0, 1, 0, 0.948733, 0, 0.31608, -7.02525, -15.8705, -23.0334)
-mesh = ExtResource("4_3fwwp")
-
-[node name="HighlightTimer" type="Timer" parent="FakeMothman"]
-wait_time = 3.0
-one_shot = true
-
-[node name="MothManAnims" type="AnimationPlayer" parent="FakeMothman"]
-libraries = {
-"": SubResource("AnimationLibrary_l0gj0")
-}
-
 [node name="MapExport" parent="." instance=ExtResource("5_c4r7w")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
+[node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
+transform = Transform3D(0.0825647, 0, -0.996586, 0, 1, 0, 0.996586, 0, 0.0825647, 0, 1.43675, -8.64865)
+
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
-[connection signal="timeout" from="FakeMothman/HighlightTimer" to="FakeMothman" method="_on_highlight_timer_timeout"]

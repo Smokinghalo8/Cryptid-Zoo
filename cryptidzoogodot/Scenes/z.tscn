@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_6mksa"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
-[ext_resource type="ArrayMesh" uid="uid://cmfmt0vb4iq5e" path="res://Assets/Models/Player/player.obj" id="2_b62bj"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_871vb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
 radius = 22.0386
@@ -180,8 +181,7 @@ script = ExtResource("1_6mksa")
 shape = SubResource("CapsuleShape3D_j5e41")
 
 [node name="ZMesh" type="MeshInstance3D" parent="ZColl"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-mesh = ExtResource("2_b62bj")
+mesh = SubResource("CapsuleMesh_871vb")
 
 [node name="Head" type="Camera3D" parent="ZColl/ZMesh"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.5, 0)
