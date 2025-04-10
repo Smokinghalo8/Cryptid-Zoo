@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [global_group]
 
 Living="Living things"
-Character="It's the character"
 
 [input]
 
