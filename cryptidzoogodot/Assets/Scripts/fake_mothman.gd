@@ -29,3 +29,19 @@ func highlight():
 
 func _on_highlight_timer_timeout() -> void:
 	$FakemothmanCol/FakemothmanMesh.set_surface_override_material(0, naturalMat);
+
+
+
+func _on_listening_radius_body_entered(body: Node3D) -> void:
+	print("Entered")
+	if body.is_in_group("Character"):
+		print("Character entered")
+		if body.velocity.length() >= 5:
+			print("Velocity met")
+
+	if body.is_in_group("Character") && body.velocity.length() >= 5 && animNum >= 1:
+		var animName = "move" + str(animNum)
+		animNum -= 0.5
+		$MothManAnims.play(animName)
+		animNum -= 0.5
+		

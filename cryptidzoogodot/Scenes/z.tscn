@@ -8,7 +8,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
-radius = 13.4247
+radius = 22.0386
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
@@ -203,7 +203,7 @@ spot_angle = 25.3125
 
 [node name="SenseArea" type="Area3D" parent="."]
 
-[node name="SenseCol" type="CollisionShape3D" parent="SenseArea"]
+[node name="SenseCol" type="CollisionShape3D" parent="SenseArea" groups=["Character"]]
 shape = SubResource("SphereShape3D_18rv6")
 
 [node name="HighlightTimer" type="Timer" parent="SenseArea"]

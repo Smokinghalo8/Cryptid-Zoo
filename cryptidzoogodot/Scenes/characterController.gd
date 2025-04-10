@@ -71,7 +71,6 @@ func _physics_process(delta: float) -> void:
 		run = false
 	#run
 	elif(velocity.length() == 10 && is_on_floor()):
-		print("Running")
 		run = true
 		walk = false
 		idle = false
@@ -97,7 +96,6 @@ func update_animation_parameters():
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = false
 	elif(walk == true):
-		print("in walk")
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = true
 		animTree["parameters/conditions/run"] = false
