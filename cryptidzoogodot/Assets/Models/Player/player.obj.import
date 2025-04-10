@@ -3,7 +3,11 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
+<<<<<<< Updated upstream
 uid="uid://cdoudhrugwkyt"
+=======
+uid="uid://bbj3u0g1sqrte"
+>>>>>>> Stashed changes
 path="res://.godot/imported/player.obj-b3968bf8177fc9f7c937ce7df6434072.mesh"
 
 [deps]
