@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+@onready var _dialog : Control = $Ui/Dialog
 
 var animNum = 1 
 
@@ -46,3 +47,4 @@ func interact():
 	$MothManAnims.play(animName)
 	animNum += 1
 	print("animNum: " + str(animNum) + "\nanimName: " + animName)
+	_dialog.display_line("Please.. Help Me....", "MothMan")

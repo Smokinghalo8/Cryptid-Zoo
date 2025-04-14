@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=15 format=3 uid="uid://bf4vgu7u0t3ri"]
 
+[ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://Scenes/fake_mothman.tscn" id="4_ijpq5"]
 [ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="4_o4rnp"]
+[ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="6_im7ec"]
+[ext_resource type="Script" path="res://Scenes/dialog.gd" id="7_edmu0"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -30,8 +33,16 @@ volumetric_fog_density = 0.1
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vqk"]
+texture = ExtResource("6_im7ec")
+
+[sub_resource type="Theme" id="Theme_bhqay"]
+default_font_size = 32
+Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
+
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
+script = ExtResource("1_8atto")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yhbei")
@@ -77,5 +88,45 @@ autostart = true
 
 [node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="Dialog" type="Control" parent="Ui"]
+layout_mode = 3
+anchor_top = 0.667
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_bhqay")
+script = ExtResource("7_edmu0")
+
+[node name="Box" type="Panel" parent="Ui/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Dialog"]
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 1140.0
+offset_bottom = 203.0
+
+[node name="Speaker" type="Label" parent="Ui/Dialog/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.678431, 0.00392157, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "MothMan"
+
+[node name="Dialogue" type="RichTextLabel" parent="Ui/Dialog/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.633757, 0.633757, 0.633757, 1)
+theme_override_colors/font_shadow_color = Color(0.796078, 0.0823529, 0.0901961, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "Please.. Help me...."
+fit_content = true
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
