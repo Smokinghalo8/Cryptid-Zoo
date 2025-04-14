@@ -87,7 +87,285 @@ autostart = true
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
 
 [node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 0)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0335845, 0, 0, 0, -1.46803e-09, 0.0335845, 0, -0.0335845, -1.46803e-09, 0.06, 0.215, 0.475)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, 0.246804, 0.214128, 0.996803)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.155872, 0.219485, 1.13366)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.331163, 0.219485, 0.638602)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D25" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, 0.06, 0.215, -1.9497)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D26" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, 0.246804, 0.214128, -1.33404)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D27" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.155872, 0.219485, -1.17899)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D28" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.331163, 0.219485, -1.77378)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.4194, 0.123807, 0.462364)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.54196, 0.123807, 0.462364)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.66757, 0.123807, 0.462364)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.40665, 0.711983, 1.9332)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.801524, 0.711983, 1.9332)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -2.01119, 0.711983, 1.9332)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -2.60775, 0.711983, 1.9332)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -2.61637, 0.711983, 2.38837)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -2.02174, 0.711983, 2.38837)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D24" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0252808, -9.5703e-10, 0.0218943, -0.0218943, -1.10506e-09, 0.0252808, 0, -0.0334437, -1.46187e-09, -0.124041, 1.01361, 2.15161)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.41556, 0.711983, 2.38837)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -0.818219, 0.711983, 2.38837)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.00314616, -1.45539e-09, 0.0332954, -0.0332954, -1.37523e-10, 0.00314616, 0, -0.0334437, -1.46187e-09, -0.473677, 0.200443, 2.14116)
+light_energy = 0.7
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 389.312
+spot_attenuation = 0.0
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, -1.46187e-09, 0.0334437, 0, -0.0334437, -1.46187e-09, -1.7805, 0.123807, 0.462364)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0333601, 0.00222811, -0.000785129, 0.00228339, -0.0332621, 0.00262697, -0.000605849, -0.00267402, -0.0333311, -1.54682, 0.188293, -1.79538)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0333601, 0.00222811, -0.000785129, 0.00228339, -0.0332621, 0.00262697, -0.000605849, -0.00267402, -0.0333311, -0.760276, 0.188293, -1.79538)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0333601, 0.00222811, -0.000785129, 0.00228339, -0.0332621, 0.00262697, -0.000605849, -0.00267402, -0.0333311, -2.22112, 0.188293, -1.79538)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, 0.00890086, 0.0322375, 0, -0.0322375, 0.00890086, -1.3284, 0.737269, -1.15597)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0334437, 0, 0, 0, 0.00890086, 0.0322375, 0, -0.0322375, 0.00890086, -1.61556, 0.737269, -1.15597)
+light_energy = 5.943
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -110,6 +388,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Ui/Dialog"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 10.0
 offset_right = 1140.0
