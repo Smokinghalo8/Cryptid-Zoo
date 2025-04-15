@@ -3,7 +3,11 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
+<<<<<<< Updated upstream
 uid="uid://0b1dlbqscwpo"
+=======
+uid="uid://nwkcg5aupnbm"
+>>>>>>> Stashed changes
 path="res://.godot/imported/playerArmless.obj-39e92cf9255dd2a549de47d209284f8c.mesh"
 
 [deps]
