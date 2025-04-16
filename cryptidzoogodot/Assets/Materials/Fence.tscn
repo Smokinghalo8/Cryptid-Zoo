@@ -8,6 +8,10 @@ albedo_texture = ExtResource("1_auqn8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02w1t"]
 resource_name = "Metal"
 vertex_color_use_as_albedo = true
+<<<<<<< Updated upstream
+=======
+albedo_color = Color(1, 1, 1, 1)
+>>>>>>> Stashed changes
 roughness = 0.2
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
