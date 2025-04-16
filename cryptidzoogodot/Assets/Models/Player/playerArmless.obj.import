@@ -3,7 +3,9 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
-uid="uid://dp4m7a42xo5dm"
+
+uid="uid://ddh7gm8b3jxf5"
+
 path="res://.godot/imported/playerArmless.obj-39e92cf9255dd2a549de47d209284f8c.mesh"
 
 [deps]
