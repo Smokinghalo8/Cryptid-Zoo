@@ -27,6 +27,7 @@ enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
 
 Living="Living things"
 Character="It's the character"
+Global="Global Script"
 
 [input]
 

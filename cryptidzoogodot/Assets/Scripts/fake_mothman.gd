@@ -1,6 +1,5 @@
 extends RigidBody3D
 
-@onready var _dialog : Control = $Ui/Dialog
 
 var animNum = 1 
 
