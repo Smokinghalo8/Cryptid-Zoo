@@ -1,0 +1,4 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://q42yhkeogaon"]
+
+[resource]
+depth_draw_mode = 2
