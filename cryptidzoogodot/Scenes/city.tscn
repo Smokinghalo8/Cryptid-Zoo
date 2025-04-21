@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=24 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -9,6 +9,13 @@
 [ext_resource type="Script" path="res://Scenes/dialog.gd" id="7_edmu0"]
 [ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Note1.tscn" id="8_hln64"]
 [ext_resource type="Script" path="res://note_1.gd" id="9_ni7w2"]
+[ext_resource type="PackedScene" uid="uid://dtxaulbcnbx08" path="res://Note2.tscn" id="10_7ysn1"]
+[ext_resource type="Script" path="res://note_2.gd" id="11_hambk"]
+[ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Note3.tscn" id="12_acp2a"]
+[ext_resource type="Script" path="res://note_3.gd" id="13_uc6et"]
+[ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Note4.tscn" id="14_0b0g1"]
+[ext_resource type="Script" path="res://note_4.gd" id="15_eb1mn"]
+[ext_resource type="PackedScene" uid="uid://o011acrb3ket" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -59,7 +66,7 @@ mesh = SubResource("BoxMesh_2b0a1")
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.28263, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.28263, 65.1562)
 
 [node name="UI" type="Control" parent="."]
 visible = false
@@ -79,7 +86,7 @@ theme_override_font_sizes/font_size = 48
 text = "Press E to interact"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 123.29)
+transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
 light_energy = 0.399
 shadow_enabled = true
 script = ExtResource("4_gkunu")
@@ -90,7 +97,7 @@ autostart = true
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
 
 [node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
-transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 0)
+transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 68.0977)
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="MapExport"]
 transform = Transform3D(0.0335845, 0, 0, 0, -1.46803e-09, 0.0335845, 0, -0.0335845, -1.46803e-09, 0.06, 0.215, 0.475)
@@ -373,6 +380,7 @@ spot_attenuation = 0.0
 [node name="Ui" type="CanvasLayer" parent="."]
 
 [node name="Dialog" type="Control" parent="Ui"]
+modulate = Color(0.656569, 1, 0.915033, 1)
 layout_mode = 3
 anchor_top = 0.667
 anchor_right = 1.0
@@ -399,18 +407,32 @@ offset_bottom = 203.0
 
 [node name="Speaker" type="Label" parent="Ui/Dialog/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.678431, 0.00392157, 0, 1)
+theme_override_colors/font_color = Color(0, 0.435479, 0.0274811, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="Dialogue" type="RichTextLabel" parent="Ui/Dialog/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.633757, 0.633757, 0.633757, 1)
-theme_override_colors/font_shadow_color = Color(0.796078, 0.0823529, 0.0901961, 1)
+theme_override_colors/default_color = Color(0.883863, 0.87429, 0.883631, 1)
+theme_override_colors/font_shadow_color = Color(0.212305, 0.212305, 0.212305, 1)
 theme_override_font_sizes/normal_font_size = 24
 fit_content = true
 
-[node name="StaticBody3D" parent="." instance=ExtResource("8_hln64")]
-transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.9337, 2.60438, 12.6734)
+[node name="Note1" parent="." instance=ExtResource("8_hln64")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.9337, 2.60438, 80.7472)
 script = ExtResource("9_ni7w2")
+
+[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
+transform = Transform3D(0.47, 0, 0, 0, 0.155051, -0.0243966, 0, -0.692863, -0.00545954, -61.9192, 0.792068, 80.9591)
+script = ExtResource("11_hambk")
+
+[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
+transform = Transform3D(0.47, 0, 0, 0, 0.695556, 0.00501712, 0, 0.142486, -0.0244914, 34.7497, 2.23479, 60.1183)
+script = ExtResource("13_uc6et")
+
+[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 99.3681, 2.2067, 83.0941)
+script = ExtResource("15_eb1mn")
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("16_xmauk")]
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
