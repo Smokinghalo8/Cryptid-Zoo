@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://g0lq1kruspbl"]
+[gd_scene load_steps=9 format=3 uid="uid://g0lq1kruspbl"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_7inl4"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_turxw"]
@@ -6,15 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bp6tc8rylpfcy" path="res://terrain_trial_slot0_albedo_bump.png" id="3_6k8y1"]
 [ext_resource type="Texture2D" uid="uid://dsfwbw6d7llux" path="res://terrain_trial_slot0_normal_roughness.png" id="4_upvu0"]
 [ext_resource type="Texture2D" uid="uid://dxtjsbfcluv3s" path="res://Assets/Materials/GroundDirtWeedsPatchy004/GroundDirtWeedsPatchy004_COL_2K.jpg" id="5_tijjl"]
-[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="7_rj0s1"]
-[ext_resource type="Texture2D" uid="uid://cag45gd25qiad" path="res://Assets/Materials/Grass/free grass.png" id="8_xoove"]
-[ext_resource type="ArrayMesh" uid="uid://c0vglrpcwgopa" path="res://Assets/Materials/Grass/free grass by adam127.obj" id="9_nd0gc"]
-[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="10_wegaa"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://black-stone.jpg" id="6_3vcck"]
 
 [sub_resource type="Resource" id="Resource_hirej"]
 script = ExtResource("2_turxw")
 mode = 0
-textures = [[ExtResource("3_6k8y1"), ExtResource("5_tijjl")], [ExtResource("4_upvu0"), null]]
+textures = [[ExtResource("3_6k8y1"), ExtResource("5_tijjl"), ExtResource("6_3vcck")], [ExtResource("4_upvu0"), null, null]]
 
 [node name="TerrainTrial" type="Node3D"]
 
@@ -35,14 +32,3 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
-
-[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
-script = ExtResource("7_rj0s1")
-texture = ExtResource("8_xoove")
-instance_mesh = ExtResource("9_nd0gc")
-shader_params/u_globalmap_tint_bottom = null
-shader_params/u_globalmap_tint_top = null
-shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = null
-shader_params/u_roughness = null
-metadata/_editor_icon = ExtResource("10_wegaa")

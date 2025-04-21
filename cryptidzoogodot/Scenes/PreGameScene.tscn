@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ykdmm74vx8s"]
+[gd_scene load_steps=4 format=3 uid="uid://ccfke0dy4rixg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
 [ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_bu07y"]
