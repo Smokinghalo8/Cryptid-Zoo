@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0vglrpcwgopa"
+path="res://.godot/imported/free grass by adam127.obj-d3ec462ae743a5f6e740f7ae9f27c795.mesh"
+
+[deps]
+
+files=["res://.godot/imported/free grass by adam127.obj-d3ec462ae743a5f6e740f7ae9f27c795.mesh"]
+
+source_file="res://Assets/Materials/Grass/free grass by adam127.obj"
+dest_files=["res://.godot/imported/free grass by adam127.obj-d3ec462ae743a5f6e740f7ae9f27c795.mesh", "res://.godot/imported/free grass by adam127.obj-d3ec462ae743a5f6e740f7ae9f27c795.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
