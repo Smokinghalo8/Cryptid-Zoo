@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -104,3 +104,10 @@ func update_animation_parameters():
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = true
 	
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Character"):
+		#SceneTransitionAnimation.play("fade_in")
+		position.y += 10
+		position.x -= 14
+		#SceneTransitionAnimation.play("fade_out")
