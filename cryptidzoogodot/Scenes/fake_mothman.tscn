@@ -1,24 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://drjilaesiq5nx"]
+[gd_scene load_steps=5 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="1_8idsb"]
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_gmu72"]
 [ext_resource type="AudioStream" uid="uid://fnaf25a1atlt" path="res://Assets/SFX/2025-04-10 11-41-52.mp3" id="3_p8vn3"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_5c6p8"]
-radius = 12.5274
+height = 3.21092
 
 [node name="FakeMothman" type="RigidBody3D" groups=["Living"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0409, 1.43675, 5.75489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.04265, 1.43675, 8.24498)
 script = ExtResource("1_8idsb")
+
+[node name="MothmanFBX" parent="." instance=ExtResource("2_gmu72")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.88354, 0.19459, -8.17838)
 
 [node name="FakemothmanCol" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 1.99326, -8.43044)
 shape = SubResource("CylinderShape3D_66xu5")
-
-[node name="MothmanFBX" parent="FakemothmanCol" instance=ExtResource("2_gmu72")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.16167, -1.79867, 0.252059)
 
 [node name="FakemothmanMesh" type="MeshInstance3D" parent="FakemothmanCol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 9.53674e-07)
@@ -26,14 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 9.53674e-07)
 [node name="HighlightTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-
-[node name="ListeningRadiusLong" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 1.99326, -8.43044)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningRadius"]
-transform = Transform3D(1.00031, 0, 0, 0, 1.00031, 0, 0, 0, 1.00031, 0, 0, 0)
-shape = SubResource("SphereShape3D_5c6p8")
 
 [node name="MothManNoises" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 1.99326, -8.43044)
@@ -43,4 +33,3 @@ autoplay = true
 max_distance = 20.0
 
 [connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]
-[connection signal="body_entered" from="ListeningRadius" to="." method="_on_listening_radius_body_entered"]
