@@ -40,7 +40,7 @@ offset_bottom = 487.0
 min_value = -6.0
 max_value = 72.0
 step = 6.0
-value = 4.0
+value = 6.0
 
 [node name="SoundLabel" type="Label" parent="ScreenControl"]
 layout_mode = 0

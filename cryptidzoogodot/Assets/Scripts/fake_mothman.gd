@@ -10,7 +10,7 @@ var highlightMat = preload("res://Assets/Materials/fakeMothmanHighlight.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MothManNoises.play(0)
-	$FakemothmanCol/FakemothmanMesh.set_surface_override_material(0, naturalMat)
+	$FakemothmanCol/MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 
 func highlight():
 	print("Switching")
+	
+	$FakemothmanCol/MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, highlightMat)
 	
 	$FakemothmanCol/FakemothmanMesh.set_surface_override_material(0, highlightMat);
 	$HighlightTimer.start()
