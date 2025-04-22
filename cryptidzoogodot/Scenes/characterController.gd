@@ -13,7 +13,7 @@ const JUMP_VELOCITY = 4.5
 func on_ready():
 	idle = true
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	#BodyMovement
 	if event is InputEventMouseMotion:
 		self.rotate_y(-event.relative.x * 0.01)
