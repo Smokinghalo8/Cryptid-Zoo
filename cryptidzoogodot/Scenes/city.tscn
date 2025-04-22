@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=26 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -7,15 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="4_o4rnp"]
 [ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="6_im7ec"]
 [ext_resource type="Script" path="res://Scenes/dialog.gd" id="7_edmu0"]
-[ext_resource type="PackedScene" path="res://Note1.tscn" id="8_hln64"]
+[ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Note1.tscn" id="8_hln64"]
 [ext_resource type="Script" path="res://note_1.gd" id="9_ni7w2"]
-[ext_resource type="PackedScene" path="res://Note2.tscn" id="10_7ysn1"]
+[ext_resource type="PackedScene" uid="uid://dtxaulbcnbx08" path="res://Note2.tscn" id="10_7ysn1"]
 [ext_resource type="Script" path="res://note_2.gd" id="11_hambk"]
-[ext_resource type="PackedScene" path="res://Note3.tscn" id="12_acp2a"]
+[ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Note3.tscn" id="12_acp2a"]
 [ext_resource type="Script" path="res://note_3.gd" id="13_uc6et"]
-[ext_resource type="PackedScene" path="res://Note4.tscn" id="14_0b0g1"]
+[ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Note4.tscn" id="14_0b0g1"]
 [ext_resource type="Script" path="res://note_4.gd" id="15_eb1mn"]
-[ext_resource type="PackedScene" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
+[ext_resource type="PackedScene" uid="uid://o011acrb3ket" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
+[ext_resource type="Script" path="res://Death_Bounds.gd" id="17_thvbw"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -49,6 +50,8 @@ texture = ExtResource("6_im7ec")
 default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
@@ -67,6 +70,7 @@ shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -14.7512, 1.28263, 90.2349)
+
 
 [node name="UI" type="Control" parent="."]
 visible = false
@@ -436,4 +440,14 @@ script = ExtResource("15_eb1mn")
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("16_xmauk")]
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-0.190835, -3.84014e-10, -4.75606, -4.10188e-07, 0.108, 0, -4.68812, -9.43385e-09, 0.1936, 112.374, 49.406, 93.4484)
+script = ExtResource("17_thvbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(38.685, 3.76164e-13, 4.69472e-08, -1.45519e-11, 1, 1.05714e-16, -1.19209e-07, -6.94005e-18, 15.235, 1.28149, -512.271, -3.82446)
+shape = SubResource("BoxShape3D_psxoi")
+
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
