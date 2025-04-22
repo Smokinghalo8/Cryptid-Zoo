@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	rotate_x(0.01745)
+	#rotate_x(0.01745)
+	pass

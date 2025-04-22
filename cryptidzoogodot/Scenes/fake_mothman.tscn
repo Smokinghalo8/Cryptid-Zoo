@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drjilaesiq5nx"]
+[gd_scene load_steps=6 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="1_8idsb"]
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_gmu72"]
@@ -7,116 +7,11 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 height = 3.21092
 
-[sub_resource type="Animation" id="Animation_xhvoi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.43675, -8.64865)]
-}
-
-[sub_resource type="Animation" id="Animation_ryhqn"]
-resource_name = "move1"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1.43675, -8.64865), Vector3(-0.209495, 1.43675, -26.2719)]
-}
-
-[sub_resource type="Animation" id="Animation_npvue"]
-resource_name = "move1.5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(0, 1.43675, -8.64865)]
-}
-
-[sub_resource type="Animation" id="Animation_gohpg"]
-resource_name = "move2"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.209495, 1.43675, -26.2719), Vector3(-40.8661, 1.4903, -41.1396)]
-}
-
-[sub_resource type="Animation" id="Animation_b3osi"]
-resource_name = "move2.5"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-0.209495, 1.43675, -26.2719)]
-}
-
-[sub_resource type="Animation" id="Animation_oas03"]
-resource_name = "move3"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-40.8661, 1.4903, -41.1396), Vector3(-25.0567, 1.43675, -8.64865)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l0gj0"]
-_data = {
-"RESET": SubResource("Animation_xhvoi"),
-"move1": SubResource("Animation_ryhqn"),
-"move1.5": SubResource("Animation_npvue"),
-"move2": SubResource("Animation_gohpg"),
-"move2.5": SubResource("Animation_b3osi"),
-"move3": SubResource("Animation_oas03")
-}
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_5c6p8"]
 radius = 12.5274
 
 [node name="FakeMothman" type="RigidBody3D" groups=["Living"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0409, 1.43675, 5.75489)
 script = ExtResource("1_8idsb")
 
 [node name="MothmanFBX" parent="." instance=ExtResource("2_gmu72")]
@@ -132,11 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 9.53674e-07)
 [node name="HighlightTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
-
-[node name="MothManAnims" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_l0gj0")
-}
 
 [node name="ListeningRadiusLong" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 1.99326, -8.43044)

@@ -66,7 +66,7 @@ mesh = SubResource("BoxMesh_2b0a1")
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
-transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -79.3954, 1.28263, 90.2349)
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -14.7512, 1.28263, 90.2349)
 
 [node name="UI" type="Control" parent="."]
 visible = false
@@ -95,6 +95,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
+transform = Transform3D(-0.999791, 0, -0.0204364, 0, 1, 0, 0.0204364, 0, -0.999791, -4.75481, -0.339596, 83.0669)
 
 [node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
 transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 68.0977)

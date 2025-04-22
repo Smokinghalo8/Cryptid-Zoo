@@ -8,14 +8,16 @@ const JUMP_VELOCITY = 4.5
 @export var walk = false
 @export var run = false
 @export var idle = true
-
+@export var canSense = true
 
 func on_ready():
 	idle = true
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
+	
 	#BodyMovement
 	if event is InputEventMouseMotion:
+		
 		self.rotate_y(-event.relative.x * 0.01)
 
 
@@ -25,11 +27,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if Input.is_action_just_pressed("sense"):
+	if Input.is_action_just_pressed("sense") && canSense == true:
 		for body in $SenseArea.get_overlapping_bodies():
 			if body.is_in_group("Living"):
 				print("Body name: " + body.name)
 				body.highlight()
+				senseCooldown()
+		
 	
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
@@ -111,3 +115,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		position.y += 10
 		position.x -= 14
 		#SceneTransitionAnimation.play("fade_out")
+
+func senseCooldown():
+	canSense = false
+	await get_tree().create_timer(5).timeout
+	canSense = true
