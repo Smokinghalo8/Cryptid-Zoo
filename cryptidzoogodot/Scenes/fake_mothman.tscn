@@ -119,12 +119,12 @@ radius = 12.5274
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, -8.64865)
 script = ExtResource("1_8idsb")
 
-[node name="FakemothmanCol" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 2.03012, -8.43044)
-shape = SubResource("CylinderShape3D_66xu5")
+[node name="MothmanFBX" parent="." instance=ExtResource("2_gmu72")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.88353, 0.231447, -8.17838)
 
-[node name="MothmanFBX" parent="FakemothmanCol" instance=ExtResource("2_gmu72")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.16167, -1.79867, 0.252059)
+[node name="FakemothmanCol" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721865, 1.96786, -8.43044)
+shape = SubResource("CylinderShape3D_66xu5")
 
 [node name="FakemothmanMesh" type="MeshInstance3D" parent="FakemothmanCol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 9.53674e-07)
