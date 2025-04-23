@@ -26,10 +26,10 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if Input.is_action_just_pressed("sense"):
-		for body in $SenseArea.get_overlapping_bodies():
-			if body.is_in_group("Living"):
-				print("Body name: " + body.name)
-				body.highlight()
+		var children = get_tree().current_scene.get_children()
+		for child in children:
+			if child.is_in_group("Living"):
+				child.highlight()
 	
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible

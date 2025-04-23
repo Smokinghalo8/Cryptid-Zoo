@@ -1,12 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://cwqd117ianhrh"]
+[gd_scene load_steps=33 format=3 uid="uid://cwqd117ianhrh"]
 
 [ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_6mksa"]
 [ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
 [ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_18rv6"]
-radius = 22.0386
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="5_yfbpq"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="6_a3kys"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
@@ -176,14 +175,6 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28263, 0)
 script = ExtResource("1_6mksa")
 
-[node name="SenseArea" type="Area3D" parent="."]
-
-[node name="SenseCol" type="CollisionShape3D" parent="SenseArea" groups=["Character"]]
-shape = SubResource("SphereShape3D_18rv6")
-
-[node name="HighlightTimer" type="Timer" parent="SenseArea"]
-wait_time = 3.0
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_jc147")
 anim_player = NodePath("../animPlayer")
@@ -224,4 +215,19 @@ shape = SubResource("CapsuleShape3D_j5e41")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.207406, -0.317895)
 mesh = ExtResource("2_2mclm")
 
-[connection signal="timeout" from="SenseArea/HighlightTimer" to="." method="_on_highlight_timer_timeout"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 530.0
+offset_right = 1019.0
+offset_bottom = 624.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_yfbpq")
+texture_progress = ExtResource("6_a3kys")

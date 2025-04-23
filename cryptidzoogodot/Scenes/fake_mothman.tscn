@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://drjilaesiq5nx"]
+[gd_scene load_steps=7 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/fake_mothman.gd" id="1_8idsb"]
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_gmu72"]
@@ -6,6 +6,12 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 height = 3.21092
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fhn5l"]
+radius = 15.3453
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bgb0r"]
+radius = 7.97711
 
 [node name="FakeMothman" type="RigidBody3D" groups=["Living"]]
 script = ExtResource("1_8idsb")
@@ -29,5 +35,15 @@ stream = ExtResource("3_p8vn3")
 volume_db = -22.326
 autoplay = true
 max_distance = 20.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_fhn5l")
+
+[node name="Area3D2" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("SphereShape3D_bgb0r")
 
 [connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]
