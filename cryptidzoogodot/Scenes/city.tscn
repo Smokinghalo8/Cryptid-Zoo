@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=32 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -35,13 +35,18 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
+radius = 15.3453
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mrpgv"]
+radius = 7.97711
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vqk"]
 texture = ExtResource("6_im7ec")
@@ -51,6 +56,96 @@ default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+
+[sub_resource type="Animation" id="Animation_q1jla"]
+resource_name = "move1"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.43675, 91.2606), Vector3(0, 4.94813, 91.2606), Vector3(0, 4.94813, 24.3683), Vector3(0, 0.154699, 24.3683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0387268, 1.52759, -0.730334), Vector3(-0.0577522, 1.56528, -1.47552), Vector3(-0.0575959, 1.56556, -0.436332), Vector3(-0.0575959, 1.56556, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lkwtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4baqa"]
+resource_name = "move1.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.154699, 24.3683), Vector3(0, 4.94813, 24.3683), Vector3(0, 4.94813, 91.2606), Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]
+_data = {
+"RESET": SubResource("Animation_lkwtc"),
+"move1": SubResource("Animation_q1jla"),
+"move1.5": SubResource("Animation_4baqa")
+}
 
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
@@ -99,6 +194,16 @@ autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, 91.2606)
+
+[node name="Big" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Big"]
+shape = SubResource("SphereShape3D_8ojvp")
+
+[node name="Small" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Small"]
+shape = SubResource("SphereShape3D_mrpgv")
 
 [node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
 transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 68.0977)
@@ -446,6 +551,11 @@ script = ExtResource("17_thvbw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(38.685, 3.76164e-13, 4.69472e-08, -1.45519e-11, 1, 1.05714e-16, -1.19209e-07, -6.94005e-18, 15.235, 1.28149, -512.271, -3.82446)
 shape = SubResource("BoxShape3D_psxoi")
+
+[node name="MothmanAnims" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cuvm8")
+}
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]

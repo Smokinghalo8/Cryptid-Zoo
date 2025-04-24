@@ -8,6 +8,12 @@ const JUMP_VELOCITY = 4.5
 @export var walk = false
 @export var run = false
 @export var idle = true
+@onready var sprintBar = $Control/TextureProgressBar
+@export var sprintable = true
+@export var sprintSpeed = 10
+@export var senseable = true
+var sprintDrain = 3
+var sprintGain = 6
 
 
 func on_ready():
@@ -25,11 +31,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if Input.is_action_just_pressed("sense"):
+	if Input.is_action_just_pressed("sense") && senseable == true:
 		var children = get_tree().current_scene.get_children()
 		for child in children:
 			if child.is_in_group("Living"):
 				child.highlight()
+				senseable = false
+				$SenseTimer.start(0)
 	
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
@@ -76,8 +84,8 @@ func _physics_process(delta: float) -> void:
 		idle = false
 	
 	#Sprint
-	if Input.is_action_pressed("shift"):
-		SPEED = 10
+	if Input.is_action_pressed("shift") && sprintable == true:
+		SPEED = sprintSpeed
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
 	
@@ -111,3 +119,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		position.y += 10
 		position.x -= 14
 		#SceneTransitionAnimation.play("fade_out")
+
+
+func _on_sense_timer_timeout() -> void:
+	senseable = true
