@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=39 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -35,6 +35,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
@@ -59,6 +60,7 @@ Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
 [sub_resource type="Animation" id="Animation_q1jla"]
 resource_name = "move1"
+length = 1.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -67,7 +69,7 @@ tracks/0/path = NodePath("FakeMothman:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"times": PackedFloat32Array(0, 0.4, 1.2, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.43675, 91.2606), Vector3(0, 4.94813, 91.2606), Vector3(0, 4.94813, 24.3683), Vector3(0, 0.154699, 24.3683)]
@@ -79,7 +81,7 @@ tracks/1/path = NodePath("FakeMothman:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.7, 0.8),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0387268, 1.52759, -0.730334), Vector3(-0.0577522, 1.56528, -1.47552), Vector3(-0.0575959, 1.56556, -0.436332), Vector3(-0.0575959, 1.56556, 0)]
@@ -134,18 +136,199 @@ tracks/1/path = NodePath("FakeMothman:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": []
+"values": [Vector3(0, 1.5708, 0), Vector3(0, -0.371668, 0), Vector3(-0.0218623, -1.58498, -0.995328), Vector3(-0.00497954, -0.733588, -0.192237), Vector3(-0.00523599, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dxftt"]
+resource_name = "move2"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.154699, 24.3683), Vector3(0, 6.40701, 24.3683), Vector3(45.4934, 2.90855, 48.6737), Vector3(45.4934, 0.262391, 48.6737)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 1.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0575959, 1.56556, 0), Vector3(-0.0203563, 0.0659412, -0.687742), Vector3(0.0148405, -0.468735, -1.20315), Vector3(0.0538897, -0.412907, -0.636321), Vector3(0, 0.541052, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3fkrg"]
+resource_name = "move2.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(45.4934, 0.262391, 48.6737), Vector3(45.4934, 2.90855, 48.6737), Vector3(0, 6.40701, 24.3683), Vector3(0, 0.154699, 24.3683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0521646, 2.33233, -0.544843), Vector3(-0.0380771, 2.30025, -0.890272), Vector3(-0.050326, 1.6064, -0.148712), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qes4m"]
+resource_name = "move3"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.5, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(45.4934, 0.262391, 48.6737), Vector3(45.4934, 36.8701, 48.6737), Vector3(-42.0022, 19.2661, 55.5136), Vector3(-63.8761, 6.97868, 57.2236), Vector3(-71.9117, 0.231596, 57.2236)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.5, 1.7, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(1.2912e-08, -3.14159, -1.08762), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k371j"]
+resource_name = "move3.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-71.9117, 0.231596, 57.2236), Vector3(-71.9117, 6.90877, 57.2236), Vector3(44.9652, 57.4144, 50.8393), Vector3(44.9652, 3.43746, 50.8393), Vector3(44.9652, 0.360385, 50.8393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0, 0.593412, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ihdvq"]
+resource_name = "move4"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-71.912, 0.232, 57.224), Vector3(-71.912, 11.8486, 57.224), Vector3(-20.0432, 26.3634, 106.842), Vector3(-14.7371, 23.5508, 106.842), Vector3(-15.825, 20.9877, 106.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.102115, -0.5562, -0.931969), Vector3(0.102115, -0.5562, -0.93197), Vector3(0, 0.261799, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fbxaa"]
+resource_name = "move5"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.1, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-20.0432, 20.7397, 106.842), Vector3(-20.0432, 37.0344, 106.842), Vector3(239.914, 43.7431, 106.842), Vector3(239.914, 24.0788, 106.842), Vector3(242.885, 15.1689, 110.315)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.1, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.261799, 0), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0, -0.329867, 0), Vector3(0, -0.512202, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]
 _data = {
 "RESET": SubResource("Animation_lkwtc"),
 "move1": SubResource("Animation_q1jla"),
-"move1.5": SubResource("Animation_4baqa")
+"move1.5": SubResource("Animation_4baqa"),
+"move2": SubResource("Animation_dxftt"),
+"move2.5": SubResource("Animation_3fkrg"),
+"move3": SubResource("Animation_qes4m"),
+"move3.5": SubResource("Animation_k371j"),
+"move4": SubResource("Animation_ihdvq"),
+"move5": SubResource("Animation_fbxaa")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sef1e"]
+size = Vector3(8.3205, 1, 4.45117)
 
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
@@ -193,7 +376,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, 91.2606)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43675, 91.2606)
 
 [node name="Big" type="Area3D" parent="FakeMothman"]
 
@@ -556,6 +739,12 @@ shape = SubResource("BoxShape3D_psxoi")
 libraries = {
 "": SubResource("AnimationLibrary_cuvm8")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5351, 20.275, 107.545)
+shape = SubResource("BoxShape3D_sef1e")
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]

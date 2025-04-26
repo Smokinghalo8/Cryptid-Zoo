@@ -7,10 +7,13 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if is_colliding():
+		print("Is colliding")
 		var target = get_collider()
 		if target != null:
+			print("Not null")
 			if target.has_method("interact"):
 				intText.visible = true
+				print("Has interact")
 				if Input.is_action_just_pressed("interact"):
 					target.interact()
 			else:

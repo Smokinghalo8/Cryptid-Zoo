@@ -41,6 +41,14 @@ func _on_highlight_timer_timeout() -> void:
 	
 func interact():
 	var animName = "move" + str(Global.animNum)
+	print(str(animName))
+	
+	$Big.monitoring = false
+	$Small.monitoring = false
 	animPlayer.play(animName)
+	await animPlayer.animation_finished
+	if Global.animNum < 4:
+		$Big.monitoring = true
+		$Small.monitoring = true
 	Global.animNum += 1
-	print("animNum: " + str(Global.animNum) + "\nanimName: " + animName)
+	print("Next anim num: " + str(Global.animNum))
