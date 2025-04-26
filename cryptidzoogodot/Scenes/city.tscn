@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=40 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -35,7 +35,6 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
@@ -57,6 +56,33 @@ default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+
+[sub_resource type="Animation" id="Animation_lkwtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q1jla"]
 resource_name = "move1"
@@ -85,33 +111,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0387268, 1.52759, -0.730334), Vector3(-0.0577522, 1.56528, -1.47552), Vector3(-0.0575959, 1.56556, -0.436332), Vector3(-0.0575959, 1.56556, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_lkwtc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FakeMothman:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.43675, 91.2606)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FakeMothman:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4baqa"]
@@ -328,7 +327,10 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sef1e"]
-size = Vector3(8.3205, 1, 4.45117)
+size = Vector3(7.05283, 1, 4.45117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmvtk"]
+size = Vector3(1, 7.85345, 14.4135)
 
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
@@ -740,11 +742,25 @@ libraries = {
 "": SubResource("AnimationLibrary_cuvm8")
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Perch" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5351, 20.275, 107.545)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9013, 20.275, 107.545)
 shape = SubResource("BoxShape3D_sef1e")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.368, 16.4256, 102.858)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41571, 1.11125)
+shape = SubResource("BoxShape3D_dmvtk")
+
+[node name="Area3D3" type="Area3D" parent="."]
+transform = Transform3D(0.222501, 0, -0.974932, 0, 1, 0, 0.974932, 0, 0.222501, 235.551, 17.2793, 93.2427)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.680206, 1.11125)
+shape = SubResource("BoxShape3D_dmvtk")
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]
