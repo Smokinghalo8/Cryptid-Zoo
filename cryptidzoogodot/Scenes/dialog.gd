@@ -107,7 +107,7 @@ func CityNotes2():
 func CityNotes3():
 		_speaker.set("theme_override_colors/font_color", Note_Color)
 		_dialogue.set("theme_override_colors/default", Child_Color)
-		display_line("*Drawing of a tall stick man around sharp trees* | I get a weird feeling looking at it.", "Little Kid")
+		display_line("*Drawing of a tall stick man around sharp trees* | I get a weird feeling looking at this.", "Little Kid")
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 
