@@ -80,6 +80,7 @@ func LIlKid1():
 		_speaker.set("theme_override_colors/font_color", Child_Color)
 		_dialogue.set("theme_override_colors/font_color", Child_Color)
 		display_line("I know a place you can be safe", "Little Kid")
+		$"../../ChildVoice1".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 
@@ -87,6 +88,7 @@ func LIlKid2():
 		_speaker.set("theme_override_colors/font_color", Child_Color)
 		_dialogue.set("theme_override_colors/font_color", Child_Color)
 		display_line("I run a zoo for cryptids like you! A sactuary where you wont have to run anymore.", "Little Kid")
+		$"../../ChildVoice2".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 		
@@ -94,6 +96,7 @@ func CityNotes1():
 		_speaker.set("theme_override_colors/font_color", Note_Color)
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Missing Mothman plushie Poster* | seems it was last seen near the park.", "Little Kid")
+		$"../../NotesVoice1".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 		
@@ -101,6 +104,7 @@ func CityNotes2():
 		_speaker.set("theme_override_colors/font_color", Note_Color)
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Mothman Terrorizes Point Pleasant!* | seems it's a newspaper thread.", "Little Kid")
+		$"../../NotesVoice2".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 		
@@ -108,6 +112,7 @@ func CityNotes3():
 		_speaker.set("theme_override_colors/font_color", Note_Color)
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Drawing of a tall stick man around sharp trees* | I get a weird feeling looking at this.", "Little Kid")
+		$"../../NotesVocie3".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false
 
@@ -115,5 +120,6 @@ func CityNotes4():
 		_speaker.set("theme_override_colors/font_color", Note_Color)
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("Don't Cross this bridge! | looks really unsafe.", "Little Kid")
+		$"../../NotesVoice4".play()
 		await get_tree().create_timer(5).timeout
 		self.visible = false

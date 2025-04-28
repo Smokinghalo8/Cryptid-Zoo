@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=46 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -17,6 +17,12 @@
 [ext_resource type="Script" path="res://note_4.gd" id="15_eb1mn"]
 [ext_resource type="PackedScene" uid="uid://o011acrb3ket" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" path="res://Death_Bounds.gd" id="17_thvbw"]
+[ext_resource type="AudioStream" uid="uid://d2n3sjmxo04hk" path="res://VoiceLines/ChildVoice1.wav" id="18_ox558"]
+[ext_resource type="AudioStream" uid="uid://bg2edglum876c" path="res://VoiceLines/ChildVoice2.wav" id="19_n03uf"]
+[ext_resource type="AudioStream" uid="uid://dgfy38534juma" path="res://VoiceLines/Notes1.wav" id="20_n8thr"]
+[ext_resource type="AudioStream" uid="uid://dvn11qq3vsu4t" path="res://VoiceLines/Notes2.wav" id="21_rec7d"]
+[ext_resource type="AudioStream" uid="uid://dlh1edeikqmpx" path="res://VoiceLines/Notes3.wav" id="22_pu0yw"]
+[ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://VoiceLines/Notes4.wav" id="23_hdda4"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -761,6 +767,24 @@ transform = Transform3D(0.222501, 0, -0.974932, 0, 1, 0, 0.974932, 0, 0.222501, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.680206, 1.11125)
 shape = SubResource("BoxShape3D_dmvtk")
+
+[node name="ChildVoice1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_ox558")
+
+[node name="ChildVoice2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("19_n03uf")
+
+[node name="NotesVoice1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("20_n8thr")
+
+[node name="NotesVoice2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("21_rec7d")
+
+[node name="NotesVocie3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("22_pu0yw")
+
+[node name="NotesVoice4" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("23_hdda4")
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]
