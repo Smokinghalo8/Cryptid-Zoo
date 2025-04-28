@@ -115,7 +115,7 @@ func update_animation_parameters():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
-		SceneTransitionAnimation.play("fade_in")
+		#SceneTransitionAnimation.play("fade_in")
 		position.y += 10
 		position.x -= 14
 		#SceneTransitionAnimation.play("fade_out")
