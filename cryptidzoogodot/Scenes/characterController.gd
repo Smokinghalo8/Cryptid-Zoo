@@ -8,12 +8,15 @@ const JUMP_VELOCITY = 4.5
 @export var walk = false
 @export var run = false
 @export var idle = true
-@onready var sprintBar = $Control/TextureProgressBar
-@export var sprintable = true
-@export var sprintSpeed = 10
 @export var senseable = true
-var sprintDrain = 3
-var sprintGain = 6
+var sprintSpeed = 10.0
+var maxStamina = 100.0
+var stamina = maxStamina
+var staminaDepletionRate = 30.0
+var staminaRecoveryRate = 30.0
+var sprintable = true
+
+
 
 
 func on_ready():
@@ -86,9 +89,25 @@ func _physics_process(delta: float) -> void:
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
 		SPEED = sprintSpeed
+		stamina -= staminaDepletionRate * delta
+		stamina = min(stamina, maxStamina)
+		print(str(stamina))
+	else:
+		stamina += staminaRecoveryRate * delta
+		stamina = min(stamina, maxStamina)
+		print(str(stamina))
+	
+	if stamina < 1:
+		sprintable = false
+		SPEED = 5
+	if stamina == maxStamina:
+		sprintable = true
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
 	
+	
+	
+	#Crouch
 	if Input.is_action_pressed("control"):
 		$ZColl.scale = Vector3(1, 0.5, 1)
 		SPEED = 2.5

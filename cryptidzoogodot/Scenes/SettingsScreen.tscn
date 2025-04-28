@@ -16,8 +16,8 @@ script = ExtResource("1_cefb5")
 [node name="Background" type="TextureRect" parent="ScreenControl"]
 layout_mode = 0
 offset_top = -2.0
-offset_right = 1227.0
-offset_bottom = 648.0
+offset_right = 1923.0
+offset_bottom = 1105.0
 texture = ExtResource("2_7ytj1")
 
 [node name="GameTitle" type="Label" parent="ScreenControl"]
@@ -28,36 +28,36 @@ offset_right = 348.0
 offset_bottom = 105.0
 scale = Vector2(1.15674, 1.8462)
 theme_override_fonts/font = ExtResource("2_mltwy")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 94
 text = "Cryptid Zoo"
 
 [node name="VolumeSlider" type="HSlider" parent="ScreenControl"]
 layout_mode = 0
-offset_left = 274.0
-offset_top = 471.0
-offset_right = 698.0
-offset_bottom = 487.0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
 min_value = -6.0
 max_value = 72.0
 step = 6.0
-value = 6.0
+value = 36.0
 
 [node name="SoundLabel" type="Label" parent="ScreenControl"]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 458.0
-offset_right = 209.0
-offset_bottom = 493.0
-theme_override_font_sizes/font_size = 25
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
 text = "Master Sound"
 
 [node name="backButton" type="Button" parent="ScreenControl"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 571.0
-offset_right = 97.0
-offset_bottom = 607.0
-theme_override_font_sizes/font_size = 20
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 133.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
 text = "Back"
 
 [connection signal="drag_ended" from="ScreenControl/VolumeSlider" to="ScreenControl" method="_on_volume_slider_drag_ended"]

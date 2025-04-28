@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3esotmtt2api"]
+
+[ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="1_iuuel"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://black-stone.jpg" id="2_yx2ps"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaome"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm4o6"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ou1kh"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5rlm"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6ria"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ltoh"]
+albedo_texture = ExtResource("2_yx2ps")
+
+[node name="MothmanFBX" instance=ExtResource("1_iuuel")]
+
+[node name="Body" parent="Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_iaome")
+
+[node name="LeftWing" parent="Skeleton3D" index="1"]
+material_override = SubResource("StandardMaterial3D_vm4o6")
+
+[node name="RightWing" parent="Skeleton3D" index="2"]
+material_override = SubResource("StandardMaterial3D_ou1kh")
+
+[node name="RLeg2" parent="Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v5rlm")
+
+[node name="LLeg2" parent="Skeleton3D" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v6ria")
+
+[node name="Head" parent="Skeleton3D" index="5"]
+material_override = SubResource("StandardMaterial3D_3ltoh")
