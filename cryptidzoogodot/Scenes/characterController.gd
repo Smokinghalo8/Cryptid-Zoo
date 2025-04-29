@@ -11,16 +11,24 @@ const JUMP_VELOCITY = 4.5
 @export var senseable = true
 var sprintSpeed = 10.0
 var maxStamina = 100.0
-var stamina = maxStamina
 var staminaDepletionRate = 30.0
-var staminaRecoveryRate = 30.0
+var staminaRecoveryRate = 40.0
 var sprintable = true
+var senseTimeMax = 5.0
+var senseTime = senseTimeMax
+var senseDeplete = 1.0
+var playing = false
+var currentVelocity = 0
+var previousVelocity = 0
+var velocityTolerance = 0.1
+var velocityDifference = 0
 
 
 
 
 func on_ready():
 	idle = true
+	Global.stamina = maxStamina
 
 func _input(event: InputEvent):
 	#BodyMovement
@@ -30,9 +38,16 @@ func _input(event: InputEvent):
 
 
 func _process(delta):
-	#ExitTheGame
-	if Input.is_action_just_pressed("quit"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+		
+	#Sensing
+	
+	$"../Ui/WednigoHead/SenseBar".value = senseTime
+	
+	if senseTime > 0:
+		senseTime -= senseDeplete * delta
+		senseTime = clamp(senseTime, 0.0, senseTimeMax)
+
 	
 	if Input.is_action_just_pressed("sense") && senseable == true:
 		var children = get_tree().current_scene.get_children()
@@ -41,7 +56,10 @@ func _process(delta):
 				child.highlight()
 				senseable = false
 				$SenseTimer.start(0)
+				senseTime = 5.0
+				$"../Ui/WednigoHead/SenseBar".visible = true
 	
+	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
 	
@@ -89,18 +107,22 @@ func _physics_process(delta: float) -> void:
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
 		SPEED = sprintSpeed
-		stamina -= staminaDepletionRate * delta
-		stamina = min(stamina, maxStamina)
-		print(str(stamina))
+		Global.stamina -= staminaDepletionRate * delta
+		Global.stamina = min(Global.stamina, maxStamina)
+
 	else:
-		stamina += staminaRecoveryRate * delta
-		stamina = min(stamina, maxStamina)
-		print(str(stamina))
+		Global.stamina += staminaRecoveryRate * delta
+		Global.stamina = min(Global.stamina, maxStamina)
+
 	
-	if stamina < 1:
+	if Global.stamina < 1:
 		sprintable = false
 		SPEED = 5
-	if stamina == maxStamina:
+		Global.stamina = 0
+		await get_tree().create_timer(1.5).timeout
+		Global.stamina += staminaRecoveryRate * delta
+
+	if Global.stamina == maxStamina:
 		sprintable = true
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
@@ -115,7 +137,36 @@ func _physics_process(delta: float) -> void:
 		$ZColl.scale = Vector3(1, 1, 1)
 		SPEED = 5
 	
+	#Walk Sounds
+	currentVelocity = velocity.length()
+	velocityDifference = abs(currentVelocity-previousVelocity)
+	if velocityDifference > velocityTolerance:
+		$Walking.stop()
+	previousVelocity = currentVelocity
 	
+	if not self.is_on_floor():
+		$Walking.stop()
+	
+	if velocity.length() > 9.9 && not $Walking.playing && self.is_on_floor():
+		$Walking.stop()
+		$Walking.stream = Global.walkingSound
+		$Walking.pitch_scale = 2
+		$Walking.volume_db = -10
+		$Walking.play(0)
+	if velocity.length() == 5 && not $Walking.playing && self.is_on_floor():
+		$Walking.stop()
+		$Walking.stream = Global.walkingSound
+		$Walking.pitch_scale = 1
+		$Walking.volume_db = -10
+		$Walking.play(0)
+	if velocity.length() == 2.5 && not $Walking.playing && self.is_on_floor():
+		$Walking.stop()
+		$Walking.stream = Global.walkingSound
+		$Walking.pitch_scale = 0.5
+		$Walking.volume_db = -10
+		$Walking.play(0)
+	if velocity.length() < 1:
+		$Walking.stop()
 
 func update_animation_parameters():
 	if(idle == true):
@@ -126,6 +177,7 @@ func update_animation_parameters():
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = true
 		animTree["parameters/conditions/run"] = false
+		
 	elif(run == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
@@ -142,3 +194,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_sense_timer_timeout() -> void:
 	senseable = true
+	$"../Ui/WednigoHead/SenseBar".visible = false
+
+func disableLooker():
+	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED

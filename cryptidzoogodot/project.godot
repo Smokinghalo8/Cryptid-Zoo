@@ -37,6 +37,10 @@ Living="Living things"
 Character="It's the character"
 Global="Global Script"
 
+[gui]
+
+theme/custom_font="res://Assets/Jersey20-Regular.ttf"
+
 [input]
 
 left={

@@ -217,4 +217,6 @@ mesh = ExtResource("2_2mclm")
 wait_time = 5.0
 one_shot = true
 
+[node name="Walking" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="SenseTimer" to="." method="_on_sense_timer_timeout"]

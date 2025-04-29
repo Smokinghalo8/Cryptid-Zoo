@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mfy6cnbgmam6"]
+
+[ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="1_gkp7r"]
+
+[node name="MothmanFBX" instance=ExtResource("1_gkp7r")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

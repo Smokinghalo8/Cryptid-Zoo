@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt4onmdecaj0v"]
+[gd_scene load_steps=6 format=3 uid="uid://dt4onmdecaj0v"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/SettingsScript.gd" id="1_cefb5"]
 [ext_resource type="Texture2D" uid="uid://cv4mgw57lwfns" path="res://Assets/Materials/StartScreenAssets/City2.png" id="2_7ytj1"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_mltwy"]
+[ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_6icty"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="4_cavw6"]
 
 [node name="SettingsScreen" type="Node2D"]
 
@@ -40,7 +42,7 @@ offset_bottom = 1015.0
 min_value = -6.0
 max_value = 72.0
 step = 6.0
-value = 36.0
+value = 72.0
 
 [node name="SoundLabel" type="Label" parent="ScreenControl"]
 layout_mode = 0
@@ -59,6 +61,16 @@ offset_right = 133.0
 offset_bottom = 1047.0
 theme_override_font_sizes/font_size = 34
 text = "Back"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="ScreenControl"]
+stream = ExtResource("4_cavw6")
+volume_db = -15.0
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6icty")
+volume_db = -30.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="drag_ended" from="ScreenControl/VolumeSlider" to="ScreenControl" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="ScreenControl/backButton" to="ScreenControl" method="_on_back_button_pressed"]

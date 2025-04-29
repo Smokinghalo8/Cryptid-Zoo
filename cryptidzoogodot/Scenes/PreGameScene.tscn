@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccfke0dy4rixg"]
+[gd_scene load_steps=6 format=3 uid="uid://ccfke0dy4rixg"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
 [ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_bu07y"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_xfyhq"]
+[ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_ktaae"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="4_omnmj"]
 
 [node name="PreGameScene" type="Node2D"]
 
@@ -61,6 +63,16 @@ scale = Vector2(1.15674, 1.8462)
 theme_override_fonts/font = ExtResource("2_xfyhq")
 theme_override_font_sizes/font_size = 94
 text = "Cryptid Zoo"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="ScreenControl"]
+stream = ExtResource("4_omnmj")
+volume_db = -15.0
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ktaae")
+volume_db = -30.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="ScreenControl/GameStartButton" to="ScreenControl" method="_on_game_start_button_pressed"]
 [connection signal="pressed" from="ScreenControl/GameOptionsButton" to="ScreenControl" method="_on_game_options_button_pressed"]
