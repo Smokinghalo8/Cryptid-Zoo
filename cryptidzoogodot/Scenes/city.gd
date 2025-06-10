@@ -65,6 +65,7 @@ func _process(delta: float) -> void:
 					_dialog.Zed5()
 					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
 					_dialog.OldMan2()
+					flyBack = false
 			
 		for body in $FakeMothman/Small.get_overlapping_bodies():
 			if body.is_in_group("Character") && body.velocity.length() > 4.5 && Global.animNum > 1:
@@ -86,6 +87,7 @@ func _process(delta: float) -> void:
 					_dialog.Zed5()
 					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
 					_dialog.OldMan2()
+					flyBack = false
 	
 func togglePause():
 	get_tree().paused = true
