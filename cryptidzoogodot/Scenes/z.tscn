@@ -168,9 +168,12 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+radius = 0.333572
+height = 2.01153
 
 [node name="Z" type="CharacterBody3D" groups=["Character"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28263, 0)
+floor_max_angle = 1.0472
 script = ExtResource("1_6mksa")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -206,7 +209,7 @@ spot_range = 13.7568
 spot_angle = 25.3125
 
 [node name="ZColl" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.069485, -0.280481, 0.0684296)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.069485, -0.126369, 0.0684296)
 shape = SubResource("CapsuleShape3D_j5e41")
 
 [node name="ZMesh" type="MeshInstance3D" parent="ZColl"]

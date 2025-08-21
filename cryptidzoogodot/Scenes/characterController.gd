@@ -27,6 +27,7 @@ var velocityDifference = 0
 
 
 func on_ready():
+	
 	idle = true
 	Global.stamina = maxStamina
 
