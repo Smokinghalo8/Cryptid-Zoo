@@ -196,7 +196,7 @@ func CityNotes1():
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Missing Mothman plushie Poster* | seems it was last seen near the park.", "Zed")
 		$Notes1.play()
-		await get_tree().create_timer($Notes1.stream.get_length()).timeout
+		await get_tree().create_timer($Notes1.stream.get_length() + 3).timeout
 		self.visible = false
 		
 func CityNotes2():
@@ -204,7 +204,7 @@ func CityNotes2():
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Mothman Terrorizes Point Pleasant!* | seems it's a newspaper thread.", "Zed")
 		$Notes2.play()
-		await get_tree().create_timer($Notes2.stream.get_length()).timeout
+		await get_tree().create_timer($Notes2.stream.get_length() + 3).timeout
 		self.visible = false
 		
 func CityNotes3():
@@ -212,7 +212,7 @@ func CityNotes3():
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("*Drawing of a tall stick man around sharp trees* | I get a weird feeling looking at this.", "Zed")
 		$Notes3.play()
-		await get_tree().create_timer($Notes3.stream.get_length()).timeout
+		await get_tree().create_timer($Notes3.stream.get_length()+ 3).timeout
 		self.visible = false
 
 func CityNotes4():
@@ -220,5 +220,5 @@ func CityNotes4():
 		_dialogue.set("theme_override_colors/default", Child_Color)
 		display_line("Don't Cross this bridge! | looks really unsafe.", "Zed")
 		$Notes4.play()
-		await get_tree().create_timer($Notes4.stream.get_length()).timeout
+		await get_tree().create_timer($Notes4.stream.get_length() + 3).timeout
 		self.visible = false

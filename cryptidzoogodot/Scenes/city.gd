@@ -106,14 +106,16 @@ func _on_big_body_entered(body: Node3D) -> void:
 
 func _on_cut_scene_collider_2_body_entered(body: Node3D) -> void:
 	if cutScene == true:
-		$CutScene/CutSceneCam.current = true
-		$CutScene/CutSceneAnims.play("mothMan")
-		await $CutScene/CutSceneAnims.animation_finished
-		get_tree().quit()
+		if Global.animNum == 6:
+			$CutScene/CutSceneCam.current = true
+			$CutScene/CutSceneAnims.play("mothMan")
+			await $CutScene/CutSceneAnims.animation_finished
+			get_tree().quit()
 
 
 func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
-	if cutScene == true:
-		$CutScene/CutSceneCam.current = true
-		$CutScene/CutSceneAnims.play("mothMan")
-		get_tree().quit()
+	if cutScene == true: 
+		if Global.animNum == 6:
+			$CutScene/CutSceneCam.current = true
+			$CutScene/CutSceneAnims.play("mothMan")
+			get_tree().quit()
