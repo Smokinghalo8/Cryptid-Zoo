@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://8cmn7hse6elv"
+path.s3tc="res://.godot/imported/MapExport_15.png-d1a6bfd0d6a4177f9cbfb1b69df73a4d.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "f4705b514f0a6888d0b314b8fa326461"
+}
+
+[deps]
+
+source_file="res://Assets/Buildings/MapExport_15.png"
+dest_files=["res://.godot/imported/MapExport_15.png-d1a6bfd0d6a4177f9cbfb1b69df73a4d.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

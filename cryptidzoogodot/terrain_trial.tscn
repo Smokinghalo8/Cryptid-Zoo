@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://g0lq1kruspbl"]
 
-[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_7inl4"]
-[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_turxw"]
-[ext_resource type="Resource" path="res://Scenes/terrain/data.hterrain" id="2_u68ho"]
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_7inl4"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_turxw"]
+[ext_resource type="Resource" uid="uid://ffv74arplbne" path="res://Scenes/terrain/data.hterrain" id="2_u68ho"]
 [ext_resource type="Texture2D" uid="uid://bp6tc8rylpfcy" path="res://terrain_trial_slot0_albedo_bump.png" id="3_6k8y1"]
 [ext_resource type="Texture2D" uid="uid://dsfwbw6d7llux" path="res://terrain_trial_slot0_normal_roughness.png" id="4_upvu0"]
 [ext_resource type="Texture2D" uid="uid://dxtjsbfcluv3s" path="res://Assets/Materials/GroundDirtWeedsPatchy004/GroundDirtWeedsPatchy004_COL_2K.jpg" id="5_tijjl"]

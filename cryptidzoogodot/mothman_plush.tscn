@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7y4d3iptqhor"]
 
 [ext_resource type="PackedScene" uid="uid://mfy6cnbgmam6" path="res://mothmanPlush.tscn" id="1_bk8en"]
-[ext_resource type="Script" path="res://mothman_plush.gd" id="1_mqt5w"]
+[ext_resource type="Script" uid="uid://biy0t05o4opek" path="res://mothman_plush.gd" id="1_mqt5w"]
 [ext_resource type="AudioStream" uid="uid://lel35xkowhux" path="res://Assets/SFX/PartyHorn.wav" id="3_p6y1v"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kmjln"]

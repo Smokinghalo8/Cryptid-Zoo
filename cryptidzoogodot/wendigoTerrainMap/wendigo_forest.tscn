@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://n0kjj88rjuor"]
+
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
+[ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
+[ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
+[ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
+[ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
+
+[sub_resource type="Resource" id="Resource_1mri4"]
+script = ExtResource("2_05m3n")
+mode = 0
+textures = [[ExtResource("4_6km8e"), ExtResource("5_mqwve")], [ExtResource("6_uaxvo"), ExtResource("7_b1vwf")]]
+
+[node name="WendigoForest" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_fa63b")
+centered = true
+_terrain_data = ExtResource("2_1mri4")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_1mri4")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"

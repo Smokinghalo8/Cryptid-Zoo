@@ -1,9 +1,9 @@
 [gd_scene load_steps=31 format=3 uid="uid://cwqd117ianhrh"]
 
-[ext_resource type="Script" path="res://Scenes/characterController.gd" id="1_6mksa"]
-[ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
+[ext_resource type="Script" uid="uid://b1w68g867f652" path="res://Scenes/characterController.gd" id="1_6mksa"]
+[ext_resource type="Script" uid="uid://6qdlcyk8jlel" path="res://Scenes/ControllerCamera.gd" id="2_1nxij"]
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
-[ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
+[ext_resource type="Script" uid="uid://b3b22gjxryt33" path="res://Scenes/ray_cast_3d.gd" id="3_wpofk"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
@@ -161,10 +161,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kgv2e"]
 _data = {
-"Idle": SubResource("Animation_2vjok"),
-"RESET": SubResource("Animation_mivah"),
-"Run": SubResource("Animation_slijq"),
-"Walk": SubResource("Animation_ri5ux")
+&"Idle": SubResource("Animation_2vjok"),
+&"RESET": SubResource("Animation_mivah"),
+&"Run": SubResource("Animation_slijq"),
+&"Walk": SubResource("Animation_ri5ux")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
@@ -188,7 +188,7 @@ parameters/Walk/blend_position = Vector2(-1, 0.0212766)
 
 [node name="animPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_kgv2e")
+&"": SubResource("AnimationLibrary_kgv2e")
 }
 
 [node name="Head" type="Camera3D" parent="."]

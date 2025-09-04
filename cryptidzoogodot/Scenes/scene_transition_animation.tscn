@@ -49,9 +49,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iqpsr"]
 _data = {
-"RESET": SubResource("Animation_8dx05"),
-"fade_in": SubResource("Animation_tl5qb"),
-"fade_out": SubResource("Animation_3mrnk")
+&"RESET": SubResource("Animation_8dx05"),
+&"fade_in": SubResource("Animation_tl5qb"),
+&"fade_out": SubResource("Animation_3mrnk")
 }
 
 [node name="SceneTransitionAnimation" type="Node2D"]
@@ -66,5 +66,5 @@ color = Color(0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
 libraries = {
-"": SubResource("AnimationLibrary_iqpsr")
+&"": SubResource("AnimationLibrary_iqpsr")
 }

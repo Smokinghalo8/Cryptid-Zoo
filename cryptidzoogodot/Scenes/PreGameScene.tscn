@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccfke0dy4rixg"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
+[ext_resource type="Script" uid="uid://bpgfntnl0gkye" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
 [ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_bu07y"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_xfyhq"]
 [ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_ktaae"]
