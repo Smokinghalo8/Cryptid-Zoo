@@ -14,20 +14,23 @@
 [ext_resource type="AudioStream" uid="uid://doldorcousc7v" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine4Trimmed.wav" id="8_5sbjd"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
 
-[ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Notes/Note1.tscn" id="8_hln64"]
+[ext_resource type="PackedScene" path="res://Note1.tscn" id="8_hln64"]
+
 [ext_resource type="AudioStream" uid="uid://c8t0wgf4ig77b" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine5Trimmed.wav" id="9_6xoik"]
-[ext_resource type="Script" path="res://Notes/note_1.gd" id="9_ni7w2"]
-[ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Notes/Note2.tscn" id="10_7ysn1"]
+[ext_resource type="Script" path="res://note_1.gd" id="9_ni7w2"]
+[ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Note2.tscn" id="10_7ysn1"]
 [ext_resource type="AudioStream" uid="uid://bgdsitdhtosfb" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav" id="10_de3em"]
-[ext_resource type="Script" path="res://Notes/note_2.gd" id="11_hambk"]
+[ext_resource type="Script" path="res://note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://image-removebg-preview (17).png" id="11_havme"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://CircleProgressUnder.png" id="12_4krsh"]
-[ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Notes/Note3.tscn" id="12_acp2a"]
+[ext_resource type="PackedScene" path="res://Note3.tscn" id="12_acp2a"]
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://CircleProgressReal.png" id="13_jceop"]
-[ext_resource type="Script" path="res://Notes/note_3.gd" id="13_uc6et"]
-[ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Notes/Note4.tscn" id="14_0b0g1"]
+[ext_resource type="Script" path="res://note_3.gd" id="13_uc6et"]
+[ext_resource type="PackedScene" path="res://Note4.tscn" id="14_0b0g1"]
 [ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="14_wvpsq"]
-[ext_resource type="Script" path="res://Notes/note_4.gd" id="15_eb1mn"]
+
+
+[ext_resource type="Script" path="res://note_4.gd" id="15_eb1mn"]
 
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
