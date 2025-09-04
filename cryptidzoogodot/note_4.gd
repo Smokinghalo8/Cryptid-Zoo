@@ -1,4 +1,4 @@
-extends DirectionalLight3D
+extends StaticBody3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_timer_timeout() -> void:
-	#rotate_x(0.01745)
-	pass
+func interact():
+	$"../Ui/Dialog".CityNotes4()
