@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=77 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://Scenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://Scenes/z.tscn" id="1_lwvs2"]
@@ -13,22 +13,12 @@
 [ext_resource type="AudioStream" uid="uid://cfvue372xracr" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine3Trimmed.wav" id="7_w5tj5"]
 [ext_resource type="AudioStream" uid="uid://doldorcousc7v" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine4Trimmed.wav" id="8_5sbjd"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
-
-[ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Notes/Note1.tscn" id="8_hln64"]
 [ext_resource type="AudioStream" uid="uid://c8t0wgf4ig77b" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine5Trimmed.wav" id="9_6xoik"]
-[ext_resource type="Script" path="res://Notes/note_1.gd" id="9_ni7w2"]
-[ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Notes/Note2.tscn" id="10_7ysn1"]
 [ext_resource type="AudioStream" uid="uid://bgdsitdhtosfb" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav" id="10_de3em"]
-[ext_resource type="Script" path="res://Notes/note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://image-removebg-preview (17).png" id="11_havme"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://CircleProgressUnder.png" id="12_4krsh"]
-[ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Notes/Note3.tscn" id="12_acp2a"]
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://CircleProgressReal.png" id="13_jceop"]
-[ext_resource type="Script" path="res://Notes/note_3.gd" id="13_uc6et"]
-[ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Notes/Note4.tscn" id="14_0b0g1"]
-[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="14_wvpsq"]
-[ext_resource type="Script" path="res://Notes/note_4.gd" id="15_eb1mn"]
-
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://Scenes/pause_menu.gd" id="14_wvpsq"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://Scenes/scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://Death_Bounds.gd" id="17_thvbw"]
@@ -1593,21 +1583,57 @@ position = Vector2(1865.44, 36.1875)
 scale = Vector2(0.176459, 0.189987)
 texture = ExtResource("42_wy0bi")
 
-[node name="Note1" parent="." instance=ExtResource("8_hln64")]
+[node name="Note1" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.9337, 2.60438, 80.7472)
-script = ExtResource("9_ni7w2")
+script = null
 
-[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
+[node name="Note2" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.47, 0, 0, 0, 0.155051, -0.0243966, 0, -0.692863, -0.00545954, -61.9192, 0.792068, 80.9591)
-script = ExtResource("11_hambk")
+script = null
 
-[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
+[node name="Note3" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.47, 0, 0, 0, 0.695556, 0.00501712, 0, 0.142486, -0.0244914, 34.7497, 2.23479, 60.1183)
-script = ExtResource("13_uc6et")
+script = null
 
-[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
+[node name="Note4" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 99.3681, 2.2067, 83.0941)
-script = ExtResource("15_eb1mn")
+script = null
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-0.190835, -3.84014e-10, -4.75606, -4.10188e-07, 0.108, 0, -4.68812, -9.43385e-09, 0.1936, 112.374, 49.406, 93.4484)
