@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duk3utoigt30v"]
+
+[ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://Scenes/fake_mothman.tscn" id="1_q7dss"]
+
+[node name="Zoo" type="Node3D"]
+
+[node name="FakeMothman" parent="." instance=ExtResource("1_q7dss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182052, 0.321988, 0.206698)
