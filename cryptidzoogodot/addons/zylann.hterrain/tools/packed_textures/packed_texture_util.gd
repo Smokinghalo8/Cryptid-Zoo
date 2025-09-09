@@ -82,5 +82,3 @@ static func _flip_normalmap_y(image: Image):
 			var col := image.get_pixel(x, y)
 			col.g = 1.0 - col.g
 			image.set_pixel(x, y, col)
-
-

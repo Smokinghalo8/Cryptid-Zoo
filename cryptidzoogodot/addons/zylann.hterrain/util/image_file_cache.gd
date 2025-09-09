@@ -287,5 +287,3 @@ func _on_image_saved(item: Dictionary):
 	item.saved = true
 	# Should remove image from memory (for usually being last reference)
 	item.image = null
-
-
