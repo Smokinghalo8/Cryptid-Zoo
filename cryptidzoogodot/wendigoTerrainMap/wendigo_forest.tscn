@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=11 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
 [ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
+[ext_resource type="PackedScene" uid="uid://beb0hlju32tho" path="res://wendigoTerrainMap/pineTreeLowPoly.gltf" id="9_uaxvo"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -35,3 +36,6 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("9_uaxvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1878, -0.804061, 68.3732)
