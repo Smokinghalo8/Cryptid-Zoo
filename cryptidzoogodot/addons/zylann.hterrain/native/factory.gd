@@ -2,8 +2,8 @@
 
 const NATIVE_PATH = "res://addons/zylann.hterrain/native/"
 
-const HT_ImageUtilsGeneric = preload("./image_utils_generic.gd")
-const HT_QuadTreeLodGeneric = preload("./quad_tree_lod_generic.gd")
+const HT_ImageUtilsGeneric = preload("res://addons/zylann.hterrain/native/image_utils_generic.gd")
+const HT_QuadTreeLodGeneric = preload("res://addons/zylann.hterrain/native/quad_tree_lod_generic.gd")
 
 # No native code was ported when moving to Godot 4.
 # It may be changed too using GDExtension.

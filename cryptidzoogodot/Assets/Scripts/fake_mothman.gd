@@ -1,7 +1,7 @@
 extends RigidBody3D
 
-var naturalMat = preload("res://Assets/Materials/fakeMothman.tres");
-var highlightMat = preload("res://Assets/Materials/fakeMothmanHighlight.tres")
+var naturalMat = preload("uid://c24ja6ql5sqp7");
+var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var animPlayer = get_node("/root/" + get_tree().current_scene.name + "/MothmanAnims")
 @onready var _dialog : Control = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog")
 @onready var OldMan3 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan3")

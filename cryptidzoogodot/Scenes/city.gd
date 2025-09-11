@@ -25,11 +25,11 @@ func _process(delta: float) -> void:
 	
 	for body in $CityLimits.get_overlapping_bodies():
 		if body.is_in_group("Character"):
-			Global.walkingSound = load("res://Assets/SFX/WalkingCity.wav")
+			Global.walkingSound = load("uid://s1h8u82saymf")
 	
 	for body in $Mountain.get_overlapping_bodies():
 		if body.is_in_group("Character"):
-			Global.walkingSound = load("res://Assets/SFX/WalkingWoods.wav")
+			Global.walkingSound = load("uid://2l7yfg02rrdx")
 	
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
