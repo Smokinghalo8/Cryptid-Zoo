@@ -1,17 +1,78 @@
-[gd_scene load_steps=9 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=19 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
+[ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
 [ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="9_q4s1m"]
+[ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="10_pdyqn"]
+[ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="11_qusdq"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="12_np73x"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
 mode = 0
-textures = [[ExtResource("4_6km8e"), ExtResource("5_mqwve")], [ExtResource("6_uaxvo"), ExtResource("7_b1vwf")]]
+textures = [[ExtResource("4_6km8e"), ExtResource("5_mqwve"), ExtResource("6_mqwve")], [ExtResource("6_uaxvo"), ExtResource("7_b1vwf"), ExtResource("6_mqwve")]]
+
+[sub_resource type="Resource" id="Resource_v22mc"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("10_pdyqn")
+member_placeforms = [[Vector3(-3.53194, -7.04175, -34.424), Vector3(-0.326892, 0.944944, -0.0149202), Transform3D(-0.0764118, 0, 0.997076, 0, 1, 0, -0.997076, 0, -0.0764118, -3.53194, -7.04175, -34.424), 1], [Vector3(16.8255, 9.53674e-07, -35.6407), Vector3(-4.90825e-07, 1, 7.46632e-07), Transform3D(0.984406, 0, 0.175909, 0, 1, 0, -0.175909, 0, 0.984406, 16.8255, 9.53674e-07, -35.6407), 5], [Vector3(13.3922, 0, -28.5521), Vector3(-3.01184e-13, 1, 2.50576e-15), Transform3D(-0.988347, 0, 0.152215, 0, 1, 0, -0.152215, 0, -0.988347, 13.3922, 0, -28.5521), 5], [Vector3(18.7444, 7.15256e-06, -41.6012), Vector3(-7.98432e-06, 1, -7.72164e-06), Transform3D(0.743425, 0, 0.668819, 0, 1, 0, -0.668819, 0, 0.743425, 18.7444, 7.15256e-06, -41.6012), 5], [Vector3(21.6026, 0, -46.5617), Vector3(-5.13871e-08, 1, -1.00385e-07), Transform3D(-0.93193, 0, 0.362637, 0, 1, 0, -0.362637, 0, -0.93193, 21.6026, 0, -46.5617), 5], [Vector3(18.7941, 0, -49.4757), Vector3(-9.52523e-12, 1, -1.74298e-11), Transform3D(0.845115, 0, 0.534585, 0, 1, 0, -0.534585, 0, 0.845115, 18.7941, 0, -49.4757), 5], [Vector3(14.6852, -0.255074, -48.2312), Vector3(-0.322319, 0.946015, -0.0341612), Transform3D(-0.522588, 0, -0.852585, 0, 1, 0, 0.852585, 0, -0.522588, 14.6852, -0.255074, -48.2312), 5], [Vector3(8.4934, -3.3768, -43.6717), Vector3(-0.504217, 0.854756, -0.123111), Transform3D(-0.953588, 0, -0.301114, 0, 1, 0, 0.301114, 0, -0.953588, 8.4934, -3.3768, -43.6717), 5], [Vector3(6.80365, -3.52888, -38.8752), Vector3(-0.459495, 0.874721, -0.154036), Transform3D(0.581084, 0, -0.813843, 0, 1, 0, 0.813843, 0, 0.581084, 6.80365, -3.52888, -38.8752), 5], [Vector3(5.42636, -3.80499, -36.4022), Vector3(-0.495534, 0.848171, -0.187221), Transform3D(0.401551, 0, -0.915837, 0, 1, 0, 0.915837, 0, 0.401551, 5.42636, -3.80499, -36.4022), 5], [Vector3(2.04333, -5.20582, -35.3531), Vector3(-0.33958, 0.93898, -0.0547833), Transform3D(0.996928, 0, 0.0783205, 0, 1, 0, -0.0783205, 0, 0.996928, 2.04333, -5.20582, -35.3531), 5], [Vector3(-8.89923, -8.78607, -37.4106), Vector3(-0.24481, 0.969491, -0.0124439), Transform3D(-0.554639, 0, -0.832091, 0, 1, 0, 0.832091, 0, -0.554639, -8.89923, -8.78607, -37.4106), 1], [Vector3(-7.91323, -8.58179, -41.0847), Vector3(-0.279942, 0.959919, -0.0136805), Transform3D(-0.711125, 0, -0.703065, 0, 1, 0, 0.703065, 0, -0.711125, -7.91323, -8.58179, -41.0847), 1], [Vector3(-14.3503, -9.62062, -42.0511), Vector3(-0.0631535, 0.997984, -0.00623302), Transform3D(-0.352488, 0, -0.935816, 0, 1, 0, 0.935816, 0, -0.352488, -14.3503, -9.62062, -42.0511), 1], [Vector3(-13.5199, -9.59295, -49.8975), Vector3(-0.0762051, 0.99709, -0.00207581), Transform3D(-0.508036, 0, 0.861336, 0, 1, 0, -0.861336, 0, -0.508036, -13.5199, -9.59295, -49.8975), 1], [Vector3(-16.6437, -9.75515, -55.4594), Vector3(-0.0276088, 0.999619, 4.38523e-05), Transform3D(-0.999996, 0, 0.00291422, 0, 1, 0, -0.00291422, 0, -0.999996, -16.6437, -9.75515, -55.4594), 1], [Vector3(-14.9139, -9.72182, -62.0782), Vector3(-0.0428153, 0.999046, -0.00859298), Transform3D(-0.960111, 0, 0.27962, 0, 1, 0, -0.27962, 0, -0.960111, -14.9139, -9.72182, -62.0782), 1], [Vector3(-11.2663, -9.54323, -65.8024), Vector3(-0.0845005, 0.996314, -0.0148044), Transform3D(-0.988934, 0, 0.148357, 0, 1, 0, -0.148357, 0, -0.988934, -11.2663, -9.54323, -65.8024), 0], [Vector3(-10.6735, -9.63332, -73.4484), Vector3(-0.0801561, 0.996653, -0.0160831), Transform3D(0.959899, 0, -0.280347, 0, 1, 0, 0.280347, 0, 0.959899, -10.6735, -9.63332, -73.4484), 0], [Vector3(-8.02525, -9.46504, -81.6162), Vector3(-0.120318, 0.992718, -0.00584227), Transform3D(-0.563596, 0, 0.82605, 0, 1, 0, -0.82605, 0, -0.563596, -8.02525, -9.46504, -81.6162), 0]]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, 21, -63)
+extent = 64.0
+bounds = AABB(-65, -43, -127, 128, 128, 128)
+max_bounds_to_center_dist = 110.851
+min_bounds_to_center_dist = 64.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_5fma2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("11_qusdq")
+root_octree_node = SubResource("Resource_v22mc")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_nknua"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("10_pdyqn")
+member_placeforms = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_n1si7"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("11_qusdq")
+root_octree_node = SubResource("Resource_nknua")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_8yfk1"]
+resource_local_to_scene = true
+script = ExtResource("12_np73x")
+octree_managers = [SubResource("Resource_5fma2"), SubResource("Resource_n1si7")]
+metadata/class = "Arborist"
 
 [node name="WendigoForest" type="Node3D"]
 
@@ -34,3 +95,13 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("9_q4s1m")
+file_management/garden_work_directory = "res://wendigoTerrainMap/gardening/"
+gardening/gardening_collision_mask = 1.0
+arborist = SubResource("Resource_8yfk1")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+metadata/class = "Gardener"
