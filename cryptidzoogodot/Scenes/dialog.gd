@@ -120,6 +120,13 @@ func MothMan6():
 		display_line("Really?", "MothMan")
 		await get_tree().create_timer(mothmanLine6.stream.get_length()).timeout
 		self.visible = false
+		
+func MothMan7():
+		_speaker.set("theme_override_colors/font_color", Moth_Color)
+		_dialogue.set("theme_override_colors/font_color", Moth_Color)
+		display_line("Dialogue check for zoo 1", "MothMan")
+		#await get_tree().create_timer(mothmanLine7.stream.get_length()).timeout
+		self.visible = false
 
 		
 func Zed1():

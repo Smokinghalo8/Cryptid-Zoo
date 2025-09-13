@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+var mothman_Compatibility = 0
 var naturalMat = preload("res://Assets/Materials/fakeMothman.tres");
 var highlightMat = preload("res://Assets/Materials/fakeMothmanHighlight.tres")
 @onready var animPlayer = get_node("/root/" + get_tree().current_scene.name + "/MothmanAnims")
@@ -67,5 +68,28 @@ func interact():
 		_dialog.Zed6()
 	if Global.animNum == 6:
 		_dialog.OldMan6()
+		
+	if Global.animNum == 7:
+		Global.MothManZooCheck == 1
+		mothman_Compatibility += 20;
+		Global.MothManZooCheck == 0 # so that you can't keep adding 20
+		
+func Compatibility():
+	if mothman_Compatibility == 20 && func interact(): :
+		#await get_tree().create_timer(MothMan7.stream.get_length()).timeout
+		_dialog.MothMan7()
+	if mothman_Compatibility == 40 && func interact(): :
+		#await get_tree().create_timer(MothMan8.stream.get_length()).timeout
+		_dialog.MothMan8()
+	if mothman_Compatibility == 60 && func interact(): :
+		#await get_tree().create_timer(MothMan9.stream.get_length()).timeout
+		_dialog.MothMan9()
+	if mothman_Compatibility == 80 && func interact(): :
+		#await get_tree().create_timer(MothMan10.stream.get_length()).timeout
+		_dialog.MothMan10()
+	if mothman_Compatibility == 100 && func interact(): :
+		#await get_tree().create_timer(MothMan11.stream.get_length()).timeout
+		_dialog.MothMan7()
+		
 func killMothmanNoises():
 	$MothManNoises.stop()
