@@ -1,4 +1,21 @@
-@tool
+[gd_scene load_steps=11 format=3 uid="uid://n0kjj88rjuor"]
+
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
+[ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
+[ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
+[ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
+[ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
+[ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
+
+[sub_resource type="Resource" id="Resource_1mri4"]
+script = ExtResource("2_05m3n")
+mode = 0
+textures = [[ExtResource("4_6km8e"), ExtResource("5_mqwve"), ExtResource("6_mqwve")], [ExtResource("6_uaxvo"), ExtResource("7_b1vwf"), ExtResource("6_mqwve")]]
+
+[sub_resource type="GDScript" id="GDScript_mqwve"]
+script/source = "@tool
 extends Node3D
 
 
@@ -13,31 +30,31 @@ extends Node3D
 #-------------------------------------------------------------------------------
 
 
-const FunLib = preload("../utility/fun_lib.gd")
-const Logger = preload("../utility/logger.gd")
-const Defaults = preload("../utility/defaults.gd")
-const Greenhouse = preload("../greenhouse/greenhouse.gd")
-const Toolshed = preload("../toolshed/toolshed.gd")
-const Painter = preload("painter.gd")
-const Arborist = preload("../arborist/arborist.gd")
-const DebugViewer = preload("debug_viewer.gd")
-const Baker = preload("baker.gd")
-const UI_SidePanel_SCN = preload("../controls/side_panel/ui_side_panel.tscn")
-const UI_SidePanel = preload("../controls/side_panel/ui_side_panel.gd")
-const Globals = preload("../utility/globals.gd")
-const DataImportExport = preload("data_import_export.gd")
-const Transplanter = preload("../transplanter/transplanter.gd")
+const FunLib = preload(\"res://addons/dreadpon.spatial_gardener/utility/fun_lib.gd\")
+const MyLogger = preload(\"res://addons/dreadpon.spatial_gardener/utility/logger.gd\")
+const Defaults = preload(\"res://addons/dreadpon.spatial_gardener/utility/defaults.gd\")
+const Greenhouse = preload(\"res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd\")
+const Toolshed = preload(\"res://addons/dreadpon.spatial_gardener/toolshed/toolshed.gd\")
+const Painter = preload(\"res://addons/dreadpon.spatial_gardener/gardener/painter.gd\")
+const Arborist = preload(\"res://addons/dreadpon.spatial_gardener/arborist/arborist.gd\")
+const DebugViewer = preload(\"res://addons/dreadpon.spatial_gardener/gardener/debug_viewer.gd\")
+const Baker = preload(\"res://addons/dreadpon.spatial_gardener/gardener/baker.gd\")
+const UI_SidePanel_SCN = preload(\"res://addons/dreadpon.spatial_gardener/controls/side_panel/ui_side_panel.tscn\")
+const UI_SidePanel = preload(\"res://addons/dreadpon.spatial_gardener/controls/side_panel/ui_side_panel.gd\")
+const Globals = preload(\"res://addons/dreadpon.spatial_gardener/utility/globals.gd\")
+const DataImportExport = preload(\"res://addons/dreadpon.spatial_gardener/gardener/data_import_export.gd\")
+const Transplanter = preload(\"res://addons/dreadpon.spatial_gardener/transplanter/transplanter.gd\")
 
-const PropAction = preload("../utility/input_field_resource/prop_action.gd")
-const PA_PropSet = preload("../utility/input_field_resource/pa_prop_set.gd")
-const PA_PropEdit = preload("../utility/input_field_resource/pa_prop_edit.gd")
-const PA_ArrayInsert = preload("../utility/input_field_resource/pa_array_insert.gd")
-const PA_ArrayRemove = preload("../utility/input_field_resource/pa_array_remove.gd")
-const PA_ArraySet = preload("../utility/input_field_resource/pa_array_set.gd")
+const PropAction = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/prop_action.gd\")
+const PA_PropSet = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/pa_prop_set.gd\")
+const PA_PropEdit = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/pa_prop_edit.gd\")
+const PA_ArrayInsert = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/pa_array_insert.gd\")
+const PA_ArrayRemove = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/pa_array_remove.gd\")
+const PA_ArraySet = preload(\"res://addons/dreadpon.spatial_gardener/utility/input_field_resource/pa_array_set.gd\")
 
 
 
-var plugin_version: String = ""
+var plugin_version: String = \"\"
 var storage_version: int = 0
 
 # file_management
@@ -82,7 +99,7 @@ signal greenhouse_prop_action_executed(prop_action, final_val)
 
 
 func _init():
-	set_meta("class", "Gardener")
+	set_meta(\"class\", \"Gardener\")
 	child_entered_tree.connect(_on_child_entered_tree)
 	child_exiting_tree.connect(_on_child_exiting_tree)
 	set_notify_transform(true)
@@ -90,9 +107,9 @@ func _init():
 
 
 func _setup_configuration_statics():
-	Globals.is_threaded_LOD_update = 		FunLib.get_setting_safe("dreadpons_spatial_gardener/plugin/is_threaded_LOD_update", true)
-	Globals.use_precise_LOD_distances = 	FunLib.get_setting_safe("dreadpons_spatial_gardener/plugin/use_precise_LOD_distances", true)
-	Globals.use_precise_camera_frustum = 	FunLib.get_setting_safe("dreadpons_spatial_gardener/plugin/use_precise_camera_frustum", true)
+	Globals.is_threaded_LOD_update = 		FunLib.get_setting_safe(\"dreadpons_spatial_gardener/plugin/is_threaded_LOD_update\", true)
+	Globals.use_precise_LOD_distances = 	FunLib.get_setting_safe(\"dreadpons_spatial_gardener/plugin/use_precise_LOD_distances\", true)
+	Globals.use_precise_camera_frustum = 	FunLib.get_setting_safe(\"dreadpons_spatial_gardener/plugin/use_precise_camera_frustum\", true)
 
 
 # Update plugin/storage versions that might have been stored inside a .tscn file for this Gardener
@@ -113,7 +130,7 @@ static func get_storage_ver():
 func _ready():
 	update_plugin_ver()
 	
-	logger = Logger.get_for(self, name)
+	logger = MyLogger.get_for(self, name)
 	
 	painting_node = Node3D.new()
 	add_child(painting_node, true, Node.INTERNAL_MODE_FRONT)
@@ -128,7 +145,7 @@ func _ready():
 	init_transplanter()
 	
 	if !is_instance_valid(arborist):
-		push_warning("Arborist invalid. This should never happen. Creating a new one...")
+		push_warning(\"Arborist invalid. This should never happen. Creating a new one...\")
 		arborist = Arborist.new()
 	
 	reload_resources()
@@ -229,10 +246,10 @@ func propagate_camera(camera:Camera3D):
 #-------------------------------------------------------------------------------
 
 
-# This is supposed to address a problem decribed in "start_gardener_edit()" of "plugin.gd"
+# This is supposed to address a problem decribed in \"start_gardener_edit()\" of \"plugin.gd\"
 # Instead of recalculating everything, we hope it's enough to just restore the member references
 func restore_references():
-	logger = Logger.get_for(self, name)
+	logger = MyLogger.get_for(self, name)
 	if !Engine.is_editor_hint(): return
 	
 	init_painter()
@@ -277,16 +294,16 @@ func reload_resources():
 	var created_new_greenhouse := false
 	
 	if !FunLib.is_dir_valid(garden_work_directory):
-		logger.warn("Skipped loading Toolshed and Greenhouse, please specify a working directory for this Gardener (%s)" % [str(self)])
+		logger.warn(\"Skipped loading Toolshed and Greenhouse, please specify a working directory for this Gardener (%s)\" % [str(self)])
 	else:
-		toolshed = FunLib.load_res(garden_work_directory, "toolshed.tres", false)
-		greenhouse = FunLib.load_res(garden_work_directory, "greenhouse.tres", false)
+		toolshed = FunLib.load_res(garden_work_directory, \"toolshed.tres\", false)
+		greenhouse = FunLib.load_res(garden_work_directory, \"greenhouse.tres\", false)
 	if !toolshed: 
-		logger.warn("Unable to load Toolshed, created a new one")
+		logger.warn(\"Unable to load Toolshed, created a new one\")
 		toolshed = Defaults.DEFAULT_TOOLSHED()
 		created_new_toolshed = true
 	if !greenhouse: 
-		logger.warn("Unable to load Greenhouse, created a new one")
+		logger.warn(\"Unable to load Greenhouse, created a new one\")
 		greenhouse = Greenhouse.new()
 		created_new_greenhouse = true
 	
@@ -344,8 +361,8 @@ func reload_resources():
 # So collapse that into a function
 func reinit_arborist_with_greenhouse():
 	if !arborist || !greenhouse:
-		if !arborist: logger.warn("Arborist->Greenhouse: Arborist is not initialized!")
-		if !greenhouse: logger.warn("Arborist->Greenhouse: Greenhouse is not initialized!")
+		if !arborist: logger.warn(\"Arborist->Greenhouse: Arborist is not initialized!\")
+		if !greenhouse: logger.warn(\"Arborist->Greenhouse: Greenhouse is not initialized!\")
 		return
 	# We could duplicate an array, but that's additional overhead so we assume Arborist won't change it
 	arborist.init_with_greenhouse(greenhouse.greenhouse_plant_states)
@@ -356,8 +373,8 @@ func reinit_arborist_with_greenhouse():
 
 func reinit_debug_viewer_with_greenhouse():
 	if !debug_viewer || !greenhouse:
-		if !debug_viewer: logger.warn("DebugViewer->Greenhouse: DebugViewer is not initialized!")
-		if !greenhouse: logger.warn("DebugViewer->Greenhouse: Greenhouse is not initialized!")
+		if !debug_viewer: logger.warn(\"DebugViewer->Greenhouse: DebugViewer is not initialized!\")
+		if !greenhouse: logger.warn(\"DebugViewer->Greenhouse: Greenhouse is not initialized!\")
 		return
 	
 	debug_viewer.set_prop_edit_selected_plant(greenhouse.greenhouse_plant_states.find(greenhouse.selected_for_edit_resource))
@@ -366,8 +383,8 @@ func reinit_debug_viewer_with_greenhouse():
 
 func reinit_debug_viewer_with_arborist():
 	if !debug_viewer || !arborist:
-		if !debug_viewer: logger.warn("DebugViewer->Arborist: DebugViewer is not initialized!")
-		if !arborist: logger.warn("DebugViewer->Arborist: Arborist is not initialized!")
+		if !debug_viewer: logger.warn(\"DebugViewer->Arborist: DebugViewer is not initialized!\")
+		if !arborist: logger.warn(\"DebugViewer->Arborist: Arborist is not initialized!\")
 		return
 	
 	if !arborist.req_debug_redraw.is_connected(debug_viewer.request_debug_redraw):
@@ -483,8 +500,8 @@ func set_gardening_collision_mask(val):
 
 
 func set_garden_work_directory(val):
-	if !val.is_empty() && !val.ends_with("/"):
-		val += "/"
+	if !val.is_empty() && !val.ends_with(\"/\"):
+		val += \"/\"
 	
 	var changed = garden_work_directory != val
 	garden_work_directory = val
@@ -517,7 +534,7 @@ func on_greenhouse_prop_action_executed(prop_action:PropAction, final_val):
 	elif is_instance_of(prop_action, PA_ArrayRemove):
 		arborist.on_plant_removed(prop_action.val, prop_action.index)
 		reinit_debug_draw_brush_active()
-	elif is_instance_of(prop_action, PA_PropSet) && prop_action.prop == "plant_types/selected_for_edit_resource":
+	elif is_instance_of(prop_action, PA_PropSet) && prop_action.prop == \"plant_types/selected_for_edit_resource\":
 		debug_viewer.set_prop_edit_selected_plant(greenhouse.greenhouse_plant_states.find(final_val))
 		debug_viewer.request_debug_redraw(arborist.octree_managers)
 	
@@ -529,7 +546,7 @@ func on_greenhouse_prop_action_executed_on_plant_state(prop_action:PropAction, f
 	var plant_index = greenhouse.greenhouse_plant_states.find(plant_state)
 	
 	match prop_action.prop:
-		"plant/plant_brush_active":
+		\"plant/plant_brush_active\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				debug_viewer.set_brush_active_plant(plant_state.plant_brush_active, plant_index)
 				debug_viewer.request_debug_redraw(arborist.octree_managers)
@@ -540,7 +557,7 @@ func on_greenhouse_prop_action_executed_on_plant_state_plant(prop_action:PropAct
 	var plant_index = greenhouse.greenhouse_plant_states.find(plant_state)
 	
 	match prop_action.prop:
-		"mesh/mesh_LOD_variants":
+		\"mesh/mesh_LOD_variants\":
 			if is_instance_of(prop_action, PA_ArrayInsert):
 				var mesh_index = prop_action.index
 				arborist.on_LOD_variant_added(plant_index, mesh_index, final_val[mesh_index])
@@ -551,11 +568,11 @@ func on_greenhouse_prop_action_executed_on_plant_state_plant(prop_action:PropAct
 				var mesh_index = prop_action.index
 				arborist.on_LOD_variant_set(plant_index, mesh_index, final_val[mesh_index])
 		
-		"mesh/mesh_LOD_max_distance":
+		\"mesh/mesh_LOD_max_distance\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				arborist.update_plant_LOD_max_distance(plant_index, final_val)
 		
-		"mesh/mesh_LOD_kill_distance":
+		\"mesh/mesh_LOD_kill_distance\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				arborist.update_plant_LOD_kill_distance(plant_index, final_val)
 
@@ -566,13 +583,13 @@ func on_greenhouse_prop_action_executed_on_LOD_variant(prop_action:PropAction, f
 	var mesh_index = plant.mesh_LOD_variants.find(LOD_variant)
 	
 	match prop_action.prop:
-		"mesh":
+		\"mesh\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				arborist.on_LOD_variant_prop_changed_mesh(plant_index, mesh_index, final_val)
-		"spawned_spatial":
+		\"spawned_spatial\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				arborist.on_LOD_variant_prop_changed_spawned_spatial(plant_index, mesh_index, final_val)
-		"cast_shadow":
+		\"cast_shadow\":
 			if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 				arborist.on_LOD_variant_prop_changed_cast_shadow(plant_index, mesh_index, final_val)
 
@@ -669,10 +686,10 @@ func on_transplanter_member_transformed(changes):
 func on_toolshed_prop_action_executed(prop_action:PropAction, final_val):
 	assert(painter)
 	assert(transplanter)
-	if prop_action.prop != "brush/active_brush": return
+	if prop_action.prop != \"brush/active_brush\": return
 	if !(is_instance_of(prop_action, PA_PropSet)) && !(is_instance_of(prop_action, PA_PropEdit)): return
 	if final_val != toolshed.active_brush:
-		logger.error("Passed final_val is not equal to toolshed.active_brush!")
+		logger.error(\"Passed final_val is not equal to toolshed.active_brush!\")
 		return
 	
 	painter_update_to_active_brush(final_val)
@@ -715,19 +732,19 @@ func on_toolshed_prop_action_executed_on_brush(prop_action:PropAction, final_val
 	if brush != toolshed.active_brush: return
 	
 	match prop_action.prop:
-		"shape/shape_volume_size":
+		\"shape/shape_volume_size\":
 			painter.set_active_brush_size(final_val)
-		"shape/shape_projection_size":
+		\"shape/shape_projection_size\":
 			painter.set_active_brush_size(final_val)
-		"behavior/behavior_strength":
+		\"behavior/behavior_strength\":
 			painter.set_active_brush_strength(final_val)
-		"behavior/behavior_overlap_mode":
+		\"behavior/behavior_overlap_mode\":
 			painter_update_to_active_brush(brush)
-		"behavior/behavior_selection_mode":
+		\"behavior/behavior_selection_mode\":
 			transplanter_update_to_active_brush(brush)
-		"behavior/behavior_selection_collision_mask":
+		\"behavior/behavior_selection_collision_mask\":
 			transplanter_update_to_active_brush(brush)
-		"behavior/behavior_enable_selection_preprocess":
+		\"behavior/behavior_enable_selection_preprocess\":
 			transplanter_update_to_active_brush(brush)
 
 
@@ -740,12 +757,12 @@ func on_toolshed_prop_action_executed_on_brush(prop_action:PropAction, final_val
 
 func save_toolshed():
 	if FunLib.is_dir_valid(garden_work_directory):
-		FunLib.save_res(toolshed, garden_work_directory, "toolshed.tres")
+		FunLib.save_res(toolshed, garden_work_directory, \"toolshed.tres\")
 
 
 func save_greenhouse():
 	if FunLib.is_dir_valid(garden_work_directory):
-		FunLib.save_res(greenhouse, garden_work_directory, "greenhouse.tres")
+		FunLib.save_res(greenhouse, garden_work_directory, \"greenhouse.tres\")
 
 
 
@@ -759,15 +776,15 @@ func save_greenhouse():
 # Built-in Godot reflection would go a long way
 func _get(property):
 	match property:
-		"file_management/garden_work_directory":
+		\"file_management/garden_work_directory\":
 			return garden_work_directory
-		"gardening/gardening_collision_mask":
+		\"gardening/gardening_collision_mask\":
 			return gardening_collision_mask
-		"arborist":
+		\"arborist\":
 			return arborist
-		"plugin_version":
+		\"plugin_version\":
 			return plugin_version
-		"storage_version":
+		\"storage_version\":
 			return storage_version
 
 
@@ -775,9 +792,9 @@ func _set(property, val):
 	var return_val = true
 	
 	match property:
-		"file_management/garden_work_directory":
+		\"file_management/garden_work_directory\":
 			set_garden_work_directory(val)
-		"gardening/gardening_collision_mask":
+		\"gardening/gardening_collision_mask\":
 			set_gardening_collision_mask(val)
 		_:
 			return_val = false
@@ -788,33 +805,33 @@ func _set(property, val):
 func _get_property_list():
 	return [
 		{
-			"name": "file_management/garden_work_directory",
-			"type": TYPE_STRING,
-			"usage": PROPERTY_USAGE_DEFAULT,
-			"hint": PROPERTY_HINT_DIR
+			\"name\": \"file_management/garden_work_directory\",
+			\"type\": TYPE_STRING,
+			\"usage\": PROPERTY_USAGE_DEFAULT,
+			\"hint\": PROPERTY_HINT_DIR
 		},
 		{
-			"name": "gardening/gardening_collision_mask",
-			"type": TYPE_INT,
-			"usage": PROPERTY_USAGE_DEFAULT,
-			"hint": PROPERTY_HINT_LAYERS_3D_PHYSICS
+			\"name\": \"gardening/gardening_collision_mask\",
+			\"type\": TYPE_INT,
+			\"usage\": PROPERTY_USAGE_DEFAULT,
+			\"hint\": PROPERTY_HINT_LAYERS_3D_PHYSICS
 		},
 		{
-			"name": "arborist",
-			"type": TYPE_OBJECT,
-			"usage": PROPERTY_USAGE_NO_EDITOR,
-			#"hint": PROPERTY_HINT_RESOURCE_TYPE,
-			#"hint_string": "Arborist"
+			\"name\": \"arborist\",
+			\"type\": TYPE_OBJECT,
+			\"usage\": PROPERTY_USAGE_NO_EDITOR,
+			#\"hint\": PROPERTY_HINT_RESOURCE_TYPE,
+			#\"hint_string\": \"Arborist\"
 		},
 		{
-			"name": "plugin_version",
-			"type": TYPE_STRING,
-			"usage": PROPERTY_USAGE_NO_EDITOR,
+			\"name\": \"plugin_version\",
+			\"type\": TYPE_STRING,
+			\"usage\": PROPERTY_USAGE_NO_EDITOR,
 		},
 		{
-			"name": "storage_version",
-			"type": TYPE_STRING,
-			"usage": PROPERTY_USAGE_NO_EDITOR,
+			\"name\": \"storage_version\",
+			\"type\": TYPE_STRING,
+			\"usage\": PROPERTY_USAGE_NO_EDITOR,
 		},
 	]
 
@@ -824,4 +841,32 @@ func _get_configuration_warnings():
 	if is_instance_valid(arborist):
 		return PackedStringArray()
 	else:
-		return PackedStringArray(["Gardener is missing a valid Arborist child", "Since it should be created automatically, try reloading a scene or recreating a Gardener"])
+		return PackedStringArray([\"Gardener is missing a valid Arborist child\", \"Since it should be created automatically, try reloading a scene or recreating a Gardener\"])
+"
+
+[node name="WendigoForest" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_fa63b")
+centered = true
+_terrain_data = ExtResource("2_1mri4")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_1mri4")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Gardener" type="Node3D" parent="."]
+script = SubResource("GDScript_mqwve")
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+metadata/class = "Gardener"
