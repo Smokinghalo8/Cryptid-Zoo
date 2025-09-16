@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt4onmdecaj0v"]
+
+[ext_resource type="Script" uid="uid://dgjoimcqqvuj0" path="res://Assets/Scripts/SettingsScript.gd" id="1_cefb5"]
+[ext_resource type="Texture2D" uid="uid://cv4mgw57lwfns" path="res://Assets/Materials/StartScreenAssets/City2.png" id="2_7ytj1"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_mltwy"]
+[ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_6icty"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="4_cavw6"]
+
+[node name="SettingsScreen" type="Node2D"]
+
+[node name="ScreenControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cefb5")
+
+[node name="Background" type="TextureRect" parent="ScreenControl"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 1923.0
+offset_bottom = 1105.0
+texture = ExtResource("2_7ytj1")
+
+[node name="GameTitle" type="Label" parent="ScreenControl"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("2_mltwy")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="ScreenControl"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="ScreenControl"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="ScreenControl"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 133.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Back"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="ScreenControl"]
+stream = ExtResource("4_cavw6")
+volume_db = -15.0
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6icty")
+volume_db = -30.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="drag_ended" from="ScreenControl/VolumeSlider" to="ScreenControl" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="ScreenControl/backButton" to="ScreenControl" method="_on_back_button_pressed"]

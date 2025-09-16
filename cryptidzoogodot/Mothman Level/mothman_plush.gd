@@ -1,7 +1,6 @@
 extends Node3D
 
 
-
 func interact():
 	Global.plushCounter += 1
 	$PartyHorn.play(0)
