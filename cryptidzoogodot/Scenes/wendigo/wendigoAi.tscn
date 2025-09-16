@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqgsslxe1crli"]
+[gd_scene load_steps=4 format=3 uid="uid://dqgsslxe1crli"]
 
 [ext_resource type="Script" uid="uid://dokf1jlwcvpgk" path="res://Scenes/wendigo/wendigo_ai.gd" id="1_spa4j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kuvfy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_spa4j"]
+radius = 3.3311915
 
 [node name="WendigoAi" type="CharacterBody3D"]
 script = ExtResource("1_spa4j")
@@ -13,3 +16,8 @@ shape = SubResource("CapsuleShape3D_kuvfy")
 
 [node name="ModelPlaceHolder" type="CSGSphere3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+
+[node name="PlayerDetection" type="CollisionShape3D" parent="PlayerDetectionArea"]
+shape = SubResource("SphereShape3D_spa4j")
