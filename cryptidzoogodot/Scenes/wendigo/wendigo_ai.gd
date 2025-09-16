@@ -51,9 +51,18 @@ func choose_new_target():
 	)
 	target_position = global_transform.origin + random_offset
 
+func caught_in_trap():
+	
+	
+	return
+	
+	
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
 		chasing_player = body
+	if body.is_in_group("Traps"):
+		caught_in_trap()
+
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:
