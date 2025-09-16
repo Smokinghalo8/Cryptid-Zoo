@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://bf4vgu7u0t3ri"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/PlayerController.gd" id="1_47cka"]
+[ext_resource type="Script" path="res://Scenes/ControllerCamera.gd" id="2_j7v16"]
+[ext_resource type="Script" path="res://Scenes/ray_cast_3d.gd" id="3_yihyx"]
+[ext_resource type="Script" path="res://Scenes/sun.gd" id="4_gkunu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2b0a1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wffbo"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uk4m8"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
+
+[sub_resource type="Sky" id="Sky_g280x"]
+sky_material = SubResource("PhysicalSkyMaterial_vum21")
+
+[sub_resource type="Environment" id="Environment_yhbei"]
+background_mode = 2
+sky = SubResource("Sky_g280x")
+ambient_light_color = Color(1, 1, 1, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="City" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.8529, 0, 0, 0, 0.224776, 0, 0, 0, 24.367, 0, 0, 0)
+mesh = SubResource("BoxMesh_2b0a1")
+
+[node name="FloorBody" type="StaticBody3D" parent="Floor"]
+
+[node name="FloorCol" type="CollisionShape3D" parent="Floor/FloorBody"]
+shape = SubResource("ConcavePolygonShape3D_wffbo")
+
+[node name="Z" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_47cka")
+
+[node name="ZColl" type="CollisionShape3D" parent="Z"]
+shape = SubResource("CapsuleShape3D_j5e41")
+
+[node name="ZMesh" type="MeshInstance3D" parent="Z"]
+mesh = SubResource("CapsuleMesh_uk4m8")
+skeleton = NodePath("../ZColl")
+
+[node name="Head" type="Camera3D" parent="Z"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("2_j7v16")
+
+[node name="Loooky" type="RayCast3D" parent="Z/Head"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
+script = ExtResource("3_yihyx")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="intText" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 71.0
+text = "Press E to interact"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.878975, 0.476867, 0, -0.476867, 0.878975, 0, 7.15633, 6.1564)
+light_energy = 2.5
+shadow_enabled = true
+script = ExtResource("4_gkunu")
+
+[node name="Timer" type="Timer" parent="DirectionalLight3D"]
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yhbei")
+
+[connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]

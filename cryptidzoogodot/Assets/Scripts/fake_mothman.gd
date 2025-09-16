@@ -19,10 +19,6 @@ func _ready() -> void:
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func highlight():
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, highlightMat);
 	$MothmanFBX/Skeleton3D/LeftWing.set_surface_override_material(0, highlightMat);
@@ -33,8 +29,6 @@ func highlight():
 	$HighlightTimer.start()
 	
 	
-
-
 func _on_highlight_timer_timeout() -> void:
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/LeftWing.set_surface_override_material(0, naturalMat);
@@ -42,6 +36,7 @@ func _on_highlight_timer_timeout() -> void:
 	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
+	
 	
 func interact():
 	var animName = "move" + str(Global.animNum)
