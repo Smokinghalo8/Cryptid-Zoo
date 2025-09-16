@@ -1,9 +1,9 @@
 @tool
 extends AcceptDialog
 
-const HT_Util = preload("../../util/util.gd")
-const HT_Logger = preload("../../util/logger.gd")
-const HT_Errors = preload("../../util/errors.gd")
+const HT_Util = preload("res://addons/zylann.hterrain/util/util.gd")
+const HT_Logger = preload("res://addons/zylann.hterrain/util/logger.gd")
+const HT_Errors = preload("res://addons/zylann.hterrain/util/errors.gd")
 
 const PLUGIN_CFG_PATH = "res://addons/zylann.hterrain/plugin.cfg"
 
