@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uvty2e4akmu3"
-path.s3tc="res://.godot/imported/wendigo_forest_slot0_albedo_bump.png-3516db9a1493990efdb6b32b998d3f44.s3tc.ctex"
+uid="uid://bnc7knvobvmam"
+path.s3tc="res://.godot/imported/wendigo_forest_slot1_albedo_bump.png-ad8e9dcb7d5ab9b5a3f6246521614ebd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://wendigo_forest_slot0_albedo_bump.png"
-dest_files=["res://.godot/imported/wendigo_forest_slot0_albedo_bump.png-3516db9a1493990efdb6b32b998d3f44.s3tc.ctex"]
+source_file="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png"
+dest_files=["res://.godot/imported/wendigo_forest_slot1_albedo_bump.png-ad8e9dcb7d5ab9b5a3f6246521614ebd.s3tc.ctex"]
 
 [params]
 

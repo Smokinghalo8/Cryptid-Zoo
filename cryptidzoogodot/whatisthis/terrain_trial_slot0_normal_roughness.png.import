@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c88ygew4thkdt"
-path.s3tc="res://.godot/imported/wendigo_forest_slot0_normal_roughness.png-a09e25a6aa991e7c98c3f320467c608c.s3tc.ctex"
+uid="uid://dsfwbw6d7llux"
+path.s3tc="res://.godot/imported/terrain_trial_slot0_normal_roughness.png-356bd28721b92b420bc87013b94f3f96.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://wendigo_forest_slot0_normal_roughness.png"
-dest_files=["res://.godot/imported/wendigo_forest_slot0_normal_roughness.png-a09e25a6aa991e7c98c3f320467c608c.s3tc.ctex"]
+source_file="res://whatisthis/terrain_trial_slot0_normal_roughness.png"
+dest_files=["res://.godot/imported/terrain_trial_slot0_normal_roughness.png-356bd28721b92b420bc87013b94f3f96.s3tc.ctex"]
 
 [params]
 

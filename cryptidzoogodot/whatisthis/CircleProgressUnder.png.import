@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gm2t6bxbvv4r"
-path="res://.godot/imported/image-removebg-preview (17).png-10a4abba7107466ce9ffe65e2e4cdf80.ctex"
+uid="uid://cu3bdq0raqx7"
+path="res://.godot/imported/CircleProgressUnder.png-c4ba1d42776827e7ac6bbf52a13b9f35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image-removebg-preview (17).png"
-dest_files=["res://.godot/imported/image-removebg-preview (17).png-10a4abba7107466ce9ffe65e2e4cdf80.ctex"]
+source_file="res://whatisthis/CircleProgressUnder.png"
+dest_files=["res://.godot/imported/CircleProgressUnder.png-c4ba1d42776827e7ac6bbf52a13b9f35.ctex"]
 
 [params]
 
