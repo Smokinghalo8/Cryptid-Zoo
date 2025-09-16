@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsietlkwq27am"]
+
+[ext_resource type="PackedScene" uid="uid://dqgsslxe1crli" path="res://Scenes/wendigo/wendigoAi.tscn" id="1_s1wk7"]
+[ext_resource type="Script" uid="uid://bjqety1oqe3x3" path="res://Scenes/wendigo/wendigo_test_map.gd" id="1_uk8m3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s1wk7"]
+
+[sub_resource type="Sky" id="Sky_uk8m3"]
+sky_material = SubResource("ProceduralSkyMaterial_s1wk7")
+
+[sub_resource type="Environment" id="Environment_3hn7e"]
+background_mode = 2
+sky = SubResource("Sky_uk8m3")
+
+[sub_resource type="Curve3D" id="Curve3D_3hn7e"]
+
+[sub_resource type="Curve3D" id="Curve3D_s1wk7"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.0022878647, 0.058117867, -0.0009727478, 0, 0, 0, 0, 0, 0, -0.079338074, -0.088415146, -11.566886, 0, 0, 0, 0, 0, 0, 16.181154, 0.32096863, -11.003487, 0, 0, 0, 0, 0, 0, 16.133, 0, -6.663, 0, 0, 0, 0, 0, 0, 3.997, 0, -5.744),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_uk8m3"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.10531616, 0.033510208, -0.13663647, 0, 0, 0, 0, 0, 0, 6.087, 0, -9.54, 0, 0, 0, 0, 0, 0, 24.752, 0, -15.167),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="WendigoTestMap" type="Node3D"]
+script = ExtResource("1_uk8m3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 8.845976, 4.560134)
+environment = SubResource("Environment_3hn7e")
+
+[node name="testFloor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9903564, -1.6200719, 28.201477)
+size = Vector3(138.61646, 0.07861328, 134.11145)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_3hn7e")
+
+[node name="WendigoPath1" type="Path3D" parent="Path3D" groups=["WendigoPaths"]]
+curve = SubResource("Curve3D_s1wk7")
+debug_custom_color = Color(0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D/WendigoPath1"]
+transform = Transform3D(0.9999778, -8.439086e-05, 0.0066611534, -7.275958e-12, 0.9999198, 0.01266809, -0.006661688, -0.012667809, 0.9998976, -0.0022878647, 0.058117867, -0.0009727478)
+
+[node name="WendigoPath2" type="Path3D" parent="Path3D" groups=["WendigoPaths"]]
+curve = SubResource("Curve3D_uk8m3")
+debug_custom_color = Color(8.1822276e-07, 0.768935, 2.695322e-06, 1)
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D/WendigoPath2"]
+transform = Transform3D(0.8437538, 0.001613853, -0.5367278, 5.820766e-11, 0.99999547, 0.003006822, 0.53673035, -0.0025370182, 0.8437498, 0.10531616, 0.033510208, -0.13663647)
+
+[node name="WendigoAi" parent="." instance=ExtResource("1_s1wk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.008461, 0, -4.935299)
+paths_container = NodePath("../Path3D")

@@ -1,12 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsietlkwq27am"]
+[gd_scene load_steps=6 format=3 uid="uid://bsietlkwq27am"]
 
 [ext_resource type="PackedScene" uid="uid://dqgsslxe1crli" path="res://Scenes/wendigo/wendigoAi.tscn" id="1_s1wk7"]
+[ext_resource type="Script" uid="uid://bjqety1oqe3x3" path="res://Scenes/wendigo/wendigo_test_map.gd" id="1_uk8m3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s1wk7"]
+
+[sub_resource type="Sky" id="Sky_uk8m3"]
+sky_material = SubResource("ProceduralSkyMaterial_s1wk7")
+
+[sub_resource type="Environment" id="Environment_3hn7e"]
+background_mode = 2
+sky = SubResource("Sky_uk8m3")
 
 [node name="WendigoTestMap" type="Node3D"]
+script = ExtResource("1_uk8m3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 11.749236, 9.660243)
+environment = SubResource("Environment_3hn7e")
 
 [node name="testFloor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9903564, -1.6200719, 28.201477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9903564, -1.6200719, 13.7661915)
 size = Vector3(138.61646, 0.07861328, 134.11145)
 
 [node name="WendigoAi" parent="." instance=ExtResource("1_s1wk7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.799545, 0, -4.935299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.008461, 0, -4.935299)
+speed = 2.5
+move_radius = 5.0
+wait_time = 1.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 11, 0)

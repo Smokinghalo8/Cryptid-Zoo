@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/zylann.hterrain/plugin.cfg")
 Living="Living things"
 Character="It's the character"
 Global="Global Script"
+WendigoPaths="Paths that Wendigo can randomly pick from to follow"
 
 [gui]
 
