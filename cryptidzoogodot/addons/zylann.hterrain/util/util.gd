@@ -546,4 +546,3 @@ static func update_texture_partial(
 	var fuck = tex.get_image()
 	fuck.blit_rect(im, src_rect, dst_pos)
 	tex.update(fuck)
-

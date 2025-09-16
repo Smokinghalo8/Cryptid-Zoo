@@ -64,4 +64,3 @@ func set_aabb(aabb: AABB):
 func _compute_aabb():
 	var pos = Vector3(cell_origin_x, 0, cell_origin_y)
 	return _parent_transform * Transform3D(Basis().scaled(_aabb.size), pos + _aabb.position)
-

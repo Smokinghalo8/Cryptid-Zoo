@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7y4d3iptqhor"]
+
+[ext_resource type="PackedScene" uid="uid://mfy6cnbgmam6" path="res://Mothman Level/mothmanPlush.tscn" id="1_bk8en"]
+[ext_resource type="Script" uid="uid://biy0t05o4opek" path="res://Mothman Level/mothman_plush.gd" id="1_mqt5w"]
+[ext_resource type="AudioStream" uid="uid://lel35xkowhux" path="res://Assets/SFX/PartyHorn.wav" id="3_p6y1v"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kmjln"]
+height = 0.814271
+radius = 0.350963
+
+[node name="MothmanPlush" type="RigidBody3D"]
+script = ExtResource("1_mqt5w")
+
+[node name="OpeningPlush" parent="." instance=ExtResource("1_bk8en")]
+transform = Transform3D(1.16973, 0, -2.76256, 0, 3, 0, 2.76256, 0, 1.16973, -0.0303918, -0.440342, -0.394264)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164707, 0.0311996, -0.0410686)
+shape = SubResource("CylinderShape3D_kmjln")
+
+[node name="PartyHorn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p6y1v")
+volume_db = 8.052

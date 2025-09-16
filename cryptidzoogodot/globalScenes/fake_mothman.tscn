@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://drjilaesiq5nx"]
+
+[ext_resource type="Script" uid="uid://gjetv1h52mau" path="res://Assets/Scripts/fake_mothman.gd" id="1_3moqr"]
+[ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_uj7hj"]
+[ext_resource type="AudioStream" uid="uid://fnaf25a1atlt" path="res://Assets/SFX/2025-04-10 11-41-52.mp3" id="3_75a1b"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
+height = 3.21092
+
+[node name="FakeMothman" type="RigidBody3D" groups=["Living"]]
+script = ExtResource("1_3moqr")
+
+[node name="MothmanFBX" parent="." instance=ExtResource("2_uj7hj")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.10962, -0.288567, 0.280424)
+
+[node name="FakemothmanCol" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46045, 0)
+shape = SubResource("CylinderShape3D_66xu5")
+
+[node name="HighlightTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="MothManNoises" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_75a1b")
+volume_db = -15.0
+autoplay = true
+max_distance = 35.0
+
+[connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]

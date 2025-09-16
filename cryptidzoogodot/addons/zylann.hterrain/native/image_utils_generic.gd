@@ -3,7 +3,7 @@
 # These functions are the same as the ones found in the GDNative library.
 # They are used if the user's platform is not supported.
 
-const HT_Util = preload("../util/util.gd")
+const HT_Util = preload("res://addons/zylann.hterrain/util/util.gd")
 
 var _blur_buffer : Image
 
