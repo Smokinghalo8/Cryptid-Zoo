@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=17 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Resource" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
@@ -8,11 +8,43 @@
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
 [ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://Wendigo Level/wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://Wendigo Level/wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="9_q4s1m"]
+[ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="10_pdyqn"]
+[ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="11_qusdq"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="12_np73x"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
 mode = 0
 textures = [[ExtResource("4_6km8e"), ExtResource("5_mqwve"), ExtResource("6_mqwve")], [ExtResource("6_uaxvo"), ExtResource("7_b1vwf"), ExtResource("6_mqwve")]]
+
+[sub_resource type="Resource" id="Resource_v22mc"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("10_pdyqn")
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.7320508075688772
+min_bounds_to_center_dist = 1.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_5fma2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("11_qusdq")
+root_octree_node = SubResource("Resource_v22mc")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_nknua"]
+resource_local_to_scene = true
+script = ExtResource("12_np73x")
+octree_managers = [SubResource("Resource_5fma2")]
+metadata/class = "Arborist"
 
 [node name="WendigoForest" type="Node3D"]
 
@@ -35,3 +67,13 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("9_q4s1m")
+file_management/garden_work_directory = "res://wendigoTerrainMap/gardening/"
+gardening/gardening_collision_mask = 1.0
+arborist = SubResource("Resource_nknua")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+metadata/class = "Gardener"
