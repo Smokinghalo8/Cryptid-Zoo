@@ -1,37 +1,35 @@
 [gd_scene load_steps=85 format=3 uid="uid://bf4vgu7u0t3ri"]
 
-[ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
+[ext_resource type="Script" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
-[ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="4_gkunu"]
+[ext_resource type="Script" path="res://globalScenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://globalScenes/fake_mothman.tscn" id="4_ijpq5"]
-[ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Map.tscn" id="4_o4rnp"]
+[ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Mothman Level/Map.tscn" id="4_o4rnp"]
 [ext_resource type="AudioStream" uid="uid://burjgjoc8r4u5" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine1Trimmed.wav" id="5_on6dd"]
 [ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="6_im7ec"]
 [ext_resource type="AudioStream" uid="uid://wh6lkv8piiab" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine2Trimmed.wav" id="6_m0i5s"]
-[ext_resource type="Script" uid="uid://1murb5rpgnye" path="res://globalScenes/dialog.gd" id="7_edmu0"]
+[ext_resource type="Script" path="res://globalScenes/dialog.gd" id="7_edmu0"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="7_hys3v"]
 [ext_resource type="AudioStream" uid="uid://cfvue372xracr" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine3Trimmed.wav" id="7_w5tj5"]
 [ext_resource type="AudioStream" uid="uid://doldorcousc7v" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine4Trimmed.wav" id="8_5sbjd"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
 [ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Mothman Level/Note1.tscn" id="8_hln64"]
 [ext_resource type="AudioStream" uid="uid://c8t0wgf4ig77b" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine5Trimmed.wav" id="9_6xoik"]
-[ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
+[ext_resource type="Script" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
 [ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Mothman Level/Note2.tscn" id="10_7ysn1"]
 [ext_resource type="AudioStream" uid="uid://bgdsitdhtosfb" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav" id="10_de3em"]
-[ext_resource type="Script" uid="uid://0e0nwk5g4k63" path="res://Mothman Level/note_2.gd" id="11_hambk"]
-
-[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://whatisthis/image-removebg-preview (17).png" id="11_havme"]
-[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://whatisthis/CircleProgressUnder.png" id="12_4krsh"]
+[ext_resource type="Script" path="res://Mothman Level/note_2.gd" id="11_hambk"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="11_havme"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="12_4krsh"]
 [ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Mothman Level/Note3.tscn" id="12_acp2a"]
-[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://whatisthis/CircleProgressReal.png" id="13_jceop"]
-[ext_resource type="Script" uid="uid://bcjreykocascj" path="res://Mothman Level/note_3.gd" id="13_uc6et"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="13_jceop"]
+[ext_resource type="Script" path="res://Mothman Level/note_3.gd" id="13_uc6et"]
 [ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Mothman Level/Note4.tscn" id="14_0b0g1"]
-[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
-[ext_resource type="Script" uid="uid://b8vqgotq3llua" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
+[ext_resource type="Script" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
+[ext_resource type="Script" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://globalScenes/scene_transition_animation.tscn" id="16_xmauk"]
-[ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
-
+[ext_resource type="Script" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
 [ext_resource type="AudioStream" uid="uid://c0t0d51ctbv75" path="res://Assets/SFX/VoiceLines/OldManLines/OldMan6.wav" id="23_nd27k"]
@@ -47,7 +45,7 @@
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
 [ext_resource type="AudioStream" uid="uid://b2jwwnvqvetlv" path="res://Assets/SFX/VoiceLines/ZedLines/ChildVoice3.wav" id="41_xq7ff"]
 [ext_resource type="AudioStream" uid="uid://vrd312i5n0t7" path="res://Assets/SFX/VoiceLines/ZedLines/ChildVoice4.wav" id="42_dn44v"]
-[ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="42_ejm3s"]
+[ext_resource type="Script" path="res://globalScenes/plusCounter.gd" id="42_ejm3s"]
 [ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="42_wy0bi"]
 [ext_resource type="AudioStream" uid="uid://q72ngwl6ky4d" path="res://Assets/SFX/VoiceLines/ZedLines/ChildVoice5.wav" id="43_5at5i"]
 [ext_resource type="AudioStream" uid="uid://bh871ga8rx3sf" path="res://Assets/SFX/VoiceLines/ZedLines/ChildVoice6.wav" id="44_0ixfe"]
@@ -1030,7 +1028,7 @@ mesh = SubResource("BoxMesh_2b0a1")
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
-transform = Transform3D(-0.450044, 0, -0.661407, 0, 0.8, 0, 0.661407, 0, -0.450044, 232.539, 13.8482, 98.8311)
+transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, 232.539, 13.8482, 98.8311)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
@@ -1042,7 +1040,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.871666, 0, -0.490098, 0, 1, 0, 0.490097, 0, 0.871667, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.87166595, 0, -0.49009773, 0, 1, 0, 0.49009708, 0, 0.87166715, 242.885, 15.1689, 110.315)
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
 stream = ExtResource("5_on6dd")
@@ -1686,7 +1684,7 @@ shape = SubResource("BoxShape3D_c5nfs")
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-3.59728e-06, 0.555571, -0.83147, 3.39941e-08, 0.83147, 0.555571, 1, 1.97028e-06, -3.00991e-06, 236.619, 18.7942, 105.608)
+transform = Transform3D(-3.597276e-06, 0.55557096, -0.83147, 3.399413e-08, 0.83147, 0.55557096, 1, 1.970277e-06, -3.0099131e-06, 236.619, 18.7942, 105.608)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3esotmtt2api"]
 
 [ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="1_iuuel"]
-[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://whatisthis/black-stone.jpg" id="2_yx2ps"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="2_yx2ps"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm4o6"]
 albedo_texture = ExtResource("2_yx2ps")
