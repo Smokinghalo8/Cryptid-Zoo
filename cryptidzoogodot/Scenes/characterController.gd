@@ -198,3 +198,7 @@ func _on_sense_timer_timeout() -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_tree_entered() -> void:
+	pass # Replace with function body.

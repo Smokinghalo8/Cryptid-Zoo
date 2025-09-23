@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://sk0etyltal4g"]
+
+[ext_resource type="Script" uid="uid://cc77veuna1nbs" path="res://Assets/Scripts/TerminalCode.gd" id="1_r4ahw"]
+[ext_resource type="Texture2D" uid="uid://45cunqes80r5" path="res://Scenes/terrain/detail.png" id="2_g6fgq"]
+[ext_resource type="Theme" uid="uid://13dmm8f71xyd" path="res://Assets/Materials/FontThemes/TerminalEnterLine.tres" id="3_6spf7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r4ahw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(967.5, 538)
+scale = Vector2(29.707693, 16.492308)
+texture = ExtResource("2_g6fgq")
+
+[node name="Output" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 14.0
+offset_right = 1913.0
+offset_bottom = 925.0
+theme = ExtResource("3_6spf7")
+text = "OUTPUT
+"
+
+[node name="Input" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_top = 923.0
+offset_right = 1926.0
+offset_bottom = 1068.0
+theme = ExtResource("3_6spf7")
+placeholder_text = "CZ:/"
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+virtual_keyboard_show_on_focus = false
+caret_blink = true
+
+[connection signal="caret_changed" from="Control/Input" to="Control" method="_on_text_edit_caret_changed"]

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://13dmm8f71xyd"]
+
+[resource]
+RichTextLabel/font_sizes/mono_font_size = 55
+RichTextLabel/font_sizes/normal_font_size = 55
+TextEdit/font_sizes/font_size = 55
+TextEdit/fonts/font = null
