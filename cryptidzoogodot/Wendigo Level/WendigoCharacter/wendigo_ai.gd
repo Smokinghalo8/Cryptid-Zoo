@@ -52,19 +52,26 @@ func choose_new_target():
 	target_position = global_transform.origin + random_offset
 
 func caught_in_trap():
-	
+	print("Help me, I've fallen adn I can't get up")
+	speed = 0
 	
 	return
 	
 	
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player"):
-		chasing_player = body
-	if body.is_in_group("Traps"):
-		caught_in_trap()
+	pass
 
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:
 		chasing_player = null
 		choose_new_target()
+
+
+func _on_monitor_traps_body_entered(body: Node3D) -> void:
+	pass
+
+
+func _on_monitor_traps_area_entered(area: Area3D) -> void:
+	if area.is_in_group("Traps"):
+		caught_in_trap()
