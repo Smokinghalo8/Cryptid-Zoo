@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy0lt1nstb0rh"]
+
+[ext_resource type="PackedScene" uid="uid://bhpijhdhnkhni" path="res://wendigoTerrainMap/gardening/plants/grass/scene.gltf" id="1_6o3ij"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_6o3ij")]
+
+[node name="new_grass_new_grass1_0" parent="Sketchfab_model/new Grass_fbx/RootNode/new_grass" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
