@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxodgsv3a4187"
-path.s3tc="res://.godot/imported/Grass_Material.008_baseColor.png-8ca0c0763cbdfff69f39fe206cef7881.s3tc.ctex"
+uid="uid://bnr2x4hm304b8"
+path.s3tc="res://.godot/imported/new_grass1_baseColor.png-809e998aad40b7220612af0dc8d6ef64.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://wendigoTerrainMap/gardening/plants/grass/textures/Grass_Material.008_baseColor.png"
-dest_files=["res://.godot/imported/Grass_Material.008_baseColor.png-8ca0c0763cbdfff69f39fe206cef7881.s3tc.ctex"]
+source_file="res://wendigoTerrainMap/gardening/plants/grass/textures/new_grass1_baseColor.png"
+dest_files=["res://.godot/imported/new_grass1_baseColor.png-809e998aad40b7220612af0dc8d6ef64.s3tc.ctex"]
 
 [params]
 

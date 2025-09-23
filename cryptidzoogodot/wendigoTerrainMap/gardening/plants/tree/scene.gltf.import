@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhpijhdhnkhni"
-path="res://.godot/imported/scene.gltf-332779f3e9f10967fd32531e4f7b98da.scn"
+uid="uid://bsynmfrc0mgnn"
+path="res://.godot/imported/scene.gltf-14e53c79faa9bf3f79dcb10537fc8c06.scn"
 
 [deps]
 
-source_file="res://wendigoTerrainMap/gardening/plants/grass/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-332779f3e9f10967fd32531e4f7b98da.scn"]
+source_file="res://wendigoTerrainMap/gardening/plants/tree/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-14e53c79faa9bf3f79dcb10537fc8c06.scn"]
 
 [params]
 
