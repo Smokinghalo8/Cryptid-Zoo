@@ -1,4 +1,4 @@
-[gd_scene load_steps=357 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=363 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Resource" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
@@ -13,6 +13,12 @@
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="11_qusdq"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="12_np73x"]
 [ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="13_pdyqn"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="14_qusdq"]
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_n1si7"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_8yfk1"]
+[ext_resource type="Script" path="res://globalScenes/pause_menu.gd" id="17_o2n4u"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="18_t4o41"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="19_lopn4"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -5644,9 +5650,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5103054, 1.2004019, 3.63366
 axis_lock_linear_y = false
 speed = 1.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.9801641, 1.3999413e-08, -0.19818771, -0.020895137, 0.99442667, 0.103339784, 0.19708313, 0.10543111, -0.9747013, -0.27425194, 1.7734056, -1.4185277)
-
 [node name="Trap" type="Area3D" parent="." groups=["Traps"]]
 
 [node name="TrappableArea" type="CollisionShape3D" parent="Trap" groups=["Traps"]]
@@ -5672,3 +5675,104 @@ shape = SubResource("BoxShape3D_pdyqn")
 [node name="TrappableArea" type="CollisionShape3D" parent="Trap4" groups=["Traps"]]
 transform = Transform3D(-0.029509237, 0, 0.9995645, 0, 1, 0, -0.9995645, 0, -0.029509237, -1.9483237, 0.52087784, 3.3211243)
 shape = SubResource("BoxShape3D_pdyqn")
+
+[node name="Z" parent="." instance=ExtResource("14_qusdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.686069, 0.94315696, -5.932075)
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="SprintBar" type="TextureProgressBar" parent="Ui"]
+visible = false
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("15_n1si7")
+texture_progress = ExtResource("16_8yfk1")
+
+[node name="Pause Menu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_o2n4u")
+
+[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.156863)
+
+[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("18_t4o41")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 204.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 238.0
+offset_top = 992.0
+offset_right = 452.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Main Menu"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
+stream = ExtResource("19_lopn4")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 720.0
+offset_top = 808.0
+offset_right = 1139.0
+offset_bottom = 875.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
