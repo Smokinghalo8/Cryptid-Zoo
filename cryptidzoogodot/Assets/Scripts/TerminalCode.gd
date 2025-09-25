@@ -5,10 +5,12 @@ extends Control
 #__________
 #This Dic should be %cmd%:%What it do%
 var cmdInformation = {
+	"help" : "Provides more information about certain commands",
 	"camera" : "Brings up Cameras sub-terminal menu you can look at Cryptids through",
 	"exit" : "Leave the terminal View"
 }
 
+var information =""
 var inputText=""
 var savedInput=""
 var outputCleaned = false
@@ -34,6 +36,8 @@ func _process(delta: float) -> void:
 
 func enterKeyPressed() -> void:
 		savedInput = $Input.text.strip_edges()
+		var splitInput = savedInput.split(" ")
+		#TODO check if there is more than 2 array values, if so then get rid of the third
 		$Input.text=""
 		#this gets rid of everything in output, each time enter key is pressed
 		if !outputCleaned:
@@ -42,8 +46,12 @@ func enterKeyPressed() -> void:
 			outputCleaned=true
 			$Output.text += "> " + savedInput+"\n"
 		if checkCMD(savedInput):
-			var information = cmdInformation[savedInput]
-			$Output.text += information + "\n" #temp information to output
+			if !runCommand(splitInput[0], splitInput[1]):
+				print("Command failed\nsplitInput[0]: "+ splitInput[0] +"\nsplitInput[1]: "+splitInput[1])
+			pass
+			
+			#var information = cmdInformation[savedInput]#returns the information block from input
+			#$Output.text += information + "\n" #temp information to output
 			#TODO right here implement running the function, or like implement a return function
 		else:
 			$Output.text += "Unknown command: " + savedInput + "\n" #change to break or something
@@ -58,6 +66,18 @@ func checkCMD(input) -> bool:
 	#check if command exists in dic
 	return cmdInformation.has(input)
 
+
+func runCommand(command, parameter) -> bool:
+	
+	match command:
+		"help":
+			information = cmdInformation[parameter]
+			$Output.text=information
+		_:
+			print("Default")
+	
+	return false#meaning the commandFailed
+	
 
 
 func _on_text_edit_caret_changed() -> void:
