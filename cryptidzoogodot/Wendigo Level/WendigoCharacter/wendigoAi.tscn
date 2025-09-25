@@ -1,22 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbali5u4o76qd"]
+[gd_scene load_steps=6 format=3 uid="uid://dbali5u4o76qd"]
 
 [ext_resource type="Script" uid="uid://x18ufc40uwp2" path="res://Wendigo Level/WendigoCharacter/wendigo_ai.gd" id="1_ynmkr"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ynmkr"]
-radius = 0.5854492
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynmkr"]
+size = Vector3(1, 2.0853271, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ynmkr"]
-radius = 1.6212763
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ynmkr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_it7xg"]
+radius = 2.7369912
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_it7xg"]
+size = Vector3(1.086792, 2.135254, 1.0610352)
 
 [node name="WendigoAi" type="CharacterBody3D"]
 script = ExtResource("1_ynmkr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_ynmkr")
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.034362793, 0)
+shape = SubResource("BoxShape3D_ynmkr")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075683594, 0)
-height = 1.8486328
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ynmkr")
 
-[node name="PlayerDetectionArea" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_ynmkr")
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+
+[node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="PlayerDetectionArea"]
+shape = SubResource("SphereShape3D_it7xg")
+
+[node name="TrapDetectionArea" type="Area3D" parent="."]
+
+[node name="TrapDetectionCollision" type="CollisionShape3D" parent="TrapDetectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012756348, -0.01586914, -0.0017089844)
+shape = SubResource("BoxShape3D_it7xg")
+
+[connection signal="area_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_area_entered"]
