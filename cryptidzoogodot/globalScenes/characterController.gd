@@ -36,22 +36,6 @@ func _input(event: InputEvent):
 
 
 func _process(delta):
-	#Sensing
-	$"../Ui/WednigoHead/SenseBar".value = senseTime
-	
-	if senseTime > 0:
-		senseTime -= senseDeplete * delta
-		senseTime = clamp(senseTime, 0.0, senseTimeMax)
-
-	if Input.is_action_just_pressed("sense") && senseable == true:
-		var children = get_tree().current_scene.get_children()
-		for child in children:
-			if child.is_in_group("Living"):
-				child.highlight()
-				senseable = false
-				$SenseTimer.start(0)
-				senseTime = 5.0
-				$"../Ui/WednigoHead/SenseBar".visible = true
 	
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):

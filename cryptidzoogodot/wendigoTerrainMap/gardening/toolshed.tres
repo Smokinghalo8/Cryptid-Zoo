@@ -7,7 +7,7 @@
 resource_name = "Toolshed_Brush"
 script = ExtResource("1_wmha5")
 behavior/behavior_brush_type = 0
-shape/shape_volume_size = 13.71
+shape/shape_volume_size = 50.0
 shape/shape_projection_size = 1.0
 behavior/behavior_strength = 1.0
 behavior/behavior_passthrough = false
@@ -22,7 +22,7 @@ metadata/class = "Toolshed_Brush"
 resource_name = "Toolshed_Brush"
 script = ExtResource("1_wmha5")
 behavior/behavior_brush_type = 1
-shape/shape_volume_size = 30.65
+shape/shape_volume_size = 8.87
 shape/shape_projection_size = 100.0
 behavior/behavior_strength = 1.0
 behavior/behavior_passthrough = false
