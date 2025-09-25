@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wnu6owvew71m"
-path="res://.godot/imported/CircleProgressReal.png-126f8da452e8ebebef53801102164253.ctex"
+uid="uid://cu3bdq0raqx7"
+path="res://.godot/imported/CircleProgressUnder.png-9f5f8ad9f4d9e0d51dbe46bb588167ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wendigo Level/CircleProgressReal.png"
-dest_files=["res://.godot/imported/CircleProgressReal.png-126f8da452e8ebebef53801102164253.ctex"]
+source_file="res://Mothman Level/CircleProgressUnder.png"
+dest_files=["res://.godot/imported/CircleProgressUnder.png-9f5f8ad9f4d9e0d51dbe46bb588167ae.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu3bdq0raqx7"
-path="res://.godot/imported/CircleProgressUnder.png-7cce95076f3285e72535be69222e0e39.ctex"
+uid="uid://gm2t6bxbvv4r"
+path="res://.godot/imported/image-removebg-preview (17).png-23e66d05d7a6b2384a30a72d239751a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wendigo Level/CircleProgressUnder.png"
-dest_files=["res://.godot/imported/CircleProgressUnder.png-7cce95076f3285e72535be69222e0e39.ctex"]
+source_file="res://Mothman Level/image-removebg-preview (17).png"
+dest_files=["res://.godot/imported/image-removebg-preview (17).png-23e66d05d7a6b2384a30a72d239751a3.ctex"]
 
 [params]
 
