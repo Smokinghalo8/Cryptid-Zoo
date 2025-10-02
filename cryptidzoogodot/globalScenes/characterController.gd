@@ -8,6 +8,7 @@ const JUMP_VELOCITY = 4.5
 @export var walk = false
 @export var run = false
 @export var idle = true
+@export var glide = false
 @export var senseable = true
 var sprintSpeed = 10.0
 var maxStamina = 100.0
@@ -63,12 +64,16 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta 
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
+	elif Input.is_action_pressed("glide") and not is_on_floor():
+		velocity += (get_gravity() * 0.5) * delta
+		velocity.y = -1
+		SPEED = 9
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -176,13 +181,21 @@ func update_animation_parameters():
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = true
 		animTree["parameters/conditions/run"] = false
+		#animTree["parameters/conditions/glide"] = false
 		
 	elif(run == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = true
+		#animTree["parameters/conditions/glide"] = false
 	
-
+	elif(glide == true):
+		animTree["parameters/conditions/idle"] = false
+		animTree["parameters/conditions/walk"] = false
+		animTree["parameters/conditions/run"] = false
+		#animTree["parameters/conditions/glide"] = true
+		
+		
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		#SceneTransitionAnimation.play("fade_in")
