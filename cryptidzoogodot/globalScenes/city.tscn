@@ -1,7 +1,7 @@
 [gd_scene load_steps=85 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
-[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/zcity.tscn" id="1_lwvs2"]
+[ext_resource type="PackedScene" uid="uid://dhkrpb1cir3w" path="res://globalScenes/zcity.tscn" id="1_lwvs2"]
 [ext_resource type="Script" path="res://globalScenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://globalScenes/fake_mothman.tscn" id="4_ijpq5"]
 [ext_resource type="PackedScene" uid="uid://cqrvb5ekn1iml" path="res://Mothman Level/Map.tscn" id="4_o4rnp"]
@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
 [ext_resource type="Script" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
-[ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://globalScenes/scene_transition_animation.tscn" id="16_xmauk"]
+[ext_resource type="PackedScene" path="res://globalScenes/scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
