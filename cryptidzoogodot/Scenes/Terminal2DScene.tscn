@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://sk0etyltal4g"]
+[gd_scene load_steps=3 format=3 uid="uid://sk0etyltal4g"]
 
 [ext_resource type="Script" uid="uid://cc77veuna1nbs" path="res://Assets/Scripts/TerminalCode.gd" id="1_r4ahw"]
-[ext_resource type="Texture2D" uid="uid://45cunqes80r5" path="res://Scenes/terrain/detail.png" id="2_g6fgq"]
 [ext_resource type="Theme" uid="uid://13dmm8f71xyd" path="res://Assets/Materials/FontThemes/TerminalEnterLine.tres" id="3_6spf7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Terminal" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -13,10 +12,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_r4ahw")
 
-[node name="Sprite2D" type="Sprite2D" parent="Control"]
+[node name="Sprite2D" type="Polygon2D" parent="Control"]
 position = Vector2(967.5, 538)
 scale = Vector2(29.707693, 16.492308)
-texture = ExtResource("2_g6fgq")
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-32.56732, -32.62127, 32.129723, -32.439365, 32.39901, 32.80317, -32.668304, 32.5)
 
 [node name="Output" type="RichTextLabel" parent="Control"]
 layout_mode = 0

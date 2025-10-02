@@ -29,7 +29,7 @@ func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("enter"):
 		enterKeyPressed()
 	pass
 
@@ -46,6 +46,7 @@ func enterKeyPressed() -> void:
 			outputCleaned=true
 			$Output.text += "> " + savedInput+"\n"
 		if checkCMD(savedInput):
+
 			if !runCommand(splitInput[0], splitInput[1]):
 				print("Command failed\nsplitInput[0]: "+ splitInput[0] +"\nsplitInput[1]: "+splitInput[1])
 			pass
