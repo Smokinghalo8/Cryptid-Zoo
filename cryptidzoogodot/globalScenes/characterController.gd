@@ -38,7 +38,7 @@ func _input(event: InputEvent):
 
 func _process(delta):
 	#Sensing
-	$"../Ui/WednigoHead/SenseBar".value = senseTime
+#	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
 	if senseTime > 0:
 		senseTime -= senseDeplete * delta

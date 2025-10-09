@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7jgey74swops"]
+
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_jpsia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ncxw"]
+transparency = 1
+albedo_color = Color(0.52034944, 0.6267192, 0.91655445, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ire4g"]
+size = Vector3(28.650879, 9.340637, 21.31488)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+size = Vector3(100, 12, 100)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.9, 0)
+operation = 2
+size = Vector3(24, 10, 16)
+material = SubResource("StandardMaterial3D_6ncxw")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.9, 0)
+operation = 2
+size = Vector3(24, 10, 16)
+material = SubResource("StandardMaterial3D_6ncxw")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5275879, -5.018341, -0.11654663)
+shape = SubResource("BoxShape3D_ire4g")
+
+[node name="Z" parent="." instance=ExtResource("1_jpsia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.120675, 1.6456223, 13.460277)

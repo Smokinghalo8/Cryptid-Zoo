@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7jgey74swops"]
+
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_jpsia"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ncxw"]
+transparency = 1
+albedo_color = Color(0.16709521, 0.026932275, 0.0010203358, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jpsia"]
+size = Vector3(25.799255, 10.411133, 24.011597)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ire4g"]
+albedo_color = Color(0.1054978, 0.5926742, 0.9999806, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0y56h"]
+material = SubResource("StandardMaterial3D_ire4g")
+size = Vector3(30, 20, 30)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Z" parent="." instance=ExtResource("1_jpsia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.120675, 1.6456223, 13.460277)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2295794, 0)
+light_energy = 16.0
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="ground" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+use_collision = true
+size = Vector3(100, 12, 100)
+
+[node name="hole" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.9251943, 0)
+operation = 2
+size = Vector3(24, 10, 16)
+material = SubResource("StandardMaterial3D_6ncxw")
+
+[node name="waterChecker" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="waterChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16793823, -4.7055664, -0.03326416)
+shape = SubResource("BoxShape3D_jpsia")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="waterChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5396919, -10.015566, -2.5583992)
+mesh = SubResource("BoxMesh_0y56h")
