@@ -1,9 +1,9 @@
 [gd_scene load_steps=31 format=3 uid="uid://cwqd117ianhrh"]
 
 [ext_resource type="Script" uid="uid://b1w68g867f652" path="res://globalScenes/characterController.gd" id="1_6mksa"]
-[ext_resource type="Script" path="res://globalScenes/ControllerCamera.gd" id="2_1nxij"]
+[ext_resource type="Script" uid="uid://6qdlcyk8jlel" path="res://globalScenes/ControllerCamera.gd" id="2_1nxij"]
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
-[ext_resource type="Script" path="res://globalScenes/ray_cast_3d.gd" id="3_wpofk"]
+[ext_resource type="Script" uid="uid://b3b22gjxryt33" path="res://globalScenes/ray_cast_3d.gd" id="3_wpofk"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
