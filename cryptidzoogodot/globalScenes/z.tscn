@@ -8,6 +8,9 @@
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y3fih"]
 animation = &"Gliding"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y3fih"]
+animation = &"Gliding"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
 
@@ -113,23 +116,6 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_52mb5")
 states/Walk/position = Vector2(567, 313)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_e750e"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_mgg7x"), "Run", "Walk", SubResource("AnimationNodeStateMachineTransition_ujojy"), "Walk", "Run", SubResource("AnimationNodeStateMachineTransition_bjstg"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_cm7f5"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_0b8x7"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_74siq"), "Walk", "Gliding", SubResource("AnimationNodeStateMachineTransition_0nw42"), "Gliding", "Walk", SubResource("AnimationNodeStateMachineTransition_k2acy"), "Gliding", "Run", SubResource("AnimationNodeStateMachineTransition_l2xe6"), "Run", "Gliding", SubResource("AnimationNodeStateMachineTransition_fgxnq"), "Gliding", "Idle", SubResource("AnimationNodeStateMachineTransition_cqbfr")]
 
-[sub_resource type="Animation" id="Animation_y3fih"]
-resource_name = "Gliding"
-length = 0.567
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.5, 0), Vector3(0, 0.08, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_2vjok"]
 resource_name = "Idle"
 length = 2.0
@@ -195,6 +181,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.5, 0), Vector3(0, 0.350107, 0), Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y3fih"]
+resource_name = "Gliding"
+length = 0.567
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0), Vector3(0, 0.08, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kgv2e"]
