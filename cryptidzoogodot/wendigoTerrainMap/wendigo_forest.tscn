@@ -1,7 +1,7 @@
 [gd_scene load_steps=591 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
-[ext_resource type="Script" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
+[ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
 [ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://Wendigo Level/wendigo_forest_slot0_normal_roughness.png" id="6_uaxvo"]
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://Wendigo Level/wendigo_forest_slot1_normal_roughness.png" id="7_b1vwf"]
-[ext_resource type="PackedScene" uid="uid://w7yf3br8kwcd" path="res://globalScenes/zwendigo.tscn" id="9_g0ukx"]
+[ext_resource type="PackedScene" path="res://globalScenes/zwendigo.tscn" id="9_g0ukx"]
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="9_q4s1m"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="10_pdyqn"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="11_qusdq"]
@@ -44,6 +44,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.07
 
 [sub_resource type="Resource" id="Resource_1mri4"]
@@ -9224,6 +9225,7 @@ shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2476864, 1.1322755, -1.7553439)
 
 [node name="Gardener" type="Node3D" parent="."]
 script = ExtResource("9_q4s1m")
