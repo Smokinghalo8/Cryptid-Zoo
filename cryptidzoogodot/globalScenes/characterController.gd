@@ -2,7 +2,7 @@ extends CharacterBody3D
 @onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
 @export var walk = false
@@ -23,6 +23,7 @@ var currentVelocity = 0
 var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
+
 
 
 func on_ready():
@@ -63,7 +64,8 @@ func _process(delta):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
 
 	update_animation_parameters()
-
+	
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -74,10 +76,19 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	elif Input.is_action_pressed("glide") and not is_on_floor():
-		velocity += (get_gravity() * 0.5) * delta
+	if velocity.y < 0:
+		# Half gravity strength
+		velocity += get_gravity() * 0.5 * delta
+		# Apply slight downward velocity
 		velocity.y = -1
+		# Reduce speed while falling
 		SPEED = 9
+	else:
+		# Normal gravity when rising or on ground
+		velocity += get_gravity() * delta
+		
+		
+
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -101,13 +112,12 @@ func _physics_process(delta: float) -> void:
 		walk = true
 		idle = false
 		run = false
-
+		
 	#run
 	elif(velocity.length() == 10 && is_on_floor()):
 		run = true
 		walk = false
 		idle = false
-
 		
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
@@ -186,16 +196,19 @@ func update_animation_parameters():
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = true
 		animTree["parameters/conditions/run"] = false
+		#animTree["parameters/conditions/glide"] = false
 		
 	elif(run == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = true
+		#animTree["parameters/conditions/glide"] = false
 	
 	elif(glide == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = false
+		#animTree["parameters/conditions/glide"] = true
 		
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
