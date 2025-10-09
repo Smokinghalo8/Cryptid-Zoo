@@ -174,7 +174,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Z:position")
+tracks/6/path = NodePath("ZCity:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -186,7 +186,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Z:rotation")
+tracks/7/path = NodePath("ZCity:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -196,8 +196,92 @@ tracks/7/keys = {
 "values": [Vector3(0, -1.64794, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_4baqa"]
+resource_name = "move1.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.154699, 24.3683), Vector3(0, 4.94813, 24.3683), Vector3(0, 4.94813, 91.2606), Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, -0.371668, 0), Vector3(-0.0218623, -1.58498, -0.995328), Vector3(-0.00497954, -0.733588, -0.192237), Vector3(-0.00523599, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3fkrg"]
+resource_name = "move2.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(45.4934, 0.262391, 48.6737), Vector3(45.4934, 2.90855, 48.6737), Vector3(0, 6.40701, 24.3683), Vector3(0, 0.154699, 24.3683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0521646, 2.33233, -0.544843), Vector3(-0.0380771, 2.30025, -0.890272), Vector3(-0.050326, 1.6064, -0.148712), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k371j"]
+resource_name = "move3.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-71.9117, 0.231596, 57.2236), Vector3(-71.9117, 6.90877, 57.2236), Vector3(44.9652, 57.4144, 50.8393), Vector3(44.9652, 3.43746, 50.8393), Vector3(44.9652, 0.360385, 50.8393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0, 0.593412, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_q1jla"]
-resource_name = "move1"
+resource_name = "move1.0"
 length = 3.2
 step = 0.1
 tracks/0/type = "value"
@@ -251,36 +335,8 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_4baqa"]
-resource_name = "move1.5"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FakeMothman:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.154699, 24.3683), Vector3(0, 4.94813, 24.3683), Vector3(0, 4.94813, 91.2606), Vector3(0, 1.43675, 91.2606)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FakeMothman:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5708, 0), Vector3(0, -0.371668, 0), Vector3(-0.0218623, -1.58498, -0.995328), Vector3(-0.00497954, -0.733588, -0.192237), Vector3(-0.00523599, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_dxftt"]
-resource_name = "move2"
+resource_name = "move2.0"
 length = 2.6
 step = 0.1
 tracks/0/type = "value"
@@ -334,36 +390,8 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_3fkrg"]
-resource_name = "move2.5"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FakeMothman:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(45.4934, 0.262391, 48.6737), Vector3(45.4934, 2.90855, 48.6737), Vector3(0, 6.40701, 24.3683), Vector3(0, 0.154699, 24.3683)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FakeMothman:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0521646, 2.33233, -0.544843), Vector3(-0.0380771, 2.30025, -0.890272), Vector3(-0.050326, 1.6064, -0.148712), Vector3(0, 1.5708, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_qes4m"]
-resource_name = "move3"
+resource_name = "move3.0"
 length = 3.0
 step = 0.1
 tracks/0/type = "value"
@@ -417,36 +445,8 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_k371j"]
-resource_name = "move3.5"
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FakeMothman:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-71.9117, 0.231596, 57.2236), Vector3(-71.9117, 6.90877, 57.2236), Vector3(44.9652, 57.4144, 50.8393), Vector3(44.9652, 3.43746, 50.8393), Vector3(44.9652, 0.360385, 50.8393)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FakeMothman:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0, 0.593412, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ihdvq"]
-resource_name = "move4"
+resource_name = "move4.0"
 length = 2.6
 step = 0.1
 tracks/0/type = "value"
@@ -501,7 +501,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_fbxaa"]
-resource_name = "move5"
+resource_name = "move5.0"
 length = 4.0
 step = 0.1
 tracks/0/type = "value"
@@ -532,14 +532,14 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]
 _data = {
 &"RESET": SubResource("Animation_lkwtc"),
-&"move1": SubResource("Animation_q1jla"),
+&"move1.0": SubResource("Animation_q1jla"),
 &"move1.5": SubResource("Animation_4baqa"),
-&"move2": SubResource("Animation_dxftt"),
+&"move2.0": SubResource("Animation_dxftt"),
 &"move2.5": SubResource("Animation_3fkrg"),
-&"move3": SubResource("Animation_qes4m"),
+&"move3.0": SubResource("Animation_qes4m"),
 &"move3.5": SubResource("Animation_k371j"),
-&"move4": SubResource("Animation_ihdvq"),
-&"move5": SubResource("Animation_fbxaa")
+&"move4.0": SubResource("Animation_ihdvq"),
+&"move5.0": SubResource("Animation_fbxaa")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sef1e"]
@@ -635,7 +635,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Z:position")
+tracks/4/path = NodePath("../ZCity:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -647,7 +647,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Z:rotation")
+tracks/5/path = NodePath("../ZCity:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -796,7 +796,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Z:position")
+tracks/2/path = NodePath("../ZCity:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -808,7 +808,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Z:rotation")
+tracks/3/path = NodePath("../ZCity:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -980,7 +980,7 @@ tracks/15/keys = {
 tracks/16/type = "method"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../Z")
+tracks/16/path = NodePath("../ZCity")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -1027,7 +1027,7 @@ mesh = SubResource("BoxMesh_2b0a1")
 [node name="FloorCol" type="CollisionShape3D" parent="Floor/FloorBody"]
 shape = SubResource("ConcavePolygonShape3D_wffbo")
 
-[node name="Z" parent="." instance=ExtResource("1_lwvs2")]
+[node name="ZCity" parent="." instance=ExtResource("1_lwvs2")]
 transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, 232.539, 13.8482, 98.8311)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1714,7 +1714,7 @@ transform = Transform3D(0.845812, 0, -0.533482, 0, 1, 0, 0.533482, 0, 0.845812, 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
-[connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="ZCity" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]

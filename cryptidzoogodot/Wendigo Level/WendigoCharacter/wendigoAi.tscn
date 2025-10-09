@@ -1,27 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbali5u4o76qd"]
 
 [ext_resource type="Script" uid="uid://x18ufc40uwp2" path="res://Wendigo Level/WendigoCharacter/wendigo_ai.gd" id="1_ynmkr"]
+[ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="2_it7xg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynmkr"]
-size = Vector3(1, 2.0853271, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ynmkr"]
+size = Vector3(1.8828735, 4.4009705, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_it7xg"]
-radius = 2.7369912
+radius = 7.2339554
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_it7xg"]
-size = Vector3(1.086792, 2.135254, 1.0610352)
+size = Vector3(1.5144348, 3.9454346, 1.0610352)
 
 [node name="WendigoAi" type="CharacterBody3D"]
 script = ExtResource("1_ynmkr")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.034362793, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01473999, 1.0381012, 0)
 shape = SubResource("BoxShape3D_ynmkr")
-
-[node name="Mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_ynmkr")
 
 [node name="PlayerDetectionArea" type="Area3D" parent="."]
 
@@ -31,7 +27,10 @@ shape = SubResource("SphereShape3D_it7xg")
 [node name="TrapDetectionArea" type="Area3D" parent="."]
 
 [node name="TrapDetectionCollision" type="CollisionShape3D" parent="TrapDetectionArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012756348, -0.01586914, -0.0017089844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036392212, 0.90509033, 0)
 shape = SubResource("BoxShape3D_it7xg")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_it7xg")]
+transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, -1.0410366, 0)
 
 [connection signal="area_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_area_entered"]

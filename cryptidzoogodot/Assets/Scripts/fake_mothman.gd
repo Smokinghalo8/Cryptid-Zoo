@@ -9,6 +9,8 @@ var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var OldMan5 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan5")
 
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	$MothManNoises.play(0)
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat);
@@ -18,6 +20,10 @@ func _ready() -> void:
 	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
 
+func _process(delta: float) -> void:
+	if Global.animNum <= 1.0:
+		$Big.monitoring = false
+		$Small.monitoring = false
 
 func highlight():
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, highlightMat);
@@ -40,6 +46,8 @@ func _on_highlight_timer_timeout() -> void:
 	
 func interact():
 	var animName = "move" + str(Global.animNum)
+	print("Trying to interact")
+	print(str(animName))
 	$MothManNoises.stop()
 	self.freeze = true
 	$Big.monitoring = false
