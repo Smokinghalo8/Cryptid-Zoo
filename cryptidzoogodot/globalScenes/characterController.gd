@@ -101,12 +101,13 @@ func _physics_process(delta: float) -> void:
 		walk = true
 		idle = false
 		run = false
-		
+
 	#run
 	elif(velocity.length() == 10 && is_on_floor()):
 		run = true
 		walk = false
 		idle = false
+
 		
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
@@ -185,19 +186,16 @@ func update_animation_parameters():
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = true
 		animTree["parameters/conditions/run"] = false
-		#animTree["parameters/conditions/glide"] = false
 		
 	elif(run == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = true
-		#animTree["parameters/conditions/glide"] = false
 	
 	elif(glide == true):
 		animTree["parameters/conditions/idle"] = false
 		animTree["parameters/conditions/walk"] = false
 		animTree["parameters/conditions/run"] = false
-		#animTree["parameters/conditions/glide"] = true
 		
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
