@@ -10,6 +10,7 @@ const JUMP_VELOCITY = 4.5
 @export var idle = true
 @export var glide = false
 @export var senseable = true
+@export var swimming = false
 var sprintSpeed = 10.0
 var maxStamina = 100.0
 var staminaDepletionRate = 30.0
@@ -65,6 +66,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta 
+		
+	#swimming
+	if swimming:
+		set_motion_mode(MOTION_MODE_FLOATING)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -211,3 +216,10 @@ func _on_sense_timer_timeout() -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+
+func _on_water_detector_area_entered(area: Area3D) -> void:
+	if area.is_in_group("water"):
+		print("check")
+		swimming = true

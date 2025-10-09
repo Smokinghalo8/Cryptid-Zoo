@@ -39,7 +39,7 @@ operation = 2
 size = Vector3(24, 10, 16)
 material = SubResource("StandardMaterial3D_6ncxw")
 
-[node name="waterChecker" type="Area3D" parent="."]
+[node name="waterChecker" type="Area3D" parent="." groups=["water"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="waterChecker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16793823, -4.7055664, -0.03326416)
