@@ -276,3 +276,4 @@ shape = SubResource("CylinderShape3D_y3fih")
 
 [connection signal="timeout" from="SenseTimer" to="." method="_on_sense_timer_timeout"]
 [connection signal="area_entered" from="waterNotifier/waterDetector" to="." method="_on_water_detector_area_entered"]
+[connection signal="area_exited" from="waterNotifier/waterDetector" to="." method="_on_water_detector_area_exited"]

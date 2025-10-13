@@ -24,6 +24,16 @@ var currentVelocity = 0
 var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
+var swimSpeed = 3.0
+var swimAcceleration = 2.0
+var buoyancy = 0.4
+var waterDrag = 0.5
+var waterSurface = 0.0
+var chestDepthOffset = 0.45
+var waterTransition = false
+var waterTransitionTime = 0.0
+var currentWaterArea: Area3D = null
+var waterSurfaceMargin = .8
 
 
 func on_ready():
@@ -63,13 +73,26 @@ func _process(delta):
 
 
 func _physics_process(delta: float) -> void:
+	# Check if player is in water
+	if currentWaterArea:
+		var depth = waterSurface - global_position.y
+		
+		if not swimming and depth > chestDepthOffset:
+			swimming = true
+			waterTransition = true
+			waterTransitionTime = 0.0
+			velocity.y = -1.5
+		elif swimming and depth < -waterSurfaceMargin:
+			swimming = false
+			waterTransition = false
+			velocity.y = 0
+	else:
+		swimming = false
+	
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not swimming:
 		velocity += get_gravity() * delta 
 		
-	#swimming
-	if swimming:
-		set_motion_mode(MOTION_MODE_FLOATING)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -88,6 +111,44 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	
+	# Swimming physics (cannot get out of water currently)
+	if swimming:
+		velocity.x *= waterDrag
+		velocity.z *= waterDrag
+		
+		# Initial drop in water
+		if waterTransition:
+			waterTransitionTime += delta
+			if waterTransitionTime < 0.4:
+				velocity += get_gravity() * delta
+			else:
+				waterTransition = false
+		else:
+			velocity.y = clamp(velocity.y, -5.0, 5.0)
+			# Makes player float along the surface of the water at chest level
+			var floatingPosition = waterSurface - chestDepthOffset
+			var verticalForce = 0.0
+			
+			# Tries to keep the player in a floating state along the surface of the water
+			if global_position.y < floatingPosition - 0.1:
+				verticalForce += buoyancy
+			elif global_position.y > floatingPosition + 0.1:
+				verticalForce -= buoyancy * 2
+			
+			# Ascending and Descending actions for swimming
+			if Input.is_action_pressed("jump"):
+				verticalForce += swimSpeed * 2.0
+			elif Input.is_action_pressed("control"):
+				verticalForce -= swimSpeed * 2.0
+		
+			velocity.y += verticalForce * delta
+			velocity.y *= 0.9
+			
+		# Smoothes out player movement in water
+		var swimDirection = direction * swimSpeed
+		velocity.x = lerp(velocity.x, swimDirection.x, swimAcceleration * delta)
+		velocity.z = lerp(velocity.z, swimDirection.z, swimAcceleration * delta)
 
 	move_and_slide()
 	
@@ -175,7 +236,6 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() < 1:
 		$Walking.stop()
 
-
 func update_animation_parameters():
 	if(idle == true):
 		animTree["parameters/conditions/idle"] = true
@@ -221,5 +281,10 @@ func disableLooker():
 
 func _on_water_detector_area_entered(area: Area3D) -> void:
 	if area.is_in_group("water"):
-		print("check")
-		swimming = true
+		# Gets the current water area and sets the surface of the water to the top of the area
+		currentWaterArea = area
+		waterSurface = area.global_position.y
+
+func _on_water_detector_area_exited(area: Area3D) -> void:
+	if area == currentWaterArea:
+		currentWaterArea = null

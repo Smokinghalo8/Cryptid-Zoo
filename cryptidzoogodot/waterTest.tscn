@@ -7,7 +7,7 @@ transparency = 1
 albedo_color = Color(0.16709521, 0.026932275, 0.0010203358, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpsia"]
-size = Vector3(25.799255, 10.411133, 24.011597)
+size = Vector3(25.799255, 9.753906, 24.011597)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ire4g"]
 albedo_color = Color(0.1054978, 0.5926742, 0.9999806, 1)
@@ -42,7 +42,7 @@ material = SubResource("StandardMaterial3D_6ncxw")
 [node name="waterChecker" type="Area3D" parent="." groups=["water"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="waterChecker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16793823, -4.7055664, -0.03326416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16793823, -5.0341797, -0.03326416)
 shape = SubResource("BoxShape3D_jpsia")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="waterChecker"]
