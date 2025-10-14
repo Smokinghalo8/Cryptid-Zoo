@@ -33,4 +33,7 @@ shape = SubResource("BoxShape3D_it7xg")
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_it7xg")]
 transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, -1.0410366, 0)
 
+[node name="TrappedTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_area_entered"]
+[connection signal="timeout" from="TrappedTimer" to="." method="_on_trapped_timer_timeout"]
