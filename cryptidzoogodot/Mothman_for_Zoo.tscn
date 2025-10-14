@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgrr4fqaukvjg"]
+
+[ext_resource type="Script" uid="uid://djm1eiytooae" path="res://Mothman_Zoo_Character.gd" id="1_qstaa"]
+[ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_s7du8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v4wq8"]
+height = 1.2873535
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_qstaa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1385498, 0)
+shape = SubResource("CapsuleShape3D_v4wq8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="MothmanFBX" parent="." instance=ExtResource("2_s7du8")]
+transform = Transform3D(4.19, 0, 0, 0, 4.19, 0, 0, 0, 4.19, -0.47824222, -0.5219539, 0.1305958)
