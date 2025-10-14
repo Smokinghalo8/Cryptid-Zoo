@@ -1,10 +1,15 @@
 extends Node3D
 
 
+
+func _ready() -> void:
+	pass
+
 func _process(delta: float) -> void:
-	$Ui/SprintBar.value = Global.stamina
+	var sprintBar = get_node("/root/" + get_tree().current_scene.name + "/Ui/SprintBar")
+	sprintBar.value = Global.stamina
 	
 	if Global.stamina < 100:
-		$Ui/SprintBar.visible = true
+		sprintBar.visible = true
 	if Global.stamina == 100:
-		$Ui/SprintBar.visible = false
+		sprintBar.visible = false

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctai68iwk25o5"]
+
+[ext_resource type="PackedScene" uid="uid://db7mx1hdkaiww" path="res://Wendigo Level/assets/scene.gltf" id="1_3yylr"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_3yylr")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 8.194637, 0)
+
+[node name="StoneBridge_material_atlas_18514_1_0" parent="Sketchfab_model/8f709f3bd1134d5785fcee1b0fcad407_fbx/RootNode/StoneBridge" index="0"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 1.4210855e-14, 0, -1.4210855e-14, 0.9999999, -70.18315, 1.0553932, 0)
