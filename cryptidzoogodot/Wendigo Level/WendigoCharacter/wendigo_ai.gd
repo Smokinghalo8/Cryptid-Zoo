@@ -9,13 +9,18 @@ var target_position: Vector3
 var waiting: bool = false
 var chasing_player: Node3D = null
 
+@onready var ray_front: RayCast3D = $RayFront
+@onready var ray_left: RayCast3D = $RayLeft
+@onready var ray_right: RayCast3D = $RayRight
+
 func _ready() -> void:
-	# Connect detection area signals
 	$PlayerDetectionArea.body_entered.connect(_on_body_entered)
 	$PlayerDetectionArea.body_exited.connect(_on_body_exited)
 	choose_new_target()
 
 func _physics_process(delta: float) -> void:
+	var move_direction = Vector3.ZERO
+
 	if chasing_player and is_instance_valid(chasing_player):
 		# Move toward player
 		speed = 2
@@ -35,18 +40,32 @@ func _physics_process(delta: float) -> void:
 			choose_new_target()
 			return
 
-	# Move toward target
-	var move_direction = (target_position - global_transform.origin)
+	move_direction = (target_position - global_transform.origin)
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
 
+	# --- Tree Avoidance ---
+	var avoid_direction = Vector3.ZERO
+	if ray_front.is_colliding():
+		avoid_direction += ray_front.get_collision_normal() * 1.0
+	if ray_left.is_colliding():
+		avoid_direction += ray_left.get_collision_normal() * 0.7
+	if ray_right.is_colliding():
+		avoid_direction += ray_right.get_collision_normal() * 0.7
+
+	if avoid_direction != Vector3.ZERO:
+		# Blend move direction with avoidance
+		move_direction += avoid_direction.normalized() * 0.8
+		move_direction = move_direction.normalized()
+
+	# --- Movement ---
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
 
 	apply_gravity(delta)
 	move_and_slide()
 
-	# Rotate toward movement direction
+	# --- Rotation ---
 	if move_direction.length() > 0.01:
 		look_at(global_transform.origin + move_direction, Vector3.UP)
 
@@ -63,7 +82,6 @@ func apply_gravity(delta: float) -> void:
 		velocity.y = 0
 
 func choose_new_target() -> void:
-	# Pick a random wander point
 	speed = 5.0
 	var random_offset = Vector3(
 		randf_range(-move_radius, move_radius),
