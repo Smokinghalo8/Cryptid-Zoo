@@ -1,12 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dw25nh5rukiip"]
+[gd_scene load_steps=8 format=3 uid="uid://dw25nh5rukiip"]
 
 [ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="1_5wlet"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="2_y1od7"]
+[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="3_8n42i"]
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="4_wravw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khj4n"]
+shader = ExtResource("4_wravw")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wravw"]
+shader = ExtResource("3_8n42i")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5wlet"]
 size = Vector3(1, 3.8514404, 14.227173)
 
 [node name="WendigoTestLvl" type="Node3D"]
+
+[node name="VHS Flavor2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_khj4n")
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="VHS Flavor1" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_wravw")
+offset_right = 1933.0
+offset_bottom = 1087.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(7.2000003, 0, 0, 0, 0.14399995, 0, 0, 0, 7.2000003, -11.400293, -0.045457017, -32.658836)
