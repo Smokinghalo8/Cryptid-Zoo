@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://db7mx1hdkaiww"
-path="res://.godot/imported/scene.gltf-65a4fb2c5828c378fe237651a2f21fd2.scn"
+uid="uid://cyxr36e0f37mu"
+valid=false
 
 [deps]
 
 source_file="res://Wendigo Level/assets/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-65a4fb2c5828c378fe237651a2f21fd2.scn"]
 
 [params]
 
@@ -38,5 +37,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=2
+gltf/naming_version=0
 gltf/embedded_image_handling=1

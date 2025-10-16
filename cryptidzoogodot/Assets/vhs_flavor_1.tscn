@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg7dj6dmehiww"]
+
+[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="1_fhrkk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wravw"]
+shader = ExtResource("1_fhrkk")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
+
+[node name="VHS Flavor1" type="ColorRect"]
+material = SubResource("ShaderMaterial_wravw")
+offset_right = 1933.0
+offset_bottom = 1087.0
