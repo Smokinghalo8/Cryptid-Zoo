@@ -1,5 +1,5 @@
 extends CharacterBody3D
-@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
+#@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
 const JUMP_VELOCITY = 7
@@ -41,7 +41,7 @@ func _process(delta):
 	#sensing
 	#Sensing
 	
-	$"../Ui/WednigoHead/SenseBar".value = senseTime
+#	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
 	if senseTime > 0:
 		senseTime -= senseDeplete * delta
