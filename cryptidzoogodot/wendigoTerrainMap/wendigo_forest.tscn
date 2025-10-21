@@ -1,4 +1,4 @@
-[gd_scene load_steps=541 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=542 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="24_ly1ea"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
+[ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8478,8 +8479,11 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31976318, 0.44322664, -0.3873291)
 shape = SubResource("BoxShape3D_qv7kg")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("27_jyr7y")]
+[node name="WendigoMonument" parent="." instance=ExtResource("27_jyr7y")]
 transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194, 4.64374)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("28_uyjqn")]
+transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
