@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://csdotxara00vn"]
+[gd_scene load_steps=3 format=3 uid="uid://csdotxara00vn"]
 
 [ext_resource type="PackedScene" uid="uid://bsynmfrc0mgnn" path="res://wendigoTerrainMap/gardening/plants/tree/scene.gltf" id="1_ymodi"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ymodi"]
+height = 73.282104
+radius = 3.7021484
+
 [node name="Sketchfab_Scene" instance=ExtResource("1_ymodi")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/d2edc94e04b54ebf9edd01c30cc10c99_fbx/RootNode/Plane_037/Plane_037_Tree_tex_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/d2edc94e04b54ebf9edd01c30cc10c99_fbx/RootNode/Plane_037/Plane_037_Tree_tex_0/StaticBody3D" index="0"]
+transform = Transform3D(0.6826156, -0.56201774, -0.4671108, 0.60860676, 0.08337032, 0.78909314, -0.4045302, -0.82293624, 0.3989503, -20.689465, 3.1604943, -29.360678)
+shape = SubResource("CylinderShape3D_ymodi")

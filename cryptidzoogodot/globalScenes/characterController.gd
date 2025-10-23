@@ -1,8 +1,8 @@
 extends CharacterBody3D
-@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
+#@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
 @export var walk = false
@@ -25,6 +25,7 @@ var velocityTolerance = 0.1
 var velocityDifference = 0
 
 
+
 func on_ready():
 	idle = true
 	Global.stamina = maxStamina
@@ -37,13 +38,16 @@ func _input(event: InputEvent):
 
 
 func _process(delta):
+	#sensing
 	#Sensing
-	$"../Ui/WednigoHead/SenseBar".value = senseTime
+	
+#	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
 	if senseTime > 0:
 		senseTime -= senseDeplete * delta
 		senseTime = clamp(senseTime, 0.0, senseTimeMax)
 
+	
 	if Input.is_action_just_pressed("sense") && senseable == true:
 		var children = get_tree().current_scene.get_children()
 		for child in children:
@@ -53,13 +57,15 @@ func _process(delta):
 				$SenseTimer.start(0)
 				senseTime = 5.0
 				$"../Ui/WednigoHead/SenseBar".visible = true
+			
 	
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
 
 	update_animation_parameters()
-
+	
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -70,10 +76,19 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	elif Input.is_action_pressed("glide") and not is_on_floor():
-		velocity += (get_gravity() * 0.5) * delta
+	if velocity.y < 0:
+		# Half gravity strength
+		velocity += get_gravity() * 0.5 * delta
+		# Apply slight downward velocity
 		velocity.y = -1
+		# Reduce speed while falling
 		SPEED = 9
+	else:
+		# Normal gravity when rising or on ground
+		velocity += get_gravity() * delta
+		
+		
+
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

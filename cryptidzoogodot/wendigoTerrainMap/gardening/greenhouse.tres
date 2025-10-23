@@ -53,7 +53,7 @@ metadata/class = "Greenhouse_Plant"
 [sub_resource type="Resource" id="Resource_eupjo"]
 resource_name = "Greenhouse_PlantState"
 script = ExtResource("4_eupjo")
-plant/plant_brush_active = false
+plant/plant_brush_active = true
 plant/plant_label = ""
 plant/plant = SubResource("Resource_0g3kv")
 metadata/class = "Greenhouse_PlantState"
@@ -113,5 +113,5 @@ metadata/class = "Greenhouse_PlantState"
 resource_name = "Greenhouse"
 script = ExtResource("5_4t7u1")
 plant_types/greenhouse_plant_states = [SubResource("Resource_eupjo"), SubResource("Resource_pjqan")]
-plant_types/selected_for_edit_resource = SubResource("Resource_pjqan")
+plant_types/selected_for_edit_resource = SubResource("Resource_eupjo")
 metadata/class = "Greenhouse"

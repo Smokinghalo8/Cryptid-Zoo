@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b238ujaflqfy"]
 
 [ext_resource type="PackedScene" uid="uid://b6w406uv5mfb4" path="res://globalScenes/Map.tscn" id="1_14b2n"]
-[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="2_11cg4"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/zcity.tscn" id="2_11cg4"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_fa3g1"]
 
