@@ -27,4 +27,15 @@ volume_db = -15.0
 autoplay = true
 max_distance = 35.0
 
+[node name="Skybeam" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
+light_color = Color(0, 1, 0.36862746, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 8.0
+spot_range = 1000.0
+spot_attenuation = 0.0
+spot_angle = 10.0
+spot_angle_attenuation = 1.2831112e-05
+
 [connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]
