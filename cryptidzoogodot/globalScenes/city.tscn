@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=86 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -27,7 +27,7 @@
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
 [ext_resource type="Script" uid="uid://b8vqgotq3llua" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
-[ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://globalScenes/scene_transition_animation.tscn" id="16_xmauk"]
+[ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
@@ -54,6 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://dvn11qq3vsu4t" path="res://Assets/SFX/VoiceLines/ZedLines/Notes2.wav" id="48_m4xnq"]
 [ext_resource type="AudioStream" uid="uid://dlh1edeikqmpx" path="res://Assets/SFX/VoiceLines/ZedLines/Notes3.wav" id="49_2rdra"]
 [ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav" id="50_ity0g"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
 [ext_resource type="PackedScene" uid="uid://dtwdk4aqtrng0" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
@@ -83,14 +84,14 @@ radius = 15.3453
 [sub_resource type="SphereShape3D" id="SphereShape3D_mrpgv"]
 radius = 7.97711
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vqk"]
 texture = ExtResource("6_im7ec")
 
 [sub_resource type="Theme" id="Theme_bhqay"]
 default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
 
 [sub_resource type="Animation" id="Animation_lkwtc"]
 length = 0.001
@@ -169,7 +170,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Z:position")
+tracks/6/path = NodePath("ZCity:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -181,7 +182,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Z:rotation")
+tracks/7/path = NodePath("ZCity:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -192,7 +193,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_q1jla"]
-resource_name = "move1"
+resource_name = "move1.0"
 length = 3.2
 step = 0.1
 tracks/0/type = "value"
@@ -275,7 +276,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_dxftt"]
-resource_name = "move2"
+resource_name = "move2.0"
 length = 2.6
 step = 0.1
 tracks/0/type = "value"
@@ -358,7 +359,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_qes4m"]
-resource_name = "move3"
+resource_name = "move3.0"
 length = 3.0
 step = 0.1
 tracks/0/type = "value"
@@ -441,7 +442,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_ihdvq"]
-resource_name = "move4"
+resource_name = "move4.0"
 length = 2.6
 step = 0.1
 tracks/0/type = "value"
@@ -496,7 +497,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_fbxaa"]
-resource_name = "move5"
+resource_name = "move5.0"
 length = 4.0
 step = 0.1
 tracks/0/type = "value"
@@ -527,14 +528,14 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]
 _data = {
 &"RESET": SubResource("Animation_lkwtc"),
-&"move1": SubResource("Animation_q1jla"),
+&"move1.0": SubResource("Animation_q1jla"),
 &"move1.5": SubResource("Animation_4baqa"),
-&"move2": SubResource("Animation_dxftt"),
+&"move2.0": SubResource("Animation_dxftt"),
 &"move2.5": SubResource("Animation_3fkrg"),
-&"move3": SubResource("Animation_qes4m"),
+&"move3.0": SubResource("Animation_qes4m"),
 &"move3.5": SubResource("Animation_k371j"),
-&"move4": SubResource("Animation_ihdvq"),
-&"move5": SubResource("Animation_fbxaa")
+&"move4.0": SubResource("Animation_ihdvq"),
+&"move5.0": SubResource("Animation_fbxaa")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sef1e"]
@@ -630,7 +631,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Z:position")
+tracks/4/path = NodePath("../ZCity:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -642,7 +643,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Z:rotation")
+tracks/5/path = NodePath("../ZCity:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -791,7 +792,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Z:position")
+tracks/2/path = NodePath("../ZCity:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -803,7 +804,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Z:rotation")
+tracks/3/path = NodePath("../ZCity:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -975,7 +976,7 @@ tracks/15/keys = {
 tracks/16/type = "method"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../Z")
+tracks/16/path = NodePath("../ZCity")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -1010,8 +1011,68 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.3711534e-08, 1, 0, -1, -4.3711534e-08, 24.23641, 0.40249062, 82.300674)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yhbei")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(104.55, 0, 0, 0, 0.512695, 0, 0, 0, 168.124, -14.7063, -0.349081, 0)
+mesh = SubResource("BoxMesh_2b0a1")
+
+[node name="FloorBody" type="StaticBody3D" parent="Floor"]
+
+[node name="FloorCol" type="CollisionShape3D" parent="Floor/FloorBody"]
+shape = SubResource("ConcavePolygonShape3D_wffbo")
+
+[node name="ZCity" parent="." instance=ExtResource("1_lwvs2")]
+transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, 232.539, 13.8482, 98.8311)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
+light_energy = 0.399
+shadow_enabled = true
+script = ExtResource("4_gkunu")
+
+[node name="Timer" type="Timer" parent="DirectionalLight3D"]
+autostart = true
+
+[node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
+transform = Transform3D(0.87166595, 0, -0.49009773, 0, 1, 0, 0.49009708, 0, 0.87166715, 242.885, 15.1689, 110.315)
+
+[node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("5_on6dd")
+volume_db = 9.008
+
+[node name="MothmanLine2Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("6_m0i5s")
+
+[node name="MothmanLine3Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("7_w5tj5")
+
+[node name="MothmanLine4Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("8_5sbjd")
+volume_db = 5.732
+
+[node name="MothmanLine5Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("9_6xoik")
+
+[node name="MothmanLine6Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
+stream = ExtResource("10_de3em")
+
+[node name="Big" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Big"]
+shape = SubResource("SphereShape3D_8ojvp")
+
+[node name="Small" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Small"]
+shape = SubResource("SphereShape3D_mrpgv")
+
+[node name="MapExport" parent="." instance=ExtResource("4_o4rnp")]
+transform = Transform3D(29.901, 0, 0, 0, 29.901, 0, 0, 0, 29.901, 0, 0, 68.0977)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="MapExport"]
+transform = Transform3D(0.0335845, 0, 0, 0, -1.46803e-09, 0.0335845, 0, -0.0335845, -1.46803e-09, 0.06, 0.215, 0.475)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
 light_indirect_energy = 0.0
@@ -1291,53 +1352,29 @@ spot_attenuation = 0.0
 [node name="SceneTransitionAnimation2" parent="." instance=ExtResource("16_xmauk")]
 position = Vector2(-38, -26)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yhbei")
+[node name="Note1" parent="." instance=ExtResource("8_hln64")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.9337, 2.60438, 80.7472)
+script = ExtResource("9_ni7w2")
 
-[node name="Z" parent="." instance=ExtResource("1_lwvs2")]
-transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, 232.539, 13.8482, 98.8311)
+[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
+transform = Transform3D(0.47, 0, 0, 0, 0.155051, -0.0243966, 0, -0.692863, -0.00545954, -61.9192, 0.792068, 80.9591)
+script = ExtResource("11_hambk")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
-light_energy = 0.399
-shadow_enabled = true
-script = ExtResource("4_gkunu")
+[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
+transform = Transform3D(0.47, 0, 0, 0, 0.695556, 0.00501712, 0, 0.142486, -0.0244914, 34.7497, 2.23479, 60.1183)
+script = ExtResource("13_uc6et")
 
-[node name="Timer" type="Timer" parent="DirectionalLight3D"]
-autostart = true
+[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 99.3681, 2.2067, 83.0941)
+script = ExtResource("15_eb1mn")
 
-[node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.87166595, 0, -0.49009773, 0, 1, 0, 0.49009708, 0, 0.87166715, 242.885, 15.1689, 110.315)
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-0.190835, -3.84014e-10, -4.75606, -4.10188e-07, 0.108, 0, -4.68812, -9.43385e-09, 0.1936, 112.374, 49.406, 93.4484)
+script = ExtResource("17_thvbw")
 
-[node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("5_on6dd")
-volume_db = 9.008
-
-[node name="MothmanLine2Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("6_m0i5s")
-
-[node name="MothmanLine3Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("7_w5tj5")
-
-[node name="MothmanLine4Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("8_5sbjd")
-volume_db = 5.732
-
-[node name="MothmanLine5Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("9_6xoik")
-
-[node name="MothmanLine6Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("10_de3em")
-
-[node name="Big" type="Area3D" parent="FakeMothman"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Big"]
-shape = SubResource("SphereShape3D_8ojvp")
-
-[node name="Small" type="Area3D" parent="FakeMothman"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Small"]
-shape = SubResource("SphereShape3D_mrpgv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(38.685, 3.76164e-13, 4.69472e-08, -1.45519e-11, 1, 1.05714e-16, -1.19209e-07, -6.94005e-18, 15.235, 1.28149, -512.271, -3.82446)
+shape = SubResource("BoxShape3D_psxoi")
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -1574,29 +1611,8 @@ position = Vector2(1865.44, 36.1875)
 scale = Vector2(0.176459, 0.189987)
 texture = ExtResource("42_wy0bi")
 
-[node name="Note1" parent="." instance=ExtResource("8_hln64")]
-transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -3.2954698, -2.8334773, 82.47452)
-script = ExtResource("9_ni7w2")
-
-[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
-transform = Transform3D(0.469999, -0.0014752969, -1.162535e-05, -5.28082e-10, 0.15505098, -0.024396604, -0.0010007471, -0.6928614, -0.005459526, -24.892103, -3.8948886, 82.44724)
-script = ExtResource("11_hambk")
-
-[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
-transform = Transform3D(0.47, 0, 0, 0, 0.70854896, -0.0015976299, 0, -0.045372963, -0.024948899, 33.876637, -3.3122425, 63.397896)
-script = ExtResource("13_uc6et")
-
-[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
-transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 90.86536, -2.7838843, 83.37887)
-script = ExtResource("15_eb1mn")
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(-0.190835, -3.84014e-10, -4.75606, -4.10188e-07, 0.108, 0, -4.68812, -9.43385e-09, 0.1936, 112.374, 49.406, 93.4484)
-script = ExtResource("17_thvbw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(38.685, 3.76164e-13, 4.69472e-08, -1.45519e-11, 1, 1.05714e-16, -1.19209e-07, -6.94005e-18, 15.235, 1.28149, -512.271, -3.82446)
-shape = SubResource("BoxShape3D_psxoi")
+[node name="Minimap" parent="Ui" instance=ExtResource("54_h81f8")]
+target = NodePath("../../ZCity")
 
 [node name="MothmanAnims" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1697,10 +1713,10 @@ transform = Transform3D(21.535, 0, 0, 0, 21.535, 0, 0, 0, 21.535, 19.073421, -4.
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
+[connection signal="body_entered" from="Area3D" to="ZCity" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
-[connection signal="body_entered" from="Area3D" to="Z" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]

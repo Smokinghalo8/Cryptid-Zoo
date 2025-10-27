@@ -7,8 +7,11 @@ var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var OldMan3 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan3")
 @onready var ChildVoice6 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/ChildVoice6")
 @onready var OldMan5 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan5")
+@onready var skybeam = $Skybeam
 
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	$MothManNoises.play(0)
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat);
@@ -18,6 +21,10 @@ func _ready() -> void:
 	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
 
+func _process(delta: float) -> void:
+	if Global.animNum <= 1.0:
+		$Big.monitoring = false
+		$Small.monitoring = false
 
 func highlight():
 	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, highlightMat);
@@ -26,6 +33,7 @@ func highlight():
 	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, highlightMat);
 	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, highlightMat);
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, highlightMat);
+	skybeam.visible = true
 	$HighlightTimer.start()
 	
 	
@@ -36,10 +44,12 @@ func _on_highlight_timer_timeout() -> void:
 	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
 	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
-	
+	skybeam.visible = false
 	
 func interact():
 	var animName = "move" + str(Global.animNum)
+	print("Trying to interact")
+	print(str(animName))
 	$MothManNoises.stop()
 	self.freeze = true
 	$Big.monitoring = false

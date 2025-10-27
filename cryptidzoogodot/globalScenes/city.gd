@@ -43,7 +43,8 @@ func _process(delta: float) -> void:
 	
 	if functioning == true:
 		for body in $FakeMothman/Big.get_overlapping_bodies():
-			if body.is_in_group("Character") && body.velocity.length() > 9.5 && Global.animNum > 1:
+			if body.is_in_group("Character") && body.velocity.length() > 9.5 && Global.animNum > 1.0:
+			
 				Global.animNum -= 0.5
 				var animName = "move" + str(Global.animNum)
 				$FakeMothman.freeze = true
@@ -63,9 +64,11 @@ func _process(delta: float) -> void:
 					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
 					_dialog.OldMan2()
 					flyBack = false
+				
 			
 		for body in $FakeMothman/Small.get_overlapping_bodies():
-			if body.is_in_group("Character") && body.velocity.length() > 4.5 && Global.animNum > 1:
+			if body.is_in_group("Character") && body.velocity.length() > 4.5 && Global.animNum > 1.0:
+				
 				Global.animNum -= 0.5
 				var animName = "move" + str(Global.animNum)
 				$FakeMothman.freeze = true
@@ -85,7 +88,7 @@ func _process(delta: float) -> void:
 					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
 					_dialog.OldMan2()
 					flyBack = false
-	
+				
 	
 func togglePause():
 	get_tree().paused = true
