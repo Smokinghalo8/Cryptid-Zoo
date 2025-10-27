@@ -1,0 +1,155 @@
+[gd_scene load_steps=32 format=3 uid="uid://bwtkj75x517sg"]
+
+[ext_resource type="PackedScene" uid="uid://cn2g34ovxantd" path="res://Assets/NEW IMPORTS/Floral_Export.fbx" id="1_3lbus"]
+[ext_resource type="Texture2D" uid="uid://b37xhhrl7tj2w" path="res://Assets/Materials/PNG/Wood_lambert1_BaseColor.png" id="2_334aa"]
+[ext_resource type="Texture2D" uid="uid://dk4mfwvl8pv4n" path="res://Assets/Materials/pizzaSign_PizzaSign_BaseMap.png" id="3_lbmw2"]
+[ext_resource type="Texture2D" uid="uid://bw76ymqnu551b" path="res://Assets/Materials/PNG/FireExit_standardSurface1_BaseMap.png" id="4_mjki2"]
+[ext_resource type="Texture2D" uid="uid://ccwuyagbgki0u" path="res://Assets/Materials/PNG/Wooden_Planks_ulyobjsn_4K_BaseColor.png" id="5_gbq5u"]
+[ext_resource type="Texture2D" uid="uid://0xhebp1m75kd" path="res://Assets/Materials/PNG/Red_lambert1_BaseColor.png" id="6_gag53"]
+[ext_resource type="Texture2D" uid="uid://dco44wgulriy6" path="res://Assets/Materials/PNG/Mossy_Stone_Floor_veilfjxn_4K_BaseColor.png" id="7_e3l8o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wc3f"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42237"]
+albedo_texture = ExtResource("3_lbmw2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kreb3"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohks1"]
+albedo_texture = ExtResource("4_mjki2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46tai"]
+albedo_texture = ExtResource("5_gbq5u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqvil"]
+albedo_texture = ExtResource("6_gag53")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvym3"]
+albedo_texture = ExtResource("3_lbmw2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar6in"]
+albedo_texture = ExtResource("4_mjki2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4hds"]
+albedo_texture = ExtResource("6_gag53")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btibu"]
+albedo_texture = ExtResource("3_lbmw2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp0we"]
+albedo_texture = ExtResource("5_gbq5u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1itxw"]
+albedo_texture = ExtResource("6_gag53")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hd5xl"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8aln"]
+albedo_texture = ExtResource("4_mjki2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wefci"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3t3p"]
+albedo_texture = ExtResource("3_lbmw2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i14kj"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sll31"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrs6j"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk5y1"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st7ad"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kthua"]
+albedo_texture = ExtResource("7_e3l8o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exerx"]
+albedo_texture = ExtResource("2_334aa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oybhf"]
+albedo_texture = ExtResource("2_334aa")
+
+[node name="Floral_Export" instance=ExtResource("1_3lbus")]
+
+[node name="birchBlowing5Main" parent="Floral/Tree_Meshes/birchBlowing5MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_6wc3f")
+
+[node name="birchBlowing5Leaf" parent="Floral/Tree_Meshes/birchBlowing5MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_42237")
+
+[node name="birchBlowing6Main" parent="Floral/Tree_Meshes/birchBlowing6MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_kreb3")
+
+[node name="birchBlowing6Leaf" parent="Floral/Tree_Meshes/birchBlowing6MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_ohks1")
+
+[node name="birchBlowing8Main" parent="Floral/Tree_Meshes/birchBlowing8MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_46tai")
+
+[node name="birchBlowing8Leaf" parent="Floral/Tree_Meshes/birchBlowing8MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_qqvil")
+
+[node name="birchBlowing9Leaf" parent="Floral/Tree_Meshes/birchBlowing9MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_uvym3")
+
+[node name="birchBlowing11Leaf" parent="Floral/Tree_Meshes/birchBlowing11MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_ar6in")
+
+[node name="birchBlowing12Leaf" parent="Floral/Tree_Meshes/birchBlowing12MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_o4hds")
+
+[node name="birchBlowing15Leaf" parent="Floral/Tree_Meshes/birchBlowing15MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_btibu")
+
+[node name="birchBlowing7Main" parent="Floral/Tree_Meshes/birchBlowing7MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_jp0we")
+
+[node name="birchBlowing7Leaf" parent="Floral/Tree_Meshes/birchBlowing7MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_1itxw")
+
+[node name="birchBlowing3Main" parent="Floral/Tree_Meshes/birchBlowing3MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_hd5xl")
+
+[node name="birchBlowing3Leaf" parent="Floral/Tree_Meshes/birchBlowing3MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_w8aln")
+
+[node name="birchBlowing4Main" parent="Floral/Tree_Meshes/birchBlowing4MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_wefci")
+
+[node name="birchBlowing4Leaf" parent="Floral/Tree_Meshes/birchBlowing4MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_n3t3p")
+
+[node name="birchDead1Main" parent="Floral/Tree_Meshes" index="13"]
+material_override = SubResource("StandardMaterial3D_i14kj")
+
+[node name="sumacLight5Leaf" parent="Floral/Flowers_Grass/sumacLight5MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_sll31")
+
+[node name="sumacLight4Leaf" parent="Floral/Flowers_Grass/sumacLight4MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_xrs6j")
+
+[node name="sumacLight2Leaf" parent="Floral/Flowers_Grass/sumacLight2MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_fk5y1")
+
+[node name="sumacLight7Leaf" parent="Floral/Flowers_Grass/sumacLight7MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_st7ad")
+
+[node name="sumacLight1Leaf" parent="Floral/Flowers_Grass/sumacLight1MeshGroup" index="1"]
+material_override = SubResource("StandardMaterial3D_kthua")
+
+[node name="riceSummer8Main" parent="Floral/Flowers_Grass/riceSummer8MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_exerx")
+
+[node name="riceSummer2Main" parent="Floral/Flowers_Grass/riceSummer2MeshGroup" index="0"]
+material_override = SubResource("StandardMaterial3D_oybhf")
