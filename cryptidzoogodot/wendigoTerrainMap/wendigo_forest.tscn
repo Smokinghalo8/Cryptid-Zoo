@@ -1,4 +1,4 @@
-[gd_scene load_steps=542 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=543 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -8393,6 +8393,9 @@ Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
 size = Vector3(4.3125, 1, 4.09906)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
+size = Vector3(1, 3.8514404, 14.227173)
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
 
@@ -8430,7 +8433,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." instance=ExtResource("13_pdyqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.81577, 0.9589385, 140.18398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.81577, 1.5213865, 140.18398)
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -8605,26 +8608,26 @@ transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194
 [node name="SpookyHouse" parent="." instance=ExtResource("28_uyjqn")]
 transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
 
-[node name="Trap2" type="Area3D" parent="."]
+[node name="Trap2" type="Area3D" parent="." groups=["Traps"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.923874, 0, -85.57547)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trap2"]
 transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.44195175, 0, 5.532364)
 shape = SubResource("BoxShape3D_uyjqn")
 
-[node name="Trap3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.14609, 0, 183.57042)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trap3"]
-transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.44195175, 0, 5.532364)
-shape = SubResource("BoxShape3D_uyjqn")
-
-[node name="Trap4" type="Area3D" parent="."]
+[node name="Trap4" type="Area3D" parent="." groups=["Traps"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.30559, 0, 0.26810837)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trap4"]
 transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.44195175, 0, 5.532364)
 shape = SubResource("BoxShape3D_uyjqn")
+
+[node name="TrapArea" type="Area3D" parent="." groups=["Traps"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.80731, 0, 148.0461)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrapArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2993774, 1.7017345, 0.08818054)
+shape = SubResource("BoxShape3D_75rbe")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
