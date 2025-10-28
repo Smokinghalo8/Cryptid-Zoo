@@ -1,4 +1,4 @@
-[gd_scene load_steps=543 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=548 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
+[ext_resource type="Shader" uid="uid://c25a0gs3hj0v4" path="res://wendigoTerrainMap/waterWend.gdshader" id="29_75rbe"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8396,6 +8397,35 @@ size = Vector3(4.3125, 1, 4.09906)
 [sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
 size = Vector3(28.590729, 3.8514404, 31.241913)
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_75rbe"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbknu"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
+noise = SubResource("FastNoiseLite_kbknu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cx7th"]
+render_priority = 0
+shader = ExtResource("29_75rbe")
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 0.05
+shader_parameter/spin = 0.05
+shader_parameter/brightness = 0.4
+shader_parameter/color_intensity = 1.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_6jnv6")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_75rbe")
+shader_parameter/wave_height = 0.5
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
 
@@ -8628,6 +8658,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.081894, 0, 189.0618)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrapArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5565643, 1.7017345, 0.051330566)
 shape = SubResource("BoxShape3D_75rbe")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.720703, -1.796875, 9.780876)
+size = Vector3(479.87445, 1, 519.14923)
+material = SubResource("ShaderMaterial_cx7th")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.74072, -2.0799103, 13.078148)
+operation = 2
+size = Vector3(54.424805, 8.931641, 72.69493)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
