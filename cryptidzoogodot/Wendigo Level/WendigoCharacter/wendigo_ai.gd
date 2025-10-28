@@ -7,8 +7,8 @@ enum State {
 	TRAPPED
 }
 
-@export var speed_idle: float = 5.0
-@export var speed_chase: float = 4.0
+@export var speed_idle: float = 5.4
+@export var speed_chase: float = 5.0
 @export var move_radius: float = 10.0
 @export var wait_time: float = 2.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")

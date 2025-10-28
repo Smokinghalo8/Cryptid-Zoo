@@ -8394,7 +8394,7 @@ Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 size = Vector3(4.3125, 1, 4.09906)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
-size = Vector3(1, 3.8514404, 14.227173)
+size = Vector3(28.590729, 3.8514404, 31.241913)
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8623,10 +8623,10 @@ transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.441
 shape = SubResource("BoxShape3D_uyjqn")
 
 [node name="TrapArea" type="Area3D" parent="." groups=["Traps"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.80731, 0, 148.0461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.081894, 0, 189.0618)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrapArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2993774, 1.7017345, 0.08818054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5565643, 1.7017345, 0.051330566)
 shape = SubResource("BoxShape3D_75rbe")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
