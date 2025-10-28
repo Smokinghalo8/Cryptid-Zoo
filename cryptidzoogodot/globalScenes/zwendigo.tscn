@@ -207,6 +207,7 @@ script = ExtResource("2_b2725")
 
 [node name="Loooky" type="RayCast3D" parent="Head"]
 transform = Transform3D(2, 0, 0, 0, -1.46959e-07, -2, 0, 3.36204, -8.74228e-08, 0, 0.016004, 0)
+collide_with_areas = true
 script = ExtResource("3_2eyi2")
 
 [node name="FlashLight" type="SpotLight3D" parent="Head"]

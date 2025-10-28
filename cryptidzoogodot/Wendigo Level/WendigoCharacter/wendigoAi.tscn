@@ -53,4 +53,5 @@ target_position = Vector3(0, -4, 0)
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
 [connection signal="area_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_area_entered"]
+[connection signal="body_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_body_entered"]
 [connection signal="timeout" from="TrappedTimer" to="." method="_on_trapped_timer_timeout"]
