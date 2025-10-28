@@ -21,12 +21,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var move_direction = Vector3.ZERO
 
+	# --- Targeting ---
 	if chasing_player and is_instance_valid(chasing_player):
-		# Move toward player
 		speed = 2
 		target_position = chasing_player.global_transform.origin
 	else:
-		# Wander randomly if not chasing
+		speed = 5.0
 		if waiting:
 			stop_and_apply_gravity(delta)
 			return
@@ -40,28 +40,24 @@ func _physics_process(delta: float) -> void:
 			choose_new_target()
 			return
 
-	move_direction = (target_position - global_transform.origin)
-	move_direction.y = 0
-	move_direction = move_direction.normalized()
+	move_direction = (target_position - global_transform.origin).normalized()
 
-	# --- Tree Avoidance ---
+	# --- Raycast avoidance ---
 	var avoid_direction = Vector3.ZERO
 	if ray_front.is_colliding():
-		avoid_direction += ray_front.get_collision_normal() * 1.0
+		avoid_direction += ray_front.get_collision_normal()
 	if ray_left.is_colliding():
 		avoid_direction += ray_left.get_collision_normal() * 0.7
 	if ray_right.is_colliding():
 		avoid_direction += ray_right.get_collision_normal() * 0.7
 
 	if avoid_direction != Vector3.ZERO:
-		# Blend move direction with avoidance
-		move_direction += avoid_direction.normalized() * 0.8
-		move_direction = move_direction.normalized()
+		# Blend avoidance gently with movement to prevent spazzing
+		move_direction = (move_direction + avoid_direction.normalized() * 0.5).normalized()
 
 	# --- Movement ---
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
-
 	apply_gravity(delta)
 	move_and_slide()
 
@@ -82,7 +78,6 @@ func apply_gravity(delta: float) -> void:
 		velocity.y = 0
 
 func choose_new_target() -> void:
-	speed = 5.0
 	var random_offset = Vector3(
 		randf_range(-move_radius, move_radius),
 		0,
