@@ -1,9 +1,9 @@
-[gd_scene load_steps=543 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=546 format=3 uid="uid://n0kjj88rjuor"]
 
-[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
+[ext_resource type="Script" uid="uid://jr758b7mswc4" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
-[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Script" uid="uid://din4ijkbxdti4" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
@@ -26,8 +26,10 @@
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
 [ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="24_ly1ea"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
+[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8396,6 +8398,25 @@ size = Vector3(4.3125, 1, 4.09906)
 [sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
 size = Vector3(28.590729, 3.8514404, 31.241913)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jnv6"]
+render_priority = 0
+shader = ExtResource("30_kbknu")
+shader_parameter/time_speed = 1.0
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_height = 0.5
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
 
@@ -8417,7 +8438,6 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
-metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.79227, 2.6597104, 159.74236)
@@ -8433,7 +8453,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." instance=ExtResource("13_pdyqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.81577, 1.5213865, 140.18398)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.77142, 1.4291719, 140.22809)
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -8590,6 +8610,8 @@ position = Vector2(1865.44, 36.1875)
 scale = Vector2(0.176459, 0.189987)
 texture = ExtResource("24_ly1ea")
 
+[node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60851187, -0.29503116, -0.7366614, 0.7935448, 0.22623797, 0.56489205, 0, -0.9283173, 0.3717889, 30.718777, 184.16792, 52.7026)
 light_color = Color(0.7970531, 0.80071235, 0.7617716, 1)
@@ -8628,6 +8650,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.081894, 0, 189.0618)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TrapArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5565643, 1.7017345, 0.051330566)
 shape = SubResource("BoxShape3D_75rbe")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
+use_collision = true
+size = Vector3(479.72803, 0.001, 543.9746)
+material = SubResource("ShaderMaterial_6jnv6")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
