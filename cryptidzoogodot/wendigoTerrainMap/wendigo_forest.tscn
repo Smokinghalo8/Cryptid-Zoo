@@ -1,4 +1,4 @@
-[gd_scene load_steps=546 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=554 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://jr758b7mswc4" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8398,24 +8400,50 @@ size = Vector3(4.3125, 1, 4.09906)
 [sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
 size = Vector3(28.590729, 3.8514404, 31.241913)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbknu"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
+noise = SubResource("FastNoiseLite_kbknu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cx7th"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ly1ea"]
+noise = SubResource("FastNoiseLite_cx7th")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6jnv6"]
 render_priority = 0
 shader = ExtResource("30_kbknu")
-shader_parameter/time_speed = 1.0
-shader_parameter/surface_speed = 1.0
-shader_parameter/spin = 0.0
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 0.5
+shader_parameter/spin = 0.02
 shader_parameter/brightness = 0.6
 shader_parameter/color_intensity = 0.0
 shader_parameter/horizontal_frequency = 2.0
 shader_parameter/vertical_frequency = 2.0
 shader_parameter/size = 3.0
 shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_ly1ea")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6jnv6")
 shader_parameter/wave_height = 0.5
 shader_parameter/texture_height = 0.5
 shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
 shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
-shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
-shader_parameter/color4 = Color(0, 0.267, 1, 1)
+shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
+shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4prm"]
+shader = ExtResource("31_cx7th")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4f0m8"]
+shader = ExtResource("32_ly1ea")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8611,6 +8639,7 @@ scale = Vector2(0.176459, 0.189987)
 texture = ExtResource("24_ly1ea")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
+target = NodePath("../../ZWendigo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60851187, -0.29503116, -0.7366614, 0.7935448, 0.22623797, 0.56489205, 0, -0.9283173, 0.3717889, 30.718777, 184.16792, 52.7026)
@@ -8651,11 +8680,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.081894, 0, 189.0618)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5565643, 1.7017345, 0.051330566)
 shape = SubResource("BoxShape3D_75rbe")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 use_collision = true
 size = Vector3(479.72803, 0.001, 543.9746)
 material = SubResource("ShaderMaterial_6jnv6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.46182, -0.620275, -3.515686)
+operation = 2
+size = Vector3(38.391296, 7.063965, 25.122437)
+
+[node name="VHS Flavor2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_k4prm")
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="VHS Flavor1" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_4f0m8")
+offset_right = 1933.0
+offset_bottom = 1087.0
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

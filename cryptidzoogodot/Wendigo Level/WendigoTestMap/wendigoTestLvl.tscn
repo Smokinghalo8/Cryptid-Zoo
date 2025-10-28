@@ -30,7 +30,6 @@ offset_right = 1926.0
 offset_bottom = 1087.0
 
 [node name="VHS Flavor1" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_wravw")
 offset_right = 1933.0
 offset_bottom = 1087.0
