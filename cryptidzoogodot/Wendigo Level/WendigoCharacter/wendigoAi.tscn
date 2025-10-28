@@ -6,13 +6,15 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynmkr"]
 size = Vector3(1.8828735, 4.4009705, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_it7xg"]
-radius = 7.2339554
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_it7xg"]
+radius = 5.6748047
+height = 16.815918
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_it7xg"]
-size = Vector3(1.5144348, 3.9454346, 1.0610352)
+size = Vector3(3.3654861, 4.938751, 1.9460449)
 
 [node name="WendigoAi" type="CharacterBody3D"]
+axis_lock_linear_y = true
 script = ExtResource("1_ynmkr")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
@@ -22,12 +24,13 @@ shape = SubResource("BoxShape3D_ynmkr")
 [node name="PlayerDetectionArea" type="Area3D" parent="."]
 
 [node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="PlayerDetectionArea"]
-shape = SubResource("SphereShape3D_it7xg")
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.676922, -5.1926045)
+shape = SubResource("CapsuleShape3D_it7xg")
 
 [node name="TrapDetectionArea" type="Area3D" parent="."]
 
 [node name="TrapDetectionCollision" type="CollisionShape3D" parent="TrapDetectionArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036392212, 0.90509033, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01731491, 1.1620636, -0.44250488)
 shape = SubResource("BoxShape3D_it7xg")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_it7xg")]
@@ -37,15 +40,17 @@ transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, 
 
 [node name="RayFront" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.008586941, -0.9999631, 0, 0.9999631, -0.008586941, 0, 1.3063146, -0.5836346)
-target_position = Vector3(0, -2, 0)
+target_position = Vector3(0, -4, 0)
 
 [node name="RayLeft" type="RayCast3D" parent="."]
 transform = Transform3D(0.94618136, 0.32359216, -0.0053714854, -2.9094968e-11, -0.016597267, -0.99986225, -0.32363674, 0.9460511, -0.015704026, -0.8551293, 1.2884771, 0)
-target_position = Vector3(0, -1.5, 0)
+target_position = Vector3(0, -4, 0)
 
 [node name="RayRight" type="RayCast3D" parent="."]
 transform = Transform3D(0.0077867354, -0.5336315, 0.84568125, 0.99989367, 0.014590418, 6.793721e-10, -0.012338842, 0.84559125, 0.5336882, 0.78029346, 1.2703322, 0)
-target_position = Vector3(0, -1.5, 0)
+target_position = Vector3(0, -4, 0)
 
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
 [connection signal="area_entered" from="TrapDetectionArea" to="." method="_on_trap_detection_area_area_entered"]
 [connection signal="timeout" from="TrappedTimer" to="." method="_on_trapped_timer_timeout"]

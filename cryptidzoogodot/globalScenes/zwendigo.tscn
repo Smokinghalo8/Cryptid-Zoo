@@ -1,8 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://x3pdcme5x3sw"]
+[gd_scene load_steps=32 format=3 uid="uid://x3pdcme5x3sw"]
 
 [ext_resource type="Script" uid="uid://dh6vt4sf3yd5k" path="res://globalScenes/zwendigocontroller.gd" id="1_dm8ox"]
-[ext_resource type="Script" path="res://globalScenes/ControllerCamera.gd" id="2_b2725"]
-[ext_resource type="Script" path="res://globalScenes/ray_cast_3d.gd" id="3_2eyi2"]
+[ext_resource type="Script" uid="uid://6qdlcyk8jlel" path="res://globalScenes/ControllerCamera.gd" id="2_b2725"]
+[ext_resource type="Script" uid="uid://b3b22gjxryt33" path="res://globalScenes/ray_cast_3d.gd" id="3_2eyi2"]
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="4_42k18"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
@@ -167,6 +167,15 @@ _data = {
 &"Walk": SubResource("Animation_ri5ux")
 }
 
+[sub_resource type="Environment" id="Environment_dm8ox"]
+background_mode = 1
+background_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+fog_enabled = true
+fog_light_color = Color(0.2412132, 0.26495063, 0.3018848, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.27752772, 0.27752772, 0.27752772, 1)
+volumetric_fog_emission = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
 radius = 0.333572
 height = 2.01153
@@ -193,6 +202,7 @@ libraries = {
 
 [node name="Head" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+environment = SubResource("Environment_dm8ox")
 script = ExtResource("2_b2725")
 
 [node name="Loooky" type="RayCast3D" parent="Head"]

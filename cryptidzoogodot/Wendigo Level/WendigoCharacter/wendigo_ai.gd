@@ -1,88 +1,124 @@
 extends CharacterBody3D
 
-@export var speed: float = 5.0
+enum State {
+	IDLE,
+	WAIT,
+	CHASE,
+	TRAPPED
+}
+
+@export var speed_idle: float = 5.4
+@export var speed_chase: float = 5.0
 @export var move_radius: float = 10.0
-@export var wait_time: float = 1.0
+@export var wait_time: float = 2.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var state: State = State.IDLE
 var target_position: Vector3
-var waiting: bool = false
 var chasing_player: Node3D = null
+var ignored_traps := {} # Keep track of traps to ignore
+var current_trap: Area3D = null
 
 @onready var ray_front: RayCast3D = $RayFront
 @onready var ray_left: RayCast3D = $RayLeft
 @onready var ray_right: RayCast3D = $RayRight
+@onready var player_detection_area: Area3D = $PlayerDetectionArea
+@onready var trap_detection_area: Area3D = $TrapDetectionArea
 
 func _ready() -> void:
-	$PlayerDetectionArea.body_entered.connect(_on_body_entered)
-	$PlayerDetectionArea.body_exited.connect(_on_body_exited)
+	# Player detection
+	player_detection_area.body_entered.connect(_on_body_entered)
+	player_detection_area.body_exited.connect(_on_body_exited)
+
+	# Trap detection
+	trap_detection_area.area_entered.connect(_on_trap_area_entered)
+	trap_detection_area.area_exited.connect(_on_trap_area_exited)
+
 	choose_new_target()
 
 func _physics_process(delta: float) -> void:
-	var move_direction = Vector3.ZERO
-
-	if chasing_player and is_instance_valid(chasing_player):
-		# Move toward player
-		speed = 2
-		target_position = chasing_player.global_transform.origin
-	else:
-		# Wander randomly if not chasing
-		if waiting:
+	match state:
+		State.IDLE:
+			_process_idle(delta)
+		State.WAIT:
 			stop_and_apply_gravity(delta)
-			return
+		State.CHASE:
+			_process_chase(delta)
+		State.TRAPPED:
+			stop_and_apply_gravity(delta)
 
-		var direction = target_position - global_transform.origin
-		direction.y = 0
-		if direction.length() < 0.1:
-			waiting = true
-			await get_tree().create_timer(wait_time).timeout
-			waiting = false
+# --- IDLE wandering ---
+func _process_idle(delta: float) -> void:
+	var move_direction = _calculate_move_direction(target_position)
+	_move_character(move_direction, speed_idle, delta)
+
+	if (global_transform.origin - target_position).length() < 0.1:
+		state = State.WAIT
+		var t = Timer.new()
+		t.wait_time = wait_time
+		t.one_shot = true
+		add_child(t)
+		t.start()
+		t.timeout.connect(func():
 			choose_new_target()
-			return
+			state = State.IDLE
+			t.queue_free()
+		)
 
-	move_direction = (target_position - global_transform.origin)
+# --- Chase player ---
+func _process_chase(delta: float) -> void:
+	if chasing_player and is_instance_valid(chasing_player):
+		target_position = chasing_player.global_transform.origin
+		var move_direction = _calculate_move_direction(target_position)
+		_move_character(move_direction, speed_chase, delta)
+	else:
+		state = State.IDLE
+		speed_idle = 5.0 
+		choose_new_target()
+
+# --- Calculate move direction with raycast avoidance ---
+func _calculate_move_direction(target: Vector3) -> Vector3:
+	var move_direction = (target - global_transform.origin)
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
 
-	# --- Tree Avoidance ---
+	# Raycast avoidance
 	var avoid_direction = Vector3.ZERO
 	if ray_front.is_colliding():
-		avoid_direction += ray_front.get_collision_normal() * 1.0
+		avoid_direction += ray_front.get_collision_normal()
 	if ray_left.is_colliding():
 		avoid_direction += ray_left.get_collision_normal() * 0.7
 	if ray_right.is_colliding():
 		avoid_direction += ray_right.get_collision_normal() * 0.7
 
 	if avoid_direction != Vector3.ZERO:
-		# Blend move direction with avoidance
-		move_direction += avoid_direction.normalized() * 0.8
-		move_direction = move_direction.normalized()
+		move_direction = (move_direction + avoid_direction.normalized() * 0.5).normalized()
 
-	# --- Movement ---
-	velocity.x = move_direction.x * speed
-	velocity.z = move_direction.z * speed
+	return move_direction
 
-	apply_gravity(delta)
+# --- Move character helper ---
+func _move_character(direction: Vector3, move_speed: float, delta: float) -> void:
+	velocity.x = direction.x * move_speed
+	velocity.z = direction.z * move_speed
+	_apply_gravity(delta)
 	move_and_slide()
 
-	# --- Rotation ---
-	if move_direction.length() > 0.01:
-		look_at(global_transform.origin + move_direction, Vector3.UP)
+	if direction.length() > 0.01:
+		look_at(global_transform.origin + direction, Vector3.UP)
 
 func stop_and_apply_gravity(delta: float) -> void:
 	velocity.x = 0
 	velocity.z = 0
-	apply_gravity(delta)
+	_apply_gravity(delta)
 	move_and_slide()
 
-func apply_gravity(delta: float) -> void:
+func _apply_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
 
 func choose_new_target() -> void:
-	speed = 5.0
 	var random_offset = Vector3(
 		randf_range(-move_radius, move_radius),
 		0,
@@ -90,21 +126,43 @@ func choose_new_target() -> void:
 	)
 	target_position = global_transform.origin + random_offset
 
-func caught_in_trap() -> void:
+# --- Trap logic ---
+func caught_in_trap(trap: Area3D) -> void:
+	if trap in ignored_traps:
+		return # Already triggered this trap, ignore it
+
 	print("Caught in trap!")
-	speed = 0
+	state = State.TRAPPED
+	speed_idle = 0
+	current_trap = trap
 	$TrappedTimer.start(4)
 
+# --- Player detection ---
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Character"):
 		chasing_player = body
-	elif body.is_in_group("Traps"):
-		caught_in_trap()
+		state = State.CHASE
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:
 		chasing_player = null
+		state = State.IDLE
+		speed_idle = 5.0
 		choose_new_target()
 
+# --- Trap detection ---
+func _on_trap_area_entered(area: Area3D) -> void:
+	if area.is_in_group("Traps"):
+		caught_in_trap(area)
+
+func _on_trap_area_exited(area: Area3D) -> void:
+	pass
+
 func _on_trapped_timer_timeout() -> void:
+	if current_trap:
+		ignored_traps[current_trap] = true
+		current_trap = null
+
+	state = State.IDLE
+	speed_idle = 5.0
 	choose_new_target()
