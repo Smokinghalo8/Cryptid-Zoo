@@ -15,7 +15,7 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 5.55
 
-[node name="Trap2" type="Area3D" groups=["Traps"]]
+[node name="Trap2" type="Area3D"]
 script = ExtResource("1_q6m2y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

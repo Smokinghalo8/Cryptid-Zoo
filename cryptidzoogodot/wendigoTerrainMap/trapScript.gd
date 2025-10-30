@@ -6,6 +6,9 @@ extends Area3D
 
 func interact():
 	if interactable == true:
+		self.add_to_group("Traps")
 		$Glow.visible = false
 		$BearTrap.visible = true
 		interactable = false
+		if self.is_in_group("Traps"):
+			print("Yay!")
