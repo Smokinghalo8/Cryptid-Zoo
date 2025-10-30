@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2smdak6wypwq"]
 
-[ext_resource type="Script" uid="uid://ba35u5n7nhmq" path="res://minimap.gd" id="1_yfyr0"]
+[ext_resource type="Script" path="res://minimap.gd" id="1_yfyr0"]
 
 [node name="Minimap" type="ColorRect"]
 custom_minimum_size = Vector2(300, 300)
@@ -25,7 +25,7 @@ size = Vector2i(300, 300)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 80.383644, 0)
 projection = 1
 current = true
-size = 20.0
+size = 40.0

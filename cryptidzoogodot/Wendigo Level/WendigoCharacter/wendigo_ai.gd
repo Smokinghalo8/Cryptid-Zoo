@@ -166,3 +166,8 @@ func _on_trapped_timer_timeout() -> void:
 	state = State.IDLE
 	speed_idle = 5.0
 	choose_new_target()
+
+
+func _on_trap_detection_area_body_entered(body: Node3D) -> void:
+	if is_in_group("Character"):
+		get_tree().quit()

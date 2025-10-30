@@ -1,9 +1,9 @@
-[gd_scene load_steps=554 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=558 format=3 uid="uid://n0kjj88rjuor"]
 
-[ext_resource type="Script" uid="uid://jr758b7mswc4" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
-[ext_resource type="Script" uid="uid://din4ijkbxdti4" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
@@ -30,7 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
+[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
@@ -8394,12 +8395,6 @@ texture = ExtResource("17_qv7kg")
 default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
-size = Vector3(4.3125, 1, 4.09906)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_75rbe"]
-size = Vector3(28.590729, 3.8514404, 31.241913)
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kbknu"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
@@ -8426,7 +8421,7 @@ shader_parameter/wave_texture = SubResource("NoiseTexture2D_ly1ea")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_6jnv6")
 shader_parameter/wave_height = 0.5
 shader_parameter/texture_height = 0.5
-shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color1 = Color(0.075589366, 0.6360646, 0.85156786, 1)
 shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
 shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
 shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
@@ -8444,6 +8439,20 @@ shader_parameter/fog_density = 0.5
 shader_parameter/fog_speed = 0.3
 shader_parameter/noise_scale = 4.0
 shader_parameter/fog_opacity = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_k4prm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f0m8"]
+albedo_color = Color(0.35815123, 0.23556736, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ly1ea"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k4prm"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4f0m8"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8659,26 +8668,17 @@ transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194
 [node name="SpookyHouse" parent="." instance=ExtResource("28_uyjqn")]
 transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
 
-[node name="Trap2" type="Area3D" parent="." groups=["Traps"]]
+[node name="Trap2" parent="." instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.923874, 0, -85.57547)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trap2"]
-transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.44195175, 0, 5.532364)
-shape = SubResource("BoxShape3D_uyjqn")
+[node name="Trap3" parent="." instance=ExtResource("30_ly1ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265923, 0, 32.696922)
 
-[node name="Trap4" type="Area3D" parent="." groups=["Traps"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.30559, 0, 0.26810837)
+[node name="Trap5" parent="." instance=ExtResource("30_ly1ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0, 128.76978)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trap4"]
-transform = Transform3D(3.9698112, 0, 0, 0, 3.758603, 0, 0, 0, 3.5703483, -0.44195175, 0, 5.532364)
-shape = SubResource("BoxShape3D_uyjqn")
-
-[node name="TrapArea" type="Area3D" parent="." groups=["Traps"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.081894, 0, 189.0618)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TrapArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5565643, 1.7017345, 0.051330566)
-shape = SubResource("BoxShape3D_75rbe")
+[node name="Trap4" parent="." instance=ExtResource("30_ly1ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.566376, 0, 184.41438)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
@@ -8704,6 +8704,38 @@ visible = false
 material = SubResource("ShaderMaterial_4f0m8")
 offset_right = 1933.0
 offset_bottom = 1087.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.003918, -2.773592, 19.061462)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ly1ea")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(42.854134, 0, -21.51986, 0, 1, 0, 52.975243, 0, 17.40841, 144.3017, -2.773592, -121.9897)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k4prm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(-45.445766, 0, -20.623806, 0, 1, 0, 50.769436, 0, -18.461195, 138.75087, -2.773592, 110.71564)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4f0m8")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
