@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://bfhkwdyxi414f" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed_brush.gd" id="1_cht77"]
 [ext_resource type="Script" uid="uid://y06d0rwxy11x" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed.gd" id="2_thd25"]
 
-[sub_resource type="Resource" id="Resource_3b6ky"]
+[sub_resource type="Resource" id="Resource_vpsp4"]
 resource_name = "Toolshed_Brush"
 script = ExtResource("1_cht77")
-behavior/behavior_brush_type = 1
-shape/shape_volume_size = 10.0
-shape/shape_projection_size = 100.0
+behavior/behavior_brush_type = 0
+shape/shape_volume_size = 20.0
+shape/shape_projection_size = 1.0
 behavior/behavior_strength = 1.0
 behavior/behavior_passthrough = false
 behavior/behavior_overlap_mode = 0
@@ -18,12 +18,12 @@ behavior/behavior_selection_collision_mask = 1
 behavior/behavior_enable_selection_preprocess = true
 metadata/class = "Toolshed_Brush"
 
-[sub_resource type="Resource" id="Resource_vpsp4"]
+[sub_resource type="Resource" id="Resource_3b6ky"]
 resource_name = "Toolshed_Brush"
 script = ExtResource("1_cht77")
-behavior/behavior_brush_type = 0
+behavior/behavior_brush_type = 1
 shape/shape_volume_size = 10.0
-shape/shape_projection_size = 1.0
+shape/shape_projection_size = 100.0
 behavior/behavior_strength = 1.0
 behavior/behavior_passthrough = false
 behavior/behavior_overlap_mode = 0
@@ -82,5 +82,5 @@ metadata/class = "Toolshed_Brush"
 resource_name = "Toolshed"
 script = ExtResource("2_thd25")
 brush/brushes = [SubResource("Resource_vpsp4"), SubResource("Resource_3b6ky"), SubResource("Resource_goaak"), SubResource("Resource_r4l3l"), SubResource("Resource_nitoq")]
-brush/active_brush = SubResource("Resource_3b6ky")
+brush/active_brush = SubResource("Resource_vpsp4")
 metadata/class = "Toolshed"
