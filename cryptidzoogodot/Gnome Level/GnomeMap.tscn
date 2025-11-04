@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn4o0c5geiix0"]
+
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
+[ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="4_c327s"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="5_x0pif"]
+
+[sub_resource type="Resource" id="Resource_mrlcg"]
+script = ExtResource("3_0qtbb")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="Resource" id="Resource_gbm7p"]
+resource_local_to_scene = true
+script = ExtResource("5_x0pif")
+octree_managers = []
+metadata/class = "Arborist"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_qqwwe")
+map_scale = Vector3(0.5, 0.5, 0.5)
+_terrain_data = ExtResource("2_1bsc7")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_mrlcg")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("4_c327s")
+file_management/garden_work_directory = "res://Gnome Level/GnomeGardenerMap/"
+gardening/gardening_collision_mask = 1.0
+arborist = SubResource("Resource_gbm7p")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+metadata/class = "Gardener"
