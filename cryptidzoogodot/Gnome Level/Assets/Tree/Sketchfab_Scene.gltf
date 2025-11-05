@@ -1,0 +1,305 @@
+{
+  "asset": {
+    "extras": {
+      "author": "Wersaus33 (https://sketchfab.com/wersaus33)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/pine-tree-ps1-low-poly-d71ceeb303644e649d09fe8038aa5e47",
+      "title": "Pine Tree - PS1 Low Poly"
+    },
+    "generator": "Sketchfab-15.10.0",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Sketchfab_Scene.bin",
+      "byteLength": 101200
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 65280,
+      "byteStride": 24,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 65280,
+      "byteLength": 21760,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 87040,
+      "byteLength": 14160,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 2720,
+      "min": [
+        -0.7603352069854736,
+        -0.9855625629425049,
+        -0.7729556560516357
+      ],
+      "max": [
+        0.9990322589874268,
+        0.9582374691963196,
+        0.997310996055603
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 2720,
+      "min": [
+        -57.531856536865234,
+        -18.2111759185791,
+        -69.11398315429688
+      ],
+      "max": [
+        2.9724082946777344,
+        25.87409782409668,
+        -0.047149658203125
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 2720,
+      "min": [
+        0.043312303721904755,
+        0.011762885376811028
+      ],
+      "max": [
+        1.005744218826294,
+        0.9956037402153015
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "normalized": false,
+      "count": 3540,
+      "min": [
+        0
+      ],
+      "max": [
+        2719
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        4
+      ],
+      "name": "Sketchfab_Scene"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Plane.037_Tree_tex_0",
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      },
+      "mesh": 0
+    },
+    {
+      "name": "Plane.037",
+      "children": [
+        0
+      ],
+      "matrix": [
+        13.658467292785645,
+        10.2451810836792,
+        -0.39276012778282166,
+        0,
+        0.7789740562438965,
+        -1.7212913036346436,
+        -17.81072235107422,
+        0,
+        -9.54079818725586,
+        12.656523704528809,
+        -1.640450119972229,
+        0,
+        -8.31047248840332,
+        1175.9144287109375,
+        -3.400423288345337,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "RootNode",
+      "children": [
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "d2edc94e04b54ebf9edd01c30cc10c99.fbx",
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0,
+        0,
+        0,
+        0,
+        3.42285422227917e-10,
+        0.009999999776482582,
+        0,
+        0,
+        -0.009999999776482582,
+        3.42285422227917e-10,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Sketchfab_model",
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3.422854177870249e-8,
+        -0.9999999403953552,
+        0,
+        0,
+        0.9999999403953552,
+        3.422854177870249e-8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "material": 0,
+          "mode": 4,
+          "attributes": {
+            "NORMAL": 0,
+            "POSITION": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Tree_tex",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1,
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        }
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "MASK",
+      "doubleSided": true,
+      "alphaCutoff": 0.4860967195328595,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 0,
+          "specularColorFactor": [
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "name": "base.png",
+      "source": 0
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "images": [
+    {
+      "uri": "base.png",
+      "mimeType": "image/png",
+      "name": "base.png"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_node_visibility",
+    "KHR_materials_specular"
+  ]
+}
