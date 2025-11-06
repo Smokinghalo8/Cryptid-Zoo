@@ -13,12 +13,13 @@ func _ready() -> void:
 	scaryNoiseFirstTime = false
 	$MothmanAnims.play("RESET")
 	Global.stamina = 100
+	$Ui/PlushControl.visible = false
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
 	_dialog.OldMan1()
 	scaryNoiseFirstTime = true
 	cutScene = true
-	$Ui/PlushControl.visible = false
+	
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

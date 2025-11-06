@@ -56,7 +56,7 @@
 [ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav" id="50_ity0g"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
-[ext_resource type="PackedScene" uid="uid://dsedc4jb5f22a" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+[ext_resource type="PackedScene" uid="uid://cybn378xfcb0i" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -75,8 +75,6 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
@@ -809,7 +807,7 @@ tracks/3/path = NodePath("../FakeMothman:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(16.5, 17, 17.6),
+"times": PackedFloat32Array(16.5, 17, 17.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(242.885, 15.1689, 110.315), Vector3(242.2172, 26.81754, 108.27228), Vector3(215.00174, 15.974937, 100.93258)]
@@ -821,10 +819,10 @@ tracks/4/path = NodePath("../FakeMothman:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(11.5, 12.6, 16.5, 17, 17.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(11.5, 12.6, 16.5, 17, 17.6, 17.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -0.512202, 0), Vector3(0, 2.5345454, 0), Vector3(0, 2.5345454, 0), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(-0.029193852, 1.3355826, -0.029458944)]
+"values": [Vector3(0, -0.512202, 0), Vector3(0, 2.5345454, 0), Vector3(0, 2.5345454, 0), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(-0.029193852, 1.3355826, -0.029458944)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1252,7 +1250,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.87166625, 0, -0.49009782, 0, 1, 0, 0.49009722, 0, 0.87166727, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.8716662, 0, -0.4900978, 0, 1, 0, 0.4900972, 0, 0.8716672, 242.885, 15.1689, 110.315)
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
 stream = ExtResource("5_on6dd")
@@ -1526,6 +1524,7 @@ offset_top = 2.0
 offset_right = 1929.0
 offset_bottom = 302.0
 target = NodePath("../../Z")
+camera_distance = 40
 
 [node name="Note1" parent="." instance=ExtResource("8_hln64")]
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -3.2954698, -2.8334773, 82.47452)
@@ -1620,7 +1619,7 @@ shape = SubResource("BoxShape3D_c5nfs")
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-0.12952, 0, -0.9915768, 0, 1, 0, 0.9915768, 0, -0.12952, 204.24544, 15.9163, 95.9888)
+transform = Transform3D(-0.12951997, 0, -0.99157655, 0, 1, 0, 0.99157655, 0, -0.12951997, 204.24544, 15.9163, 95.9888)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]
@@ -1653,6 +1652,6 @@ transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.36398315, 1.3343601, 68.
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
-[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
+[connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
