@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dulcdkfied8gv"]
+[gd_scene load_steps=6 format=3 uid="uid://b3fxc24r8xoiq"]
 
-[ext_resource type="PackedScene" uid="uid://iuxt5ou6enrk" path="res://Wendigo Level/assets/bear_trap.tscn" id="1_7dike"]
-[ext_resource type="Script" uid="uid://cgp1pxtvo0rmc" path="res://wendigoTerrainMap/trapScript.gd" id="1_q6m2y"]
+[ext_resource type="PackedScene" uid="uid://b67wfjyfb04hd" path="res://Wendigo Level/assets/bear_trap.tscn" id="1_7dike"]
+[ext_resource type="Script" path="res://wendigoTerrainMap/trapScript.gd" id="1_q6m2y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
 size = Vector3(16.036255, 1, 19.074142)
@@ -9,6 +9,7 @@ size = Vector3(16.036255, 1, 19.074142)
 [sub_resource type="BoxMesh" id="BoxMesh_q6m2y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pufgm"]
+transparency = 1
 albedo_color = Color(1, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
