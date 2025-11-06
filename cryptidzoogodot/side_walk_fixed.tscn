@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://71uqlbp8lpa6"]
+[gd_scene load_steps=5 format=3 uid="uid://2s83a2qlx385"]
 
 [ext_resource type="PackedScene" uid="uid://bexsrf0p8srfs" path="res://Assets/NEW IMPORTS/SideWalk_Fixed.fbx" id="1_us8o0"]
 [ext_resource type="Texture2D" uid="uid://djntfvwxbfn3e" path="res://Assets/Materials/PNG/Worn_Pavement_uddhdb1fw_4K_BaseColor.png" id="2_4t6il"]

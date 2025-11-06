@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=84 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -54,8 +54,9 @@
 [ext_resource type="AudioStream" uid="uid://dvn11qq3vsu4t" path="res://Assets/SFX/VoiceLines/ZedLines/Notes2.wav" id="48_m4xnq"]
 [ext_resource type="AudioStream" uid="uid://dlh1edeikqmpx" path="res://Assets/SFX/VoiceLines/ZedLines/Notes3.wav" id="49_2rdra"]
 [ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav" id="50_ity0g"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
-[ext_resource type="PackedScene" uid="uid://b0ipsejpi0dwn" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+[ext_resource type="PackedScene" uid="uid://dsedc4jb5f22a" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -74,6 +75,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
@@ -90,6 +92,7 @@ default_font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+size = Vector3(1, 1, 1.3632813)
 
 [sub_resource type="Animation" id="Animation_lkwtc"]
 length = 0.001
@@ -168,26 +171,26 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ZCity:position")
+tracks/6/path = NodePath("Z:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-73.3096, 1.01508, 57.0241)]
+"values": [Vector3(-64.366035, 2.0135589, 60.401386)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("ZCity:rotation")
+tracks/7/path = NodePath("Z:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -1.64794, 0)]
+"values": [Vector3(0, -1.5680863, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_q1jla"]
@@ -543,10 +546,10 @@ size = Vector3(7.05283, 1, 4.45117)
 size = Vector3(1, 7.85345, 14.4135)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8elgs"]
-size = Vector3(266.588, 79.3418, 161.053)
+size = Vector3(250.52069, 79.3418, 161.053)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5nfs"]
-size = Vector3(80.5369, 37.9178, 90.9608)
+size = Vector3(72.26191, 37.9178, 91.22259)
 
 [sub_resource type="Animation" id="Animation_hpaky"]
 resource_name = "FadeIn"
@@ -605,55 +608,55 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CutSceneCam:position")
+tracks/2/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(236.619, 18.7942, 105.608)]
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CutSceneCam:rotation")
+tracks/3/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.589049, -1.5708, 4.08844e-08)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../ZCity:position")
+tracks/4/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(232.539, 13.8482, 98.8311)]
+"update": 1,
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../ZCity:rotation")
+tracks/5/path = NodePath("../FakeMothman:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -2.16827, 0)]
+"values": [Vector3(0, -0.512202, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
+tracks/6/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -665,7 +668,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
+tracks/7/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -677,86 +680,86 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
+tracks/8/path = NodePath("../FakeMothman:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(242.885, 15.1689, 110.315)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../FakeMothman:rotation")
+tracks/9/path = NodePath("../Ui/WednigoHead:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.512202, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
+tracks/10/path = NodePath("../Ui/PlushControl:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
+tracks/11/path = NodePath("../Z:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, -2.16827, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../FakeMothman:position")
+tracks/12/path = NodePath("../Z:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(242.885, 15.1689, 110.315)]
+"values": [Vector3(207.68576, 14.458996, 95.436325)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Ui/WednigoHead:visible")
+tracks/13/path = NodePath("CutSceneCam:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(204.24544, 15.9163, 95.9888)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../Ui/PlushControl:visible")
+tracks/14/path = NodePath("CutSceneCam:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(0, -1.7006812, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qehwl"]
@@ -766,71 +769,71 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CutSceneCam:position")
+tracks/0/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 13.7, 14.5, 16.8, 17.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(229.482, 15.9163, 95.9888), Vector3(236.619, 18.7942, 105.608), Vector3(236.619, 18.7942, 105.608), Vector3(239.138, 16.8534, 104.303), Vector3(239.138, 16.8534, 104.303), Vector3(240.294, 16.8534, 104.778)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CutSceneCam:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 13.7, 14.5, 16.8, 17.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -2.77076, 0), Vector3(-0.589049, -1.5708, 4.08844e-08), Vector3(-0.589049, -1.5708, 4.08844e-08), Vector3(-0.153624, -2.52401, 0), Vector3(-0.153624, -2.52401, 0), Vector3(-0.153624, -2.52401, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../ZCity:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.8, 2, 13.7, 14.5, 16.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(231.152, 13.8482, 98.4005), Vector3(234.439, 14.3199, 101.546), Vector3(235.229, 14.744, 101.546), Vector3(236.946, 15.3944, 101.546), Vector3(241.294, 15.3944, 103.445), Vector3(241.294, 15.3944, 104.409), Vector3(241.294, 15.3944, 104.409), Vector3(241.294, 15.3944, 106.073), Vector3(241.294, 15.3944, 106.073)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../ZCity:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.4, 1.8, 2, 13.7, 14.5, 16.8, 17.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -2.16827, 0), Vector3(0, -1.97926, 0), Vector3(0, -2.09548, 0), Vector3(0, -2.3518, 0), Vector3(0, -2.67697, 0), Vector3(0, -2.61326, 0), Vector3(0, -2.61326, 0), Vector3(0, -2.7567, 0), Vector3(0, -2.7567, 0), Vector3(0, -2.65351, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(3.9),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FakeMothman:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(16.5, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(242.885, 15.1689, 110.315), Vector3(242.2172, 26.81754, 108.27228), Vector3(215.00174, 15.974937, 100.93258)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FakeMothman:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(11.5, 12.6, 16.5, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.512202, 0), Vector3(0, 2.5345454, 0), Vector3(0, 2.5345454, 0), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(-0.029193852, 1.3355826, -0.029458944)]
+}
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
+tracks/5/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(12.8),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -838,11 +841,11 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
+tracks/6/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(7.4),
+"times": PackedFloat32Array(14.6),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -850,94 +853,46 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../FakeMothman:position")
+tracks/7/path = NodePath("../Ui/CutSceneRect:color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(16.5, 17.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(242.885, 15.1689, 110.315), Vector3(241.679, 15.1689, 106.626)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../FakeMothman:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(11.5, 12.6, 16.5, 17.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.512202, 0), Vector3(0, 2.37874, 0), Vector3(0, 2.37874, 0), Vector3(0, 2.20147, 0)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(12.8),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(14.6),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../Ui/CutSceneRect:color")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(17.4, 18.9),
+"times": PackedFloat32Array(16.8, 19.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../Ui/CutSceneRect:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Ui/CutSceneRect:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(17.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../Ui/WednigoHead:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Ui/WednigoHead:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/14/type = "method"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../FakeMothman")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../FakeMothman")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -945,13 +900,13 @@ tracks/14/keys = {
 "method": &"killMothmanNoises"
 }]
 }
-tracks/15/type = "method"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../Ui/Dialog")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Ui/Dialog")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(2, 3.9, 7.4, 12.8, 14.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
@@ -971,13 +926,49 @@ tracks/15/keys = {
 "method": &"Zed9"
 }]
 }
-tracks/16/type = "method"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("../ZCity")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Ui/PlushControl:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Z:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6, 18.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(207.31267, 14.233891, 97.38749), Vector3(210.65337, 15.145884, 97.30941), Vector3(212.67784, 15.733356, 95.77419), Vector3(213.63474, 16.403835, 96.11554), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.33828), Vector3(215.0343, 16.767204, 99.89257)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../Z:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5319057, 0), Vector3(0, -1.0667976, 0), Vector3(0, -1.391655, 0), Vector3(0, -1.9336928, 0), Vector3(0, -2.0489244, 0), Vector3(0, -2.0489244, 0), Vector3(0, 2.727291, 0)]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Z")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -985,17 +976,29 @@ tracks/16/keys = {
 "method": &"disableLooker"
 }]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CutSceneCam:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(204.24544, 15.9163, 95.9888), Vector3(208.154, 15.9163, 95.9888), Vector3(210.77441, 15.9163, 93.79872), Vector3(215.65707, 17.92923, 94.68064), Vector3(215.65707, 17.92923, 94.68064), Vector3(216.03511, 17.249203, 96.203415)]
+}
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../Ui/PlushControl:visible")
+tracks/17/path = NodePath("CutSceneCam:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.7006812, 0), Vector3(0, -1.4534553, 0), Vector3(0, -1.8236572, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.894818, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lpc8"]
@@ -1009,7 +1012,10 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -7.6293945e-06, 2.3841858e-07, 1.4305115e-06)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 24.23641, 5.479577, 109.271255)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1020,7 +1026,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D3" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D3" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.246804, 5.2912145, 27.967388)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1031,7 +1037,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D4" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D4" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.155872, 5.2965713, 28.104246)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1042,7 +1048,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D5" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D5" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.331163, 5.2965713, 27.609188)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1053,7 +1059,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D25" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D25" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.06, 5.2920866, 25.020885)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1064,7 +1070,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D26" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D26" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.246804, 5.2912145, 25.636545)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1075,7 +1081,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D27" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D27" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.155872, 5.2965713, 25.791595)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1086,7 +1092,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D28" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D28" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.331163, 5.2965713, 25.196806)
 light_color = Color(1, 1, 0.72549, 1)
 light_energy = 10.514
@@ -1097,7 +1103,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D6" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D6" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.4194, 5.2008934, 27.43295)
 light_energy = 5.943
 light_indirect_energy = 0.0
@@ -1107,7 +1113,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D7" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D7" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.54196, 5.2008934, 27.43295)
 light_energy = 5.943
 light_indirect_energy = 0.0
@@ -1117,7 +1123,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D8" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D8" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.66757, 5.2008934, 27.43295)
 light_energy = 5.943
 light_indirect_energy = 0.0
@@ -1127,7 +1133,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D10" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D10" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.40665, 5.7890697, 28.903784)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1137,7 +1143,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D16" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D16" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.801524, 5.7890697, 28.903784)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1147,7 +1153,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D18" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D18" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.60775, 5.7890697, 28.903784)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1157,7 +1163,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D19" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D19" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.61637, 5.7890697, 29.358957)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1167,8 +1173,8 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D24" type="SpotLight3D" parent="."]
-transform = Transform3D(0.7559217, -1.0668999e-08, 0.654662, -0.654662, -2.8616185e-08, 0.7559217, 1.0669002e-08, -1, -2.8616183e-08, -0.124041, 6.0906963, 29.122194)
+[node name="MapExport#SpotLight3D24" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.7559217, -1.0668999e-08, 0.654662, -0.654662, -2.8616185e-08, 0.7559217, 1.0669002e-08, -1, -2.8616185e-08, -0.124041, 6.0906963, 29.122194)
 light_energy = 0.1
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.1
@@ -1177,7 +1183,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D21" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D21" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.41556, 5.7890697, 29.358957)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1187,7 +1193,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D22" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D22" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.818219, 5.7890697, 29.358957)
 light_energy = 0.1
 light_indirect_energy = 0.0
@@ -1197,7 +1203,7 @@ light_specular = 1.628
 spot_range = 22.479
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D9" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D9" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.7805, 5.2008934, 27.43295)
 light_energy = 5.943
 light_indirect_energy = 0.0
@@ -1207,7 +1213,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D11" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D11" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.2661446, 0.96393317, 0, -0.96393317, 0.2661446, -1.3284, 5.8143554, 25.814615)
 light_energy = 1.159
 light_indirect_energy = 0.0
@@ -1217,7 +1223,7 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SpotLight3D12" type="SpotLight3D" parent="."]
+[node name="MapExport#SpotLight3D12" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 0.2661446, 0.96393317, 0, -0.96393317, 0.2661446, -1.61556, 5.8143554, 25.814615)
 light_energy = 1.819
 light_indirect_energy = 0.0
@@ -1227,14 +1233,14 @@ light_specular = 1.628
 spot_range = 17.724
 spot_attenuation = 0.0
 
-[node name="MapExport#SceneTransitionAnimation2" parent="." instance=ExtResource("16_xmauk")]
-position = Vector2(-38, -26)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yhbei")
 
+[node name="MapExport#SceneTransitionAnimation2" parent="." instance=ExtResource("16_xmauk")]
+position = Vector2(-38, -26)
+
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
-transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, -64.59611, 2.0264359, 61.13539)
+transform = Transform3D(-0.45004395, 0, -0.66140664, 0, 0.8, 0, 0.66140664, 0, -0.45004395, 207.68576, 14.458996, 95.436325)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
@@ -1246,7 +1252,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.87166595, 0, -0.4900977, 0, 1, 0, 0.4900971, 0, 0.8716671, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.87166625, 0, -0.49009782, 0, 1, 0, 0.49009722, 0, 0.87166727, 242.885, 15.1689, 110.315)
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
 stream = ExtResource("5_on6dd")
@@ -1480,10 +1486,10 @@ volume_db = -15.0
 
 [node name="intText" type="Label" parent="Ui"]
 visible = false
-offset_left = 720.0
-offset_top = 808.0
-offset_right = 1139.0
-offset_bottom = 875.0
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
 theme_override_font_sizes/font_size = 48
 text = "Press E to interact"
 
@@ -1500,18 +1506,26 @@ offset_bottom = 40.0
 
 [node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
 layout_mode = 0
-offset_left = 1713.0
-offset_right = 1806.0
-offset_bottom = 73.0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
 theme_override_fonts/font = ExtResource("41_s1lhy")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 152
 text = "0/5"
 script = ExtResource("42_ejm3s")
 
 [node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
-position = Vector2(1865.44, 36.1875)
-scale = Vector2(0.176459, 0.189987)
+position = Vector2(1024, 165.40625)
+scale = Vector2(0.44570318, 0.45308372)
 texture = ExtResource("42_wy0bi")
+
+[node name="Minimap" parent="Ui" instance=ExtResource("54_h81f8")]
+offset_left = 1629.0
+offset_top = 2.0
+offset_right = 1929.0
+offset_bottom = 302.0
+target = NodePath("../../Z")
 
 [node name="Note1" parent="." instance=ExtResource("8_hln64")]
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -3.2954698, -2.8334773, 82.47452)
@@ -1529,12 +1543,12 @@ script = ExtResource("13_uc6et")
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 90.86536, -2.7838843, 83.37887)
 script = ExtResource("15_eb1mn")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Water" type="Area3D" parent="."]
 transform = Transform3D(-4.6920023, 0, 0, 0, -0.108, 0, 0, 0, -4.759999, 112.374, 49.406, 93.4484)
 script = ExtResource("17_thvbw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-1.6909755e-06, 0, 15.235006, 0, 1, 0, -38.685028, 0, -6.659434e-07, -0.49606895, 511.5413, 2.4255486)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(-1.6909755e-06, 0, 15.235006, 0, 1, 0, -38.68539, 0, -6.659495e-07, 0.24782181, 511.5413, 2.4255486)
 shape = SubResource("BoxShape3D_psxoi")
 
 [node name="MothmanAnims" type="AnimationPlayer" parent="."]
@@ -1593,20 +1607,20 @@ parameters/looping = true
 [node name="CityLimits" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CityLimits"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8653, 39.1709, 80.0267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.831638, 39.1709, 80.0267)
 shape = SubResource("BoxShape3D_8elgs")
 
 [node name="Mountain" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267.814, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9377, 16.5492, 76.2252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.723236, 16.5492, 76.0943)
 shape = SubResource("BoxShape3D_c5nfs")
 
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-3.597276e-06, 0.55557096, -0.83147, 3.399413e-08, 0.83147, 0.55557096, 1, 1.970277e-06, -3.0099131e-06, 236.619, 18.7942, 105.608)
+transform = Transform3D(-0.12952, 0, -0.9915768, 0, 1, 0, 0.9915768, 0, -0.12952, 204.24544, 15.9163, 95.9888)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]
@@ -1639,6 +1653,6 @@ transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.36398315, 1.3343601, 68.
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
