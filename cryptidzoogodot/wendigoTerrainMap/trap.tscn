@@ -1,26 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3fxc24r8xoiq"]
+[gd_scene load_steps=9 format=3 uid="uid://b3fxc24r8xoiq"]
 
-[ext_resource type="PackedScene" uid="uid://b67wfjyfb04hd" path="res://Wendigo Level/assets/bear_trap.tscn" id="1_7dike"]
-[ext_resource type="Script" path="res://wendigoTerrainMap/trapScript.gd" id="1_q6m2y"]
+[ext_resource type="PackedScene" uid="uid://iuxt5ou6enrk" path="res://Wendigo Level/assets/bear_trap.tscn" id="1_7dike"]
+[ext_resource type="Script" uid="uid://cgp1pxtvo0rmc" path="res://wendigoTerrainMap/trapScript.gd" id="1_q6m2y"]
+[ext_resource type="BoxMesh" uid="uid://bygmc1hj5e82p" path="res://wendigoTerrainMap/trap.tres" id="3_pufgm"]
+[ext_resource type="Script" uid="uid://cko3aj0xae5l1" path="res://wendigoTerrainMap/TrapWireframe.gd" id="4_347sx"]
+[ext_resource type="Shader" uid="uid://b38xjamhpcyae" path="res://wendigoTerrainMap/trap.gdshader" id="4_prstt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
 size = Vector3(16.036255, 1, 19.074142)
 
-[sub_resource type="BoxMesh" id="BoxMesh_q6m2y"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pufgm"]
 transparency = 1
-albedo_color = Color(1, 0, 0, 1)
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.015686275)
 metallic = 1.0
-emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 5.55
+grow = true
+grow_amount = 0.01
+stencil_flags = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uc00"]
+render_priority = 0
+shader = ExtResource("4_prstt")
+shader_parameter/edge_color = Color(1, 0, 0, 1)
+shader_parameter/glow_strength = 3.0
 
 [node name="Trap2" type="Area3D"]
 script = ExtResource("1_q6m2y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8065796, 0, 7.487541)
+visible = false
 shape = SubResource("BoxShape3D_uyjqn")
 
 [node name="BearTrap" parent="." instance=ExtResource("1_7dike")]
@@ -29,8 +40,12 @@ visible = false
 
 [node name="Glow" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.333988, 0, 0, 0, 1.066489, 0, 0, 0, 3.0293255, 0, 0, 8)
-mesh = SubResource("BoxMesh_q6m2y")
+mesh = ExtResource("3_pufgm")
 skeleton = NodePath("../BearTrap")
 surface_material_override/0 = SubResource("StandardMaterial3D_pufgm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Glow"]
+material_override = SubResource("ShaderMaterial_4uc00")
+script = ExtResource("4_347sx")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
