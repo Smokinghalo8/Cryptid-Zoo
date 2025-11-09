@@ -4,7 +4,7 @@ Old Man: For this mission, I've granted you the power of the Wendigo. So, if you
 => END
 
 ~ MothmanScared
-Old Man: Yes, be carful. You may want to sneak up on him by crouching as to not scare him. [next=auto]
+Old Man: Yes, be careful. You may want to sneak up on him by crouching as to not scare him. [next=auto]
 => END
 
 ~ Warehouse
