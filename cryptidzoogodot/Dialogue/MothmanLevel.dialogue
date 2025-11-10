@@ -1,6 +1,6 @@
 ~ OldmanStart
-Old Man: Mothman is somewhere in this small town. Our job is to try and catch it.[next=auto]
-Old Man: For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision.[next=auto]
+Old Man: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan1.wav, next=auto]Mothman is somewhere in this small town. Our job is to try and catch it. [#voice=uid://dxbpqnsxjwuwc]
+Old Man: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2.wav, next=auto]For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision. [#voice=uid://byhryppvct3o1]
 => END
 
 ~ MothmanScared

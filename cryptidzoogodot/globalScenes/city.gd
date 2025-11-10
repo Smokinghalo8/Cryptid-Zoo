@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var dialogue_resource: DialogueResource
 @onready var _dialog : Control = $Ui/Dialog
 @export var customSpeed = -1.0
 @export var functioning = true
@@ -15,7 +16,9 @@ func _ready() -> void:
 	Global.stamina = 100
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
-	_dialog.OldMan1()
+	#_dialog.OldMan1()
+	if dialogue_resource:
+		DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart")
 	scaryNoiseFirstTime = true
 	cutScene = true
 	
