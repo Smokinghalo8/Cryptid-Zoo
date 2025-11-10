@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Resource" uid="uid://dt5bc67gpcaxd" path="res://Dialogue/MothmanLevel.dialogue" id="2_4uavd"]
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="4_gkunu"]
