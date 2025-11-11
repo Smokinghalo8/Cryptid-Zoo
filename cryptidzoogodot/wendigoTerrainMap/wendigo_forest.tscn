@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
-[ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
+[ext_resource type="Resource" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
@@ -30,8 +30,12 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+=======
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+>>>>>>> Stashed changes
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]

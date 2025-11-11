@@ -1,7 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=8 format=3 uid="uid://dbali5u4o76qd"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://dbali5u4o76qd"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://x18ufc40uwp2" path="res://Wendigo Level/WendigoCharacter/wendigo_ai.gd" id="1_ynmkr"]
 [ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="2_it7xg"]
+[ext_resource type="PackedScene" uid="uid://pogpcgapwma4" path="res://sketchfab_scene.tscn" id="3_l0g73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynmkr"]
 size = Vector3(1.8828735, 4.4009705, 1)
@@ -47,6 +52,7 @@ shape = SubResource("BoxShape3D_it7xg")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_it7xg")]
 transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, -1.0410366, 0)
+visible = false
 
 [node name="TrappedTimer" type="Timer" parent="."]
 
@@ -62,10 +68,15 @@ target_position = Vector3(0, -4, 0)
 transform = Transform3D(0.0077867354, -0.5336315, 0.84568125, 0.99989367, 0.014590418, 6.793721e-10, -0.012338842, 0.84559125, 0.5336882, 0.78029346, 1.2703322, 0)
 target_position = Vector3(0, -4, 0)
 
+<<<<<<< Updated upstream
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.64, 0, 0, 0, 1.4587774, 0, 0, 0, 0.64, 0, 1.2855656, 0.09390521)
 mesh = SubResource("SphereMesh_it7xg")
 surface_material_override/0 = SubResource("StandardMaterial3D_l0g73")
+=======
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_l0g73")]
+transform = Transform3D(-0.02, 0, 1.7484555e-09, 0, 0.02, 0, -1.7484555e-09, 0, -0.02, 0, -1.041, 0)
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
