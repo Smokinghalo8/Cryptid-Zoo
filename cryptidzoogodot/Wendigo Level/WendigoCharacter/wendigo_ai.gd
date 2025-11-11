@@ -155,6 +155,7 @@ func _on_trap_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Traps"):
 		caught_in_trap(area)
 
+
 func _on_trap_area_exited(area: Area3D) -> void:
 	pass
 
@@ -170,4 +171,5 @@ func _on_trapped_timer_timeout() -> void:
 
 func _on_trap_detection_area_body_entered(body: Node3D) -> void:
 	if is_in_group("Character"):
-		get_tree().quit()
+		self.body.disabled()
+		print("GOTYOU")
