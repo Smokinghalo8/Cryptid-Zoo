@@ -7,12 +7,11 @@ extends CanvasLayer
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
+## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 ## The dialogue resource
 var resource: DialogueResource
-
-var audio_cache: Dictionary = {}
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -55,7 +54,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
-## Indicator to show that player can progress dialogue
+## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
 
@@ -70,8 +69,10 @@ func _ready() -> void:
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
 
-func _process(_delta: float) -> void:
+
+func _process(delta: float) -> void:
 	progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
+
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
@@ -100,6 +101,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
 
+	progress.hide()
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
@@ -118,29 +120,15 @@ func apply_dialogue_line() -> void:
 	will_hide_balloon = false
 
 	dialogue_label.show()
-	
-	
 	if not dialogue_line.text.is_empty():
 		dialogue_label.type_out()
-	
-	if dialogue_line.has_tag("voice"):
-		var voice_path = dialogue_line.get_tag_value("voice")
-		if voice_path != "":
-			var audio_stream: AudioStream
-			if voice_path in audio_cache:
-				audio_stream = audio_cache[voice_path]
-			else:
-				audio_stream = load(voice_path)
-				audio_cache[voice_path] = audio_stream
-			
-			audio_stream_player.stream = audio_stream
-			audio_stream_player.play()
-			await audio_stream_player.finished
-	
-	await get_tree().create_timer(0.5).timeout
+		await dialogue_label.finished_typing
 
-	# Wait for input
-	if dialogue_line.next_id != "" and dialogue_line.next_id != "END":
+	# Wait for next line
+	if dialogue_line.has_tag("voice"):
+		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
+		audio_stream_player.play()
+		await audio_stream_player.finished
 		next(dialogue_line.next_id)
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
@@ -170,9 +158,10 @@ func _on_mutation_cooldown_timeout() -> void:
 
 
 func _on_mutated(_mutation: Dictionary) -> void:
-	is_waiting_for_input = false
-	will_hide_balloon = true
-	mutation_cooldown.start(0.1)
+	if not _mutation.is_inline:
+		is_waiting_for_input = false
+		will_hide_balloon = true
+		mutation_cooldown.start(0.1)
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
