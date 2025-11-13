@@ -19,7 +19,7 @@ textures = [[ExtResource("4_x0pif")], [ExtResource("5_mrlcg")]]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("7_gbm7p")
-member_placeforms = [[Vector3(218.3829, 0, 203.28407), Vector3(0, 1, 0), Transform3D(0.7466744, 0, -0.6651897, 0, 1, 0, 0.6651897, 0, 0.7466744, 218.3829, 0, 203.28407), 7]]
+member_placeforms = [[Vector3(218.3829, 0, 203.28407), Vector3(0, 1, 0), Transform3D(0.7466744, 0, -0.6651897, 0, 1, 0, 0.6651897, 0, 0.7466744, 218.3829, 0, 203.28407), 7], [Vector3(85.63007, 9.536743e-07, 114.41574), Vector3(0, 1, 0), Transform3D(-9.958387, 0, 0.9113308, 0, 10, 0, -0.9113308, 0, -9.958387, 85.63007, 9.536743e-07, 114.41574), 2]]
 max_members = 75
 min_leaf_extent = 1.0
 octant = -1
@@ -74,6 +74,7 @@ extent = 1.0
 bounds = AABB(-1, -1, -1, 2, 2, 2)
 max_bounds_to_center_dist = 1.7320508075688772
 min_bounds_to_center_dist = 1.0
+active_LOD_index = 0
 metadata/class = "MMIOctreeNode"
 
 [sub_resource type="Resource" id="Resource_jlxtx"]
