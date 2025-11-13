@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bepdhpq4n8kxf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c16uf"]
+transparency = 1
+albedo_color = Color(0.50980395, 1, 1, 0.7176471)
+metallic = 1.0
+roughness = 0.13
+
+[node name="marble" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.8958673, 0, 0, 0, 1, 0, 0, 0)
+material = SubResource("StandardMaterial3D_c16uf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCombiner3D/CSGSphere3D"]
+skeleton = NodePath("../../..")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5302126, 0)
+operation = 2
+size = Vector3(1, 0.9727783, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCombiner3D/CSGBox3D"]
