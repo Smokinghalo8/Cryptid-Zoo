@@ -13,6 +13,8 @@ extends CanvasLayer
 ## The dialogue resource
 var resource: DialogueResource
 
+var audio_cache: Dictionary = {}
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -70,7 +72,7 @@ func _ready() -> void:
 	add_child(mutation_cooldown)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
 
 
@@ -118,17 +120,29 @@ func apply_dialogue_line() -> void:
 	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
-
 	dialogue_label.show()
+	
 	if not dialogue_line.text.is_empty():
 		dialogue_label.type_out()
-		await dialogue_label.finished_typing
 
 	# Wait for next line
 	if dialogue_line.has_tag("voice"):
-		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
-		audio_stream_player.play()
-		await audio_stream_player.finished
+		var voice_path = dialogue_line.get_tag_value("voice")
+		if voice_path != "":
+			var audio_stream: AudioStream
+			if voice_path in audio_cache:
+				audio_stream = audio_cache[voice_path]
+			else:
+				audio_stream = load(voice_path)
+				audio_cache[voice_path] = audio_stream
+			
+			audio_stream_player.stream = audio_stream
+			audio_stream_player.play()
+			await audio_stream_player.finished
+	
+	await get_tree().create_timer(0.5).timeout
+
+	if dialogue_line.next_id != "" and dialogue_line.next_id != "END":
 		next(dialogue_line.next_id)
 	elif dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE

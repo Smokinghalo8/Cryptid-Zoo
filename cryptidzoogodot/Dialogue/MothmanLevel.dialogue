@@ -1,92 +1,101 @@
  ~ OldmanStart
-Old Man: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan1.wav, next=auto] Mothman is somewhere in this small town. Our job is to try and catch it. [#voice=uid://dxbpqnsxjwuwc]
-Old Man: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2.wav, next=auto] For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision. [#voice=uid://byhryppvct3o1]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan1.wav, next=auto] Mothman is somewhere in this small town. Our job is to try and catch it.[#voice=uid://dxbpqnsxjwuwc]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2.wav, next=auto] For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision. [#voice=uid://byhryppvct3o1]
 => END
 
 ~ MothmanScared
-Old Man: Yes, be careful. You may want to sneak up on him by crouching as to not scare him.
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2Real.wav, next=auto] Yes, be careful. You may want to sneak up on him by crouching as to not scare him. [#voice=uid://fs7oqr0j8iyc]
 => END
 
 ~ Warehouse
-Old Man: I think I saw him fly to the warehouse near the parking lot. Try checking there.
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan3.wav, next=auto] I think I saw him fly to the warehouse near the parking lot. Try checking there. [#voice=uid://bxkrkb1evwcj]
 => END
 
 ~ Docile
-Old Man: Don't worry. Mothman is a docile creature. He won't try to harm you.
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan4.wav, next=auto] Don't worry. Mothman is a docile creature. He won't try to harm you. [#voice=uid://ucujl00f56e8]
 => END
 
 ~ Understand
-Old Man: Because he doesn't understand that we're trying to help him, Zed. He thinks we're just like the rest of the people in this town. [next=auto]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan5.wav, next=auto] Because he doesn't understand that we're trying to help him, Zed. He thinks we're just like the rest of the people in this town. [#voice=uid://jm7clhoh7t42]
 => END
 
 ~ Bridge
-Old Man: I think he just flew over the bridge out of town. Towards the mountains! Quickly, give chase before he gets away! [next=auto]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan6.wav, next=auto] I think he just flew over the bridge out of town. Towards the mountains! Quickly, give chase before he gets away! [#voice=uid://c0t0d51ctbv75]
 => END
 
 ~ GoAway
-Mothman: [shake rate=20 level=10]Please... Go away...[/shake][next=auto]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine1Trimmed.wav, next=auto] [shake rate=20 level=10]Please... Go away...[/shake][#voice=uid://burjgjoc8r4u5]
 => END
 
 ~ NotSafe
-Mothman: [shake rate=20 level=10]It's not safe here[/shake][next=auto]
+[color=#7ece73]Mothman[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine2Trimmed.wav, next=auto] [shake rate=20 level=10]It's not safe here..[/shake][#voice=uid://wh6lkv8piiab]
 => END
 
 ~ Catch
-Mothman: [shake rate=20 level=10]Don't try to catch me[/shake][next=auto]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine3Trimmed.wav, next=auto] [shake rate=20 level=10]Don't try to catch me..[/shake][#voice=uid://cfvue372xracr]
+=> END
+
+~ Nowhere
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine4Trimmed.wav, next=auto] [shake rate=20 level=10]Nowhere is safe..[/shake][#voice=uid://doldorcousc7v]
 => END
 
 ~ People
-Mothman: [shake rate=20 level=10]The people here... they try to hunt me[/shake][next=auto]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine5Trimmed.wav, next=auto] [shake rate=20 level=10]The people here... they try to hunt me..[/shake][#voice=uid://c8t0wgf4ig77b]
 => END
 
 ~ Really
-Mothman: [shake rate=20 level=10]Really?[/shake][next=auto]
+[color=#7ece73]Mothman[/color]: [speed=0.6, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav, next=auto] [shake rate=20 level=10]Really?[/shake][#voice=uid://bgdsitdhtosfb]
 => END
 
 ~ Safe
-Zed: I know a place where you can be safe. [next=auto]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice1.wav, next=auto] I know a place you can be safe. [#voice=uid://d2n3sjmxo04hk]
 => END
 
 ~ Zoo
-Zed: I run a zoo for cryptids like you! A sanctuary where you won't have to run anymore.[next=auto]
-=> END
-
-~ Scary
-Zed: He's making a lot of scary noises! [next=auto]
-=> END
-
-~ Why
-Zed: Why are we trying to capture him if he doesn't want to come back? [next=auto]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice2.wav, next=auto] I run a zoo for cryptids like you! A sanctuary where you won't have to run anymore. [#voice=uid://bg2edglum876c]
 => END
 
 ~ Ran
-Zed: He ran away before I could try and talk to him. [next=auto]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice3.wav, next=auto] He ran away before I could try and talk to him. [#voice=uid://b2jwwnvqvetlv]
+=> END
+
+~ Scary
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice4.wav, next=auto] He's making a lot of scary noises. [#voice=uid://vrd312i5n0t7]
+=> END
+
+~ Try
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice5.wav, next=auto] I'll try. [#voice=uid://q72ngwl6ky4d]
+
+=> END
+
+~ Why
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice6.wav, next=auto] Why are we trying to capture him if he doesn't want to come back? [#voice=uid://bh871ga8rx3sf]
 => END
 
 ~ Okay
-Zed: Okay. That makes sense. [next=auto]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice7.wav, next=auto] Okay. That makes sense. [#voice=uid://qui62o1uxhly]
 => END
 
 ~ Hurt
-Zed: I promise I'm not going to hurt you. [next=auto]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice8.wav, next=auto] I promise I'm not going to hurt you. [#voice=uid://4donlncess1o]
 => END
 
 ~ Note1
-Zed: *Missing Mothman Plushie Poster*
-	Seems like it was last seen  near the park.
+[color=#d950ff]Zed[/color]: [speed=1.5, voice=res://Assets/SFX/VoiceLines/ZedLines/Notes1.wav, next=auto] *Missing Mothman Plushie Poster* [#voice=uid://dgfy38534juma]
+	Seems it was last seen near the park. 
 => END
 
 ~ Note2
-Zed: *Mothman Terrorizes Point Pleasant!*
-	Seems like it's a newspaper thread.
+[color=#d950ff]Zed[/color]: [speed=1.5, voice=res://Assets/SFX/VoiceLines/ZedLines/Notes2.wav, next=auto] *Mothman Terrorizes Point Pleasant!* [#voice=uid://dvn11qq3vsu4t]
+	Seems like a newspaper thread.
 => END
 
 ~ Note3
-Zed: *A drawing of a tall stick man around sharp trees*
+[color=#d950ff]Zed[/color]: [speed=1.7, voice=res://Assets/SFX/VoiceLines/ZedLines/Notes3.wav, next=auto] *A drawing of a tall stick man around sharp trees* [#voice=uid://dlh1edeikqmpx]
 	I get a weird feeling looking at this.
 => END
 
 ~ Note4
-Zed: *Don't cross this bridge!*
+[color=#d950ff]Zed[/color]: [speed=1.5, res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav, next=auto] *Don't cross this bridge!* [#voice=uid://deef1hj3t5rgo]
 	Looks really unsafe.
 => END

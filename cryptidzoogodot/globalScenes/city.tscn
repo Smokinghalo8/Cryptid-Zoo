@@ -1,7 +1,8 @@
-[gd_scene load_steps=84 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=85 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
+[ext_resource type="Resource" uid="uid://dt5bc67gpcaxd" path="res://Dialogue/MothmanLevel.dialogue" id="2_iu74x"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://globalScenes/fake_mothman.tscn" id="4_ijpq5"]
 [ext_resource type="AudioStream" uid="uid://burjgjoc8r4u5" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine1Trimmed.wav" id="5_on6dd"]
@@ -56,7 +57,7 @@
 [ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav" id="50_ity0g"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
-[ext_resource type="PackedScene" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+[ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
@@ -1009,6 +1010,7 @@ _data = {
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -7.6293945e-06, 2.3841858e-07, 1.4305115e-06)
@@ -1258,7 +1260,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.87166613, 0, -0.49009776, 0, 1, 0, 0.49009717, 0, 0.8716672, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.8716661, 0, -0.49009776, 0, 1, 0, 0.49009714, 0, 0.8716672, 242.885, 15.1689, 110.315)
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
 stream = ExtResource("5_on6dd")
@@ -1305,6 +1307,7 @@ texture_under = ExtResource("7_hys3v")
 texture_progress = ExtResource("8_524on")
 
 [node name="Dialog" type="Control" parent="Ui"]
+visible = false
 modulate = Color(0.656569, 1, 0.915033, 1)
 layout_mode = 3
 anchor_top = 0.667
@@ -1627,7 +1630,7 @@ shape = SubResource("BoxShape3D_c5nfs")
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-0.12951995, 0, -0.9915765, 0, 1, 0, 0.9915765, 0, -0.12951995, 204.24544, 15.9163, 95.9888)
+transform = Transform3D(-0.12951995, 0, -0.99157643, 0, 1, 0, 0.99157643, 0, -0.12951995, 204.24544, 15.9163, 95.9888)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]
