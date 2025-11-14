@@ -123,3 +123,19 @@ func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			get_tree().quit()
+
+
+func MothMan1():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "GoAway").finished
+		
+		
+func MothMan2():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "NotSafe").finished
+
+
+func MothMan3():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Catch").finished
+		
+		
+func MothMan4():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Nowhere").finished

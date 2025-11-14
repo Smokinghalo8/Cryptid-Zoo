@@ -3,9 +3,6 @@ extends RigidBody3D
 var naturalMat = preload("uid://c24ja6ql5sqp7");
 var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var animPlayer = get_node("/root/" + get_tree().current_scene.name + "/MothmanAnims")
-@onready var OldMan3 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan3")
-@onready var ChildVoice6 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/ChildVoice6")
-@onready var OldMan5 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan5")
 @onready var skybeam = $Skybeam
 @export var dialogue_resource: DialogueResource
 
