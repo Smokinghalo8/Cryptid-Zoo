@@ -1,5 +1,5 @@
 
-#Old Man
+#Old Man One Liners
  ~ OldmanStart
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan1.wav, next=auto] Mothman is somewhere in this small town. Our job is to try and catch it.[#voice=uid://dxbpqnsxjwuwc]
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2.wav, next=auto] For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision. [#voice=uid://byhryppvct3o1]
@@ -9,21 +9,33 @@
 [color=grey]Old Man[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2Real.wav, next=auto] Yes, be careful. You may want to sneak up on him by crouching as to not scare him. [#voice=uid://fs7oqr0j8iyc]
 => END
 
-~ Warehouse
-[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan3.wav, next=auto] I think I saw him fly to the warehouse near the parking lot. Try checking there. [#voice=uid://bxkrkb1evwcj]
-=> END
-
-~ Docile
-[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan4.wav, next=auto] Don't worry. Mothman is a docile creature. He won't try to harm you. [#voice=uid://ucujl00f56e8]
-=> END
-
-~ Understand
-[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan5.wav, next=auto] Because he doesn't understand that we're trying to help him, Zed. He thinks we're just like the rest of the people in this town. [#voice=uid://jm7clhoh7t42]
-=> END
-
 ~ Bridge
 [color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan6.wav, next=auto] I think he just flew over the bridge out of town. Towards the mountains! Quickly, give chase before he gets away! [#voice=uid://c0t0d51ctbv75]
 => END
+
+
+#Conversations
+
+#Mothman flies to warehouse conversation
+~ Warehouse
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan3.wav, next=auto] I think I saw him fly to the warehouse near the parking lot. Try checking there. [#voice=uid://bxkrkb1evwcj]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice6.wav, next=auto] Why are we trying to capture him if he doesn't want to come back? [#voice=uid://bh871ga8rx3sf]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan5.wav, next=auto] Because he doesn't understand that we're trying to help him, Zed. He thinks we're just like the rest of the people in this town. [#voice=uid://jm7clhoh7t42]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice7.wav, next=auto] Okay. That makes sense. [#voice=uid://qui62o1uxhly]
+=> END
+
+#Zed is scared of Mothman noises
+~ Docile
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice4.wav, next=auto] He's making a lot of scary noises. [#voice=uid://vrd312i5n0t7]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan4.wav, next=auto] Don't worry. Mothman is a docile creature. He won't try to harm you. [#voice=uid://ucujl00f56e8]
+=> END
+
+#Mothman runs away before Zed can catch him
+~ Ran
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice3.wav, next=auto] He ran away before I could try and talk to him. [#voice=uid://b2jwwnvqvetlv]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2Real.wav, next=auto] Yes, be careful. You may want to sneak up on him by crouching as to not scare him. [#voice=uid://fs7oqr0j8iyc]
+=> END
+
 
 
 
@@ -54,7 +66,7 @@
 
 
 
-#Zed
+#Zed one liners
 ~ Safe
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice1.wav, next=auto] I know a place you can be safe. [#voice=uid://d2n3sjmxo04hk]
 => END
@@ -63,24 +75,8 @@
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice2.wav, next=auto] I run a zoo for cryptids like you! A sanctuary where you won't have to run anymore. [#voice=uid://bg2edglum876c]
 => END
 
-~ Ran
-[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice3.wav, next=auto] He ran away before I could try and talk to him. [#voice=uid://b2jwwnvqvetlv]
-=> END
-
-~ Scary
-[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice4.wav, next=auto] He's making a lot of scary noises. [#voice=uid://vrd312i5n0t7]
-=> END
-
 ~ Try
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice5.wav, next=auto] I'll try. [#voice=uid://q72ngwl6ky4d]
-=> END
-
-~ Why
-[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice6.wav, next=auto] Why are we trying to capture him if he doesn't want to come back? [#voice=uid://bh871ga8rx3sf]
-=> END
-
-~ Okay
-[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice7.wav, next=auto] Okay. That makes sense. [#voice=uid://qui62o1uxhly]
 => END
 
 ~ Hurt

@@ -1260,7 +1260,7 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.87166595, 0, -0.49009776, 0, 1, 0, 0.4900971, 0, 0.8716672, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.87166595, 0, -0.49009776, 0, 1, 0, 0.49009708, 0, 0.8716672, 242.885, 15.1689, 110.315)
 dialogue_resource = ExtResource("2_iu74x")
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
@@ -1635,7 +1635,7 @@ shape = SubResource("BoxShape3D_c5nfs")
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-0.12951994, 0, -0.9915763, 0, 1, 0, 0.9915763, 0, -0.12951994, 204.24544, 15.9163, 95.9888)
+transform = Transform3D(-0.12951992, 0, -0.99157625, 0, 1, 0, 0.99157625, 0, -0.12951992, 204.24544, 15.9163, 95.9888)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]

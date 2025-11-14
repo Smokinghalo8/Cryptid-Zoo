@@ -3,7 +3,6 @@ extends RigidBody3D
 var naturalMat = preload("uid://c24ja6ql5sqp7");
 var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var animPlayer = get_node("/root/" + get_tree().current_scene.name + "/MothmanAnims")
-@onready var _dialog : Control = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog")
 @onready var OldMan3 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan3")
 @onready var ChildVoice6 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/ChildVoice6")
 @onready var OldMan5 = get_node("/root/" + get_tree().current_scene.name + "/Ui/Dialog/OldMan5")
@@ -64,19 +63,8 @@ func interact():
 		$Small.monitoring = true
 	Global.animNum += 1
 	if Global.animNum == 5:
-		#_dialog.OldMan3()
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Warehouse").finished
-		#await get_tree().create_timer(OldMan3.stream.get_length()).timeout
-		#_dialog.Zed4()
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Why").finished
-		#await get_tree().create_timer(ChildVoice6.stream.get_length()).timeout
-		#_dialog.OldMan5()
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Understand").finished
-		#await get_tree().create_timer(OldMan5.stream.get_length()).timeout
-		#_dialog.Zed6()
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Okay").finished
 	if Global.animNum == 6:
-		#_dialog.OldMan6()
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Bridge").finished
 func killMothmanNoises():
 	$MothManNoises.stop()

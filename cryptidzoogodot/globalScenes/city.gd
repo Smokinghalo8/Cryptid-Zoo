@@ -1,12 +1,12 @@
 extends Node3D
 
-@onready var _dialog : Control = $Ui/Dialog
 @export var dialogue_resource: DialogueResource
 @export var customSpeed = -1.0
 @export var functioning = true
 var scaryNoiseFirstTime = true
 var flyBack = true
 var cutScene = false
+var talking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +17,6 @@ func _ready() -> void:
 	$Ui/PlushControl.visible = false
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
-	#_dialog.OldMan1()
 	if dialogue_resource:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
 	scaryNoiseFirstTime = true
@@ -64,12 +63,10 @@ func _process(delta: float) -> void:
 				Global.animNum -= 0.5
 				if Global.animNum >=5:
 					functioning = false
-				if flyBack == true:
-					#_dialog.Zed5()
+				if flyBack == true and not talking:
+					talking = true
 					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
-					#await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					#_dialog.OldMan2()
-					await DialogueManager.show_dialogue_balloon(dialogue_resource, "MothmanScared").finished
+					talking = false
 					flyBack = false
 				
 			
@@ -90,12 +87,10 @@ func _process(delta: float) -> void:
 				Global.animNum -= 0.5
 				if Global.animNum >=5:
 					functioning = false
-				if flyBack == true:
-					#_dialog.Zed5()
+				if flyBack == true and not talking:
+					talking = true
 					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
-					#await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					#_dialog.OldMan2()
-					await DialogueManager.show_dialogue_balloon(dialogue_resource, "MothmanScared").finished
+					talking = false
 					flyBack = false
 				
 	
@@ -106,11 +101,10 @@ func togglePause():
 
 func _on_big_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character") && scaryNoiseFirstTime == true:
-		#_dialog.Zed3()
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Scary").finished
-		#await get_tree().create_timer($Ui/Dialog/ChildVoice4.stream.get_length()).timeout
-		#_dialog.OldMan4()
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Docile").finished
+		if not talking:
+			talking = true
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "Docile").finished
+			talking = false
 		scaryNoiseFirstTime = false
 
 
