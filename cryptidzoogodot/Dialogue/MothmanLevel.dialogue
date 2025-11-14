@@ -1,3 +1,5 @@
+
+#Old Man
  ~ OldmanStart
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan1.wav, next=auto] Mothman is somewhere in this small town. Our job is to try and catch it.[#voice=uid://dxbpqnsxjwuwc]
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan2.wav, next=auto] For this mission, I've granted you the power of the Wendigo. So, if you press [Q], you'll be able to see Mothman using night vision. [#voice=uid://byhryppvct3o1]
@@ -23,6 +25,9 @@
 [color=grey]Old Man[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/OldManLines/OldMan6.wav, next=auto] I think he just flew over the bridge out of town. Towards the mountains! Quickly, give chase before he gets away! [#voice=uid://c0t0d51ctbv75]
 => END
 
+
+
+#Mothman
 ~ GoAway
 [color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine1Trimmed.wav, next=auto] [shake rate=20 level=10]Please... Go away...[/shake][#voice=uid://burjgjoc8r4u5]
 => END
@@ -47,6 +52,9 @@
 [color=#7ece73]Mothman[/color]: [speed=0.6, voice=res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav, next=auto] [shake rate=20 level=10]Really?[/shake][#voice=uid://bgdsitdhtosfb]
 => END
 
+
+
+#Zed
 ~ Safe
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice1.wav, next=auto] I know a place you can be safe. [#voice=uid://d2n3sjmxo04hk]
 => END
@@ -65,7 +73,6 @@
 
 ~ Try
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice5.wav, next=auto] I'll try. [#voice=uid://q72ngwl6ky4d]
-
 => END
 
 ~ Why
@@ -80,6 +87,9 @@
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLines/ZedLines/ChildVoice8.wav, next=auto] I promise I'm not going to hurt you. [#voice=uid://4donlncess1o]
 => END
 
+
+
+#Notes
 ~ Note1
 [color=#d950ff]Zed[/color]: [speed=1.5, voice=res://Assets/SFX/VoiceLines/ZedLines/Notes1.wav, next=auto] *Missing Mothman Plushie Poster* [#voice=uid://dgfy38534juma]
 	Seems it was last seen near the park. 

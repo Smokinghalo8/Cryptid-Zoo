@@ -19,7 +19,7 @@ func _ready() -> void:
 	await $CutScene/CutSceneAnims.animation_finished
 	#_dialog.OldMan1()
 	if dialogue_resource:
-		DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart")
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
 	scaryNoiseFirstTime = true
 	cutScene = true
 	
@@ -65,9 +65,11 @@ func _process(delta: float) -> void:
 				if Global.animNum >=5:
 					functioning = false
 				if flyBack == true:
-					_dialog.Zed5()
-					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					_dialog.OldMan2()
+					#_dialog.Zed5()
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
+					#await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
+					#_dialog.OldMan2()
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "MothmanScared").finished
 					flyBack = false
 				
 			
@@ -89,9 +91,11 @@ func _process(delta: float) -> void:
 				if Global.animNum >=5:
 					functioning = false
 				if flyBack == true:
-					_dialog.Zed5()
-					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					_dialog.OldMan2()
+					#_dialog.Zed5()
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
+					#await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
+					#_dialog.OldMan2()
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "MothmanScared").finished
 					flyBack = false
 				
 	
@@ -102,9 +106,11 @@ func togglePause():
 
 func _on_big_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character") && scaryNoiseFirstTime == true:
-		_dialog.Zed3()
-		await get_tree().create_timer($Ui/Dialog/ChildVoice4.stream.get_length()).timeout
-		_dialog.OldMan4()
+		#_dialog.Zed3()
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Scary").finished
+		#await get_tree().create_timer($Ui/Dialog/ChildVoice4.stream.get_length()).timeout
+		#_dialog.OldMan4()
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Docile").finished
 		scaryNoiseFirstTime = false
 
 

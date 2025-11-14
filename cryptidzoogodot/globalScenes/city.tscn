@@ -1260,7 +1260,8 @@ script = ExtResource("4_gkunu")
 autostart = true
 
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
-transform = Transform3D(0.8716661, 0, -0.49009776, 0, 1, 0, 0.49009714, 0, 0.8716672, 242.885, 15.1689, 110.315)
+transform = Transform3D(0.87166595, 0, -0.49009776, 0, 1, 0, 0.4900971, 0, 0.8716672, 242.885, 15.1689, 110.315)
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
 stream = ExtResource("5_on6dd")
@@ -1540,18 +1541,22 @@ camera_distance = 40
 [node name="Note1" parent="." instance=ExtResource("8_hln64")]
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.36352, 3.7309244, 80.20716)
 script = ExtResource("9_ni7w2")
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
 transform = Transform3D(0.469999, -0.0014752969, -1.162535e-05, -5.28082e-10, 0.15505098, -0.024396604, -0.0010007471, -0.6928614, -0.005459526, -55.033142, 2.1984098, 80.677635)
 script = ExtResource("11_hambk")
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Note3" parent="." instance=ExtResource("12_acp2a")]
 transform = Transform3D(0.47, 0, 0, 0, 0.70854896, -0.0015976299, 0, -0.045372963, -0.024948899, 18.935564, 2.833732, 56.743874)
 script = ExtResource("13_uc6et")
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 90.26859, 3.424793, 81.65424)
 script = ExtResource("15_eb1mn")
+dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Water" type="Area3D" parent="."]
 transform = Transform3D(-4.6920023, 0, 0, 0, -0.108, 0, 0, 0, -4.759999, 112.374, 49.406, 93.4484)
@@ -1630,7 +1635,7 @@ shape = SubResource("BoxShape3D_c5nfs")
 [node name="CutScene" type="Node3D" parent="."]
 
 [node name="CutSceneCam" type="Camera3D" parent="CutScene"]
-transform = Transform3D(-0.12951995, 0, -0.99157643, 0, 1, 0, 0.99157643, 0, -0.12951995, 204.24544, 15.9163, 95.9888)
+transform = Transform3D(-0.12951994, 0, -0.9915763, 0, 1, 0, 0.9915763, 0, -0.12951994, 204.24544, 15.9163, 95.9888)
 fov = 108.67
 
 [node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]

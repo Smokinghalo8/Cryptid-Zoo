@@ -37,6 +37,7 @@ var dialogue_line: DialogueLine:
 			apply_dialogue_line()
 		else:
 			# The dialogue has finished so close the balloon
+			emit_signal("finished")
 			queue_free()
 	get:
 		return dialogue_line
@@ -58,6 +59,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
+
+signal finished
 
 
 func _ready() -> void:
