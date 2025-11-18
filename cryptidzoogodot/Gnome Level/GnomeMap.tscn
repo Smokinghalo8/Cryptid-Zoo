@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=23 format=3 uid="uid://cn4o0c5geiix0"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="5_x0pif"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="7_gbm7p"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="8_xhii3"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
+[ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/gnome_character.tscn" id="11_gbm7p"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -90,6 +92,16 @@ script = ExtResource("5_x0pif")
 octree_managers = [SubResource("Resource_agahs"), SubResource("Resource_o4cu5"), SubResource("Resource_jlxtx")]
 metadata/class = "Arborist"
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mrlcg"]
+
+[sub_resource type="Sky" id="Sky_gbm7p"]
+sky_material = SubResource("ProceduralSkyMaterial_mrlcg")
+
+[sub_resource type="Environment" id="Environment_mrlcg"]
+sky = SubResource("Sky_gbm7p")
+ambient_light_source = 3
+ambient_light_color = Color(0.9342328, 0.97891563, 0.7968004, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -121,3 +133,24 @@ plugin_version = "1.4.1"
 storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
+
+[node name="Z" parent="." instance=ExtResource("10_mrlcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.53134, 1.8581402, 46.92762)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrlcg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0, 114, 0)
+
+[node name="gnomeCharacter" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.01385, -4.7683716e-07, 85.72751)
+
+[node name="gnomeCharacter2" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.6408, 0, 75.48723)
+
+[node name="gnomeCharacter3" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.92412, 0, 57.10351)
+
+[node name="gnomeCharacter4" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)

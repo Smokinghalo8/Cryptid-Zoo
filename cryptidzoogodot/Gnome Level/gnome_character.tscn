@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba2fn7cebruad"]
+
+[ext_resource type="Script" uid="uid://dm0u67gu8ww05" path="res://Gnome Level/gnome_character.gd" id="1_hi1f6"]
+[ext_resource type="PackedScene" uid="uid://dk61xqmrfnoxf" path="res://Gnome Level/GnomeCharacters/sketchfab_scene.tscn" id="2_dxjvc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f0f7h"]
+height = 2.7392578
+radius = 0.69628906
+
+[node name="gnomeCharacter" type="CharacterBody3D"]
+script = ExtResource("1_hi1f6")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_dxjvc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3196578, 0.8168974)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3339846, 0.43202126)
+shape = SubResource("CylinderShape3D_f0f7h")
+
+[node name="RayFront" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.008586941, -0.9999631, 0, 0.9999631, -0.008586941, 0, 1.3063146, -0.5836346)
+target_position = Vector3(0, -4, 0)
+
+[node name="RayLeft" type="RayCast3D" parent="."]
+transform = Transform3D(0.94618136, 0.32359216, -0.0053714854, -2.9094968e-11, -0.016597267, -0.99986225, -0.32363674, 0.9460511, -0.015704026, -0.8551293, 1.2884771, 0)
+target_position = Vector3(0, -4, 0)
+
+[node name="RayRight" type="RayCast3D" parent="."]
+transform = Transform3D(0.0077867364, -0.5336315, 0.8456812, 0.99989367, 0.014590417, -8.098133e-10, -0.012338844, 0.84559125, 0.53368825, 0.78029346, 1.2703322, 0)
+target_position = Vector3(0, -4, 0)
