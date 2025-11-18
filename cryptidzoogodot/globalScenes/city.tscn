@@ -1,23 +1,17 @@
-[gd_scene load_steps=85 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=79 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
 [ext_resource type="Resource" uid="uid://dt5bc67gpcaxd" path="res://Dialogue/MothmanLevel.dialogue" id="2_iu74x"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="4_gkunu"]
 [ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://globalScenes/fake_mothman.tscn" id="4_ijpq5"]
-[ext_resource type="AudioStream" uid="uid://burjgjoc8r4u5" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine1Trimmed.wav" id="5_on6dd"]
 [ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="6_im7ec"]
-[ext_resource type="AudioStream" uid="uid://wh6lkv8piiab" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine2Trimmed.wav" id="6_m0i5s"]
 [ext_resource type="Script" uid="uid://1murb5rpgnye" path="res://globalScenes/dialog.gd" id="7_edmu0"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="7_hys3v"]
-[ext_resource type="AudioStream" uid="uid://cfvue372xracr" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine3Trimmed.wav" id="7_w5tj5"]
-[ext_resource type="AudioStream" uid="uid://doldorcousc7v" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine4Trimmed.wav" id="8_5sbjd"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
 [ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Mothman Level/Note1.tscn" id="8_hln64"]
-[ext_resource type="AudioStream" uid="uid://c8t0wgf4ig77b" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine5Trimmed.wav" id="9_6xoik"]
 [ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
 [ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Mothman Level/Note2.tscn" id="10_7ysn1"]
-[ext_resource type="AudioStream" uid="uid://bgdsitdhtosfb" path="res://Assets/SFX/VoiceLines/MothmanLines/MothmanLine6Trimmed.wav" id="10_de3em"]
 [ext_resource type="Script" uid="uid://0e0nwk5g4k63" path="res://Mothman Level/note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="11_havme"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="12_4krsh"]
@@ -122,70 +116,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FakeMothman/MothmanLine1Trimmed:playing")
+tracks/2/path = NodePath("Z:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(-64.366035, 2.0135589, 60.401386)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("FakeMothman/MothmanLine2Trimmed:playing")
+tracks/3/path = NodePath("Z:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("FakeMothman/MothmanLine3Trimmed:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("FakeMothman/MothmanLine4Trimmed:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Z:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-64.366035, 2.0135589, 60.401386)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Z:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -220,25 +166,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0387268, 1.52759, -0.730334), Vector3(-0.0577522, 1.56528, -1.47552), Vector3(-0.0575959, 1.56556, -0.436332), Vector3(-0.0575959, 1.56556, 0)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FakeMothman/MothmanLine1Trimmed:playing")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Ui/Dialog")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -303,25 +237,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.0575959, 1.56556, 0), Vector3(-0.0203563, 0.0659412, -0.687742), Vector3(0.0148405, -0.468735, -1.20315), Vector3(0.0538897, -0.412907, -0.636321), Vector3(0, 0.541052, 0)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FakeMothman/MothmanLine2Trimmed:playing")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Ui/Dialog")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -386,25 +308,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(1.2912e-08, -3.14159, -1.08762), Vector3(0, 3.14159, 0)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FakeMothman/MothmanLine3Trimmed:playing")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Ui/Dialog")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -469,25 +379,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 3.14159, 0), Vector3(0.102115, -0.5562, -0.931969), Vector3(0.102115, -0.5562, -0.93197), Vector3(0, 0.261799, 0)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FakeMothman/MothmanLine4Trimmed:playing")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Ui/Dialog")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -607,7 +505,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
+tracks/2/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -619,7 +517,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
+tracks/3/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -631,130 +529,106 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
+tracks/4/path = NodePath("../FakeMothman:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(0, -0.512202, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../FakeMothman:rotation")
+tracks/5/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.512202, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
+tracks/6/path = NodePath("../FakeMothman:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(242.885, 15.1689, 110.315)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
+tracks/7/path = NodePath("../Ui/WednigoHead:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../FakeMothman:position")
+tracks/8/path = NodePath("../Ui/PlushControl:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(242.885, 15.1689, 110.315)]
+"update": 1,
+"values": [true]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Ui/WednigoHead:visible")
+tracks/9/path = NodePath("../Z:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(0, -2.16827, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Ui/PlushControl:visible")
+tracks/10/path = NodePath("../Z:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(207.68576, 14.458996, 95.436325)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../Z:rotation")
+tracks/11/path = NodePath("CutSceneCam:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -2.16827, 0)]
+"values": [Vector3(204.24544, 15.9163, 95.9888)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../Z:position")
+tracks/12/path = NodePath("CutSceneCam:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(207.68576, 14.458996, 95.436325)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("CutSceneCam:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(204.24544, 15.9163, 95.9888)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("CutSceneCam:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -767,24 +641,24 @@ length = 20.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../FakeMothman/MothmanLine5Trimmed:playing")
+tracks/0/enabled = false
+tracks/0/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3.9),
+"times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Ui/Dialog/ChildVoice1:playing")
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(7.4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -792,59 +666,59 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Ui/Dialog/ChildVoice2:playing")
+tracks/2/path = NodePath("../FakeMothman:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(7.4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../FakeMothman:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(16.5, 17, 17.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(242.885, 15.1689, 110.315), Vector3(242.2172, 26.81754, 108.27228), Vector3(215.00174, 15.974937, 100.93258)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../FakeMothman:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FakeMothman:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(11.5, 12.6, 16.5, 17, 17.6, 17.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.512202, 0), Vector3(0, 2.5345454, 0), Vector3(0, 2.5345454, 0), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(-0.029193852, 1.3355826, -0.029458944)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../FakeMothman/MothmanLine6Trimmed:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(12.8),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(14.6),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Ui/CutSceneRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(16.8, 19.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Ui/Dialog/ChildVoice8:playing")
+tracks/6/path = NodePath("../Ui/CutSceneRect:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(14.6),
+"times": PackedFloat32Array(17.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -852,46 +726,22 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Ui/CutSceneRect:color")
+tracks/7/path = NodePath("../Ui/WednigoHead:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(16.8, 19.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Ui/CutSceneRect:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(17.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Ui/WednigoHead:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/10/type = "method"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../FakeMothman")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../FakeMothman")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -899,13 +749,13 @@ tracks/10/keys = {
 "method": &"killMothmanNoises"
 }]
 }
-tracks/11/type = "method"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../Ui/Dialog")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/path = NodePath("../Ui/Dialog")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(2, 3.9, 7.4, 12.8, 14.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
@@ -925,49 +775,49 @@ tracks/11/keys = {
 "method": &"Zed9"
 }]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../Ui/PlushControl:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Ui/PlushControl:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("../Z:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Z:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6, 18.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(207.31267, 14.233891, 97.38749), Vector3(210.65337, 15.145884, 97.30941), Vector3(212.67784, 15.733356, 95.77419), Vector3(213.63474, 16.403835, 96.11554), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.33828), Vector3(215.0343, 16.767204, 99.89257)]
 }
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("../Z:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Z:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -1.5319057, 0), Vector3(0, -1.0667976, 0), Vector3(0, -1.391655, 0), Vector3(0, -1.9336928, 0), Vector3(0, -2.0489244, 0), Vector3(0, -2.0489244, 0), Vector3(0, 2.727291, 0)]
 }
-tracks/15/type = "method"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../Z")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../Z")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -975,29 +825,55 @@ tracks/15/keys = {
 "method": &"disableLooker"
 }]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("CutSceneCam:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CutSceneCam:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(204.24544, 15.9163, 95.9888), Vector3(208.154, 15.9163, 95.9888), Vector3(210.77441, 15.9163, 93.79872), Vector3(215.65707, 17.92923, 94.68064), Vector3(215.65707, 17.92923, 94.68064), Vector3(216.03511, 17.249203, 96.203415)]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("CutSceneCam:rotation")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CutSceneCam:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -1.7006812, 0), Vector3(0, -1.4534553, 0), Vector3(0, -1.8236572, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.894818, 0)]
+}
+tracks/16/type = "method"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("..")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(2, 3.9, 7.4, 12.8, 14.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"cutscene1"
+}, {
+"args": [],
+"method": &"cutscene2"
+}, {
+"args": [],
+"method": &"cutscene3"
+}, {
+"args": [],
+"method": &"cutscene4"
+}, {
+"args": [],
+"method": &"cutscene5"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lpc8"]
@@ -1262,26 +1138,6 @@ autostart = true
 [node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
 transform = Transform3D(0.87166595, 0, -0.49009776, 0, 1, 0, 0.49009708, 0, 0.8716672, 242.885, 15.1689, 110.315)
 dialogue_resource = ExtResource("2_iu74x")
-
-[node name="MothmanLine1Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("5_on6dd")
-volume_db = 9.008
-
-[node name="MothmanLine2Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("6_m0i5s")
-
-[node name="MothmanLine3Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("7_w5tj5")
-
-[node name="MothmanLine4Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("8_5sbjd")
-volume_db = 5.732
-
-[node name="MothmanLine5Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("9_6xoik")
-
-[node name="MothmanLine6Trimmed" type="AudioStreamPlayer" parent="FakeMothman"]
-stream = ExtResource("10_de3em")
 
 [node name="Big" type="Area3D" parent="FakeMothman"]
 

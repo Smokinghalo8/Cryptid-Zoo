@@ -139,3 +139,18 @@ func MothMan3():
 		
 func MothMan4():
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Nowhere").finished
+
+func cutscene1():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Safe").finished
+
+func cutscene2():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "People").finished
+
+func cutscene3():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Zoo").finished
+
+func cutscene4():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Really").finished
+
+func cutscene5():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Hurt").finished
