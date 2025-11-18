@@ -24,6 +24,12 @@ var current_trap: Area3D = null
 @onready var ray_right: RayCast3D = $RayRight
 @onready var player_detection_area: Area3D = $PlayerDetectionArea
 @onready var trap_detection_area: Area3D = $TrapDetectionArea
+@onready var wendigoPlayer = get_node("/root/WendigoAnims")
+@onready var activated5 = false
+@onready var activated2 = false
+@onready var activated3 = false
+@onready var activated4 = false
+
 
 func _ready() -> void:
 	# Player detection
@@ -152,8 +158,7 @@ func _on_body_exited(body: Node) -> void:
 
 # --- Trap detection ---
 func _on_trap_area_entered(area: Area3D) -> void:
-	if area.is_in_group("Traps"):
-		caught_in_trap(area)
+	pass
 
 
 func _on_trap_area_exited(area: Area3D) -> void:
@@ -171,5 +176,47 @@ func _on_trapped_timer_timeout() -> void:
 
 func _on_trap_detection_area_body_entered(body: Node3D) -> void:
 	if is_in_group("Character"):
-		self.body.disabled()
-		print("GOTYOU")
+		get_tree().quit()
+
+
+func _on_trap_2_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies") and activated5 == true:
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
+		activated2 = false
+
+
+func _on_trap_3_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies") and activated5 == true:
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
+		activated3 = false
+
+
+func _on_trap_4_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies") and activated5 == true:
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
+		activated4 = false
+
+func _on_trap_5_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies") and activated5 == true:
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
+		activated5 = false
+
+
+func _on_trap_5_activated() -> void:
+	activated5 = true
+
+
+func _on_trap_3_activated() -> void:
+	activated3 = true
+
+
+func _on_trap_2_activated() -> void:
+	activated2 = true
+
+
+func _on_trap_4_activated() -> void:
+	activated4 = true

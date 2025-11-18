@@ -176,3 +176,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_trap_2_activated() -> void:
+	pass # Replace with function body.
