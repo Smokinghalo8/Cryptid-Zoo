@@ -122,6 +122,7 @@ func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 		if Global.animNum == 6:
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
+			await($CutScene/CutSceneAnims.animation_finished)
 			get_tree().quit()
 
 
