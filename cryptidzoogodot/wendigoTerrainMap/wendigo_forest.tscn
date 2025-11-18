@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
-[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
+[ext_resource type="Shader" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 [ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
@@ -8463,8 +8463,8 @@ centered = true
 _terrain_data = ExtResource("2_1mri4")
 chunk_size = 32
 collision_enabled = true
-collision_layer = 1
-collision_mask = 1
+collision_layer = 2
+collision_mask = 2
 shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
@@ -8478,6 +8478,8 @@ shader_params/u_tile_reduction = null
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.79227, 2.6597104, 159.74236)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Gardener" type="Node3D" parent="."]
 script = ExtResource("9_q4s1m")
@@ -8489,8 +8491,10 @@ storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
-[node name="WendigoAi" parent="." instance=ExtResource("13_pdyqn")]
+[node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.77142, 1.4291719, 140.22809)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Ui" type="CanvasLayer" parent="."]
 
@@ -8668,17 +8672,17 @@ transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194
 [node name="SpookyHouse" parent="." instance=ExtResource("28_uyjqn")]
 transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
 
-[node name="Trap2" parent="." instance=ExtResource("30_ly1ea")]
+[node name="Trap2" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.923874, 0, -85.57547)
 
-[node name="Trap3" parent="." instance=ExtResource("30_ly1ea")]
+[node name="Trap3" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265923, 0, 32.696922)
 
-[node name="Trap5" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0, 128.76978)
-
-[node name="Trap4" parent="." instance=ExtResource("30_ly1ea")]
+[node name="Trap4" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.566376, 0, 184.41438)
+
+[node name="Trap5" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0.5068753, 128.76978)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
@@ -8705,39 +8709,47 @@ material = SubResource("ShaderMaterial_4f0m8")
 offset_right = 1933.0
 offset_bottom = 1087.0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="Bridges" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.003918, -2.773592, 19.061462)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ly1ea")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(42.854134, 0, -21.51986, 0, 1, 0, 52.975243, 0, 17.40841, 144.3017, -2.773592, -121.9897)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k4prm")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(-45.445766, 0, -20.623806, 0, 1, 0, 50.769436, 0, -18.461195, 138.75087, -2.773592, 110.71564)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4f0m8")
+
+[node name="Camera3D" type="Camera3D" parent="Bridges"]
+
+[node name="WendigoAnims" type="AnimationPlayer" parent="."]
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Trap2" to="WendigoAi" method="_on_trap_2_body_entered"]
+[connection signal="body_entered" from="Trap3" to="WendigoAi" method="_on_trap_3_body_entered"]
+[connection signal="body_entered" from="Trap4" to="WendigoAi" method="_on_trap_4_body_entered"]
+[connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]

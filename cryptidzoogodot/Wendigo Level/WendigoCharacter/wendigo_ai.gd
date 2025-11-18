@@ -24,6 +24,7 @@ var current_trap: Area3D = null
 @onready var ray_right: RayCast3D = $RayRight
 @onready var player_detection_area: Area3D = $PlayerDetectionArea
 @onready var trap_detection_area: Area3D = $TrapDetectionArea
+@onready var wendigoPlayer = get_node("/root/WendigoAnims")
 
 func _ready() -> void:
 	# Player detection
@@ -152,8 +153,7 @@ func _on_body_exited(body: Node) -> void:
 
 # --- Trap detection ---
 func _on_trap_area_entered(area: Area3D) -> void:
-	if area.is_in_group("Traps"):
-		caught_in_trap(area)
+	pass
 
 func _on_trap_area_exited(area: Area3D) -> void:
 	pass
@@ -171,3 +171,23 @@ func _on_trapped_timer_timeout() -> void:
 func _on_trap_detection_area_body_entered(body: Node3D) -> void:
 	if is_in_group("Character"):
 		get_tree().quit()
+
+
+func _on_trap_2_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies"):
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
+
+
+func _on_trap_3_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_trap_4_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_trap_5_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemies"):
+		#wendigoPlayer.play("trap1")
+		print("Trapped")
