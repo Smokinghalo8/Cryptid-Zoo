@@ -8704,7 +8704,6 @@ offset_right = 1926.0
 offset_bottom = 1087.0
 
 [node name="VHS Flavor1" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_4f0m8")
 offset_right = 1933.0
 offset_bottom = 1087.0
@@ -8749,7 +8748,11 @@ shape = SubResource("ConcavePolygonShape3D_4f0m8")
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="activated" from="Trap2" to="WendigoAi" method="_on_trap_2_activated"]
 [connection signal="body_entered" from="Trap2" to="WendigoAi" method="_on_trap_2_body_entered"]
+[connection signal="activated" from="Trap3" to="WendigoAi" method="_on_trap_3_activated"]
 [connection signal="body_entered" from="Trap3" to="WendigoAi" method="_on_trap_3_body_entered"]
+[connection signal="activated" from="Trap4" to="WendigoAi" method="_on_trap_4_activated"]
 [connection signal="body_entered" from="Trap4" to="WendigoAi" method="_on_trap_4_body_entered"]
+[connection signal="activated" from="Trap5" to="WendigoAi" method="_on_trap_5_activated"]
 [connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]

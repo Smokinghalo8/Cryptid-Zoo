@@ -1,7 +1,8 @@
 extends Area3D
 @onready var wendigo = get_node("/root/WendigoAI")
-
 @onready var interactable = true
+@onready var trapped = false
+signal activated
 
 func _ready() -> void:
 	$TrapColl.disabled = true
@@ -14,3 +15,8 @@ func interact():
 		$BearTrap.visible = true
 		interactable = false
 		$InteractCol.disabled = true
+		activated.emit()
+
+
+func _on_wendigo_ai_trapped_2() -> void:
+	pass # Replace with function body.

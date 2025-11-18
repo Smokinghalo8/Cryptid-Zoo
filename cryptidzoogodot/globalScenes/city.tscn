@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=83 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -55,26 +55,8 @@
 [ext_resource type="AudioStream" uid="uid://dlh1edeikqmpx" path="res://Assets/SFX/VoiceLines/ZedLines/Notes3.wav" id="49_2rdra"]
 [ext_resource type="AudioStream" uid="uid://deef1hj3t5rgo" path="res://Assets/SFX/VoiceLines/ZedLines/Notes4.wav" id="50_ity0g"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
-
-[sub_resource type="Sky" id="Sky_g280x"]
-sky_material = SubResource("PhysicalSkyMaterial_vum21")
-
-[sub_resource type="Environment" id="Environment_yhbei"]
-background_mode = 2
-background_energy_multiplier = 0.46
-sky = SubResource("Sky_g280x")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
-reflected_light_source = 2
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="56_h81f8"]
+[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="57_iu74x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
@@ -1005,6 +987,20 @@ _data = {
 &"mothMan": SubResource("Animation_qehwl")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbkjd"]
+shader = ExtResource("56_h81f8")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7fvgy"]
+shader = ExtResource("57_iu74x")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
+
 [node name="City" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
@@ -1289,9 +1285,6 @@ spot_attenuation = 0.0
 
 [node name="MapExport#SceneTransitionAnimation2" parent="." instance=ExtResource("16_xmauk")]
 position = Vector2(-38, -26)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yhbei")
 
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
 transform = Transform3D(-0.4500441, 0, -0.6614069, 0, 0.8, 0, 0.6614069, 0, -0.4500441, 232.539, 13.8482, 98.8311)
@@ -1690,6 +1683,16 @@ transform = Transform3D(-0.174439, 0, -0.984668, 0, 1, 0, 0.984668, 0, -0.174439
 
 [node name="MothmanPlush5" parent="Plushies" instance=ExtResource("55_78vex")]
 transform = Transform3D(0.845812, 0, -0.533482, 0, 1, 0, 0.533482, 0, 0.845812, 211.38, 8.10493, 45.4419)
+
+[node name="VHS Flavor2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_tbkjd")
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="VHS Flavor1" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7fvgy")
+offset_right = 1933.0
+offset_bottom = 1087.0
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
