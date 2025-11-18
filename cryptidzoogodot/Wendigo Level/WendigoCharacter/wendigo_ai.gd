@@ -160,6 +160,7 @@ func _on_body_exited(body: Node) -> void:
 func _on_trap_area_entered(area: Area3D) -> void:
 	pass
 
+
 func _on_trap_area_exited(area: Area3D) -> void:
 	pass
 

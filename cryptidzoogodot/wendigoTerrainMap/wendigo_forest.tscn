@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 [ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
-[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
