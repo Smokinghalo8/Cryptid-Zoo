@@ -10,9 +10,10 @@ func _process(delta: float) -> void:
 	if is_colliding():
 		var target = get_collider()
 		if target != null:
-			if target.has_method("interact") && Input.is_action_just_pressed("interact"):
+			if target.has_method("interact"):
 				intText.visible = true
-				target.interact()
+				if Input.is_action_just_pressed("interact"):
+					target.interact()
 			else:
 				intText.visible = false
 	else:
