@@ -1,11 +1,12 @@
 extends Node3D
 
-@onready var _dialog : Control = $Ui/Dialog
+@export var dialogue_resource: DialogueResource
 @export var customSpeed = -1.0
 @export var functioning = true
 var scaryNoiseFirstTime = true
 var flyBack = true
 var cutScene = false
+var talking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,7 +17,8 @@ func _ready() -> void:
 	$Ui/PlushControl.visible = false
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
-	_dialog.OldMan1()
+	if dialogue_resource:
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
 	scaryNoiseFirstTime = true
 	cutScene = true
 	
@@ -61,10 +63,10 @@ func _process(delta: float) -> void:
 				Global.animNum -= 0.5
 				if Global.animNum >=5:
 					functioning = false
-				if flyBack == true:
-					_dialog.Zed5()
-					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					_dialog.OldMan2()
+				if flyBack == true and not talking:
+					talking = true
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
+					talking = false
 					flyBack = false
 				
 			
@@ -85,10 +87,10 @@ func _process(delta: float) -> void:
 				Global.animNum -= 0.5
 				if Global.animNum >=5:
 					functioning = false
-				if flyBack == true:
-					_dialog.Zed5()
-					await get_tree().create_timer($Ui/Dialog/ChildVoice3.stream.get_length()).timeout
-					_dialog.OldMan2()
+				if flyBack == true and not talking:
+					talking = true
+					await DialogueManager.show_dialogue_balloon(dialogue_resource, "Ran").finished
+					talking = false
 					flyBack = false
 				
 	
@@ -99,9 +101,10 @@ func togglePause():
 
 func _on_big_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character") && scaryNoiseFirstTime == true:
-		_dialog.Zed3()
-		await get_tree().create_timer($Ui/Dialog/ChildVoice4.stream.get_length()).timeout
-		_dialog.OldMan4()
+		if not talking:
+			talking = true
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "Docile").finished
+			talking = false
 		scaryNoiseFirstTime = false
 
 
@@ -119,4 +122,36 @@ func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 		if Global.animNum == 6:
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
+			await($CutScene/CutSceneAnims.animation_finished)
 			get_tree().quit()
+
+
+func MothMan1():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "GoAway").finished
+		
+		
+func MothMan2():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "NotSafe").finished
+
+
+func MothMan3():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Catch").finished
+		
+		
+func MothMan4():
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Nowhere").finished
+
+func cutscene1():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Safe").finished
+
+func cutscene2():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "People").finished
+
+func cutscene3():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Zoo").finished
+
+func cutscene4():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Really").finished
+
+func cutscene5():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Hurt").finished

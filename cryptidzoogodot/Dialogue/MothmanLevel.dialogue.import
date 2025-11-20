@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dt5bc67gpcaxd"
+path="res://.godot/imported/MothmanLevel.dialogue-81ebf7862045bd75c69ac33569439a93.tres"
+
+[deps]
+
+source_file="res://Dialogue/MothmanLevel.dialogue"
+dest_files=["res://.godot/imported/MothmanLevel.dialogue-81ebf7862045bd75c69ac33569439a93.tres"]
+
+[params]
+
+defaults=true
