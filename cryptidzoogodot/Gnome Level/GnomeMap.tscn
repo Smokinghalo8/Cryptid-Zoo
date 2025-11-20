@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=24 format=3 uid="uid://cn4o0c5geiix0"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="8_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
 [ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/gnome_character.tscn" id="11_gbm7p"]
+[ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -21,7 +22,7 @@ textures = [[ExtResource("4_x0pif")], [ExtResource("5_mrlcg")]]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("7_gbm7p")
-member_placeforms = [[Vector3(218.3829, 0, 203.28407), Vector3(0, 1, 0), Transform3D(0.7466744, 0, -0.6651897, 0, 1, 0, 0.6651897, 0, 0.7466744, 218.3829, 0, 203.28407), 7], [Vector3(85.63007, 9.536743e-07, 114.41574), Vector3(0, 1, 0), Transform3D(-9.958387, 0, 0.9113308, 0, 10, 0, -0.9113308, 0, -9.958387, 85.63007, 9.536743e-07, 114.41574), 2]]
+member_placeforms = [[Vector3(85.63007, 9.536743e-07, 114.41574), Vector3(0, 1, 0), Transform3D(-9.958387, 0, 0.9113308, 0, 10, 0, -0.9113308, 0, -9.958387, 85.63007, 9.536743e-07, 114.41574), 2]]
 max_members = 75
 min_leaf_extent = 1.0
 octant = -1
@@ -145,12 +146,31 @@ transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9
 
 [node name="gnomeCharacter" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.01385, -4.7683716e-07, 85.72751)
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
 
 [node name="gnomeCharacter2" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.6408, 0, 75.48723)
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
 
 [node name="gnomeCharacter3" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.92412, 0, 57.10351)
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
 
 [node name="gnomeCharacter4" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
+
+[node name="marble" parent="." instance=ExtResource("12_xhii3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.2156, -3.8146973e-06, 41.16959)

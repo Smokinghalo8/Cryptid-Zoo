@@ -20,13 +20,13 @@ var chasing_player: Node3D = null
 @onready var ray_front: RayCast3D = $RayFront
 @onready var ray_left: RayCast3D = $RayLeft
 @onready var ray_right: RayCast3D = $RayRight
-#@onready var player_detection_area: Area3D = $PlayerDetectionArea
+@onready var player_detection_area: Area3D = $PlayerDetectionArea
 
 
 func _ready() -> void:
 	# Player detection
-	#player_detection_area.body_entered.connect(_on_body_entered)
-	#player_detection_area.body_exited.connect(_on_body_exited)
+	player_detection_area.body_entered.connect(_on_body_entered)
+	player_detection_area.body_exited.connect(_on_body_exited)
 
 
 	choose_new_target()
@@ -132,3 +132,12 @@ func _on_body_exited(body: Node) -> void:
 		state = State.IDLE
 		speed_idle = 5.0
 		choose_new_target()
+
+
+
+func _on_player_detection_area_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_player_detection_area_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.
