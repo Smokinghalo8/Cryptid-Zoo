@@ -1,0 +1,86 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://xtmskvmuteym"]
+
+[ext_resource type="Script" uid="uid://bfhkwdyxi414f" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed_brush.gd" id="1_k7p0u"]
+[ext_resource type="Script" uid="uid://y06d0rwxy11x" path="res://addons/dreadpon.spatial_gardener/toolshed/toolshed.gd" id="2_b8rq8"]
+
+[sub_resource type="Resource" id="Resource_06008"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_k7p0u")
+behavior/behavior_brush_type = 2
+shape/shape_volume_size = 1.0
+shape/shape_projection_size = 1.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+behavior/behavior_selection_mode = 0
+behavior/behavior_selection_collision_mask = 1
+behavior/behavior_enable_selection_preprocess = true
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_my8j3"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_k7p0u")
+behavior/behavior_brush_type = 0
+shape/shape_volume_size = 25.81
+shape/shape_projection_size = 1.0
+behavior/behavior_strength = 0.79
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+behavior/behavior_selection_mode = 0
+behavior/behavior_selection_collision_mask = 1
+behavior/behavior_enable_selection_preprocess = true
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_mrlw6"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_k7p0u")
+behavior/behavior_brush_type = 1
+shape/shape_volume_size = 9.68
+shape/shape_projection_size = 100.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+behavior/behavior_selection_mode = 0
+behavior/behavior_selection_collision_mask = 1
+behavior/behavior_enable_selection_preprocess = true
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_npajh"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_k7p0u")
+behavior/behavior_brush_type = 3
+shape/shape_volume_size = 10.0
+shape/shape_projection_size = 100.0
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+behavior/behavior_selection_mode = 0
+behavior/behavior_selection_collision_mask = 1
+behavior/behavior_enable_selection_preprocess = true
+metadata/class = "Toolshed_Brush"
+
+[sub_resource type="Resource" id="Resource_mdn8a"]
+resource_name = "Toolshed_Brush"
+script = ExtResource("1_k7p0u")
+behavior/behavior_brush_type = 4
+shape/shape_volume_size = 1e-05
+shape/shape_projection_size = 1e-05
+behavior/behavior_strength = 1.0
+behavior/behavior_passthrough = false
+behavior/behavior_overlap_mode = 0
+behavior/behavior_no_settings_text = "This brush has no additional settings"
+behavior/behavior_selection_mode = 2
+behavior/behavior_selection_collision_mask = 1
+behavior/behavior_enable_selection_preprocess = true
+metadata/class = "Toolshed_Brush"
+
+[resource]
+resource_name = "Toolshed"
+script = ExtResource("2_b8rq8")
+brush/brushes = [SubResource("Resource_my8j3"), SubResource("Resource_mrlw6"), SubResource("Resource_06008"), SubResource("Resource_npajh"), SubResource("Resource_mdn8a")]
+brush/active_brush = SubResource("Resource_06008")
+metadata/class = "Toolshed"

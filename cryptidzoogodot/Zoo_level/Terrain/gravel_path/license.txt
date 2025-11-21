@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gravel path
+* source:	https://sketchfab.com/3d-models/gravel-path-2c631c18a08b48f2a71f962d8634100d
+* author:	Krzysztof Lewicki (https://sketchfab.com/slavgamedev)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gravel path" (https://sketchfab.com/3d-models/gravel-path-2c631c18a08b48f2a71f962d8634100d) by Krzysztof Lewicki (https://sketchfab.com/slavgamedev) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

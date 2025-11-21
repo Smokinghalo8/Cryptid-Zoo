@@ -1,0 +1,8 @@
+Model Information:
+* title:	grass
+* source:	https://sketchfab.com/3d-models/grass-674d42354f6348a7a85fc06a7f004db5
+* author:	Georgeous (https://sketchfab.com/intice184)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://pjsu80eywgb5"]
+
+[ext_resource type="PackedScene" uid="uid://lochyj1htdu" path="res://Zoo_level/Terrain/Plants/psx_style_bush/scene.gltf" id="1_pqi26"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(14.468427, 0, 0, 0, 1.3264624, 0, 0, 0, 26.194187, 0, 0, 0)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_pqi26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03421092, -1.1920929e-07, -1.2427263)

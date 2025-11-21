@@ -1,0 +1,11 @@
+Model Information:
+* title:	psx style bush
+* source:	https://sketchfab.com/3d-models/psx-style-bush-093cffa78eb54832b8470df86e08828c
+* author:	valse kamerplant (https://sketchfab.com/valsekamerplant)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "psx style bush" (https://sketchfab.com/3d-models/psx-style-bush-093cffa78eb54832b8470df86e08828c) by valse kamerplant (https://sketchfab.com/valsekamerplant) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
