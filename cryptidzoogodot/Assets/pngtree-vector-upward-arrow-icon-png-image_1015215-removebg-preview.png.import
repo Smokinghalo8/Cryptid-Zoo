@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mhf7oryxwy1"
-path="res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png-327dd08fb7c69e2a8931bed66196be36.ctex"
+path="res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png-8e86029c9e9ebe73fe6678d756be8f67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://globalScenes/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png"
-dest_files=["res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png-327dd08fb7c69e2a8931bed66196be36.ctex"]
+source_file="res://Assets/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png"
+dest_files=["res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png-8e86029c9e9ebe73fe6678d756be8f67.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbucmiugpf2w4"
-path="res://.godot/imported/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png-e03433b6874cd169d6fe7580406d026e.ctex"
+uid="uid://bcyxlcm48v7xu"
+path="res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215.jpg-89437fb77ec3debc19d1f44ebe9f092b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://globalScenes/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png"
-dest_files=["res://.godot/imported/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png-e03433b6874cd169d6fe7580406d026e.ctex"]
+source_file="res://Assets/pngtree-vector-upward-arrow-icon-png-image_1015215.jpg"
+dest_files=["res://.godot/imported/pngtree-vector-upward-arrow-icon-png-image_1015215.jpg-89437fb77ec3debc19d1f44ebe9f092b.ctex"]
 
 [params]
 
