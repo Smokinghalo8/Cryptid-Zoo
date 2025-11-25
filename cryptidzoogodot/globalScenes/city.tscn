@@ -32,7 +32,14 @@
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
 [ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
+[node name="Minimap" type="ColorRect"]
+custom_minimum_size = Vector2(300, 300)
+offset_left = 1592.0
+offset_top = 99.0
+offset_right = 1892.0
+offset_bottom = 399.0
+color = Color(0.13682577, 0.13682574, 0.13682571, 1)
+script = ExtResource("1_1g4pn")
 
 [sub_resource type="Sky" id="Sky_g280x"]
 sky_material = SubResource("PhysicalSkyMaterial_vum21")
