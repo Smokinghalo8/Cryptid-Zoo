@@ -69,23 +69,24 @@ func _process(delta):
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	velocity += get_gravity() * delta
 	if not is_on_floor():
-		velocity += get_gravity() * delta 
+		velocity += get_gravity() * delta * 0.7
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if velocity.y < 0:
+	#if velocity.y < 0:
 		# Half gravity strength
-		velocity += get_gravity() * 0.5 * delta
-		# Apply slight downward velocity
-		velocity.y = -1
-		# Reduce speed while falling
-		SPEED = 9
-	else:
-		# Normal gravity when rising or on ground
-		velocity += get_gravity() * delta
+	#	velocity += get_gravity() * 0.5 * delta
+	#	# Apply slight downward velocity
+	#	velocity.y = -1
+	#	# Reduce speed while falling
+	#	SPEED = 9
+	#else:
+	#	# Normal gravity when rising or on ground
+	#	velocity += get_gravity() * delta
 		
 		
 
@@ -226,3 +227,8 @@ func _on_sense_timer_timeout() -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_water_body_entered(body: Node3D) -> void:
+	self.position.x -= 30
+	self.position.y += 20

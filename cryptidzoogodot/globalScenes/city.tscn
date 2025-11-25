@@ -1,8 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=56 format=3 uid="uid://bf4vgu7u0t3ri"]
 
-[ext_resource type="Script" uid="uid://ba35u5n7nhmq" path="res://minimap.gd" id="1_1g4pn"]
-[ext_resource type="Texture2D" uid="uid://mhf7oryxwy1" path="res://globalScenes/pngtree-vector-upward-arrow-icon-png-image_1015215-removebg-preview.png" id="3_5iuns"]
+[ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
+[ext_resource type="Resource" uid="uid://dt5bc67gpcaxd" path="res://Dialogue/MothmanLevel.dialogue" id="2_iu74x"]
+[ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="4_gkunu"]
+[ext_resource type="PackedScene" uid="uid://drjilaesiq5nx" path="res://globalScenes/fake_mothman.tscn" id="4_ijpq5"]
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="7_hys3v"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
+[ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Mothman Level/Note1.tscn" id="8_hln64"]
+[ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
+[ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Mothman Level/Note2.tscn" id="10_7ysn1"]
+[ext_resource type="Script" uid="uid://0e0nwk5g4k63" path="res://Mothman Level/note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="11_havme"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="12_4krsh"]
+[ext_resource type="PackedScene" uid="uid://c1n1y86rwfgbh" path="res://Mothman Level/Note3.tscn" id="12_acp2a"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="13_jceop"]
+[ext_resource type="Script" uid="uid://bcjreykocascj" path="res://Mothman Level/note_3.gd" id="13_uc6et"]
+[ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Mothman Level/Note4.tscn" id="14_0b0g1"]
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
+[ext_resource type="Script" uid="uid://b8vqgotq3llua" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
+[ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
+[ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
+[ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
+[ext_resource type="AudioStream" uid="uid://cko6q5a2ql0h4" path="res://Assets/SFX/OverworldTheme.mp3" id="26_65jtr"]
+[ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
+[ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="42_ejm3s"]
+[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="42_wy0bi"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
+[ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
+[ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
 
 [node name="Minimap" type="ColorRect"]
 custom_minimum_size = Vector2(300, 300)
@@ -13,34 +41,1273 @@ offset_bottom = 399.0
 color = Color(0.13682577, 0.13682574, 0.13682571, 1)
 script = ExtResource("1_1g4pn")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Sky" id="Sky_g280x"]
+sky_material = SubResource("PhysicalSkyMaterial_vum21")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(300, 300)
-render_target_update_mode = 4
+[sub_resource type="Environment" id="Environment_yhbei"]
+background_mode = 2
+background_energy_multiplier = 0.46
+sky = SubResource("Sky_g280x")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20, 0)
-projection = 1
-current = true
-size = 20.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
+radius = 15.3453
 
-[node name="player_marker" type="Sprite2D" parent="SubViewportContainer"]
-position = Vector2(146, 152)
-scale = Vector2(0.049, 0.06)
+[sub_resource type="SphereShape3D" id="SphereShape3D_mrpgv"]
+radius = 7.97711
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_psxoi"]
+size = Vector3(1, 1, 1.3632813)
+
+[sub_resource type="Animation" id="Animation_lkwtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-64.366035, 2.0135589, 60.401386)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5680863, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q1jla"]
+resource_name = "move1.0"
+length = 3.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.8, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.43675, 91.2606), Vector3(0, 4.94813, 91.2606), Vector3(0, 4.94813, 24.3683), Vector3(0, 1.391, 24.368)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 2.2, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0387268, 1.52759, -0.730334), Vector3(-0.0577522, 1.56528, -1.47552), Vector3(-0.0575959, 1.56556, -0.436332), Vector3(-0.0575959, 1.56556, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"MothMan1"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4baqa"]
+resource_name = "move1.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.391, 24.368), Vector3(0, 4.94813, 24.3683), Vector3(0, 4.94813, 91.2606), Vector3(0, 1.43675, 91.2606)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, -0.371668, 0), Vector3(-0.0218623, -1.58498, -0.995328), Vector3(-0.00497954, -0.733588, -0.192237), Vector3(-0.00523599, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dxftt"]
+resource_name = "move2.0"
+length = 2.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.391, 24.368), Vector3(0, 6.40701, 24.3683), Vector3(45.4934, 2.90855, 48.6737), Vector3(45.493, 1.571, 48.674)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.6, 2.2, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0575959, 1.56556, 0), Vector3(-0.0203563, 0.0659412, -0.687742), Vector3(0.0148405, -0.468735, -1.20315), Vector3(0.0538897, -0.412907, -0.636321), Vector3(0, 0.541052, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"MothMan2"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3fkrg"]
+resource_name = "move2.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(45.493, 1.591, 48.674), Vector3(45.4934, 2.90855, 48.6737), Vector3(0, 6.40701, 24.3683), Vector3(0, 1.391, 24.368)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0521646, 2.33233, -0.544843), Vector3(-0.0380771, 2.30025, -0.890272), Vector3(-0.050326, 1.6064, -0.148712), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qes4m"]
+resource_name = "move3.0"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.1, 2.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(45.493, 1.591, 48.674), Vector3(45.4934, 36.8701, 48.6737), Vector3(-42.0022, 19.2661, 55.5136), Vector3(-63.8761, 6.97868, 57.2236), Vector3(-64, 1.5, 57)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.1, 2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(8.58857e-08, 3.14159, -1.75859), Vector3(1.2912e-08, -3.14159, -1.08762), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"MothMan3"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_k371j"]
+resource_name = "move3.5"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-64, 1.5, 57), Vector3(-71.9117, 6.90877, 57.2236), Vector3(44.9652, 57.4144, 50.8393), Vector3(44.9652, 3.43746, 50.8393), Vector3(44.965, 1.599, 50.839)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0, 0.593412, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ihdvq"]
+resource_name = "move4.0"
+length = 2.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.1, 2.4, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-64, 1.5, 57), Vector3(-71.912, 11.8486, 57.224), Vector3(-20.0432, 26.3634, 106.842), Vector3(-14.7371, 23.5508, 106.842), Vector3(-15.825, 20.9877, 106.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.1, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.102115, -0.5562, -0.931969), Vector3(0.102115, -0.5562, -0.93197), Vector3(0, 0.261799, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"MothMan4"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fbxaa"]
+resource_name = "move5.0"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.1, 3.7, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-15.825, 20.9877, 106.842), Vector3(-20.0432, 37.0344, 106.842), Vector3(239.914, 43.7431, 106.842), Vector3(239.914, 24.0788, 106.842), Vector3(242.885, 15.1689, 110.315)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.1, 3.7, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.261799, 0), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0, -0.329867, 0), Vector3(0, -0.512202, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]
+_data = {
+&"RESET": SubResource("Animation_lkwtc"),
+&"move1.0": SubResource("Animation_q1jla"),
+&"move1.5": SubResource("Animation_4baqa"),
+&"move2.0": SubResource("Animation_dxftt"),
+&"move2.5": SubResource("Animation_3fkrg"),
+&"move3.0": SubResource("Animation_qes4m"),
+&"move3.5": SubResource("Animation_k371j"),
+&"move4.0": SubResource("Animation_ihdvq"),
+&"move5.0": SubResource("Animation_fbxaa")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sef1e"]
+size = Vector3(7.05283, 1, 4.45117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmvtk"]
+size = Vector3(1, 7.85345, 14.4135)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8elgs"]
+size = Vector3(250.52069, 79.3418, 161.053)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5nfs"]
+size = Vector3(72.26191, 37.9178, 91.22259)
+
+[sub_resource type="Animation" id="Animation_hpaky"]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ui/CutSceneRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ui/CutSceneRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bl81h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ui/CutSceneRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ui/CutSceneRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FakeMothman:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.512202, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FakeMothman:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(242.885, 15.1689, 110.315)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Ui/WednigoHead:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Ui/PlushControl:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Z:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.16827, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Z:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(207.68576, 14.458996, 95.436325)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CutSceneCam:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(204.24544, 15.9163, 95.9888)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CutSceneCam:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.7006812, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qehwl"]
+resource_name = "mothMan"
+length = 20.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FakeMothman:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(16.5, 17, 17.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(242.885, 15.1689, 110.315), Vector3(242.2172, 26.81754, 108.27228), Vector3(215.00174, 15.974937, 100.93258)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FakeMothman:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(11.5, 12.6, 16.5, 17, 17.6, 17.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.512202, 0), Vector3(0, 2.5345454, 0), Vector3(0, 2.5345454, 0), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(0.10426551, 2.7711978, -1.8066913), Vector3(-0.029193852, 1.3355826, -0.029458944)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Ui/CutSceneRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(16.8, 19.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Ui/CutSceneRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(17.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Ui/WednigoHead:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FakeMothman")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"killMothmanNoises"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Ui/PlushControl:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Z:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6, 18.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(207.31267, 14.233891, 97.38749), Vector3(210.65337, 15.145884, 97.30941), Vector3(212.67784, 15.733356, 95.77419), Vector3(213.63474, 16.403835, 96.11554), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.1706), Vector3(216.59238, 16.767204, 97.33828), Vector3(215.0343, 16.767204, 99.89257)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Z:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1, 1.3, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5319057, 0), Vector3(0, -1.0667976, 0), Vector3(0, -1.391655, 0), Vector3(0, -1.9336928, 0), Vector3(0, -2.0489244, 0), Vector3(0, -2.0489244, 0), Vector3(0, 2.727291, 0)]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Z")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"disableLooker"
+}]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CutSceneCam:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(204.24544, 15.9163, 95.9888), Vector3(208.154, 15.9163, 95.9888), Vector3(210.77441, 15.9163, 93.79872), Vector3(215.65707, 17.92923, 94.68064), Vector3(215.65707, 17.92923, 94.68064), Vector3(216.03511, 17.249203, 96.203415)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CutSceneCam:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.2, 2, 17, 17.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.7006812, 0), Vector3(0, -1.4534553, 0), Vector3(0, -1.8236572, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.269676, 0), Vector3(0, -2.894818, 0)]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("..")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2, 3.9, 7.4, 12.8, 14.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"cutscene1"
+}, {
+"args": [],
+"method": &"cutscene2"
+}, {
+"args": [],
+"method": &"cutscene3"
+}, {
+"args": [],
+"method": &"cutscene4"
+}, {
+"args": [],
+"method": &"cutscene5"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8lpc8"]
+_data = {
+&"FadeIn": SubResource("Animation_hpaky"),
+&"RESET": SubResource("Animation_bl81h"),
+&"mothMan": SubResource("Animation_qehwl")
+}
+
+[node name="City" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
+script = ExtResource("1_8atto")
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -7.6293945e-06, 2.3841858e-07, 1.4305115e-06)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, 807.4598, 5.4795775, 2364.6365)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, 8.099229, 7.8396616, 95.62052)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -5.2147703, 7.8450184, 99.37977)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -9.469648, 7.8450184, 83.09681)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D25" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, 3.5765738, 7.4594793, 17.00676)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D26" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, 9.737731, 7.4586067, 34.16208)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D27" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -3.5433035, 7.4639635, 38.482544)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D28" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -9.324744, 7.4639635, 21.908783)
+light_color = Color(1, 1, 0.72549, 1)
+light_energy = 10.514
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -36.155945, 5.2496037, 81.90436)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D9" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -48.065735, 5.2496037, 81.90436)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D7" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -40.198227, 5.2496037, 81.90436)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D8" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -44.34108, 5.2496037, 81.90436)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D10" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -38.166946, 21.091295, 120.78157)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D16" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -18.208721, 21.091295, 120.78157)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D18" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -77.781555, 21.091295, 120.78157)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.2
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D20" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9206138, -0.34785306, 0.17739294, 0, 0.4543015, 0.890848, -0.390474, -0.8201271, 0.41823635, -59.9858, 21.091295, 120.78157)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.2
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D19" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -78.06587, 21.091295, 133.46486)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D23" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -53.541054, 21.091295, 133.46486)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D24" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.7559216, -1.0669001e-08, 0.65466195, -0.65466195, -2.8616181e-08, 0.75592166, 1.0669e-08, -1, -2.8616187e-08, 5.755716, 21.88872, 126.425064)
+light_energy = 5.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 27.689
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D21" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -38.46081, 21.091295, 133.46486)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D22" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -1, -4.3711392e-08, -18.75935, 21.091295, 133.46486)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.1
+light_size = 1.0
+light_specular = 1.628
+spot_range = 22.479
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D11" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.36209685, 0.9321405, 0, 0.93214047, -0.36209673, -35.58611, 21.116583, 34.702087)
+light_energy = 1.159
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="MapExport#SpotLight3D12" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.48600018, 0.8739588, 0, 0.87395877, -0.48600006, -45.057213, 21.116583, 34.702087)
+light_energy = 1.819
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.8
+light_size = 1.0
+light_specular = 1.628
+spot_range = 17.724
+spot_attenuation = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yhbei")
+
+[node name="MapExport#SceneTransitionAnimation2" parent="." instance=ExtResource("16_xmauk")]
+position = Vector2(-38, -26)
+
+[node name="Z" parent="." instance=ExtResource("1_lwvs2")]
+transform = Transform3D(-0.45004395, 0, -0.66140664, 0, 0.8, 0, 0.66140664, 0, -0.45004395, 207.68576, 14.458996, 95.436325)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
+light_energy = 0.399
+shadow_enabled = true
+script = ExtResource("4_gkunu")
+
+[node name="Timer" type="Timer" parent="DirectionalLight3D"]
+autostart = true
+
+[node name="FakeMothman" parent="." instance=ExtResource("4_ijpq5")]
+transform = Transform3D(0.87166595, 0, -0.49009776, 0, 1, 0, 0.49009708, 0, 0.8716672, 242.885, 15.1689, 110.315)
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Big" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Big"]
+shape = SubResource("SphereShape3D_8ojvp")
+
+[node name="Small" type="Area3D" parent="FakeMothman"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FakeMothman/Small"]
+shape = SubResource("SphereShape3D_mrpgv")
+
+[node name="Ui" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="SprintBar" type="TextureProgressBar" parent="Ui"]
+visible = false
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("7_hys3v")
+texture_progress = ExtResource("8_524on")
+
+[node name="WednigoHead" type="Sprite2D" parent="Ui"]
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
 texture = ExtResource("11_havme")
 
-[node name="objective_arrow" type="Sprite2D" parent="SubViewportContainer"]
-position = Vector2(149, 58)
-rotation = -1.097812
-scale = Vector2(0.121, 0.125)
-texture = ExtResource("3_5iuns")
+[node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("12_4krsh")
+texture_progress = ExtResource("13_jceop")
 
-[node name="objective_marker" type="Sprite2D" parent="SubViewportContainer"]
+[node name="Pause Menu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("14_wvpsq")
+
+[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("15_ryqhk")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 204.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 238.0
+offset_top = 992.0
+offset_right = 452.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Main Menu"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
+stream = ExtResource("21_k8whp")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="Ui"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlushControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
+theme_override_fonts/font = ExtResource("41_s1lhy")
+theme_override_font_sizes/font_size = 152
+text = "0/5"
+script = ExtResource("42_ejm3s")
+
+[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
+position = Vector2(1024, 165.40625)
+scale = Vector2(0.44570318, 0.45308372)
+texture = ExtResource("42_wy0bi")
+
+[node name="Minimap" parent="Ui" instance=ExtResource("54_h81f8")]
+offset_left = 1629.0
+offset_top = 2.0
+offset_right = 1929.0
+offset_bottom = 302.0
+target = NodePath("../../Z")
+camera_distance = 40
+
+[node name="Note1" parent="." instance=ExtResource("8_hln64")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.36352, 3.7309244, 80.20716)
+script = ExtResource("9_ni7w2")
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
+transform = Transform3D(0.469999, -0.0014752969, -1.162535e-05, -5.28082e-10, 0.15505098, -0.024396604, -0.0010007471, -0.6928614, -0.005459526, -55.033142, 2.1984098, 80.677635)
+script = ExtResource("11_hambk")
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
+transform = Transform3D(0.47, 0, 0, 0, 0.70854896, -0.0015976299, 0, -0.045372963, -0.024948899, 18.935564, 2.833732, 56.743874)
+script = ExtResource("13_uc6et")
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
+transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 90.26859, 3.424793, 81.65424)
+script = ExtResource("15_eb1mn")
+dialogue_resource = ExtResource("2_iu74x")
+
+[node name="Water" type="Area3D" parent="."]
+transform = Transform3D(-4.6920023, 0, 0, 0, -0.108, 0, 0, 0, -4.759999, 112.374, 49.406, 93.4484)
+script = ExtResource("17_thvbw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(-1.6909755e-06, 0, 15.235006, 0, 1, 0, -38.68539, 0, -6.659495e-07, 0.24782181, 511.5413, 2.4255486)
+shape = SubResource("BoxShape3D_psxoi")
+
+[node name="MothmanAnims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cuvm8")
+}
+
+[node name="Perch" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Perch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9013, 20.275, 107.545)
+shape = SubResource("BoxShape3D_sef1e")
+
+[node name="CutSceneCollider" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.29897, 16.4256, 96.06307)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CutSceneCollider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41571, 1.11125)
+shape = SubResource("BoxShape3D_dmvtk")
+
+[node name="CutSceneCollider2" type="Area3D" parent="."]
+transform = Transform3D(0.222501, 0, -0.974932, 0, 1, 0, 0.974932, 0, 0.222501, 235.551, 17.2793, 93.2427)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CutSceneCollider2"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -12.021622, -1.4684086, 22.434525)
+shape = SubResource("BoxShape3D_dmvtk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.99916, 11.834155, 48.12297)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.54117, 11.834155, 48.71057)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.98616, 11.834155, 48.01057)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="MothmanFBX" parent="." instance=ExtResource("18_a85v4")]
+transform = Transform3D(-6.55671e-07, 0, -15, 0, 15, 0, 15, 0, -6.55671e-07, 192.15216, 11.386456, 46.49927)
+
+[node name="OverworldTheme" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("26_65jtr")
+volume_db = -30.0
+autoplay = true
+parameters/looping = true
+
+[node name="CityLimits" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CityLimits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.831638, 39.1709, 80.0267)
+shape = SubResource("BoxShape3D_8elgs")
+
+[node name="Mountain" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 267.814, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.723236, 16.5492, 76.0943)
+shape = SubResource("BoxShape3D_c5nfs")
+
+[node name="CutScene" type="Node3D" parent="."]
+
+[node name="CutSceneCam" type="Camera3D" parent="CutScene"]
+transform = Transform3D(-0.12951992, 0, -0.99157625, 0, 1, 0, 0.99157625, 0, -0.12951992, 204.24544, 15.9163, 95.9888)
+fov = 108.67
+
+[node name="CutSceneAnims" type="AnimationPlayer" parent="CutScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_8lpc8")
+}
+
+[node name="Plushies" type="Node3D" parent="."]
+
+[node name="BenchPlush" parent="Plushies" instance=ExtResource("55_78vex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.543903, 2.5169938, 80.720345)
+
+[node name="AlleyPlush" parent="Plushies" instance=ExtResource("55_78vex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.899242, 2.4719763, 75.68401)
+
+[node name="ParkPlush" parent="Plushies" instance=ExtResource("55_78vex")]
+transform = Transform3D(0.132741, 0, -0.991151, 0, 1, 0, 0.991151, 0, 0.132741, 43.6689, 3.0861313, 59.4104)
+
+[node name="BridgePlusg" parent="Plushies" instance=ExtResource("55_78vex")]
+transform = Transform3D(-0.174439, 0, -0.984668, 0, 1, 0, 0.984668, 0, -0.174439, 118.385864, 14.196845, 80.95561)
+
+[node name="MothmanPlush5" parent="Plushies" instance=ExtResource("55_78vex")]
+transform = Transform3D(0.845812, 0, -0.533482, 0, 1, 0, 0.533482, 0, 0.845812, 192.0334, 9.596173, 49.268524)
+
+[node name="FixedMap" parent="." instance=ExtResource("56_4uavd")]
+transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.36398315, 1.3343601, 68.08882)
+
+[connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
+[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
+[connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
+[connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
+[connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
