@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bepdhpq4n8kxf"]
+[gd_scene load_steps=4 format=3 uid="uid://bepdhpq4n8kxf"]
 
+[ext_resource type="Script" uid="uid://nit4cyid1f6y" path="res://Gnome Level/marble.gd" id="1_dgatj"]
 [ext_resource type="Material" uid="uid://dqid0o3q5fwfn" path="res://Gnome Level/Assets/marble.tres" id="1_ekvq1"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_r1srr"]
+radius = 1.796869
+
 [node name="marble" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_dgatj")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.066807695, 0)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 0.5673826, 0, 0, 0, 1, 0, 0, 0)
@@ -12,13 +19,24 @@ material_override = ExtResource("1_ekvq1")
 material = ExtResource("1_ekvq1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCombiner3D/CSGSphere3D"]
-visible = false
 skeleton = NodePath("../../..")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5302126, 0)
-visible = false
 operation = 2
 size = Vector3(1, 0.9727783, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGCombiner3D/CSGBox3D"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1.0524306, 0, 0, 0, 0.39478016, 0, 0, 0, 0.09932535, 0, -0.05996394, 0)
+visible = false
+polygon = PackedVector2Array(0, 0, -0.09515962, 1.3348104, 1, 1, 1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_r1srr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://edjg0qs1nknl"]
+
+[ext_resource type="PackedScene" path="res://Gnome Level/Assets/sword/scene.gltf" id="1_74bdg"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_74bdg")]
