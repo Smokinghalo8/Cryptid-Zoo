@@ -178,7 +178,7 @@ func _on_trap_detection_area_body_entered(body: Node3D) -> void:
 	if is_in_group("Character"):
 		get_tree().quit()
 
-
+### ACT TRAP 1 
 func _on_trap_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies") and activated5 == true:
 		wendigoPlayer.play("wendTrap1")
@@ -193,10 +193,10 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 		print("Trapped")
 		activated3 = false
 
-
+### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Enemies") and activated5 == true:
-		wendigoPlayer.play("wendTrap1")
+	if body.is_in_group("Enemies"):
+		wendigoPlayer.play("wendTrap2")
 		print("Trapped")
 		activated4 = false
 

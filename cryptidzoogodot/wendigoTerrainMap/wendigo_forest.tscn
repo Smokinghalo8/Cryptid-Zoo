@@ -1,4 +1,4 @@
-[gd_scene load_steps=561 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=564 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
+[ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8463,6 +8464,13 @@ tracks/0/path = NodePath("WendigoAi")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Trap4Wrap")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472)
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
 resource_name = "wendTrap1"
@@ -8482,11 +8490,37 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, -132.05534, 1.2335448, 129.26471)
 
+[sub_resource type="Animation" id="Animation_4f0m8"]
+resource_name = "wendTrap2"
+length = 15.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.008333325, 1, 83.818535, 1.3136218, 185.05214, 1.0416666, 1, 83.818535, 1.3136218, 185.24805, 2.0083332, 1, 83.818535, 1.3136218, 184.92949, 2.99, 1, 83.818535, 1.3136218, 185.05214, 4.0233335, 1, 83.818535, 1.3136218, 185.24805, 4.99, 1, 83.818535, 1.3136218, 184.92949, 5.96, 1, 83.818535, 1.3136218, 185.05214, 6.9933333, 1, 83.818535, 1.3136218, 185.24805, 7.96, 1, 83.818535, 1.3136218, 184.92949, 8.99, 1, 83.818535, 1.3136218, 185.05214, 10.023333, 1, 83.818535, 1.3136218, 185.24805, 10.99, 1, 83.818535, 1.3136218, 184.92949, 11.84, 1, 83.818535, 1.3136218, 185.05214, 12.873333, 1, 83.818535, 1.3136218, 185.24805, 13.84, 1, 83.818535, 1.3136218, 184.92949, 14.966666, 1, 83.818535, 1.3136218, 185.05214)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Trap4Wrap")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472, 0.53333336, 1, 83.47394, 0.6950488, 184.68472, 14.666667, 1, 83.47394, 0.6950488, 184.68472, 14.933333, 1, 83.47394, -5.7903466, 184.68472)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
 _data = {
 &"RESET": SubResource("Animation_k4prm"),
-&"wendTrap1": SubResource("Animation_ly1ea")
+&"wendTrap1": SubResource("Animation_ly1ea"),
+&"wendTrap2": SubResource("Animation_4f0m8")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgjca"]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("34_k4prm")
+metallic = 1.0
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8511,7 +8545,7 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.79227, 2.6597104, 159.74236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.72844, 2.6597104, 186.30191)
 collision_layer = 3
 collision_mask = 3
 
@@ -8526,7 +8560,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.05534, 1.2335448, 129.26471)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.630646, 1.3136218, 191.47707)
 collision_layer = 3
 collision_mask = 3
 
@@ -8738,6 +8772,7 @@ offset_right = 1926.0
 offset_bottom = 1087.0
 
 [node name="VHS Flavor1" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_4f0m8")
 offset_right = 1933.0
 offset_bottom = 1087.0
@@ -8780,6 +8815,11 @@ shape = SubResource("ConcavePolygonShape3D_4f0m8")
 libraries = {
 &"": SubResource("AnimationLibrary_4f0m8")
 }
+
+[node name="Trap4Wrap" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.47394, -5.7903466, 184.68472)
+radius = 5.2946253
+material = SubResource("StandardMaterial3D_wgjca")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
