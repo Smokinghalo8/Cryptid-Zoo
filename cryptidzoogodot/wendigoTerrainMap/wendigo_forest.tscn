@@ -1,4 +1,4 @@
-[gd_scene load_steps=567 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=570 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_136gw"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_g0ukx"]
 [ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="17_qv7kg"]
-[ext_resource type="Script" uid="uid://1murb5rpgnye" path="res://globalScenes/dialog.gd" id="18_jyr7y"]
+[ext_resource type="Script" path="res://globalScenes/dialog.gd" id="18_jyr7y"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="19_uyjqn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="20_75rbe"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
@@ -29,12 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
-[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
-[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="Shader" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
+[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
+[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
+[ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8523,24 +8524,6 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472, 0.53333336, 1, 83.47394, 0.6950488, 184.68472, 14.666667, 1, 83.47394, 0.6950488, 184.68472, 14.933333, 1, 83.47394, -5.7903466, 184.68472)
 
-[sub_resource type="Animation" id="Animation_wgjca"]
-resource_name = "wendigoTrap3"
-length = 15.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WendigoAi")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 99.840225, 1.3136218, 4.2221413, 0.53333336, 1, 99.80343, 1.1752727, 4.221266, 0.9333334, 1, 99.840225, 1.3136218, 4.2221413, 1.41, 1, 99.80343, 1.1752727, 4.221266, 1.81, 1, 99.840225, 1.3136218, 4.2221413, 2.37, 1, 99.80343, 1.1752727, 4.221266, 2.77, 1, 99.840225, 1.3136218, 4.2221413, 3.54, 1, 99.80343, 1.1752727, 4.221266, 3.94, 1, 99.840225, 1.3136218, 4.2221413, 4.9, 1, 99.80343, 1.1752727, 4.221266, 5.3, 1, 99.840225, 1.3136218, 4.2221413, 6.52, 1, 99.80343, 1.1752727, 4.221266, 6.92, 1, 99.840225, 1.3136218, 4.2221413, 7.533334, 1, 99.80343, 1.1752727, 4.221266, 7.933334, 1, 99.840225, 1.3136218, 4.2221413, 8.766667, 1, 99.80343, 1.1752727, 4.221266, 9.166667, 1, 99.840225, 1.3136218, 4.2221413, 10.75, 1, 99.80343, 1.1752727, 4.221266, 11.15, 1, 99.840225, 1.3136218, 4.2221413, 12.21, 1, 99.80343, 1.1752727, 4.221266, 12.61, 1, 99.840225, 1.3136218, 4.2221413, 13.4, 1, 99.80343, 1.1752727, 4.221266, 14.133333, 1, 99.81907, 1.5557785, 4.2216377, 15, 1, 99.840225, 1.3136218, 4.2221413)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("string")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 99.97217, 32.244507, 4.376326, 0.36666667, 1, 99.97217, 8.243574, 4.376326, 14.733334, 1, 99.97217, 8.243574, 4.376326, 14.966666, 1, 99.97217, 32.244507, 4.376326)
-
 [sub_resource type="Animation" id="Animation_bhjje"]
 resource_name = "wendTrap4"
 length = 25.0
@@ -8566,6 +8549,24 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0, 0.5707278, 0, 0.8211393, 2.0333333, 1, 0.04265835, 0.5691314, -0.061375048, 0.81884235)
 
+[sub_resource type="Animation" id="Animation_wgjca"]
+resource_name = "wendigoTrap3"
+length = 15.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 99.840225, 1.3136218, 4.2221413, 0.53333336, 1, 99.80343, 1.1752727, 4.221266, 0.9333334, 1, 99.840225, 1.3136218, 4.2221413, 1.41, 1, 99.80343, 1.1752727, 4.221266, 1.81, 1, 99.840225, 1.3136218, 4.2221413, 2.37, 1, 99.80343, 1.1752727, 4.221266, 2.77, 1, 99.840225, 1.3136218, 4.2221413, 3.54, 1, 99.80343, 1.1752727, 4.221266, 3.94, 1, 99.840225, 1.3136218, 4.2221413, 4.9, 1, 99.80343, 1.1752727, 4.221266, 5.3, 1, 99.840225, 1.3136218, 4.2221413, 6.52, 1, 99.80343, 1.1752727, 4.221266, 6.92, 1, 99.840225, 1.3136218, 4.2221413, 7.533334, 1, 99.80343, 1.1752727, 4.221266, 7.933334, 1, 99.840225, 1.3136218, 4.2221413, 8.766667, 1, 99.80343, 1.1752727, 4.221266, 9.166667, 1, 99.840225, 1.3136218, 4.2221413, 10.75, 1, 99.80343, 1.1752727, 4.221266, 11.15, 1, 99.840225, 1.3136218, 4.2221413, 12.21, 1, 99.80343, 1.1752727, 4.221266, 12.61, 1, 99.840225, 1.3136218, 4.2221413, 13.4, 1, 99.80343, 1.1752727, 4.221266, 14.133333, 1, 99.81907, 1.5557785, 4.2216377, 15, 1, 99.840225, 1.3136218, 4.2221413)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("string")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 99.97217, 32.244507, 4.376326, 0.36666667, 1, 99.97217, 8.243574, 4.376326, 14.733334, 1, 99.97217, 8.243574, 4.376326, 14.966666, 1, 99.97217, 32.244507, 4.376326)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
 _data = {
 &"RESET": SubResource("Animation_k4prm"),
@@ -8581,6 +8582,12 @@ cull_mode = 2
 depth_draw_mode = 1
 albedo_texture = ExtResource("34_k4prm")
 metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhjje"]
+albedo_texture = ExtResource("35_wgjca")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgjca"]
+size = Vector3(107.84458, 34.108337, 2.91687)
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8605,7 +8612,7 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.76275, 2.6597104, -171.2395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.19592, 3.1796148, 158.56525)
 collision_layer = 3
 collision_mask = 3
 
@@ -8620,7 +8627,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 72.90572, 1.686511, -150.34836)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -154.2644, 1.2017729, 188.58597)
 collision_layer = 3
 collision_mask = 3
 
@@ -8893,19 +8900,31 @@ radius = 0.008
 [node name="tarp" type="CSGBox3D" parent="."]
 transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 46.21802, -2.6953216, -151.01622)
 size = Vector3(8.005093, 0.1459961, 6.1776276)
+material = SubResource("StandardMaterial3D_bhjje")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("35_4f0m8")]
 transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 106.01007, -0.10002577, 3.398624)
+
+[node name="ForestBound1" type="Area3D" parent="."]
+
+[node name="ForestBound1Shape" type="CollisionShape3D" parent="ForestBound1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.97372, 14.890767, 108.248505)
+shape = SubResource("BoxShape3D_wgjca")
+
+[node name="ForestBound2" type="Area3D" parent="."]
+transform = Transform3D(-0.14821856, 0, -0.9691537, 0, 1, 0, 1.1740949, 0, -0.12234664, -99.099525, 0, 176.71877)
+
+[node name="ForestBound1Shape" type="CollisionShape3D" parent="ForestBound2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.220688, 12.973744, -2.2316666)
+shape = SubResource("BoxShape3D_wgjca")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
-[connection signal="activated" from="Trap2" to="WendigoAi" method="_on_trap_2_activated"]
 [connection signal="body_entered" from="Trap2" to="WendigoAi" method="_on_trap_2_body_entered"]
-[connection signal="activated" from="Trap3" to="WendigoAi" method="_on_trap_3_activated"]
 [connection signal="body_entered" from="Trap3" to="WendigoAi" method="_on_trap_3_body_entered"]
-[connection signal="activated" from="Trap4" to="WendigoAi" method="_on_trap_4_activated"]
 [connection signal="body_entered" from="Trap4" to="WendigoAi" method="_on_trap_4_body_entered"]
-[connection signal="activated" from="Trap5" to="WendigoAi" method="_on_trap_5_activated"]
 [connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]
+[connection signal="body_entered" from="ForestBound1" to="." method="_on_forest_bound_1_body_entered"]
+[connection signal="body_entered" from="ForestBound2" to="." method="_on_forest_bound_2_body_entered"]

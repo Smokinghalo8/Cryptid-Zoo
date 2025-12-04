@@ -148,6 +148,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Character"):
 		chasing_player = body
 		state = State.CHASE
+		
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:

@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dulcdkfied8gv"]
+[gd_scene load_steps=6 format=3 uid="uid://cn1ecy3n7c6my"]
 
-[ext_resource type="PackedScene" uid="uid://b67wfjyfb04hd" path="res://Wendigo Level/assets/bear_trap.tscn" id="1_7dike"]
 [ext_resource type="Script" uid="uid://cgp1pxtvo0rmc" path="res://wendigoTerrainMap/trapScript.gd" id="1_q6m2y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
@@ -29,12 +28,8 @@ shape = SubResource("BoxShape3D_uyjqn")
 [node name="Glow" type="MeshInstance3D" parent="."]
 transform = Transform3D(5.259191, 0, 0, 0, 1.066489, 0, 0, 0, 6.9610634, 0, 0, 0)
 mesh = SubResource("BoxMesh_q6m2y")
-skeleton = NodePath("../BearTrap")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pufgm")
-
-[node name="BearTrap" parent="." instance=ExtResource("1_7dike")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-visible = false
 
 [node name="TrapColl" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42391968, 0)
