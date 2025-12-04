@@ -1,4 +1,4 @@
-[gd_scene load_steps=564 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=567 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -34,6 +34,7 @@
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
+[ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8471,6 +8472,20 @@ tracks/1/path = NodePath("Trap4Wrap")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("string")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 99.97217, 10.003115, 4.376326)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tarp")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622)
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
 resource_name = "wendTrap1"
@@ -8508,11 +8523,56 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472, 0.53333336, 1, 83.47394, 0.6950488, 184.68472, 14.666667, 1, 83.47394, 0.6950488, 184.68472, 14.933333, 1, 83.47394, -5.7903466, 184.68472)
 
+[sub_resource type="Animation" id="Animation_wgjca"]
+resource_name = "wendigoTrap3"
+length = 15.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 99.840225, 1.3136218, 4.2221413, 0.53333336, 1, 99.80343, 1.1752727, 4.221266, 0.9333334, 1, 99.840225, 1.3136218, 4.2221413, 1.41, 1, 99.80343, 1.1752727, 4.221266, 1.81, 1, 99.840225, 1.3136218, 4.2221413, 2.37, 1, 99.80343, 1.1752727, 4.221266, 2.77, 1, 99.840225, 1.3136218, 4.2221413, 3.54, 1, 99.80343, 1.1752727, 4.221266, 3.94, 1, 99.840225, 1.3136218, 4.2221413, 4.9, 1, 99.80343, 1.1752727, 4.221266, 5.3, 1, 99.840225, 1.3136218, 4.2221413, 6.52, 1, 99.80343, 1.1752727, 4.221266, 6.92, 1, 99.840225, 1.3136218, 4.2221413, 7.533334, 1, 99.80343, 1.1752727, 4.221266, 7.933334, 1, 99.840225, 1.3136218, 4.2221413, 8.766667, 1, 99.80343, 1.1752727, 4.221266, 9.166667, 1, 99.840225, 1.3136218, 4.2221413, 10.75, 1, 99.80343, 1.1752727, 4.221266, 11.15, 1, 99.840225, 1.3136218, 4.2221413, 12.21, 1, 99.80343, 1.1752727, 4.221266, 12.61, 1, 99.840225, 1.3136218, 4.2221413, 13.4, 1, 99.80343, 1.1752727, 4.221266, 14.133333, 1, 99.81907, 1.5557785, 4.2216377, 15, 1, 99.840225, 1.3136218, 4.2221413)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("string")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 99.97217, 32.244507, 4.376326, 0.36666667, 1, 99.97217, 8.243574, 4.376326, 14.733334, 1, 99.97217, 8.243574, 4.376326, 14.966666, 1, 99.97217, 32.244507, 4.376326)
+
+[sub_resource type="Animation" id="Animation_bhjje"]
+resource_name = "wendTrap4"
+length = 25.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tarp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622, 0.96666664, 1, 46.21802, -15.636354, -151.01622)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WendigoAi")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.033333335, 1, 51.738377, -0.9811497, -150.34836, 1.5666667, 1, 51.738377, -13.933051, -150.34836)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0.5707278, 0, 0.8211393, 2.0333333, 1, 0.04265835, 0.5691314, -0.061375048, 0.81884235)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
 _data = {
 &"RESET": SubResource("Animation_k4prm"),
 &"wendTrap1": SubResource("Animation_ly1ea"),
-&"wendTrap2": SubResource("Animation_4f0m8")
+&"wendTrap2": SubResource("Animation_4f0m8"),
+&"wendTrap4": SubResource("Animation_bhjje"),
+&"wendigoTrap3": SubResource("Animation_wgjca")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgjca"]
@@ -8545,7 +8605,7 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.72844, 2.6597104, 186.30191)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.76275, 2.6597104, -171.2395)
 collision_layer = 3
 collision_mask = 3
 
@@ -8560,7 +8620,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.630646, 1.3136218, 191.47707)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 72.90572, 1.686511, -150.34836)
 collision_layer = 3
 collision_mask = 3
 
@@ -8741,10 +8801,10 @@ transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194
 transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
 
 [node name="Trap2" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.923874, 0, -85.57547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.894905, 0.12553453, -178.366)
 
 [node name="Trap3" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265923, 0, 32.696922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.10275, 0, 4.1995926)
 
 [node name="Trap4" parent="." groups=["Traps"] instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.566376, 0, 184.41438)
@@ -8765,6 +8825,11 @@ material = SubResource("ShaderMaterial_6jnv6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.46182, -0.620275, -3.515686)
 operation = 2
 size = Vector3(38.391296, 7.063965, 25.122437)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 83.63259, 0.76462936, -166.62445)
+operation = 2
+size = Vector3(7.4367676, 0.9857178, 6.3101807)
 
 [node name="VHS Flavor2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_k4prm")
@@ -8820,6 +8885,17 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.47394, -5.7903466, 184.68472)
 radius = 5.2946253
 material = SubResource("StandardMaterial3D_wgjca")
+
+[node name="string" type="CSGCylinder3D" parent="."]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 99.97217, 10.003115, 4.376326)
+radius = 0.008
+
+[node name="tarp" type="CSGBox3D" parent="."]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 46.21802, -2.6953216, -151.01622)
+size = Vector3(8.005093, 0.1459961, 6.1776276)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("35_4f0m8")]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 106.01007, -0.10002577, 3.398624)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
