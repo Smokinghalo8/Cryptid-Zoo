@@ -8,3 +8,7 @@ var walkingSound
 var animNum = 1.0
 var plushCounter = 0
 var mothman_Zoo_Compatability = 0
+
+
+#Wendigo Things
+var trapCounter = 4

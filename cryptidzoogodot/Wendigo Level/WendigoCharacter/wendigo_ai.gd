@@ -30,6 +30,7 @@ var current_trap: Area3D = null
 @onready var activated3 = false
 @onready var activated4 = false
 
+@onready var levelPlayer : AnimationPlayer = $"../LevelAnimations"
 
 func _ready() -> void:
 	# Player detection
@@ -182,30 +183,44 @@ func _on_trap_detection_area_body_entered(body: Node3D) -> void:
 ### ACT TRAP 4
 func _on_trap_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
-		wendigoPlayer.play("wendTrap4")
-		print("Trapped")
-		activated2 = false
+		if Global.trapCounter == 1:
+			wendigoPlayer.play("wendTrap4")
+			await wendigoPlayer.animation_finished
+			#insert wendigo getting trapped
+			activated2 = false
+			Global.trapCounter -= 1
+			levelPlayer.play("FinalCutscene")
+			
 
 ### Act trap 3
 func _on_trap_3_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
-		wendigoPlayer.play("wendigoTrap3")
-		print("Trapped")
-		activated3 = false
+		if Global.trapCounter == 2:
+			wendigoPlayer.play("wendigoTrap3")
+			await wendigoPlayer.animation_finished
+			#insert trap escape line 3
+			activated3 = false
+			Global.trapCounter -= 1
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
-		wendigoPlayer.play("wendTrap2")
-		print("Trapped")
-		activated4 = false
+		if Global.trapCounter == 3:
+			wendigoPlayer.play("wendTrap2")
+			await wendigoPlayer.animation_finished
+			#insert trap escape line 2
+			activated4 = false
+			Global.trapCounter -= 1
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
-		wendigoPlayer.play("wendTrap1")
-		print("Trapped")
-		activated5 = false
+		if Global.trapCounter == 4:
+			wendigoPlayer.play("wendTrap1")
+			await wendigoPlayer.animation_finished
+			#insert trap escape line 1
+			activated5 = false
+			Global.trapCounter -= 1
 
 
 func _on_trap_5_activated() -> void:
