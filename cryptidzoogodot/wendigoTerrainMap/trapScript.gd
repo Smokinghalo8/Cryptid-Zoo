@@ -15,6 +15,8 @@ func interact():
 		interactable = false
 		$InteractCol.disabled = true
 		activated.emit()
+		if self.is_in_group("Traps"):
+			print("I'm a trap")
 
 
 func _on_wendigo_ai_trapped_2() -> void:

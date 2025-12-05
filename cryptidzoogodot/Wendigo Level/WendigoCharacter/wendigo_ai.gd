@@ -31,6 +31,10 @@ var current_trap: Area3D = null
 @onready var activated4 = false
 
 @onready var levelPlayer : AnimationPlayer = $"../LevelAnimations"
+@onready var chaseMusic = $"../ChaseMusic"
+@onready var chaseMusicOn = false
+
+@onready var zed = $"../ZWendigo"
 
 func _ready() -> void:
 	# Player detection
@@ -75,10 +79,17 @@ func _process_idle(delta: float) -> void:
 # --- Chase player ---
 func _process_chase(delta: float) -> void:
 	if chasing_player and is_instance_valid(chasing_player):
+		if chaseMusicOn == false:
+			chaseMusicOn = true
+			chaseMusic.play(0.0)
+			
+			
 		target_position = chasing_player.global_transform.origin
 		var move_direction = _calculate_move_direction(target_position)
 		_move_character(move_direction, speed_chase, delta)
 	else:
+		chaseMusic.stop()
+		chaseMusicOn = false
 		state = State.IDLE
 		speed_idle = 5.0 
 		choose_new_target()
@@ -108,7 +119,8 @@ func _move_character(direction: Vector3, move_speed: float, delta: float) -> voi
 	velocity.x = direction.x * move_speed
 	velocity.z = direction.z * move_speed
 	_apply_gravity(delta)
-	move_and_slide()
+	if Global.frozen == false:
+		move_and_slide()
 
 	if direction.length() > 0.01:
 		look_at(global_transform.origin + direction, Vector3.UP)
@@ -117,7 +129,8 @@ func stop_and_apply_gravity(delta: float) -> void:
 	velocity.x = 0
 	velocity.z = 0
 	_apply_gravity(delta)
-	move_and_slide()
+	if Global.frozen == false:
+		move_and_slide()
 
 func _apply_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -201,6 +214,7 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 			#insert trap escape line 3
 			activated3 = false
 			Global.trapCounter -= 1
+			speed_chase += 2
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
@@ -211,6 +225,7 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 			#insert trap escape line 2
 			activated4 = false
 			Global.trapCounter -= 1
+			speed_chase += 2
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
@@ -221,6 +236,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 			#insert trap escape line 1
 			activated5 = false
 			Global.trapCounter -= 1
+			speed_chase += 2
 
 
 func _on_trap_5_activated() -> void:

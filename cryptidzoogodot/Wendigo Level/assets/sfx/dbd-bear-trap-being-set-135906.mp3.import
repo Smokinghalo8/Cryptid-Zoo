@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmb36of1ca5go"
+path="res://.godot/imported/dbd-bear-trap-being-set-135906.mp3-3567a4256c2a8872a2bf11bfa2294353.mp3str"
+
+[deps]
+
+source_file="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3"
+dest_files=["res://.godot/imported/dbd-bear-trap-being-set-135906.mp3-3567a4256c2a8872a2bf11bfa2294353.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

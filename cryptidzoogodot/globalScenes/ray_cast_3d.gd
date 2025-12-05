@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 		var target = get_collider()
 		if target != null:
 			if target.has_method("interact"):
+				if target.is_in_group("Traps"):
+					return
 				intText.visible = true
 				if Input.is_action_just_pressed("interact"):
 					target.interact()
