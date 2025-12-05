@@ -23,12 +23,13 @@ var currentVelocity = 0
 var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
-
+@onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
 
 
 func on_ready():
 	idle = true
 	Global.stamina = maxStamina
+	objectiveArrow.visible = false
 
 
 func _input(event: InputEvent):
@@ -52,11 +53,16 @@ func _process(delta):
 		var children = get_tree().current_scene.get_children()
 		for child in children:
 			if child.is_in_group("Living"):
+				
 				child.highlight()
 				senseable = false
 				$SenseTimer.start(0)
 				senseTime = 5.0
 				$"../Ui/WednigoHead/SenseBar".visible = true
+				objectiveArrow.visible = true
+				await get_tree().create_timer(3.0).timeout
+				objectiveArrow.visible = false
+				
 			
 	
 	#Flashlight

@@ -7,10 +7,12 @@ var scaryNoiseFirstTime = true
 var flyBack = true
 var cutScene = false
 var talking = false
+@onready var objectiveArrow = $"Ui/Minimap/SubViewportContainer/objective_arrow"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#SceneTransitionAnimation.play("fade_out")
+	objectiveArrow.visible = false
 	scaryNoiseFirstTime = false
 	$MothmanAnims.play("RESET")
 	Global.stamina = 100

@@ -49,6 +49,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
@@ -1170,6 +1171,7 @@ offset_right = 1929.0
 offset_bottom = 302.0
 target = NodePath("../../Z")
 camera_distance = 40
+objective_path = NodePath("../../FakeMothman")
 
 [node name="Note1" parent="." instance=ExtResource("8_hln64")]
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.36352, 3.7309244, 80.20716)
