@@ -49,6 +49,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
