@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n52jb2mcbkwy"
+path="res://.godot/imported/Hold on Zed.wav-d70a1d2e8bb58020b70fa5549c2067c9.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Hold on Zed.wav"
+dest_files=["res://.godot/imported/Hold on Zed.wav-d70a1d2e8bb58020b70fa5549c2067c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

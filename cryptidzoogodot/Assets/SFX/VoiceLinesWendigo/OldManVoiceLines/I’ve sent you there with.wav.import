@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4wc04qbrmu7h"
+path="res://.godot/imported/I’ve sent you there with.wav-4bf38e243a3f0a4a8cf404dfb35c77f1.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/I’ve sent you there with.wav"
+dest_files=["res://.godot/imported/I’ve sent you there with.wav-4bf38e243a3f0a4a8cf404dfb35c77f1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

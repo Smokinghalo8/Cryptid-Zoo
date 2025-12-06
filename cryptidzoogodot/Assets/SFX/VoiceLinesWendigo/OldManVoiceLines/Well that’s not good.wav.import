@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://didgpxjjamdn8"
+path="res://.godot/imported/Well that’s not good.wav-d6fa0ae8382bd69d3b9020b60da40efc.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well that’s not good.wav"
+dest_files=["res://.godot/imported/Well that’s not good.wav-d6fa0ae8382bd69d3b9020b60da40efc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

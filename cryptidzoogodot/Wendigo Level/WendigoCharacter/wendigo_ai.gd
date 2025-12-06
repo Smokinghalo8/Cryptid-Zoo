@@ -7,6 +7,8 @@ enum State {
 	TRAPPED
 }
 
+@export var dialogue_resource: DialogueResource
+
 @export var speed_idle: float = 5.4
 @export var speed_chase: float = 5.0
 @export var move_radius: float = 10.0
@@ -202,6 +204,8 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 			wendigoPlayer.play("wendTrap4")
 			await wendigoPlayer.animation_finished
 			#insert wendigo getting trapped
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "WendigoTrapped").finished
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "ToWendigo").finished
 			activated2 = false
 			Global.trapCounter -= 1
 			levelPlayer.play("FinalCutscene")
@@ -214,6 +218,7 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 			wendigoPlayer.play("wendigoTrap3")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 3
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
 			activated3 = false
 			Global.trapCounter -= 1
 			speed_chase += 2
@@ -226,6 +231,7 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 			wendigoPlayer.play("wendTrap2")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 2
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Escaped").finished
 			activated4 = false
 			Global.trapCounter -= 1
 			speed_chase += 2
@@ -238,6 +244,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 			wendigoPlayer.play("wendTrap1")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 1
+			await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Escaped").finished
 			activated5 = false
 			Global.trapCounter -= 1
 			speed_chase += 2

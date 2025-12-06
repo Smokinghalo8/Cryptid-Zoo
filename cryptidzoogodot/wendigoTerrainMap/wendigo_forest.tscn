@@ -1,9 +1,10 @@
-[gd_scene load_steps=582 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=580 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Resource" uid="uid://cqlo847hulha6" path="res://Dialogue/WendigoLevel.dialogue" id="2_jrcfp"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
@@ -17,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="13_pdyqn"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_136gw"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_g0ukx"]
-[ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="17_qv7kg"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="19_uyjqn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="20_75rbe"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
@@ -8397,13 +8397,6 @@ script = ExtResource("12_np73x")
 octree_managers = [SubResource("Resource_pdyqn"), SubResource("Resource_8pilc")]
 metadata/class = "Arborist"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vqk"]
-texture = ExtResource("17_qv7kg")
-
-[sub_resource type="Theme" id="Theme_k4prm"]
-default_font_size = 32
-Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kbknu"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
@@ -8842,6 +8835,7 @@ albedo_texture = ExtResource("35_wgjca")
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
+dialogue_resource = ExtResource("2_jrcfp")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_fa63b")
@@ -8881,8 +8875,10 @@ metadata/_custom_type_script = "uid://bc7pailucq83t"
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -150.64017, 1.3136218, 185.05214)
 collision_layer = 3
 collision_mask = 3
+dialogue_resource = ExtResource("2_jrcfp")
 
 [node name="Ui" type="CanvasLayer" parent="."]
+layer = 1000
 
 [node name="SprintBar" type="TextureProgressBar" parent="Ui"]
 visible = false
@@ -8895,45 +8891,6 @@ fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("15_136gw")
 texture_progress = ExtResource("16_g0ukx")
-
-[node name="Dialog" type="Control" parent="Ui"]
-modulate = Color(0.656569, 1, 0.915033, 1)
-layout_mode = 3
-anchor_top = 0.667
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_k4prm")
-
-[node name="Box" type="Panel" parent="Ui/Dialog"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 178.0
-offset_bottom = 0.359985
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Dialog"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 196.0
-offset_right = 1902.0
-offset_bottom = 344.0
-
-[node name="Speaker" type="Label" parent="Ui/Dialog/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.435479, 0.0274811, 1)
-theme_override_font_sizes/font_size = 20
-
-[node name="Dialogue" type="RichTextLabel" parent="Ui/Dialog/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.883863, 0.87429, 0.883631, 1)
-theme_override_colors/font_shadow_color = Color(0.212305, 0.212305, 0.212305, 1)
-theme_override_font_sizes/normal_font_size = 24
-fit_content = true
 
 [node name="Pause Menu" type="Control" parent="Ui"]
 visible = false
