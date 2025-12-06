@@ -36,6 +36,8 @@ var current_trap: Area3D = null
 
 @onready var zed = $"../ZWendigo"
 
+@onready var minimap = $"../Ui/Minimap"
+
 func _ready() -> void:
 	# Player detection
 	player_detection_area.body_entered.connect(_on_body_entered)
@@ -215,6 +217,7 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 			activated3 = false
 			Global.trapCounter -= 1
 			speed_chase += 2
+			minimap.objective = $Trap2
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
@@ -226,6 +229,7 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 			activated4 = false
 			Global.trapCounter -= 1
 			speed_chase += 2
+			minimap.objective = $Trap3
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
@@ -237,6 +241,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 			activated5 = false
 			Global.trapCounter -= 1
 			speed_chase += 2
+			minimap.objective = $Trap4
 
 
 func _on_trap_5_activated() -> void:

@@ -8878,7 +8878,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 83.818535, 1.3136218, 185.05214)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -150.64017, 1.3136218, 185.05214)
 collision_layer = 3
 collision_mask = 3
 
@@ -9038,7 +9038,7 @@ texture = ExtResource("24_ly1ea")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
 target = NodePath("../../ZWendigo")
-objective_path = NodePath("../../Trap2")
+objective_path = NodePath("../../Trap5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60851187, -0.29503116, -0.7366614, 0.7935448, 0.22623797, 0.56489205, 0, -0.9283173, 0.3717889, 30.718777, 184.16792, 52.7026)
