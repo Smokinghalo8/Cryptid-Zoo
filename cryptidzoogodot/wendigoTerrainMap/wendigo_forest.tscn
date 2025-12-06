@@ -1,4 +1,4 @@
-[gd_scene load_steps=583 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=582 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_136gw"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_g0ukx"]
 [ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="17_qv7kg"]
-[ext_resource type="Script" uid="uid://1murb5rpgnye" path="res://globalScenes/dialog.gd" id="18_jyr7y"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="19_uyjqn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="20_75rbe"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
@@ -29,9 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
-[ext_resource type="Shader" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
+[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 [ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
-[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
@@ -8586,6 +8585,117 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_wgjca"]
 size = Vector3(107.84458, 34.108337, 2.91687)
 
+[sub_resource type="Animation" id="Animation_h6ks2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StuffForTraps/string:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("StuffForTraps/Trap4Wrap:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("StuffForTraps/Trap4Wrap:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(83.47394, -3.620357, 184.68472)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StuffForTraps/tarp:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(46.21802, -2.6953216, -181.18488)]
+}
+
 [sub_resource type="Animation" id="Animation_hxb2w"]
 resource_name = "trap1Active"
 length = 3.0
@@ -8711,117 +8821,6 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_h6ks2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("StuffForTraps/string:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("StuffForTraps/Trap4Wrap:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("StuffForTraps/Trap4Wrap:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(83.47394, -3.620357, 184.68472)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("StuffForTraps/tarp:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(46.21802, -2.6953216, -181.18488)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epaa6"]
 _data = {
 &"RESET": SubResource("Animation_h6ks2"),
@@ -8906,7 +8905,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_k4prm")
-script = ExtResource("18_jyr7y")
 
 [node name="Box" type="Panel" parent="Ui/Dialog"]
 layout_mode = 1
@@ -9040,6 +9038,7 @@ texture = ExtResource("24_ly1ea")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
 target = NodePath("../../ZWendigo")
+objective_path = NodePath("../../Trap2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60851187, -0.29503116, -0.7366614, 0.7935448, 0.22623797, 0.56489205, 0, -0.9283173, 0.3717889, 30.718777, 184.16792, 52.7026)
