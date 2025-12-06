@@ -1423,6 +1423,7 @@ transform = Transform3D(0.845812, 0, -0.533482, 0, 1, 0, 0.533482, 0, 0.845812, 
 
 [node name="FixedMap" parent="." instance=ExtResource("56_4uavd")]
 transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.36398315, 1.3343601, 68.08882)
+scale = Vector3(27, 27, 27)
 
 [node name="VHS Flavor2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tbkjd")
