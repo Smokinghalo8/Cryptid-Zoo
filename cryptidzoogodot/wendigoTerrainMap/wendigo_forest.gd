@@ -34,14 +34,14 @@ func _process(delta: float) -> void:
 
 func _on_forest_bound_1_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character") and not has_visited_forest:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "EnterDarkForest").finished
 		has_visited_forest = true
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "EnterDarkForest").finished
 
 
 func _on_forest_bound_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character") and not has_visited_forest:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "EnterDarkForest").finished
 		has_visited_forest = true
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "EnterDarkForest").finished
 
 #Actual trap 4
 func _on_trap_2_activated() -> void:

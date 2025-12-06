@@ -36,7 +36,7 @@
 ~ Trap4Complete
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Good job kid.wav, next=auto] Good job, kid.  Now… you just have to lure him through the traps. [#voice=uid://crtl45r135gbw]
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/How do I do that.wav, next=auto] And.. how do I do that? [#voice=uid://bbn6c0fi434dh]
-[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well you’re going to.wav, next=auto] Well, you’re going to use yourself as bait. [#voice=uid://1i8y33o0ytj0]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well you’re going to.wav, next=auto] Well.. you’re going to use yourself as bait. [#voice=uid://1i8y33o0ytj0]
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/As what.wav, next=auto] As WHAT?? [#voice=uid://dcgkko31yibti]
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes as bait.wav, next=auto] Yes, as bait, but don’t worry.  As long as you don’t exhaust your stamina, you should be able to outrun him. [#voice=uid://btwn54g62wq2f]
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/i'm not sure about this.wav, next=auto] Old Man, I’m nooot sure about this.. [#voice=uid://bxysdyrvbph31]
