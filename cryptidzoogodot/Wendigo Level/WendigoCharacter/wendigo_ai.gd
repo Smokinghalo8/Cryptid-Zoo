@@ -38,7 +38,8 @@ var current_trap: Area3D = null
 
 @onready var zed = $"../ZWendigo"
 
-@onready var minimap = $"../Ui/Minimap"
+#@onready var minimap = $"../Ui/Minimap"
+@onready var minimap = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap")
 
 func _ready() -> void:
 	# Player detection
