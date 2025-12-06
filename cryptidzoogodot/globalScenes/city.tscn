@@ -40,6 +40,7 @@
 [ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="56_h81f8"]
 [ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="57_iu74x"]
 [ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+[ext_resource type="PackedScene" uid="id://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vum21"]
 
