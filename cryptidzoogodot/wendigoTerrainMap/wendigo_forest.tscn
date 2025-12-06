@@ -8872,7 +8872,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -150.64017, 1.3136218, 185.05214)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 99.840225, 1.3136218, 4.2221413)
 collision_layer = 3
 collision_mask = 3
 dialogue_resource = ExtResource("2_jrcfp")
