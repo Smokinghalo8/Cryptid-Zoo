@@ -5,12 +5,6 @@
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
 [ext_resource type="Script" uid="uid://b3b22gjxryt33" path="res://globalScenes/ray_cast_3d.gd" id="3_wpofk"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y3fih"]
-animation = &"Gliding"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y3fih"]
-animation = &"Gliding"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ewuyu"]
 animation = &"Idle"
 

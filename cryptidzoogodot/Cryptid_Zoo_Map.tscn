@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgaqul4w11asc"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_himo1"]
-[ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_o4ypb"]
+[ext_resource type="Resource" path="res://wendigoTerrainMap/data.hterrain" id="2_o4ypb"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_vqe8s"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_n8r35"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_52htr"]
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_740eg"]
 [ext_resource type="Texture2D" uid="uid://c88ygew4thkdt" path="res://Wendigo Level/wendigo_forest_slot0_normal_roughness.png" id="7_o0fkb"]
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://Wendigo Level/wendigo_forest_slot1_normal_roughness.png" id="8_tua2f"]
-[ext_resource type="PackedScene" uid="uid://bfvcgg3g1sjtc" path="res://Assets/Cryptid_Zoo_Ship_Export.fbx" id="9_veadk"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_o4ypb"]
+[ext_resource type="PackedScene" uid="uid://begfsx85rdr33" path="res://ship.tscn" id="10_vqe8s"]
 
 [sub_resource type="Resource" id="Resource_buty1"]
 script = ExtResource("3_vqe8s")
@@ -38,8 +38,8 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
-[node name="Cryptid_Zoo_Ship_Export" parent="." instance=ExtResource("9_veadk")]
-transform = Transform3D(62.255, 0, 0, 0, 62.255, 0, 0, 0, 62.255, -80.7796, -0.105695724, 7.379204)
-
 [node name="Z" parent="." instance=ExtResource("10_o4ypb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.27901, 1.2121811, 14.743207)
+transform = Transform3D(0.014206484, 0, -0.9998991, 0, 1, 0, 0.9998991, 0, 0.014206484, -168.78001, 5.085522, 7.7972445)
+
+[node name="Ship" parent="." instance=ExtResource("10_vqe8s")]
+transform = Transform3D(0.98095775, 0, -69.04304, 0, 69.05, 0, 69.04304, 0, 0.98095775, -162.05586, -0.13902998, 9.834721)
