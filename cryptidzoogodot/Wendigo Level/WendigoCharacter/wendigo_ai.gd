@@ -234,9 +234,10 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
 				activated3 = false
 				Global.trapCounter -= 1
-				speed_chase += 2
+				speed_chase += 0.5
 				minimap.objective = $"../Trap2"
 				minimap.arrow.visible = true
+				$"../Trap3".queue_free()
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
@@ -250,9 +251,10 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Escaped").finished
 				activated4 = false
 				Global.trapCounter -= 1
-				speed_chase += 2
+				speed_chase += 0.5
 				minimap.objective = $"../Trap3"
 				minimap.arrow.visible = true
+				$"../Trap4".queue_free()
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
@@ -266,9 +268,10 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Escaped").finished
 				activated5 = false
 				Global.trapCounter -= 1
-				speed_chase += 2
+				speed_chase += 0.5
 				minimap.objective = $"../Trap4"
 				minimap.arrow.visible = true
+				$"../Tra5".queue_free()
 
 
 func _on_trap_5_activated() -> void:

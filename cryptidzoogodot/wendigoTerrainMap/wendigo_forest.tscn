@@ -8579,6 +8579,100 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_wgjca"]
 size = Vector3(107.84458, 34.108337, 2.91687)
 
+[sub_resource type="Animation" id="Animation_x5eoj"]
+resource_name = "FinalCutscene"
+length = 85.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(55.80875, -0.75160146, -152.79074)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZWendigo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(59.429, 0.591, -148.794), Vector3(61.387455, 0.5910001, -155.07875), Vector3(61.387455, 0.5910001, -155.07875), Vector3(58.51292, 0.5910001, -151.09073), Vector3(58.512924, 0.5910001, -151.09073)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 18.3, 75, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ZWendigo:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.6830597, 0), Vector3(0, 2.6830597, 0), Vector3(0, 1.5483339, 0), Vector3(0, 1.5483339, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutSceneCam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutSceneCam:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 16),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"wendigoTrapped"
+}, {
+"args": [],
+"method": &"toWendigo"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_h6ks2"]
 length = 0.001
 tracks/0/type = "value"
@@ -8885,100 +8979,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_x5eoj"]
-resource_name = "FinalCutscene"
-length = 85.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WendigoAi:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 75.6, 77),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(55.80875, -0.75160146, -152.79074)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ZWendigo:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(59.429, 0.591, -148.794), Vector3(61.387455, 0.5910001, -155.07875), Vector3(61.387455, 0.5910001, -155.07875), Vector3(58.51292, 0.5910001, -151.09073), Vector3(58.512924, 0.5910001, -151.09073)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WendigoAi:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 18.3, 75, 75.6, 77),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.11032527, 1.2125082, -0.041204154), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ZWendigo:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 2.6830597, 0), Vector3(0, 2.6830597, 0), Vector3(0, 1.5483339, 0), Vector3(0, 1.5483339, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CutSceneCam:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CutSceneCam:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0)]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.5, 16),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"wendigoTrapped"
-}, {
-"args": [],
-"method": &"toWendigo"
-}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epaa6"]
