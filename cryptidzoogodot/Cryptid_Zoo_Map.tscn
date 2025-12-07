@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgaqul4w11asc"]
+[gd_scene load_steps=18 format=3 uid="uid://dgaqul4w11asc"]
 
+[ext_resource type="Script" uid="uid://cb4ytnygokj4o" path="res://cryptid_zoo_map.gd" id="1_52htr"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_himo1"]
-[ext_resource type="Resource" path="res://wendigoTerrainMap/data.hterrain" id="2_o4ypb"]
+[ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_o4ypb"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_vqe8s"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_n8r35"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_52htr"]
@@ -10,13 +11,184 @@
 [ext_resource type="Texture2D" uid="uid://d2rnd2qiej447" path="res://Wendigo Level/wendigo_forest_slot1_normal_roughness.png" id="8_tua2f"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_o4ypb"]
 [ext_resource type="PackedScene" uid="uid://begfsx85rdr33" path="res://ship.tscn" id="10_vqe8s"]
+[ext_resource type="PackedScene" uid="uid://drbocyk2r25jx" path="res://Assets/Models/OldManPlaceholder.tscn" id="11_vqe8s"]
+[ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="12_n8r35"]
 
 [sub_resource type="Resource" id="Resource_buty1"]
 script = ExtResource("3_vqe8s")
 mode = 0
 textures = [[ExtResource("4_n8r35"), ExtResource("5_52htr"), ExtResource("6_740eg")], [ExtResource("7_o0fkb"), ExtResource("8_tua2f"), ExtResource("6_740eg")]]
 
+[sub_resource type="Animation" id="Animation_52htr"]
+resource_name = "wendyToMM"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 17.4, 19.5, 19.966667, 20.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-152.30742, 1.113883, 5.260338), Vector3(-152.30742, 1.113883, 5.260338), Vector3(-152.41194, 1.113883, 3.7741847), Vector3(-152.41194, 1.113883, 3.7741847), Vector3(-156.85585, 1.113883, 7.4141684)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 17.4, 19.5, 20, 20.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.1389008, 0), Vector3(0, 2.1389008, 0), Vector3(0, 0.56381094, 0), Vector3(0, 2.1146932, 0), Vector3(0, 2.5283186, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 14.4, 17.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-151.86845, 0.85377395, 10.088173), Vector3(-151.86845, 0.85377395, 10.088173), Vector3(-154.16959, 0.85377395, -4.150552)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WendigoAi:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 14.4, 17.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.9253387, 0), Vector3(0, 0.9253387, 0), Vector3(0, 0.08121022, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneCam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 19.966667, 20.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-148.73, 1.4968176, 6.379507), Vector3(-148.73, 1.4968176, 6.379507), Vector3(-155.19621, 1.4968176, 9.610852)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutsceneCam:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 19.966667, 20.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.873384, 0), Vector3(0, 1.873384, 0), Vector3(0, 1.3034468, 0)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_n8r35"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-152.30742, 1.113883, 5.260338)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.1389008, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-151.86845, 0.85377395, 10.088173)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WendigoAi:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.9253387, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutsceneCam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-148.73, 1.4968176, 6.379507)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutsceneCam:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.873384, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_740eg"]
+_data = {
+&"RESET": SubResource("Animation_n8r35"),
+&"wendyToMM": SubResource("Animation_52htr")
+}
+
 [node name="Zoo_Map" type="Node3D"]
+script = ExtResource("1_52htr")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_himo1")
@@ -39,7 +211,21 @@ shader_params/u_tile_reduction = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
 [node name="Z" parent="." instance=ExtResource("10_o4ypb")]
-transform = Transform3D(0.014206484, 0, -0.9998991, 0, 1, 0, 0.9998991, 0, 0.014206484, -168.78001, 5.085522, 7.7972445)
+transform = Transform3D(-0.5380353, 0, 0.8429225, 0, 1, 0, -0.8429225, 0, -0.5380353, -152.30742, 1.113883, 5.260338)
 
 [node name="Ship" parent="." instance=ExtResource("10_vqe8s")]
 transform = Transform3D(0.98095775, 0, -69.04304, 0, 69.05, 0, 69.04304, 0, 0.98095775, -162.05586, -0.13902998, 9.834721)
+
+[node name="Wizard" parent="." instance=ExtResource("11_vqe8s")]
+transform = Transform3D(-0.10145563, 0, 0.9948401, 0, 1, 0, -0.9948401, 0, -0.10145563, -157.60666, 1.0015321, 10.008623)
+
+[node name="WendigoAi" parent="." instance=ExtResource("12_n8r35")]
+transform = Transform3D(0.40304792, 0, 0.53521246, 0, 0.6700001, 0, -0.53521246, 0, 0.40304792, -151.86845, 0.85377395, 10.088173)
+
+[node name="CutsceneCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.2979913, 0, 0.95456856, 0, 1, 0, -0.95456856, 0, -0.2979913, -148.73, 1.4968176, 6.379507)
+
+[node name="TransitionAnims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_740eg")
+}

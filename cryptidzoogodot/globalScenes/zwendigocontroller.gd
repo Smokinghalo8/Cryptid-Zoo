@@ -24,9 +24,10 @@ var velocityTolerance = 0.1
 var velocityDifference = 0
 
 
-func on_ready():
+func _ready():
 	idle = true
 	Global.stamina = maxStamina
+	Global.walkingSound = load("uid://2l7yfg02rrdx")
 
 
 func _input(event: InputEvent):

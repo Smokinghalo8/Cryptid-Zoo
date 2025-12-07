@@ -1,4 +1,4 @@
-[gd_scene load_steps=580 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=585 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
-[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="24_ly1ea"]
+[ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
@@ -31,7 +31,6 @@
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 [ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
-[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
 [ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
@@ -42,6 +41,11 @@
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
+[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://wendigoTerrainMap/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
+[ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
+[ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
+[ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="46_x5eoj"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8428,20 +8432,6 @@ shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
 shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
 shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4prm"]
-shader = ExtResource("31_cx7th")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
-shader_parameter/blur_samples = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4f0m8"]
-shader = ExtResource("32_ly1ea")
-shader_parameter/fog_density = 0.5
-shader_parameter/fog_speed = 0.3
-shader_parameter/noise_scale = 4.0
-shader_parameter/fog_opacity = 0.5
-
 [sub_resource type="BoxMesh" id="BoxMesh_k4prm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f0m8"]
@@ -8486,6 +8476,18 @@ tracks/3/path = NodePath("StuffForTraps/tarp")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WendigoAi:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836)]
+}
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
 resource_name = "wendTrap1"
@@ -8526,27 +8528,26 @@ tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472, 0.5333
 [sub_resource type="Animation" id="Animation_bhjje"]
 resource_name = "wendTrap4"
 length = 25.0
+step = 0.1
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("StuffForTraps/tarp")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622, 0.96666664, 1, 46.21802, -15.636354, -151.01622)
-tracks/1/type = "position_3d"
+tracks/0/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622, 1, 1, 46.218, -4.9355783, -151.016)
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WendigoAi")
+tracks/1/path = NodePath("WendigoAi:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0.033333335, 1, 51.738377, -0.9811497, -150.34836, 1.5666667, 1, 51.738377, -13.933051, -150.34836)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WendigoAi")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, 0.5707278, 0, 0.8211393, 2.0333333, 1, 0.04265835, 0.5691314, -0.061375048, 0.81884235)
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(51.738377, -3.5498424, -150.34836)]
+}
 
 [sub_resource type="Animation" id="Animation_wgjca"]
 resource_name = "wendigoTrap3"
@@ -8688,6 +8689,78 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector3(46.21802, -2.6953216, -181.18488)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WendigoAi:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-148.86244, 1.4200971, -53.40697)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WendigoAi:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ZWendigo:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-148.19592, 3.1796148, 158.56525)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ZWendigo:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CutSceneCam:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(55.62169, 5.3216925, -142.14674)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CutSceneCam:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6310937, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_hxb2w"]
 resource_name = "trap1Active"
@@ -8814,8 +8887,103 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_x5eoj"]
+resource_name = "FinalCutscene"
+length = 85.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(55.80875, -0.75160146, -152.79074)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZWendigo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(59.429, 0.591, -148.794), Vector3(61.387455, 0.5910001, -155.07875), Vector3(61.387455, 0.5910001, -155.07875), Vector3(58.51292, 0.5910001, -151.09073), Vector3(58.512924, 0.5910001, -151.09073)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 18.3, 75, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ZWendigo:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.6830597, 0), Vector3(0, 2.6830597, 0), Vector3(0, 1.5483339, 0), Vector3(0, 1.5483339, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutSceneCam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutSceneCam:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 16),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"wendigoTrapped"
+}, {
+"args": [],
+"method": &"toWendigo"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_epaa6"]
 _data = {
+&"FinalCutscene": SubResource("Animation_x5eoj"),
 &"RESET": SubResource("Animation_h6ks2"),
 &"trap1Active": SubResource("Animation_hxb2w"),
 &"trap2Active": SubResource("Animation_w1jcc"),
@@ -8832,6 +9000,16 @@ metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhjje"]
 albedo_texture = ExtResource("35_wgjca")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2v7d2"]
+albedo_texture = ExtResource("44_epaa6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4prm"]
+shader = ExtResource("31_cx7th")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -8856,11 +9034,6 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
-[node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.19592, 3.1796148, 158.56525)
-collision_layer = 3
-collision_mask = 3
-
 [node name="Gardener" type="Node3D" parent="."]
 script = ExtResource("9_q4s1m")
 file_management/garden_work_directory = "res://wendigoTerrainMap/gardening/"
@@ -8871,11 +9044,20 @@ storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
+[node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -148.19592, 3.1796148, 158.56525)
+collision_layer = 3
+collision_mask = 3
+
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -151.80054, 1.3136218, -42.105743)
+transform = Transform3D(0.34612653, 0.11746749, 0.930805, -0.040942054, 0.9930767, -0.11010161, -0.9372939, 1.490116e-08, 0.34853965, -148.86244, 1.4200971, -53.40697)
 collision_layer = 3
 collision_mask = 3
 dialogue_resource = ExtResource("2_jrcfp")
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
 
 [node name="Ui" type="CanvasLayer" parent="."]
 layer = 1000
@@ -8973,6 +9155,7 @@ theme_override_font_sizes/font_size = 48
 text = "Press E to interact"
 
 [node name="PlushControl" type="Control" parent="Ui"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -8980,20 +9163,25 @@ offset_bottom = 40.0
 
 [node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
 layout_mode = 0
-offset_left = 1713.0
-offset_right = 1806.0
-offset_bottom = 73.0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
 theme_override_fonts/font = ExtResource("22_6jnv6")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 152
 text = "0/5"
 script = ExtResource("23_cx7th")
 
-[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
-position = Vector2(1865.44, 36.1875)
-scale = Vector2(0.176459, 0.189987)
-texture = ExtResource("24_ly1ea")
+[node name="WendigoPlushGraphic" type="Sprite2D" parent="Ui/PlushControl"]
+position = Vector2(991, 167)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("24_jrcfp")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
+offset_left = 1619.0
+offset_top = 2.0
+offset_right = 1919.0
+offset_bottom = 302.0
 target = NodePath("../../ZWendigo")
 objective_path = NodePath("../../Trap5")
 
@@ -9009,14 +9197,9 @@ script = ExtResource("25_g0ukx")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-[node name="WendigoMonument" parent="." instance=ExtResource("27_jyr7y")]
-transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194, 4.64374)
-
-[node name="SpookyHouse" parent="." instance=ExtResource("28_uyjqn")]
-transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
-
 [node name="Trap2" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.894905, 0.12553453, -178.366)
+transform = Transform3D(2.674213, 0, 0, 0, 1, 0, 0, 0, 1.980717, 47.894905, 0.12553453, -154.67412)
+visible = false
 
 [node name="Trap3" parent="." instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.10275, 0, 4.1995926)
@@ -9027,35 +9210,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.566376, 0, 184.41438)
 [node name="Trap5" parent="." instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0.5068753, 128.76978)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="Water" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Water"]
 use_collision = true
 size = Vector3(479.72803, 0.001, 543.9746)
 material = SubResource("ShaderMaterial_6jnv6")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Water"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.46182, -0.620275, -3.515686)
 operation = 2
 size = Vector3(38.391296, 7.063965, 25.122437)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Water"]
 transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 83.63259, 0.76462936, -166.62445)
 operation = 2
 size = Vector3(7.4367676, 0.9857178, 6.3101807)
-
-[node name="VHS Flavor2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_k4prm")
-offset_right = 1926.0
-offset_bottom = 1087.0
-
-[node name="VHS Flavor1" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_4f0m8")
-offset_right = 1933.0
-offset_bottom = 1087.0
 
 [node name="Bridges" type="Node3D" parent="."]
 
@@ -9089,15 +9261,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4f0m8")
 
-[node name="Camera3D" type="Camera3D" parent="Bridges"]
-
 [node name="WendigoAnims" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_4f0m8")
 }
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("35_4f0m8")]
-transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 106.01007, -0.10002577, 3.398624)
 
 [node name="ForestBound1" type="Area3D" parent="."]
 
@@ -9155,6 +9322,127 @@ stream = ExtResource("39_hxb2w")
 
 [node name="ChaseMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_w1jcc")
+
+[node name="Plushies" type="Node3D" parent="."]
+
+[node name="PorchPlushy" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.86496, 2.4413292, 161.59625)
+
+[node name="MonumentPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(-0.6373701, 0, 0.77055776, 0, 1, 0, -0.77055776, 0, -0.6373701, 168.64516, -8.032878, 5.4699535)
+
+[node name="GraveyardPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(-0.99933916, 0, 0.03634727, 0, 1, 0, -0.03634727, 0, -0.99933916, 9.545032, 1.6030568, -166.30734)
+
+[node name="MausoleumPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, -128.38791, -0.056017965, -52.183273)
+
+[node name="BigTreePlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
+
+[node name="LandMarks" type="Node3D" parent="."]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
+
+[node name="WendigoMonument" parent="LandMarks" instance=ExtResource("27_jyr7y")]
+transform = Transform3D(-1.5245585, 0, -1.3098933, 0, 2.01, 0, 1.3098933, 0, -1.5245585, 40.832993, -4.0385094, 43.215347)
+
+[node name="SpookyHouse" parent="LandMarks" instance=ExtResource("28_uyjqn")]
+transform = Transform3D(1.134916, 0, 0.6542674, 0, 1.31, 0, -0.6542674, 0, 1.134916, -296.6499, 1.4879123, -73.86502)
+
+[node name="BigTree" parent="LandMarks" instance=ExtResource("35_4f0m8")]
+transform = Transform3D(3.1631546, 0, -3.7146127, 0, 5.562967, 0, 3.2383497, 0, 3.6283588, -2.929268, -0.044007808, -2.9922028)
+
+[node name="Monument" type="Node3D" parent="LandMarks"]
+transform = Transform3D(0.42274532, 0, -0.4327949, 0, 0.605, 0, 0.4327949, 0, 0.42274532, 40.843643, -8.507805, 43.273674)
+
+[node name="Pedestal" type="MeshInstance3D" parent="LandMarks/Monument"]
+material_override = SubResource("StandardMaterial3D_2v7d2")
+mesh = ExtResource("45_x5eoj")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, 0.89541626, 7.781783, -0.30146074)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, 0.13839722, 7.781783, 0.66978025)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, -0.7789612, 7.781783, -0.48724556)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="Mausoluems" type="Node3D" parent="LandMarks"]
+transform = Transform3D(0.9769605, 0, -0.2134226, 0, 1, 0, 0.2134226, 0, 0.9769605, -136.48004, 3.2446766, -233.8808)
+
+[node name="Mausoleum" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
+
+[node name="Mausoleum2" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(-0.13064718, 0, -0.99142945, 0, 1.0000001, 0, 0.99142945, 0, -0.13064718, 11.394012, 0, 25.219246)
+
+[node name="Mausoleum3" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(-0.7009597, 0, 0.713202, 0, 0.99999994, 0, -0.713202, 0, -0.7009597, -13.623497, 0, 28.185654)
+
+[node name="Graveyard" type="Node3D" parent="LandMarks"]
+transform = Transform3D(1.1835042, 0, -0.059518695, 0, 1.185, 0, 0.059518695, 0, 1.1835042, 42.98575, 0.056017965, -184.84845)
+
+[node name="Tombstone" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
+
+[node name="Tombstone2" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.5495626, 0, -0.8354528, 0, 1, 0, 0.8354528, 0, 0.5495626, 7.5211334, 0, 0.2033081)
+
+[node name="Tombstone3" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.19806793, 0, 0.9801885, 0, 0.9999999, 0, -0.9801885, 0, 0.19806793, 3.8610153, 0, 4.156708)
+
+[node name="Tombstone4" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.83920264, 0, -0.5438191, 0, 1, 0, 0.5438191, 0, 0.83920264, 7.5695877, 0, -14.798683)
+
+[node name="Tombstone5" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.006859064, 0, -0.9999768, 0, 1, 0, 0.9999768, 0, 0.006859064, 13.770775, 0, -10.537926)
+
+[node name="Tombstone6" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.69926447, 0, 0.7148637, 0, 0.9999999, 0, -0.7148637, 0, 0.69926447, 8.549248, 0, -9.21067)
+
+[node name="Tombstone7" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.7022526, 0, 0.7119282, 0, 1, 0, -0.7119282, 0, 0.7022526, 13.76899, 0, 7.1082535)
+
+[node name="Tombstone10" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.54956263, 0, -0.8354529, 0, 1, 0, 0.8354529, 0, 0.54956263, 0.23309326, 0, -12.166229)
+
+[node name="Tombstone13" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.93823385, 0, -0.34600246, 0, 1, 0, 0.34600246, 0, 0.93823385, 7.6039734, 0, -25.004738)
+
+[node name="Tombstone14" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.71980095, 0, -0.6941816, 0, 1, 0, 0.6941816, 0, 0.71980095, 1.0257721, 0, -20.823677)
+
+[node name="Tombstone11" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.198068, 0, 0.9801887, 0, 0.9999999, 0, -0.9801887, 0, 0.198068, -3.4270248, 0, -8.21283)
+
+[node name="Tombstone12" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.7022526, 0, 0.7119282, 0, 1, 0, -0.7119282, 0, 0.7022526, 6.480942, 0, -5.261284)
+
+[node name="Tombstone8" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.9807142, 0, -0.1954498, 0, 1, 0, 0.1954498, 0, 0.9807142, 19.195457, 0, 1.8965302)
+
+[node name="Tombstone9" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(-0.01787129, 0, 0.9998408, 0, 0.9999998, 0, -0.9998408, 0, -0.01787129, 13.21537, 0, -5.446419)
+
+[node name="VHS Flavor2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_k4prm")
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="CutSceneCam" type="Camera3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.8073827, 0.590028, 0, -0.5900281, 0.8073826, 55.62169, 5.3216925, -142.14674)
+fov = 59.062492
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

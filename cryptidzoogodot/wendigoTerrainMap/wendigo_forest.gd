@@ -12,9 +12,9 @@ func _ready() -> void:
 	Global.frozen = true
 	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
-	if dialogue_resource:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
-		minimap.arrow.visible = true
+	#if dialogue_resource:
+#		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+#		minimap.arrow.visible = true
 	Global.frozen = false
 
 
@@ -29,6 +29,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		togglePause()
+	
+	
 
 
 
@@ -84,3 +86,13 @@ func _on_trap_5_activated() -> void:
 func togglePause():
 	get_tree().paused = true
 	$"Ui/Pause Menu".visible = true
+
+
+func wendigoTrapped():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "WendigoTrapped").finished
+
+func toWendigo():
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "ToWendigo").finished
+
+func killWendyNoise():
+	$WendigoAi/AudioStreamPlayer3D.queue_free()

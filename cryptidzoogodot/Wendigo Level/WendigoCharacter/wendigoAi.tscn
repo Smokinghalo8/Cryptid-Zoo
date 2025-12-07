@@ -29,6 +29,10 @@ refraction_scale = 1.0
 [node name="WendigoAi" type="CharacterBody3D"]
 axis_lock_linear_y = true
 script = ExtResource("1_ynmkr")
+speed_idle = null
+speed_chase = null
+move_radius = null
+wait_time = null
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01473999, 1.0381012, 0)
