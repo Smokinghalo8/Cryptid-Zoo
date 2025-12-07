@@ -1,9 +1,10 @@
-[gd_scene load_steps=558 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=585 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
+[ext_resource type="Resource" uid="uid://cqlo847hulha6" path="res://Dialogue/WendigoLevel.dialogue" id="2_jrcfp"]
 [ext_resource type="Texture2D" uid="uid://uvty2e4akmu3" path="res://Wendigo Level/wendigo_forest_slot0_albedo_bump.png" id="4_6km8e"]
 [ext_resource type="Texture2D" uid="uid://bnc7knvobvmam" path="res://Wendigo Level/wendigo_forest_slot1_albedo_bump.png" id="5_mqwve"]
 [ext_resource type="Texture2D" uid="uid://cm5pnnq8bn8o0" path="res://wendigoTerrainMap/ground-SticksLeaves.png" id="6_mqwve"]
@@ -17,22 +18,34 @@
 [ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="13_pdyqn"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_136gw"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_g0ukx"]
-[ext_resource type="Texture2D" uid="uid://booo2f3co4624" path="res://Assets/Materials/spa-homepage-greybox.png" id="17_qv7kg"]
-[ext_resource type="Script" uid="uid://1murb5rpgnye" path="res://globalScenes/dialog.gd" id="18_jyr7y"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="19_uyjqn"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="20_75rbe"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
-[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="24_ly1ea"]
+[ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://dulcdkfied8gv" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
-[ext_resource type="Shader" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
-[ext_resource type="Shader" uid="uid://dy1444m3krfvh" path="res://Wendigo Level/WendigoTestMap/vhs.gdshader" id="32_ly1ea"]
+[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
+[ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
+[ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
+[ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
+[ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
+[ext_resource type="PackedScene" uid="uid://b67wfjyfb04hd" path="res://Wendigo Level/assets/bear_trap.tscn" id="37_yrhgu"]
+[ext_resource type="AudioStream" uid="uid://bmb36of1ca5go" path="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3" id="38_a0ttt"]
+[ext_resource type="AudioStream" uid="uid://bi2ba460tqw3d" path="res://Wendigo Level/assets/sfx/mystic-forest-ambient-23812.mp3" id="39_hxb2w"]
+[ext_resource type="AudioStream" uid="uid://t5ajif4huvb5" path="res://Wendigo Level/assets/sfx/rope-creak-01-sound-effect-340131.mp3" id="39_w1jcc"]
+[ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
+[ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
+[ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
+[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://wendigoTerrainMap/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
+[ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
+[ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
+[ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="46_x5eoj"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8388,13 +8401,6 @@ script = ExtResource("12_np73x")
 octree_managers = [SubResource("Resource_pdyqn"), SubResource("Resource_8pilc")]
 metadata/class = "Arborist"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vqk"]
-texture = ExtResource("17_qv7kg")
-
-[sub_resource type="Theme" id="Theme_k4prm"]
-default_font_size = 32
-Panel/styles/panel = SubResource("StyleBoxTexture_y8vqk")
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kbknu"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
@@ -8426,20 +8432,6 @@ shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
 shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
 shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4prm"]
-shader = ExtResource("31_cx7th")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 1.0
-shader_parameter/blur_samples = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4f0m8"]
-shader = ExtResource("32_ly1ea")
-shader_parameter/fog_density = 0.5
-shader_parameter/fog_speed = 0.3
-shader_parameter/noise_scale = 4.0
-shader_parameter/fog_opacity = 0.5
-
 [sub_resource type="BoxMesh" id="BoxMesh_k4prm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f0m8"]
@@ -8454,8 +8446,574 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4f0m8"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="Animation" id="Animation_k4prm"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/Trap4Wrap")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StuffForTraps/string")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 99.97217, 10.003115, 4.376326)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StuffForTraps/tarp")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WendigoAi:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836)]
+}
+
+[sub_resource type="Animation" id="Animation_ly1ea"]
+resource_name = "wendTrap1"
+length = 5.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.56666666, 1, 0, -0.121808715, 0, 0.9925536, 1.3666667, 1, 0, 0.16523264, 0, 0.98625463, 2, 1, 0, 0, 0, 1, 2.02, 1, 0, 0, 0, 1, 2.5866666, 1, 0, -0.121808715, 0, 0.9925536, 3.3866668, 1, 0, 0.16523264, 0, 0.98625463, 4.02, 1, 0, 0, 0, 1, 4.366667, 1, 0, 0.16523264, 0, 0.98625463, 5, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WendigoAi")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -132.05534, 1.2335448, 129.26471)
+
+[sub_resource type="Animation" id="Animation_4f0m8"]
+resource_name = "wendTrap2"
+length = 15.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.008333325, 1, 83.818535, 1.3136218, 185.05214, 1.0416666, 1, 83.818535, 1.3136218, 185.24805, 2.0083332, 1, 83.818535, 1.3136218, 184.92949, 2.99, 1, 83.818535, 1.3136218, 185.05214, 4.0233335, 1, 83.818535, 1.3136218, 185.24805, 4.99, 1, 83.818535, 1.3136218, 184.92949, 5.96, 1, 83.818535, 1.3136218, 185.05214, 6.9933333, 1, 83.818535, 1.3136218, 185.24805, 7.96, 1, 83.818535, 1.3136218, 184.92949, 8.99, 1, 83.818535, 1.3136218, 185.05214, 10.023333, 1, 83.818535, 1.3136218, 185.24805, 10.99, 1, 83.818535, 1.3136218, 184.92949, 11.84, 1, 83.818535, 1.3136218, 185.05214, 12.873333, 1, 83.818535, 1.3136218, 185.24805, 13.84, 1, 83.818535, 1.3136218, 184.92949, 14.966666, 1, 83.818535, 1.3136218, 185.05214)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/Trap4Wrap")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 83.47394, -5.7903466, 184.68472, 0.53333336, 1, 83.47394, 0.6950488, 184.68472, 14.666667, 1, 83.47394, 0.6950488, 184.68472, 14.933333, 1, 83.47394, -5.7903466, 184.68472)
+
+[sub_resource type="Animation" id="Animation_bhjje"]
+resource_name = "wendTrap4"
+length = 25.0
+step = 0.1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/tarp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 46.21802, -2.6953216, -151.01622, 1, 1, 46.218, -4.9355783, -151.016)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WendigoAi:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(51.738377, -3.5498424, -150.34836)]
+}
+
+[sub_resource type="Animation" id="Animation_wgjca"]
+resource_name = "wendigoTrap3"
+length = 15.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 99.840225, 1.3136218, 4.2221413, 0.53333336, 1, 99.80343, 1.1752727, 4.221266, 0.9333334, 1, 99.840225, 1.3136218, 4.2221413, 1.41, 1, 99.80343, 1.1752727, 4.221266, 1.81, 1, 99.840225, 1.3136218, 4.2221413, 2.37, 1, 99.80343, 1.1752727, 4.221266, 2.77, 1, 99.840225, 1.3136218, 4.2221413, 3.54, 1, 99.80343, 1.1752727, 4.221266, 3.94, 1, 99.840225, 1.3136218, 4.2221413, 4.9, 1, 99.80343, 1.1752727, 4.221266, 5.3, 1, 99.840225, 1.3136218, 4.2221413, 6.52, 1, 99.80343, 1.1752727, 4.221266, 6.92, 1, 99.840225, 1.3136218, 4.2221413, 7.533334, 1, 99.80343, 1.1752727, 4.221266, 7.933334, 1, 99.840225, 1.3136218, 4.2221413, 8.766667, 1, 99.80343, 1.1752727, 4.221266, 9.166667, 1, 99.840225, 1.3136218, 4.2221413, 10.75, 1, 99.80343, 1.1752727, 4.221266, 11.15, 1, 99.840225, 1.3136218, 4.2221413, 12.21, 1, 99.80343, 1.1752727, 4.221266, 12.61, 1, 99.840225, 1.3136218, 4.2221413, 13.4, 1, 99.80343, 1.1752727, 4.221266, 14.133333, 1, 99.81907, 1.5557785, 4.2216377, 15, 1, 99.840225, 1.3136218, 4.2221413)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/string")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 99.97217, 32.244507, 4.376326, 0.36666667, 1, 99.97217, 8.243574, 4.376326, 14.733334, 1, 99.97217, 8.243574, 4.376326, 14.966666, 1, 99.97217, 32.244507, 4.376326)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
+_data = {
+&"RESET": SubResource("Animation_k4prm"),
+&"wendTrap1": SubResource("Animation_ly1ea"),
+&"wendTrap2": SubResource("Animation_4f0m8"),
+&"wendTrap4": SubResource("Animation_bhjje"),
+&"wendigoTrap3": SubResource("Animation_wgjca")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wgjca"]
+size = Vector3(107.84458, 34.108337, 2.91687)
+
+[sub_resource type="Animation" id="Animation_h6ks2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StuffForTraps/string:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("StuffForTraps/Trap4Wrap:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("StuffForTraps/Trap4Wrap:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(83.47394, -3.620357, 184.68472)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StuffForTraps/tarp:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(46.21802, -2.6953216, -181.18488)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WendigoAi:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-148.86244, 1.4200971, -53.40697)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WendigoAi:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ZWendigo:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-148.19592, 3.1796148, 158.56525)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ZWendigo:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CutSceneCam:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(55.62169, 5.3216925, -142.14674)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CutSceneCam:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.6310937, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hxb2w"]
+resource_name = "trap1Active"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w1jcc"]
+resource_name = "trap2Active"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/Trap4Wrap:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/Trap4Wrap:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7666667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(83.47394, -3.620357, 184.68472), Vector3(83.47394, -0.40002775, 184.68472), Vector3(83.47394, -5.8517776, 184.68472)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kbgbe"]
+resource_name = "trap3Active"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/string:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jrcfp"]
+resource_name = "trap4Active"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StuffForTraps/tarp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.9, 2, 2.9, 3, 3.9, 4, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(46.21802, -2.6953216, -181.18488), Vector3(46.21802, -2.6953216, -181.18488), Vector3(46.21802, -2.6953216, -174.3833), Vector3(46.21802, -2.6953216, -174.3833), Vector3(46.21802, -2.6953216, -171.46584), Vector3(46.21802, -2.6953216, -171.46584), Vector3(46.21802, -2.6953216, -168.54819), Vector3(46.21802, -2.6953216, -168.54819), Vector3(46.21802, -2.6953216, -164.77116), Vector3(46.21802, -2.6953216, -164.77116), Vector3(46.21802, -2.6953216, -161.20656)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_x5eoj"]
+resource_name = "FinalCutscene"
+length = 85.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WendigoAi:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(51.738377, -0.75160146, -150.34836), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(41.45438, -0.75160146, -152.79074), Vector3(55.80875, -0.75160146, -152.79074)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZWendigo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(59.429, 0.591, -148.794), Vector3(61.387455, 0.5910001, -155.07875), Vector3(61.387455, 0.5910001, -155.07875), Vector3(58.51292, 0.5910001, -151.09073), Vector3(58.512924, 0.5910001, -151.09073)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WendigoAi:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 18.3, 75, 75.6, 77),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ZWendigo:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.6830597, 0), Vector3(0, 2.6830597, 0), Vector3(0, 1.5483339, 0), Vector3(0, 1.5483339, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CutSceneCam:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CutSceneCam:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 16),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"wendigoTrapped"
+}, {
+"args": [],
+"method": &"toWendigo"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epaa6"]
+_data = {
+&"FinalCutscene": SubResource("Animation_x5eoj"),
+&"RESET": SubResource("Animation_h6ks2"),
+&"trap1Active": SubResource("Animation_hxb2w"),
+&"trap2Active": SubResource("Animation_w1jcc"),
+&"trap3Active": SubResource("Animation_kbgbe"),
+&"trap4Active": SubResource("Animation_jrcfp")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgjca"]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("34_k4prm")
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhjje"]
+albedo_texture = ExtResource("35_wgjca")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2v7d2"]
+albedo_texture = ExtResource("44_epaa6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4prm"]
+shader = ExtResource("31_cx7th")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 1.0
+shader_parameter/blur_samples = 15
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
+dialogue_resource = ExtResource("2_jrcfp")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_fa63b")
@@ -8463,8 +9021,8 @@ centered = true
 _terrain_data = ExtResource("2_1mri4")
 chunk_size = 32
 collision_enabled = true
-collision_layer = 1
-collision_mask = 1
+collision_layer = 2
+collision_mask = 2
 shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
@@ -8476,9 +9034,6 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
-[node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.79227, 2.6597104, 159.74236)
-
 [node name="Gardener" type="Node3D" parent="."]
 script = ExtResource("9_q4s1m")
 file_management/garden_work_directory = "res://wendigoTerrainMap/gardening/"
@@ -8489,10 +9044,23 @@ storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
-[node name="WendigoAi" parent="." instance=ExtResource("13_pdyqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.77142, 1.4291719, 140.22809)
+[node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -148.19592, 3.1796148, 158.56525)
+collision_layer = 3
+collision_mask = 3
+
+[node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
+transform = Transform3D(0.34612653, 0.11746749, 0.930805, -0.040942054, 0.9930767, -0.11010161, -0.9372939, 1.490116e-08, 0.34853965, -148.86244, 1.4200971, -53.40697)
+collision_layer = 3
+collision_mask = 3
+dialogue_resource = ExtResource("2_jrcfp")
+speed_idle = 5.4
+speed_chase = 5.0
+move_radius = 10.0
+wait_time = 2.0
 
 [node name="Ui" type="CanvasLayer" parent="."]
+layer = 1000
 
 [node name="SprintBar" type="TextureProgressBar" parent="Ui"]
 visible = false
@@ -8505,46 +9073,6 @@ fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("15_136gw")
 texture_progress = ExtResource("16_g0ukx")
-
-[node name="Dialog" type="Control" parent="Ui"]
-modulate = Color(0.656569, 1, 0.915033, 1)
-layout_mode = 3
-anchor_top = 0.667
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_k4prm")
-script = ExtResource("18_jyr7y")
-
-[node name="Box" type="Panel" parent="Ui/Dialog"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 178.0
-offset_bottom = 0.359985
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Ui/Dialog"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 196.0
-offset_right = 1902.0
-offset_bottom = 344.0
-
-[node name="Speaker" type="Label" parent="Ui/Dialog/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.435479, 0.0274811, 1)
-theme_override_font_sizes/font_size = 20
-
-[node name="Dialogue" type="RichTextLabel" parent="Ui/Dialog/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.883863, 0.87429, 0.883631, 1)
-theme_override_colors/font_shadow_color = Color(0.212305, 0.212305, 0.212305, 1)
-theme_override_font_sizes/normal_font_size = 24
-fit_content = true
 
 [node name="Pause Menu" type="Control" parent="Ui"]
 visible = false
@@ -8627,6 +9155,7 @@ theme_override_font_sizes/font_size = 48
 text = "Press E to interact"
 
 [node name="PlushControl" type="Control" parent="Ui"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -8634,21 +9163,27 @@ offset_bottom = 40.0
 
 [node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
 layout_mode = 0
-offset_left = 1713.0
-offset_right = 1806.0
-offset_bottom = 73.0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
 theme_override_fonts/font = ExtResource("22_6jnv6")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 152
 text = "0/5"
 script = ExtResource("23_cx7th")
 
-[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
-position = Vector2(1865.44, 36.1875)
-scale = Vector2(0.176459, 0.189987)
-texture = ExtResource("24_ly1ea")
+[node name="WendigoPlushGraphic" type="Sprite2D" parent="Ui/PlushControl"]
+position = Vector2(991, 167)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("24_jrcfp")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
+offset_left = 1619.0
+offset_top = 2.0
+offset_right = 1919.0
+offset_bottom = 302.0
 target = NodePath("../../ZWendigo")
+objective_path = NodePath("../../Trap5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.60851187, -0.29503116, -0.7366614, 0.7935448, 0.22623797, 0.56489205, 0, -0.9283173, 0.3717889, 30.718777, 184.16792, 52.7026)
@@ -8662,82 +9197,264 @@ script = ExtResource("25_g0ukx")
 [node name="Timer" type="Timer" parent="DirectionalLight3D"]
 autostart = true
 
-[node name="WendigoMonument" parent="." instance=ExtResource("27_jyr7y")]
-transform = Transform3D(2.01, 0, 0, 0, 2.01, 0, 0, 0, 2.01, 169.4975, -7.9198194, 4.64374)
-
-[node name="SpookyHouse" parent="." instance=ExtResource("28_uyjqn")]
-transform = Transform3D(0.32498646, 0, 1.2690483, 0, 1.31, 0, -1.2690483, 0, 0.32498646, -149.9278, 1.4318943, 163.99306)
-
 [node name="Trap2" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.923874, 0, -85.57547)
+transform = Transform3D(2.674213, 0, 0, 0, 1, 0, 0, 0, 1.980717, 47.894905, 0.12553453, -154.67412)
+visible = false
 
 [node name="Trap3" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265923, 0, 32.696922)
-
-[node name="Trap5" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0, 128.76978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.10275, 0, 4.1995926)
 
 [node name="Trap4" parent="." instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.566376, 0, 184.41438)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="Trap5" parent="." instance=ExtResource("30_ly1ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.22252, 0.5068753, 128.76978)
+
+[node name="Water" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Water"]
 use_collision = true
 size = Vector3(479.72803, 0.001, 543.9746)
 material = SubResource("ShaderMaterial_6jnv6")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Water"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.46182, -0.620275, -3.515686)
 operation = 2
 size = Vector3(38.391296, 7.063965, 25.122437)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Water"]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 83.63259, 0.76462936, -166.62445)
+operation = 2
+size = Vector3(7.4367676, 0.9857178, 6.3101807)
+
+[node name="Bridges" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bridges"]
+transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.003918, -2.773592, 19.061462)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ly1ea")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Bridges"]
+transform = Transform3D(42.854134, 0, -21.51986, 0, 1, 0, 52.975243, 0, 17.40841, 144.3017, -2.773592, -121.9897)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k4prm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Bridges"]
+transform = Transform3D(-45.445766, 0, -20.623806, 0, 1, 0, 50.769436, 0, -18.461195, 138.75087, -2.773592, 110.71564)
+mesh = SubResource("BoxMesh_k4prm")
+surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4f0m8")
+
+[node name="WendigoAnims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4f0m8")
+}
+
+[node name="ForestBound1" type="Area3D" parent="."]
+
+[node name="ForestBound1Shape" type="CollisionShape3D" parent="ForestBound1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.97372, 14.890767, 108.248505)
+shape = SubResource("BoxShape3D_wgjca")
+
+[node name="ForestBound2" type="Area3D" parent="."]
+transform = Transform3D(-0.14821856, 0, -0.9691537, 0, 1, 0, 1.1740949, 0, -0.12234664, -99.099525, 0, 176.71877)
+
+[node name="ForestBound1Shape" type="CollisionShape3D" parent="ForestBound2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.220688, 12.973744, -2.2316666)
+shape = SubResource("BoxShape3D_wgjca")
+
+[node name="LevelAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_epaa6")
+}
+
+[node name="StuffForTraps" type="Node3D" parent="."]
+
+[node name="BearTrap" parent="StuffForTraps" instance=ExtResource("37_yrhgu")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -132.09967, 0.00019851318, 128.9467)
+visible = false
+
+[node name="DbdBearTrapBeingSet135906" type="AudioStreamPlayer" parent="StuffForTraps"]
+stream = ExtResource("38_a0ttt")
+
+[node name="Trap4Wrap" type="CSGSphere3D" parent="StuffForTraps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.47394, -3.620357, 184.68472)
+visible = false
+radius = 5.2946253
+material = SubResource("StandardMaterial3D_wgjca")
+
+[node name="string" type="CSGCylinder3D" parent="StuffForTraps"]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 99.97217, 10.003115, 4.376326)
+radius = 0.008
+
+[node name="tarp" type="CSGBox3D" parent="StuffForTraps"]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 46.21802, -2.6953216, -181.18488)
+size = Vector3(8.005093, 0.1459961, 6.1776276)
+material = SubResource("StandardMaterial3D_bhjje")
+
+[node name="RopeCreak01SoundEffect340131" type="AudioStreamPlayer" parent="StuffForTraps"]
+stream = ExtResource("39_w1jcc")
+
+[node name="RopeSound65417[audioTrimmer_com]" type="AudioStreamPlayer" parent="StuffForTraps"]
+stream = ExtResource("40_kbgbe")
+
+[node name="Leaves64875[audioTrimmer_com]" type="AudioStreamPlayer" parent="StuffForTraps"]
+stream = ExtResource("41_jrcfp")
+
+[node name="MainLevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_hxb2w")
+
+[node name="ChaseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_w1jcc")
+
+[node name="Plushies" type="Node3D" parent="."]
+
+[node name="PorchPlushy" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.86496, 2.4413292, 161.59625)
+
+[node name="MonumentPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(-0.6373701, 0, 0.77055776, 0, 1, 0, -0.77055776, 0, -0.6373701, 168.64516, -8.032878, 5.4699535)
+
+[node name="GraveyardPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(-0.99933916, 0, 0.03634727, 0, 1, 0, -0.03634727, 0, -0.99933916, 9.545032, 1.6030568, -166.30734)
+
+[node name="MausoleumPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, -128.38791, -0.056017965, -52.183273)
+
+[node name="BigTreePlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
+
+[node name="LandMarks" type="Node3D" parent="."]
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
+
+[node name="WendigoMonument" parent="LandMarks" instance=ExtResource("27_jyr7y")]
+transform = Transform3D(-1.5245585, 0, -1.3098933, 0, 2.01, 0, 1.3098933, 0, -1.5245585, 40.832993, -4.0385094, 43.215347)
+
+[node name="SpookyHouse" parent="LandMarks" instance=ExtResource("28_uyjqn")]
+transform = Transform3D(1.134916, 0, 0.6542674, 0, 1.31, 0, -0.6542674, 0, 1.134916, -296.6499, 1.4879123, -73.86502)
+
+[node name="BigTree" parent="LandMarks" instance=ExtResource("35_4f0m8")]
+transform = Transform3D(3.1631546, 0, -3.7146127, 0, 5.562967, 0, 3.2383497, 0, 3.6283588, -2.929268, -0.044007808, -2.9922028)
+
+[node name="Monument" type="Node3D" parent="LandMarks"]
+transform = Transform3D(0.42274532, 0, -0.4327949, 0, 0.605, 0, 0.4327949, 0, 0.42274532, 40.843643, -8.507805, 43.273674)
+
+[node name="Pedestal" type="MeshInstance3D" parent="LandMarks/Monument"]
+material_override = SubResource("StandardMaterial3D_2v7d2")
+mesh = ExtResource("45_x5eoj")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, 0.89541626, 7.781783, -0.30146074)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, 0.13839722, 7.781783, 0.66978025)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LandMarks/Monument"]
+transform = Transform3D(1.6528925, 0, 0, 0, 1.6528925, 0, 0, 0, 1.6528925, -0.7789612, 7.781783, -0.48724556)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 8.738
+
+[node name="Mausoluems" type="Node3D" parent="LandMarks"]
+transform = Transform3D(0.9769605, 0, -0.2134226, 0, 1, 0, 0.2134226, 0, 0.9769605, -136.48004, 3.2446766, -233.8808)
+
+[node name="Mausoleum" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0, 0, 0)
+
+[node name="Mausoleum2" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(-0.13064718, 0, -0.99142945, 0, 1.0000001, 0, 0.99142945, 0, -0.13064718, 11.394012, 0, 25.219246)
+
+[node name="Mausoleum3" parent="LandMarks/Mausoluems" instance=ExtResource("46_2v7d2")]
+transform = Transform3D(-0.7009597, 0, 0.713202, 0, 0.99999994, 0, -0.713202, 0, -0.7009597, -13.623497, 0, 28.185654)
+
+[node name="Graveyard" type="Node3D" parent="LandMarks"]
+transform = Transform3D(1.1835042, 0, -0.059518695, 0, 1.185, 0, 0.059518695, 0, 1.1835042, 42.98575, 0.056017965, -184.84845)
+
+[node name="Tombstone" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0)
+
+[node name="Tombstone2" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.5495626, 0, -0.8354528, 0, 1, 0, 0.8354528, 0, 0.5495626, 7.5211334, 0, 0.2033081)
+
+[node name="Tombstone3" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.19806793, 0, 0.9801885, 0, 0.9999999, 0, -0.9801885, 0, 0.19806793, 3.8610153, 0, 4.156708)
+
+[node name="Tombstone4" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.83920264, 0, -0.5438191, 0, 1, 0, 0.5438191, 0, 0.83920264, 7.5695877, 0, -14.798683)
+
+[node name="Tombstone5" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.006859064, 0, -0.9999768, 0, 1, 0, 0.9999768, 0, 0.006859064, 13.770775, 0, -10.537926)
+
+[node name="Tombstone6" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.69926447, 0, 0.7148637, 0, 0.9999999, 0, -0.7148637, 0, 0.69926447, 8.549248, 0, -9.21067)
+
+[node name="Tombstone7" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.7022526, 0, 0.7119282, 0, 1, 0, -0.7119282, 0, 0.7022526, 13.76899, 0, 7.1082535)
+
+[node name="Tombstone10" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.54956263, 0, -0.8354529, 0, 1, 0, 0.8354529, 0, 0.54956263, 0.23309326, 0, -12.166229)
+
+[node name="Tombstone13" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.93823385, 0, -0.34600246, 0, 1, 0, 0.34600246, 0, 0.93823385, 7.6039734, 0, -25.004738)
+
+[node name="Tombstone14" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.71980095, 0, -0.6941816, 0, 1, 0, 0.6941816, 0, 0.71980095, 1.0257721, 0, -20.823677)
+
+[node name="Tombstone11" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.198068, 0, 0.9801887, 0, 0.9999999, 0, -0.9801887, 0, 0.198068, -3.4270248, 0, -8.21283)
+
+[node name="Tombstone12" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.7022526, 0, 0.7119282, 0, 1, 0, -0.7119282, 0, 0.7022526, 6.480942, 0, -5.261284)
+
+[node name="Tombstone8" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(0.9807142, 0, -0.1954498, 0, 1, 0, 0.1954498, 0, 0.9807142, 19.195457, 0, 1.8965302)
+
+[node name="Tombstone9" parent="LandMarks/Graveyard" instance=ExtResource("46_x5eoj")]
+transform = Transform3D(-0.01787129, 0, 0.9998408, 0, 0.9999998, 0, -0.9998408, 0, -0.01787129, 13.21537, 0, -5.446419)
 
 [node name="VHS Flavor2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_k4prm")
 offset_right = 1926.0
 offset_bottom = 1087.0
 
-[node name="VHS Flavor1" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_4f0m8")
-offset_right = 1933.0
-offset_bottom = 1087.0
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.003918, -2.773592, 19.061462)
-mesh = SubResource("BoxMesh_k4prm")
-surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ly1ea")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(42.854134, 0, -21.51986, 0, 1, 0, 52.975243, 0, 17.40841, 144.3017, -2.773592, -121.9897)
-mesh = SubResource("BoxMesh_k4prm")
-surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_k4prm")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(-45.445766, 0, -20.623806, 0, 1, 0, 50.769436, 0, -18.461195, 138.75087, -2.773592, 110.71564)
-mesh = SubResource("BoxMesh_k4prm")
-surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/MeshInstance3D3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/MeshInstance3D3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4f0m8")
+[node name="CutSceneCam" type="Camera3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.8073827, 0.590028, 0, -0.5900281, 0.8073826, 55.62169, 5.3216925, -142.14674)
+fov = 59.062492
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="activated" from="Trap2" to="." method="_on_trap_2_activated"]
+[connection signal="body_entered" from="Trap2" to="WendigoAi" method="_on_trap_2_body_entered"]
+[connection signal="activated" from="Trap3" to="." method="_on_trap_3_activated"]
+[connection signal="body_entered" from="Trap3" to="WendigoAi" method="_on_trap_3_body_entered"]
+[connection signal="activated" from="Trap4" to="." method="_on_trap_4_activated"]
+[connection signal="body_entered" from="Trap4" to="WendigoAi" method="_on_trap_4_body_entered"]
+[connection signal="activated" from="Trap5" to="." method="_on_trap_5_activated"]
+[connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]
+[connection signal="body_entered" from="ForestBound1" to="." method="_on_forest_bound_1_body_entered"]
+[connection signal="body_entered" from="ForestBound2" to="." method="_on_forest_bound_2_body_entered"]

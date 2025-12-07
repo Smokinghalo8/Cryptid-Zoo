@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsw1nm5f7u7rj"]
+[gd_scene load_steps=6 format=3 uid="uid://bsw1nm5f7u7rj"]
 
 [ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_n7j3w"]
+[ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="2_euxx3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w72hh"]
+albedo_texture = ExtResource("2_euxx3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jajex"]
+albedo_texture = ExtResource("2_euxx3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klbtr"]
+albedo_texture = ExtResource("2_euxx3")
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_n7j3w")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, 0.01, 0, -0.01, -4.3711387e-10, 0, 0, 0)
+
+[node name="Object_2" parent="Sketchfab_model/Wendigo_obj_cleaner" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w72hh")
+
+[node name="Object_3" parent="Sketchfab_model/Wendigo_obj_cleaner" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jajex")
+
+[node name="Object_4" parent="Sketchfab_model/Wendigo_obj_cleaner" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_klbtr")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt4mam00o3j3e"
+path="res://.godot/imported/Yes Wendigo.wav-b5b664c4cbc7abc57f61a7fdf259f923.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes Wendigo.wav"
+dest_files=["res://.godot/imported/Yes Wendigo.wav-b5b664c4cbc7abc57f61a7fdf259f923.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

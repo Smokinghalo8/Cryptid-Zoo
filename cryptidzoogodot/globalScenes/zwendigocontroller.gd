@@ -24,9 +24,10 @@ var velocityTolerance = 0.1
 var velocityDifference = 0
 
 
-func on_ready():
+func _ready():
 	idle = true
 	Global.stamina = maxStamina
+	Global.walkingSound = load("uid://2l7yfg02rrdx")
 
 
 func _input(event: InputEvent):
@@ -61,8 +62,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+		
+	if Global.frozen == false:
+		move_and_slide()
 	
 	#idle
 	if(velocity.length() <= 1 && is_on_floor()):
@@ -176,3 +178,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_trap_2_activated() -> void:
+	pass # Replace with function body.

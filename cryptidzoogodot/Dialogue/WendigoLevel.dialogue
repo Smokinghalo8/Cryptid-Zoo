@@ -1,0 +1,105 @@
+~ BeginningOfLevel
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Welcome to the Pacific.wav, next=auto] Welcome to the Pacific Northwest. I've sent you here to track down the mythical Wendigo, and bring him back to our sanctuary. The locals see him as a demon, but he is simply misunderstood. [#voice=uid://bphugbqserjhi]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/how_can_i_hear_you.wav, next=auto] Wait, how can I hear you? [#voice=uid://cc1y1pwol2j2p]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Long Ago.wav, next=auto] Long ago, I learned a way to communicate with special people like you telepathically. [#voice=uid://up35k5ki5en7]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/how to catch him.wav, next=auto] Woooah, cool. So how am I supposed to catch him? [#voice=uid://c33ox8asf30qr]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/I’ve sent you there with.wav, next=auto] I've sent you there with a few traps that you'll need to set up throughout the forest. [#voice=uid://b4wc04qbrmu7h]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Just wait for him to come out.wav, next=auto] And then.. I just have to wait for him to come out? [#voice=uid://bxxu40an6a6ky]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well actually.wav, next=auto] Well.. actually, the Wendigo can be a bit… agressive… [#voice=uid://ba5hbubcf8ec4]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Wendigo Level/assets/sfx/Wendigo_Screech.wav, next=auto] [tornado r=10 freq=8] *SCREECH* [/tornado][#voice=uid://225eo32hgpyt]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Scary.wav, next=auto] Was that him?!  That's.. scary! [#voice=uid://7mpp3tjue0b7]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Don’t worry Zed.wav, next=auto] Don’t worry, Zed.  If you just set up the traps one by one, you’ll do perfectly fine. [#voice=uid://bt5pbdekrh3j4]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/If you say so.wav, next=auto] ...If you.. say so. [#voice=uid://85e3erivql1b]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You’ll see some glowing.wav, next=auto] You’ll see some glowing red boxes around. That’s where you need to set up the traps.  Good luck, Zed. [#voice=uid://d1jrurso7i2te]
+=> END
+
+
+~ EnterDarkForest
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/It’s dark.wav, next=auto] It’s dark.. How am I supposed to see? [#voice=uid://8o8sfvfbevyp]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/If you press F.wav, next=auto] If you press [F] you should be able to use the flashlight I sent with you. That should help. [#voice=uid://csfvbhh81kd0v]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/thanks_old_man.wav, next=auto] Thanks, old man! [#voice=uid://cjtbqnpprh7iw]
+=> END
+
+
+~ Trap1Complete
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Good job sport.wav, next=auto] Good job, sport! That’s just the first one though.  There are three more in the forest you’ll need to set up before you’re ready to trap him. [#voice=uid://nriso7s8n0rk]
+=> END
+
+~ Trap2Complete
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Keep it up.wav, next=auto] Keep it up! [#voice=uid://64t2d2xnnk48]
+=> END
+
+~ Trap3Complete
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Great job.wav, next=auto] Great job! Only one more left! [#voice=uid://0l3esq3y42un]
+=> END
+
+~ Trap4Complete
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Good job kid.wav, next=auto] Good job, kid.  Now… you just have to lure him through the traps. [#voice=uid://crtl45r135gbw]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/How do I do that.wav, next=auto] And.. how do I do that? [#voice=uid://bbn6c0fi434dh]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well you’re going to.wav, next=auto] Well.. you’re going to use yourself as bait. [#voice=uid://1i8y33o0ytj0]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/As what.wav, next=auto] As WHAT?? [#voice=uid://dcgkko31yibti]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes as bait.wav, next=auto] Yes, as bait, but don’t worry.  As long as you don’t exhaust your stamina, you should be able to outrun him. [#voice=uid://btwn54g62wq2f]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/i'm not sure about this.wav, next=auto] Old Man, I’m nooot sure about this.. [#voice=uid://bxysdyrvbph31]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You must Zed.wav, next=auto] You must, Zed, to help the Wendigo! [#voice=uid://briw1eehfmtu]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Let’s do it.wav, next=auto] Okaaaay, let’s do it.. [#voice=uid://cq4g3xdbqedmv]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Good why don’t you.wav, next=auto] Good, why don’t you lead him to the bear trap first. [#voice=uid://c50yoeb25ohla]
+=> END
+
+
+~ Trap1Escaped
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/escaped what now.wav, next=auto] He escaped!  What now? [#voice=uid://cbgeue3raeglr]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Well that’s not good.wav, next=auto] Well, that’s not good. Quickly, lead him to the snare! [#voice=uid://didgpxjjamdn8]
+=> END
+
+~ Trap2Escaped
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/escaped again and faster.wav, next=auto] He escaped that one too, and he’s getting faster! [#voice=uid://brusx8wp50qgw]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You better hurry.wav, next=auto] You better hurry to the net! [#voice=uid://tgou7gvscf4n]
+=> END
+
+~ Trap3Escaped
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/getting really worried.wav, next=auto] Old Man, I’m getting really worried! [#voice=uid://dufoe7fkd68sr]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Don’t worry the.wav, next=auto] Don’t worry! The hole trap is bound to work! [#voice=uid://c2jr4xrj878js]
+=> END
+
+
+~ WendigoTrapped
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Seem really angry.wav, next=auto] I did it… but he seems really angry, what do I do now? [#voice=uid://131qxapanu7s]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You must speak to him.wav, next=auto] You must speak to him, calm him down, and convince him to accompany you to the sanctuary. [#voice=uid://dy6sw43dnoc6i]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/i'll try.wav, next=auto] I’ll try… [#voice=uid://bq34wyfnohvk1]
+=> END
+
+
+~ ToWendigo
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/hi friend.wav, next=auto] Hi friend- [#voice=uid://b3bx3l4h76kum]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Not_My_Friend.wav, next=auto] You are not my friend! [#voice=uid://b6ohaeqsgxi7b]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/You’re right.wav, next=auto] Well, I guess you’re right about that- [#voice=uid://wetbpfob32u7]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Type_of_Friend.wav, next=auto] What type of a friend would do all of this? [#voice=uid://fomrw0v0ap3g]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/What type of friend attacks.wav, next=auto] Well, what type of a friend would try and attack me? [#voice=uid://dmh87435hcgq5]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Traps.wav, next=auto] The type who’s scared that you’re setting up traps all over his forest. [#voice=uid://b764g8thc0q8s]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/fair point.wav, next=auto] That’s a fair point- [#voice=uid://bfeu43v4l26mb]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo - Live in Peace - Voice_Audio.wav, next=auto] For years, all you people have done is hunt me and treat me like a monster, when all I want is to live in peace… [#voice=uid://dirmjbucev8st]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/i can help.wav, next=auto] I can help with that! [#voice=uid://c2olvj02lrvy4]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Dont_Want_Help.wav, next=auto] I don’t want your help. You’re just like them- [#voice=uid://vbgfjf5bindw]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/No listen.wav, next=auto] No, listen!  The reason I was trapping you was so I could talk to you!  There’s a sanctuary that I… well, I guess I live there now. [#voice=uid://d248wgiv2jo7j]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/its_run_by_a_nice_man.wav, next=auto] It’s run by this really nice Old Man, and he’s built it especially to protect cryptids like you!  We want to help you, Wendigo!  Will you let us? [#voice=uid://dila7pnt7o781]
+# *reaches out hand*
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Okay.wav, next=auto] *Ponders* Okay… [#voice=uid://dq0mmhjq2v6fk]
+=> END
+
+
+
+# this is between levels - likely to be moved to new dialogue file - this means the voice lines will also need to be moved - which also means the uid/res will change
+~ BetweenLevels
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes Wendigo.wav, next=auto] Yes, Wendigo. We have a special habitat set up just for you. That I’m sure you will be happy in. [#voice=uid://dt4mam00o3j3e]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/WendigoVoiceLines/Wendigo__Kindness.wav - Voice_Audio.wav, next=auto] Thank you.  No one has ever shown me this type of.. kindness. [#voice=uid://25728s00fgdy]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/glad to help.wav, next=auto] Well, we’re just glad we can help! [#voice=uid://rfn18fxasag8]
+# Zed and Wendigo start to walk off
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Hold on Zed.wav, next=auto] Hold on, Zed! [#voice=uid://n52jb2mcbkwy]
+# Zed stays back
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/What is it.wav, next=auto] What is it? [#voice=uid://bkuxu0ipmya0k]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/I have another mission.wav, next=auto] I have another mission for you. [#voice=uid://cdn6vwlxjdmta]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/already.wav, next=auto] Already??  I’ve barely even been here for a second! [#voice=uid://bybtrrxf7qwls]
+# In full game, player can explore zoo?
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes unfortunately so.wav, next=auto] Yes, unfortunately so. We’ve had a spotting of the ever elusive Mothman and have to hurry if we have any chance of ca- Saving him. [#voice=uid://c3yn2lasod3tf]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Send me his way.wav, next=auto] Well, okay.. Send me his way then! [#voice=uid://cv2g5c6e78y0p]
+=> END

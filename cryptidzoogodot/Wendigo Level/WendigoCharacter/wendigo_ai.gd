@@ -7,6 +7,8 @@ enum State {
 	TRAPPED
 }
 
+@export var dialogue_resource: DialogueResource
+
 @export var speed_idle: float = 5.4
 @export var speed_chase: float = 5.0
 @export var move_radius: float = 10.0
@@ -24,6 +26,20 @@ var current_trap: Area3D = null
 @onready var ray_right: RayCast3D = $RayRight
 @onready var player_detection_area: Area3D = $PlayerDetectionArea
 @onready var trap_detection_area: Area3D = $TrapDetectionArea
+@onready var wendigoPlayer: AnimationPlayer = $"../WendigoAnims"
+@onready var activated5 = false
+@onready var activated2 = false
+@onready var activated3 = false
+@onready var activated4 = false
+
+@onready var levelPlayer : AnimationPlayer = $"../LevelAnimations"
+@onready var chaseMusic = $"../ChaseMusic"
+@onready var chaseMusicOn = false
+
+@onready var zed = $"../ZWendigo"
+
+#@onready var minimap = $"../Ui/Minimap"
+@onready var minimap = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap")
 
 func _ready() -> void:
 	# Player detection
@@ -68,10 +84,17 @@ func _process_idle(delta: float) -> void:
 # --- Chase player ---
 func _process_chase(delta: float) -> void:
 	if chasing_player and is_instance_valid(chasing_player):
+		if chaseMusicOn == false:
+			chaseMusicOn = true
+			chaseMusic.play(0.0)
+			
+			
 		target_position = chasing_player.global_transform.origin
 		var move_direction = _calculate_move_direction(target_position)
 		_move_character(move_direction, speed_chase, delta)
 	else:
+		chaseMusic.stop()
+		chaseMusicOn = false
 		state = State.IDLE
 		speed_idle = 5.0 
 		choose_new_target()
@@ -98,8 +121,14 @@ func _calculate_move_direction(target: Vector3) -> Vector3:
 
 # --- Move character helper ---
 func _move_character(direction: Vector3, move_speed: float, delta: float) -> void:
-	velocity.x = direction.x * move_speed
-	velocity.z = direction.z * move_speed
+	
+	
+	if Global.frozen == false:
+		velocity.x = direction.x * move_speed
+		velocity.z = direction.z * move_speed
+	else:
+		velocity.x = 0
+		velocity.z = 0
 	_apply_gravity(delta)
 	move_and_slide()
 
@@ -116,7 +145,7 @@ func _apply_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
-		velocity.y = 0
+		velocity.y = -0.5
 
 func choose_new_target() -> void:
 	var random_offset = Vector3(
@@ -142,6 +171,10 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Character"):
 		chasing_player = body
 		state = State.CHASE
+		if $"..".findWendigo == true:
+			minimap.objective = $"../Trap5"
+			$"..".findWendigo = false
+		
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:
@@ -152,8 +185,8 @@ func _on_body_exited(body: Node) -> void:
 
 # --- Trap detection ---
 func _on_trap_area_entered(area: Area3D) -> void:
-	if area.is_in_group("Traps"):
-		caught_in_trap(area)
+	pass
+
 
 func _on_trap_area_exited(area: Area3D) -> void:
 	pass
@@ -169,5 +202,91 @@ func _on_trapped_timer_timeout() -> void:
 
 
 func _on_trap_detection_area_body_entered(body: Node3D) -> void:
-	if is_in_group("Character"):
-		get_tree().quit()
+	if body.is_in_group("Character"):
+		restart()
+
+### ACT TRAP 4
+func _on_trap_2_body_entered(body: Node3D) -> void:
+	if $"../Trap2".is_in_group("Traps"):
+		if body.is_in_group("Enemies"):
+			if Global.trapCounter == 1:
+				wendigoPlayer.play("wendTrap4")
+				await wendigoPlayer.animation_finished
+				#insert wendigo getting trapped
+				activated2 = false
+				Global.trapCounter -= 1
+				$CutSceneCam.current = true
+				Global.frozen = true
+				levelPlayer.play("FinalCutscene")
+				await levelPlayer.animation_finished
+				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
+			
+
+### Act trap 3
+func _on_trap_3_body_entered(body: Node3D) -> void:
+	if $"../Trap3".is_in_group("Traps"):
+		if body.is_in_group("Enemies"):
+			if Global.trapCounter == 2:
+				minimap.arrow.visible = false
+				wendigoPlayer.play("wendigoTrap3")
+				await wendigoPlayer.animation_finished
+				#insert trap escape line 3
+				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
+				activated3 = false
+				Global.trapCounter -= 1
+				speed_chase += 2
+				minimap.objective = $"../Trap2"
+				minimap.arrow.visible = true
+
+### ACT TRAP 2
+func _on_trap_4_body_entered(body: Node3D) -> void:
+	if $"../Trap4".is_in_group("Traps"):
+		if body.is_in_group("Enemies"):
+			if Global.trapCounter == 3:
+				minimap.arrow.visible = false
+				wendigoPlayer.play("wendTrap2")
+				await wendigoPlayer.animation_finished
+				#insert trap escape line 2
+				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Escaped").finished
+				activated4 = false
+				Global.trapCounter -= 1
+				speed_chase += 2
+				minimap.objective = $"../Trap3"
+				minimap.arrow.visible = true
+
+## ACT TRAP 1
+func _on_trap_5_body_entered(body: Node3D) -> void:
+	if $"../Trap5".is_in_group("Traps"):
+		if body.is_in_group("Enemies"):
+			if Global.trapCounter == 4:
+				minimap.arrow.visible = false
+				wendigoPlayer.play("wendTrap1")
+				await wendigoPlayer.animation_finished
+				#insert trap escape line 1
+				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Escaped").finished
+				activated5 = false
+				Global.trapCounter -= 1
+				speed_chase += 2
+				minimap.objective = $"../Trap4"
+				minimap.arrow.visible = true
+
+
+func _on_trap_5_activated() -> void:
+	activated5 = true
+
+
+func _on_trap_3_activated() -> void:
+	activated3 = true
+
+
+func _on_trap_2_activated() -> void:
+	activated2 = true
+
+
+func _on_trap_4_activated() -> void:
+	activated4 = true
+
+func restart():
+	$"../LevelAnimations".play("RESET")
+	$".."._ready()
+	

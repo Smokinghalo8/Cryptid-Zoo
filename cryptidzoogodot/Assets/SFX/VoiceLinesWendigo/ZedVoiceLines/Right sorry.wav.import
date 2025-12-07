@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://emophxx4dcbw"
+path="res://.godot/imported/Right sorry.wav-619bc05f7fc87a59793313858e224c23.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Right sorry.wav"
+dest_files=["res://.godot/imported/Right sorry.wav-619bc05f7fc87a59793313858e224c23.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

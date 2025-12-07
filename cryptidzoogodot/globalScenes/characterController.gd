@@ -23,12 +23,13 @@ var currentVelocity = 0
 var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
-
+@onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
 
 
 func on_ready():
 	idle = true
 	Global.stamina = maxStamina
+	objectiveArrow.visible = false
 
 
 func _input(event: InputEvent):
@@ -52,11 +53,16 @@ func _process(delta):
 		var children = get_tree().current_scene.get_children()
 		for child in children:
 			if child.is_in_group("Living"):
+				
 				child.highlight()
 				senseable = false
 				$SenseTimer.start(0)
 				senseTime = 5.0
 				$"../Ui/WednigoHead/SenseBar".visible = true
+				objectiveArrow.visible = true
+				await get_tree().create_timer(3.0).timeout
+				objectiveArrow.visible = false
+				
 			
 	
 	#Flashlight
@@ -69,23 +75,24 @@ func _process(delta):
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	velocity += get_gravity() * delta
 	if not is_on_floor():
-		velocity += get_gravity() * delta 
+		velocity += get_gravity() * delta * 0.7
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if velocity.y < 0:
+	#if velocity.y < 0:
 		# Half gravity strength
-		velocity += get_gravity() * 0.5 * delta
-		# Apply slight downward velocity
-		velocity.y = -1
-		# Reduce speed while falling
-		SPEED = 9
-	else:
-		# Normal gravity when rising or on ground
-		velocity += get_gravity() * delta
+	#	velocity += get_gravity() * 0.5 * delta
+	#	# Apply slight downward velocity
+	#	velocity.y = -1
+	#	# Reduce speed while falling
+	#	SPEED = 9
+	#else:
+	#	# Normal gravity when rising or on ground
+	#	velocity += get_gravity() * delta
 		
 		
 
@@ -226,3 +233,8 @@ func _on_sense_timer_timeout() -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_water_body_entered(body: Node3D) -> void:
+	self.position.x -= 30
+	self.position.y += 20
