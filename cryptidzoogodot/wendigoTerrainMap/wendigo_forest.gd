@@ -12,9 +12,9 @@ func _ready() -> void:
 	Global.frozen = true
 	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
-	#if dialogue_resource:
-#		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
-#		minimap.arrow.visible = true
+	if dialogue_resource:
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+		minimap.arrow.visible = true
 	Global.frozen = false
 
 
