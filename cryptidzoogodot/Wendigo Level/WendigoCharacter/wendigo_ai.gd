@@ -219,7 +219,7 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 func _on_trap_3_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
 		if Global.trapCounter == 2:
-			minimap.objective_arrow.visible = false
+			minimap.arrow.visible = false
 			wendigoPlayer.play("wendigoTrap3")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 3
@@ -228,13 +228,13 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 			Global.trapCounter -= 1
 			speed_chase += 2
 			minimap.objective = $"../Trap2"
-			minimap.objective_arrow.visible = true
+			minimap.arrow.visible = true
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
 		if Global.trapCounter == 3:
-			minimap.objective_arrow.visible = false
+			minimap.arrow.visible = false
 			wendigoPlayer.play("wendTrap2")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 2
@@ -243,13 +243,13 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 			Global.trapCounter -= 1
 			speed_chase += 2
 			minimap.objective = $"../Trap3"
-			minimap.objective_arrow.visible = true
+			minimap.arrow.visible = true
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemies"):
 		if Global.trapCounter == 4:
-			minimap.objective_arrow.visible = false
+			minimap.arrow.visible = false
 			wendigoPlayer.play("wendTrap1")
 			await wendigoPlayer.animation_finished
 			#insert trap escape line 1
@@ -258,7 +258,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 			Global.trapCounter -= 1
 			speed_chase += 2
 			minimap.objective = $"../Trap4"
-			minimap.objective_arrow.visible = true
+			minimap.arrow.visible = true
 
 
 func _on_trap_5_activated() -> void:

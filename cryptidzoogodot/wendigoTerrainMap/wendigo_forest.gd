@@ -10,11 +10,11 @@ var has_visited_forest = false
 
 func _ready() -> void:
 	Global.frozen = true
-	minimap.objective_arrow.visible = false
+	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
 	if dialogue_resource:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
-		minimap.objective_arrow.visible = true
+		minimap.arrow.visible = true
 	Global.frozen = false
 
 
@@ -46,39 +46,39 @@ func _on_forest_bound_2_body_entered(body: Node3D) -> void:
 #Actual trap 4
 func _on_trap_2_activated() -> void:
 	#Trap 4 complete
-	minimap.objective_arrow.visible = false
+	minimap.arrow.visible = false
 	animPlayer.play("trap4Active")
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap4Complete").finished
 	minimap.objective = $WendigoAi
 	findWendigo = true
-	minimap.objective_arrow.visible = true
+	minimap.arrow.visible = true
 
 #Actual trap 3
 func _on_trap_3_activated() -> void:
 	#Trap 3 complete
-	minimap.objective_arrow.visible = false
+	minimap.arrow.visible = false
 	animPlayer.play("trap3Active")
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Complete").finished
 	minimap.objective = $Trap2
-	minimap.objective_arrow.visible = true
+	minimap.arrow.visible = true
 
 #Actual trap 2
 func _on_trap_4_activated() -> void:
 	#Trap 2 complete
-	minimap.objective_arrow.visible = false
+	minimap.arrow.visible = false
 	animPlayer.play("trap2Active")
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Complete").finished
 	minimap.objective = $Trap3
-	minimap.objective_arrow.visible = true
+	minimap.arrow.visible = true
 
 #Actual trap 1
 func _on_trap_5_activated() -> void:
 	#Trap 1 complete
-	minimap.objective_arrow.visible = false
+	minimap.arrow.visible = false
 	animPlayer.play("trap1Active")
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Complete").finished
 	minimap.objective = $Trap4
-	minimap.objective_arrow.visible = true
+	minimap.arrow.visible = true
 	
 
 func togglePause():
