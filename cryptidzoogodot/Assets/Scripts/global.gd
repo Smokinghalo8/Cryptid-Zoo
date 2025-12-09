@@ -3,6 +3,7 @@ extends Node
 #In general
 var stamina = 0
 var walkingSound
+var character_position = Vector3(0,0,0)
 
 #Mothman Things
 var animNum = 1.0

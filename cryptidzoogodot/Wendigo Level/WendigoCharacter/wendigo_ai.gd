@@ -291,5 +291,8 @@ func _on_trap_4_activated() -> void:
 
 func restart():
 	$"../LevelAnimations".play("RESET")
-	$".."._ready()
-	
+	$"..".restart()
+	$"../Trap2".reset()
+	$"../Trap3".reset()
+	$"../Trap4".reset()
+	$"../Trap5".reset()

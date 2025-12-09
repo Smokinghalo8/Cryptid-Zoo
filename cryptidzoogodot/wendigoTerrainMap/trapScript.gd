@@ -24,3 +24,13 @@ func _on_wendigo_ai_trapped_2() -> void:
 
 func killMe():
 	self.queue_free()
+
+func reset():
+	$TrapColl.disabled = true
+	self.remove_from_group("Traps")
+	$Glow.visible = true
+	interactable = true
+	$InteractCol.disabled = false
+	
+	
+	
