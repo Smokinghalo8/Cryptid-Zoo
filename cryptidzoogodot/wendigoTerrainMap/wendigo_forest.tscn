@@ -1,4 +1,4 @@
-[gd_scene load_steps=586 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=594 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -47,6 +47,9 @@
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
 [ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="46_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://btvjihfcsxv3v" path="res://Wendigo Level/assets/torch.tscn" id="47_2v7d2"]
+[ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://wendigoTerrainMap/stop_from_dying.gd" id="48_sy734"]
+[ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://wendigoTerrainMap/water_detection.gd" id="49_ixmxt"]
+[ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -9012,6 +9015,22 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ixmxt"]
+height = 2.9243164
+radius = 14.475586
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jimfv"]
+size = Vector3(42.889923, 1, 378.17853)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fcgyg"]
+size = Vector3(17.45697, 1, 6.885742)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0uae"]
+size = Vector3(9.525269, 1, 9.245056)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4ph1"]
+size = Vector3(3.7924805, 1, 6.9190674)
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
 dialogue_resource = ExtResource("2_jrcfp")
@@ -9614,6 +9633,51 @@ transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.61849
 [node name="Torch30" parent="Torches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 270.37964, -2.6684136, -161.92694)
 
+[node name="StopFromDying" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.389423, -1.5098181, -158.5836)
+script = ExtResource("48_sy734")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StopFromDying"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51696396, -3.3877401, 2.7861328)
+shape = SubResource("CylinderShape3D_ixmxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StopFromDying/CollisionShape3D"]
+
+[node name="WaterDetection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.0442333, 0)
+script = ExtResource("49_ixmxt")
+
+[node name="WaterBig" type="CollisionShape3D" parent="WaterDetection"]
+transform = Transform3D(8.931402, 0, 0, 0, 1, 0, 0, 0, 1, -65.29411, 0, 66.21237)
+shape = SubResource("BoxShape3D_jimfv")
+debug_color = Color(0.84313726, 0, 0.91764706, 0.6784314)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WaterDetection/WaterBig"]
+
+[node name="WaterGraveyard" type="CollisionShape3D" parent="WaterDetection"]
+transform = Transform3D(15.825039, 0, 0, 0, 1.1043668, 0, 0, 0, 20.852858, -137.08179, 0, -183.42429)
+shape = SubResource("BoxShape3D_fcgyg")
+debug_color = Color(0.92941177, 0, 0.6627451, 0.74509805)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WaterDetection/WaterGraveyard"]
+
+[node name="WaterBetweenGYAndMonument" type="CollisionShape3D" parent="WaterDetection"]
+transform = Transform3D(15.844268, 0, 0, 0, 1, 0, 0, 0, 23.956972, 155.12859, 0, -141.70164)
+shape = SubResource("BoxShape3D_p0uae")
+debug_color = Color(0.93333334, 0, 0.6431373, 0.8392157)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WaterDetection/WaterBetweenGYAndMonument"]
+
+[node name="WaterBetweenMonumentAndNet" type="CollisionShape3D" parent="WaterDetection"]
+transform = Transform3D(21.15797, 0, 0, 0, 1, 0, 0, 0, 33.020332, 161.0921, 0, 154.92245)
+shape = SubResource("BoxShape3D_l4ph1")
+debug_color = Color(1, 0.1764706, 0.6039216, 0.84705883)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WaterDetection/WaterBetweenMonumentAndNet"]
+
+[node name="SplashByBlaukreuz6261" type="AudioStreamPlayer" parent="WaterDetection"]
+stream = ExtResource("50_jimfv")
+
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
@@ -9628,3 +9692,5 @@ transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.61849
 [connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]
 [connection signal="body_entered" from="ForestBound1" to="." method="_on_forest_bound_1_body_entered"]
 [connection signal="body_entered" from="ForestBound2" to="." method="_on_forest_bound_2_body_entered"]
+[connection signal="body_entered" from="StopFromDying" to="StopFromDying" method="_on_body_entered"]
+[connection signal="body_entered" from="WaterDetection" to="WaterDetection" method="_on_body_entered"]

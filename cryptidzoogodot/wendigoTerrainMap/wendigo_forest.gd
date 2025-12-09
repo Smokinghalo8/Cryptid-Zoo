@@ -96,3 +96,11 @@ func toWendigo():
 
 func killWendyNoise():
 	$WendigoAi/AudioStreamPlayer3D.queue_free()
+	
+func restart():
+	Global.frozen = true
+	minimap.arrow.visible = false
+	$MainLevelMusic.play(0.0)
+	await DialogueManager.show_dialogue_balloon(dialogue_resource, "StartSmall").finished
+	minimap.arrow.visible = true
+	Global.frozen = false
