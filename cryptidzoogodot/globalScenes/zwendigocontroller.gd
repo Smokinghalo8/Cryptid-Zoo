@@ -182,3 +182,7 @@ func disableLooker():
 
 func _on_trap_2_activated() -> void:
 	pass # Replace with function body.
+
+
+func _on_trap_2_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

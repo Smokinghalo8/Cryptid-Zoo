@@ -1,4 +1,4 @@
-[gd_scene load_steps=585 format=3 uid="uid://n0kjj88rjuor"]
+[gd_scene load_steps=586 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
@@ -46,6 +46,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
 [ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="46_x5eoj"]
+[ext_resource type="PackedScene" uid="uid://btvjihfcsxv3v" path="res://Wendigo Level/assets/torch.tscn" id="47_2v7d2"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -9198,8 +9199,7 @@ script = ExtResource("25_g0ukx")
 autostart = true
 
 [node name="Trap2" parent="." instance=ExtResource("30_ly1ea")]
-transform = Transform3D(2.674213, 0, 0, 0, 1, 0, 0, 0, 1.980717, 47.894905, 0.12553453, -154.67412)
-visible = false
+transform = Transform3D(2.755489, 0, 0, 0, 1, 0, 0, 0, 2.1187716, 48.098454, 0.5068753, -154.29507)
 
 [node name="Trap3" parent="." instance=ExtResource("30_ly1ea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.10275, 0, 4.1995926)
@@ -9232,7 +9232,7 @@ size = Vector3(7.4367676, 0.9857178, 6.3101807)
 [node name="Bridges" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bridges"]
-transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.003918, -2.773592, 19.061462)
+transform = Transform3D(68.13848, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.18184, -2.7735958, 19.060741)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
@@ -9338,7 +9338,7 @@ transform = Transform3D(-0.99933916, 0, 0.03634727, 0, 1, 0, -0.03634727, 0, -0.
 transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, -128.38791, -0.056017965, -52.183273)
 
 [node name="BigTreePlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
-transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
+transform = Transform3D(-0.38165134, 0, -0.92430615, 0, 1, 0, 0.92430615, 0, -0.38165134, 110.19742, -0.056017965, 3.39394)
 
 [node name="LandMarks" type="Node3D" parent="."]
 transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, 110.19742, -0.056017965, 3.39394)
@@ -9443,6 +9443,176 @@ offset_bottom = 1087.0
 [node name="CutSceneCam" type="Camera3D" parent="."]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.8073827, 0.590028, 0, -0.5900281, 0.8073826, 55.62169, 5.3216925, -142.14674)
 fov = 59.062492
+
+[node name="Torches" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.954124, 1.5205871, 65.81093)
+
+[node name="Torch" parent="Torches" instance=ExtResource("47_2v7d2")]
+
+[node name="Torch31" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.11905, 0, 128.59482)
+
+[node name="Torch32" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.77447, 0, 75.837494)
+
+[node name="Torch33" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.231476, 0, 108.90555)
+
+[node name="Torch34" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.75877, 0, 100.77832)
+
+[node name="Torch35" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.83846, 0, 130.28455)
+
+[node name="Torch2" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.122444, 0, -48.236443)
+
+[node name="Torch3" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.122444, 0, -99.88672)
+
+[node name="Torch14" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.24606, 0, -30.271767)
+
+[node name="Torch15" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.51051, -0.05814457, -42.03716)
+
+[node name="Torch16" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.60242, -0.05814457, -40.16896)
+
+[node name="Torch17" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 261.2632, -0.05814457, -56.237007)
+
+[node name="Torch18" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264.0774, -0.05814457, -73.8206)
+
+[node name="Torch19" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 287.6598, -2.1282802, -81.47466)
+
+[node name="Torch20" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.43857, -0.05814457, -77.00174)
+
+[node name="Torch21" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.43857, -0.05814457, -34.344166)
+
+[node name="Torch22" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 287.71655, -0.05814457, -34.344166)
+
+[node name="Torch4" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.91033, 0, -111.72145)
+
+[node name="Torch5" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.978493, 0, -132.50453)
+
+[node name="Torch44" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.38971, 0, -124.666534)
+
+[node name="Torch45" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.00575, 0, -217.03377)
+
+[node name="Torch46" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.73883, 0, -231.80675)
+
+[node name="Torch47" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.14679, 0, -230.0181)
+
+[node name="Torch48" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.14679, 0, -209.99985)
+
+[node name="Torch49" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.41121, 0, -167.56473)
+
+[node name="Torch50" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.0744, 0, -190.08205)
+
+[node name="Torch51" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.20085, 0, -232.32849)
+
+[node name="Torch52" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.26297, 0, -248.98526)
+
+[node name="Torch53" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.39768, 0, -248.98526)
+
+[node name="Torch54" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.39768, 0, -208.89421)
+
+[node name="Torch55" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.13674, 0, -232.29881)
+
+[node name="Torch56" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.41037, 0, -250.08838)
+
+[node name="Torch6" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.74231, -2.6684136, -57.100403)
+
+[node name="Torch7" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.89908, -2.6684136, -57.100403)
+
+[node name="Torch8" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.87863, -2.6684175, -57.101124)
+
+[node name="Torch9" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.00886, -2.6684136, -57.100403)
+
+[node name="Torch10" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.74231, -2.6684136, -34.094715)
+
+[node name="Torch11" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.89908, -2.6684136, -34.094715)
+
+[node name="Torch12" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.05655, -2.6684136, -34.094715)
+
+[node name="Torch13" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.00886, -2.6684136, -34.094715)
+
+[node name="Torch36" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 233.86308, -0.16142106, 56.831543)
+
+[node name="Torch37" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 246.09381, -2.6684136, 43.412262)
+
+[node name="Torch38" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 255.51016, -2.6684175, 33.07979)
+
+[node name="Torch39" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 265.02908, -2.6684136, 22.636932)
+
+[node name="Torch40" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 250.86609, -2.6684136, 72.32861)
+
+[node name="Torch41" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 263.09683, -2.6684136, 58.909332)
+
+[node name="Torch42" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 272.63358, -2.6684136, 48.445847)
+
+[node name="Torch43" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.67361903, 0, 0.73907876, 0, 1, 0, -0.73907876, 0, 0.67361903, 282.0321, -2.6684136, 38.134003)
+
+[node name="Torch23" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 259.84192, -2.6684136, -212.51166)
+
+[node name="Torch24" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 271.07172, -2.6684136, -198.2442)
+
+[node name="Torch25" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 279.71848, -2.6684175, -187.25961)
+
+[node name="Torch26" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 288.45734, -2.6684136, -176.15576)
+
+[node name="Torch27" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 241.76425, -2.6684136, -198.28284)
+
+[node name="Torch28" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 252.99402, -2.6684136, -184.01538)
+
+[node name="Torch29" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 261.7503, -2.6684136, -172.8906)
+
+[node name="Torch30" parent="Torches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6184907, 0, -0.7857921, 0, 1, 0, 0.7857921, 0, 0.6184907, 270.37964, -2.6684136, -161.92694)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

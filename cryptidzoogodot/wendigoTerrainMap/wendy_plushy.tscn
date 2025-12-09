@@ -9,6 +9,7 @@ height = 1.1794434
 radius = 0.40234375
 
 [node name="WendyPlushy" type="RigidBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_yyurl")
 
 [node name="PlushySkin" parent="." instance=ExtResource("1_gxt5p")]
