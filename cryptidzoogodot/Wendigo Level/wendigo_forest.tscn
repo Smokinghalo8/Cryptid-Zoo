@@ -1,7 +1,7 @@
 [gd_scene load_steps=594 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
-[ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://wendigoTerrainMap/wendigo_forest.gd" id="1_qv7kg"]
+[ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://Wendigo Level/wendigo_forest.gd" id="1_qv7kg"]
 [ext_resource type="Resource" uid="uid://kswptg5hojwh" path="res://wendigoTerrainMap/data.hterrain" id="2_1mri4"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_05m3n"]
 [ext_resource type="Resource" uid="uid://cqlo847hulha6" path="res://Dialogue/WendigoLevel.dialogue" id="2_jrcfp"]
@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://wendigoTerrainMap/trap.tscn" id="30_ly1ea"]
+[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
@@ -41,14 +41,14 @@
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://wendigoTerrainMap/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
 [ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="46_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://btvjihfcsxv3v" path="res://Wendigo Level/assets/torch.tscn" id="47_2v7d2"]
-[ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://wendigoTerrainMap/stop_from_dying.gd" id="48_sy734"]
-[ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://wendigoTerrainMap/water_detection.gd" id="49_ixmxt"]
+[ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://Wendigo Level/stop_from_dying.gd" id="48_sy734"]
+[ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="49_ixmxt"]
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
@@ -9345,16 +9345,16 @@ stream = ExtResource("40_w1jcc")
 [node name="Plushies" type="Node3D" parent="."]
 
 [node name="PorchPlushy" parent="Plushies" instance=ExtResource("43_h6ks2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.86496, 2.4413292, 161.59625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.86496, 1.6946695, 161.59625)
 
 [node name="MonumentPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
 transform = Transform3D(-0.6373701, 0, 0.77055776, 0, 1, 0, -0.77055776, 0, -0.6373701, 168.64516, -8.032878, 5.4699535)
 
 [node name="GraveyardPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
-transform = Transform3D(-0.99933916, 0, 0.03634727, 0, 1, 0, -0.03634727, 0, -0.99933916, 9.545032, 1.6030568, -166.30734)
+transform = Transform3D(-0.99933916, 0, 0.03634727, 0, 1, 0, -0.03634727, 0, -0.99933916, 9.545032, 1.6749843, -166.30734)
 
 [node name="MausoleumPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
-transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, -128.38791, -0.056017965, -52.183273)
+transform = Transform3D(0.6987525, 0, 0.7153634, 0, 1, 0, -0.7153634, 0, 0.6987525, -128.38791, -0.02228722, -52.183273)
 
 [node name="BigTreePlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
 transform = Transform3D(-0.38165134, 0, -0.92430615, 0, 1, 0, 0.92430615, 0, -0.38165134, 110.19742, -0.056017965, 3.39394)

@@ -219,6 +219,7 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
 				await levelPlayer.animation_finished
+				Global.plushCounter = 0
 				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
 			
 
