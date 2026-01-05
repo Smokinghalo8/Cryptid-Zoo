@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=25 format=3 uid="uid://cn4o0c5geiix0"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
@@ -10,8 +10,9 @@
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="7_gbm7p"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="8_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
-[ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/gnome_character.tscn" id="11_gbm7p"]
+[ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/GnomeCharacters/gnome_character.tscn" id="11_gbm7p"]
 [ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
+[ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -174,3 +175,6 @@ wait_time = 2.0
 
 [node name="marble" parent="." instance=ExtResource("12_xhii3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.2156, -3.8146973e-06, 41.16959)
+
+[node name="sword" parent="." instance=ExtResource("13_8dup0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.64468, 0, 69.95526)

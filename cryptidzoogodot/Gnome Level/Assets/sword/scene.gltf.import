@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cr6vqwy6180m6"
-valid=false
+path="res://.godot/imported/scene.gltf-2a23d0e9f02f8a2675cfd2e88e46ec5c.scn"
 
 [deps]
 
 source_file="res://Gnome Level/Assets/sword/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-2a23d0e9f02f8a2675cfd2e88e46ec5c.scn"]
 
 [params]
 

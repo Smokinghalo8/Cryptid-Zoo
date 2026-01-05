@@ -5,7 +5,8 @@ var is_in_marble = false
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	is_in_marble = true
+	if body.is_in_group("Character"):
+		is_in_marble = true
 
 
 func _process(delta: float) -> void:
@@ -15,4 +16,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	is_in_marble = false
+	if body.is_in_group("Character"):
+		is_in_marble = false
