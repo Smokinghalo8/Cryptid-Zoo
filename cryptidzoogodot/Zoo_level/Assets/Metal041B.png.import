@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwiilk7mg00mn"
-path.s3tc="res://.godot/imported/Metal041B.png-106617d1dd98ef7d793c92f494f5f8db.s3tc.ctex"
+path.s3tc="res://.godot/imported/Metal041B.png-7d9a31006f75dbda1a9ee22afd83ed69.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Zoo_level/Assets/Metal041B.png"
-dest_files=["res://.godot/imported/Metal041B.png-106617d1dd98ef7d793c92f494f5f8db.s3tc.ctex"]
+source_file="res://Zoo_level/assets/Metal041B.png"
+dest_files=["res://.godot/imported/Metal041B.png-7d9a31006f75dbda1a9ee22afd83ed69.s3tc.ctex"]
 
 [params]
 

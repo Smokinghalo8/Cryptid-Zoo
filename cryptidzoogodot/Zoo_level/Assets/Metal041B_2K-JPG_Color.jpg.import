@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq0ktyis1cjow"
-path.s3tc="res://.godot/imported/Metal041B_2K-JPG_Color.jpg-3c18a4129cd44327877f48a3d1a10ac4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Metal041B_2K-JPG_Color.jpg-0ece0723b1b76e82be6cbc66f33f4b16.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Zoo_level/Assets/Metal041B_2K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/Metal041B_2K-JPG_Color.jpg-3c18a4129cd44327877f48a3d1a10ac4.s3tc.ctex"]
+source_file="res://Zoo_level/assets/Metal041B_2K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/Metal041B_2K-JPG_Color.jpg-0ece0723b1b76e82be6cbc66f33f4b16.s3tc.ctex"]
 
 [params]
 

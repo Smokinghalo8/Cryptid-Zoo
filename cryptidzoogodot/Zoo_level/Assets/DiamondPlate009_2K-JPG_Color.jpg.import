@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce0twqpvuyclt"
-path.s3tc="res://.godot/imported/DiamondPlate009_2K-JPG_Color.jpg-61d7b6102f17c73575337f0b123e2577.s3tc.ctex"
+path.s3tc="res://.godot/imported/DiamondPlate009_2K-JPG_Color.jpg-8da2478c0074704c5812c263e422704e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Zoo_level/Assets/DiamondPlate009_2K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/DiamondPlate009_2K-JPG_Color.jpg-61d7b6102f17c73575337f0b123e2577.s3tc.ctex"]
+source_file="res://Zoo_level/assets/DiamondPlate009_2K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/DiamondPlate009_2K-JPG_Color.jpg-8da2478c0074704c5812c263e422704e.s3tc.ctex"]
 
 [params]
 
