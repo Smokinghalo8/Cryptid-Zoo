@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://wx81ig6aeqdo"]
+
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
+[ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
+
+[sub_resource type="Resource" id="Resource_4bmcb"]
+script = ExtResource("3_glbf2")
+mode = 0
+textures = [[], []]
+
+[node name="NessLevel" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_iiie1")
+_terrain_data = ExtResource("2_5xobx")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_4bmcb")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
