@@ -1,31 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=6 format=3 uid="uid://wx81ig6aeqdo"]
 
-[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
-[ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
-[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
+[ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
+[ext_resource type="Texture2D" uid="uid://bk6a7b0utei6x" path="res://Nessie Level/sky_02_2k.png" id="2_lsqwe"]
 
-[sub_resource type="Resource" id="Resource_4bmcb"]
-script = ExtResource("3_glbf2")
-mode = 0
-textures = [[], []]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
+panorama = ExtResource("2_lsqwe")
+
+[sub_resource type="Sky" id="Sky_5xobx"]
+sky_material = SubResource("PanoramaSkyMaterial_iiie1")
+
+[sub_resource type="Environment" id="Environment_glbf2"]
+background_mode = 2
+sky = SubResource("Sky_5xobx")
+ambient_light_source = 3
+ambient_light_color = Color(0.99215686, 0.68235296, 0.3764706, 1)
+fog_mode = 1
+fog_density = 0.0
+volumetric_fog_density = 0.0
 
 [node name="NessLevel" type="Node3D"]
 
-[node name="HTerrain" type="Node3D" parent="."]
-script = ExtResource("1_iiie1")
-_terrain_data = ExtResource("2_5xobx")
-chunk_size = 32
-collision_enabled = true
-collision_layer = 1
-collision_mask = 1
-shader_type = "Classic4Lite"
-custom_shader = null
-custom_globalmap_shader = null
-texture_set = SubResource("Resource_4bmcb")
-render_layers = 1
-cast_shadow = 1
-shader_params/u_ground_uv_scale = 20
-shader_params/u_depth_blending = true
-shader_params/u_triplanar = null
-shader_params/u_tile_reduction = null
-metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+[node name="Z" parent="." instance=ExtResource("1_jpks3")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.978027, -1.336093, -1.8509827)
+use_collision = true
+size = Vector3(47.989258, 1, 19.425842)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glbf2")

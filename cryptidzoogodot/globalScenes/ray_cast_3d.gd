@@ -7,16 +7,4 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if is_colliding():
-		var target = get_collider()
-		if target != null:
-			if target.has_method("interact"):
-				if target.is_in_group("Traps"):
-					return
-				intText.visible = true
-				if Input.is_action_just_pressed("interact"):
-					target.interact()
-			else:
-				intText.visible = false
-	else:
-		intText.visible = false
+	pass
