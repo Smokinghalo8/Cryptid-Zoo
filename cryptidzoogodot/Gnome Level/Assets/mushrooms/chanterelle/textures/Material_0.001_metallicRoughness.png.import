@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvawv5bkno67"
-path.s3tc="res://.godot/imported/ColorPaletteOpac_baseColor.png-6a531d1135ba59e342b589049dd0702f.s3tc.ctex"
+uid="uid://cq06p3aj33d2n"
+path.s3tc="res://.godot/imported/Material_0.001_metallicRoughness.png-9f5631a2bb6f7b3d8c7cee0f02f2fb94.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Gnome Level/Assets/sword/textures/ColorPaletteOpac_baseColor.png"
-dest_files=["res://.godot/imported/ColorPaletteOpac_baseColor.png-6a531d1135ba59e342b589049dd0702f.s3tc.ctex"]
+source_file="res://Gnome Level/Assets/mushrooms/chanterelle/textures/Material_0.001_metallicRoughness.png"
+dest_files=["res://.godot/imported/Material_0.001_metallicRoughness.png-9f5631a2bb6f7b3d8c7cee0f02f2fb94.s3tc.ctex"]
 
 [params]
 

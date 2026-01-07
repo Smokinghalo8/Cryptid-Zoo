@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://0bfgqnc426ow"]
+
+[ext_resource type="Script" uid="uid://cc4wv0xbeybnq" path="res://Gnome Level/mushroom.gd" id="1_7qprm"]
+[ext_resource type="PackedScene" uid="uid://oltte3yhr5hc" path="res://Gnome Level/Assets/mushrooms/russula/scene.gltf" id="2_jbids"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7qprm"]
+height = 2.3535156
+radius = 3.538086
+
+[node name="russula" type="Node3D"]
+script = ExtResource("1_7qprm")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_jbids")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63400793, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9576161, 0)
+shape = SubResource("CylinderShape3D_7qprm")

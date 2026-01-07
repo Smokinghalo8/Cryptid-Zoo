@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvawv5bkno67"
-path.s3tc="res://.godot/imported/ColorPaletteOpac_baseColor.png-6a531d1135ba59e342b589049dd0702f.s3tc.ctex"
+uid="uid://bjps3jyb5lesp"
+path.s3tc="res://.godot/imported/Material_0.001_normal.jpeg-859d96b017ac241a87d0afd92d2265f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Gnome Level/Assets/sword/textures/ColorPaletteOpac_baseColor.png"
-dest_files=["res://.godot/imported/ColorPaletteOpac_baseColor.png-6a531d1135ba59e342b589049dd0702f.s3tc.ctex"]
+source_file="res://Gnome Level/Assets/mushrooms/chanterelle/textures/Material_0.001_normal.jpeg"
+dest_files=["res://.godot/imported/Material_0.001_normal.jpeg-859d96b017ac241a87d0afd92d2265f7.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Gnome Level/Assets/mushrooms/chanterelle/textures/Material_0.001_normal.jpeg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
