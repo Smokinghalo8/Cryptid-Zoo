@@ -12,11 +12,8 @@ radius = 5.6748047
 height = 16.815918
 
 [node name="gnomeCharacter" type="CharacterBody3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_hi1f6")
-speed_idle = null
-speed_chase = null
-move_radius = null
-wait_time = null
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_dxjvc")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3196578, 0.8168974)

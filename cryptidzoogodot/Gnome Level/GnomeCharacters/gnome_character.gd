@@ -3,7 +3,7 @@ extends CharacterBody3D
 enum State {
 	IDLE,
 	WAIT,
-	CHASE,
+	#CHASE,
 }
 
 @export var speed_idle: float = 5.4
@@ -37,8 +37,8 @@ func _physics_process(delta: float) -> void:
 			_process_idle(delta)
 		State.WAIT:
 			stop_and_apply_gravity(delta)
-		State.CHASE:
-			_process_chase(delta)
+		#State.CHASE:
+			# _process_chase(delta)
 
 # --- IDLE wandering ---
 func _process_idle(delta: float) -> void:
@@ -124,7 +124,7 @@ func choose_new_target() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Character"):
 		chasing_player = body
-		state = State.CHASE
+		#state = State.CHASE
 
 func _on_body_exited(body: Node) -> void:
 	if body == chasing_player:
