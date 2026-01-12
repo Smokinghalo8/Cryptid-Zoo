@@ -1,17 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdpamu5wophfj"]
 
-[ext_resource type="Texture2D" uid="uid://cag45gd25qiad" path="res://Assets/Materials/Grass/free grass.png" id="1_e8vhd"]
+[ext_resource type="ArrayMesh" uid="uid://byoy7orbuo261" path="res://Gnome Level/GnomeCharacters/HedgeMesh.obj" id="1_e8vhd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c6c8s"]
-size = Vector3(1, 2.5078125, 3.390503)
+size = Vector3(1.4528809, 0.6366577, 3.390503)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.449968, 0, 0, 0, 0.71644115, 0, 0.27772093, -0.47743845)
-axis = 0
-texture = ExtResource("1_e8vhd")
+[node name="Sprite3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59805226, -0.47743845)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75390625, -0.5293579)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sprite3D"]
+transform = Transform3D(-4.3711387e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.3711387e-10, -0.72540903, 0, 0)
+mesh = ExtResource("1_e8vhd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049194336, 0.13338459, -0.07246858)
 shape = SubResource("BoxShape3D_c6c8s")
