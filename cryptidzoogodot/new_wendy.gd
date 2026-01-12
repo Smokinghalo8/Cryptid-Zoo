@@ -56,7 +56,8 @@ func _physics_process(delta):
 	direction = direction.normalized()
 	
 	velocity = velocity.lerp(direction * speed, delta * 10)
-	
+	velocity.y += -9.8 * delta
+	print(velocity.y)
 	move_and_slide()
 
 
@@ -66,12 +67,12 @@ func chase():
 	nav.target_position = player.global_position
 
 func wandering(delta):
-	speed = 7
+	speed = 7.5
 	look_at(global_transform.origin + velocity)
 	hasSeen = false
 	nav.target_position = randomPos
 	if (abs(randomPos.x - global_position.x) <= 5 and abs(randomPos.z - global_position.z)<=5) or wanderTimer <= 0:
-		randomPos = Vector3(randf_range(player.global_position.x-30, player.global_position.x+30), position.y, randf_range(player.global_position.z-30, player.global_position.z+30))
+		randomPos = Vector3(randf_range(player.global_position.x-30, player.global_position.x+30), player.global_position.y, randf_range(player.global_position.z-30, player.global_position.z+30))
 		clamp(randomPos.x, -210, 223)
 		clamp(randomPos.z, -245, 235)
 		wanderTimer = 15.0
@@ -79,7 +80,7 @@ func wandering(delta):
 		randomPos = Vector3(randf_range(player.global_position.x-15, player.global_position.x+15), position.y, randf_range(player.global_position.z-15, player.global_position.z+15))
 		clamp(randomPos.x, -210, 223)
 		clamp(randomPos.z, -245, 235)
-		wanderTimer-=delta
+		wanderTimer = 15.0
 	wanderTimer-=delta
 
 

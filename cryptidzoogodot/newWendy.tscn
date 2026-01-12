@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.044404, 0)
 shape = SubResource("CapsuleShape3D_jo68c")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2uqoh")]
-transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, -0.6512272, 0)
+transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, 0.18168467, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true

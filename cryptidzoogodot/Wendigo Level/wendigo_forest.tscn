@@ -9411,6 +9411,7 @@ collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.94388, 1.117157, 135.89462)
+floor_max_angle = 3.1415927
 dialogue_resource = ExtResource("2_jrcfp")
 
 [node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
