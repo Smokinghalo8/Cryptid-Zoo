@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkbhyk41hxxh3"
-path="res://.godot/imported/10449_Rectangular_Box_Hedge_v1_Diffuse.jpg-081a4aae1fb51661a13fea8501ff36fb.ctex"
+uid="uid://bi3w23i27glfi"
+path.s3tc="res://.godot/imported/CorrectedHedge_0.jpg-59da11b1d6f42f06198e35bd79161751.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "eb3df096fd866d5790d468a112c13322"
 }
 
 [deps]
 
-source_file="res://Gnome Level/HedgeMaze/10449_Rectangular_Box_Hedge_v1_Diffuse.jpg"
-dest_files=["res://.godot/imported/10449_Rectangular_Box_Hedge_v1_Diffuse.jpg-081a4aae1fb51661a13fea8501ff36fb.ctex"]
+source_file="res://Gnome Level/GnomeTerrainMap/CorrectedHedge_0.jpg"
+dest_files=["res://.godot/imported/CorrectedHedge_0.jpg-59da11b1d6f42f06198e35bd79161751.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

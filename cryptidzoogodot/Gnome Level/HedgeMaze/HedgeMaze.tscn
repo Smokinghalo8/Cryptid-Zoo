@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44r1qts7g25d"]
+
+[ext_resource type="PackedScene" uid="uid://vxwv46fcdxtw" path="res://Gnome Level/HedgeMaze/correctedSinglehedge.tscn" id="1_00c2o"]
+
+[node name="OverAllMaze" type="Node3D"]
+
+[node name="Hedge1" parent="." instance=ExtResource("1_00c2o")]
+
+[node name="Hedge2" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.970078, 0, 0)
+
+[node name="Hedge3" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.533897, 0, 0)
+
+[node name="Hedge4" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.44915, 0, 0)
+
+[node name="Hedge5" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.58428, 0, 0)
+
+[node name="Hedge6" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.71941, 0, 0)
+
+[node name="Hedge7" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9914169, 0, -123.97875)
+
+[node name="Hedge8" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.978653, 0, -123.97875)
+
+[node name="Hedge9" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.54248, 0, -123.97875)
+
+[node name="Hedge10" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.457733, 0, -123.97875)
+
+[node name="Hedge11" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.592865, 0, -123.97875)
+
+[node name="Hedge12" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.728, 0, -123.97875)
+
+[node name="Hedge13" parent="." instance=ExtResource("1_00c2o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.756004, 0, -10.657814)
+
+[node name="Hedge13" parent="Hedge13" instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.76059, 0, -0.47942734)
+
+[node name="Hedge13" parent="Hedge13/Hedge13" instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.76059, 0, -0.47942734)
+
+[node name="Hedge13" parent="Hedge13/Hedge13/Hedge13" instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.76059, 0, -0.47942734)
+
+[node name="Hedge13" parent="Hedge13/Hedge13/Hedge13/Hedge13" instance=ExtResource("1_00c2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.76059, 0, -0.47942734)

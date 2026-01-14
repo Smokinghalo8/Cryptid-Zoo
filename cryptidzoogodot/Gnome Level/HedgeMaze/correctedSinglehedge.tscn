@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vxwv46fcdxtw"]
+
+[ext_resource type="PackedScene" uid="uid://ifno5irueihe" path="res://Gnome Level/GnomeTerrainMap/CorrectedHedge.gltf" id="1_hgdja"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgdja"]
+size = Vector3(2.2235718, 0.748291, 1.4997559)
+
+[node name="CorrectedHedge" instance=ExtResource("1_hgdja")]
+
+[node name="Node1" parent="Node0" index="0"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 4.289612, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.038589478, 4.867592, 8.164585)
+shape = SubResource("BoxShape3D_hgdja")
