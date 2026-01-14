@@ -8,6 +8,7 @@ height = 2.3535156
 radius = 3.538086
 
 [node name="porcini" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.014505863, 0)
 script = ExtResource("1_y8e0x")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_1bv4y")]

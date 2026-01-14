@@ -3,6 +3,7 @@ render_mode unshaded, cull_disabled;
 
 uniform float strength : hint_range(0.0, 1.0) = 0.4;
 uniform float speed : hint_range(0.0, 2.0) = 0.333;
+uniform float transparency : hint_range(0.0, 1.0) = .2;
 uniform vec2 screen_resolution = vec2(1280.0, 720.0); // Must be set from GDScript
 
 void fragment() {
@@ -29,7 +30,9 @@ void fragment() {
     // Gamma correction
     col = pow(col, vec3(0.4545));
 
+	
+
     // Set final output
     ALBEDO = col;
-    ALPHA = 1.0;
+    ALPHA = transparency;
 }
