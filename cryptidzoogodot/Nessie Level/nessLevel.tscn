@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=15 format=3 uid="uid://wx81ig6aeqdo"]
 
+[ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
 [ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
-[ext_resource type="Texture2D" uid="uid://bk6a7b0utei6x" path="res://Nessie Level/sky_02_2k.png" id="2_lsqwe"]
+[ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
+[ext_resource type="PackedScene" uid="uid://bdopa3ywnw1qk" path="res://Nessie Level/nessie_goat_simulator/nessModelScene.gltf" id="2_lrauw"]
+[ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
+[ext_resource type="Texture2D" uid="uid://djxvlq4sydeml" path="res://Nessie Level/sky_20_2k.png" id="3_lrauw"]
+[ext_resource type="Shader" uid="uid://cy1bfrgahdjoa" path="res://Nessie Level/nessWaterShader.gdshader" id="6_4bmcb"]
+[ext_resource type="Script" uid="uid://cjrae5bm6bgew" path="res://Nessie Level/NessWaterBob.gd" id="8_31gws"]
+[ext_resource type="PackedScene" uid="uid://cslplarl1bkea" path="res://Nessie Level/wooden_boat_01_lod1.gltf" id="9_64hkd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
-panorama = ExtResource("2_lsqwe")
+panorama = ExtResource("3_lrauw")
 
 [sub_resource type="Sky" id="Sky_5xobx"]
 sky_material = SubResource("PanoramaSkyMaterial_iiie1")
@@ -12,20 +19,135 @@ sky_material = SubResource("PanoramaSkyMaterial_iiie1")
 [sub_resource type="Environment" id="Environment_glbf2"]
 background_mode = 2
 sky = SubResource("Sky_5xobx")
-ambient_light_source = 3
-ambient_light_color = Color(0.99215686, 0.68235296, 0.3764706, 1)
+fog_enabled = true
 fog_mode = 1
-fog_density = 0.0
-volumetric_fog_density = 0.0
+fog_density = 0.685
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0574
+volumetric_fog_emission = Color(0, 0, 0.35686275, 1)
+
+[sub_resource type="Resource" id="Resource_glbf2"]
+script = ExtResource("3_glbf2")
+mode = 0
+textures = [[], []]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lrauw"]
+render_priority = 0
+shader = ExtResource("6_4bmcb")
+shader_parameter/wave_1 = Vector4(0.3, 4, 0.2, 0.6)
+shader_parameter/wave_2 = Vector4(-0.26, -0.19, 0.01, 0.47)
+shader_parameter/wave_3 = Vector4(-7.67, 5.63, 0.1, 0.38)
+shader_parameter/wave_4 = Vector4(-0.42, -1.63, 0.1, 0.28)
+shader_parameter/wave_5 = Vector4(1.66, 0.07, 0.15, 1.81)
+shader_parameter/wave_6 = Vector4(1.2, 1.14, 0.01, 0.33)
+shader_parameter/wave_7 = Vector4(-1.6, 7.3, 0.11, 0.73)
+shader_parameter/wave_8 = Vector4(-0.42, -1.63, 0.15, 1.52)
+shader_parameter/time_factor = 5.0
+shader_parameter/noise_zoom = 0.0
+shader_parameter/noise_amp = 0.0
+shader_parameter/base_water_color = Color(0, 0.54901963, 0.8039216, 1)
+shader_parameter/fresnel_water_color = Color(6.617978e-08, 0.15602961, 0.15603927, 1)
+shader_parameter/deep_water_color = Color(0, 0.49803922, 0.31764707, 1)
+shader_parameter/shallow_water_color = Color(0.4627451, 0.99215686, 1, 1)
+shader_parameter/beers_law = 0.2
+shader_parameter/depth_offset = -1.0
+shader_parameter/near = 7.0
+shader_parameter/far = 10000.0
+shader_parameter/edge_texture_scale = 3.5
+shader_parameter/edge_texture_offset = 1.0
+shader_parameter/edge_texture_speed = 0.1
+shader_parameter/edge_foam_intensity = 2.0
+shader_parameter/edge_fade_start = -3.0
+shader_parameter/edge_fade_end = 6.6
+shader_parameter/peak_height_threshold = 1.0
+shader_parameter/peak_color = Vector3(1, 1, 1)
+shader_parameter/peak_intensity = 1.0
+shader_parameter/foam_intensity = 1.0
+shader_parameter/foam_scale = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/uv_scale_text_a = 0.1
+shader_parameter/uv_speed_text_a = Vector2(0.42, 0.3)
+shader_parameter/uv_scale_text_b = 0.6
+shader_parameter/uv_speed_text_b = Vector2(0.15, 0.1)
+shader_parameter/normal_strength = 0.5
+shader_parameter/uv_sampler_scale = 0.3
+shader_parameter/blend_factor = 0.28
+shader_parameter/perturbation_strength = 1.0
+shader_parameter/perturbation_time = 0.3
+shader_parameter/caustics_intensity = 15.0
+shader_parameter/num_caustic_layers = 16.0
+shader_parameter/caustic_distortion_strength = 0.001
 
 [node name="NessLevel" type="Node3D"]
 
 [node name="Z" parent="." instance=ExtResource("1_jpks3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.838659, 0)
+collision_layer = 9
+collision_mask = 9
+
+[node name="f" parent="." instance=ExtResource("2_lrauw")]
+transform = Transform3D(0.74494064, 0, 0.66713077, 0, 1, 0, -0.66713077, 0, 0.74494064, -15.559477, -11.299948, -16.380161)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.978027, -1.336093, -1.8509827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0868797, -21.160921, 0.2974844)
 use_collision = true
-size = Vector3(47.989258, 1, 19.425842)
+size = Vector3(20, 33.158752, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.405478, -3.1670399, 0.2974844)
+use_collision = true
+size = Vector3(20, 33.158752, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.645643, 0.9480839, -18.53166)
+use_collision = true
+size = Vector3(20, 33.158752, 20)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_glbf2")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_iiie1")
+map_scale = Vector3(0.25, 0.25, 0.25)
+centered = true
+_terrain_data = ExtResource("2_5xobx")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_glbf2")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale_per_texture = null
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+shader_params/u_globalmap_blend_start = null
+shader_params/u_globalmap_blend_distance = null
+shader_params/u_colormap_opacity_per_texture = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
+
+[node name="Water" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.870398, -106.766075, 0.0022506714)
+size = Vector3(200, 200, 200)
+material = SubResource("ShaderMaterial_lrauw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.38052166, 0.924772, 0, -0.924772, 0.38052166, 0, 8.02569, 0)
+light_color = Color(0.60933006, 0.6093301, 0.60933006, 1)
+
+[node name="WaveBox" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.663448, 17.414612)
+layers = 0
+use_collision = true
+collision_layer = 8
+collision_mask = 8
+size = Vector3(300, 1, 300)
+script = ExtResource("8_31gws")
+
+[node name="wooden_boat_01_lod1" parent="." instance=ExtResource("9_64hkd")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -18.294533, -7.381605, 9.934216)

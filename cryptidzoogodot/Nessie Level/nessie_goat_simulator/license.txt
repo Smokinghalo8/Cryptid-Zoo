@@ -1,0 +1,11 @@
+Model Information:
+* title:	Nessie [Goat Simulator]
+* source:	https://sketchfab.com/3d-models/nessie-goat-simulator-2d6830038fb94915b9131012ce6ea0e5
+* author:	dinoguy263allo (https://sketchfab.com/dinoguy263allo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Nessie [Goat Simulator]" (https://sketchfab.com/3d-models/nessie-goat-simulator-2d6830038fb94915b9131012ce6ea0e5) by dinoguy263allo (https://sketchfab.com/dinoguy263allo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

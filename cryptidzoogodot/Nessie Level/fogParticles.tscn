@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b0w63yet3ts1t"]
+
+[node name="FogParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
