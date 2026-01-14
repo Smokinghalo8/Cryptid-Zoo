@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgx0cjw5trxup"]
+
+[ext_resource type="PackedScene" uid="uid://dmmjuji4pvi6f" path="res://Gnome Level/HedgeMaze/hedgedog/scene.gltf" id="1_p2obj"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_p2obj")]
+
+[node name="Object_12" parent="Sketchfab_model/root/GLTF_SceneRootNode/RootNode (gltf orientation matrix)_0/RootNode (model correction matrix)_1/1_FBX_2/RootNode_3/Box002_6/Box002_default_0_7" index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

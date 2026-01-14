@@ -3,6 +3,8 @@ extends Node3D
 @onready var marble: Node3D = $"."
 var is_in_marble = false
 
+# TODO player can only carry one riddle item at a time
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
