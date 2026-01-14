@@ -21,5 +21,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and is_in_shroom == true:
+		self.queue_free()
 		if psychedelic >= 1:
-			self.queue_free()
+			$"../../Z/psychedelicCube".visible = true
