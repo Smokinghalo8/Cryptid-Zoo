@@ -1,4 +1,4 @@
-[gd_scene load_steps=597 format=3 uid="uid://dxsurf27hc834"]
+[gd_scene load_steps=599 format=3 uid="uid://dxsurf27hc834"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://Wendigo Level/wendigo_forest.gd" id="1_qv7kg"]
@@ -42,7 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://dnab6v7mt7fq3" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
@@ -9043,6 +9043,10 @@ size = Vector3(9.525269, 1, 9.245056)
 [sub_resource type="BoxShape3D" id="BoxShape3D_l4ph1"]
 size = Vector3(3.7924805, 1, 6.9190674)
 
+[sub_resource type="BoxMesh" id="BoxMesh_rfgrx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q35a6"]
+
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
 dialogue_resource = ExtResource("2_jrcfp")
@@ -9410,7 +9414,9 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.94388, 1.117157, 135.89462)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.94388, 0.44655335, 135.89462)
+collision_layer = 3
+collision_mask = 3
 floor_max_angle = 3.1415927
 dialogue_resource = ExtResource("2_jrcfp")
 
@@ -9654,7 +9660,7 @@ stream = ExtResource("40_w1jcc")
 [node name="Plushies" type="Node3D" parent="."]
 
 [node name="PorchPlushy" parent="Plushies" instance=ExtResource("43_h6ks2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.86496, 1.6946695, 161.59625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.52936, 1.9712775, 161.3494)
 
 [node name="MonumentPlushie" parent="Plushies" instance=ExtResource("43_h6ks2")]
 transform = Transform3D(-0.6373701, 0, 0.77055776, 0, 1, 0, -0.77055776, 0, -0.6373701, 168.64516, -8.032878, 5.4699535)
@@ -9724,6 +9730,15 @@ stream = ExtResource("50_jimfv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.68604, 0, 234.46454)
+
+[node name="Plushy" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.00327, 0.6264727, 158.71298)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plushy"]
+mesh = SubResource("BoxMesh_rfgrx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plushy"]
+shape = SubResource("BoxShape3D_q35a6")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
