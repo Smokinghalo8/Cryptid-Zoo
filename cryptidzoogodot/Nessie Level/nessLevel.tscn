@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=17 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
 [ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
 [ext_resource type="Texture2D" uid="uid://djxvlq4sydeml" path="res://Nessie Level/sky_20_2k.png" id="3_lrauw"]
 [ext_resource type="Shader" uid="uid://cy1bfrgahdjoa" path="res://Nessie Level/nessWaterShader.gdshader" id="6_4bmcb"]
+[ext_resource type="Texture2D" uid="uid://deiqafwg1auf8" path="res://wendigoTerrainMap/ground-ShortGrass.png" id="7_64hkd"]
 [ext_resource type="Script" uid="uid://cjrae5bm6bgew" path="res://Nessie Level/NessWaterBob.gd" id="8_31gws"]
-[ext_resource type="PackedScene" uid="uid://cslplarl1bkea" path="res://Nessie Level/wooden_boat_01_lod1.gltf" id="9_64hkd"]
+[ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="10_7lbco"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -29,7 +30,7 @@ volumetric_fog_emission = Color(0, 0, 0.35686275, 1)
 [sub_resource type="Resource" id="Resource_glbf2"]
 script = ExtResource("3_glbf2")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("7_64hkd")], [null]]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lrauw"]
 render_priority = 0
@@ -79,30 +80,20 @@ shader_parameter/caustics_intensity = 15.0
 shader_parameter/num_caustic_layers = 16.0
 shader_parameter/caustic_distortion_strength = 0.001
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g60a"]
+albedo_texture = ExtResource("10_7lbco")
+
 [node name="NessLevel" type="Node3D"]
 
 [node name="Z" parent="." instance=ExtResource("1_jpks3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.838659, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.838659, 39.715088)
 collision_layer = 9
 collision_mask = 9
 
-[node name="f" parent="." instance=ExtResource("2_lrauw")]
-transform = Transform3D(0.74494064, 0, 0.66713077, 0, 1, 0, -0.66713077, 0, 0.74494064, -15.559477, -11.299948, -16.380161)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0868797, -21.160921, 0.2974844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0868797, -19.963243, 42.805954)
 use_collision = true
-size = Vector3(20, 33.158752, 20)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.405478, -3.1670399, 0.2974844)
-use_collision = true
-size = Vector3(20, 33.158752, 20)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.645643, 0.9480839, -18.53166)
-use_collision = true
-size = Vector3(20, 33.158752, 20)
+size = Vector3(20, 35.554108, 20)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_glbf2")
@@ -132,7 +123,7 @@ shader_params/u_colormap_opacity_per_texture = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
 [node name="Water" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.870398, -106.766075, 0.0022506714)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.870398, -101.766075, 0.0022506714)
 size = Vector3(200, 200, 200)
 material = SubResource("ShaderMaterial_lrauw")
 
@@ -141,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 0.38052166, 0.924772, 0, -0.924772, 0.380521
 light_color = Color(0.60933006, 0.6093301, 0.60933006, 1)
 
 [node name="WaveBox" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.663448, 17.414612)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.618204, 17.414612)
 layers = 0
 use_collision = true
 collision_layer = 8
@@ -149,5 +140,15 @@ collision_mask = 8
 size = Vector3(300, 1, 300)
 script = ExtResource("8_31gws")
 
-[node name="wooden_boat_01_lod1" parent="." instance=ExtResource("9_64hkd")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -18.294533, -7.381605, 9.934216)
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_lrauw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.971592, -7.7601595, 10.737814)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0063878302, 0, -0.9999796, 0, 1, 0, 0.9999796, 0, -0.0063878302, 76.905464, -4.5098114, 16.388084)
+size = Vector3(136.88684, 200, 32.388)
+material = SubResource("StandardMaterial3D_2g60a")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.064323, -2.2549057, -79.87109)
+size = Vector3(173.35963, 200, 32.388)
+material = SubResource("StandardMaterial3D_2g60a")

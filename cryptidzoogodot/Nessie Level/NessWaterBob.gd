@@ -1,7 +1,7 @@
 extends CSGBox3D
 
 @export var amplitude: float = 0.3  # How high/low it moves
-@export var frequency: float = 1.5  # How fast it moves
+@export var frequency: float = 2  # How fast it moves
 @export var phase_offset: float = 0.0 # Useful if you have multiple boxes and want them out of sync
 
 var initial_y: float
