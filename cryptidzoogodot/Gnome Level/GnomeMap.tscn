@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="8_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
 [ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/GnomeCharacters/gnome_character.tscn" id="11_gbm7p"]
-[ext_resource type="Script" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
 [ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
 [ext_resource type="PackedScene" uid="uid://cd11ay8qa8k8k" path="res://Gnome Level/chanterelle.tscn" id="14_o4cu5"]
@@ -210,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.777313, 0, 3.2789764)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.966698, -0.014505863, 5.8243484)
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, 0, 131.6574)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
 
 [node name="House_Back" parent="." instance=ExtResource("20_humbe")]
 transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 254.39603, 4.0599785, 81.92442)
