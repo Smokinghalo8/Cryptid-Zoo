@@ -1,0 +1,181 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 181,
+            "type": "VEC3",
+            "max": [
+                0.4999997317790985,
+                0.8569656014442444,
+                4.994182586669922
+            ],
+            "min": [
+                -0.4999997317790985,
+                -0.5061996579170227,
+                -16.986865997314453
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 181,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 181,
+            "type": "VEC2",
+            "max": [
+                1.39762282371521,
+                1.0400192737579346
+            ],
+            "min": [
+                -0.1487608551979065,
+                0.03401303291320801
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 462,
+            "type": "SCALAR",
+            "max": [
+                180
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 7640,
+            "uri": "894ce638-a6a7-422a-82d1-16791fcf1678.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 2172,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2172,
+            "byteLength": 2172,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 4344,
+            "byteLength": 1448,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5792,
+            "byteLength": 1848,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "openPBR_shader1",
+            "pbrMetallicRoughness": {
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "pCube1",
+            "primitives": [
+                {
+                    "extensions": {
+                        "FB_ngon_encoding": {}
+                    },
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "pCube1",
+            "matrix": [
+                33.02695846557617,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                15.874960899353027,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5043837428092957,
+                0.0,
+                0.0,
+                7.0581159591674805,
+                0.0,
+                1.0
+            ],
+            "mesh": 0,
+            "extras": {
+                "UserProperties": "",
+                "IsNull": false,
+                "DefaultAttributeIndex": 0,
+                "InheritType": 1,
+                "RotationActive": true,
+                "ScalingMax": null,
+                "currentUVSet": "map1"
+            }
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
