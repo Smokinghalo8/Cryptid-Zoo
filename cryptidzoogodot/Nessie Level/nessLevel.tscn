@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=18 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
 [ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://deiqafwg1auf8" path="res://wendigoTerrainMap/ground-ShortGrass.png" id="7_64hkd"]
 [ext_resource type="Script" uid="uid://cjrae5bm6bgew" path="res://Nessie Level/NessWaterBob.gd" id="8_31gws"]
 [ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="10_7lbco"]
+[ext_resource type="PackedScene" uid="uid://do07tts56us2r" path="res://Nessie Level/dock.tscn" id="11_2g60a"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -86,19 +87,16 @@ albedo_texture = ExtResource("10_7lbco")
 [node name="NessLevel" type="Node3D"]
 
 [node name="Z" parent="." instance=ExtResource("1_jpks3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.838659, 39.715088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.891144, 1.838659, 52.18472)
 collision_layer = 9
 collision_mask = 9
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0868797, -19.963243, 42.805954)
-use_collision = true
-size = Vector3(20, 35.554108, 20)
+[node name="Level" type="Node" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource("Environment_glbf2")
 
-[node name="HTerrain" type="Node3D" parent="."]
+[node name="HTerrain" type="Node3D" parent="Level"]
 script = ExtResource("1_iiie1")
 map_scale = Vector3(0.25, 0.25, 0.25)
 centered = true
@@ -122,17 +120,17 @@ shader_params/u_globalmap_blend_distance = null
 shader_params/u_colormap_opacity_per_texture = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
-[node name="Water" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.870398, -101.766075, 0.0022506714)
+[node name="Water" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.9968701, 0, 0, 0, 0.9968701, 0, 0, 0, 0.9968701, 12.870398, -100.91048, 0.0022506714)
 size = Vector3(200, 200, 200)
 material = SubResource("ShaderMaterial_lrauw")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 0.38052166, 0.924772, 0, -0.924772, 0.38052166, 0, 8.02569, 0)
 light_color = Color(0.60933006, 0.6093301, 0.60933006, 1)
 
-[node name="WaveBox" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.618204, 17.414612)
+[node name="WaveBox" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1145058, 17.414612)
 layers = 0
 use_collision = true
 collision_layer = 8
@@ -140,28 +138,36 @@ collision_mask = 8
 size = Vector3(300, 1, 300)
 script = ExtResource("8_31gws")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_lrauw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.971592, -7.7601595, 10.737814)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 78.34491, 49.814835, -1.6628342)
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D5"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level/CSGBox3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.914139e-06, 0, -155.9641)
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.814835, 79.58677)
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.5, -78.63184)
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
+
+[node name="Dock2" parent="Level" instance=ExtResource("11_2g60a")]
+transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -17.432255, -2.0411444, 50.684708)
+
+[node name="Dock4" parent="Level" instance=ExtResource("11_2g60a")]
+transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -2.0411444, 50.684708)
+
+[node name="Ness" type="Node" parent="."]
+
+[node name="Sketchfab_Scene" parent="Ness" instance=ExtResource("2_lrauw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.971592, -7.7601595, 10.737814)
