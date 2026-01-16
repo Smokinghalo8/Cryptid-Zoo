@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=33 format=3 uid="uid://cn4o0c5geiix0"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://0bfgqnc426ow" path="res://Gnome Level/russula.tscn" id="16_jlxtx"]
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="20_humbe"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -211,6 +210,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.966698, -0.014505863, 5.82
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
-
-[node name="House_Back" parent="." instance=ExtResource("20_humbe")]
-transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 254.39603, 4.0599785, 81.92442)
