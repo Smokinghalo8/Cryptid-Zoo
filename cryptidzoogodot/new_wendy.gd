@@ -53,22 +53,26 @@ func _physics_process(delta):
 		wandering(delta)
 	
 	var direction = nav.get_next_path_position()-global_position
+	direction.y = 0
 	direction = direction.normalized()
-	
 	velocity = velocity.lerp(direction * speed, delta * 10)
-	velocity.y += -9.8 * delta
-	print(velocity.y)
+	velocity += get_gravity() * delta
+	
 	move_and_slide()
 
 
 func chase():
 	speed = chaseSpeed
-	look_at(player.position)
+	var look_pos = player.global_position
+	look_pos.y = self.global_position.y
+	look_at(look_pos)
 	nav.target_position = player.global_position
 
 func wandering(delta):
 	speed = 7.5
-	look_at(global_transform.origin + velocity)
+	var look_pos = global_transform.origin + velocity
+	look_pos.y = self.global_position.y
+	look_at(look_pos)
 	hasSeen = false
 	nav.target_position = randomPos
 	if (abs(randomPos.x - global_position.x) <= 5 and abs(randomPos.z - global_position.z)<=5) or wanderTimer <= 0:
@@ -126,14 +130,13 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 				Global.plushCounter = 0
 				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
 			
-
 ### Act trap 3
 func _on_trap_3_body_entered(body: Node3D) -> void:
 	if $"../Trap3".is_in_group("Traps"):
 		if body.is_in_group("Enemies"):
 			if Global.trapCounter == 3:
 				minimap.arrow.visible = false
-				wendigoPlayer.play("wendigoTrap3")
+				wendigoPlayer.play("wendTrap3")
 				await wendigoPlayer.animation_finished
 				#insert trap escape line 3
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
