@@ -9046,6 +9046,7 @@ metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
 transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -148.19592, 3.1796148, 158.56525)
+visible = false
 collision_layer = 3
 collision_mask = 3
 
@@ -9178,6 +9179,7 @@ scale = Vector2(0.54, 0.54)
 texture = ExtResource("24_jrcfp")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
+visible = false
 offset_left = 1619.0
 offset_top = 2.0
 offset_right = 1919.0

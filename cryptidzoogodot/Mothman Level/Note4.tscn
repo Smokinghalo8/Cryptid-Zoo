@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://ej1o1a6xmtlb"]
+[gd_scene load_steps=6 format=3 uid="uid://ej1o1a6xmtlb"]
 
-[ext_resource type="Material" uid="uid://bwmgay08a0pg1" path="res://Assets/Materials/NoteGlow.tres" id="1_khiin"]
+[ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="1_v7xci"]
+[ext_resource type="Texture2D" uid="uid://dwuxndrg6p4ln" path="res://Assets/newspaper/NPMothman1_normal.png" id="2_bueir"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0fpkj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi0ds"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_v7xci")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("1_v7xci")
+normal_enabled = true
+normal_texture = ExtResource("2_bueir")
+uv1_scale = Vector3(-2.9, 2, 2.9)
+uv1_offset = Vector3(0.985, 0, 0)
+texture_repeat = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_26rki"]
 
@@ -12,7 +28,7 @@ transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_0fpkj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_khiin")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["newspaper"]]
+material_override = SubResource("StandardMaterial3D_mi0ds")
 mesh = SubResource("BoxMesh_26rki")
 skeleton = NodePath("../CollisionShape3D")
