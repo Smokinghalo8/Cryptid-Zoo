@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7dqa4rl3bh1d"]
 
 [ext_resource type="PackedScene" uid="uid://j8mgvr8ismke" path="res://Gnome Level/Assets/House_Back.gltf" id="1_r60c0"]
-[ext_resource type="Texture2D" uid="uid://0duqyxcj5og5" path="res://Assets/Materials/convenienceSign_standardSurface1_BaseMap.png" id="2_mmeck"]
+[ext_resource type="Texture2D" uid="uid://dco44wgulriy6" path="res://Assets/Materials/PNG/Mossy_Stone_Floor_veilfjxn_4K_BaseColor.png" id="2_r60c0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8uwt"]
-albedo_texture = ExtResource("2_mmeck")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmeck"]
+albedo_texture = ExtResource("2_r60c0")
 
 [node name="House_Back" instance=ExtResource("1_r60c0")]
 
 [node name="pCube1" parent="." index="0"]
-material_override = SubResource("StandardMaterial3D_q8uwt")
+material_override = SubResource("StandardMaterial3D_mmeck")

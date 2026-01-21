@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://0bfgqnc426ow" path="res://Gnome Level/russula.tscn" id="16_jlxtx"]
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="20_humbe"]
+[ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -230,22 +230,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.966698, -0.014505863, 5.82
 [node name="Maze" parent="NavigationRegion3D" instance=ExtResource("18_jlxtx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
 
-[node name="House_Back" parent="NavigationRegion3D" instance=ExtResource("20_humbe")]
-transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 254.39603, 4.0599785, 81.92442)
-
-[node name="Gardener" type="Node3D" parent="NavigationRegion3D"]
-script = ExtResource("4_c327s")
-file_management/garden_work_directory = "res://Gnome Level/GnomeGardenerMap/"
-gardening/gardening_collision_mask = 1.0
-arborist = SubResource("Resource_gbm7p")
-plugin_version = "1.4.1"
-storage_version = 4
-metadata/class = "Gardener"
-metadata/_custom_type_script = "uid://bc7pailucq83t"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.50922, 0.24139786, 127.772)
-shape = SubResource("BoxShape3D_humbe")
-debug_color = Color(0.94509804, 0, 0.59607846, 1)
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 81.895706, 3.4961243, 126.16343)
