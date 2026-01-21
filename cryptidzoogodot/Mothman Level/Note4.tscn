@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="1_v7xci"]
 [ext_resource type="Texture2D" uid="uid://dwuxndrg6p4ln" path="res://Assets/newspaper/NPMothman1_normal.png" id="2_bueir"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0fpkj"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v7xci"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi0ds"]
 transparency = 3
@@ -26,9 +27,14 @@ texture_repeat = false
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_0fpkj")
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_v7xci")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["newspaper"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="CollisionShape3D"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/StaticBody3D" groups=["newspaper"]]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_mi0ds")
 mesh = SubResource("BoxMesh_26rki")
-skeleton = NodePath("../CollisionShape3D")
+skeleton = NodePath("")

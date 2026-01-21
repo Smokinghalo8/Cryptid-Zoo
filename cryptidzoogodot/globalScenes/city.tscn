@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=56 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -23,7 +23,10 @@
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
 [ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="19_0i1hi"]
+[ext_resource type="Texture2D" uid="uid://cuj577svp8v5j" path="res://Assets/newspaper/NPMothman2.png" id="20_ket5o"]
+[ext_resource type="Texture2D" uid="uid://bmcdqkhy0vm3c" path="res://Assets/newspaper/NPMothman3.png" id="21_i3gd2"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
+[ext_resource type="Texture2D" uid="uid://dbxvxcyyu31jl" path="res://Assets/newspaper/NPMothman4.png" id="22_vrwf7"]
 [ext_resource type="AudioStream" uid="uid://cko6q5a2ql0h4" path="res://Assets/SFX/OverworldTheme.mp3" id="26_65jtr"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="42_ejm3s"]
@@ -1163,9 +1166,60 @@ offset_bottom = 40.0
 visible = false
 position = Vector2(961, 536.99994)
 scale = Vector2(0.78113425, 0.7920371)
-texture = ExtResource("19_0i1hi")
+texture = ExtResource("22_vrwf7")
 
 [node name="NpMothman1Button" type="Button" parent="Ui/Newspapers/NpMothman1"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman2" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("20_ket5o")
+
+[node name="NpMothman2Button" type="Button" parent="Ui/Newspapers/NpMothman2"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman3" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("21_i3gd2")
+
+[node name="NpMothman3Button" type="Button" parent="Ui/Newspapers/NpMothman3"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman4" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.79203725)
+texture = ExtResource("19_0i1hi")
+
+[node name="NpMothman4Button" type="Button" parent="Ui/Newspapers/NpMothman4"]
 offset_left = 448.06638
 offset_top = -672.9482
 offset_right = 478.06638
@@ -1301,7 +1355,10 @@ transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.364, 1.334, 68.089)
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Ui/Newspapers/NpMothman1/NpMothman1Button" to="Note1" method="_on_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman1/NpMothman1Button" to="Note1" method="_on_np_mothman_1_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman2/NpMothman2Button" to="Note2" method="_on_np_mothman_2_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman3/NpMothman3Button" to="Note3" method="_on_np_mothman_3_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman4/NpMothman4Button" to="Note4" method="_on_np_mothman_4_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
