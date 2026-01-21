@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="7_hys3v"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
 [ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Mothman Level/Note1.tscn" id="8_hln64"]
-[ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
 [ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Mothman Level/Note2.tscn" id="10_7ysn1"]
 [ext_resource type="Script" uid="uid://0e0nwk5g4k63" path="res://Mothman Level/note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="11_havme"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
+[ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="19_0i1hi"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
 [ext_resource type="AudioStream" uid="uid://cko6q5a2ql0h4" path="res://Assets/SFX/OverworldTheme.mp3" id="26_65jtr"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
@@ -1003,6 +1003,7 @@ shape = SubResource("SphereShape3D_8ojvp")
 shape = SubResource("SphereShape3D_mrpgv")
 
 [node name="Ui" type="CanvasLayer" parent="."]
+process_mode = 3
 layer = 101
 
 [node name="SprintBar" type="TextureProgressBar" parent="Ui"]
@@ -1151,9 +1152,32 @@ target = NodePath("../../Z")
 camera_distance = 40
 objective_path = NodePath("../../FakeMothman")
 
+[node name="Newspapers" type="Control" parent="Ui"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NpMothman1" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("19_0i1hi")
+
+[node name="NpMothman1Button" type="Button" parent="Ui/Newspapers/NpMothman1"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
 [node name="Note1" parent="." groups=["newspaper"] instance=ExtResource("8_hln64")]
 transform = Transform3D(-0.47, 0, 0, 0, 0.71, -2.1855695e-09, 0, 6.207017e-08, 0.025, -23.36352, 3.7309244, 80.20716)
-script = ExtResource("9_ni7w2")
 
 [node name="Note2" parent="." groups=["newspaper"] instance=ExtResource("10_7ysn1")]
 transform = Transform3D(-0.46999934, -0.0012093395, 9.518296e-06, 0, 0.15488169, 0.024397934, 0.0008203044, -0.69289976, 0.0054535763, -55.033142, 2.1984098, 80.677635)
@@ -1277,6 +1301,7 @@ transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.364, 1.334, 68.089)
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman1/NpMothman1Button" to="Note1" method="_on_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
