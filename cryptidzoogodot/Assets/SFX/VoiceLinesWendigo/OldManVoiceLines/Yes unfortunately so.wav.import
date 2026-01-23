@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3yn2lasod3tf"
+path="res://.godot/imported/Yes unfortunately so.wav-32085678e121133092a7a12fc9e70bd7.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes unfortunately so.wav"
+dest_files=["res://.godot/imported/Yes unfortunately so.wav-32085678e121133092a7a12fc9e70bd7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

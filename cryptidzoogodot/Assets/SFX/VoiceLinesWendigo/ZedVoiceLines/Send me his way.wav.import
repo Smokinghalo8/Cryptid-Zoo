@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv2g5c6e78y0p"
+path="res://.godot/imported/Send me his way.wav-692336877534380946c994b5977c4661.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Send me his way.wav"
+dest_files=["res://.godot/imported/Send me his way.wav-692336877534380946c994b5977c4661.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

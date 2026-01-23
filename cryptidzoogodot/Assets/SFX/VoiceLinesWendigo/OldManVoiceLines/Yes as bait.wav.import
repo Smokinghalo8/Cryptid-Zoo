@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btwn54g62wq2f"
+path="res://.godot/imported/Yes as bait.wav-c7ff11039d2226d39b5b48c9dea5412c.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/Yes as bait.wav"
+dest_files=["res://.godot/imported/Yes as bait.wav-c7ff11039d2226d39b5b48c9dea5412c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

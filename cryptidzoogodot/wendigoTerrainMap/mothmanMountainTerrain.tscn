@@ -1,17 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://g0lq1kruspbl"]
+[gd_scene load_steps=13 format=3 uid="uid://g0lq1kruspbl"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_w74bu"]
-[ext_resource type="Resource" path="res://globalScenes/terrain/data.hterrain" id="2_uav72"]
+[ext_resource type="Resource" uid="uid://ffv74arplbne" path="res://globalScenes/terrain/data.hterrain" id="2_uav72"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_1cwpb"]
 [ext_resource type="Texture2D" uid="uid://bp6tc8rylpfcy" path="res://wendigoTerrainMap/mothmanTerrainGrass.png" id="4_gtxyl"]
 [ext_resource type="Texture2D" uid="uid://dxtjsbfcluv3s" path="res://Assets/Materials/GroundDirtWeedsPatchy004/GroundDirtWeedsPatchy004_COL_2K.jpg" id="5_twtnq"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="6_h6a5j"]
 [ext_resource type="Texture2D" uid="uid://dsfwbw6d7llux" path="res://wendigoTerrainMap/MothmanTerrainGrassNormal.png" id="7_kxlba"]
+[ext_resource type="Resource" path="res://mothman ravine/data.hterrain" id="8_cyend"]
+[ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="9_e3ssm"]
+[ext_resource type="Texture2D" uid="uid://bempg0famj53e" path="res://Assets/Materials/GroundDirtWeedsPatchy004/GroundDirtWeedsPatchy004_NRM_2K.jpg" id="10_dxhxs"]
 
 [sub_resource type="Resource" id="Resource_hirej"]
 script = ExtResource("3_1cwpb")
 mode = 0
 textures = [[ExtResource("4_gtxyl"), ExtResource("5_twtnq"), ExtResource("6_h6a5j")], [ExtResource("7_kxlba"), null, null]]
+
+[sub_resource type="Resource" id="Resource_uw7md"]
+script = ExtResource("3_1cwpb")
+mode = 0
+textures = [[ExtResource("5_twtnq"), ExtResource("9_e3ssm"), ExtResource("6_h6a5j")], [ExtResource("10_dxhxs"), null, null]]
 
 [node name="TerrainTrial" type="Node3D"]
 
@@ -32,3 +40,23 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
+
+[node name="HTerrain2" type="Node3D" parent="."]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, -26, 0, 32)
+script = ExtResource("1_w74bu")
+_terrain_data = ExtResource("8_cyend")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_uw7md")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://dnrelw0fv4ou8"

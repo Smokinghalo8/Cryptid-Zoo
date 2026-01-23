@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4fbtn7mnohiw"
+path="res://.godot/imported/Wendigo sounds.mp3-ba6aae3720edf514cb790c3c6fc3308d.mp3str"
+
+[deps]
+
+source_file="res://Wendigo Level/assets/sfx/Wendigo sounds.mp3"
+dest_files=["res://.godot/imported/Wendigo sounds.mp3-ba6aae3720edf514cb790c3c6fc3308d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

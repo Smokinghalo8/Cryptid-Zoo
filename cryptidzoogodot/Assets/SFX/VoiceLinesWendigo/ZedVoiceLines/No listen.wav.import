@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d248wgiv2jo7j"
+path="res://.godot/imported/No listen.wav-351395468e495c0dad3f4f617f18cd78.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/No listen.wav"
+dest_files=["res://.godot/imported/No listen.wav-351395468e495c0dad3f4f617f18cd78.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
