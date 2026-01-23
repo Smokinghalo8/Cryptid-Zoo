@@ -236,3 +236,5 @@ debug_color = Color(0.94509804, 0, 0.59607846, 1)
 
 [connection signal="gotMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_got_marble"]
 [connection signal="lostMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_lost_marble"]
+[connection signal="got_sword" from="NavigationRegion3D/sword" to="NavigationRegion3D/marble" method="_on_sword_got_sword"]
+[connection signal="lost_sword" from="NavigationRegion3D/sword" to="NavigationRegion3D/marble" method="_on_sword_lost_sword"]

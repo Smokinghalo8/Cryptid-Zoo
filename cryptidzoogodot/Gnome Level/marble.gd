@@ -15,7 +15,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and is_in_marble == true:
+	if Input.is_action_just_pressed("interact") and is_in_marble == true and can_grab:
 		marble.queue_free()
 		gotMarble.emit()
 
@@ -26,8 +26,8 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _on_sword_got_sword() -> void:
-	pass # Replace with function body.
+	can_grab = false
 
 
 func _on_sword_lost_sword() -> void:
-	pass # Replace with function body.
+	can_grab = true
