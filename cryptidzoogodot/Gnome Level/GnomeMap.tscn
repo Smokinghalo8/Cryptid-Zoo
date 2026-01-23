@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://0bfgqnc426ow" path="res://Gnome Level/russula.tscn" id="16_jlxtx"]
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
+[ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="20_humbe"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -170,65 +170,69 @@ transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9
 
 [node name="rouletteGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.98932, -4.2915344e-06, 95.54438)
-speed_idle = null
-speed_stare = null
-move_radius = null
-wait_time = null
 
 [node name="mazeGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.69933, 0, 184.84073)
-speed_idle = null
-speed_stare = null
-move_radius = null
-wait_time = null
 
 [node name="fetchGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.01518, 0, 44.551937)
-speed_idle = null
-speed_stare = null
-move_radius = null
-wait_time = null
 
 [node name="gnomeKing" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)
-speed_idle = null
-speed_stare = null
-move_radius = 5.0
-wait_time = null
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_humbe")
 
-[node name="marble" parent="NavigationRegion3D" instance=ExtResource("12_xhii3")]
+[node name="marble" parent="NavigationRegion3D" groups=["Items"] instance=ExtResource("12_xhii3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.2156, -3.8146973e-06, 41.16959)
 
-[node name="sword" parent="NavigationRegion3D" groups=["Traps"] instance=ExtResource("13_8dup0")]
+[node name="sword" parent="NavigationRegion3D" groups=["Items"] instance=ExtResource("13_8dup0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.64468, 0, 69.95526)
 
 [node name="mushroomCircle" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.62569, 0, 93.46468)
 
-[node name="chanterelle2" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("14_o4cu5")]
+[node name="chanterelle2" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("14_o4cu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7807617, -0.011428714, 4.6057663)
 
-[node name="chanterelle" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("14_o4cu5")]
+[node name="chanterelle" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("14_o4cu5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.153976, -0.011428714, -2.4275894)
 
-[node name="porcini" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("15_p4eam")]
+[node name="porcini" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("15_p4eam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.129959, 0, -4.72068)
 
-[node name="russula" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("16_jlxtx")]
+[node name="russula" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.517853, -9.536743e-07, -0.6662369)
 psychedelic = 1
 
-[node name="russula2" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("16_jlxtx")]
+[node name="russula2" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.777313, 0, 3.2789764)
 
-[node name="porcini2" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("15_p4eam")]
+[node name="porcini2" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("15_p4eam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.966698, -0.014505863, 5.8243484)
 
 [node name="Maze" parent="NavigationRegion3D" instance=ExtResource("18_jlxtx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("20_humbe")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 81.895706, 3.4961243, 126.16343)
+[node name="House_Back" parent="NavigationRegion3D" instance=ExtResource("20_humbe")]
+transform = Transform3D(-2.1855695e-07, 0, -5, 0, 5, 0, 5, 0, -2.1855695e-07, 254.39603, 4.0599785, 81.92442)
+
+[node name="Gardener" type="Node3D" parent="NavigationRegion3D"]
+script = ExtResource("4_c327s")
+file_management/garden_work_directory = "res://Gnome Level/GnomeGardenerMap/"
+gardening/gardening_collision_mask = 1.0
+arborist = SubResource("Resource_gbm7p")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/class = "Gardener"
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.50922, 0.24139786, 127.772)
+shape = SubResource("BoxShape3D_humbe")
+debug_color = Color(0.94509804, 0, 0.59607846, 1)
+
+[connection signal="gotMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_got_marble"]
+[connection signal="lostMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_lost_marble"]
