@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://xfpdfaleqjnv"]
+
+[ext_resource type="Texture2D" uid="uid://dnt7fxrl78yjj" path="res://addons/SettingsButtonNormal.png" id="1_qfani"]
+[ext_resource type="Texture2D" uid="uid://bjapunxvsb1e2" path="res://addons/SettingsButtonPressed.png" id="2_qcae6"]
+[ext_resource type="Texture2D" uid="uid://dhj48y5reuxo2" path="res://addons/SettingsButtonHovered.png" id="3_dg8lo"]
+[ext_resource type="Script" uid="uid://c2wibuwfauw3g" path="res://SettingsButton.gd" id="4_qcae6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcae6"]
+atlas = ExtResource("1_qfani")
+region = Rect2(163.77924, 393.6798, 707.3844, 240.51068)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg8lo"]
+atlas = ExtResource("2_qcae6")
+region = Rect2(166.13715, 429.049, 693.2368, 198.06769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yvny"]
+atlas = ExtResource("3_dg8lo")
+region = Rect2(163.77924, 391.32184, 721.5321, 235.79486)
+
+[node name="Settings Button" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 273.0
+offset_top = 207.0
+offset_right = 972.00995
+offset_bottom = 460.46533
+scale = Vector2(0.505, 0.505)
+texture_normal = SubResource("AtlasTexture_qcae6")
+texture_pressed = SubResource("AtlasTexture_dg8lo")
+texture_hover = SubResource("AtlasTexture_0yvny")
+ignore_texture_size = true
+stretch_mode = 3
+script = ExtResource("4_qcae6")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

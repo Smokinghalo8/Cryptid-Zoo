@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://h18ibekcbhtf"]
+[gd_scene load_steps=9 format=3 uid="uid://h18ibekcbhtf"]
 
 [ext_resource type="Script" uid="uid://bpgfntnl0gkye" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
 [ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_bu07y"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_xfyhq"]
 [ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_ktaae"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="4_omnmj"]
+[ext_resource type="PackedScene" uid="uid://bivtq3yeab8mw" path="res://start_button.tscn" id="5_7j548"]
+[ext_resource type="PackedScene" uid="uid://xfpdfaleqjnv" path="res://settings_button.tscn" id="6_j4tgo"]
+[ext_resource type="PackedScene" uid="uid://bcge5nej1rchd" path="res://exit_button.tscn" id="7_jrnw4"]
 
 [node name="PreGameScene" type="Node2D"]
 
@@ -21,37 +24,6 @@ offset_top = -2.0
 offset_right = 1937.0
 offset_bottom = 1091.0
 texture = ExtResource("1_bu07y")
-
-[node name="GameStartButton" type="Button" parent="ScreenControl"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 668.0
-offset_right = 132.0
-offset_bottom = 715.0
-scale = Vector2(2.3017, 2.19952)
-theme_override_font_sizes/font_size = 28
-text = "Start!"
-
-[node name="GameOptionsButton" type="Button" parent="ScreenControl"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 808.0
-offset_right = 162.0
-offset_bottom = 855.0
-scale = Vector2(2.06031, 1.84395)
-theme_override_font_sizes/font_size = 28
-text = "Settings
-"
-
-[node name="GameExitButton" type="Button" parent="ScreenControl"]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 938.0
-offset_right = 104.0
-offset_bottom = 985.0
-scale = Vector2(2.37084, 1.86669)
-theme_override_font_sizes/font_size = 28
-text = "Exit"
 
 [node name="Label" type="Label" parent="ScreenControl"]
 layout_mode = 0
@@ -74,6 +46,11 @@ volume_db = -30.0
 autoplay = true
 parameters/looping = true
 
-[connection signal="pressed" from="ScreenControl/GameStartButton" to="ScreenControl" method="_on_game_start_button_pressed"]
-[connection signal="pressed" from="ScreenControl/GameOptionsButton" to="ScreenControl" method="_on_game_options_button_pressed"]
-[connection signal="pressed" from="ScreenControl/GameExitButton" to="ScreenControl" method="_on_game_exit_button_pressed"]
+[node name="StartButton" parent="." instance=ExtResource("5_7j548")]
+position = Vector2(-483, 359)
+
+[node name="Settings Button" parent="." instance=ExtResource("6_j4tgo")]
+position = Vector2(-189, 411)
+
+[node name="Exit Button" parent="." instance=ExtResource("7_jrnw4")]
+position = Vector2(80, 757)

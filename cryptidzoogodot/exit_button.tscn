@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcge5nej1rchd"]
+
+[ext_resource type="Texture2D" uid="uid://crwkss4dfsxw" path="res://addons/ExitButtonNormal.png" id="1_kkgcw"]
+[ext_resource type="Texture2D" uid="uid://bfgsw16n60e2" path="res://addons/ExitButtonPressed.png" id="2_x3yxf"]
+[ext_resource type="Texture2D" uid="uid://dh8o0fqw1nmod" path="res://addons/ExitButtonHovered.png" id="3_7qn0j"]
+[ext_resource type="Script" uid="uid://vmri5n58v2he" path="res://ExitButton.gd" id="4_x3yxf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3yxf"]
+atlas = ExtResource("1_kkgcw")
+region = Rect2(295.82428, 388.96387, 537.6122, 216.93127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qn0j"]
+atlas = ExtResource("2_x3yxf")
+region = Rect2(279.31866, 421.97516, 532.89636, 216.93127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o38p"]
+atlas = ExtResource("3_7qn0j")
+region = Rect2(286.39252, 396.03772, 554.1178, 221.64716)
+
+[node name="Exit Button" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 558.41583
+offset_bottom = 223.76237
+scale = Vector2(0.505, 0.505)
+texture_normal = SubResource("AtlasTexture_x3yxf")
+texture_pressed = SubResource("AtlasTexture_7qn0j")
+texture_hover = SubResource("AtlasTexture_5o38p")
+ignore_texture_size = true
+stretch_mode = 3
+script = ExtResource("4_x3yxf")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
