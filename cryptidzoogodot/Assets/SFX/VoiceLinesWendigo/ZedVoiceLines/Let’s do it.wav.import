@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cq4g3xdbqedmv"
+path="res://.godot/imported/Let’s do it.wav-8f12728e8f7508893c3c51c8588352d5.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Let’s do it.wav"
+dest_files=["res://.godot/imported/Let’s do it.wav-8f12728e8f7508893c3c51c8588352d5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

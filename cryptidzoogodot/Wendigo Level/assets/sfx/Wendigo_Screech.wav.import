@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://225eo32hgpyt"
+path="res://.godot/imported/Wendigo_Screech.wav-d3e8e9afe0ea489e80a9a53ad8b96744.sample"
+
+[deps]
+
+source_file="res://Wendigo Level/assets/sfx/Wendigo_Screech.wav"
+dest_files=["res://.godot/imported/Wendigo_Screech.wav-d3e8e9afe0ea489e80a9a53ad8b96744.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

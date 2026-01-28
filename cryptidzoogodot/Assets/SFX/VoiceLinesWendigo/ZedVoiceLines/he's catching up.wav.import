@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4tmq0fs5ihaw"
+path="res://.godot/imported/he's catching up.wav-58f2b3d5e7a14318e986a2c195f97e1e.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/he's catching up.wav"
+dest_files=["res://.godot/imported/he's catching up.wav-58f2b3d5e7a14318e986a2c195f97e1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

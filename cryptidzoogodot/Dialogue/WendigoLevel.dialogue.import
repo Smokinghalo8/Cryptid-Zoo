@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cqlo847hulha6"
+path="res://.godot/imported/WendigoLevel.dialogue-9614ce07a38f68be09a5121ad9cdb445.tres"
+
+[deps]
+
+source_file="res://Dialogue/WendigoLevel.dialogue"
+dest_files=["res://.godot/imported/WendigoLevel.dialogue-9614ce07a38f68be09a5121ad9cdb445.tres"]
+
+[params]
+
+defaults=true

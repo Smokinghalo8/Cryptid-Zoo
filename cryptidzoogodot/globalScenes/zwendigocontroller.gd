@@ -11,7 +11,7 @@ const JUMP_VELOCITY = 4.5
 @export var senseable = true
 var sprintSpeed = 10.0
 var maxStamina = 100.0
-var staminaDepletionRate = 30.0
+var staminaDepletionRate = 15.0
 var staminaRecoveryRate = 40.0
 var sprintable = true
 var senseTimeMax = 5.0
@@ -24,9 +24,10 @@ var velocityTolerance = 0.1
 var velocityDifference = 0
 
 
-func on_ready():
+func _ready():
 	idle = true
 	Global.stamina = maxStamina
+	Global.walkingSound = load("uid://2l7yfg02rrdx")
 
 
 func _input(event: InputEvent):
@@ -39,9 +40,14 @@ func _process(delta):
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
+	
+	#Always have ground position
+	if self.is_on_floor() and self.position.y >= -1.2:
+		Global.character_position = self.global_position
+		
 
 	update_animation_parameters()
-
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -61,8 +67,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+		
+	if Global.frozen == false:
+		move_and_slide()
 	
 	#idle
 	if(velocity.length() <= 1 && is_on_floor()):
@@ -176,3 +183,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _on_trap_2_activated() -> void:
+	pass # Replace with function body.
+
+
+func _on_trap_2_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

@@ -1,9 +1,10 @@
 shader_type canvas_item;
 
-uniform float fog_density : hint_range(0.1, 1.0) = 0.5; // Controls the density of the fog
-uniform float fog_speed : hint_range(0.1, 2.0) = 0.3;   // Controls the movement speed
+uniform float fog_density : hint_range(0.1, 1.0) = 0.05; // Controls the density of the fog
+uniform float fog_speed : hint_range(0.1, 2.0) = 0.03;   // Controls the movement speed
 uniform float noise_scale : hint_range(1.0, 10.0) = 4.0; // Scale of the noise pattern
-uniform float fog_opacity : hint_range(0.1, 1.0) = 0.5; // Opacity of the fog
+uniform float fog_opacity : hint_range(0.1, 1.0) = 0.005; // Opacity of the fog
+
 
 // Classic Perlin noise function
 float noise(vec2 p) {

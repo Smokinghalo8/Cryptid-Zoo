@@ -1,18 +1,17 @@
 @tool
-
 extends HBoxContainer
 
 
 signal pressed()
-signal resource_changed(next_resource: DialogueResource)
+signal resource_changed(next_resource: Resource)
 
 
-const ITEM_NEW: int = 100
-const ITEM_QUICK_LOAD: int = 200
-const ITEM_LOAD: int = 201
-const ITEM_EDIT: int = 300
-const ITEM_CLEAR: int = 301
-const ITEM_FILESYSTEM: int = 400
+const ITEM_NEW = 100
+const ITEM_QUICK_LOAD = 200
+const ITEM_LOAD = 201
+const ITEM_EDIT = 300
+const ITEM_CLEAR = 301
+const ITEM_FILESYSTEM = 400
 
 
 @onready var button: Button = $ResourceButton
@@ -58,7 +57,7 @@ func build_menu() -> void:
 	menu.size = Vector2.ZERO
 
 
-#region Signals
+### Signals
 
 
 func _on_new_dialog_file_selected(path: String) -> void:
@@ -67,7 +66,7 @@ func _on_new_dialog_file_selected(path: String) -> void:
 	if Engine.get_meta("DMCache").has_file(path):
 		resource_changed.emit(load(path))
 	else:
-		var next_resource: DialogueResource = await editor_plugin.import_plugin.compiled_resource
+		var next_resource: Resource = await editor_plugin.import_plugin.compiled_resource
 		next_resource.resource_path = path
 		resource_changed.emit(next_resource)
 
@@ -83,9 +82,6 @@ func _on_file_dialog_canceled() -> void:
 func _on_resource_button_pressed() -> void:
 	if is_instance_valid(resource):
 		EditorInterface.call_deferred("edit_resource", resource)
-
-	elif menu.visible:
-		menu.hide()
 	else:
 		build_menu()
 		menu.position = get_viewport().position + Vector2i(
@@ -100,15 +96,12 @@ func _on_resource_button_resource_dropped(next_resource: Resource) -> void:
 
 
 func _on_menu_button_pressed() -> void:
-	if menu.visible:
-		menu.hide()
-	else:
-		build_menu()
-		menu.position = get_viewport().position + Vector2i(
-			menu_button.global_position.x + menu_button.size.x - menu.size.x,
-			2 + menu_button.global_position.y + menu_button.size.y
-		)
-		menu.popup()
+	build_menu()
+	menu.position = get_viewport().position + Vector2i(
+		menu_button.global_position.x + menu_button.size.x - menu.size.x,
+		2 + menu_button.global_position.y + menu_button.size.y
+	)
+	menu.popup()
 
 
 func _on_menu_id_pressed(id: int) -> void:
@@ -136,7 +129,8 @@ func _on_menu_id_pressed(id: int) -> void:
 			resource_changed.emit(null)
 
 		ITEM_FILESYSTEM:
-			EditorInterface.get_file_system_dock().navigate_to_path(resource.resource_path)
+			var file_system = EditorInterface.get_file_system_dock()
+			file_system.navigate_to_path(resource.resource_path)
 
 
 func _on_files_list_file_double_clicked(file_path: String) -> void:
@@ -151,6 +145,3 @@ func _on_files_list_file_selected(file_path: String) -> void:
 func _on_quick_open_dialog_confirmed() -> void:
 	if quick_selected_file != "":
 		resource_changed.emit(load(quick_selected_file))
-
-
-#endregion
