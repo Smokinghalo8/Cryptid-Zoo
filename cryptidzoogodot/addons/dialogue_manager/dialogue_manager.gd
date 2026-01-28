@@ -564,20 +564,16 @@ func _bridge_get_next_dialogue_line(call_id: int, resource: DialogueResource, ke
 		dialogue_ended.emit(resource)
 
 
-func _bridge_get_line(call_id: int, resource: DialogueResource, key: String, extra_game_states: Array = []) -> void:
+func _bridge_get_line(resource: DialogueResource, key: String, extra_game_states: Array = []) -> void:
 	# dotnet needs at least one await tick of the signal gets called too quickly
 	await Engine.get_main_loop().process_frame
 	var line = await get_line(resource, key, extra_game_states)
-	bridge_get_line_completed.emit(call_id, line)
+	bridge_get_line_completed.emit(line)
 
 
-func _bridge_mutate(call_id: int, mutation: Dictionary, extra_game_states: Array, is_inline_mutation: bool = false) -> void:
+func _bridge_mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation: bool = false) -> void:
 	await _mutate(mutation, extra_game_states, is_inline_mutation)
-	bridge_mutated.emit(call_id)
-
-
-func _bridge_get_error_message(error: int) -> String:
-	return DMConstants.get_error_message(error)
+	bridge_mutated.emit()
 
 
 #endregion
@@ -718,21 +714,7 @@ func _get_game_states(extra_game_states: Array) -> Array:
 
 # Check if a condition is met
 func _check_condition(data: Dictionary, extra_game_states: Array) -> bool:
-	var result: Variant = await _resolve_condition_value(data, extra_game_states)
-	if typeof(result) in [
-		TYPE_STRING, TYPE_STRING_NAME, \
-		TYPE_DICTIONARY, \
-		TYPE_ARRAY, TYPE_PACKED_BYTE_ARRAY, TYPE_PACKED_COLOR_ARRAY, \
-		TYPE_PACKED_FLOAT32_ARRAY, TYPE_PACKED_FLOAT64_ARRAY, \
-		TYPE_PACKED_INT32_ARRAY, TYPE_PACKED_INT64_ARRAY, \
-		TYPE_PACKED_STRING_ARRAY, \
-		TYPE_PACKED_VECTOR2_ARRAY, TYPE_PACKED_VECTOR3_ARRAY, TYPE_PACKED_VECTOR4_ARRAY]:
-			return (result as String).is_empty()
-
-	if result is Node or result is Resource:
-		return is_instance_valid(result)
-
-	return bool(result)
+	return bool(await _resolve_condition_value(data, extra_game_states))
 
 
 # Resolve a condition's expression value
@@ -841,7 +823,7 @@ func _get_responses(ids: Array, resource: DialogueResource, id_trail: String, ex
 		var data: Dictionary = resource.lines.get(id).duplicate(true)
 		data.is_allowed = await _check_condition(data, extra_game_states)
 		var response: DialogueResponse = await create_response(data, extra_game_states)
-		response.next_id = _get_id_with_resource(resource, response.next_id) + id_trail
+		response.next_id += id_trail
 		responses.append(response)
 
 	return responses
@@ -1481,8 +1463,6 @@ func _thing_has_method(thing, method: String, args: Array) -> bool:
 	if thing.has_method(method):
 		return true
 
-	if thing is Script:
-		thing = thing.new()
 	if thing.get_script() and thing.get_script().resource_path.ends_with(".cs"):
 		# If we get this far then the method might be a C# method with a Task return type
 		return _get_dotnet_dialogue_manager().ThingHasMethod(thing, method, args)
@@ -1524,10 +1504,8 @@ func _get_method_info_for(thing: Variant, method: String, args: Array) -> Dictio
 	var method_key: String = "%s:%d" % [method, args.size()]
 	if methods.has(method_key):
 		return methods.get(method_key)
-	elif methods.has(method):
-		return methods.get(method)
 	else:
-		return _get_method_info_for(thing.new(), method, args)
+		return methods.get(method)
 
 
 func _resolve_thing_method(thing, method: String, args: Array):
@@ -1566,16 +1544,6 @@ func _resolve_thing_method(thing, method: String, args: Array):
 		return await thing.callv(method, args)
 
 	# If we get here then it's probably a C# method with a Task return type
-	if thing is Script:
-		thing = thing.new()
 	var dotnet_dialogue_manager = _get_dotnet_dialogue_manager()
 	dotnet_dialogue_manager.ResolveThingMethod(thing, method, args)
 	return await dotnet_dialogue_manager.Resolved
-
-
-func _get_resource_uid(resource: DialogueResource) -> String:
-	return ResourceUID.path_to_uid(resource.resource_path).replace("uid://", "")
-
-
-func _get_id_with_resource(resource: DialogueResource, id: String) -> String:
-	return id if "@" in id else "%s@%s" % [_get_resource_uid(resource), id]

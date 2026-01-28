@@ -125,9 +125,6 @@ msgstr ""
 msgid "confirm_close.discard"
 msgstr ""
 
-msgid "confirm_n_unsaved_files"
-msgstr ""
-
 msgid "buffer.save"
 msgstr ""
 
@@ -333,9 +330,6 @@ msgid "errors.unexpected_syntax_on_nested_dialogue_line"
 msgstr ""
 
 msgid "errors.err_nested_dialogue_invalid_jump"
-msgstr ""
-
-msgid "errors.missing_resource_for_autostart"
 msgstr ""
 
 msgid "errors.unknown"

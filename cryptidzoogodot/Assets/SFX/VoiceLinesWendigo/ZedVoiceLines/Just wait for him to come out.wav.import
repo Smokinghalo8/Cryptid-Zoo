@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxxu40an6a6ky"
+path="res://.godot/imported/Just wait for him to come out.wav-a65e50d81e29d16372b1c4ea021339dd.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/Just wait for him to come out.wav"
+dest_files=["res://.godot/imported/Just wait for him to come out.wav-a65e50d81e29d16372b1c4ea021339dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brusx8wp50qgw"
+path="res://.godot/imported/escaped again and faster.wav-060f0d63aaa303ef3afa075db001b102.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/escaped again and faster.wav"
+dest_files=["res://.godot/imported/escaped again and faster.wav-060f0d63aaa303ef3afa075db001b102.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

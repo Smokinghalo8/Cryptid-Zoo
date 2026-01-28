@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://85e3erivql1b"
+path="res://.godot/imported/If you say so.wav-71df2b42ee510505b49507d820f7b03f.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/If you say so.wav"
+dest_files=["res://.godot/imported/If you say so.wav-71df2b42ee510505b49507d820f7b03f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
