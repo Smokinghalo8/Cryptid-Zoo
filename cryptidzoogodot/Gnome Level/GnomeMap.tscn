@@ -170,12 +170,15 @@ transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9
 
 [node name="rouletteGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.98932, -4.2915344e-06, 95.54438)
+gnome_identifier = 3
 
 [node name="mazeGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.69933, 0, 184.84073)
+gnome_identifier = 4
 
 [node name="fetchGnome" parent="." instance=ExtResource("11_gbm7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.01518, 0, 44.551937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.81314, 0, 55.307632)
+gnome_identifier = 2
 
 [node name="gnomeKing" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)
@@ -203,7 +206,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.129959, 0, -4.72068)
 
 [node name="russula" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.517853, -9.536743e-07, -0.6662369)
-psychedelic = 1
 
 [node name="russula2" parent="NavigationRegion3D/mushroomCircle" groups=["Items"] instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.777313, 0, 3.2789764)
@@ -234,5 +236,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.50922, 0.24139786, 127.77
 shape = SubResource("BoxShape3D_humbe")
 debug_color = Color(0.94509804, 0, 0.59607846, 1)
 
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[connection signal="fetch_quest_start" from="fetchGnome" to="NavigationRegion3D/marble" method="_on_fetch_gnome_fetch_quest_start"]
+[connection signal="fetch_quest_start" from="fetchGnome" to="NavigationRegion3D/sword" method="_on_fetch_gnome_fetch_quest_start"]
 [connection signal="gotMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_got_marble"]
 [connection signal="lostMarble" from="NavigationRegion3D/marble" to="NavigationRegion3D/sword" method="_on_marble_lost_marble"]
+[connection signal="got_sword" from="NavigationRegion3D/sword" to="NavigationRegion3D/marble" method="_on_sword_got_sword"]
+[connection signal="lost_sword" from="NavigationRegion3D/sword" to="NavigationRegion3D/marble" method="_on_sword_lost_sword"]

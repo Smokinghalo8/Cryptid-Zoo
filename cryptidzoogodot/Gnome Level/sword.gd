@@ -4,6 +4,7 @@ var is_in_sword = false
 var can_grab = true
 signal got_sword
 signal lost_sword
+var quest_started = false
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -11,8 +12,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		is_in_sword = true
 
 
-func process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and is_in_sword == true and can_grab:
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and is_in_sword == true and can_grab and quest_started:
 		self.queue_free()
 		got_sword.emit()
 
@@ -27,3 +28,7 @@ func _on_marble_got_marble() -> void:
 
 func _on_marble_lost_marble() -> void:
 	can_grab = true
+
+
+func _on_fetch_gnome_fetch_quest_start() -> void:
+	quest_started = true

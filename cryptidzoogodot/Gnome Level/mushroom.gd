@@ -1,13 +1,12 @@
 extends Node3D
 
 var is_in_shroom = false
-@export var psychedelic = 0
+@export var psychedelic = 0.0
 
 
 # export either a boolean or a 1 to set a mushroom as poison/psychedelic so it can potentially
 # set randomly in the future
 #all mushrooms use this script
-#look up screen shaders for a psychedelic effect
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -21,6 +20,14 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and is_in_shroom == true:
-		self.queue_free()
-		if psychedelic >= 1:
-			$"../../Z/psychedelicCube".visible = true
+		self.visible = false
+		if psychedelic >= 1.0:
+			$"../../../Z/psychedelicCube".visible = true
+			await get_tree().create_timer(10.0).timeout
+			$"../../../Z/psychedelicCube".visible = false
+			self.queue_free()
+			psychedelic = 0.0
+
+
+func _on_gnome_king_roulette_start() -> void:
+	pass # Replace with function body.

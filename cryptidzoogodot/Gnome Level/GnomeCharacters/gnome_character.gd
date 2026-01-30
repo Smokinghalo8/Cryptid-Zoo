@@ -105,12 +105,30 @@ extends CharacterBody3D
 		#state = State.IDLE
 		#speed_idle = 5.0
 		#choose_new_target()
-#
-#
-#
-#func _on_player_detection_area_body_entered(body: Node3D) -> void:
-	#pass # Replace with function body.
-#
-#
-#func _on_player_detection_area_body_exited(body: Node3D) -> void:
-	#pass # Replace with function body.
+
+signal fetch_quest_start
+signal roulette_start
+signal maze_start
+@export var gnome_identifier = 1
+var dialogue = load("res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue")
+var dialogueLines 
+
+#gnome 1 = gnome king - will be added later
+#gnome 2 = fetch quest gnome
+#gnome 3 = roulette gnome
+#gnome 4 = maze gnome
+
+func _on_player_detection_area_body_entered(body: Node3D) -> void:
+	if gnome_identifier == 2 and body.is_in_group("Character"):
+		fetch_quest_start.emit()
+		dialogueLines = DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeGiveQuest")
+		print("talking to gnome")
+		print(gnome_identifier)
+	if Input.is_action_just_pressed("interact") and gnome_identifier == 3 and body.is_in_group("Character"):
+		roulette_start.emit()
+	if Input.is_action_just_pressed("interact") and gnome_identifier == 4 and body.is_in_group("Character"):
+		maze_start.emit()
+		
+		
+func _on_player_detection_area_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.

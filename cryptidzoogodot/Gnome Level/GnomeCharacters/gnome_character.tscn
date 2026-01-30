@@ -9,15 +9,11 @@ radius = 0.69628906
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hi1f6"]
 radius = 5.6748047
-height = 16.815918
+height = 13.6883545
 
 [node name="gnomeCharacter" type="CharacterBody3D"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_hi1f6")
-speed_idle = null
-speed_stare = null
-move_radius = null
-wait_time = null
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_dxjvc")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3196578, 0.8168974)
@@ -29,7 +25,7 @@ shape = SubResource("CylinderShape3D_f0f7h")
 [node name="PlayerDetectionArea" type="Area3D" parent="."]
 
 [node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="PlayerDetectionArea"]
-transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.676922, -5.1926045)
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.68672025, -3.6288543)
 shape = SubResource("CapsuleShape3D_hi1f6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
