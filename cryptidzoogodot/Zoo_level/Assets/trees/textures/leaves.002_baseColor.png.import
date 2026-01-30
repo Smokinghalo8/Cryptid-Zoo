@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwiilk7mg00mn"
-path.s3tc="res://.godot/imported/Metal041B.png-106617d1dd98ef7d793c92f494f5f8db.s3tc.ctex"
+uid="uid://yrrbp4e3uex3"
+path.s3tc="res://.godot/imported/leaves.002_baseColor.png-cc3ec1cd90360f4ee681612b476e59dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Zoo_level/Assets/Metal041B.png"
-dest_files=["res://.godot/imported/Metal041B.png-106617d1dd98ef7d793c92f494f5f8db.s3tc.ctex"]
+source_file="res://Zoo_level/Assets/trees/textures/leaves.002_baseColor.png"
+dest_files=["res://.godot/imported/leaves.002_baseColor.png-cc3ec1cd90360f4ee681612b476e59dc.s3tc.ctex"]
 
 [params]
 
