@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdgkeiq2feufc"]
+
+[ext_resource type="PackedScene" uid="uid://db21ncwlfb7h8" path="res://Gnome Level/Assets/Fences/SingleColoredFence.tscn" id="1_22tpp"]
+
+[node name="Fences" type="Node3D"]
+
+[node name="Fence" parent="." instance=ExtResource("1_22tpp")]
+
+[node name="Fence2" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.944595, 0, 0)
+
+[node name="Fence3" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.98434, 0, 0)
+
+[node name="Fence4" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.92894, 0, 0)
+
+[node name="Fence5" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.75383, 0, 0)
+
+[node name="Fence6" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.69843, 0, 0)
+
+[node name="Fence7" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.73817, 0, 0)
+
+[node name="Fence8" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202.68277, 0, 0)
+
+[node name="Fence9" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.47307, 0, 0)
+
+[node name="Fence10" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.221817, 0, 18.624218)
+
+[node name="Fence11" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.662941, 0, 255.34665)
+
+[node name="Fence12" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.281654, 0, 255.34665)
+
+[node name="Fence13" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.32139, 0, 255.34665)
+
+[node name="Fence14" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.266, 0, 255.34665)
+
+[node name="Fence15" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.09089, 0, 255.34665)
+
+[node name="Fence16" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.03549, 0, 255.34665)
+
+[node name="Fence17" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.07523, 0, 255.34665)
+
+[node name="Fence18" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.0198, 0, 255.34665)
+
+[node name="Fence19" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.81012, 0, 255.34665)
+
+[node name="Fence20" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.970757, 0, 244.83481)
+
+[node name="Fence21" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.53429, 0, 18.670252)
+
+[node name="Fence22" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.50813, 0, 47.551334)
+
+[node name="Fence23" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.36548, 0, 76.41327)
+
+[node name="Fence24" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.24596, 0, 105.3007)
+
+[node name="Fence25" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.21196, 0, 134.13362)
+
+[node name="Fence26" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.24892, 0, 163.00484)
+
+[node name="Fence27" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.2135, 0, 191.85825)
+
+[node name="Fence28" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.23738, 0, 220.66087)
+
+[node name="Fence29" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -234.32841, 0, 249.61243)
+
+[node name="Fence30" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.966309, 0, 216.45976)
+
+[node name="Fence31" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.987259, 0, 187.59784)
+
+[node name="Fence32" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.999794, 0, 158.455)
+
+[node name="Fence33" parent="." instance=ExtResource("1_22tpp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.042133, 0, 129.59712)

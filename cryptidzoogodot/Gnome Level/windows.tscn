@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://peqwgbg0mdt"]
+[gd_scene load_steps=3 format=3 uid="uid://peqwgbg0mdt"]
 
 [ext_resource type="PackedScene" uid="uid://b7x413rmogrcx" path="res://Gnome Level/Assets/Windows.gltf" id="1_qwouf"]
+[ext_resource type="Material" uid="uid://q42yhkeogaon" path="res://Assets/Materials/Glass.tres" id="2_toysb"]
 
 [node name="Windows" instance=ExtResource("1_qwouf")]
+
+[node name="wINDOW" parent="." index="0"]
+material_override = ExtResource("2_toysb")
+
+[node name="wINDOW1" parent="." index="1"]
+material_override = ExtResource("2_toysb")
+
+[node name="wINDOW2" parent="." index="2"]
+material_override = ExtResource("2_toysb")

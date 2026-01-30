@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://db21ncwlfb7h8"]
+
+[ext_resource type="PackedScene" uid="uid://dpstp4sehn7ba" path="res://Gnome Level/Assets/Fences/yourMesh.obj.gltf" id="1_gxogq"]
+
+[node name="yourMesh_obj2" instance=ExtResource("1_gxogq")]

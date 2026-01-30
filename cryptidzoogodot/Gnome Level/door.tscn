@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqtym8i4ehudf"]
+[gd_scene load_steps=6 format=3 uid="uid://bqtym8i4ehudf"]
 
 [ext_resource type="PackedScene" uid="uid://dqc65lg3ifqx3" path="res://Gnome Level/Assets/door.gltf" id="1_vbetj"]
+[ext_resource type="Texture2D" uid="uid://ccwuyagbgki0u" path="res://Assets/Materials/PNG/Wooden_Planks_ulyobjsn_4K_BaseColor.png" id="2_bypx4"]
+[ext_resource type="Texture2D" uid="uid://b1wjvcgcoad33" path="res://Assets/Materials/PNG/Metal_lambert1_BaseColor.png" id="3_kr8pi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhc8f"]
+albedo_texture = ExtResource("2_bypx4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ycqg"]
+albedo_texture = ExtResource("3_kr8pi")
 
 [node name="door" instance=ExtResource("1_vbetj")]
+
+[node name="pCube37" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_bhc8f")
+
+[node name="pSphere1" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_2ycqg")
