@@ -1,14 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=29 format=3 uid="uid://cn4o0c5geiix0"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
 [ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="4_x0pif"]
 [ext_resource type="Texture2D" uid="uid://dipdfhsnh056j" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_Normal.png" id="5_mrlcg"]
+[ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="10_6pwx4"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
 [ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/GnomeCharacters/gnome_character.tscn" id="11_gbm7p"]
-[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
+[ext_resource type="Script" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="PackedScene" uid="uid://dgt5uttmcblf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
 [ext_resource type="PackedScene" uid="uid://cd11ay8qa8k8k" path="res://Gnome Level/chanterelle.tscn" id="14_o4cu5"]
 [ext_resource type="PackedScene" uid="uid://c32oymy1wjy81" path="res://Gnome Level/porcini.tscn" id="15_p4eam"]
@@ -18,7 +19,7 @@
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://bdgkeiq2feufc" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
 [ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
@@ -93,15 +94,22 @@ transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9
 
 [node name="rouletteGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.98932, -4.2915344e-06, 95.54438)
+gnome_identifier = 3
+dialogue = ExtResource("10_6pwx4")
 
 [node name="mazeGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.69933, 0, 184.84073)
+gnome_identifier = 4
+dialogue = ExtResource("10_6pwx4")
 
 [node name="fetchGnome" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.01518, 0, 44.551937)
+gnome_identifier = 2
+dialogue = ExtResource("10_6pwx4")
 
 [node name="gnomeKing" parent="." instance=ExtResource("11_gbm7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)
+dialogue = ExtResource("10_6pwx4")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_humbe")
@@ -151,3 +159,14 @@ transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 81.895706, 3.4961243, 126.163
 
 [node name="Fences" parent="." instance=ExtResource("20_6pwx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.78351, 0, 0)
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"

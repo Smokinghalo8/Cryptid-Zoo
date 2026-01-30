@@ -1,4 +1,19 @@
 ~ fetchGnomeGiveQuest
-[color=grey]Bleafus[/color]: [speed = 0.3] Go get my sword and my marble
+[color=grey]Bleafus[/color]: [speed=0.3, next=10] Go get my sword and my marble
 => END
 
+#~ fetchGnomeEndQuest
+#=> END
+#
+#~ rouletteGnomeGiveQuest
+#=> END 
+#
+#~ rouletteGnomeEndQuest
+#=> END 
+#
+#~ mazeGnomeGiveQuest
+#=> END 
+#
+#~ mazeGnomeEndQuest
+#=> END 
+#

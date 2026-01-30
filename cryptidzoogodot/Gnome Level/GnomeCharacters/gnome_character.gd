@@ -110,7 +110,7 @@ signal fetch_quest_start
 signal roulette_start
 signal maze_start
 @export var gnome_identifier = 1
-var dialogue = load("res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue")
+@export var dialogue : DialogueResource
 var dialogueLines 
 
 #gnome 1 = gnome king - will be added later
@@ -121,7 +121,7 @@ var dialogueLines
 func _on_player_detection_area_body_entered(body: Node3D) -> void:
 	if gnome_identifier == 2 and body.is_in_group("Character"):
 		fetch_quest_start.emit()
-		dialogueLines = DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeGiveQuest")
+		await DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeGiveQuest").finished
 		print("talking to gnome")
 		print(gnome_identifier)
 	if Input.is_action_just_pressed("interact") and gnome_identifier == 3 and body.is_in_group("Character"):
