@@ -119,14 +119,16 @@ var dialogueLines
 #gnome 4 = maze gnome
 
 func _on_player_detection_area_body_entered(body: Node3D) -> void:
-	if gnome_identifier == 2 and body.is_in_group("Character") and Input.is_action_just_pressed("interact"):
+	if gnome_identifier == 2 and body.is_in_group("Character"):
 		fetch_quest_start.emit()
 		await DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeGiveQuest").finished
 		print("talking to gnome")
 		print(gnome_identifier)
-	if Input.is_action_just_pressed("interact") and gnome_identifier == 3 and body.is_in_group("Character"):
+	if gnome_identifier == 3 and body.is_in_group("Character"):
 		roulette_start.emit()
-	if Input.is_action_just_pressed("interact") and gnome_identifier == 4 and body.is_in_group("Character"):
+		await DialogueManager.show_dialogue_balloon(dialogue, "rouletteGnomeGiveQuest").finished
+	if gnome_identifier == 4 and body.is_in_group("Character"):
+		
 		maze_start.emit()
 		
 		
