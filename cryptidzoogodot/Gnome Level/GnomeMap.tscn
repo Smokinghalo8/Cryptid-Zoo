@@ -103,7 +103,7 @@ gnome_identifier = 4
 dialogue = ExtResource("10_6pwx4")
 
 [node name="fetchGnome" parent="." instance=ExtResource("11_gbm7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.01518, 0, 44.551937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.03767, 0, 54.181618)
 gnome_identifier = 2
 dialogue = ExtResource("10_6pwx4")
 
@@ -134,7 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.129959, 0, -4.72068)
 
 [node name="russula" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.517853, -9.536743e-07, -0.6662369)
-psychedelic = 1
+psychedelic = 1.0
 
 [node name="russula2" parent="NavigationRegion3D/mushroomCircle" instance=ExtResource("16_jlxtx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.777313, 0, 3.2789764)

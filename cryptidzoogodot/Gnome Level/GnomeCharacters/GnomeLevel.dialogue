@@ -2,18 +2,19 @@
 [color=grey]Bleafus[/color]: [speed=0.3, next=10] Go get my sword and my marble
 => END
 
-#~ fetchGnomeEndQuest
-#=> END
-#
-#~ rouletteGnomeGiveQuest
-#=> END 
-#
-#~ rouletteGnomeEndQuest
-#=> END 
-#
-#~ mazeGnomeGiveQuest
-#=> END 
-#
-#~ mazeGnomeEndQuest
-#=> END 
-#
+~ fetchGnomeEndQuest
+=> END
+
+~ rouletteGnomeGiveQuest
+[color=grey]Bloogargth[/color]: [speed=0.3, next=10] Eat these shrooms
+=> END 
+
+~ rouletteGnomeEndQuest
+[color=grey]Bloogargth[/color]: [speed=0.3, next=10] damn you didn't die
+=> END 
+
+~ mazeGnomeGiveQuest
+=> END 
+
+~ mazeGnomeEndQuest
+=> END 

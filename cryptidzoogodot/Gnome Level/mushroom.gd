@@ -2,6 +2,7 @@ extends Node3D
 
 var is_in_shroom = false
 @export var psychedelic = 0.0
+var can_eat = false
 
 
 # export either a boolean or a 1 to set a mushroom as poison/psychedelic so it can potentially
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 			self.queue_free()
 			psychedelic = 0.0
 
+#make 10-12 mushrooms 3-4 are poison, reset when poison is eaten
 
 func _on_gnome_king_roulette_start() -> void:
-	pass # Replace with function body.
+	can_eat = true
