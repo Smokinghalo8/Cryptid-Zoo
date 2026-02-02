@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bgmyn3xrvrb2b"
+path="res://.godot/imported/Zoo.dialogue-bff4b3d1e4ffc9326a88ac82b5162c89.tres"
+
+[deps]
+
+source_file="res://Dialogue/Zoo.dialogue"
+dest_files=["res://.godot/imported/Zoo.dialogue-bff4b3d1e4ffc9326a88ac82b5162c89.tres"]
+
+[params]
+
+defaults=true
