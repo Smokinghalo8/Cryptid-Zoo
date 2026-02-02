@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://cn4o0c5geiix0"]
+[gd_scene load_steps=30 format=3 uid="uid://dfi6482kw0bq2"]
 
+[ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
 [ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
@@ -8,8 +9,8 @@
 [ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="10_6pwx4"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
 [ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/GnomeCharacters/gnome_character.tscn" id="11_gbm7p"]
-[ext_resource type="Script" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://dgt5uttmcblf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
+[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
 [ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
 [ext_resource type="PackedScene" uid="uid://cd11ay8qa8k8k" path="res://Gnome Level/chanterelle.tscn" id="14_o4cu5"]
 [ext_resource type="PackedScene" uid="uid://c32oymy1wjy81" path="res://Gnome Level/porcini.tscn" id="15_p4eam"]
@@ -53,7 +54,8 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 4, 5), PackedInt32Arr
 cell_height = 0.01
 agent_max_slope = 0.02
 
-[node name="Node3D" type="Node3D"]
+[node name="GnomeLevel" type="Node3D"]
+script = ExtResource("1_42gdw")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_qqwwe")
