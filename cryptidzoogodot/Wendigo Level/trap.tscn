@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn1ecy3n7c6my"]
+[gd_scene load_steps=6 format=3 uid="uid://c251vdgqpo8bv"]
 
-[ext_resource type="Script" uid="uid://cgp1pxtvo0rmc" path="res://Wendigo Level/trapScript.gd" id="1_q6m2y"]
+[ext_resource type="Script" path="res://Wendigo Level/trapScript.gd" id="1_q6m2y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyjqn"]
 size = Vector3(7.8859596, 1, 11.223323)
