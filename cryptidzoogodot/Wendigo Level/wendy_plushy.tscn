@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dupgfjq4ksapw"]
+[gd_scene load_steps=5 format=3 uid="uid://dnab6v7mt7fq3"]
 
 [ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_gxt5p"]
-[ext_resource type="Script" path="res://Wendigo Level/wendy_plushy.gd" id="1_yyurl"]
+[ext_resource type="Script" uid="uid://bqrbtlqs5rkc5" path="res://Wendigo Level/wendy_plushy.gd" id="1_yyurl"]
 [ext_resource type="AudioStream" uid="uid://lel35xkowhux" path="res://Assets/SFX/PartyHorn.wav" id="2_yyurl"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x5eoj"]
@@ -9,6 +9,8 @@ height = 1.3778687
 radius = 0.48388672
 
 [node name="WendyPlushy" type="RigidBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_yyurl")
 
 [node name="PlushySkin" parent="." instance=ExtResource("1_gxt5p")]

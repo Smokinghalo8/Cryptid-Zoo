@@ -11,7 +11,7 @@ const JUMP_VELOCITY = 4.5
 @export var senseable = true
 var sprintSpeed = 10.0
 var maxStamina = 100.0
-var staminaDepletionRate = 30.0
+var staminaDepletionRate = 15.0
 var staminaRecoveryRate = 40.0
 var sprintable = true
 var senseTimeMax = 5.0
@@ -40,9 +40,14 @@ func _process(delta):
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
+	
+	#Always have ground position
+	if self.is_on_floor() and self.position.y >= -1.2:
+		Global.character_position = self.global_position
+		
 
 	update_animation_parameters()
-
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -181,4 +186,8 @@ func disableLooker():
 
 
 func _on_trap_2_activated() -> void:
+	pass # Replace with function body.
+
+
+func _on_trap_2_body_entered(body: Node3D) -> void:
 	pass # Replace with function body.

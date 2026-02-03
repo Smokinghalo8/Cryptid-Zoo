@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://peqwgbg0mdt"]
+
+[ext_resource type="PackedScene" uid="uid://b7x413rmogrcx" path="res://Gnome Level/Assets/Windows.gltf" id="1_qwouf"]
+
+[node name="Windows" instance=ExtResource("1_qwouf")]

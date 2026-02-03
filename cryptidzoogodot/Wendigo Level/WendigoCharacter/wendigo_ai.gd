@@ -219,6 +219,7 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
 				await levelPlayer.animation_finished
+				Global.plushCounter = 0
 				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
 			
 
@@ -291,5 +292,8 @@ func _on_trap_4_activated() -> void:
 
 func restart():
 	$"../LevelAnimations".play("RESET")
-	$".."._ready()
-	
+	$"..".restart()
+	$"../Trap2".reset()
+	$"../Trap3".reset()
+	$"../Trap4".reset()
+	$"../Trap5".reset()

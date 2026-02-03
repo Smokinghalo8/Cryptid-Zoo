@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqtym8i4ehudf"]
+
+[ext_resource type="PackedScene" uid="uid://dqc65lg3ifqx3" path="res://Gnome Level/Assets/door.gltf" id="1_vbetj"]
+
+[node name="door" instance=ExtResource("1_vbetj")]

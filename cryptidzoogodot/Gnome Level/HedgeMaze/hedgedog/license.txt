@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hedgedog
+* source:	https://sketchfab.com/3d-models/hedgedog-fe704a6c80614219b7b0bc31dc2d4e51
+* author:	Dominik Zimmer (https://sketchfab.com/dominikzimmer)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hedgedog" (https://sketchfab.com/3d-models/hedgedog-fe704a6c80614219b7b0bc31dc2d4e51) by Dominik Zimmer (https://sketchfab.com/dominikzimmer) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

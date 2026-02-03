@@ -13,6 +13,9 @@
 [color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You’ll see some glowing.wav, next=auto] You’ll see some glowing red boxes around. That’s where you need to set up the traps.  Good luck, Zed. [#voice=uid://d1jrurso7i2te]
 => END
 
+~ StartSmall
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://Assets/SFX/VoiceLinesWendigo/OldManVoiceLines/You’ll see some glowing.wav, next=auto] You’ll see some glowing red boxes around. That’s where you need to set up the traps.  Good luck, Zed. [#voice=uid://d1jrurso7i2te]
+=> END
 
 ~ EnterDarkForest
 [color=#d950ff]Zed[/color]: [speed=0.5, voice=res://Assets/SFX/VoiceLinesWendigo/ZedVoiceLines/It’s dark.wav, next=auto] It’s dark.. How am I supposed to see? [#voice=uid://8o8sfvfbevyp]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2ntfrdghh5xs"]
+[gd_scene load_steps=18 format=3 uid="uid://diyhjppamkeqi"]
 
 [ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_2uqoh"]
-[ext_resource type="Script" path="res://new_wendy.gd" id="1_hmsqo"]
+[ext_resource type="Script" uid="uid://d2klt8xfi3ohq" path="res://new_wendy.gd" id="1_hmsqo"]
 [ext_resource type="AudioStream" uid="uid://d4fbtn7mnohiw" path="res://Wendigo Level/assets/sfx/Wendigo sounds.mp3" id="2_hmsqo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jo68c"]
@@ -37,12 +37,12 @@ albedo_color = Color(11.152633, 0, 0, 0.3137255)
 
 [sub_resource type="Gradient" id="Gradient_jo68c"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r7r26"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hmsqo"]
 gradient = SubResource("Gradient_jo68c")
 
 [sub_resource type="Gradient" id="Gradient_r3hej"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_mt1e5"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jo68c"]
 gradient = SubResource("Gradient_r3hej")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khtfr"]
@@ -53,8 +53,8 @@ spread = 180.0
 gravity = Vector3(0, 0, -1)
 radial_accel_min = -2.0000021
 radial_accel_max = 1.9999977
-color_ramp = SubResource("GradientTexture1D_mt1e5")
-color_initial_ramp = SubResource("GradientTexture1D_r7r26")
+color_ramp = SubResource("GradientTexture1D_jo68c")
+color_initial_ramp = SubResource("GradientTexture1D_hmsqo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tf45f"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -65,12 +65,12 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_hmsqo")
 
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2uqoh")]
+transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, 0.09778255, 0)
+
 [node name="MainCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.044404, 0)
 shape = SubResource("CapsuleShape3D_jo68c")
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2uqoh")]
-transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, 0.09778255, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true

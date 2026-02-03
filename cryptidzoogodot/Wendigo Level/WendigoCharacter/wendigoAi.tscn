@@ -29,10 +29,6 @@ refraction_scale = 1.0
 [node name="WendigoAi" type="CharacterBody3D"]
 axis_lock_linear_y = true
 script = ExtResource("1_ynmkr")
-speed_idle = null
-speed_chase = null
-move_radius = null
-wait_time = null
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01473999, 1.0381012, 0)
@@ -60,11 +56,11 @@ transform = Transform3D(1, 0, 0, 0, -0.008586941, -0.9999631, 0, 0.9999631, -0.0
 target_position = Vector3(0, -4, 0)
 
 [node name="RayLeft" type="RayCast3D" parent="."]
-transform = Transform3D(0.94618136, 0.32359216, -0.0053714854, -2.9094968e-11, -0.016597267, -0.99986225, -0.32363674, 0.9460511, -0.015704026, -0.8551293, 1.2884771, 0)
+transform = Transform3D(0.61522114, 0.7882459, -0.013084531, -2.9094968e-11, -0.016597267, -0.99986225, -0.7883545, 0.6151365, -0.010210992, -0.8551293, 1.2884771, 0)
 target_position = Vector3(0, -4, 0)
 
 [node name="RayRight" type="RayCast3D" parent="."]
-transform = Transform3D(0.0077867354, -0.5336315, 0.84568125, 0.99989367, 0.014590418, 6.793721e-10, -0.012338842, 0.84559125, 0.5336882, 0.78029346, 1.2703322, 0)
+transform = Transform3D(0.012165336, -0.8337007, 0.55208254, 0.99989367, 0.014590418, 9.649432e-10, -0.008055114, 0.55202377, 0.83378935, 0.78029346, 1.2703322, 0)
 target_position = Vector3(0, -4, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

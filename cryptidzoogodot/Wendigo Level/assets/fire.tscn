@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://sv6ordy2svwq"]
+[gd_scene load_steps=8 format=3 uid="uid://bgmxe6bqvp1rj"]
 
-[ext_resource type="Texture2D" path="res://Wendigo Level/pictures/Smoke.png" id="1_5xpkr"]
+[ext_resource type="Texture2D" uid="uid://cmu5fe8partwj" path="res://Wendigo Level/pictures/Smoke.png" id="1_5xpkr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irn68"]
 transparency = 1
