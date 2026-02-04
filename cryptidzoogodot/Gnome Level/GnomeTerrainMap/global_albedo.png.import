@@ -2,37 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipdfhsnh056j"
-path.s3tc="res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"
+uid="uid://chqstojvnvs1j"
+path="res://.godot/imported/global_albedo.png-56b12ac7ee9c14dc4c633865cb2cf9e0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_Normal.png"
-dest_files=["res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"]
+source_file="res://Gnome Level/GnomeTerrainMap/global_albedo.png"
+dest_files=["res://.godot/imported/global_albedo.png-56b12ac7ee9c14dc4c633865cb2cf9e0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
-compress/hdr_compression=1
+compress/hdr_compression=0
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
+mipmaps/generate=false
+mipmaps/limit=0
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

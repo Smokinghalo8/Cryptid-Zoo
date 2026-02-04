@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipdfhsnh056j"
-path.s3tc="res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"
+uid="uid://bkabbm4mj4f4m"
+path.s3tc="res://.godot/imported/grass.png-a19899c74ce8d8ff38e88f30dd5b1cac.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_Normal.png"
-dest_files=["res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"]
+source_file="res://Gnome Level/GnomeTerrainMap/Textures/grass.png"
+dest_files=["res://.godot/imported/grass.png-a19899c74ce8d8ff38e88f30dd5b1cac.s3tc.ctex"]
 
 [params]
 

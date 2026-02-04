@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipdfhsnh056j"
-path.s3tc="res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"
+uid="uid://b3jgiag48lgxc"
+path.s3tc="res://.godot/imported/Ground037_1K-JPG_Displacement.jpg-da5c5d661950a083aa3e2c25011b56c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_Normal.png"
-dest_files=["res://.godot/imported/Poliigon_GrassPatchyGround_4585_Normal.png-e770c27631ab2486c4787d4e291e4eeb.s3tc.ctex"]
+source_file="res://Gnome Level/GnomeTerrainMap/Textures/Ground037_1K-JPG/Ground037_1K-JPG_Displacement.jpg"
+dest_files=["res://.godot/imported/Ground037_1K-JPG_Displacement.jpg-da5c5d661950a083aa3e2c25011b56c9.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=7
+roughness/src_normal="res://Gnome Level/GnomeTerrainMap/Textures/Ground037_1K-JPG/Ground037_1K-JPG_NormalGL.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
