@@ -24,7 +24,7 @@
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
 [ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://diyhjppamkeqi" path="res://newWendy.tscn" id="24_rfgrx"]
+[ext_resource type="PackedScene" path="res://newWendy.tscn" id="24_rfgrx"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
 [ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
-[ext_resource type="PackedScene" uid="uid://b67wfjyfb04hd" path="res://Wendigo Level/assets/bear_trap.tscn" id="37_yrhgu"]
 [ext_resource type="AudioStream" uid="uid://bmb36of1ca5go" path="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3" id="38_a0ttt"]
 [ext_resource type="AudioStream" uid="uid://bi2ba460tqw3d" path="res://Wendigo Level/assets/sfx/mystic-forest-ambient-23812.mp3" id="39_hxb2w"]
 [ext_resource type="AudioStream" uid="uid://t5ajif4huvb5" path="res://Wendigo Level/assets/sfx/rope-creak-01-sound-effect-340131.mp3" id="39_w1jcc"]
@@ -51,6 +50,7 @@
 [ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://Wendigo Level/stop_from_dying.gd" id="48_sy734"]
 [ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="49_ixmxt"]
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
+[ext_resource type="PackedScene" uid="uid://bm6bobi4u2cgg" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -8684,7 +8684,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
+tracks/0/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -8696,31 +8696,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
+tracks/1/path = NodePath("StuffForTraps/string:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StuffForTraps/string:visible")
+tracks/2/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("StuffForTraps/RopeCreak01SoundEffect340131:playing")
+tracks/3/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -8732,7 +8732,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("StuffForTraps/RopeSound65417[audioTrimmer_com]:playing")
+tracks/4/path = NodePath("StuffForTraps/Trap4Wrap:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -8744,122 +8744,122 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("StuffForTraps/Trap4Wrap:visible")
+tracks/5/path = NodePath("StuffForTraps/Trap4Wrap:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(83.47394, -3.620357, 184.68472)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("StuffForTraps/Trap4Wrap:position")
+tracks/6/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(83.47394, -3.620357, 184.68472)]
+"update": 1,
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("StuffForTraps/Leaves64875[audioTrimmer_com]:playing")
+tracks/7/path = NodePath("StuffForTraps/tarp:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector3(46.21802, -2.6953216, -181.18488)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("StuffForTraps/tarp:position")
+tracks/8/path = NodePath("WendigoAi:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(46.21802, -2.6953216, -181.18488)]
+"values": [Vector3(-148.86244, 1.4200971, -53.40697)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("WendigoAi:position")
+tracks/9/path = NodePath("WendigoAi:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-148.86244, 1.4200971, -53.40697)]
+"values": [Vector3(0.11032527, 1.2125082, -0.041204154)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("WendigoAi:rotation")
+tracks/10/path = NodePath("ZWendigo:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.11032527, 1.2125082, -0.041204154)]
+"values": [Vector3(-148.19592, 3.1796148, 158.56525)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("ZWendigo:position")
+tracks/11/path = NodePath("ZWendigo:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-148.19592, 3.1796148, 158.56525)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("ZWendigo:rotation")
+tracks/12/path = NodePath("CutSceneCam:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(55.62169, 5.3216925, -142.14674)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("CutSceneCam:position")
+tracks/13/path = NodePath("CutSceneCam:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(55.62169, 5.3216925, -142.14674)]
+"values": [Vector3(-0.6310937, 0, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("CutSceneCam:rotation")
+tracks/14/path = NodePath("BearTrap:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.6310937, 0, 0)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_hxb2w"]
@@ -8868,7 +8868,7 @@ length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StuffForTraps/BearTrap:visible")
+tracks/0/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -8880,7 +8880,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("StuffForTraps/DbdBearTrapBeingSet135906:playing")
+tracks/1/path = NodePath("BearTrap:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -9593,9 +9593,19 @@ libraries = {
 
 [node name="StuffForTraps" type="Node3D" parent="."]
 
-[node name="BearTrap" parent="StuffForTraps" instance=ExtResource("37_yrhgu")]
+[node name="BearTrap" parent="StuffForTraps"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -132.09967, 0.00019851318, 128.9467)
-visible = false
+visible = true
+script = null
 
 [node name="DbdBearTrapBeingSet135906" type="AudioStreamPlayer" parent="StuffForTraps"]
 stream = ExtResource("38_a0ttt")
@@ -9744,6 +9754,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4f0m8")
+
+[node name="BearTrap" parent="." instance=ExtResource("51_rfgrx")]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, -132.16872, -0.051770806, 128.78876)
+visible = false
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
