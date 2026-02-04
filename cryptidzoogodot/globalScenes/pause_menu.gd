@@ -1,8 +1,12 @@
 extends Control
 
-
-func _on_volume_slider_drag_ended(value_changed: bool) -> void:
-	AudioServer.set_bus_volume_db(0, linear_to_db($VolumeSlider.value))
+func _ready() -> void:
+	var current_db = AudioServer.get_bus_volume_db(GlobalSettings.master_bus)
+	var linear_val = db_to_linear(current_db)
+	$VolumeSlider.set_value_no_signal(linear_val)
+	
+func _on_volume_slider_value_changed(value: float) -> void:
+	GlobalSettings.set_volume(value)
 
 
 func _on_back_button_pressed() -> void:

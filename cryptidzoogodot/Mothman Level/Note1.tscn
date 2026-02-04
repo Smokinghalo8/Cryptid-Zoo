@@ -1,18 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2pyoowlngifw"]
+[gd_scene load_steps=7 format=3 uid="uid://c2pyoowlngifw"]
 
-[ext_resource type="Material" uid="uid://bwmgay08a0pg1" path="res://Assets/Materials/NoteGlow.tres" id="1_fngaf"]
+[ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="1_70rbq"]
+[ext_resource type="Texture2D" uid="uid://dbxvxcyyu31jl" path="res://Assets/newspaper/NPMothman4.png" id="1_h6k8p"]
+[ext_resource type="Texture2D" uid="uid://du3wx5jdnprnc" path="res://Assets/newspaper/NPMothman4_normal.png" id="2_70rbq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0fpkj"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k15si"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k15si"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_h6k8p")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("1_h6k8p")
+normal_enabled = true
+normal_texture = ExtResource("2_70rbq")
+uv1_scale = Vector3(-2.9, 2, 2.9)
+uv1_offset = Vector3(0.985, 0, 0)
+texture_repeat = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_26rki"]
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="StaticBody3D2" type="StaticBody3D"]
+process_mode = 3
 transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 0, 0, 0)
+script = ExtResource("1_70rbq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_0fpkj")
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_k15si")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_fngaf")
+[node name="StaticBody3D" type="StaticBody3D" parent="CollisionShape3D"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k15si")
 mesh = SubResource("BoxMesh_26rki")
-skeleton = NodePath("../CollisionShape3D")
+skeleton = NodePath("")
