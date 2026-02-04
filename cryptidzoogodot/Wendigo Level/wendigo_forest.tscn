@@ -9593,20 +9593,6 @@ libraries = {
 
 [node name="StuffForTraps" type="Node3D" parent="."]
 
-[node name="BearTrap" parent="StuffForTraps"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -132.09967, 0.00019851318, 128.9467)
-visible = true
-script = null
-
 [node name="DbdBearTrapBeingSet135906" type="AudioStreamPlayer" parent="StuffForTraps"]
 stream = ExtResource("38_a0ttt")
 
