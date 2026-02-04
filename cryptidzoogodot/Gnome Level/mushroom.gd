@@ -5,6 +5,7 @@ var is_in_shroom = false
 var can_eat = false
 var eaten = false
 signal poisoned
+var mushrooms_eaten = 0
 
 
 # export either a boolean or a 1 to set a mushroom as poison/psychedelic so it can potentially
@@ -24,9 +25,12 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and is_in_shroom == true and eaten == false:
 		self.visible = false
+		eaten = true
+		mushrooms_eaten +=1
 		if psychedelic >= 1.0:
 			$"../../../Z/psychedelicCube".visible = true
 			eaten = true
+			mushrooms_eaten = 0.0
 			await get_tree().create_timer(1.0).timeout
 			poisoned.emit()
 			await get_tree().create_timer(10.0).timeout
