@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://y0mqv42op1ok"]
+[gd_scene load_steps=111 format=3 uid="uid://b1nfx33n8ynsw"]
 
 [ext_resource type="PackedScene" uid="uid://dlxbyjrmp50l0" path="res://Gnome Level/Playset.fbx" id="1_1wvvg"]
 [ext_resource type="Texture2D" uid="uid://b1wjvcgcoad33" path="res://Assets/Materials/PNG/Metal_lambert1_BaseColor.png" id="2_0ewfl"]
