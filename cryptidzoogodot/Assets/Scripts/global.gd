@@ -18,3 +18,5 @@ var frozen = false
 
 #Gnome Things
 var thingsGathered = 0
+var gnomeState = 0
+var shroomsAte = 0

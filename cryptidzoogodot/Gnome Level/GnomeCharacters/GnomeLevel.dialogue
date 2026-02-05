@@ -1,20 +1,70 @@
+~ introToGnomeLevel
+#need to add both voicelines
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Uhgg... what happened...
+[color=yellow]Random Gnome[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Buff_O, next=10] HALT! What are you doing in the Gnome Kings land??! Explain yourself human!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] W...What are you talking about- Gnome king? Why am I so small?
+[color=yellow]Random Gnome[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Buff_O, next=10] Enough! You’re coming with me to meet the king himself!
+=> END
+
+
+~ teleportToGnomeKing
+#add lines
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] -And who have you brought me this time, Gnome 1? Another snack?
+[color=yellow]Random Gnome[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Buff_O, next=10] Something like that, I wouldn’t be opposed to seeing you eat such insolence.
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Hold on, wait! I can be friend! Don’t eat me, I taste like sadness and financial troubles!
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] ...hmm... I could use another errand boy to do my tasks.... Tell you what, kid, I have a few tasks that I really should be doing, but since you showed up, perfect time to delegate them!
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] I hear that the Mushroom farmer, Bloogargth needed my help for something, but I am unsure what... come back to me, after you helped him out!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Alright...
+
+#voice=res://Gnome Level/Assets/Voicelines/
 ~ fetchGnomeGiveQuest
-[color=grey]Bleafus[/color]: [speed=0.3, next=10] Go get my sword and my marble
+#need to add Zed voicelines yet
+[color=green]Bleafus[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bleafus voices/Foretold.mp3, next=10] Human, I have already been foretold of your arrival, my task is simple, I have lost my mini sword and marble, could you help me find them?
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Yeah, I can help with that! Where did you last seem them?
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Headed straight for them now!
+[color=green]Bleafus[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bleafus voices/Last_I_Saw_Them.mp3, next=10] I believe the last place I saw them was in the Hedge Maze somewhere and on top of the big Playset!
 => END
 
 ~ fetchGnomeEndQuest
+[color=green]Bleafus[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bleafus voices/Thank_You_Human.mp3, next=10] Thank you again for helping me Human!- Actually, what is your name?
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] It’s Zed, and no worries!
 => END
 
+~ backToKingAfterShrooms
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] Human! I heard from my minions that you managed to help my mushroom farmer! Thank you!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Yeah, of course, what’s next?
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] Now, my next task for you is to help my other Gnome minion, Bleafus find my lost items around the yard! After you do that, there is one more task I need you to do!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] On it!
+=> END
+
+
 ~ rouletteGnomeGiveQuest
-[color=grey]Bloogargth[/color]: [speed=0.3, next=10] Eat these shrooms
+#add both voicelines
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth, next=10] Gahh! Why do you look like that?!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Rude. I’m here on behalf of the Gnome King, you asked for his help with something?
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth, next=10] ...well yes I did... but do you think you can really help?
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Come on, I can at least try, what do you need help with?
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth, next=10] so... I might've gotten my Food mushrooms with my Fun mushrooms, and I need a little help finding the Food ones, I’m starving...
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] sigh... I really don’t have another choice...
+
 => END 
 
 ~ rouletteGnomeEndQuest
-[color=grey]Bloogargth[/color]: [speed=0.3, next=10] damn you didn't die
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth, next=10] Wow! You really did it! Thank you so much! I can finally eat my fill without seeing waves everywhere!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] yeah, no problem...
 => END 
 
-~ mazeGnomeGiveQuest
+~ rouletteGnomeEndQuestFail
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth, next=10] yeah, see the goal is to not eat the fun mushrooms, or did I say that already?
+=> END
+
+~ backToKingAfterScavenger
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] Zed! Welcome back! I learned your name from my last minion you were just talking to! Are you ready for the final task I have for you?
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Yes! Of course, I was born ready!
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/king, next=10] that’s the spirit! My last task for you is to find my trophy I left at the end of the Hedge Maze, try not to get lost in there!
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Can do! Be right back!
 => END 
 
 ~ mazeGnomeEndQuest
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/, next=10] Well... this should be the trophy the King was looking for...
 => END 

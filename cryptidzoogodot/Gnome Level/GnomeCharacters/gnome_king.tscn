@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://du6b7snsy0qiw"]
+
+[ext_resource type="Script" uid="uid://b4qcbbc1mp7d1" path="res://Gnome Level/GnomeCharacters/Scripts/gnome_king.gd" id="1_kd1pe"]
+[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/scene.gltf" id="2_ws4yr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qiqb7"]
+radius = 1.0395508
+height = 2.9956055
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bdipr"]
+radius = 5.6748047
+height = 13.6883545
+
+[node name="GnomeKING" type="StaticBody3D"]
+script = ExtResource("1_kd1pe")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ws4yr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1662598, 0.3813095)
+shape = SubResource("CapsuleShape3D_qiqb7")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1662598, 0.3813095)
+
+[node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.68672025, 4.1797624)
+shape = SubResource("CapsuleShape3D_bdipr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
