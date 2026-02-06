@@ -1,12 +1,12 @@
-[gd_resource type="Resource" load_steps=17 format=3 uid="uid://d14iwhxfdder0"]
+[gd_resource type="Resource" load_steps=17 format=3 uid="uid://b2dgpgewr8b4v"]
 
 [ext_resource type="Script" uid="uid://c6btkf1v8d8pn" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_LOD_variant.gd" id="1_a6b07"]
 [ext_resource type="Script" uid="uid://cjsirac1827tg" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd" id="1_u7qgm"]
-[ext_resource type="PackedScene" uid="uid://bbbx6wsskomny" path="res://Zoo_level/Assets/trees/small_tree.tscn" id="2_hbj2h"]
+[ext_resource type="PackedScene" path="res://Zoo_level/Assets/trees/small_tree.tscn" id="2_hbj2h"]
 [ext_resource type="Script" uid="uid://bnsd2fyntembv" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_plant.gd" id="2_hxyoi"]
 [ext_resource type="Script" uid="uid://ckg16wf0ebcts" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_plant_state.gd" id="3_hbj2h"]
-[ext_resource type="PackedScene" uid="uid://q3n1geadp8kl" path="res://Zoo_level/Assets/trees/large_tree.tscn" id="5_t80ax"]
-[ext_resource type="PackedScene" uid="uid://c1wkkeclv1nby" path="res://Zoo_level/Assets/trees/medium_tree.tscn" id="6_t80ax"]
+[ext_resource type="PackedScene" path="res://Zoo_level/Assets/trees/large_tree.tscn" id="5_t80ax"]
+[ext_resource type="PackedScene" path="res://Zoo_level/Assets/trees/medium_tree.tscn" id="6_t80ax"]
 
 [sub_resource type="Resource" id="Resource_t80ax"]
 resource_name = "Greenhouse_LODVariant"
