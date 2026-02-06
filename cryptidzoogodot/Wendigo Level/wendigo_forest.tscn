@@ -24,7 +24,7 @@
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
 [ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
-[ext_resource type="PackedScene" path="res://newWendy.tscn" id="24_rfgrx"]
+[ext_resource type="PackedScene" uid="uid://diyhjppamkeqi" path="res://newWendy.tscn" id="24_rfgrx"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
