@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cin7f1iusttov"]
+
+[ext_resource type="Script" uid="uid://bi6di63stotfg" path="res://Gnome Level/Assets/new_sword/Scripts/sword.gd" id="1_j6pov"]
+[ext_resource type="PackedScene" uid="uid://cr6vqwy6180m6" path="res://Gnome Level/Assets/sword/scene.gltf" id="2_brb0c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yvu35"]
+height = 1.1247559
+radius = 2.7607422
+
+[node name="sword" type="Node3D"]
+script = ExtResource("1_j6pov")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_brb0c")]
+transform = Transform3D(1, 0, 0, 0, 0.048309308, 0.9988324, 0, -0.9988324, 0.048309308, 0, 0.22082031, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1792392, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1705644, -0.6446235, -1.3599389)
+shape = SubResource("CylinderShape3D_yvu35")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

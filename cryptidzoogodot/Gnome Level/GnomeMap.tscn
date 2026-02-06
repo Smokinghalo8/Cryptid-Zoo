@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=37 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -13,8 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bkabbm4mj4f4m" path="res://Gnome Level/GnomeTerrainMap/Textures/grass.png" id="10_ujj1q"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_kkme5"]
 [ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
-[ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
+[ext_resource type="Texture2D" uid="uid://cfyvowei4twq7" path="res://Gnome Level/GnomeTerrainMap/Textures/flower1.png" id="12_pxd54"]
 [ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
@@ -24,7 +23,13 @@
 [ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
 [ext_resource type="PackedScene" uid="uid://b7qt40ivocetw" path="res://Gnome Level/GnomeCharacters/Gnome_buff_o.tscn" id="24_vxnpk"]
 [ext_resource type="PackedScene" uid="uid://cqnyuxynar2bn" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_1.tscn" id="25_7oysy"]
+[ext_resource type="PackedScene" uid="uid://c4mkoe3jb7kwe" path="res://Gnome Level/Assets/new_marble/new_marble.tscn" id="26_87shl"]
+[ext_resource type="PackedScene" uid="uid://vxwv46fcdxtw" path="res://Gnome Level/HedgeMaze/correctedSinglehedge.tscn" id="26_bwcok"]
+[ext_resource type="PackedScene" uid="uid://cin7f1iusttov" path="res://Gnome Level/Assets/new_sword/new_sword.tscn" id="26_ujj1q"]
+[ext_resource type="PackedScene" uid="uid://du6b7snsy0qiw" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
+[ext_resource type="PackedScene" uid="uid://o88uvdldcumw" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
 [ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
+[ext_resource type="PackedScene" uid="uid://bsdc15jgfb724" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -79,12 +84,25 @@ metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 [node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
 script = ExtResource("9_87shl")
 texture = ExtResource("10_ujj1q")
-view_distance = 500.0
+view_distance = 150.0
 density = 0.789
 shader_params/u_globalmap_tint_bottom = 0.3710000176225
 shader_params/u_globalmap_tint_top = 0.1450000068875
 shader_params/u_bottom_ao = 0.34400001634
 shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_kkme5")
+
+[node name="@Node3D@75207" type="Node3D" parent="HTerrain"]
+script = ExtResource("9_87shl")
+layer_index = 1
+texture = ExtResource("12_pxd54")
+view_distance = 150.0
+density = 0.505
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(1, 1, 1)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
@@ -106,13 +124,7 @@ environment = SubResource("Environment_mrlcg")
 transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0, 114, 0)
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 43.107903)
-
-[node name="marble" parent="." instance=ExtResource("12_xhii3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.2156, -3.8146973e-06, 41.16959)
-
-[node name="sword" parent="." instance=ExtResource("13_8dup0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.32925, 0, 68.92524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 30.547337)
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
@@ -161,7 +173,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.69919, 0, 80.01421)
 [node name="shroom3" parent="." instance=ExtResource("25_7oysy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.69919, 0, 85.82154)
 
-[connection signal="gotMarble" from="marble" to="sword" method="_on_marble_got_marble"]
-[connection signal="lostMarble" from="marble" to="sword" method="_on_marble_lost_marble"]
-[connection signal="got_sword" from="sword" to="marble" method="_on_sword_got_sword"]
-[connection signal="lost_sword" from="sword" to="marble" method="_on_sword_lost_sword"]
+[node name="quest_hedge" parent="." instance=ExtResource("26_bwcok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.00264, 0, 160.32022)
+
+[node name="new_marble" parent="." instance=ExtResource("26_87shl")]
+transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 176.23727, 0, 215.8356)
+
+[node name="sword" parent="." instance=ExtResource("26_ujj1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.91413, 10.606115, 86.813576)
+
+[node name="GnomeKING" parent="." instance=ExtResource("27_kkme5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 114.95887, 0.3991499, 129.23508)
+
+[node name="bloogaragth" parent="." instance=ExtResource("28_pxd54")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 134.69148, 0.3218441, 92.12883)
+
+[node name="Bleafus_the_gnome" parent="." instance=ExtResource("29_i627o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.24689, 0.3262241, 26.152647)

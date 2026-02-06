@@ -19,9 +19,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	#highest going down
 	if Global.gnomeState == 3:
 		#back from maze
+		#end game scene, which isnt made yet- sorry
 		pass
 	elif Global.gnomeState == 2:
 		#back from scav hunt
+		#TODO work from here, coded in everything prior
+		await DialogueManager.show_dialogue_balloon(dialogue, "backToKingAfterScavenger").finished
+		Global.gnomeState = 50 #WERE IN THE 50s NOW BABY WOOO
 		pass
 	elif Global.gnomeState == 1:
 		#back from mushrooms

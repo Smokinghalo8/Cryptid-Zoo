@@ -18,8 +18,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	#bleafus gives player Scav hunt quest, should be the second quest
 	#should be 4 states, after quest is done (11?)
 	# 10=First talk - GnomeKing setup
-	# 2=End Quest
-	# 1= Before anything, debug - shouldnt be possible
+	# 41=End Quest
+	# 40= Before anything, debug - shouldnt be possible
 	if Global.gnomeState == 11:
 		pass 
 	elif Global.gnomeState == 10:
@@ -27,11 +27,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		Global.gnomeState = 12
 		#set gnomstate to 2 after picked up everything
 		pass
-	elif Global.gnomeState == 2:
+	elif Global.gnomeState == 41:
 		await DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeEndQuest").finished
 		Global.gnomeState = 2
 		pass
-	elif Global.gnomeState == 1:
+	elif Global.gnomeState == 40:
 		#TODO put some bs here
 		pass
 	
