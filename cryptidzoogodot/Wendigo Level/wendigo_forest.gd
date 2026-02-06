@@ -1,7 +1,6 @@
 extends Node3D
 
 @export var dialogue_resource: DialogueResource
-@export var findWendigo = false
 
 @onready var animPlayer : AnimationPlayer = $LevelAnimations
 @onready var minimap = $Ui/Minimap
@@ -16,6 +15,7 @@ func _ready() -> void:
 	#	await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
 		minimap.arrow.visible = true
 	Global.frozen = false
+	
 
 
 func _process(delta: float) -> void:
@@ -54,7 +54,6 @@ func _on_trap_2_activated() -> void:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap4Complete").finished
 		minimap.objective = $BugFixWendy
 		Global.wendyFound = false
-		findWendigo = true
 		minimap.arrow.visible = true
 		Global.trapCounter += 1
 
