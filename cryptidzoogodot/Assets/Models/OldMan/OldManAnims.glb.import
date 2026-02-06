@@ -8263,6 +8263,28 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"materials": {
+"Old_Man_Body_aiSS1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/OldMan/Old_Man_Body_aiSS1.tres",
+"use_external/path": "uid://g1wt7j2puy4n"
+},
+"Old_Man_Clothing_aiSS1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/OldMan/Old_Man_Clothing_aiSS1.tres",
+"use_external/path": "uid://cd4nblo5o6hcc"
+},
+"Old_Man_Facial_Features_aiSS": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/OldMan/Old_Man_Facial_Features_aiSS.tres",
+"use_external/path": "uid://cfygdw368f4kj"
+},
+"Old_Man_Hair_aiSS1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Assets/Models/OldMan/Old_Man_Hair_aiSS1.tres",
+"use_external/path": "uid://c535pp5tfbdox"
+}
 }
 }
 gltf/naming_version=2
