@@ -8484,7 +8484,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-131.695, 0.44655335, 129.28374)]
+"values": [Vector3(-183.13782, 0.44655335, 159.07983)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -8496,7 +8496,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, -1.019028, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
@@ -8892,7 +8892,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-155.30634, 1.0211151, 91.48519)]
+"values": [Vector3(-179.99132, 1.0211151, 163.18503)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -8904,7 +8904,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.1206486, -0.040142573)]
+"values": [Vector3(-5.0545226e-09, -1.125563, -0.040142577)]
 }
 
 [sub_resource type="Animation" id="Animation_hxb2w"]
@@ -9431,12 +9431,11 @@ affect_navigation_mesh = true
 
 [node name="ZWendigo" parent="." instance=ExtResource("9_g0ukx")]
 transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -148.19592, 3.1796148, 158.56525)
-visible = false
 collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.99897534, -0.040122993, 0.020942496, -0.040131796, 0.9991945, 0, -0.02092563, -0.0008404602, -0.9997805, -155.30634, 1.0211151, 91.48519)
+transform = Transform3D(0.43032154, 0.017283503, -0.90251005, -0.0401318, 0.9991945, 5.0545217e-09, 0.9017833, 0.036219355, 0.43066835, -179.99132, 1.0211151, 163.18503)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
@@ -9559,7 +9558,6 @@ scale = Vector2(0.54, 0.54)
 texture = ExtResource("24_jrcfp")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_75rbe")]
-visible = false
 offset_left = 1619.0
 offset_top = 2.0
 offset_right = 1919.0
