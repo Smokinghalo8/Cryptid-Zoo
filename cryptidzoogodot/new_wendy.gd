@@ -121,11 +121,11 @@ func _on_sound_detect_body_exited(body: Node3D) -> void:
 func _on_trap_2_body_entered(body: Node3D) -> void:
 	if $"../Trap2".is_in_group("Traps"):
 		if body.is_in_group("Enemies"):
-			if Global.trapCounter == 2:
+			if Global.trapCounter == 8:
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
-				Global.trapCounter -= 1
+				Global.trapCounter += 1
 				$CutSceneCam.current = true
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
@@ -137,14 +137,14 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 func _on_trap_3_body_entered(body: Node3D) -> void:
 	if $"../Trap3".is_in_group("Traps"):
 		if body.is_in_group("Enemies"):
-			if Global.trapCounter == 3:
+			if Global.trapCounter == 7:
 				minimap.arrow.visible = false
 				wendigoPlayer.play("wendTrap3")
 				await wendigoPlayer.animation_finished
 				#insert trap escape line 3
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
 				activated3 = false
-				Global.trapCounter -= 1
+				Global.trapCounter += 1
 				chaseSpeed += 0.3
 				minimap.objective = $"../Trap2"
 				minimap.arrow.visible = true
@@ -154,14 +154,14 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 func _on_trap_4_body_entered(body: Node3D) -> void:
 	if $"../Trap4".is_in_group("Traps"):
 		if body.is_in_group("Enemies"):
-			if Global.trapCounter == 4:
+			if Global.trapCounter == 6:
 				minimap.arrow.visible = false
 				wendigoPlayer.play("wendTrap2")
 				await wendigoPlayer.animation_finished
 				#insert trap escape line 2
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Escaped").finished
 				activated4 = false
-				Global.trapCounter -= 1
+				Global.trapCounter += 1
 				chaseSpeed += 0.3
 				minimap.objective = $"../Trap3"
 				minimap.arrow.visible = true
@@ -178,7 +178,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 				#insert trap escape line 1
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Escaped").finished
 				activated5 = false
-				Global.trapCounter -= 1
+				Global.trapCounter += 1
 				chaseSpeed += 0.3
 				minimap.objective = $"../Trap4"
 				minimap.arrow.visible = true

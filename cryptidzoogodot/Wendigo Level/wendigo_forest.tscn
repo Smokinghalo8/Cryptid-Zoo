@@ -8748,7 +8748,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -9644,6 +9644,7 @@ material = SubResource("StandardMaterial3D_wgjca")
 
 [node name="string" type="CSGCylinder3D" parent="StuffForTraps"]
 transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 99.97217, 10.003115, 4.376326)
+visible = false
 radius = 0.008
 
 [node name="tarp" type="CSGBox3D" parent="StuffForTraps"]
