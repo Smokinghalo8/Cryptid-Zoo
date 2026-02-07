@@ -8484,7 +8484,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-183.13782, 0.44655335, 159.07983)]
+"values": [Vector3(-126.00398, 0.44655335, 101.804794)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -8496,7 +8496,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -1.019028, 0)]
+"values": [Vector3(0, 2.8890433, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
@@ -8892,7 +8892,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-179.99132, 1.0211151, 163.18503)]
+"values": [Vector3(-123.92911, 1.0211151, 100.80882)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -8904,7 +8904,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-5.0545226e-09, -1.125563, -0.040142577)]
+"values": [Vector3(-9.297405e-09, 2.8935463, -0.040142577)]
 }
 
 [sub_resource type="Animation" id="Animation_hxb2w"]
@@ -9435,7 +9435,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(0.43032154, 0.017283503, -0.90251005, -0.0401318, 0.9991945, 5.0545217e-09, 0.9017833, 0.036219355, 0.43066835, -179.99132, 1.0211151, 163.18503)
+transform = Transform3D(-0.9686129, -0.038903527, 0.24551047, -0.040131792, 0.9991945, 9.297403e-09, -0.24531274, -0.009852771, -0.9693937, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
