@@ -4,7 +4,7 @@ extends Control
 func _on_game_start_button_pressed() -> void: #Start
 	$ButtonPressNoise.play(0)
 	await get_tree().create_timer($ButtonPressNoise.stream.get_length())
-	get_tree().change_scene_to_file("uid://bf4vgu7u0t3ri")
+	get_tree().change_scene_to_file("uid://dxsurf27hc834")
 	#when the game start button is pressed change the scene
 	pass # Replace with function body.
 

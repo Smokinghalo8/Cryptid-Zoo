@@ -1,4 +1,4 @@
-[gd_scene load_steps=599 format=3 uid="uid://dxsurf27hc834"]
+[gd_scene load_steps=598 format=3 uid="uid://dxsurf27hc834"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://Wendigo Level/wendigo_forest.gd" id="1_qv7kg"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="10_pdyqn"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="11_qusdq"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="12_np73x"]
-[ext_resource type="PackedScene" uid="uid://dbali5u4o76qd" path="res://Wendigo Level/WendigoCharacter/wendigoAi.tscn" id="13_pdyqn"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_136gw"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_g0ukx"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="19_uyjqn"]
@@ -30,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
+[ext_resource type="PackedScene" uid="uid://c251vdgqpo8bv" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
@@ -41,7 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://dnab6v7mt7fq3" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
@@ -9437,17 +9436,10 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.99897534, -0.040122993, 0.020942498, -0.040131796, 0.9991945, 0, -0.02092563, -0.0008404602, -0.9997806, -155.30634, 1.0211151, 91.48519)
+transform = Transform3D(-0.99897534, -0.040122993, 0.020942496, -0.040131796, 0.9991945, 0, -0.02092563, -0.0008404602, -0.9997805, -155.30634, 1.0211151, 91.48519)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
-dialogue_resource = ExtResource("2_jrcfp")
-
-[node name="WendigoAi" parent="." groups=["Enemies"] instance=ExtResource("13_pdyqn")]
-transform = Transform3D(0.34612653, 0.11746749, 0.930805, -0.040942054, 0.9930767, -0.11010161, -0.9372939, 1.490116e-08, 0.34853965, 51.738373, -0.75160146, -150.34836)
-visible = false
-collision_layer = 3
-collision_mask = 3
 dialogue_resource = ExtResource("2_jrcfp")
 
 [node name="Ui" type="CanvasLayer" parent="."]
@@ -9802,19 +9794,15 @@ visible = false
 [connection signal="activated" from="Trap2" to="." method="_on_trap_2_activated"]
 [connection signal="activated" from="Trap2" to="BugFixWendy" method="_on_trap_2_activated"]
 [connection signal="body_entered" from="Trap2" to="BugFixWendy" method="_on_trap_2_body_entered"]
-[connection signal="body_entered" from="Trap2" to="WendigoAi" method="_on_trap_2_body_entered"]
 [connection signal="activated" from="Trap3" to="." method="_on_trap_3_activated"]
 [connection signal="activated" from="Trap3" to="BugFixWendy" method="_on_trap_3_activated"]
 [connection signal="body_entered" from="Trap3" to="BugFixWendy" method="_on_trap_3_body_entered"]
-[connection signal="body_entered" from="Trap3" to="WendigoAi" method="_on_trap_3_body_entered"]
 [connection signal="activated" from="Trap4" to="." method="_on_trap_4_activated"]
 [connection signal="activated" from="Trap4" to="BugFixWendy" method="_on_trap_4_activated"]
 [connection signal="body_entered" from="Trap4" to="BugFixWendy" method="_on_trap_4_body_entered"]
-[connection signal="body_entered" from="Trap4" to="WendigoAi" method="_on_trap_4_body_entered"]
 [connection signal="activated" from="Trap5" to="." method="_on_trap_5_activated"]
 [connection signal="activated" from="Trap5" to="BugFixWendy" method="_on_trap_5_activated"]
 [connection signal="body_entered" from="Trap5" to="BugFixWendy" method="_on_trap_5_body_entered"]
-[connection signal="body_entered" from="Trap5" to="WendigoAi" method="_on_trap_5_body_entered"]
 [connection signal="body_entered" from="ForestBound1" to="." method="_on_forest_bound_1_body_entered"]
 [connection signal="body_entered" from="ForestBound2" to="." method="_on_forest_bound_2_body_entered"]
 [connection signal="body_entered" from="StopFromDying" to="StopFromDying" method="_on_body_entered"]
