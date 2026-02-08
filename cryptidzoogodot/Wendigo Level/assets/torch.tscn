@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://btvjihfcsxv3v"]
+[gd_scene load_steps=5 format=3 uid="uid://btvjihfcsxv3v"]
 
-[ext_resource type="PackedScene" uid="uid://wcbngmgwx8la" path="res://Wendigo Level/assets/scene.gltf" id="1_c7xlb"]
+[ext_resource type="PackedScene" uid="uid://csno1qxlpvgen" path="res://Wendigo Level/assets/bearTrap.gltf" id="1_c7xlb"]
+[ext_resource type="PackedScene" uid="uid://b5ke1lgkywmh1" path="res://Wendigo Level/assets/torchModel.tscn" id="2_8gyy4"]
 [ext_resource type="PackedScene" uid="uid://bgmxe6bqvp1rj" path="res://Wendigo Level/assets/fire.tscn" id="2_nkuc6"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c7xlb"]
@@ -8,16 +9,33 @@ data = PackedVector3Array(-0.0023, 0.17119999, -0.1806, 0.1379, 0.093399994, 0.1
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_c7xlb")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Wooden Torch_fbx/RootNode/Cylinder/Cylinder_Material_0" index="0"]
+[node name="Sketchfab_Scene" parent="." index="0" instance=ExtResource("2_8gyy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09963018, 0.006279707, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Wooden Torch_fbx/RootNode/Cylinder/Cylinder_Material_0/StaticBody3D" index="0"]
+[node name="Sketchfab_model_Wooden Torch_fbx_RootNode_Cylinder_Cylinder_Material_0_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.09948802, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_c7xlb")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, -1.6292067e-07, 1, 0, -1, -1.6292067e-07, 0.04063511, 1.7495686, 0.020512104)
 light_color = Color(1, 0.7019608, 0.5411765, 1)
 light_energy = 8.608
 omni_range = 20.306887
 
-[node name="Fire" parent="." index="2" instance=ExtResource("2_nkuc6")]
+[node name="Fire" parent="." index="3" instance=ExtResource("2_nkuc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4914758, 0)
+
+[node name="Sketchfab_model" parent="." index="4"]
+visible = false
+
+[node name="8a74899e8b9c40c4ba6157a4fb92767d_fbx" parent="Sketchfab_model" index="0"]
+visible = false
+
+[node name="RootNode" parent="Sketchfab_model/8a74899e8b9c40c4ba6157a4fb92767d_fbx" index="0"]
+visible = false
+
+[node name="BearTrap" parent="Sketchfab_model/8a74899e8b9c40c4ba6157a4fb92767d_fbx/RootNode" index="0"]
+visible = false
+
+[node name="BearTrap_beartrap_m_0" parent="Sketchfab_model/8a74899e8b9c40c4ba6157a4fb92767d_fbx/RootNode/BearTrap" index="0"]
+visible = false

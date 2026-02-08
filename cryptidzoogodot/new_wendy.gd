@@ -57,8 +57,8 @@ func _physics_process(delta):
 	direction = direction.normalized()
 	velocity = velocity.lerp(direction * speed, delta * 10)
 	velocity += get_gravity() * delta
-	
-	move_and_slide()
+	if Global.frozen == false:
+		move_and_slide()
 
 
 func chase():
@@ -102,6 +102,9 @@ func _on_in_front_detect_body_exited(body: Node3D) -> void:
 
 func _on_sound_detect_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
+		if Global.wendyFound == false:
+			Global.wendyFound = true
+			minimap.objective = $"../Trap5"
 		isInSoundDetector = true
 		overlappingNoise.append(body)
 		if Global.wendyFound == false:
@@ -208,6 +211,7 @@ func restart():
 	randomPos = Vector3(randf_range(player.global_position.x-30, player.global_position.x+30), position.y, randf_range(player.global_position.z-30, player.global_position.z+30))
 	clamp(randomPos.x, -210, 223)
 	clamp(randomPos.z, -245, 235)
+	Global.trapCounter = 1
 	
 
 

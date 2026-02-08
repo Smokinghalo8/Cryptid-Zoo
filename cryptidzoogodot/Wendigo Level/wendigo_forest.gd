@@ -1,7 +1,6 @@
 extends Node3D
 
 @export var dialogue_resource: DialogueResource
-@export var findWendigo = false
 
 @onready var animPlayer : AnimationPlayer = $LevelAnimations
 @onready var minimap = $Ui/Minimap
@@ -13,9 +12,10 @@ func _ready() -> void:
 	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
 	if dialogue_resource:
-	#	await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
 		minimap.arrow.visible = true
 	Global.frozen = false
+	
 
 
 func _process(delta: float) -> void:
@@ -29,9 +29,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("quit"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		togglePause()
-	
-	
-
 
 
 func _on_forest_bound_1_body_entered(body: Node3D) -> void:
@@ -54,7 +51,6 @@ func _on_trap_2_activated() -> void:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap4Complete").finished
 		minimap.objective = $BugFixWendy
 		Global.wendyFound = false
-		findWendigo = true
 		minimap.arrow.visible = true
 		Global.trapCounter += 1
 
