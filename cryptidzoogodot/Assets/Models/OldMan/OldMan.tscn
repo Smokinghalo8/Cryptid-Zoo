@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmgbycsqo40xi"]
+
+[ext_resource type="PackedScene" uid="uid://dgdwrv7bxmeqo" path="res://Assets/Models/OldMan/OldManAnims.glb" id="1_7m15t"]
+
+[node name="OldManAnims" instance=ExtResource("1_7m15t")]
