@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=23 format=3 uid="uid://wx81ig6aeqdo"]
 
+[ext_resource type="Script" uid="uid://biryocr8gbvqs" path="res://Nessie Level/ness_level.gd" id="1_gdr6b"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
 [ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
 [ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cjrae5bm6bgew" path="res://Nessie Level/NessWaterBob.gd" id="8_31gws"]
 [ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="10_7lbco"]
 [ext_resource type="PackedScene" uid="uid://do07tts56us2r" path="res://Nessie Level/dock.tscn" id="11_2g60a"]
+[ext_resource type="PackedScene" uid="uid://b3sr72b3emcbo" path="res://Nessie Level/boat.tscn" id="12_g5q0w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -84,10 +86,66 @@ shader_parameter/caustic_distortion_strength = 0.001
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g60a"]
 albedo_texture = ExtResource("10_7lbco")
 
+[sub_resource type="Animation" id="Animation_g5q0w"]
+resource_name = "boat_start"
+length = 9.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boat")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.024999857, 1, -11.942199, -1.2588595, 48.30097, 1.6916665, 1, -11.942199, -1.2588595, 40.74921, 3.4583333, 1, -5.2503653, -1.2588595, 32.440647, 5.1, 1, 1.5191507, -1.2588595, 20.026192, 7.008333, 1, 1.5191507, -1.2588595, 5.5681915, 7.8199997, 1, 1.5191507, -1.2588595, 5.5681915, 8.566667, 1, 1.5191507, -17.509787, 5.5681915)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boat")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.6333333, 1, 0, 0, 0, 1, 2.6666667, 1, 0, -0.22547819, 0, 0.97424823, 5.133333, 1, 0, -0.0830517, 0, 0.99654526, 7.0416665, 1, 0, 0.07476117, 0, 0.9972015, 7.853333, 1, 0, 0.07476117, 0, 0.9972015)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ness/NessMod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0, 1.3666667, 1, -9.711833, -4.5721254, 0, 2.6666667, 1, -9.711833, -5.9183893, -10.154919, 4.366667, 1, -13.98024, -5.9183893, -25.154919, 6.3333335, 1, -3.7889051, -5.9183893, -10.154919, 7.4333334, 1, 0.892756, -3.490158, 4.4135523, 7.5, 1, -2.4861062, -6.544822, 4.0135374, 8.933333, 1, 0.892756, -7.227644, -39.945625)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ness/NessMod")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.03333333, 1, 0, -0.71778, 0, 0.6962699, 1.3666667, 1, 0, -0.7316155, 0, 0.6817175, 2.7, 1, 0, 0.97059053, 0, -0.24073634, 4.4666667, 1, 0, 0.936107, 0, -0.3517152, 6.3, 1, 0, 0.6012574, 0, 0.7990554, 7.4333334, 1, 0, 0.6012573, 0, 0.7990554, 7.6666665, 1, 0.19071205, 0.57020974, -0.25345144, 0.7577942, 8.733334, 1, 0, 0.98926336, 0, 0.14614347)
+
+[sub_resource type="Animation" id="Animation_gdr6b"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boat")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -11.942199, -1.2588595, 48.30097)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/NessMod")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdr6b"]
+_data = {
+&"RESET": SubResource("Animation_gdr6b"),
+&"boat_start": SubResource("Animation_g5q0w")
+}
+
 [node name="NessLevel" type="Node3D"]
+script = ExtResource("1_gdr6b")
 
 [node name="Z" parent="." instance=ExtResource("1_jpks3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.891144, 1.838659, 52.18472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.942199, 0.26813674, 49.083027)
 collision_layer = 9
 collision_mask = 9
 
@@ -169,5 +227,40 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 
 [node name="Ness" type="Node" parent="."]
 
-[node name="Sketchfab_Scene" parent="Ness" instance=ExtResource("2_lrauw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.971592, -7.7601595, 10.737814)
+[node name="NessMod" parent="Ness" instance=ExtResource("2_lrauw")]
+transform = Transform3D(-0.030416362, 0, -0.99953693, 0, 1, 0, 0.999537, 0, -0.03041636, 0, -3.309063, 0)
+
+[node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -11.942199, -1.2588595, 48.30097)
+
+[node name="Rafts" type="Node" parent="."]
+
+[node name="Dock8" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, 21.242447, -2.0411444, 2.2816467)
+visible = false
+
+[node name="Dock9" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, -10.187126, -2.0411444, -16.599804)
+visible = false
+
+[node name="Dock7" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, 15.295456, -2.0411444, -19.715134)
+visible = false
+
+[node name="Dock6" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(1.9675833, 0, -2.7725217, 0, 1, 0, 3.2538629, 0, 1.6765208, -27.73791, -2.0411444, 24.663235)
+visible = false
+
+[node name="Dock5" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(2.4254918, 0, 2.4952729, 0, 1, 0, -2.9284804, 0, 2.0666914, 23.127182, -2.0411444, 31.244766)
+visible = false
+
+[node name="Dock3" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(2.4900532, 0, -2.448669, 0, 1, 0, 2.8737855, 0, 2.1217022, 9.892036, -2.0411444, 24.418682)
+visible = false
+
+[node name="BoatAnm" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gdr6b")
+}
+autoplay = "boat_start"

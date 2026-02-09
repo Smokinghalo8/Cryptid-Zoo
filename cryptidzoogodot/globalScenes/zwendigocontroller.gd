@@ -2,7 +2,7 @@ extends CharacterBody3D
 @onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
-const JUMP_VELOCITY = 6.5
+const JUMP_VELOCITY = 6.7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
 @export var walk = false

@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://b3sr72b3emcbo"]
+[gd_scene load_steps=7 format=4 uid="uid://b3sr72b3emcbo"]
+
+[ext_resource type="Texture2D" uid="uid://dce04f3iyrdvc" path="res://Nessie Level/wooden_boat_Base_color.png" id="1_e0l4u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chv84"]
 
@@ -16,7 +18,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5bng7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e0l4u"]
 resource_name = "wooden_boat_01"
 _surfaces = [{
 "aabb": AABB(-0.8407643, -0.0023045347, -3.43078, 1.6803604, 1.2176031, 6.829429),
@@ -34,15 +36,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2hdrq")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_e0l4u"]
-size = Vector3(1, 0.2783203, 5.854248)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puvem"]
+albedo_texture = ExtResource("1_e0l4u")
 
-[node name="Node3D" type="Area3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_75vnr"]
+size = Vector3(1.6765137, 0.115356445, 7)
+
+[node name="Boat" type="StaticBody3D"]
 
 [node name="wooden_boat_01" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_5bng7")
+mesh = SubResource("ArrayMesh_e0l4u")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_puvem")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5447358, -0.07116699)
-shape = SubResource("BoxShape3D_e0l4u")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049682617, 0.154612, -0.043841362)
+shape = SubResource("BoxShape3D_75vnr")
