@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://j8kfml0xyfpd"]
+
+[ext_resource type="Texture2D" uid="uid://dibt58c1nlwq" path="res://NormalMain.png" id="1_fh7ul"]
+[ext_resource type="Texture2D" uid="uid://bjvtg1hince4n" path="res://PressedMain.png" id="2_7q5on"]
+[ext_resource type="Texture2D" uid="uid://1kwj03bcgiw6" path="res://HoveredMain.png" id="3_udhhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jpwv"]
+atlas = ExtResource("1_fh7ul")
+region = Rect2(173.42548, 382.42548, 818.85114, 225.0769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ky8"]
+atlas = ExtResource("2_7q5on")
+region = Rect2(136.98444, 406.00494, 838.1435, 229.36407)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yjb0"]
+atlas = ExtResource("3_udhhc")
+region = Rect2(164.85114, 388.85626, 827.4255, 229.36407)
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.26, 0.26)
+texture_normal = SubResource("AtlasTexture_8jpwv")
+texture_pressed = SubResource("AtlasTexture_w6ky8")
+texture_hover = SubResource("AtlasTexture_8yjb0")

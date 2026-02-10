@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3e4m55x4afd4"]
+
+[ext_resource type="Texture2D" uid="uid://cjdpolm6ife5p" path="res://HoveredBack.png" id="1_sxk0b"]
+[ext_resource type="Script" uid="uid://daiu22g14hu66" path="res://Back_Button.gd" id="2_xa1eb"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="3_r7wbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc1fm"]
+atlas = ExtResource("1_sxk0b")
+region = Rect2(289.4613, 394.64606, 546.61523, 225.0769)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa1eb"]
+atlas = ExtResource("1_sxk0b")
+region = Rect2(282.74854, 390.99982, 548.7589, 227.22052)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7wbx"]
+atlas = ExtResource("1_sxk0b")
+region = Rect2(291.32288, 403.8614, 527.323, 216.5025)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 546.0
+offset_bottom = 225.0
+scale = Vector2(0.415, 0.415)
+texture_normal = SubResource("AtlasTexture_oc1fm")
+texture_pressed = SubResource("AtlasTexture_xa1eb")
+texture_hover = SubResource("AtlasTexture_r7wbx")
+script = ExtResource("2_xa1eb")
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="TextureButton"]
+stream = ExtResource("3_r7wbx")
+volume_db = -15.0
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

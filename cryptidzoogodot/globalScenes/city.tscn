@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=57 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -17,8 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="13_jceop"]
 [ext_resource type="Script" uid="uid://bcjreykocascj" path="res://Mothman Level/note_3.gd" id="13_uc6et"]
 [ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Mothman Level/Note4.tscn" id="14_0b0g1"]
+[ext_resource type="PackedScene" uid="uid://j8kfml0xyfpd" path="res://Main_Button.tscn" id="14_arc4g"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
 [ext_resource type="Script" uid="uid://b8vqgotq3llua" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
+[ext_resource type="PackedScene" uid="uid://dlwu484e63gpy" path="res://Resume_Button.tscn" id="15_ket5o"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
@@ -1090,32 +1092,25 @@ offset_bottom = 951.0
 theme_override_font_sizes/font_size = 42
 text = "Master Sound"
 
-[node name="backButton" type="Button" parent="Ui/Pause Menu"]
-process_mode = 3
+[node name="mainMenuButton" parent="Ui/Pause Menu" instance=ExtResource("14_arc4g")]
 layout_mode = 0
-offset_left = 47.0
-offset_top = 992.0
-offset_right = 204.0
-offset_bottom = 1047.0
-theme_override_font_sizes/font_size = 34
-text = "Resume"
+offset_left = 261.0
+offset_top = 991.0
+offset_right = 1079.0
+offset_bottom = 1216.0
 
-[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
-process_mode = 3
+[node name="resumeButton" parent="Ui/Pause Menu" instance=ExtResource("15_ket5o")]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 992.0
-offset_right = 452.0
-offset_bottom = 1047.0
-theme_override_font_sizes/font_size = 34
-text = "Main Menu"
+offset_left = 54.0
+offset_top = 989.0
+offset_right = 765.0
+offset_bottom = 1211.0
 
 [node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
 stream = ExtResource("21_k8whp")
 volume_db = -15.0
 
 [node name="intText" type="Label" parent="Ui"]
-visible = false
 offset_left = 792.0
 offset_top = 722.0
 offset_right = 1145.0
@@ -1285,6 +1280,7 @@ transform = Transform3D(0.845812, 0, -0.533482, 0, 1, 0, 0.533482, 0, 0.845812, 
 transform = Transform3D(27, 0, 0, 0, 27, 0, 0, 0, 27, 0.364, 1.334, 68.089)
 
 [node name="VHS Flavor2" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_arc4g")
 offset_right = 1926.0
 offset_bottom = 1087.0
@@ -1292,8 +1288,8 @@ offset_bottom = 1087.0
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
-[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
-[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/resumeButton" to="Ui/Pause Menu" method="_on_resume_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
