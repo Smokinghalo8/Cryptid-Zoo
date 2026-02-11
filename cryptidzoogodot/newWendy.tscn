@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bcymwpfab06xc"]
+[gd_scene load_steps=18 format=3 uid="uid://diyhjppamkeqi"]
 
 [ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_2uqoh"]
 [ext_resource type="Script" uid="uid://d2klt8xfi3ohq" path="res://new_wendy.gd" id="1_hmsqo"]

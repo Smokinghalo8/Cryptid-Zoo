@@ -39,6 +39,13 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	
+	var bodies = soundDetector.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("Character"):
+			if Global.wendyFound == false:
+				Global.wendyFound = true
+				minimap.objective = $"../Trap5"
+	
 	if player.SPEED >= 9.8:
 		noiseMade = true
 	
@@ -125,7 +132,6 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
-				Global.trapCounter += 1
 				$CutSceneCam.current = true
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
