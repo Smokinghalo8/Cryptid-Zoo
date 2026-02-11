@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=25 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://biryocr8gbvqs" path="res://Nessie Level/ness_level.gd" id="1_gdr6b"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="10_7lbco"]
 [ext_resource type="PackedScene" uid="uid://do07tts56us2r" path="res://Nessie Level/dock.tscn" id="11_2g60a"]
 [ext_resource type="PackedScene" uid="uid://b3sr72b3emcbo" path="res://Nessie Level/boat.tscn" id="12_g5q0w"]
+[ext_resource type="Texture2D" uid="uid://btmyus38wmq5a" path="res://Nessie Level/mountains probably.png" id="14_8mi7u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -86,6 +87,23 @@ shader_parameter/caustic_distortion_strength = 0.001
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g60a"]
 albedo_texture = ExtResource("10_7lbco")
 
+[sub_resource type="Animation" id="Animation_gdr6b"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boat")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -11.942199, -1.2588595, 48.30097)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/NessMod")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0)
+
 [sub_resource type="Animation" id="Animation_g5q0w"]
 resource_name = "boat_start"
 length = 9.0
@@ -118,28 +136,16 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0.03333333, 1, 0, -0.71778, 0, 0.6962699, 1.3666667, 1, 0, -0.7316155, 0, 0.6817175, 2.7, 1, 0, 0.97059053, 0, -0.24073634, 4.4666667, 1, 0, 0.936107, 0, -0.3517152, 6.3, 1, 0, 0.6012574, 0, 0.7990554, 7.4333334, 1, 0, 0.6012573, 0, 0.7990554, 7.6666665, 1, 0.19071205, 0.57020974, -0.25345144, 0.7577942, 8.733334, 1, 0, 0.98926336, 0, 0.14614347)
 
-[sub_resource type="Animation" id="Animation_gdr6b"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Boat")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -11.942199, -1.2588595, 48.30097)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Ness/NessMod")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdr6b"]
 _data = {
 &"RESET": SubResource("Animation_gdr6b"),
 &"boat_start": SubResource("Animation_g5q0w")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40yyd"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("14_8mi7u")
 
 [node name="NessLevel" type="Node3D"]
 script = ExtResource("1_gdr6b")
@@ -179,8 +185,8 @@ shader_params/u_colormap_opacity_per_texture = null
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
 [node name="Water" type="CSGBox3D" parent="Level"]
-transform = Transform3D(0.9968701, 0, 0, 0, 0.9968701, 0, 0, 0, 0.9968701, 12.870398, -100.91048, 0.0022506714)
-size = Vector3(200, 200, 200)
+transform = Transform3D(0.9956284, 0, -0.04973952, 0, 0.9968701, 0, 0.04973952, 0, 0.9956284, -2.7080078, -8.259239, 11.269577)
+size = Vector3(160.78943, 14.115723, 175.86328)
 material = SubResource("ShaderMaterial_lrauw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level"]
@@ -198,6 +204,7 @@ script = ExtResource("8_31gws")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Level"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 78.34491, 49.814835, -1.6628342)
+visible = false
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
@@ -209,12 +216,14 @@ material = SubResource("StandardMaterial3D_2g60a")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.814835, 79.58677)
+visible = false
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.5, -78.63184)
+visible = false
 use_collision = true
 size = Vector3(173.35963, 129, 32.388)
 material = SubResource("StandardMaterial3D_2g60a")
@@ -228,10 +237,10 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 [node name="Ness" type="Node" parent="."]
 
 [node name="NessMod" parent="Ness" instance=ExtResource("2_lrauw")]
-transform = Transform3D(-0.030416362, 0, -0.99953693, 0, 1, 0, 0.999537, 0, -0.03041636, 0, -3.309063, 0)
+transform = Transform3D(0.2769789, 0, 0.96087563, 0, 1, 0, -0.9608757, 0, 0.2769789, 0, -3.309063, 0)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -11.942199, -1.2588595, 48.30097)
+transform = Transform3D(0.9985141, 0, 0.054492567, 0, 1, 0, -0.054492567, 0, 0.9985141, -11.942199, -1.2588595, 48.30097)
 
 [node name="Rafts" type="Node" parent="."]
 
@@ -264,3 +273,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_gdr6b")
 }
 autoplay = "boat_start"
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.99997973, 0.006370414, 0, -0.006370414, -0.99997973, 0, 0, 0, 1, 0, 39.91762, 0)
+radius = 115.17
+height = 98.32
+material = SubResource("StandardMaterial3D_40yyd")
