@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=17 format=3 uid="uid://b2dgpgewr8b4v"]
+[gd_resource type="Resource" load_steps=17 format=3 uid="uid://wbtrcyga4efe"]
 
 [ext_resource type="Script" uid="uid://c6btkf1v8d8pn" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_LOD_variant.gd" id="1_a6b07"]
 [ext_resource type="Script" uid="uid://cjsirac1827tg" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse.gd" id="1_u7qgm"]

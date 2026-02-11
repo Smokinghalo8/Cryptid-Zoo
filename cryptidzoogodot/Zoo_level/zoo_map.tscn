@@ -1,4 +1,4 @@
-[gd_scene load_steps=269 format=3 uid="uid://oxnads8fodq5"]
+[gd_scene load_steps=286 format=3 uid="uid://c4d05rw44mu86"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ln3a3"]
 [ext_resource type="Resource" path="res://Zoo_level/terrainForZoo/data.hterrain" id="2_ruine"]
@@ -28,6 +28,9 @@
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="24_11x55"]
 [ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="25_tlnf5"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_jkyki"]
+[ext_resource type="PackedScene" uid="uid://1udmib64c74m" path="res://Zoo_level/mothman_enclosure.tscn" id="29_d11sa"]
+[ext_resource type="Material" uid="uid://c4dbp2ibs0d2e" path="res://Zoo_level/EnclosureTextures/oak_veneer_01.tres" id="30_6chjn"]
+[ext_resource type="Material" uid="uid://cck41xc4f3v03" path="res://Zoo_level/Assets/zoo_fences.tres" id="31_r1jwb"]
 
 [sub_resource type="Resource" id="Resource_53lb3"]
 script = ExtResource("3_4e4wp")
@@ -3918,6 +3921,46 @@ script = ExtResource("11_chy36")
 octree_managers = [SubResource("Resource_84a6y"), SubResource("Resource_ybemu"), SubResource("Resource_qirjw")]
 metadata/class = "Arborist"
 
+[sub_resource type="BoxMesh" id="BoxMesh_6chjn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r1jwb"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w3hhf"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pnutm"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t6vbc"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gks62"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_chy36"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s0k0w"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w3hhf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_juwcu"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eli4a"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gprb7"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yyx32"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ckfc"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
 [node name="zoo_map" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -4106,6 +4149,142 @@ offset_bottom = 302.0
 target = NodePath("../../Z")
 camera_distance = 40
 objective_path = NodePath("../../Zed_Fort")
+
+[node name="MothmanEcnlosureOverview" type="Node3D" parent="."]
+
+[node name="MothmanEnclosure" parent="MothmanEcnlosureOverview" instance=ExtResource("29_d11sa")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 73.148254, 0.055880178, 65.54294)
+
+[node name="Beams" type="Node3D" parent="MothmanEcnlosureOverview"]
+
+[node name="StandingBeam4" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 77.10789, 7.8704095, 52.51061)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r1jwb")
+
+[node name="StandingBeam5" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 76.895966, 7.782618, 76.94851)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w3hhf")
+
+[node name="StandingBeam3" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 55.917267, 7.8704095, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pnutm")
+
+[node name="StandingBeam6" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t6vbc")
+
+[node name="StandingBeam9" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 52.54345)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gks62")
+
+[node name="StandingBeam7" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 77.013245, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chy36")
+
+[node name="StandingBeam8" type="MeshInstance3D" parent="MothmanEcnlosureOverview/Beams"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 55.958725, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/Beams/StandingBeam8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s0k0w")
+
+[node name="ChainLinks" type="Node3D" parent="MothmanEcnlosureOverview"]
+
+[node name="ChainLinks" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 55.974277, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_juwcu")
+
+[node name="ChainLinks4" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 77.25039, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eli4a")
+
+[node name="ChainLinks2" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.858, 7.485, 52.404)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gprb7")
+
+[node name="ChainLinks3" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.34902, 7.485, 76.92273)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yyx32")
+
+[node name="ChainLinks5" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
+transform = Transform3D(5.338941e-07, 3.8213692e-15, -10.354923, 1.0677882e-06, -0.9999996, 0, -12.214072, -8.742274e-08, -4.526281e-07, 66.476776, 15.995495, 64.76002)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

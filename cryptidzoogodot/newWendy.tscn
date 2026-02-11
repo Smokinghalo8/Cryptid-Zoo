@@ -1,0 +1,131 @@
+[gd_scene load_steps=18 format=3 uid="uid://diyhjppamkeqi"]
+
+[ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_2uqoh"]
+[ext_resource type="Script" path="res://new_wendy.gd" id="1_hmsqo"]
+[ext_resource type="AudioStream" uid="uid://d4fbtn7mnohiw" path="res://Wendigo Level/assets/sfx/Wendigo sounds.mp3" id="2_hmsqo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jo68c"]
+radius = 1.1210938
+height = 4.229492
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7r26"]
+size = Vector3(2.343811, 4.715515, 2.5267334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3hej"]
+size = Vector3(6.7929688, 1.90979, 19.856155)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mt1e5"]
+radius = 23.057617
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khtfr"]
+size = Vector3(1.4180908, 3.5830688, 1.6816406)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hmsqo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo68c"]
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+refraction_enabled = true
+refraction_scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmsqo"]
+albedo_color = Color(11.152633, 0, 0, 0.3137255)
+
+[sub_resource type="Gradient" id="Gradient_jo68c"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hmsqo"]
+gradient = SubResource("Gradient_jo68c")
+
+[sub_resource type="Gradient" id="Gradient_r3hej"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jo68c"]
+gradient = SubResource("Gradient_r3hej")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khtfr"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, -1)
+radial_accel_min = -2.0000021
+radial_accel_max = 1.9999977
+color_ramp = SubResource("GradientTexture1D_jo68c")
+color_initial_ramp = SubResource("GradientTexture1D_hmsqo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_tf45f"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="BugFixWendy" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_hmsqo")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2uqoh")]
+transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, 0.09778255, 0)
+
+[node name="MainCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.044404, 0)
+shape = SubResource("CapsuleShape3D_jo68c")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.5
+debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="TrapDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrapDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1055603, 2.1289368, -0.10430908)
+shape = SubResource("BoxShape3D_r7r26")
+debug_color = Color(0.5563126, 0.3985711, 1, 0.41960785)
+
+[node name="InFrontDetect" type="Area3D" parent="."]
+
+[node name="InFrontCol" type="CollisionShape3D" parent="InFrontDetect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20507813, 1.4984531, -9.890461)
+shape = SubResource("BoxShape3D_r3hej")
+debug_color = Color(1, 0.012358605, 0.049005166, 0.41960785)
+
+[node name="SoundDetect" type="Area3D" parent="."]
+
+[node name="SoundDetectCol" type="CollisionShape3D" parent="SoundDetect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4703841, 0)
+shape = SubResource("CylinderShape3D_mt1e5")
+debug_color = Color(0.99999994, 0.013541611, 0.041450262, 0.41960785)
+
+[node name="JumpScaries" type="Area3D" parent="."]
+gravity_space_override = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpScaries"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055114746, 2.0169072, -1.2651763)
+shape = SubResource("BoxShape3D_khtfr")
+debug_color = Color(0.5645416, 0.5586186, 0, 0.41960785)
+
+[node name="WendyNoises" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_hmsqo")
+autoplay = true
+max_distance = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.64, 0, 0, 0, 1.4587774, 0, 0, 0, 0.64, 0, 2.4600036, 0.09390521)
+mesh = SubResource("SphereMesh_hmsqo")
+surface_material_override/0 = SubResource("StandardMaterial3D_jo68c")
+
+[node name="SpookyParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1084423, 0)
+material_override = SubResource("StandardMaterial3D_hmsqo")
+amount = 16
+lifetime = 2.0
+randomness = 0.36
+process_material = SubResource("ParticleProcessMaterial_khtfr")
+draw_pass_1 = SubResource("BoxMesh_tf45f")
+
+[connection signal="body_entered" from="InFrontDetect" to="." method="_on_in_front_detect_body_entered"]
+[connection signal="body_exited" from="InFrontDetect" to="." method="_on_in_front_detect_body_exited"]
+[connection signal="body_entered" from="SoundDetect" to="." method="_on_sound_detect_body_entered"]
+[connection signal="body_exited" from="SoundDetect" to="." method="_on_sound_detect_body_exited"]
+[connection signal="body_entered" from="JumpScaries" to="." method="_on_jump_scaries_body_entered"]
