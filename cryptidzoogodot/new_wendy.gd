@@ -24,6 +24,7 @@ extends CharacterBody3D
 @onready var randomPos = Vector3(randf_range(-210, 223), position.y, randf_range(-245, 235))
 @onready var soundDetector = $SoundDetect
 @onready var noiseMade: bool
+@onready var chaseSpeedAdd : float = 0.4
 var isInSoundDetector : bool
 var lastPos
 var hasSeen: bool
@@ -125,10 +126,11 @@ func _on_sound_detect_body_exited(body: Node3D) -> void:
 		overlappingNoise.pop_front()
 
 ### ACT TRAP 4
-func _on_trap_2_body_entered(body: Node3D) -> void:
-	if $"../Trap2".is_in_group("Traps"):
+func _on_actual_trap_2_body_entered(body: Node3D) -> void:
+	if $"../ActualTrap2".is_in_group("Traps"):
 		if body.is_in_group("Enemies"):
 			if Global.trapCounter == 8:
+				print("Final trap triggered")
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
@@ -138,6 +140,7 @@ func _on_trap_2_body_entered(body: Node3D) -> void:
 				await levelPlayer.animation_finished
 				Global.plushCounter = 0
 				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
+
 			
 ### Act trap 3
 func _on_trap_3_body_entered(body: Node3D) -> void:
@@ -151,7 +154,7 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Escaped").finished
 				activated3 = false
 				Global.trapCounter += 1
-				chaseSpeed += 0.3
+				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap2"
 				minimap.arrow.visible = true
 				$"../Trap3".queue_free()
@@ -168,7 +171,7 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Escaped").finished
 				activated4 = false
 				Global.trapCounter += 1
-				chaseSpeed += 0.3
+				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap3"
 				minimap.arrow.visible = true
 				$"../Trap4".queue_free()
@@ -185,7 +188,7 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 				await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap1Escaped").finished
 				activated5 = false
 				Global.trapCounter += 1
-				chaseSpeed += 0.3
+				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap4"
 				minimap.arrow.visible = true
 				$"../Trap5".queue_free()
@@ -199,7 +202,7 @@ func _on_trap_3_activated() -> void:
 	activated3 = true
 
 
-func _on_trap_2_activated() -> void:
+func _on_actual_trap_2_activated() -> void:
 	activated2 = true
 
 

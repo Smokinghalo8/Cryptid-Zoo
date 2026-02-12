@@ -43,7 +43,7 @@ func _on_forest_bound_2_body_entered(body: Node3D) -> void:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "EnterDarkForest").finished
 
 #Actual trap 4
-func _on_trap_2_activated() -> void:
+func _on_actual_trap_2_activated() -> void:
 	#Trap 4 complete
 	if Global.trapCounter == 4:
 		minimap.arrow.visible = false
