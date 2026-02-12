@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 				intText.visible = true
 				if Input.is_action_just_pressed("interact"):
 					target.interact()
-			else:
+		else:
 				intText.visible = false
 	else:
 		intText.visible = false

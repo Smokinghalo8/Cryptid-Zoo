@@ -23,3 +23,5 @@ scale = Vector2(0.26, 0.26)
 texture_normal = SubResource("AtlasTexture_8jpwv")
 texture_pressed = SubResource("AtlasTexture_w6ky8")
 texture_hover = SubResource("AtlasTexture_8yjb0")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

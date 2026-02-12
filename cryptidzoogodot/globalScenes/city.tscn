@@ -1046,11 +1046,11 @@ texture_under = ExtResource("12_4krsh")
 texture_progress = ExtResource("13_jceop")
 
 [node name="Pause Menu" type="Control" parent="Ui"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("14_wvpsq")
 
 [node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
@@ -1094,10 +1094,11 @@ text = "Master Sound"
 
 [node name="mainMenuButton" parent="Ui/Pause Menu" instance=ExtResource("14_arc4g")]
 layout_mode = 0
-offset_left = 261.0
-offset_top = 991.0
-offset_right = 1079.0
-offset_bottom = 1216.0
+offset_left = 302.0
+offset_top = 537.0
+offset_right = 1120.0
+offset_bottom = 762.0
+button_mask = 3
 
 [node name="resumeButton" parent="Ui/Pause Menu" instance=ExtResource("15_ket5o")]
 layout_mode = 0
@@ -1105,6 +1106,7 @@ offset_left = 54.0
 offset_top = 989.0
 offset_right = 765.0
 offset_bottom = 1211.0
+button_mask = 3
 
 [node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
 stream = ExtResource("21_k8whp")
@@ -1288,6 +1290,7 @@ offset_bottom = 1087.0
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="button_down" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_button_down"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/resumeButton" to="Ui/Pause Menu" method="_on_resume_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]

@@ -19,8 +19,8 @@ func _ready() -> void:
 	$Ui/PlushControl.visible = false
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
-	if dialogue_resource:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
+	#if dialogue_resource:
+	#	await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
 	scaryNoiseFirstTime = true
 	cutScene = true
 	
