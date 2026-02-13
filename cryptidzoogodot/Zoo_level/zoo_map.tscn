@@ -1,7 +1,7 @@
-[gd_scene load_steps=286 format=3 uid="uid://c4d05rw44mu86"]
+[gd_scene load_steps=295 format=3 uid="uid://c4d05rw44mu86"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ln3a3"]
-[ext_resource type="Resource" path="res://Zoo_level/terrainForZoo/data.hterrain" id="2_ruine"]
+[ext_resource type="Resource" uid="uid://d0ls5pv1ieo1b" path="res://Zoo_level/terrainForZoo/data.hterrain" id="2_ruine"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_4e4wp"]
 [ext_resource type="Texture2D" uid="uid://ft30fhuimv4c" path="res://zooTerrainMap/Grass004_4K-PNG_Color.png" id="4_d11sa"]
 [ext_resource type="Texture2D" uid="uid://dxtjsbfcluv3s" path="res://Assets/Materials/GroundDirtWeedsPatchy004/GroundDirtWeedsPatchy004_COL_2K.jpg" id="5_6chjn"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="11_chy36"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="12_s0k0w"]
 [ext_resource type="PackedScene" uid="uid://begfsx85rdr33" path="res://ship.tscn" id="13_juwcu"]
-[ext_resource type="PackedScene" path="res://Zoo_level/Assets/zed_fort.tscn" id="14_eli4a"]
+[ext_resource type="PackedScene" uid="uid://by0fdo8yquimf" path="res://Zoo_level/Assets/zed_fort.tscn" id="14_eli4a"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="15_gprb7"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="16_yyx32"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="17_2ckfc"]
@@ -31,6 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://1udmib64c74m" path="res://Zoo_level/mothman_enclosure.tscn" id="29_d11sa"]
 [ext_resource type="Material" uid="uid://c4dbp2ibs0d2e" path="res://Zoo_level/EnclosureTextures/oak_veneer_01.tres" id="30_6chjn"]
 [ext_resource type="Material" uid="uid://cck41xc4f3v03" path="res://Zoo_level/Assets/zoo_fences.tres" id="31_r1jwb"]
+[ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="32_pnutm"]
+[ext_resource type="PackedScene" uid="uid://btvjihfcsxv3v" path="res://Wendigo Level/assets/torch.tscn" id="33_t6vbc"]
+[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="34_t6vbc"]
+[ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="35_gks62"]
 
 [sub_resource type="Resource" id="Resource_53lb3"]
 script = ExtResource("3_4e4wp")
@@ -3961,6 +3965,37 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ckfc"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gks62"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
+noise = SubResource("FastNoiseLite_gks62")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_chy36"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ly1ea"]
+noise = SubResource("FastNoiseLite_chy36")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0k0w"]
+render_priority = 0
+shader = ExtResource("34_t6vbc")
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 0.5
+shader_parameter/spin = 0.02
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_ly1ea")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6jnv6")
+shader_parameter/wave_height = 0.5
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.075589366, 0.6360646, 0.85156786, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
+shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
+
 [node name="zoo_map" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -4285,6 +4320,198 @@ mesh = SubResource("PlaneMesh_w3hhf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MothmanEcnlosureOverview/ChainLinks/ChainLinks5/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2ckfc")
+
+[node name="WendyEnclosureOverview" type="Node3D" parent="."]
+
+[node name="Beams2" type="Node3D" parent="WendyEnclosureOverview"]
+transform = Transform3D(-3.278354e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.278354e-08, -19.09461, 0, 18.572609)
+
+[node name="StandingBeam4" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 77.10789, 7.8704095, 52.51061)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r1jwb")
+
+[node name="StandingBeam5" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 76.895966, 7.782618, 76.94851)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w3hhf")
+
+[node name="StandingBeam3" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 55.917267, 7.8704095, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pnutm")
+
+[node name="StandingBeam6" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t6vbc")
+
+[node name="StandingBeam9" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 52.54345)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gks62")
+
+[node name="StandingBeam7" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 77.013245, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chy36")
+
+[node name="StandingBeam8" type="MeshInstance3D" parent="WendyEnclosureOverview/Beams2"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 55.958725, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/Beams2/StandingBeam8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/Beams2/StandingBeam8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s0k0w")
+
+[node name="ChainLinks2" type="Node3D" parent="WendyEnclosureOverview"]
+transform = Transform3D(-3.278354e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.278354e-08, -19.09461, 0, 18.572609)
+
+[node name="ChainLinks" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 55.974277, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_juwcu")
+
+[node name="ChainLinks4" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 77.25039, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eli4a")
+
+[node name="ChainLinks2" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.858, 7.485, 52.404)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gprb7")
+
+[node name="ChainLinks3" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.34902, 7.485, 76.92273)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yyx32")
+
+[node name="ChainLinks5" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
+transform = Transform3D(5.338941e-07, 3.8213692e-15, -10.354923, 1.0677882e-06, -0.9999996, 0, -12.214072, -8.742274e-08, -4.526281e-07, 66.476776, 15.995495, 64.76002)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosureOverview/ChainLinks2/ChainLinks5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ckfc")
+
+[node name="Trees" type="Node3D" parent="WendyEnclosureOverview"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7141895, 0)
+
+[node name="Tree" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, -72.41325, 1.3132799, 71.63408)
+
+[node name="Tree2" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, -69.77039, 1.3132799, 73.13357)
+
+[node name="Tree3" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, -73.80001, 1.3132799, 69.275154)
+
+[node name="Tree4" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, -66.30183, 1.3132799, 73.702614)
+
+[node name="Tree5" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.585, 0, 0, 0, 0.585, 0, 0, 0, 0.585, -69.530365, 1.3132799, 68.83037)
+
+[node name="Tree6" parent="WendyEnclosureOverview/Trees" instance=ExtResource("32_pnutm")]
+transform = Transform3D(0.58, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -72.70338, 1.3132799, 66.01847)
+
+[node name="Landmarks" type="Node3D" parent="WendyEnclosureOverview"]
+
+[node name="Torch" parent="WendyEnclosureOverview/Landmarks" instance=ExtResource("33_t6vbc")]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, -74.921524, 0.8752711, 62.97586)
+
+[node name="Torch2" parent="WendyEnclosureOverview/Landmarks" instance=ExtResource("33_t6vbc")]
+transform = Transform3D(0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, -62.884567, 0.8752711, 74.96404)
+
+[node name="Tombstone" parent="WendyEnclosureOverview/Landmarks" instance=ExtResource("35_gks62")]
+transform = Transform3D(0.17436942, 0, 0.60018355, 0, 0.625, 0, -0.60018355, 0, 0.17436942, -60.311768, 0.06671106, 70.54021)
+
+[node name="Tombstone2" parent="WendyEnclosureOverview/Landmarks" instance=ExtResource("35_gks62")]
+transform = Transform3D(-0.38689944, 0, 0.4908501, 0, 0.62499994, 0, -0.4908501, 0, -0.38689944, -59.191723, 0.06671106, 70.54021)
+
+[node name="Tombstone3" parent="WendyEnclosureOverview/Landmarks" instance=ExtResource("35_gks62")]
+transform = Transform3D(0.11683473, 0, 0.6139827, 0, 0.625, 0, -0.6139827, 0, 0.11683473, -60.030037, 0.06671106, 68.77648)
+
+[node name="Water" type="CSGCombiner3D" parent="WendyEnclosureOverview"]
+transform = Transform3D(0.038309302, 0, 0, 0, 1, 0, 0, 0, 0.029511387, -67.59303, -0.88119984, 68.4583)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WendyEnclosureOverview/Water"]
+use_collision = true
+size = Vector3(479.72803, 0.001, 543.9746)
+material = SubResource("ShaderMaterial_s0k0w")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="WendyEnclosureOverview/Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 210.46182, -0.620275, -3.515686)
+operation = 2
+size = Vector3(38.391296, 7.063965, 25.122437)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="WendyEnclosureOverview/Water"]
+transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 83.63259, 0.76462936, -166.62445)
+operation = 2
+size = Vector3(7.4367676, 0.9857178, 6.3101807)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
