@@ -4312,7 +4312,7 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_yyx32")
 
 [node name="ChainLinks5" type="MeshInstance3D" parent="MothmanEcnlosureOverview/ChainLinks"]
-transform = Transform3D(5.338941e-07, 3.8213692e-15, -10.354923, 1.0677882e-06, -0.9999996, 0, -12.214072, -8.742274e-08, -4.526281e-07, 66.476776, 15.995495, 64.76002)
+transform = Transform3D(5.338941e-07, 3.8213692e-15, -10.354923, 1.0677882e-06, -0.9999996, 0, -12.214072, -8.742274e-08, -4.526281e-07, 66.476776, 15.633678, 64.76002)
 material_override = ExtResource("31_r1jwb")
 mesh = SubResource("PlaneMesh_w3hhf")
 
@@ -4447,7 +4447,7 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_yyx32")
 
 [node name="ChainLinks5" type="MeshInstance3D" parent="WendyEnclosureOverview/ChainLinks2"]
-transform = Transform3D(5.338941e-07, 3.8213692e-15, -10.354923, 1.0677882e-06, -0.9999996, 0, -12.214072, -8.742274e-08, -4.526281e-07, 66.476776, 15.995495, 64.76002)
+transform = Transform3D(5.3389414e-07, 3.82137e-15, -10.354923, 1.0677882e-06, -0.99999964, 0, -12.214072, -8.742275e-08, -4.5262811e-07, 66.47678, 15.574316, 64.76002)
 material_override = ExtResource("31_r1jwb")
 mesh = SubResource("PlaneMesh_w3hhf")
 
