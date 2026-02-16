@@ -1046,6 +1046,8 @@ texture_under = ExtResource("12_4krsh")
 texture_progress = ExtResource("13_jceop")
 
 [node name="Pause Menu" type="Control" parent="Ui"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -1074,10 +1076,10 @@ text = "Cryptid Zoo"
 [node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
 process_mode = 3
 layout_mode = 0
-offset_left = 357.0
-offset_top = 825.0
-offset_right = 1081.0
-offset_bottom = 1015.0
+offset_left = 329.0
+offset_top = 200.0
+offset_right = 1053.0
+offset_bottom = 390.0
 min_value = -6.0
 max_value = 72.0
 step = 6.0
@@ -1085,27 +1087,27 @@ value = 72.0
 
 [node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 893.0
-offset_right = 323.0
-offset_bottom = 951.0
+offset_left = 50.0
+offset_top = 275.0
+offset_right = 332.0
+offset_bottom = 333.0
 theme_override_font_sizes/font_size = 42
 text = "Master Sound"
 
 [node name="mainMenuButton" parent="Ui/Pause Menu" instance=ExtResource("14_arc4g")]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 537.0
-offset_right = 1120.0
-offset_bottom = 762.0
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 868.0
+offset_bottom = 575.0
 button_mask = 3
 
 [node name="resumeButton" parent="Ui/Pause Menu" instance=ExtResource("15_ket5o")]
 layout_mode = 0
-offset_left = 54.0
-offset_top = 989.0
-offset_right = 765.0
-offset_bottom = 1211.0
+offset_left = 50.0
+offset_top = 425.0
+offset_right = 761.0
+offset_bottom = 647.0
 button_mask = 3
 
 [node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
@@ -1290,7 +1292,6 @@ offset_bottom = 1087.0
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
-[connection signal="button_down" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_button_down"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/resumeButton" to="Ui/Pause Menu" method="_on_resume_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
