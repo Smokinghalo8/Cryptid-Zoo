@@ -1,26 +1,66 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=35 format=3 uid="uid://cn4o0c5geiix0"]
 
+[ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
-[ext_resource type="Resource" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
+[ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
-[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="4_c327s"]
-[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="5_x0pif"]
+[ext_resource type="Texture2D" uid="uid://bvmui0g6idba4" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot0_albedo_bump.png" id="5_vxnpk"]
+[ext_resource type="Texture2D" uid="uid://sla7ogpnqa6f" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot1_albedo_bump.png" id="6_7oysy"]
+[ext_resource type="Texture2D" uid="uid://b6qnwc0pxj6h6" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot0_normal_roughness.png" id="7_bwcok"]
+[ext_resource type="Texture2D" uid="uid://cf3n3b8n56wxx" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot1_normal_roughness.png" id="8_87shl"]
+[ext_resource type="Script" uid="uid://db4e531r2on67" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="9_87shl"]
+[ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="10_6pwx4"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
+[ext_resource type="Texture2D" uid="uid://bkabbm4mj4f4m" path="res://Gnome Level/GnomeTerrainMap/Textures/grass.png" id="10_ujj1q"]
+[ext_resource type="PackedScene" uid="uid://ba2fn7cebruad" path="res://Gnome Level/GnomeCharacters/gnome_character.tscn" id="11_gbm7p"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_kkme5"]
+[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="PackedScene" uid="uid://bepdhpq4n8kxf" path="res://Gnome Level/marble.tscn" id="12_xhii3"]
+[ext_resource type="PackedScene" uid="uid://cdyttjp2v0y5m" path="res://Gnome Level/sword.tscn" id="13_8dup0"]
+[ext_resource type="PackedScene" uid="uid://cd11ay8qa8k8k" path="res://Gnome Level/chanterelle.tscn" id="14_o4cu5"]
+[ext_resource type="PackedScene" uid="uid://c32oymy1wjy81" path="res://Gnome Level/porcini.tscn" id="15_p4eam"]
+[ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
+[ext_resource type="PackedScene" uid="uid://0bfgqnc426ow" path="res://Gnome Level/russula.tscn" id="16_jlxtx"]
+[ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
+[ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
+[ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
+[ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
+[ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
+[ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("5_vxnpk"), ExtResource("6_7oysy")], [ExtResource("7_bwcok"), ExtResource("8_87shl")]]
 
-[sub_resource type="Resource" id="Resource_gbm7p"]
-resource_local_to_scene = true
-script = ExtResource("5_x0pif")
-octree_managers = []
-metadata/class = "Arborist"
+[sub_resource type="BoxMesh" id="BoxMesh_jlxtx"]
 
-[node name="GnomeTerrain" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csh1m"]
+render_priority = 0
+shader = ExtResource("17_p4eam")
+shader_parameter/strength = 0.400000019
+shader_parameter/speed = 0.333
+shader_parameter/transparency = 0.2000000095
+shader_parameter/screen_resolution = Vector2(1280, 720)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mrlcg"]
+
+[sub_resource type="Sky" id="Sky_gbm7p"]
+sky_material = SubResource("ProceduralSkyMaterial_mrlcg")
+
+[sub_resource type="Environment" id="Environment_mrlcg"]
+sky = SubResource("Sky_gbm7p")
+ambient_light_source = 3
+ambient_light_color = Color(0.9342328, 0.97891563, 0.7968004, 1)
+tonemap_mode = 3
+
+[node name="GnomeLevel" type="Node3D"]
+script = ExtResource("1_42gdw")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_qqwwe")
+ambient_wind = 0.4
 map_scale = Vector3(0.5, 0.5, 0.5)
 _terrain_data = ExtResource("2_1bsc7")
 chunk_size = 32
@@ -36,15 +76,125 @@ cast_shadow = 1
 shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
-shader_params/u_tile_reduction = null
+shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
-[node name="Gardener" type="Node3D" parent="."]
-script = ExtResource("4_c327s")
-file_management/garden_work_directory = "res://Gnome Level/GnomeGardenerMap/"
-gardening/gardening_collision_mask = 1.0
-arborist = SubResource("Resource_gbm7p")
-plugin_version = "1.4.1"
-storage_version = 4
-metadata/class = "Gardener"
-metadata/_custom_type_script = "uid://bc7pailucq83t"
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("9_87shl")
+texture = ExtResource("10_ujj1q")
+view_distance = 500.0
+density = 0.789
+shader_params/u_globalmap_tint_bottom = 0.3710000176225
+shader_params/u_globalmap_tint_top = 0.1450000068875
+shader_params/u_bottom_ao = 0.34400001634
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_kkme5")
+
+[node name="Z" parent="." instance=ExtResource("10_mrlcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.53134, 1.1320212, 47.104347)
+
+[node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
+transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
+visible = false
+mesh = SubResource("BoxMesh_jlxtx")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_csh1m")
+script = ExtResource("12_jlxtx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrlcg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0, 114, 0)
+
+[node name="rouletteGnome" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.716503, -4.2915344e-06, 237.26843)
+gnome_identifier = 3
+dialogue = ExtResource("10_6pwx4")
+
+[node name="mazeGnome" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 25.162643, 0, 33.392403)
+gnome_identifier = 4
+dialogue = ExtResource("10_6pwx4")
+
+[node name="fetchGnome" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.99899, 0, 109.17624)
+gnome_identifier = 2
+dialogue = ExtResource("10_6pwx4")
+
+[node name="gnomeKing" parent="." instance=ExtResource("11_gbm7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.95967, 0, 55.376682)
+dialogue = ExtResource("10_6pwx4")
+
+[node name="marble" parent="." instance=ExtResource("12_xhii3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.2156, -3.8146973e-06, 41.16959)
+
+[node name="sword" parent="." instance=ExtResource("13_8dup0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.32925, 0, 68.92524)
+
+[node name="mushroomCircle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.62569, 0, 93.46468)
+visible = false
+
+[node name="chanterelle2" parent="mushroomCircle" instance=ExtResource("14_o4cu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7807617, -0.011428714, 4.6057663)
+
+[node name="chanterelle" parent="mushroomCircle" instance=ExtResource("14_o4cu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.153976, -0.011428714, -2.4275894)
+
+[node name="porcini" parent="mushroomCircle" instance=ExtResource("15_p4eam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.129959, 0, -4.72068)
+
+[node name="russula" parent="mushroomCircle" instance=ExtResource("16_jlxtx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.517853, -9.536743e-07, -0.6662369)
+psychedelic = 1.0
+
+[node name="russula2" parent="mushroomCircle" instance=ExtResource("16_jlxtx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.777313, 0, 3.2789764)
+
+[node name="porcini2" parent="mushroomCircle" instance=ExtResource("15_p4eam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.966698, -0.014505863, 5.8243484)
+
+[node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
+
+[node name="door" parent="." instance=ExtResource("16_csh1m")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 249.32649, 3.7640514, 66.210815)
+
+[node name="House_Back" parent="." instance=ExtResource("17_humbe")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 248.90517, 3.8994522, 66.26556)
+
+[node name="Windows" parent="." instance=ExtResource("18_csh1m")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 248.47333, 5.0094376, 65.41658)
+
+[node name="BigTree" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 81.895706, 3.4961243, 126.16343)
+
+[node name="BigTree2" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(4.007147, 0, -3.523214, 0, 5.1072855, 0, 3.6332045, 0, 3.8858361, 54.73532, 1.9105072, 238.47241)
+
+[node name="BigTree3" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(3.3997107, 0, -4.0074525, 0, 6.7889786, 0, 3.0824535, 0, 4.4199142, 189.70372, 1.9105072, 27.362526)
+
+[node name="Fences" parent="." instance=ExtResource("20_6pwx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.78351, 0, 0)
+
+[node name="Playset" parent="." instance=ExtResource("28_ujj1q")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 72.35481, 0, 94.54317)
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[connection signal="gotMarble" from="marble" to="sword" method="_on_marble_got_marble"]
+[connection signal="lostMarble" from="marble" to="sword" method="_on_marble_lost_marble"]
+[connection signal="got_sword" from="sword" to="marble" method="_on_sword_got_sword"]
+[connection signal="lost_sword" from="sword" to="marble" method="_on_sword_lost_sword"]

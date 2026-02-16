@@ -14,3 +14,7 @@ var mothman_Zoo_Compatability = 0
 #Wendigo Things
 var trapCounter = 4
 var frozen = false
+
+
+#Gnome Things
+var thingsGathered = 0

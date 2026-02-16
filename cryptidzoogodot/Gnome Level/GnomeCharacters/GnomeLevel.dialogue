@@ -1,0 +1,50 @@
+~ landingInYard
+[color=grey]Zed[/color]: [speed=0.3] Urgh ... What happened...?
+[color=grey]Shmebulock[/color]: [speed=0.3] Halt! Wht are you doing in the Gnome King's Land? Explain yourself human!
+[color=grey]Zed[/color]: [speed=0.3] What are you talking about- Gnome King? And why am I so small?
+[color=grey]Shmebulock[/color]: [speed=0.3] Enough! You're coming with me to meet the king himself!
+=> END
+
+~ meetingGnomeKing
+[color=grey]Gnome King[/color]: [speed=0.3] And what have you brought me this time, Shmebulock? Another snack?
+[color=grey]Shmebulock[/color]: [speed=0.3] Something like that. I wouldn't be opposed to seeing you eat such insolence.
+[color=grey]Zed[/color]: [speed=0.3] Hold on! Wait! I can be a friend! Don't eat me I taste like sadness and financial troubles!
+[color=grey]Gnome King[/color]: [speed=0.3] Hmm... I could use another errand boy to do my tasks...
+[color=grey]Gnome King[/color]: [speed=0.3] Tell you what, kid, I have a few tasks I really should be doing,
+[color=grey]Gnome King[/color]: [speed=0.3] but since you showed up, perfect time to delegate them!
+[color=grey]Gnome King[/color]: [speed=0.3] I hear that the mushroom farmer Bloogargth needed my help for something, I'm unsure what...
+[color=grey]Gnome King[/color]: [speed=0.3] Come back to me after you've helped him out!
+[color=grey]Zed[/color]: [speed=0.3] Alright!
+
+
+
+~ fetchGnomeGiveQuest
+[color=grey]Bleafus[/color]: [speed=0.3, next=10] Go get my sword and my marble
+=> END
+
+~ fetchGnomeEndQuest
+=> END
+
+~ rouletteGnomeGiveQuest
+[color=grey]Bloogargth[/color]: [speed=0.3, next=10] Gahh! Why do you look like that?
+[color=grey]Zed[/color]: [speed=0.3] Rude. I'm here on behalf of the Gnome King. You asked for help with something?
+[color=grey]Bloogargth[/color]: [speed=0.3] Well.. Yes I did... But do you really think you could help?
+[color=grey]Zed[/color]: [speed=0.3] Come on, I can at least try! What do you need help with?
+[color=grey]Bloogargth[/color]: [speed=0.3] So... I might've gotten my Food mushrooms mixed up with my Fun mushrooms...
+[color=grey]Bloogargth[/color]: [speed=0.3] And I need help finding the Food ones, I'm starving...
+[color=grey]Zed[/color]: [speed=0.3] sigh... I really don't have any other choice, do I?
+=> END 
+
+~ rouletteSuccess
+[color=grey]Bloogargth[/color]: [speed=0.3] Wow! You really did it! Thank you so much! I can finally eay my fill without seeing waves everywhere!
+[color=grey]Zed[/color]: [speed=0.3] Yeah, no problem...
+=> END
+
+~ rouletteFailure
+[color=grey]Bloogargth[/color]: [speed=0.3] Yeah, see the goal is to not eat the Fun mushrooms, or did I say that already?
+
+~ mazeGnomeGiveQuest
+=> END 
+
+~ mazeGnomeEndQuest
+=> END 
