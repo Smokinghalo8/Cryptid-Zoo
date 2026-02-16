@@ -1,0 +1,164 @@
+[gd_scene load_steps=15 format=3 uid="uid://dyejmuo1oydr2"]
+
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="1_11o4s"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="2_g7001"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="3_5rbg2"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="4_3comh"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="5_76ad8"]
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="6_vfds0"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="7_y8dgx"]
+[ext_resource type="PackedScene" uid="uid://j8kfml0xyfpd" path="res://Main_Button.tscn" id="8_0eamb"]
+[ext_resource type="PackedScene" uid="uid://dlwu484e63gpy" path="res://Resume_Button.tscn" id="9_cy00r"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="10_st3qw"]
+[ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="11_g8tyr"]
+[ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="12_orikv"]
+[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="13_b3dkg"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="14_d6nqe"]
+
+[node name="Ui" type="CanvasLayer"]
+layer = 101
+
+[node name="SprintBar" type="TextureProgressBar" parent="."]
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("1_11o4s")
+texture_progress = ExtResource("2_g7001")
+
+[node name="WednigoHead" type="Sprite2D" parent="."]
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
+texture = ExtResource("3_5rbg2")
+
+[node name="SenseBar" type="TextureProgressBar" parent="WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("4_3comh")
+texture_progress = ExtResource("5_76ad8")
+
+[node name="Pause Menu" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("6_vfds0")
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("7_y8dgx")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 329.0
+offset_top = 200.0
+offset_right = 1053.0
+offset_bottom = 390.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="Pause Menu"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 275.0
+offset_right = 332.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="mainMenuButton" parent="Pause Menu" instance=ExtResource("8_0eamb")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 868.0
+offset_bottom = 575.0
+button_mask = 3
+
+[node name="resumeButton" parent="Pause Menu" instance=ExtResource("9_cy00r")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 425.0
+offset_right = 761.0
+offset_bottom = 647.0
+button_mask = 3
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Pause Menu"]
+stream = ExtResource("10_st3qw")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="."]
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlushControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MothmanPlushCounter" type="Label" parent="PlushControl"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
+theme_override_fonts/font = ExtResource("11_g8tyr")
+theme_override_font_sizes/font_size = 152
+text = "0/5"
+script = ExtResource("12_orikv")
+
+[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="PlushControl"]
+position = Vector2(1024, 165.40625)
+scale = Vector2(0.44570318, 0.45308372)
+texture = ExtResource("13_b3dkg")
+
+[node name="Minimap" parent="." instance=ExtResource("14_d6nqe")]
+offset_left = 1629.0
+offset_top = 2.0
+offset_right = 1929.0
+offset_bottom = 302.0
+target = NodePath("../../Z")
+camera_distance = 40
+objective_path = NodePath("../../FakeMothman")
+
+[connection signal="drag_ended" from="Pause Menu/VolumeSlider" to="Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="Pause Menu/mainMenuButton" to="Pause Menu" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Pause Menu/resumeButton" to="Pause Menu" method="_on_resume_button_pressed"]
