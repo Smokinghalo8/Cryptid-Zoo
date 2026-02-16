@@ -103,10 +103,29 @@ tracks/1/path = NodePath("Ness/NessMod")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:process_mode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027)
 
 [sub_resource type="Animation" id="Animation_g5q0w"]
 resource_name = "boat_start"
-length = 9.0
+length = 12.0
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -135,6 +154,25 @@ tracks/3/path = NodePath("Ness/NessMod")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0.03333333, 1, 0, -0.71778, 0, 0.6962699, 1.3666667, 1, 0, -0.7316155, 0, 0.6817175, 2.7, 1, 0, 0.97059053, 0, -0.24073634, 4.4666667, 1, 0, 0.936107, 0, -0.3517152, 6.3, 1, 0, 0.6012574, 0, 0.7990554, 7.4333334, 1, 0, 0.6012573, 0, 0.7990554, 7.6666665, 1, 0.19071205, 0.57020974, -0.25345144, 0.7577942, 8.733334, 1, 0, 0.98926336, 0, 0.14614347)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Z:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 11.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027, 1.7, 1, -11.942199, 0.26813674, 41.387268, 3.4666667, 1, -5.996979, 0.26813674, 33.891205, 5.133333, 1, 1.1240913, 0.26813674, 21.142765, 7.0333333, 1, 1.6034441, 0.26813674, 6.6835127, 7.6666665, 1, 1.6034441, 0.26813674, 6.6835127, 8.366667, 1, 4.2736206, 4.280196, 6.6835136, 10.5, 1, 6.9059544, 6.9370584, 6.6835136, 11.433333, 1, 20.982473, 0.57766104, 3.835958)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdr6b"]
 _data = {
@@ -237,16 +275,18 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 [node name="Ness" type="Node" parent="."]
 
 [node name="NessMod" parent="Ness" instance=ExtResource("2_lrauw")]
-transform = Transform3D(0.2769789, 0, 0.96087563, 0, 1, 0, -0.9608757, 0, 0.2769789, 0, -3.309063, 0)
+transform = Transform3D(-0.95728385, 0, 0.28914866, 0, 1, 0, -0.28914866, 0, -0.9572838, 0, -3.309063, 0)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
-transform = Transform3D(0.9985141, 0, 0.054492567, 0, 1, 0, -0.054492567, 0, 0.9985141, -11.942199, -1.2588595, 48.30097)
+transform = Transform3D(0.98882145, 0, 0.1491039, 0, 1, 0, -0.1491039, 0, 0.98882145, -11.942199, -1.2588595, 48.30097)
 
 [node name="Rafts" type="Node" parent="."]
 
 [node name="Dock8" parent="Rafts" instance=ExtResource("11_2g60a")]
 transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, 21.242447, -2.0411444, 2.2816467)
-visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Rafts/Dock8"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.9865937, 0)
 
 [node name="Dock9" parent="Rafts" instance=ExtResource("11_2g60a")]
 transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, -10.187126, -2.0411444, -16.599804)
