@@ -68,8 +68,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-	if Global.frozen == false:
-		move_and_slide()
+	move_and_slide()
 	
 	#idle
 	if(velocity.length() <= 1 && is_on_floor()):

@@ -117,7 +117,7 @@ func _on_sound_detect_body_entered(body: Node3D) -> void:
 		overlappingNoise.append(body)
 		if Global.wendyFound == false:
 			Global.wendyFound = true
-			minimap.objective = $"../Trap5"
+			minimap.objective = $"../Bridges/ExtraBridge"
 
 func _on_sound_detect_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Character"):
@@ -157,7 +157,8 @@ func _on_trap_3_body_entered(body: Node3D) -> void:
 				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap2"
 				minimap.arrow.visible = true
-				$"../Trap3".queue_free()
+				$"../Trap3".visible = false
+				$"../Trap3".PROCESS_MODE_DISABLED
 
 ### ACT TRAP 2
 func _on_trap_4_body_entered(body: Node3D) -> void:
@@ -174,7 +175,8 @@ func _on_trap_4_body_entered(body: Node3D) -> void:
 				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap3"
 				minimap.arrow.visible = true
-				$"../Trap4".queue_free()
+				$"../Trap4".visible = false
+				$"../Trap4".PROCESS_MODE_DISABLED
 
 ## ACT TRAP 1
 func _on_trap_5_body_entered(body: Node3D) -> void:
@@ -191,7 +193,8 @@ func _on_trap_5_body_entered(body: Node3D) -> void:
 				chaseSpeed += chaseSpeedAdd
 				minimap.objective = $"../Trap4"
 				minimap.arrow.visible = true
-				$"../Trap5".queue_free()
+				$"../Trap5".visible = false
+				$"../Trap5".PROCESS_MODE_DISABLED
 
 
 func _on_trap_5_activated() -> void:
@@ -212,7 +215,7 @@ func _on_trap_4_activated() -> void:
 func restart():
 	$"../LevelAnimations".play("RESET")
 	$"..".restart()
-	$"../Trap2".reset()
+	$"../ActualTrap2".reset()
 	$"../Trap3".reset()
 	$"../Trap4".reset()
 	$"../Trap5".reset()
@@ -222,8 +225,25 @@ func restart():
 	clamp(randomPos.z, -245, 235)
 	Global.trapCounter = 1
 	
+func restartCheckpoint():
+	$"../LevelAnimations".play("reset_checkpoint")
+	Global.trapCounter = 5
+	isChasing = false
+	randomPos = Vector3(randf_range(player.global_position.x-30, player.global_position.x+30), position.y, randf_range(player.global_position.z-30, player.global_position.z+30))
+	clamp(randomPos.x, -210, 223)
+	clamp(randomPos.z, -245, 235)
+	minimap.objective = self
+	$"../Trap5".visible = true
+	$"../Trap5".PROCESS_MODE_INHERIT
+	$"../Trap4".visible = true
+	$"../Trap4".PROCESS_MODE_INHERIT
+	$"../Trap3".visible = true
+	$"../Trap3".PROCESS_MODE_INHERIT
 
 
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
-		restart()
+		if Global.checkpoint == false:
+			restart()
+		if Global.checkpoint == true:
+			restartCheckpoint()

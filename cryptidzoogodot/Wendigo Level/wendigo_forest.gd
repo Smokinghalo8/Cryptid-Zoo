@@ -13,6 +13,7 @@ func _ready() -> void:
 	$MainLevelMusic.play(0.0)
 	if dialogue_resource:
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+		$PlayPenCarrier.queue_free()
 		minimap.arrow.visible = true
 	Global.frozen = false
 	
@@ -53,6 +54,7 @@ func _on_actual_trap_2_activated() -> void:
 		Global.wendyFound = false
 		minimap.arrow.visible = true
 		Global.trapCounter += 1
+		Global.checkpoint == true
 
 #Actual trap 3
 func _on_trap_3_activated() -> void:
@@ -61,7 +63,7 @@ func _on_trap_3_activated() -> void:
 		minimap.arrow.visible = false
 		animPlayer.play("trap3Active")
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap3Complete").finished
-		minimap.objective = $Trap2
+		minimap.objective = $Bridges/CemeteryBridge
 		minimap.arrow.visible = true
 		Global.trapCounter += 1
 
@@ -72,7 +74,7 @@ func _on_trap_4_activated() -> void:
 		minimap.arrow.visible = false
 		animPlayer.play("trap2Active")
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "Trap2Complete").finished
-		minimap.objective = $Trap3
+		minimap.objective = $Bridges/NetBridge
 		minimap.arrow.visible = true
 		Global.trapCounter += 1
 
@@ -109,3 +111,18 @@ func restart():
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "StartSmall").finished
 	minimap.arrow.visible = true
 	Global.frozen = false
+
+
+func _on_extra_bridge_detector_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Character") && Global.trapCounter == 5:
+		minimap.objective = $Trap5
+
+
+func _on_cemetery_bridge_detector_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Character") && Global.trapCounter == 4:
+		minimap.objective = $Trap2
+
+
+func _on_net_bridge_detector_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Character") && Global.trapCounter == 3:
+		minimap.objective = $Trap3

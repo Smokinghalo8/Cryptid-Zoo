@@ -1,4 +1,4 @@
-[gd_scene load_steps=602 format=3 uid="uid://dxsurf27hc834"]
+[gd_scene load_steps=605 format=3 uid="uid://n0kjj88rjuor"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://Wendigo Level/wendigo_forest.gd" id="1_qv7kg"]
@@ -30,19 +30,19 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://c251vdgqpo8bv" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
+[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
 [ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
-[ext_resource type="Script" uid="uid://bk4gi4by788w1" path="res://Wendigo Level/actual_trap_2.gd" id="36_q35a6"]
+[ext_resource type="Script" path="res://Wendigo Level/actual_trap_2.gd" id="36_q35a6"]
 [ext_resource type="AudioStream" uid="uid://bmb36of1ca5go" path="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3" id="38_a0ttt"]
 [ext_resource type="AudioStream" uid="uid://bi2ba460tqw3d" path="res://Wendigo Level/assets/sfx/mystic-forest-ambient-23812.mp3" id="39_hxb2w"]
 [ext_resource type="AudioStream" uid="uid://t5ajif4huvb5" path="res://Wendigo Level/assets/sfx/rope-creak-01-sound-effect-340131.mp3" id="39_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://dnab6v7mt7fq3" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
@@ -8926,6 +8926,35 @@ tracks/14/keys = {
 "values": [Vector3(-9.297405e-09, 2.8935463, -0.040142577)]
 }
 
+[sub_resource type="Animation" id="Animation_q35a6"]
+resource_name = "reset_checkpoint"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZWendigo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-146.30275, 1.2861574, 153.62604)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BugFixWendy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-122.87171, 0.44655335, 67.93898)]
+}
+
 [sub_resource type="Animation" id="Animation_hxb2w"]
 resource_name = "trap1Active"
 length = 3.0
@@ -9055,6 +9084,7 @@ tracks/1/keys = {
 _data = {
 &"FinalCutscene": SubResource("Animation_x5eoj"),
 &"RESET": SubResource("Animation_h6ks2"),
+&"reset_checkpoint": SubResource("Animation_q35a6"),
 &"trap1Active": SubResource("Animation_hxb2w"),
 &"trap2Active": SubResource("Animation_w1jcc"),
 &"trap3Active": SubResource("Animation_kbgbe"),
@@ -9105,11 +9135,17 @@ albedo_color = Color(0.35815123, 0.23556736, 0, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ly1ea"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5mowj"]
+size = Vector3(28.109558, 13.062195, 8.148346)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k4prm"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4f0m8"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q35a6"]
+size = Vector3(35.956326, 18.661499, 1)
 
 [node name="WendigoForest" type="Node3D"]
 script = ExtResource("1_qv7kg")
@@ -9511,7 +9547,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686129, -0.038903527, 0.24551044, -0.040131792, 0.9991945, 9.297401e-09, -0.24531274, -0.009852771, -0.96939355, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.038903527, 0.24551041, -0.040131792, 0.9991945, 9.2974e-09, -0.24531274, -0.009852771, -0.96939343, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
@@ -9830,49 +9866,104 @@ stream = ExtResource("50_jimfv")
 
 [node name="Bridges" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bridges"]
+[node name="MainBridge" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(79.89638, 0, 0, 0, 1, 0, 0, 0, 27.679539, -33.18184, -0.5466399, 19.060741)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MainBridge"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MainBridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ly1ea")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Bridges"]
+[node name="ExtraBridge" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(78.98151, 0, -4.1768045, 0, 1, 0, 12.05625, 0, 27.36259, -13.990987, -0.5466399, -69.26376)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/ExtraBridge"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/ExtraBridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ly1ea")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Bridges"]
+[node name="ExtraBridgeDetector" type="Area3D" parent="Bridges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.397812, 3.8715448, -74.497536)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/ExtraBridgeDetector"]
+transform = Transform3D(-0.13507578, 0, -0.9908353, 0, 1, 0, 0.9908353, 0, -0.13507578, -2.3367815, 2.1175232, 4.3237915)
+shape = SubResource("BoxShape3D_5mowj")
+
+[node name="CemeteryBridge" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(42.854134, 0, -21.51986, 0, 1, 0, 52.975243, 0, 17.40841, 144.3017, -0.5436611, -121.9897)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/CemeteryBridge"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/CemeteryBridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k4prm")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Bridges"]
+[node name="CemeteryBridgeDetector" type="Area3D" parent="Bridges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.64822, 3.8715448, -125.46116)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/CemeteryBridgeDetector"]
+transform = Transform3D(-0.75209296, 0, -0.6590571, 0, 1, 0, 0.6590571, 0, -0.75209296, 8.226471, 2.1175232, 8.583946)
+shape = SubResource("BoxShape3D_5mowj")
+
+[node name="NetBridge" type="MeshInstance3D" parent="Bridges"]
 transform = Transform3D(-48.28747, 0, -22.064468, 0, 1, 0, 53.944027, 0, -19.75079, 138.75087, -0.58976555, 110.71564)
 mesh = SubResource("BoxMesh_k4prm")
 surface_material_override/0 = SubResource("StandardMaterial3D_4f0m8")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bridges/NetBridge"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/NetBridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4f0m8")
+
+[node name="NetBridgeDetector" type="Area3D" parent="Bridges"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.64822, 3.8715448, 110.406395)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridges/NetBridgeDetector"]
+transform = Transform3D(0.7668516, 0, -0.6418245, 0, 1, 0, 0.6418245, 0, 0.7668516, -3.5601807, 2.1175232, 2.2300034)
+shape = SubResource("BoxShape3D_5mowj")
 
 [node name="BearTrap" parent="." instance=ExtResource("51_rfgrx")]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, -132.16872, -0.051770806, 128.78876)
 visible = false
+
+[node name="PlayPenCarrier" type="Node3D" parent="."]
+
+[node name="PlayPen" type="StaticBody3D" parent="PlayPenCarrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.12184, 0, 147.17015)
+
+[node name="PlayPenColl" type="CollisionShape3D" parent="PlayPenCarrier/PlayPen"]
+transform = Transform3D(0.96877384, 0, -0.24794601, 0, 1, 0, 0.24794601, 0, 0.96877384, 2.8742065, 9.303593, 0.45158386)
+shape = SubResource("BoxShape3D_q35a6")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="PlayPen2" type="StaticBody3D" parent="PlayPenCarrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.85397, 0, 177.78821)
+
+[node name="PlayPenColl" type="CollisionShape3D" parent="PlayPenCarrier/PlayPen2"]
+transform = Transform3D(0.96877384, 0, -0.24794601, 0, 1, 0, 0.24794601, 0, 0.96877384, 2.8742065, 9.303593, 0.45158386)
+shape = SubResource("BoxShape3D_q35a6")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="PlayPen3" type="StaticBody3D" parent="PlayPenCarrier"]
+transform = Transform3D(-0.018150449, 0, -0.99983525, 0, 1, 0, 0.99983525, 0, -0.018150449, -165.57564, 0, 155.90875)
+
+[node name="PlayPenColl" type="CollisionShape3D" parent="PlayPenCarrier/PlayPen3"]
+transform = Transform3D(0.96877384, 0, -0.24794601, 0, 1, 0, 0.24794601, 0, 0.96877384, 2.8742065, 9.303593, 0.45158386)
+shape = SubResource("BoxShape3D_q35a6")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="PlayPen4" type="StaticBody3D" parent="PlayPenCarrier"]
+transform = Transform3D(-0.018150449, 0, -0.99983525, 0, 1, 0, 0.99983525, 0, -0.018150449, -131.7806, 0, 163.12181)
+
+[node name="PlayPenColl" type="CollisionShape3D" parent="PlayPenCarrier/PlayPen4"]
+transform = Transform3D(0.96877384, 0, -0.24794601, 0, 1, 0, 0.24794601, 0, 0.96877384, 2.8742065, 9.303593, 0.45158386)
+shape = SubResource("BoxShape3D_q35a6")
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
@@ -9894,3 +9985,6 @@ visible = false
 [connection signal="body_entered" from="ForestBound2" to="." method="_on_forest_bound_2_body_entered"]
 [connection signal="body_entered" from="StopFromDying" to="StopFromDying" method="_on_body_entered"]
 [connection signal="body_entered" from="WaterDetection" to="WaterDetection" method="_on_body_entered"]
+[connection signal="body_entered" from="Bridges/ExtraBridgeDetector" to="." method="_on_extra_bridge_detector_body_entered"]
+[connection signal="body_entered" from="Bridges/CemeteryBridgeDetector" to="." method="_on_cemetery_bridge_detector_body_entered"]
+[connection signal="body_entered" from="Bridges/NetBridgeDetector" to="." method="_on_net_bridge_detector_body_entered"]
