@@ -30,7 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
 [ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
-[ext_resource type="PackedScene" uid="uid://cn1ecy3n7c6my" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
+[ext_resource type="PackedScene" uid="uid://c251vdgqpo8bv" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
@@ -41,7 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://dnab6v7mt7fq3" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://cvra5vu1st64b" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
@@ -50,7 +50,7 @@
 [ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://Wendigo Level/stop_from_dying.gd" id="48_sy734"]
 [ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="49_ixmxt"]
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
-[ext_resource type="PackedScene" uid="uid://oti4sa0npsal" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
+[ext_resource type="PackedScene" uid="uid://bm6bobi4u2cgg" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -9437,7 +9437,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.99897534, -0.040122993, 0.020942498, -0.040131796, 0.9991945, 0, -0.02092563, -0.0008404602, -0.9997806, -155.30634, 1.0211151, 91.48519)
+transform = Transform3D(-0.99897534, -0.040122993, 0.020942498, -0.040131796, 0.9991945, 0, -0.02092563, -0.0008404602, -0.99978054, -155.30634, 1.0211151, 91.48519)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
