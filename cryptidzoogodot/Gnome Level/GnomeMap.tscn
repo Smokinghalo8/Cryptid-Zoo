@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=45 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cfyvowei4twq7" path="res://Gnome Level/GnomeTerrainMap/Textures/flower1.png" id="12_pxd54"]
 [ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
+[ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="17_i627o"]
 [ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
@@ -30,6 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://o88uvdldcumw" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
 [ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
 [ext_resource type="PackedScene" uid="uid://bsdc15jgfb724" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="32_ehsa6"]
+[ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="33_ifqdx"]
+[ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="34_7y28q"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="35_dyhn3"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -56,6 +61,34 @@ sky = SubResource("Sky_gbm7p")
 ambient_light_source = 3
 ambient_light_color = Color(0.9342328, 0.97891563, 0.7968004, 1)
 tonemap_mode = 3
+
+[sub_resource type="Resource" id="Resource_pcypi"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.7320508075688772
+min_bounds_to_center_dist = 1.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_v57qc"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("34_7y28q")
+root_octree_node = SubResource("Resource_pcypi")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_xukq4"]
+resource_local_to_scene = true
+script = ExtResource("35_dyhn3")
+octree_managers = [SubResource("Resource_v57qc")]
+metadata/class = "Arborist"
 
 [node name="GnomeLevel" type="Node3D"]
 script = ExtResource("1_42gdw")
@@ -125,6 +158,7 @@ transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 30.547337)
+dialogue = ExtResource("17_i627o")
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
@@ -184,9 +218,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.91413, 10.606115, 86.81357
 
 [node name="GnomeKING" parent="." instance=ExtResource("27_kkme5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 114.95887, 0.3991499, 129.23508)
+dialogue = ExtResource("17_i627o")
 
 [node name="bloogaragth" parent="." instance=ExtResource("28_pxd54")]
 transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 134.69148, 0.3218441, 92.12883)
+dialogue = ExtResource("17_i627o")
 
 [node name="Bleafus_the_gnome" parent="." instance=ExtResource("29_i627o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.24689, 0.3262241, 26.152647)
+dialogue = ExtResource("17_i627o")
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("32_ehsa6")
+file_management/garden_work_directory = "res://Gnome Level/gardener/"
+gardening/gardening_collision_mask = 1.0
+arborist = SubResource("Resource_xukq4")
+plugin_version = "1.4.1"
+storage_version = 4
+metadata/_custom_type_script = "uid://bc7pailucq83t"
+metadata/class = "Gardener"

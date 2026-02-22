@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwnitnvghmdn3"
+path="res://.godot/imported/GKing_line1.mp3-3846631b3bf93a0294e1ad04d644b38d.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Gnomeking/GKing_line1.mp3"
+dest_files=["res://.godot/imported/GKing_line1.mp3-3846631b3bf93a0294e1ad04d644b38d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
