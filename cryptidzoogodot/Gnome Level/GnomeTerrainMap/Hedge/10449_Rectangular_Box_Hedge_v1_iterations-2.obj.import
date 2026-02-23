@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqc6v2gai0d4n"
+path="res://.godot/imported/10449_Rectangular_Box_Hedge_v1_iterations-2.obj-ca41ba82fc9aa6db5dc8d27240e0dff7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/10449_Rectangular_Box_Hedge_v1_iterations-2.obj-ca41ba82fc9aa6db5dc8d27240e0dff7.mesh"]
+
+source_file="res://Gnome Level/GnomeTerrainMap/Hedge/10449_Rectangular_Box_Hedge_v1_iterations-2.obj"
+dest_files=["res://.godot/imported/10449_Rectangular_Box_Hedge_v1_iterations-2.obj-ca41ba82fc9aa6db5dc8d27240e0dff7.mesh", "res://.godot/imported/10449_Rectangular_Box_Hedge_v1_iterations-2.obj-ca41ba82fc9aa6db5dc8d27240e0dff7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

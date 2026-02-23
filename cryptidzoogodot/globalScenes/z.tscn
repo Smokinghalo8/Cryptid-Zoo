@@ -199,9 +199,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 environment = ExtResource("2_0nw42")
 script = ExtResource("2_1nxij")
 
-[node name="Loooky" type="RayCast3D" parent="Head"]
+[node name="Loooky" type="RayCast3D" parent="Head" node_paths=PackedStringArray("inspect_anchor")]
 transform = Transform3D(2, 0, 0, 0, -1.46959e-07, -2, 0, 3.36204, -8.74228e-08, 0, 0.016004, 0)
 script = ExtResource("3_wpofk")
+inspect_anchor = NodePath("../InspectAnchor")
 
 [node name="FlashLight" type="SpotLight3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
@@ -211,6 +212,8 @@ light_volumetric_fog_energy = 1.5
 shadow_enabled = true
 spot_range = 13.7568
 spot_angle = 25.3125
+
+[node name="InspectAnchor" type="Marker3D" parent="Head"]
 
 [node name="ZColl" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.069485, -0.126369, 0.0684296)

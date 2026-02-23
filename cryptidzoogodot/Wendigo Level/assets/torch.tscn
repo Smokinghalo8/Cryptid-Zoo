@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://btvjihfcsxv3v"]
 
-[ext_resource type="PackedScene" uid="uid://csno1qxlpvgen" path="res://Wendigo Level/assets/BearTrap.gltf" id="1_c7xlb"]
+[ext_resource type="PackedScene" uid="uid://csno1qxlpvgen" path="res://Wendigo Level/assets/bearTrap.gltf" id="1_c7xlb"]
 [ext_resource type="PackedScene" uid="uid://b5ke1lgkywmh1" path="res://Wendigo Level/assets/torchModel.tscn" id="2_8gyy4"]
 [ext_resource type="PackedScene" uid="uid://bgmxe6bqvp1rj" path="res://Wendigo Level/assets/fire.tscn" id="2_nkuc6"]
 
