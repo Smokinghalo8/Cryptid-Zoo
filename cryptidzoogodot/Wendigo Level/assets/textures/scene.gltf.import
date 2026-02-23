@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cr4cvdjdwjlpe"
-path="res://.godot/imported/torch.gltf-14bea6cfea811920705c5e1101b47060.scn"
+uid="uid://b6c6i5ra4gcqh"
+path="res://.godot/imported/scene.gltf-99216edf877e1d124bb5bbe843a41959.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/torch.gltf"
-dest_files=["res://.godot/imported/torch.gltf-14bea6cfea811920705c5e1101b47060.scn"]
+source_file="res://Wendigo Level/assets/textures/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-99216edf877e1d124bb5bbe843a41959.scn"]
 
 [params]
 
