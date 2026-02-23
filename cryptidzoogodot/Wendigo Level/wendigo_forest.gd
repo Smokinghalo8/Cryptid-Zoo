@@ -5,6 +5,10 @@ extends Node3D
 @onready var animPlayer : AnimationPlayer = $LevelAnimations
 @onready var minimap = $Ui/Minimap
 
+@onready var netBridgeFirst = true
+@onready var cemeteryBridgeFirst = true
+@onready var extraBridgeFirst = true
+
 var has_visited_forest = false
 
 func _ready() -> void:
@@ -12,7 +16,7 @@ func _ready() -> void:
 	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
 	if dialogue_resource:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+		#await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
 		$PlayPenCarrier.queue_free()
 		minimap.arrow.visible = true
 	Global.frozen = false
@@ -114,15 +118,18 @@ func restart():
 
 
 func _on_extra_bridge_detector_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Character") && Global.trapCounter == 5:
+	if body.is_in_group("Character") && Global.trapCounter == 5 && extraBridgeFirst == true:
+		extraBridgeFirst = false
 		minimap.objective = $Trap5
 
 
 func _on_cemetery_bridge_detector_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Character") && Global.trapCounter == 4:
-		minimap.objective = $Trap2
+	if body.is_in_group("Character") && Global.trapCounter == 4 && cemeteryBridgeFirst == true:
+		cemeteryBridgeFirst = false
+		minimap.objective = $ActualTrap2
 
 
 func _on_net_bridge_detector_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Character") && Global.trapCounter == 3:
+	if body.is_in_group("Character") && Global.trapCounter == 3 && netBridgeFirst == true:
+		netBridgeFirst = false
 		minimap.objective = $Trap3

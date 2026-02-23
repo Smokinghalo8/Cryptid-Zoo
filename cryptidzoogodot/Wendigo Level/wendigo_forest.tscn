@@ -22,9 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
-[ext_resource type="PackedScene" uid="uid://b6lggfcs4q5c0" path="res://Wendigo Level/assets/totemPole.tscn" id="23_rfgrx"]
+[ext_resource type="PackedScene" path="res://Wendigo Level/assets/totemPole.tscn" id="23_rfgrx"]
 [ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://diyhjppamkeqi" path="res://newWendy.tscn" id="24_rfgrx"]
+[ext_resource type="PackedScene" path="res://newWendy.tscn" id="24_rfgrx"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
@@ -51,7 +51,7 @@
 [ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://Wendigo Level/stop_from_dying.gd" id="48_sy734"]
 [ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="49_ixmxt"]
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
-[ext_resource type="PackedScene" uid="uid://oti4sa0npsal" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
+[ext_resource type="PackedScene" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -9547,7 +9547,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686129, -0.038903527, 0.24551041, -0.040131792, 0.9991945, 9.2974e-09, -0.24531274, -0.009852771, -0.96939343, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.038903527, 0.2455104, -0.040131792, 0.9991945, 9.297399e-09, -0.24531274, -0.009852771, -0.9693934, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927

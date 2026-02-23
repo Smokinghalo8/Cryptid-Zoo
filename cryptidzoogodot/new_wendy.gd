@@ -213,6 +213,7 @@ func _on_trap_4_activated() -> void:
 	activated4 = true
 
 func restart():
+	minimap.objective = $"../Trap5"
 	$"../LevelAnimations".play("RESET")
 	$"..".restart()
 	$"../ActualTrap2".reset()
