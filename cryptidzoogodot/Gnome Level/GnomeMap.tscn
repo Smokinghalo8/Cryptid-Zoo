@@ -1,8 +1,8 @@
 [gd_scene load_steps=45 format=3 uid="uid://dfi6482kw0bq2"]
 
-[ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
+[ext_resource type="Script" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
-[ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
+[ext_resource type="Resource" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
 [ext_resource type="Texture2D" uid="uid://bvmui0g6idba4" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot0_albedo_bump.png" id="5_vxnpk"]
 [ext_resource type="Texture2D" uid="uid://sla7ogpnqa6f" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot1_albedo_bump.png" id="6_7oysy"]
@@ -12,25 +12,25 @@
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
 [ext_resource type="Texture2D" uid="uid://bkabbm4mj4f4m" path="res://Gnome Level/GnomeTerrainMap/Textures/grass.png" id="10_ujj1q"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_kkme5"]
-[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="Script" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
 [ext_resource type="Texture2D" uid="uid://cfyvowei4twq7" path="res://Gnome Level/GnomeTerrainMap/Textures/flower1.png" id="12_pxd54"]
 [ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
 [ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="17_i627o"]
-[ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
+[ext_resource type="Shader" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
 [ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
-[ext_resource type="PackedScene" uid="uid://bdgkeiq2feufc" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
 [ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
-[ext_resource type="PackedScene" uid="uid://b7qt40ivocetw" path="res://Gnome Level/GnomeCharacters/Gnome_buff_o.tscn" id="24_vxnpk"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeCharacters/Gnome_buff_o.tscn" id="24_vxnpk"]
 [ext_resource type="PackedScene" uid="uid://cqnyuxynar2bn" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_1.tscn" id="25_7oysy"]
 [ext_resource type="PackedScene" uid="uid://c4mkoe3jb7kwe" path="res://Gnome Level/Assets/new_marble/new_marble.tscn" id="26_87shl"]
 [ext_resource type="PackedScene" uid="uid://vxwv46fcdxtw" path="res://Gnome Level/HedgeMaze/correctedSinglehedge.tscn" id="26_bwcok"]
 [ext_resource type="PackedScene" uid="uid://cin7f1iusttov" path="res://Gnome Level/Assets/new_sword/new_sword.tscn" id="26_ujj1q"]
-[ext_resource type="PackedScene" uid="uid://du6b7snsy0qiw" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
-[ext_resource type="PackedScene" uid="uid://o88uvdldcumw" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
-[ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
-[ext_resource type="PackedScene" uid="uid://bsdc15jgfb724" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
+[ext_resource type="PackedScene" uid="uid://biqahtdg3v85" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
+[ext_resource type="PackedScene" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
+[ext_resource type="PackedScene" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="32_ehsa6"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="33_ifqdx"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="34_7y28q"]
@@ -235,5 +235,5 @@ gardening/gardening_collision_mask = 1.0
 arborist = SubResource("Resource_xukq4")
 plugin_version = "1.4.1"
 storage_version = 4
-metadata/_custom_type_script = "uid://bc7pailucq83t"
 metadata/class = "Gardener"
+metadata/_custom_type_script = "uid://bc7pailucq83t"
