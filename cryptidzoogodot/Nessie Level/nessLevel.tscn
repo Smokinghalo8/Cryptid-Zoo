@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=26 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://biryocr8gbvqs" path="res://Nessie Level/ness_level.gd" id="1_gdr6b"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cpji0547ikafe" path="res://Assets/Materials/2K/Poliigon_GrassPatchyGround_4585_BaseColor.jpg" id="10_7lbco"]
 [ext_resource type="PackedScene" uid="uid://do07tts56us2r" path="res://Nessie Level/dock.tscn" id="11_2g60a"]
 [ext_resource type="PackedScene" uid="uid://b3sr72b3emcbo" path="res://Nessie Level/boat.tscn" id="12_g5q0w"]
+[ext_resource type="PackedScene" uid="uid://b4nrm1q40cyot" path="res://Nessie Level/nessmodelscene.tscn" id="13_40yyd"]
 [ext_resource type="Texture2D" uid="uid://btmyus38wmq5a" path="res://Nessie Level/mountains probably.png" id="14_8mi7u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
@@ -275,10 +276,14 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 [node name="Ness" type="Node" parent="."]
 
 [node name="NessMod" parent="Ness" instance=ExtResource("2_lrauw")]
-transform = Transform3D(-0.95728385, 0, 0.28914866, 0, 1, 0, -0.28914866, 0, -0.9572838, 0, -3.309063, 0)
+transform = Transform3D(-0.9572838, 0, 0.28914863, 0, 1, 0, -0.28914866, 0, -0.95728374, 0, -3.309063, 0)
+visible = false
+
+[node name="nessieblend" parent="Ness" instance=ExtResource("13_40yyd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5151584, 0)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
-transform = Transform3D(0.98882145, 0, 0.1491039, 0, 1, 0, -0.1491039, 0, 0.98882145, -11.942199, -1.2588595, 48.30097)
+transform = Transform3D(0.9888214, 0, 0.149104, 0, 1, 0, -0.149104, 0, 0.9888214, -11.942199, -1.2588595, 48.30097)
 
 [node name="Rafts" type="Node" parent="."]
 

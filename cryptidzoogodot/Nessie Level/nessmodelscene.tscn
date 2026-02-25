@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4nrm1q40cyot"]
+
+[ext_resource type="PackedScene" uid="uid://b2tuovvupl4ia" path="res://Assets/Models/Nessie/nessieblend.glb" id="1_53r0a"]
+[ext_resource type="Shader" uid="uid://blip1pxebvhjx" path="res://nessshader.gdshader" id="2_nyald"]
+[ext_resource type="Texture2D" uid="uid://sr5ggd5gqte" path="res://Assets/Models/Nessie/nesssieTex.png" id="3_uujx2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkkir"]
+render_priority = 0
+shader = ExtResource("2_nyald")
+shader_parameter/main_texture = ExtResource("3_uujx2")
+shader_parameter/rim_color = Color(0, 0.5933253, 6.144511, 1)
+shader_parameter/rim_steepness = 0.0050000002375
+shader_parameter/rim_spread = 0.22000001045
+shader_parameter/rim_glow = 10.0
+
+[node name="nessieblend" instance=ExtResource("1_53r0a")]
+
+[node name="Prev_001" parent="NessieRig/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_kkkir")
