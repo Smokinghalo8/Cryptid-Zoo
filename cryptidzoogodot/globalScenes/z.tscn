@@ -17,7 +17,7 @@ floor_max_angle = 1.0472
 script = ExtResource("1_6mksa")
 
 [node name="Head" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05431056, 0.6367415, -0.5746859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05431056, 0.6367415, -0.1983099)
 environment = ExtResource("2_0nw42")
 script = ExtResource("2_1nxij")
 

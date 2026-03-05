@@ -27,6 +27,7 @@ var velocityDifference = 0
 @onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
 @onready var zedAnims = $ZColl/ZedAnims/AnimationPlayer
 @onready var zedAnimTree = $ZColl/ZedAnims/AnimationTree
+@onready var playback = zedAnimTree.get("parameters/playback")
 
 
 func on_ready():
@@ -152,8 +153,7 @@ func _physics_process(delta: float) -> void:
 		walk = false
 		run = false
 		jump = true
-	
-	if velocity.length() > 9.9 && not $Walking.playing && self.is_on_floor():
+	elif velocity.length() > 6 && not $Walking.playing && self.is_on_floor():
 		$Walking.stop()
 		$Walking.stream = Global.walkingSound
 		$Walking.pitch_scale = 2
@@ -165,7 +165,7 @@ func _physics_process(delta: float) -> void:
 		jump = false
 		
 		
-	if velocity.length() == 5 && not $Walking.playing && self.is_on_floor():
+	elif velocity.length() > 4 && not $Walking.playing && self.is_on_floor():
 		$Walking.stop()
 		$Walking.stream = Global.walkingSound
 		$Walking.pitch_scale = 1
@@ -207,28 +207,45 @@ func _on_water_body_entered(body: Node3D) -> void:
 	self.position.x -= 30
 	self.position.y += 20
 
-func updateAnimationParameters():
+#func updateAnimationParameters():
+	##zedAnimTree["parameters/conditions/idle"] = idle
+	##zedAnimTree["parameters/conditions/walk"] = walk
+	##zedAnimTree["parameters/conditions/run"] = run
+	##zedAnimTree["parameters/conditions/jump"] = jump
 	#if idle == true:
-		print("idle: " + str(idle))
-		print("Walk: " + str(walk))
-		print("Run: " + str(run))
-		print("Jump: " + str(jump))
-		zedAnimTree.set("parameters/conditions/idle", true)
-		zedAnimTree.set("parameters/conditions/walk", false)
-		zedAnimTree.set("parameters/conditions/run", false)
-		zedAnimTree.set("parameters/conditions/jump", false)
+		#print("Idle")
+		#zedAnimTree.set("parameters/conditions/idle", true)
+		#zedAnimTree.set("parameters/conditions/walk", false)
+		#zedAnimTree.set("parameters/conditions/run", false)
+		#zedAnimTree.set("parameters/conditions/jump", false)
 	#elif walk == true:
+		#print("Walk")
 		#zedAnimTree.set("parameters/conditions/idle", false)
 		#zedAnimTree.set("parameters/conditions/walk", true)
 		#zedAnimTree.set("parameters/conditions/run", false)
 		#zedAnimTree.set("parameters/conditions/jump", false)
 	#elif run == true:
+		#print("Run")
 		#zedAnimTree.set("parameters/conditions/idle", false)
 		#zedAnimTree.set("parameters/conditions/walk", false)
 		#zedAnimTree.set("parameters/conditions/run", true)
 		#zedAnimTree.set("parameters/conditions/jump", false)
 	#elif jump == true:
+		#print("Jump")
 		#zedAnimTree.set("parameters/conditions/idle", false)
 		#zedAnimTree.set("parameters/conditions/walk", false)
 		#zedAnimTree.set("parameters/conditions/run", false)
 		#zedAnimTree.set("parameters/conditions/jump", true)
+
+func updateAnimationParameters():
+	var horizontal_velocity = Vector2(velocity.x, velocity.z)
+	var speed = horizontal_velocity.length()
+	print(speed)
+	
+	zedAnimTree.set("parameters/movement/blend_position", speed)
+	zedAnimTree.set("parameters/conditions/is_jumping", not is_on_floor())
+	
+	if not is_on_floor():
+		playback.travel("jump")
+	else:
+		playback.travel("movement")
