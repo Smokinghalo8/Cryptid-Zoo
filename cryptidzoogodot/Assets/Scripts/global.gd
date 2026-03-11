@@ -20,3 +20,4 @@ var frozen = false
 var thingsGathered = 0
 var gnomeState = 0
 var shroomsAte = 0
+var playerShouldBeMoving = true

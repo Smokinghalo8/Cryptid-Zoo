@@ -8,6 +8,7 @@ var mazeQuest = false
 @onready var bloogaragth: StaticBody3D = $bloogaragth
 @onready var bleafus_the_gnome: StaticBody3D = $Bleafus_the_gnome
 @onready var THE_KING: StaticBody3D = $GnomeKING
+@onready var playerZed = $Z
 
 
 func _ready() -> void:
@@ -26,6 +27,12 @@ func _process(delta: float) -> void:
 	elif MushroomQuest:
 		bloogaragth.visible = true #on the offchance the player is feelin explorative
 		Global.gnomeState = 2 #Give you ScavQuest
+	
+	
+	#check if player is moving or not
+	if Global.playerShouldBeMoving == false:
+		pass
+		#TODO make the player stop moving, or find some way to stop Buff-O from repeating his lines!
 	
 	#CHECK THINGSGATHERED
 	if Global.thingsGathered == 2:

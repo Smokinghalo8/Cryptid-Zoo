@@ -9,7 +9,7 @@
 
 ~ teleportToGnomeKing
 #add lines
-[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/GKing_line1.mp3, next=auto] -And who have you brought me this time, Gnome 1? Another snack?[#voice=uid://dwnitnvghmdn3]
+[color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/GKing_line1.mp3, next=auto] -And who have you brought me this time, Buff-O? Another snack?[#voice=uid://dwnitnvghmdn3]
 [color=yellow]Random Gnome[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Buff-O/Buff_O_line3.mp3, next=auto] Something like that, I wouldn’t be opposed to seeing you eat such insolence.[#voice=uid://boepu45jx3i8v]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zline3.mp3, next=auto] Hold on, wait! I can be friend! Don’t eat me, I taste like sadness and financial troubles![#voice=uid://1du557cmsrqj]
 [color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/GKing_line2.mp3, next=auto] ...hmm... I could use another errand boy to do my tasks.... Tell you what, kid, I have a few tasks that I really should be doing, but since you showed up, perfect time to delegate them![#voice=uid://5t7brrr4cbea]
