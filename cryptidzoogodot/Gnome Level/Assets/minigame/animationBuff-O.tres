@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bjmn21mwdhted"]
+
+[ext_resource type="Texture2D" uid="uid://caw7imfy0scth" path="res://Gnome Level/Assets/minigame/Buff-O20x20RunningAnimation/Buff-O20x20Running2.png" id="2_ahsqi"]
+[ext_resource type="Texture2D" uid="uid://bl6ifc0koiysm" path="res://Gnome Level/Assets/minigame/Buff-O20x20RunningAnimation/Buff-O20x20Running3.png" id="3_fnkxi"]
+[ext_resource type="Texture2D" uid="uid://dmsy1wq1u6xyk" path="res://Gnome Level/Assets/minigame/Buff-O20x20RunningAnimation/Buff-O20x20Running4.png" id="4_srk8p"]
+[ext_resource type="Texture2D" uid="uid://87n4x84442e6" path="res://Gnome Level/Assets/minigame/Buff-O20x20RunningAnimation/Buff-O20x20Running5.png" id="5_kqgjm"]
+[ext_resource type="Texture2D" uid="uid://dj617ju7a2t1d" path="res://Gnome Level/Assets/minigame/Buff-O20x20RunningAnimation/Buff-O20x20Running6.png" id="6_kww00"]
+[ext_resource type="Texture2D" uid="uid://0kaho6fnp32m" path="res://Gnome Level/Assets/minigame/Buff-O20x20.png" id="7_tggkg"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ahsqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fnkxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_srk8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kqgjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kww00")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tggkg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

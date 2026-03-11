@@ -23,7 +23,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			#TODO give the teleport a smooth black transition so the teleport is SEEMLESS
 			#start of quest, have buff-o give basic dialouge
 			Global.playerShouldBeMoving = false
-			#await DialogueManager.show_dialogue_balloon(dialogue, "introToGnomeLevel").finished
+			await DialogueManager.show_dialogue_balloon(dialogue, "introToGnomeLevel").finished
 			Global.playerShouldBeMoving = true
 			start = false
 			z.global_position = GnomeKingPos

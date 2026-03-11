@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://4yw03uolf1nx"]
+[gd_scene load_steps=12 format=4 uid="uid://4yw03uolf1nx"]
 
 [ext_resource type="Texture2D" uid="uid://de3lwdk8hbue2" path="res://Gnome Level/Assets/Big_Oak/base.png" id="1_yc437"]
 [ext_resource type="Texture2D" uid="uid://dqvj4wk1fqntf" path="res://Gnome Level/Assets/Big_Oak/normal.png" id="2_54tj3"]
@@ -46,6 +46,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nq3v8")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yc437"]
+height = 8176.004
+radius = 4096.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my3iq"]
 resource_name = "M_Branch.005"
@@ -106,6 +110,12 @@ transform = Transform3D(0.012285702, 2.001595e-09, 0, -2.001595e-09, 0.012285702
 [node name="Linden_LOD0_M_Bark_005_0" type="MeshInstance3D" parent="Sketchfab_model/SM_Linden_fbx/RootNode/Linden_LOD0"]
 mesh = SubResource("ArrayMesh_y8krn")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/SM_Linden_fbx/RootNode/Linden_LOD0/Linden_LOD0_M_Bark_005_0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/SM_Linden_fbx/RootNode/Linden_LOD0/Linden_LOD0_M_Bark_005_0/StaticBody3D"]
+transform = Transform3D(1.2913953, 3.5660087e-18, 2.5920599e-11, 2.9459102e-11, -6.338614e-08, -1.1347848, -7.148958e-19, 1.4501058, -4.9603393e-08, 701.7288, -159.61601, 2930.4521)
+shape = SubResource("CylinderShape3D_yc437")
 
 [node name="Linden_LOD0_M_Branch_005_0" type="MeshInstance3D" parent="Sketchfab_model/SM_Linden_fbx/RootNode/Linden_LOD0"]
 mesh = SubResource("ArrayMesh_aclnc")

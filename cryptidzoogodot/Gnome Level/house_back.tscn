@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b7dqa4rl3bh1d"]
+[gd_scene load_steps=37 format=3 uid="uid://b7dqa4rl3bh1d"]
 
 [ext_resource type="PackedScene" uid="uid://j8mgvr8ismke" path="res://Gnome Level/Assets/House_Back.gltf" id="1_r60c0"]
 [ext_resource type="Texture2D" uid="uid://dco44wgulriy6" path="res://Assets/Materials/PNG/Mossy_Stone_Floor_veilfjxn_4K_BaseColor.png" id="2_r60c0"]
@@ -98,9 +98,13 @@ albedo_texture = ExtResource("4_85046")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pepxt"]
 albedo_texture = ExtResource("4_85046")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8uwt"]
+size = Vector3(36.007874, 17.738525, 2.8544312)
+
 [node name="House_Back" instance=ExtResource("1_r60c0")]
 
 [node name="pCube1" parent="." index="0"]
+transform = Transform3D(33.02696, 0, 0, 0, 15.874961, 0, 0, 0, 0.50438374, 0, 6.7018366, 0)
 material_override = SubResource("StandardMaterial3D_mmeck")
 
 [node name="pCube5" parent="." index="1"]
@@ -192,3 +196,9 @@ material_override = SubResource("StandardMaterial3D_wnvj3")
 
 [node name="pCube36" parent="group1" index="17"]
 material_override = SubResource("StandardMaterial3D_pepxt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1522522, 7.30896, 0.9272156)
+shape = SubResource("BoxShape3D_q8uwt")
