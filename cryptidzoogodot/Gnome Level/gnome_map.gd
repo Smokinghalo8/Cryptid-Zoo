@@ -29,6 +29,18 @@ func _process(delta: float) -> void:
 		Global.gnomeState = 2 #Give you ScavQuest
 	
 	
+	
+	#processQuitButton
+	if Input.is_action_just_pressed("quit"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		togglePause()
+	
+	
+	
+func togglePause():
+	get_tree().paused = true
+	$"Ui/Pause Menu".visible = true
+	
 	#check if player is moving or not
 	if Global.playerShouldBeMoving == false:
 		pass

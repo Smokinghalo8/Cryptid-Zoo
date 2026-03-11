@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=63 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -35,6 +35,14 @@
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="33_ifqdx"]
 [ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="34_7y28q"]
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="35_dyhn3"]
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="36_i6n8p"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="37_2iq4o"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="38_ixyha"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="39_ec0i6"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="40_mgsad"]
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="41_qsklv"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="42_taton"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="43_uc803"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -69,6 +77,7 @@ script = ExtResource("33_ifqdx")
 member_placeforms = [[Vector3(44.875473, 0, 48.100983), Vector3(0, 1, 0), Transform3D(-0.957534, 0, 0.28832033, 0, 1, 0, -0.28832033, 0, -0.957534, 44.875473, 0, 48.100983), 6], [Vector3(87.10699, 0, 106.564476), Vector3(0, 1, 0), Transform3D(-0.49285194, 0, -0.87011325, 0, 1, 0, 0.87011325, 0, -0.49285194, 87.10699, 0, 106.564476), 6], [Vector3(51.896225, 0, 61.898323), Vector3(0, 1, 0), Transform3D(0.9328362, 0, -0.36030075, 0, 1, 0, 0.36030075, 0, 0.9328362, 51.896225, 0, 61.898323), 6], [Vector3(27.123215, 0, 36.169067), Vector3(0, 1, 0), Transform3D(0.22160284, 0, -0.97513705, 0, 1, 0, 0.97513705, 0, 0.22160284, 27.123215, 0, 36.169067), 6], [Vector3(31.239365, 0, 101.419785), Vector3(0, 1, 0), Transform3D(-0.70307237, 0, 0.7111183, 0, 1, 0, -0.7111183, 0, -0.70307237, 31.239365, 0, 101.419785), 6], [Vector3(29.34636, 0, 235.14081), Vector3(0, 1, 0), Transform3D(0.9651866, 0, 0.2615623, 0, 1, 0, -0.2615623, 0, 0.9651866, 29.34636, 0, 235.14081), 7], [Vector3(110.343216, 0, 238.08536), Vector3(0, 1, 0), Transform3D(-0.87550735, 0, 0.4832048, 0, 1, 0, -0.4832048, 0, -0.87550735, 110.343216, 0, 238.08536), 7], [Vector3(89.321266, 0, 246.15764), Vector3(0, 1, 0), Transform3D(-0.94747293, 0, 0.31983596, 0, 1, 0, -0.31983596, 0, -0.94747293, 89.321266, 0, 246.15764), 7], [Vector3(105.225044, 0, 212.77664), Vector3(0, 1, 0), Transform3D(-0.7020929, 0, -0.71208537, 0, 1, 0, 0.71208537, 0, -0.7020929, 105.225044, 0, 212.77664), 7], [Vector3(91.47435, 0, 191.05753), Vector3(0, 1, 0), Transform3D(-0.82827806, 0, -0.5603173, 0, 1, 0, 0.5603173, 0, -0.82827806, 91.47435, 0, 191.05753), 7], [Vector3(89.83392, 9.536743e-07, 219.8746), Vector3(0, 1, 0), Transform3D(-0.9965217, 0, 0.08333368, 0, 1, 0, -0.08333368, 0, -0.9965217, 89.83392, 9.536743e-07, 219.8746), 7], [Vector3(24.187462, 0, 168.26091), Vector3(0, 1, 0), Transform3D(0.30198342, 0, 0.9533132, 0, 1, 0, -0.9533132, 0, 0.30198342, 24.187462, 0, 168.26091), 7], [Vector3(36.31201, 0, 164.6297), Vector3(0, 1, 0), Transform3D(0.4036182, 0, -0.91492754, 0, 1, 0, 0.91492754, 0, 0.4036182, 36.31201, 0, 164.6297), 7], [Vector3(21.49192, 0, 200.88849), Vector3(0, 1, 0), Transform3D(-0.46140796, 0, 0.8871881, 0, 1, 0, -0.8871881, 0, -0.46140796, 21.49192, 0, 200.88849), 7], [Vector3(114.53163, 0, 139.42903), Vector3(0, 1, 0), Transform3D(-0.21845658, 0, 0.97584665, 0, 1, 0, -0.97584665, 0, -0.21845658, 114.53163, 0, 139.42903), 7], [Vector3(109.68389, 0, 166.46852), Vector3(0, 1, 0), Transform3D(0.9954298, 0, 0.095496505, 0, 1, 0, -0.0954965, 0, 0.9954298, 109.68389, 0, 166.46852), 7], [Vector3(124.75665, 0, 185.14241), Vector3(0, 1, 0), Transform3D(0.20620492, 0, 0.97850883, 0, 1, 0, -0.97850883, 0, 0.20620492, 124.75665, 0, 185.14241), 7], [Vector3(120.116005, 0, 196.08727), Vector3(0, 1, 0), Transform3D(0.7599137, 0, -0.650024, 0, 1, 0, 0.650024, 0, 0.7599137, 120.116005, 0, 196.08727), 7]]
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(-1, -43, 127)
 extent = 128.0
@@ -199,6 +208,7 @@ child_nodes = [SubResource("Resource_dyhn3"), SubResource("Resource_pcypi"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = -1
+is_leaf = true
 center_pos = Vector3(127, 85, 255)
 extent = 256.0
 bounds = AABB(-129, -171, -1, 512, 512, 512)
@@ -302,6 +312,127 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_csh1m")
 script = ExtResource("12_jlxtx")
 
+[node name="Ui" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="SprintBar" type="TextureProgressBar" parent="Ui"]
+visible = false
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("36_i6n8p")
+texture_progress = ExtResource("37_2iq4o")
+
+[node name="WednigoHead" type="Sprite2D" parent="Ui"]
+visible = false
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
+texture = ExtResource("38_ixyha")
+
+[node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("39_ec0i6")
+texture_progress = ExtResource("40_mgsad")
+
+[node name="Pause Menu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("41_qsklv")
+
+[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("42_taton")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 204.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 238.0
+offset_top = 992.0
+offset_right = 452.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Main Menu"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
+stream = ExtResource("43_uc803")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="Ui"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mrlcg")
 
@@ -349,17 +480,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.78351, 0, 0)
 [node name="Playset" parent="." instance=ExtResource("28_ujj1q")]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 72.35481, 0, 94.54317)
 
-[node name="Ui" type="CanvasLayer" parent="."]
-
-[node name="intText" type="Label" parent="Ui"]
-visible = false
-offset_left = 792.0
-offset_top = 722.0
-offset_right = 1145.0
-offset_bottom = 789.0
-theme_override_font_sizes/font_size = 48
-text = "Press E to interact"
-
 [node name="shroom2" parent="." instance=ExtResource("25_7oysy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.8775, 0, 86.14665)
 
@@ -389,3 +509,7 @@ dialogue = ExtResource("17_i627o")
 [node name="Bleafus_the_gnome" parent="." instance=ExtResource("29_i627o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.24689, 0.3262241, 26.152647)
 dialogue = ExtResource("17_i627o")
+
+[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
