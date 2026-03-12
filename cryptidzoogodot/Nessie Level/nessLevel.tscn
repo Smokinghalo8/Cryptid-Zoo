@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=35 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://biryocr8gbvqs" path="res://Nessie Level/ness_level.gd" id="1_gdr6b"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
 [ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
-[ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
-[ext_resource type="PackedScene" uid="uid://bdopa3ywnw1qk" path="res://Nessie Level/nessie_goat_simulator/nessModelScene.gltf" id="2_lrauw"]
+[ext_resource type="Resource" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
 [ext_resource type="Texture2D" uid="uid://djxvlq4sydeml" path="res://Nessie Level/sky_20_2k.png" id="3_lrauw"]
 [ext_resource type="Shader" uid="uid://cy1bfrgahdjoa" path="res://Nessie Level/nessWaterShader.gdshader" id="6_4bmcb"]
@@ -15,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b3sr72b3emcbo" path="res://Nessie Level/boat.tscn" id="12_g5q0w"]
 [ext_resource type="PackedScene" uid="uid://b4nrm1q40cyot" path="res://Nessie Level/nessmodelscene.tscn" id="13_40yyd"]
 [ext_resource type="Texture2D" uid="uid://btmyus38wmq5a" path="res://Nessie Level/mountains probably.png" id="14_8mi7u"]
+[ext_resource type="PackedScene" uid="uid://coiwyjwegkuph" path="res://Nessie Level/fish_2.tscn" id="15_40yyd"]
+[ext_resource type="PackedScene" uid="uid://dbl0npfupvg8s" path="res://Nessie Level/bread.tscn" id="15_qqm1c"]
+[ext_resource type="PackedScene" uid="uid://bivt2hu3ycr4h" path="res://Nessie Level/pizza.fbx" id="17_181tc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -97,32 +99,25 @@ tracks/0/path = NodePath("Boat")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -11.942199, -1.2588595, 48.30097)
-tracks/1/type = "position_3d"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Ness/NessMod")
+tracks/1/path = NodePath("Z:process_mode")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0)
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Z:process_mode")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
 }
-tracks/3/type = "position_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Z")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Ness/nessieblend")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, -7.9970765, -23.383438)
 
 [sub_resource type="Animation" id="Animation_g5q0w"]
 resource_name = "boat_start"
@@ -141,44 +136,114 @@ tracks/1/path = NodePath("Boat")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.6333333, 1, 0, 0, 0, 1, 2.6666667, 1, 0, -0.22547819, 0, 0.97424823, 5.133333, 1, 0, -0.0830517, 0, 0.99654526, 7.0416665, 1, 0, 0.07476117, 0, 0.9972015, 7.853333, 1, 0, 0.07476117, 0, 0.9972015)
-tracks/2/type = "position_3d"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Ness/NessMod")
+tracks/2/path = NodePath("Z:process_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, -3.309063, 0, 1.3666667, 1, -9.711833, -4.5721254, 0, 2.6666667, 1, -9.711833, -5.9183893, -10.154919, 4.366667, 1, -13.98024, -5.9183893, -25.154919, 6.3333335, 1, -3.7889051, -5.9183893, -10.154919, 7.4333334, 1, 0.892756, -3.490158, 4.4135523, 7.5, 1, -2.4861062, -6.544822, 4.0135374, 8.933333, 1, 0.892756, -7.227644, -39.945625)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Ness/NessMod")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0.03333333, 1, 0, -0.71778, 0, 0.6962699, 1.3666667, 1, 0, -0.7316155, 0, 0.6817175, 2.7, 1, 0, 0.97059053, 0, -0.24073634, 4.4666667, 1, 0, 0.936107, 0, -0.3517152, 6.3, 1, 0, 0.6012574, 0, 0.7990554, 7.4333334, 1, 0, 0.6012573, 0, 0.7990554, 7.6666665, 1, 0.19071205, 0.57020974, -0.25345144, 0.7577942, 8.733334, 1, 0, 0.98926336, 0, 0.14614347)
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Z:process_mode")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 11.933333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [4, 0]
+"values": [1, 0]
 }
-tracks/5/type = "position_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027, 1.7, 1, -11.942199, 0.26813674, 41.387268, 3.4666667, 1, -5.996979, 0.26813674, 33.891205, 5.133333, 1, 1.1240913, 0.26813674, 21.142765, 7.0333333, 1, 1.6034441, 0.26813674, 6.6835127, 7.6666665, 1, 1.6034441, 0.26813674, 6.6835127, 8.366667, 1, 4.2736206, 4.280196, 6.6835136, 10.5, 1, 6.9059544, 6.9370584, 6.6835136, 11.433333, 1, 20.982473, 0.57766104, 3.835958)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027, 1.7, 1, -11.942199, 0.26813674, 41.387268, 3.4666667, 1, -5.996979, 0.26813674, 33.891205, 5.133333, 1, 1.1240913, 0.26813674, 21.142765, 7.0333333, 1, 1.6034441, 0.26813674, 6.6835127, 7.6666665, 1, 1.6034441, 0.26813674, 6.6835127, 8.366667, 1, 4.2736206, 4.280196, 6.6835136, 10.5, 1, 6.9059544, 6.9370584, 6.6835136, 11.433333, 1, 20.982473, 0.57766104, 3.835958)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ness/nessieblend")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, -2.70092, -39.34516, 1.6333333, 1, 0, -2.70092, -15.175045, 2.6, 1, 6.205271, -2.70092, -5.878927, 3.1666667, 1, -17.425795, -2.70092, 15.863737, 5.1666665, 1, -17.425795, -2.70092, 1.5095654, 6.9666667, 1, -17.425795, -2.70092, 1.5095654, 7.9333334, 1, -2.4983282, -2.70092, 1.5095654, 9.066667, 1, -2.4983282, -2.70092, -7.170412, 10.933333, 1, 6.3069983, -3.8352547, -7.170412, 11.533334, 1, 6.3069983, -8.136393, -7.170412, 11.933333, 1, 6.3069983, -30.380775, -7.170412)
+
+[sub_resource type="Animation" id="Animation_8mi7u"]
+resource_name = "ness_idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ness/nessieblend")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -7.9970765, -23.383438, 2.9666667, 1, 0, -7.9970765, 31.224434, 5.366667, 1, -19.019585, -7.9970765, -11.522438, 8.066667, 1, 25.466259, -7.9970765, -11.522438, 10, 1, -7.063385, -19.123013, -11.522438)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/nessieblend")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.033333335, 1, 0, 0.032658055, 0, 0.9994666, 1.3666667, 1, 0, 0.032658055, 0, 0.9994666, 2.9666667, 1, 0, -0.77925044, 0, 0.6267126, 4.9333334, 1, 0, -0.77925044, 0, 0.6267126, 5.7, 1, 0, 0.47958812, 0, 0.8774938, 7.133333, 1, 0, 0.47958812, 0, 0.8774938, 8.4, 1, 0.050738055, -0.6841363, 0.053812746, 0.7255945)
+
+[sub_resource type="Animation" id="Animation_40yyd"]
+resource_name = "ness_lure1anm"
+length = 10.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ness/nessieblend")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -7.9970765, -23.383438, 0.6666667, 1, 16.661976, -7.9970765, -7.9213076, 1.5666667, 1, 29.668602, -7.9970765, -7.209283, 2.2666667, 1, 29.668602, -7.2310634, -7.209282, 9.566667, 1, 29.668602, -7.2310634, -7.209282, 9.966666, 1, 19.024008, -12.333658, -7.209282)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/nessieblend")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.0011519569, 0.016600015, 0.0012217647, 0.99986076, 2.2666667, 1, -0.14852636, 0.31107134, -0.048946485, 0.937432, 9.6, 1, -0.14852636, 0.3110714, -0.04894648, 0.937432, 9.966666, 1, -0.011680397, -0.65044343, -0.050597165, 0.7577774)
+
+[sub_resource type="Animation" id="Animation_qqm1c"]
+resource_name = "ness_lure2anm"
+length = 15.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ness/nessieblend")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.0011526498, 0.9971998, -0.0012211103, -0.074763715, 0.8666667, 1, 0.0011526495, 0.9971997, -0.00122111, -0.07476366, 1.4, 1, -0.016676733, 0.96882784, 0.23618081, -0.072889104)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/nessieblend")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -13.830421, -21.766418, 0.8666667, 1, 0, -11.702386, -31.534594, 1.4, 1, -1.3758271, -9.036072, -35.433533, 1.98, 1, -1.3758271, -9.036072, -35.433533, 2.4333334, 1, -1.3758271, -8.458043, -35.433533, 2.99, 1, -1.3758271, -9.036072, -35.433533, 3.4199998, 1, -1.3758271, -8.458043, -35.433533, 4, 1, -1.3758271, -9.036072, -35.433533, 4.3300004, 1, -1.3758271, -8.458043, -35.433533, 4.9900002, 1, -1.3758271, -9.036072, -35.433533, 5.3900003, 1, -1.3758271, -8.458043, -35.433533, 6.02, 1, -1.3758271, -9.036072, -35.433533, 6.4, 1, -1.3758271, -8.458043, -35.433533, 6.98, 1, -1.3758271, -9.036072, -35.433533, 7.44, 1, -1.3758271, -8.458043, -35.433533, 8.0199995, 1, -1.3758271, -9.036072, -35.433533, 8.38, 1, -1.3758271, -8.458043, -35.433533, 9.0199995, 1, -1.3758271, -9.036072, -35.433533, 9.38, 1, -1.3758271, -8.458043, -35.433533, 10, 1, -1.3758271, -9.036072, -35.433533, 10.41, 1, -1.3758271, -8.458043, -35.433533, 11.0199995, 1, -1.3758271, -9.036072, -35.433533, 11.48, 1, -1.3758271, -8.458043, -35.433533, 12.03, 1, -1.3758271, -9.036072, -35.433533, 12.44, 1, -1.3758271, -8.458043, -35.433533, 13.0199995, 1, -1.3758271, -9.036072, -35.433533, 14.0199995, 1, -1.3758271, -9.036072, -35.433533, 15, 1, -1.3758271, -18.195412, -27.074059)
+
+[sub_resource type="Animation" id="Animation_181tc"]
+resource_name = "ness_lure3anm"
+length = 20.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ness/nessieblend")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -13.830421, -21.766418, 0.53333336, 1, 0, -8.883583, -16.341463, 1.3, 1, -8.690832, -8.883583, -13.397549, 2.1, 1, -10.8190365, -3.5874224, -6.583288)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ness/nessieblend")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.9999998, 0.53333336, 1, -0.06017638, -0.31613672, 0.020097373, 0.94658977, 1.3, 1, -0.06017638, -0.31613675, 0.020097371, 0.9465897, 2.1, 1, -0.0011810703, -0.3697871, -0.019733228, 0.928906)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gdr6b"]
 _data = {
 &"RESET": SubResource("Animation_gdr6b"),
-&"boat_start": SubResource("Animation_g5q0w")
+&"boat_start": SubResource("Animation_g5q0w"),
+&"ness_idle": SubResource("Animation_8mi7u"),
+&"ness_lure1anm": SubResource("Animation_40yyd"),
+&"ness_lure2anm": SubResource("Animation_qqm1c"),
+&"ness_lure3anm": SubResource("Animation_181tc")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40yyd"]
@@ -186,11 +251,28 @@ transparency = 1
 cull_mode = 2
 albedo_texture = ExtResource("14_8mi7u")
 
-[node name="NessLevel" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_181tc"]
+size = Vector3(8.281006, 4.3897095, 13.965927)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxbah"]
+size = Vector3(15.949707, 3.1534424, 8.781708)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uuryg"]
+size = Vector3(6.291443, 1.796875, 9.893799)
+
+[node name="NessLevel" type="Node3D" node_paths=PackedStringArray("animation_player", "lure_1_area", "lure_2_area", "lure_3_area")]
 script = ExtResource("1_gdr6b")
+animation_player = NodePath("BoatAnm")
+lure_1_area = NodePath("Lure1/Lure1Area3d")
+lure_2_area = NodePath("Lure2/Lure2Area3D")
+lure_3_area = NodePath("Lure3/Lure3Area3D")
+roaming_anim = "ness_idle"
+lure_1_anim = "ness_lure1anm"
+lure_2_anim = "ness_lure2anm"
+lure_3_anim = "ness_lure3anm"
 
 [node name="Z" parent="." instance=ExtResource("1_jpks3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.942199, 0.26813674, 49.083027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.943583, 0.26813674, 49.083027)
 collision_layer = 9
 collision_mask = 9
 
@@ -275,52 +357,169 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 
 [node name="Ness" type="Node" parent="."]
 
-[node name="NessMod" parent="Ness" instance=ExtResource("2_lrauw")]
-transform = Transform3D(-0.9572838, 0, 0.28914863, 0, 1, 0, -0.28914866, 0, -0.95728374, 0, -3.309063, 0)
-visible = false
-
 [node name="nessieblend" parent="Ness" instance=ExtResource("13_40yyd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5151584, 0)
+transform = Transform3D(0.9994454, -0.0024049433, 0.033198226, 0.0024814336, 0.99999386, -0.00226303, -0.033192586, 0.0023441545, 0.99944603, 0, -7.9970765, -23.383438)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
-transform = Transform3D(0.9888214, 0, 0.149104, 0, 1, 0, -0.149104, 0, 0.9888214, -11.942199, -1.2588595, 48.30097)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -11.942199, -1.2588595, 48.30097)
 
 [node name="Rafts" type="Node" parent="."]
 
 [node name="Dock8" parent="Rafts" instance=ExtResource("11_2g60a")]
-transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, 21.242447, -2.0411444, 2.2816467)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Rafts/Dock8"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 5.9604645e-08, 0, 1, 0, 0.9865937, 0)
+transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, 22.971308, -2.0411444, 2.2816467)
 
 [node name="Dock9" parent="Rafts" instance=ExtResource("11_2g60a")]
-transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, -10.187126, -2.0411444, -16.599804)
-visible = false
+transform = Transform3D(2.7160857, 0, -2.2675152, 0, 1, 0, 2.6611812, 0, 2.314298, -16.063007, -2.0411444, -40.23719)
 
 [node name="Dock7" parent="Rafts" instance=ExtResource("11_2g60a")]
-transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, 15.295456, -2.0411444, -19.715134)
-visible = false
+transform = Transform3D(3.2080653, 0, 1.7394195, 0, 1, 0, -2.0414023, 0, 2.7334998, 29.723698, -2.0411444, -14.158442)
 
 [node name="Dock6" parent="Rafts" instance=ExtResource("11_2g60a")]
-transform = Transform3D(1.9675833, 0, -2.7725217, 0, 1, 0, 3.2538629, 0, 1.6765208, -27.73791, -2.0411444, 24.663235)
-visible = false
+transform = Transform3D(1.9675833, 0, -2.7725217, 0, 1, 0, 3.2538629, 0, 1.6765208, -27.73791, -2.0411444, -37.835426)
 
 [node name="Dock5" parent="Rafts" instance=ExtResource("11_2g60a")]
 transform = Transform3D(2.4254918, 0, 2.4952729, 0, 1, 0, -2.9284804, 0, 2.0666914, 23.127182, -2.0411444, 31.244766)
-visible = false
 
 [node name="Dock3" parent="Rafts" instance=ExtResource("11_2g60a")]
-transform = Transform3D(2.4900532, 0, -2.448669, 0, 1, 0, 2.8737855, 0, 2.1217022, 9.892036, -2.0411444, 24.418682)
-visible = false
+transform = Transform3D(2.4900532, 0, -2.448669, 0, 1, 0, 2.8737855, 0, 2.1217022, -33.71532, -2.0411444, -22.854916)
+
+[node name="Dock10" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(0.014048334, 0, 5.108503, 0, 1, 0, -6.051888, 0, 0.011858155, 41.087334, -2.0411444, 1.8502519)
+
+[node name="Dock11" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(0.006442995, 0, -5.108513, 0, 1, 0, 6.0519, 0, 0.005438929, 46.97737, -2.0411444, 2.2720842)
+
+[node name="Dock12" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(3.2935922, 0, -1.6192163, 0, 1, 0, 1.9003305, 0, 2.8063748, 21.92817, -2.0411444, -25.60437)
+
+[node name="Dock13" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(1.9186954, 0, 2.7972875, 0, 1, 0, -3.2829273, 0, 1.6348647, 13.23744, -2.0411444, -38.41108)
+
+[node name="Dock14" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(6.3052135, 0, 0.37617803, 0, 0.9999999, 0, -0.26580942, 0, 8.923224, 2.0374641, -2.0411444, -49.43556)
+
+[node name="Dock4" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(-2.0239596, 0, -2.7429006, 0, 1, 0, 3.2190986, 0, -1.7245569, -31.372568, -2.0411444, -9.330116)
+
+[node name="Dock15" parent="Rafts" instance=ExtResource("11_2g60a")]
+transform = Transform3D(2.4900532, 0, -2.448669, 0, 1, 0, 2.8737855, 0, 2.1217022, -21.522322, -2.0411444, 2.9963975)
 
 [node name="BoatAnm" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_gdr6b")
 }
-autoplay = "boat_start"
+autoplay = "ness_idle"
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-0.99997973, 0.006370414, 0, -0.006370414, -0.99997973, 0, 0, 0, 1, 0, 39.91762, 0)
 radius = 115.17
 height = 98.32
 material = SubResource("StandardMaterial3D_40yyd")
+
+[node name="Lure1" type="Node" parent="."]
+
+[node name="Lure1Area3d" type="Area3D" parent="Lure1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.57832, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lure1/Lure1Area3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6546631, -0.029693604, 1.7745132)
+shape = SubResource("BoxShape3D_181tc")
+
+[node name="fish2" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.4778023, -1.9135076, 3.2226784)
+
+[node name="fish3" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.9877853, -1.9135076, 2.5726783)
+
+[node name="fish4" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.0813293, -1.9135076, 2.4933832)
+
+[node name="fish5" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.9899635, -1.9135076, 3.8514135)
+
+[node name="fish6" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.1099739, -1.9135076, 3.9957545)
+
+[node name="fish7" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.4778023, -1.9135076, 4.563881)
+
+[node name="fish8" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.4778023, -1.9135076, 0.5192449)
+
+[node name="fish9" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.9877853, -1.9135076, -0.13075519)
+
+[node name="fish10" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.0813293, -1.9135076, -0.21005034)
+
+[node name="fish11" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.9899635, -1.9135076, 1.14798)
+
+[node name="fish12" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.1099739, -1.9135076, 1.292321)
+
+[node name="fish13" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -1.4778023, -1.9135076, 1.8604474)
+
+[node name="fish14" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.785118, -1.9135076, 2.2998679)
+
+[node name="fish15" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -3.2951012, -1.9135076, 1.6498678)
+
+[node name="fish16" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.3886452, -1.9135076, 1.5705726)
+
+[node name="fish17" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -3.2972794, -1.9135076, 2.928603)
+
+[node name="fish18" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.4172897, -1.9135076, 3.072944)
+
+[node name="fish19" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.785118, -1.9135076, 3.6410704)
+
+[node name="fish20" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.8769608, -1.9135076, -0.5010073)
+
+[node name="fish21" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -3.3869438, -1.9135076, -1.1510074)
+
+[node name="fish22" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.4804878, -1.9135076, -1.2303026)
+
+[node name="fish23" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -3.389122, -1.9135076, 0.12772775)
+
+[node name="fish24" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.5091324, -1.9135076, 0.27206874)
+
+[node name="fish25" parent="Lure1/Lure1Area3d" instance=ExtResource("15_40yyd")]
+transform = Transform3D(2.0279727, -0.19330758, 0, 0.27884334, 1.4058881, 0, 0, 0, 1.8213025, -2.8769608, -1.9135076, 0.8401952)
+
+[node name="Lure2" type="Node" parent="."]
+
+[node name="Lure2Area3D" type="Area3D" parent="Lure2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.832947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lure2/Lure2Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2831573, -0.3076625, -0.10570526)
+shape = SubResource("BoxShape3D_gxbah")
+
+[node name="bread" parent="Lure2/Lure2Area3D" instance=ExtResource("15_qqm1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4996614, -1.0470039, 2.202324)
+
+[node name="bread2" parent="Lure2/Lure2Area3D" instance=ExtResource("15_qqm1c")]
+transform = Transform3D(0.82484716, 0, -0.5653558, 0, 1, 0, 0.5653558, 0, 0.82484716, -4.361167, -1.0470039, 1.6926689)
+
+[node name="Lure3" type="Node" parent="."]
+
+[node name="Lure3Area3D" type="Area3D" parent="Lure3"]
+transform = Transform3D(0.7395959, 0, 0.67305124, 0, 1, 0, -0.67305124, 0, 0.7395959, -19.60533, 0, 1.517755)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lure3/Lure3Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60220146, -0.3984375, 0.41931152)
+shape = SubResource("BoxShape3D_uuryg")
+
+[node name="pizza" parent="Lure3/Lure3Area3D" instance=ExtResource("17_181tc")]
+transform = Transform3D(2.3388128, 0, -2.1283798, 0, 3.1622849, 0, 2.1283798, 0, 2.3388128, 0.17140579, -1.0470037, 2.4621964)

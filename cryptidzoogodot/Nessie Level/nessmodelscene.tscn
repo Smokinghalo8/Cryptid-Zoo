@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4nrm1q40cyot"]
+[gd_scene load_steps=2 format=3 uid="uid://b4nrm1q40cyot"]
 
 [ext_resource type="PackedScene" uid="uid://b2tuovvupl4ia" path="res://Assets/Models/Nessie/nessieblend.glb" id="1_53r0a"]
-[ext_resource type="Shader" uid="uid://blip1pxebvhjx" path="res://nessshader.gdshader" id="2_nyald"]
-[ext_resource type="Texture2D" uid="uid://sr5ggd5gqte" path="res://Assets/Models/Nessie/nesssieTex.png" id="3_uujx2"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkkir"]
-render_priority = 0
-shader = ExtResource("2_nyald")
-shader_parameter/main_texture = ExtResource("3_uujx2")
-shader_parameter/rim_color = Color(0, 0.5933253, 6.144511, 1)
-shader_parameter/rim_steepness = 0.0050000002375
-shader_parameter/rim_spread = 0.22000001045
-shader_parameter/rim_glow = 10.0
 
 [node name="nessieblend" instance=ExtResource("1_53r0a")]
 
-[node name="Prev_001" parent="NessieRig/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("ShaderMaterial_kkkir")
+[node name="Skeleton3D" parent="NessieRig" index="0"]
+bones/1/rotation = Quaternion(0.3772288, -0.006847221, 0.011759834, 0.92602015)
+bones/3/rotation = Quaternion(-0.09666902, -1.1999639e-07, 1.0925316e-08, 0.9953167)
+bones/5/rotation = Quaternion(0.008370313, -1.24227885e-14, -1.9956392e-09, 0.99996495)
+bones/6/rotation = Quaternion(0.27991205, -2.9865422e-15, -6.6736234e-08, 0.9600257)
+bones/9/rotation = Quaternion(-0.25275543, 0.079945214, 0.29856068, 0.91683424)
+bones/14/rotation = Quaternion(-0.20119385, -0.098438844, -0.4206756, 0.8791262)
+bones/17/rotation = Quaternion(0.99945605, 7.863033e-09, -2.3828886e-07, -0.032979954)
+bones/19/rotation = Quaternion(-0.06683746, 2.147483e-14, 3.1870584e-08, 0.9977639)
+bones/21/rotation = Quaternion(-0.014298447, -2.8867045e-14, 6.818029e-09, 0.9998978)
+bones/24/rotation = Quaternion(0.1824306, -0.049360733, -0.26036552, 0.94683284)
+bones/28/rotation = Quaternion(0.43195352, 0.5544362, 0.66673905, -0.24794291)
+bones/29/rotation = Quaternion(0.20230648, 0.0507598, 0.2635512, 0.94182605)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "NessieRigAction"
