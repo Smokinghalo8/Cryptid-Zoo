@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://dre0462n3c30l"]
 
-[ext_resource type="Script" path="res://Gnome Level/Assets/minigame/minigameScript.gd" id="1_6dco7"]
+[ext_resource type="Script" uid="uid://csypldgn584ja" path="res://Gnome Level/Assets/minigame/Scripts/minigameScript.gd" id="1_6dco7"]
 [ext_resource type="SpriteFrames" uid="uid://bjmn21mwdhted" path="res://Gnome Level/Assets/minigame/animationBuff-O.tres" id="1_q8t0t"]
 [ext_resource type="Script" uid="uid://53k3xdpoo52r" path="res://Gnome Level/Assets/minigame/Scripts/buffO2DScript.gd" id="2_e5clp"]
 [ext_resource type="Texture2D" uid="uid://crpke1lrq8dn" path="res://Gnome Level/Assets/minigame/GrassTile.png" id="3_e5clp"]

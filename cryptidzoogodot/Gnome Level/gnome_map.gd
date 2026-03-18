@@ -41,10 +41,7 @@ func togglePause():
 	get_tree().paused = true
 	$"Ui/Pause Menu".visible = true
 	
-	#check if player is moving or not
-	if Global.playerShouldBeMoving == false:
-		pass
-		#TODO make the player stop moving, or find some way to stop Buff-O from repeating his lines!
+	
 	
 	#CHECK THINGSGATHERED
 	if Global.thingsGathered == 2:

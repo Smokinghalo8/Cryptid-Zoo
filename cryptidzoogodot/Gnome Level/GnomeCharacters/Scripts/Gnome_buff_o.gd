@@ -27,4 +27,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			Global.playerShouldBeMoving = true
 			start = false
 			z.global_position = GnomeKingPos
-			#move player in front of Gnome King now TODO not implemented AS of yet
+			#TODO teleport Buff-O over there too

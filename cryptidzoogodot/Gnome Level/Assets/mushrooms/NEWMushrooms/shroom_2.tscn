@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8o4qodxewu80"]
+
+[ext_resource type="Script" uid="uid://dh7rpr3i1abxn" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/Scripts/shroom_2.gd" id="1_lfdp1"]
+[ext_resource type="PackedScene" uid="uid://dl3asgoqqouqy" path="res://Gnome Level/Assets/mushrooms/chanterelle/scene.gltf" id="2_50rsm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8jrwj"]
+height = 2.3535156
+radius = 3.538086
+
+[node name="Shroom2" type="Node3D"]
+script = ExtResource("1_lfdp1")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_50rsm")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9576161, 0)
+shape = SubResource("CylinderShape3D_8jrwj")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

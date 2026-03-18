@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=64 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="35_dyhn3"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="36_i6n8p"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="37_2iq4o"]
+[ext_resource type="PackedScene" uid="uid://8o4qodxewu80" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_2.tscn" id="38_hvxpa"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="38_ixyha"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="39_ec0i6"]
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="40_mgsad"]
@@ -488,14 +489,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.78351, 0, 0)
 [node name="Playset" parent="." instance=ExtResource("28_ujj1q")]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 72.35481, 0, 94.54317)
 
-[node name="shroom2" parent="." instance=ExtResource("25_7oysy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.8775, 0, 86.14665)
-
 [node name="shroom1" parent="." instance=ExtResource("25_7oysy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.69919, 0, 80.01421)
 
-[node name="shroom3" parent="." instance=ExtResource("25_7oysy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.69919, 0, 85.82154)
+[node name="shroom2" parent="." instance=ExtResource("38_hvxpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.74156, 0.8201132, 74.07087)
 
 [node name="quest_hedge" parent="." instance=ExtResource("26_bwcok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.00264, -1.277019, 160.32022)

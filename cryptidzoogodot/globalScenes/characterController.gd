@@ -25,6 +25,8 @@ var velocityTolerance = 0.1
 var velocityDifference = 0
 @onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
 
+#ethan make glide
+
 
 func on_ready():
 	idle = true
@@ -41,6 +43,13 @@ func _input(event: InputEvent):
 func _process(delta):
 	#sensing
 	#Sensing
+	
+	if Global.playerShouldBeMoving == false:
+		SPEED = 0.0
+		
+	if Global.playerShouldBeMoving == true:
+		SPEED = 5.0
+	
 	
 #	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
@@ -128,11 +137,13 @@ func _physics_process(delta: float) -> void:
 		
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
+		print("Were sprinting")
 		SPEED = sprintSpeed
 		Global.stamina -= staminaDepletionRate * delta
 		Global.stamina = min(Global.stamina, maxStamina)
 
 	else:
+		print("Were NOT sprinting")
 		Global.stamina += staminaRecoveryRate * delta
 		Global.stamina = min(Global.stamina, maxStamina)
 
