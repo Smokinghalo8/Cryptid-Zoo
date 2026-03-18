@@ -21,10 +21,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			#play init talk
 			await DialogueManager.show_dialogue_balloon(dialogue, "rouletteGnomeGiveQuest").finished
 			Global.gnomeState = 20
+			#now go to shroom 1 & 2.gd to find when gnomestate == 21
+			
 		elif Global.gnomeState == 21:
 			#quest done
 			await DialogueManager.show_dialogue_balloon(dialogue, "rouletteGnomeEndQuest").finished
 			Global.gnomeState = 1 #now player can go back to Gnome King
+			
 			pass
 		elif Global.gnomeState == 22:
 			#failState

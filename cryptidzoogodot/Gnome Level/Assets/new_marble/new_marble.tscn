@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://dqid0o3q5fwfn" path="res://Gnome Level/Assets/marble.tres" id="2_l6sfj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r1srr"]
-radius = 1.796869
+radius = 3.0
 
 [node name="new_marble" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 0, 0, 0)
@@ -37,6 +37,10 @@ polygon = PackedVector2Array(0, 0, -0.09515962, 1.3348104, 1, 1, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_r1srr")
+
+[node name="PickUpText" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.007812679, 0.7183743, 0)
+text = "Press 'E' to pick up!"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

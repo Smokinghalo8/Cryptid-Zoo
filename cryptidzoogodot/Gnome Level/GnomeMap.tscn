@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=65 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="41_qsklv"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="42_taton"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="43_uc803"]
+[ext_resource type="PackedScene" uid="uid://gmvp7ejea7jk" path="res://Gnome Level/Assets/New_HedgeReward/new_hedge_dog.tscn" id="45_4oad2"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -459,7 +460,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 30.547337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 37.557545)
 dialogue = ExtResource("17_i627o")
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
@@ -499,7 +500,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.74156, 0.8201132, 74.0708
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.00264, -1.277019, 160.32022)
 
 [node name="new_marble" parent="." instance=ExtResource("26_87shl")]
-transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 176.23727, 0, 215.8356)
+transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 176.23727, 0.8496541, 215.8356)
 
 [node name="sword" parent="." instance=ExtResource("26_ujj1q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.91413, 10.606115, 86.813576)
@@ -515,6 +516,9 @@ dialogue = ExtResource("17_i627o")
 [node name="Bleafus_the_gnome" parent="." instance=ExtResource("29_i627o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.24689, 0.3262241, 26.152647)
 dialogue = ExtResource("17_i627o")
+
+[node name="NewHedgeDog" parent="." instance=ExtResource("45_4oad2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 227.19513, 1.9645767, 153.82436)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

@@ -23,13 +23,16 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		if Global.gnomeState == 11:
 			pass 
+			
 		elif Global.gnomeState == 10:
 			await DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeGiveQuest").finished
 			Global.gnomeState = 12
+			#Check the marble.tscn AND new_sword.tscn!
 			#set gnomstate to 2 after picked up everything
 		elif Global.gnomeState == 41:
 			await DialogueManager.show_dialogue_balloon(dialogue, "fetchGnomeEndQuest").finished
 			Global.gnomeState = 2
+			Global.convoDone = true
 		elif Global.gnomeState == 40:
 			#TODO put some bs here
 			pass

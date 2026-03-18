@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
-@export var SPEED = 5.0
+@export var SPEED = 25.0
 const JUMP_VELOCITY = 7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
@@ -48,7 +48,7 @@ func _process(delta):
 		SPEED = 0.0
 		
 	if Global.playerShouldBeMoving == true:
-		SPEED = 5.0
+		SPEED = 25.0
 	
 	
 #	$"../Ui/WednigoHead/SenseBar".value = senseTime
@@ -137,13 +137,11 @@ func _physics_process(delta: float) -> void:
 		
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
-		print("Were sprinting")
 		SPEED = sprintSpeed
 		Global.stamina -= staminaDepletionRate * delta
 		Global.stamina = min(Global.stamina, maxStamina)
 
 	else:
-		print("Were NOT sprinting")
 		Global.stamina += staminaRecoveryRate * delta
 		Global.stamina = min(Global.stamina, maxStamina)
 

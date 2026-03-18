@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 			enough = true#stop plasyer from eating
 			#after eating 4 make gloabl 21 and send back to king
 			Global.gnomeState = 21
+			print(str(Global.gnomeState) + " Should be 21")
 	pass
 
 

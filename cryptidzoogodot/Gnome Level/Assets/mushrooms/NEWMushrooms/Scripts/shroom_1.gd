@@ -1,7 +1,8 @@
 extends Node3D
 
 var is_in_shroom = false
-@export var psychedelic = 0.0
+@export var psychedelic = 0.0#unsued for now
+@onready var pick_up_text: Label3D = $PickUpText
 var can_eat = false
 var eaten = false
 var enough = false
@@ -9,6 +10,7 @@ var enough = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pick_up_text.hide()
 	pass # Replace with function body.
 
 
@@ -35,6 +37,7 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		is_in_shroom = true
+		pick_up_text.show()
 		#can eat
 		pass # Replace with function body.
 
@@ -42,5 +45,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		is_in_shroom = false
+		pick_up_text.hide()
 		#can eat
 		pass # Replace with function body.
