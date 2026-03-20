@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bugc32vvagpvh"
-path="res://.godot/imported/scene.gltf-1c6570ed89c9689414f731801245e83b.scn"
+uid="uid://daywxrbxwga7l"
+path="res://.godot/imported/masuoleum.gltf-ed9ed67100750899a2b6d53a3873aa23.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/ps1_style__lowpoly_mausoleum/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-1c6570ed89c9689414f731801245e83b.scn"]
+source_file="res://Wendigo Level/assets/masuoleum.gltf"
+dest_files=["res://.godot/imported/masuoleum.gltf-ed9ed67100750899a2b6d53a3873aa23.scn"]
 
 [params]
 

@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5ke1lgkywmh1"]
-
-[ext_resource type="PackedScene" uid="uid://2v3njd7m2cr8" path="res://Wendigo Level/assets/torch.gltf" id="1_eqivi"]
-
-[node name="Sketchfab_Scene" instance=ExtResource("1_eqivi")]

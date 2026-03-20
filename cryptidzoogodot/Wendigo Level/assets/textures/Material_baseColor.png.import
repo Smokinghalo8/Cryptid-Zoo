@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdmov5dqbk5ng"
-path.s3tc="res://.godot/imported/Material_0_diffuse.jpeg-55dca4aaf7f70d3390799e2b5dc14564.s3tc.ctex"
+uid="uid://dndt72isek8oq"
+path.s3tc="res://.godot/imported/Material_baseColor.png-bd3be14e96eae354e6eea991865d827b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Wendigo Level/assets/ps1_style__lowpoly_mausoleum/textures/Material_0_diffuse.jpeg"
-dest_files=["res://.godot/imported/Material_0_diffuse.jpeg-55dca4aaf7f70d3390799e2b5dc14564.s3tc.ctex"]
+source_file="res://Wendigo Level/assets/textures/Material_baseColor.png"
+dest_files=["res://.godot/imported/Material_baseColor.png-bd3be14e96eae354e6eea991865d827b.s3tc.ctex"]
 
 [params]
 
