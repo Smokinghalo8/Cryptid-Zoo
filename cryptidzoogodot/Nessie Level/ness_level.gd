@@ -11,6 +11,7 @@ extends Node3D
 @export var lure_1_anim: String = "Lure1"
 @export var lure_2_anim: String = "Lure2"
 @export var lure_3_anim: String = "Lure3"
+@export var boat_anm: String = "BoatAnm"
 
 # This tracks which function to call when 'E' is pressed
 var current_lure_id: int = 0 
@@ -46,6 +47,10 @@ func _on_animation_finished(anim_name: String):
 
 ############# LURES
 
+func start_boat_anm():
+	print("Starting Boat Anm...")
+	animation_player.play(boat_anm)
+	
 func action_lure_1():
 	print("Activating Lure 1")
 	_show_children(lure_1_area)
@@ -84,3 +89,12 @@ func _show_children(area: Area3D):
 	for child in area.get_children():
 		if child is VisualInstance3D or child is Node3D:
 			child.show()
+
+
+
+
+
+
+func _on_boat_start_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Character"):
+		start_boat_anm()
