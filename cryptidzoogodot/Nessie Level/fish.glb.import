@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ct0xaa2c1skwc"
-valid=false
+uid="uid://l3irmxr54wma"
+path="res://.godot/imported/fish.glb-a34c25c8cba11ae066e7e5d97085a02a.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/spookyHouse.gltf"
+source_file="res://Nessie Level/fish.glb"
+dest_files=["res://.godot/imported/fish.glb-a34c25c8cba11ae066e7e5d97085a02a.scn"]
 
 [params]
 

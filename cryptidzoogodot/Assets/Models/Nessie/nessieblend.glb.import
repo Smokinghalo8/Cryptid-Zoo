@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ct0xaa2c1skwc"
-valid=false
+uid="uid://b2tuovvupl4ia"
+path="res://.godot/imported/nessieblend.glb-ff87a0716c5fd3bf0ef8981b01385576.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/spookyHouse.gltf"
+source_file="res://Assets/Models/Nessie/nessieblend.glb"
+dest_files=["res://.godot/imported/nessieblend.glb-ff87a0716c5fd3bf0ef8981b01385576.scn"]
 
 [params]
 

@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ct0xaa2c1skwc"
-valid=false
+uid="uid://bdopa3ywnw1qk"
+path="res://.godot/imported/nessModelScene.gltf-9e6cef20e9f20d19c629d08a4a81a731.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/spookyHouse.gltf"
+source_file="res://Nessie Level/nessie_goat_simulator/nessModelScene.gltf"
+dest_files=["res://.godot/imported/nessModelScene.gltf-9e6cef20e9f20d19c629d08a4a81a731.scn"]
 
 [params]
 

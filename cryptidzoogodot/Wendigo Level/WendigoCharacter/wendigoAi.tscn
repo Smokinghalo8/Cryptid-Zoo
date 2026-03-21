@@ -27,7 +27,6 @@ refraction_enabled = true
 refraction_scale = 1.0
 
 [node name="WendigoAi" type="CharacterBody3D"]
-axis_lock_linear_y = true
 script = ExtResource("1_ynmkr")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
