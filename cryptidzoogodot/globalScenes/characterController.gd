@@ -28,7 +28,9 @@ var velocityDifference = 0
 @onready var zedAnims = $ZColl/ZedAnims/AnimationPlayer
 @onready var zedAnimTree = $ZColl/ZedAnims/AnimationTree
 
-	
+#ethan make glide
+
+
 func on_ready():
 	idle = true
 	Global.stamina = maxStamina
@@ -45,6 +47,13 @@ func _input(event: InputEvent):
 func _process(delta):
 	#sensing
 	#Sensing
+	
+	if Global.playerShouldBeMoving == false:
+		SPEED = 0.0
+		
+	if Global.playerShouldBeMoving == true:
+		SPEED = 5.0
+	
 	
 #	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	

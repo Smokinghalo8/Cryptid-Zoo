@@ -14,5 +14,14 @@ var mothman_Zoo_Compatability = 0
 #Wendigo Things
 var trapCounter = 1
 var frozen = false
+
+
+#Gnome Things
+var thingsGathered = 0
+var gnomeState = 0
+var shroomsAte = 0
+var playerShouldBeMoving = true
+var HedgeCompleted = false
+var convoDone = false
 var wendyFound = true
 var checkpoint = false

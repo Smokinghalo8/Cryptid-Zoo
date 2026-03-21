@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cntmip7wepk2c"
+path="res://.godot/imported/GnomeLevel.dialogue-95641f9d0ef04540937f8468657e24cb.tres"
+
+[deps]
+
+source_file="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue"
+dest_files=["res://.godot/imported/GnomeLevel.dialogue-95641f9d0ef04540937f8468657e24cb.tres"]
+
+[params]
+
+defaults=true

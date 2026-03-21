@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2pghmlmrbd8t"]
+
+[ext_resource type="PackedScene" uid="uid://chi4agqishpat" path="res://Gnome Level/anemone_flower_low_poly/scene.gltf" id="1_gbqwa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wcka0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tc00o"]
+radius = 11.372314
+height = 22.744629
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_gbqwa")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("SphereShape3D_wcka0")
+
+[node name="Area3D" type="Area3D" parent="CollisionShape3D"]
+visible = false
+
+[node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="CollisionShape3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 2.1580257, 9.899319, 2.9871829)
+visible = false
+shape = SubResource("CapsuleShape3D_tc00o")

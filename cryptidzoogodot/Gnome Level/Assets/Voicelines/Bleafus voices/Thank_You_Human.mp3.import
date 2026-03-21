@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5hf77uru4iuj"
+path="res://.godot/imported/Thank_You_Human.mp3-4200b779797dd1ee3d244dac701555cc.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Bleafus voices/Thank_You_Human.mp3"
+dest_files=["res://.godot/imported/Thank_You_Human.mp3-4200b779797dd1ee3d244dac701555cc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

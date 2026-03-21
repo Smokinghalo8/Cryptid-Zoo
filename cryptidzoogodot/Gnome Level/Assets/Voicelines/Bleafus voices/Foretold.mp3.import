@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gjuxpap4xmjo"
+path="res://.godot/imported/Foretold.mp3-a0a9d4a81fa3463c96feaa655ff7d03a.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Bleafus voices/Foretold.mp3"
+dest_files=["res://.godot/imported/Foretold.mp3-a0a9d4a81fa3463c96feaa655ff7d03a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
