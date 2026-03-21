@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		var local_z = player.transform.basis.z.dot(to_objective)
 		var dir_2d = Vector2(local_x, local_z)
 		arrow.rotation = dir_2d.angle() + PI/2
-		
 		var radius = 50
 		var center = Vector2(viewport.size.x / 2, viewport.size.y / 2)
 		
