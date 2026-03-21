@@ -1,0 +1,94 @@
+[gd_scene load_steps=20 format=3 uid="uid://dkv13pmtdbk5w"]
+
+[ext_resource type="PackedScene" uid="uid://ci3qefciyaq6t" path="res://Assets/Models/Zed/ZedAnims.glb" id="1_oyd6j"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oyd6j"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_luruw"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_btcwr"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yr5dy"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ruaw3"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k0q76"]
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iu5au"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gao4c"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pgw28"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jr40v"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8dq0f"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ofqu"]
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vcdv1"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhp6c"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhavd"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xig6e"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w5khb"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xeoak"]
+states/idle/node = SubResource("AnimationNodeAnimation_oyd6j")
+states/idle/position = Vector2(391, 100)
+states/jump/node = SubResource("AnimationNodeAnimation_luruw")
+states/jump/position = Vector2(700, 100)
+states/run/node = SubResource("AnimationNodeAnimation_btcwr")
+states/run/position = Vector2(535, 29)
+states/walk/node = SubResource("AnimationNodeAnimation_yr5dy")
+states/walk/position = Vector2(535, 175)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ruaw3"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_k0q76"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_iu5au"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_gao4c"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_pgw28"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_jr40v"), "run", "walk", SubResource("AnimationNodeStateMachineTransition_8dq0f"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_5ofqu"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_vcdv1"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_fhp6c"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_fhavd"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_xig6e"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_w5khb")]
+
+[node name="ZedAnims" instance=ExtResource("1_oyd6j")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+callback_mode_process = 0
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_xeoak")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/jump = false
+parameters/conditions/run = false
+parameters/conditions/walk = false

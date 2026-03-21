@@ -9,6 +9,7 @@ const JUMP_VELOCITY = 7
 @export var run = false
 @export var idle = true
 @export var glide = false
+@export var jump = false
 @export var senseable = true
 var sprintSpeed = 10.0
 var maxStamina = 100.0
@@ -24,12 +25,15 @@ var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
 @onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
+@onready var zedAnims = $ZColl/ZedAnims/AnimationPlayer
+@onready var zedAnimTree = $ZColl/ZedAnims/AnimationTree
 
-
+	
 func on_ready():
 	idle = true
 	Global.stamina = maxStamina
 	objectiveArrow.visible = false
+
 
 
 func _input(event: InputEvent):
@@ -68,8 +72,8 @@ func _process(delta):
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
-
-	update_animation_parameters()
+	
+	
 	
 	
 
@@ -105,26 +109,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
 	
-	#idle
-	if(velocity.length() <= 1 && is_on_floor()):
-		idle = true
-		walk = false
-		run = false
-		
-	#walk
-	elif(velocity.length() == 5 && is_on_floor()):
-		walk = true
-		idle = false
-		run = false
-		
-	#run
-	elif(velocity.length() == 10 && is_on_floor()):
-		run = true
-		walk = false
-		idle = false
+	if Global.frozen == false:
+		move_and_slide()
 		
 	#Sprint
 	if Input.is_action_pressed("shift") && sprintable == true:
@@ -149,11 +136,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
 		
-	#Crouch
-	if Input.is_action_pressed("control"):
-		$ZColl.scale = Vector3(1, 0.5, 1)
-		SPEED = 2.5
-		
 	if Input.is_action_just_released("control"):
 		$ZColl.scale = Vector3(1, 1, 1)
 		SPEED = 5
@@ -167,56 +149,43 @@ func _physics_process(delta: float) -> void:
 	
 	if not self.is_on_floor():
 		$Walking.stop()
+		idle = false
+		walk = false
+		run = false
+		jump = true
 	
-	if velocity.length() > 9.9 && not $Walking.playing && self.is_on_floor():
+	elif velocity.length() > 6 && not $Walking.playing && self.is_on_floor():
 		$Walking.stop()
 		$Walking.stream = Global.walkingSound
 		$Walking.pitch_scale = 2
 		$Walking.volume_db = -10
 		$Walking.play(0)
+		idle = false
+		walk = false
+		run = true
+		jump = false
 		
-	if velocity.length() == 5 && not $Walking.playing && self.is_on_floor():
+		
+	elif velocity.length() > 4 && not $Walking.playing && self.is_on_floor():
 		$Walking.stop()
 		$Walking.stream = Global.walkingSound
 		$Walking.pitch_scale = 1
 		$Walking.volume_db = -10
 		$Walking.play(0)
+		idle = false
+		walk = true
+		run = false
+		jump = false
 		
-	if velocity.length() == 2.5 && not $Walking.playing && self.is_on_floor():
-		$Walking.stop()
-		$Walking.stream = Global.walkingSound
-		$Walking.pitch_scale = 0.5
-		$Walking.volume_db = -10
-		$Walking.play(0)
 		
 	if velocity.length() < 1:
-		$Walking.stop()
-
-
-func update_animation_parameters():
-	if(idle == true):
-		animTree["parameters/conditions/idle"] = true
-		animTree["parameters/conditions/walk"] = false
-		animTree["parameters/conditions/run"] = false
-		
-	elif(walk == true):
-		animTree["parameters/conditions/idle"] = false
-		animTree["parameters/conditions/walk"] = true
-		animTree["parameters/conditions/run"] = false
-		#animTree["parameters/conditions/glide"] = false
-		
-	elif(run == true):
-		animTree["parameters/conditions/idle"] = false
-		animTree["parameters/conditions/walk"] = false
-		animTree["parameters/conditions/run"] = true
-		#animTree["parameters/conditions/glide"] = false
+		$Walking.stop
+		idle = true
+		walk = false
+		run = false
+		jump = false
 	
-	elif(glide == true):
-		animTree["parameters/conditions/idle"] = false
-		animTree["parameters/conditions/walk"] = false
-		animTree["parameters/conditions/run"] = false
-		#animTree["parameters/conditions/glide"] = true
-		
+	updateAnimationParameters()
 		
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
@@ -238,3 +207,37 @@ func disableLooker():
 func _on_water_body_entered(body: Node3D) -> void:
 	self.position.x -= 30
 	self.position.y += 20
+
+func updateAnimationParameters():
+	zedAnimTree.set("parameters/conditions/idle", idle)
+	zedAnimTree.set("parameters/conditions/walk", walk)
+	zedAnimTree.set("parameters/conditions/run", run)
+	zedAnimTree.set("parameters/conditions/jump", jump)
+	#if idle == true:
+		##stateMachine.travel("idle")
+		#print("Idle")
+		#zedAnimTree.set("parameters/conditions/idle", true)
+		#zedAnimTree.set("parameters/conditions/walk", false)
+		#zedAnimTree.set("parameters/conditions/run", false)
+		#zedAnimTree.set("parameters/conditions/jump", false)
+	#elif walk == true:
+		##stateMachine.travel("walk")
+		#print("Walk")
+		#zedAnimTree.set("parameters/conditions/idle", false)
+		#zedAnimTree.set("parameters/conditions/walk", true)
+		#zedAnimTree.set("parameters/conditions/run", false)
+		#zedAnimTree.set("parameters/conditions/jump", false)
+	#elif run == true:
+		##stateMachine.travel("run")
+		#print("Run")
+		#zedAnimTree.set("parameters/conditions/idle", false)
+		#zedAnimTree.set("parameters/conditions/walk", false)
+		#zedAnimTree.set("parameters/conditions/run", true)
+		#zedAnimTree.set("parameters/conditions/jump", false)
+	#elif jump == true:
+		##stateMachine.travel("jump")
+		#print("Jump")
+		#zedAnimTree.set("parameters/conditions/idle", false)
+		#zedAnimTree.set("parameters/conditions/walk", false)
+		#zedAnimTree.set("parameters/conditions/run", false)
+		#zedAnimTree.set("parameters/conditions/jump", true)

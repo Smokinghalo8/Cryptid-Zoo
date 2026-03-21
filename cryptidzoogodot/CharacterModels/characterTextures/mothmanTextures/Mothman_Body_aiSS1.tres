@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://m8028oo8y3xe"]
+
+[ext_resource type="Texture2D" uid="uid://cxmm4f06erb77" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_BaseColor.png" id="1_8p1ev"]
+[ext_resource type="Texture2D" uid="uid://7jn14bwvsvyu" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_Emissive.png" id="2_nqk7o"]
+[ext_resource type="Texture2D" uid="uid://b44lsqbq3ss4v" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_Height.png" id="3_27o3q"]
+[ext_resource type="Texture2D" uid="uid://850gu3ovvko0" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_Metallic.png" id="4_tebg2"]
+[ext_resource type="Texture2D" uid="uid://vp4c8hufsrci" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_Normal.png" id="5_n0srw"]
+[ext_resource type="Texture2D" uid="uid://vusdiyi6u0on" path="res://CharacterModels/characterTextures/mothmanTextures/Body/Mothman_Exploded_Mothman_Body_aiSS_Roughness.png" id="6_1rqkr"]
+
+[resource]
+resource_name = "Mothman_Body_aiSS1"
+albedo_texture = ExtResource("1_8p1ev")
+metallic = 1.0
+metallic_texture = ExtResource("4_tebg2")
+roughness_texture = ExtResource("6_1rqkr")
+emission_enabled = true
+emission_texture = ExtResource("2_nqk7o")
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("5_n0srw")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_27o3q")

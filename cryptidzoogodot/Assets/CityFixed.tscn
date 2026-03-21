@@ -1,4 +1,4 @@
-[gd_scene load_steps=2457 format=4 uid="uid://c1mi5nba5p3pi"]
+[gd_scene load_steps=2455 format=4 uid="uid://c1mi5nba5p3pi"]
 
 [ext_resource type="PackedScene" uid="uid://ygtjyrv25ar2" path="res://Assets/NEW IMPORTS/Road_Export.fbx" id="1_bmstc"]
 [ext_resource type="Texture2D" uid="uid://c74nf1m8kltms" path="res://Assets/Materials/PNG/road_road_BaseMap.png" id="2_k3co6"]
@@ -1273,20 +1273,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c03px")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_sba8p"]
-_surfaces = [{
-"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
-"format": 34359742465,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMAAwAFAAQABgAEAAUABQAHAAYAAQAGAAcABwACAAEABAAGAAEAAQAAAAQAAwACAAcABwAFAAMA"),
-"name": "Metal",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAPwAAAD8AAAA/AAAAPwAAAL8AAAA/AAAAvwAAAL8AAAA/AAAAvwAAAD8AAAA/AAAAPwAAAD8AAAC/AAAAvwAAAD8AAAC/AAAAPwAAAL8AAAC/AAAAvwAAAL8AAAC/")
-}]
-blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_uq31f"]
 _surfaces = [{
@@ -32847,37 +32833,37 @@ material_override = SubResource("StandardMaterial3D_haa4j")
 mesh = SubResource("ArrayMesh_mdkkr")
 skeleton = NodePath("")
 
-[node name="Window_Frame32" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="2"]
+[node name="Window_Frame32" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="1"]
 transform = Transform3D(0.0141684, 0.124495, -2.55737e-06, -2.79707e-06, 0.000228711, 0.00180742, 0.0276888, -0.0637042, 1.49116e-06, 0.310895, -0.340229, 0.284923)
 material_override = SubResource("StandardMaterial3D_fwf2v")
 mesh = SubResource("ArrayMesh_1wfdx")
 skeleton = NodePath("")
 
-[node name="Window_Frame42" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="3"]
+[node name="Window_Frame42" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="2"]
 transform = Transform3D(0.0157884, 0.12049, -2.46426e-06, -2.79707e-06, 0.000228711, 0.00180742, 0.0267981, -0.070988, 1.64046e-06, 0.310895, -0.313314, 0.284923)
 material_override = SubResource("StandardMaterial3D_43ck5")
 mesh = SubResource("ArrayMesh_dg3wq")
 skeleton = NodePath("")
 
-[node name="Window_Frame5" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="4"]
+[node name="Window_Frame5" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="3"]
 transform = Transform3D(0.028191, -0.00013636, -0.00175955, -2.79723e-06, 0.0796061, -1.76885e-05, 0.0131409, 0.000309476, 0.00377471, 0.110773, -0.329669, 0.386244)
 material_override = SubResource("StandardMaterial3D_twjqj")
 mesh = SubResource("ArrayMesh_1cd21")
 skeleton = NodePath("")
 
-[node name="Window_Frame6" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="5"]
+[node name="Window_Frame6" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="4"]
 transform = Transform3D(0.028191, -0.000154223, -0.00175955, -2.79723e-06, 0.0900344, -1.76885e-05, 0.0131409, 0.000350017, 0.00377471, 0.0514944, -0.333775, 0.416503)
 material_override = SubResource("StandardMaterial3D_pui88")
 mesh = SubResource("ArrayMesh_qnmyi")
 skeleton = NodePath("")
 
-[node name="Window_Frame7" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="6"]
+[node name="Window_Frame7" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="5"]
 transform = Transform3D(0.0142534, 0.124299, -2.55277e-06, -2.79707e-06, 0.000228711, 0.00180742, 0.0276452, -0.0640863, 1.49901e-06, 0.0808306, -0.340229, 0.40116)
 material_override = SubResource("StandardMaterial3D_vi3ox")
 mesh = SubResource("ArrayMesh_uoe5h")
 skeleton = NodePath("")
 
-[node name="Window_Frame8" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="7"]
+[node name="Window_Frame8" type="MeshInstance3D" parent="Buildings/Pizza_Place2/Window_Frames" index="6"]
 transform = Transform3D(0.0139224, 0.125055, -2.57049e-06, -2.79707e-06, 0.000228711, 0.00180742, 0.0278133, -0.0625979, 1.46843e-06, 0.0808306, -0.313314, 0.40116)
 material_override = SubResource("StandardMaterial3D_4p7cj")
 mesh = SubResource("ArrayMesh_kfg6p")

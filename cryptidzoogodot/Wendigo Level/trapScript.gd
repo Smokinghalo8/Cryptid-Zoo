@@ -33,4 +33,3 @@ func reset():
 	$InteractCol.disabled = false
 	
 	
-	

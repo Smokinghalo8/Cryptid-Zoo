@@ -12,5 +12,7 @@ var mothman_Zoo_Compatability = 0
 
 
 #Wendigo Things
-var trapCounter = 4
+var trapCounter = 1
 var frozen = false
+var wendyFound = true
+var checkpoint = false
