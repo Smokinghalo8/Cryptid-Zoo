@@ -48,7 +48,6 @@ func togglePause():
 	$"Ui/Pause Menu".visible = true
 	
 func checkAndApplyGlobals():
-	print(Global.gnomeState)
 	#CHECK THINGSGATHERED
 	
 	if Global.thingsGathered == 2 and Global.convoDone:

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
-@export var SPEED = 25.0
+@export var SPEED = 5.0
 const JUMP_VELOCITY = 7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
@@ -48,7 +48,7 @@ func _process(delta):
 		SPEED = 0.0
 		
 	if Global.playerShouldBeMoving == true:
-		SPEED = 25.0
+		SPEED = 5.0
 	
 	
 #	$"../Ui/WednigoHead/SenseBar".value = senseTime
