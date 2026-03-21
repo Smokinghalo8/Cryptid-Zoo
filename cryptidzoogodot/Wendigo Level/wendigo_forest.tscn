@@ -22,27 +22,27 @@
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_kbknu"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="22_6jnv6"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="23_cx7th"]
-[ext_resource type="PackedScene" path="res://Wendigo Level/assets/totemPole.tscn" id="23_rfgrx"]
+[ext_resource type="PackedScene" uid="uid://b6lggfcs4q5c0" path="res://Wendigo Level/assets/totemPole.tscn" id="23_rfgrx"]
 [ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="24_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://bcymwpfab06xc" path="res://newWendy.tscn" id="24_rfgrx"]
+[ext_resource type="PackedScene" uid="uid://diyhjppamkeqi" path="res://newWendy.tscn" id="24_rfgrx"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="25_g0ukx"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_75rbe"]
 [ext_resource type="PackedScene" uid="uid://bsw1nm5f7u7rj" path="res://Wendigo Level/WendigoCharacter/sketchfab_scene.tscn" id="27_jyr7y"]
-[ext_resource type="PackedScene" uid="uid://dxn6j66a0yk3o" path="res://SpookyHouse.tscn" id="28_uyjqn"]
+[ext_resource type="PackedScene" uid="uid://cpkls5hiolnrk" path="res://Wendigo Level/assets/spookyHouse.tscn" id="28_uyjqn"]
 [ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="30_kbknu"]
 [ext_resource type="PackedScene" uid="uid://c251vdgqpo8bv" path="res://Wendigo Level/trap.tscn" id="30_ly1ea"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="31_cx7th"]
 [ext_resource type="Texture2D" uid="uid://yofmkdseddy1" path="res://globalScenes/tempnettexture.png" id="34_k4prm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="35_4f0m8"]
 [ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
-[ext_resource type="Script" path="res://Wendigo Level/actual_trap_2.gd" id="36_q35a6"]
+[ext_resource type="Script" uid="uid://bk4gi4by788w1" path="res://Wendigo Level/actual_trap_2.gd" id="36_q35a6"]
 [ext_resource type="AudioStream" uid="uid://bmb36of1ca5go" path="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3" id="38_a0ttt"]
 [ext_resource type="AudioStream" uid="uid://bi2ba460tqw3d" path="res://Wendigo Level/assets/sfx/mystic-forest-ambient-23812.mp3" id="39_hxb2w"]
 [ext_resource type="AudioStream" uid="uid://t5ajif4huvb5" path="res://Wendigo Level/assets/sfx/rope-creak-01-sound-effect-340131.mp3" id="39_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
 [ext_resource type="AudioStream" uid="uid://52ascjpa5fy1" path="res://Wendigo Level/assets/sfx/chase-120950.mp3" id="40_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://d1182hgt315h4" path="res://Wendigo Level/assets/sfx/leaves-64875-[AudioTrimmer.com].mp3" id="41_jrcfp"]
-[ext_resource type="PackedScene" uid="uid://b3xqojlmbrhjg" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
+[ext_resource type="PackedScene" uid="uid://dnab6v7mt7fq3" path="res://Wendigo Level/wendy_plushy.tscn" id="43_h6ks2"]
 [ext_resource type="Texture2D" uid="uid://bv8cplctkjy0y" path="res://wendigoTerrainMap/black-stone.jpg" id="44_epaa6"]
 [ext_resource type="ArrayMesh" uid="uid://dmfmjy2t4v53v" path="res://Objects/Pedestal.obj" id="45_x5eoj"]
 [ext_resource type="PackedScene" uid="uid://b7gdijbaptvjd" path="res://Wendigo Level/assets/mausoleum.tscn" id="46_2v7d2"]
@@ -9312,13 +9312,13 @@ transform = Transform3D(-0.01787129, 0, 0.9998408, 0, 0.9999998, 0, -0.9998408, 
 [node name="TotemPoles" type="Node3D" parent="NavigationRegion3D/LandMarks"]
 
 [node name="TotemPole" parent="NavigationRegion3D/LandMarks/TotemPoles" instance=ExtResource("23_rfgrx")]
-transform = Transform3D(0.31854376, 0, 0.3853957, 0, 0.5, 0, -0.3853957, 0, 0.31854376, -112.629456, 5.7524147, -36.011845)
+transform = Transform3D(0.3185436, 0, 0.38539556, 0, 0.5, 0, -0.38539556, 0, 0.3185436, -104.237305, -0.3226098, -35.097942)
 
 [node name="TotemPole2" parent="NavigationRegion3D/LandMarks/TotemPoles" instance=ExtResource("23_rfgrx")]
-transform = Transform3D(-0.49628055, 0, -0.06087409, 0, 0.5, 0, 0.06087409, 0, -0.49628055, -86.70037, 5.7524147, -24.362774)
+transform = Transform3D(-0.49628055, 0, -0.06087409, 0, 0.5, 0, 0.06087409, 0, -0.49628055, -92.209595, -0.3226098, -29.675957)
 
 [node name="TotemPole3" parent="NavigationRegion3D/LandMarks/TotemPoles" instance=ExtResource("23_rfgrx")]
-transform = Transform3D(0.25566155, 0, -0.42969424, 0, 0.5, 0, 0.42969424, 0, 0.25566155, -93.72478, 5.7524147, -55.48755)
+transform = Transform3D(0.25566152, 0, -0.42969412, 0, 0.5, 0, 0.42969412, 0, 0.25566152, -96.30728, -0.3226098, -48.303715)
 
 [node name="Torches" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.954124, 1.5205871, 65.81093)
