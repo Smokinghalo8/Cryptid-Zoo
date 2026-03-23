@@ -9323,77 +9323,313 @@ transform = Transform3D(0.25566152, 0, -0.42969412, 0, 0.5, 0, 0.42969412, 0, 0.
 [node name="Torches" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.954124, 1.5205871, 65.81093)
 
-[node name="torch5" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="RestOfTorches" type="Node3D" parent="NavigationRegion3D/Torches"]
+
+[node name="torch5" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.129028, -1.0725473, 58.017395)
 
-[node name="torch6" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch61" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.919502, -1.0725473, 32.936317)
+
+[node name="torch62" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.978058, -1.0725473, 18.51477)
+
+[node name="torch63" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.583176, -1.0725473, -7.853157)
+
+[node name="torch64" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.056984, -1.0725473, -9.995293)
+
+[node name="torch65" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.857132, -1.0725473, -33.43985)
+
+[node name="torch66" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.75393, -1.0725473, -57.675274)
+
+[node name="torch67" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.769966, -1.0725473, -45.803658)
+
+[node name="torch68" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.859688, -1.0725473, -22.66883)
+
+[node name="torch69" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.51937, -1.0725473, -15.316917)
+
+[node name="torch70" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.406166, -1.0725473, -10.705162)
+
+[node name="torch71" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.749794, -1.0725473, -61.50782)
+
+[node name="torch72" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.18539, -1.0725473, -35.6397)
+
+[node name="torch73" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.43, -1.0725473, -74.71715)
+
+[node name="torch74" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.552177, -1.0725473, -111.88169)
+
+[node name="torch75" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.253822, -1.0725473, -139.88011)
+
+[node name="torch76" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.253822, -1.0725473, -95.17525)
+
+[node name="torch77" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.561714, -1.0725473, -159.55911)
+
+[node name="torch78" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.8406, -1.0725473, -188.14336)
+
+[node name="torch79" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.888649, -1.0725473, -168.94913)
+
+[node name="torch80" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.622665, -1.0725473, -168.94913)
+
+[node name="torch81" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.855003, -1.0725473, -140.14914)
+
+[node name="torch82" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.759087, -1.0725473, -134.72456)
+
+[node name="torch83" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.564476, -1.0725473, -94.032036)
+
+[node name="torch84" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.518013, -1.0725473, -101.34955)
+
+[node name="torch85" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.416534, -1.0725473, -101.34955)
+
+[node name="torch86" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.57536, -1.0725473, -131.08084)
+
+[node name="torch87" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.14027, -1.0725473, -150.19208)
+
+[node name="torch88" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.14027, -1.0725473, -180.61844)
+
+[node name="torch89" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.3151, -1.0725473, -175.01558)
+
+[node name="torch90" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.60275, -1.0725473, -189.86298)
+
+[node name="torch91" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 226.6442, -1.0725473, -214.92186)
+
+[node name="torch92" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 245.06938, -1.0725473, -245.06938)
+
+[node name="torch93" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.78769, -1.0725473, -247.65811)
+
+[node name="torch94" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 251.40219, -1.0725473, -270.80127)
+
+[node name="torch95" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.56485, -1.0725473, -274.7342)
+
+[node name="torch96" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.05106, -1.0725473, -247.83005)
+
+[node name="torch97" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.09694, -1.0725473, -247.83005)
+
+[node name="torch98" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.028885, -1.0725473, -258.13806)
+
+[node name="torch99" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.13081, -1.0725473, -246.09192)
+
+[node name="torch100" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.67081, -1.0725473, -237.50389)
+
+[node name="torch101" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.20445, -1.0725473, -232.79793)
+
+[node name="torch102" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.0982, -1.0725473, -211.5864)
+
+[node name="torch6" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.129028, -1.0725473, 99.89015)
 
-[node name="torch7" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch103" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4968948, -1.0725473, 123.88292)
+
+[node name="torch104" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.63633, -1.0725473, 123.88292)
+
+[node name="torch105" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.84023, -1.0725473, 110.62317)
+
+[node name="torch106" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.81785, -1.0725473, 85.100494)
+
+[node name="torch7" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.567986, -1.0725473, 102.0596)
 
-[node name="torch8" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch8" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.4369, -1.0725473, 113.262726)
 
-[node name="torch9" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch9" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.000336, -1.0725473, 129.6576)
 
-[node name="torch10" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch10" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.74632, -1.0725473, 73.57564)
 
-[node name="torch11" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch11" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.750854, -1.0725473, 101.547745)
 
-[node name="torch12" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch12" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.95215, -1.0725473, 122.894394)
 
-[node name="torch13" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch13" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.06033, -1.0725473, 122.894394)
 
-[node name="torch14" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch14" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.81547, -1.0725473, 98.34944)
 
-[node name="torch15" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch15" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.43021, -1.0725473, 86.17378)
 
-[node name="torch16" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch16" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.10117, -1.0725473, 105.79669)
 
-[node name="torch17" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch17" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.69461, -1.0725473, 132.74802)
 
-[node name="torch18" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch18" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.69461, -1.0725473, 106.62549)
 
-[node name="torch19" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch19" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.02846, -1.0725473, 105.04031)
 
-[node name="torch20" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch20" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.02846, -1.0725473, 105.04031)
 
-[node name="torch21" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch21" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.14185, -1.0725473, 122.645065)
 
-[node name="torch22" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch22" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 217.73795, -1.0725473, 82.59247)
 
-[node name="torch23" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch23" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.82663, -1.0725473, 75.68129)
 
-[node name="torch27" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch27" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.64134, -1.0725473, 114.25836)
 
-[node name="torch28" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch28" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.60785, -1.0725473, 141.86317)
 
-[node name="torch24" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch24" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 223.5479, -1.0725473, 60.730698)
 
-[node name="torch25" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch25" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.62823, -1.0725473, 76.1931)
 
-[node name="torch26" parent="NavigationRegion3D/Torches" instance=ExtResource("47_2v7d2")]
+[node name="torch26" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.9812, -1.0725473, 92.52672)
+
+[node name="torch29" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 287.53745, -1.0725473, 24.298836)
+
+[node name="torch30" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.8353, -1.0725473, -0.5527649)
+
+[node name="torch31" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.8353, -3.7614627, -25.887146)
+
+[node name="torch42" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.37552, -3.7614627, -27.201073)
+
+[node name="torch43" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 283.8709, -3.7614627, -30.849876)
+
+[node name="torch44" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.26013, -3.7614627, -45.88176)
+
+[node name="torch45" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 269.241, -3.7614627, -63.405983)
+
+[node name="torch48" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.14487, -3.7614627, -73.417854)
+
+[node name="torch49" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.0977, -3.7614627, -79.74109)
+
+[node name="torch50" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 294.07547, -3.7614627, -83.02596)
+
+[node name="torch51" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.21985, -3.7614627, -77.17411)
+
+[node name="torch32" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.77884, -1.0725473, -11.241501)
+
+[node name="torch33" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 261.6742, -1.0725473, -11.241501)
+
+[node name="torch34" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.36801, -1.0725473, -8.238869)
+
+[node name="torch35" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.10735, -1.0725473, -11.255928)
+
+[node name="torch36" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.56772, -1.0725473, -6.0124207)
+
+[node name="torch37" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.8511, -1.0725473, -11.249039)
+
+[node name="torch38" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246.1871, -1.0725473, -32.96133)
+
+[node name="torch39" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.18704, -1.0725473, -30.74953)
+
+[node name="torch40" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.87643, -1.0725473, -34.167904)
+
+[node name="torch41" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.05922, -1.0725473, -52.262604)
+
+[node name="torch52" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.88159, -1.0725473, -75.36897)
+
+[node name="torch53" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255.86859, -1.0725473, -95.95813)
+
+[node name="torch54" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.34344, -1.0725473, -105.315674)
+
+[node name="torch55" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.31293, -1.0725473, -112.85222)
+
+[node name="torch56" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 297.22778, -1.0725473, -112.85222)
+
+[node name="torch57" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 301.74045, -1.0725473, -124.82986)
+
+[node name="torch58" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.8413, -1.0725473, -127.17392)
+
+[node name="torch59" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 281.8413, -1.0725473, -144.05539)
+
+[node name="torch60" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 298.0935, -1.0725473, -141.05484)
+
+[node name="torch46" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 221.9748, -1.0725473, -66.610596)
+
+[node name="torch47" parent="NavigationRegion3D/Torches/RestOfTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.49251, -1.0725473, -60.912323)
 
 [node name="NetTrapTorches" type="Node3D" parent="NavigationRegion3D/Torches"]
 
@@ -9425,7 +9661,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.392761, -1.0725473, 58.017
 
 [node name="SnareTorches" type="Node3D" parent="NavigationRegion3D/Torches"]
 
+[node name="torch42" parent="NavigationRegion3D/Torches/SnareTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 221.67334, -1.0725473, -55.700428)
+
+[node name="torch43" parent="NavigationRegion3D/Torches/SnareTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.46939, -1.0725473, -55.700428)
+
+[node name="torch44" parent="NavigationRegion3D/Torches/SnareTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.46939, -1.0725473, -66.610596)
+
+[node name="torch45" parent="NavigationRegion3D/Torches/SnareTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.79301, -1.0725473, -45.769432)
+
 [node name="HoleTorches" type="Node3D" parent="NavigationRegion3D/Torches"]
+
+[node name="torch103" parent="NavigationRegion3D/Torches/HoleTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.95494, -1.0725473, -211.5864)
+
+[node name="torch104" parent="NavigationRegion3D/Torches/HoleTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.95494, -1.0725473, -229.19623)
+
+[node name="torch105" parent="NavigationRegion3D/Torches/HoleTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.95624, -1.0725473, -229.19623)
+
+[node name="torch106" parent="NavigationRegion3D/Torches/HoleTorches" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.95624, -1.0725473, -211.39435)
 
 [node name="NetBridge" type="Node3D" parent="NavigationRegion3D/Torches"]
 
@@ -9440,6 +9700,96 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.4853, -1.3305205, 51.6088
 
 [node name="torch32" parent="NavigationRegion3D/Torches/NetBridge" instance=ExtResource("47_2v7d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.67996, -1.3305205, 42.413887)
+
+[node name="torch33" parent="NavigationRegion3D/Torches/NetBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.9998266, 0, 0.018621586, 0, 1, 0, -0.018621586, 0, 0.9998266, 239.51234, -1.3305205, 48.617172)
+
+[node name="torch34" parent="NavigationRegion3D/Torches/NetBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.9998266, 0, 0.018621586, 0, 1, 0, -0.018621586, 0, 0.9998266, 248.60092, -1.3305205, 39.682327)
+
+[node name="torch35" parent="NavigationRegion3D/Torches/NetBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.9998266, 0, 0.018621586, 0, 1, 0, -0.018621586, 0, 0.9998266, 257.88388, -1.3305205, 27.926643)
+
+[node name="torch36" parent="NavigationRegion3D/Torches/NetBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.9998266, 0, 0.018621586, 0, 1, 0, -0.018621586, 0, 0.9998266, 266.90573, -1.3305205, 18.562035)
+
+[node name="MainBridge" type="Node3D" parent="NavigationRegion3D/Torches"]
+
+[node name="torch37" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6610238, 0, -0.75036496, 0, 1, 0, 0.75036496, 0, 0.6610238, 62.859413, -1.8159345, -35.47998)
+
+[node name="torch38" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6610238, 0, -0.75036496, 0, 1, 0, 0.75036496, 0, 0.6610238, 76.30591, -1.8159345, -34.32981)
+
+[node name="torch39" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6610238, 0, -0.75036496, 0, 1, 0, 0.75036496, 0, 0.6610238, 95.81644, -1.8159345, -34.856308)
+
+[node name="torch40" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6610238, 0, -0.75036496, 0, 1, 0, 0.75036496, 0, 0.6610238, 111.95285, -1.8159345, -34.035053)
+
+[node name="torch41" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6748821, 0, -0.7379256, 0, 1, 0, 0.7379256, 0, 0.6748821, 64.11707, -1.8159345, -58.57418)
+
+[node name="torch42" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6748821, 0, -0.7379256, 0, 1, 0, 0.7379256, 0, 0.6748821, 77.681145, -1.8159345, -57.660576)
+
+[node name="torch43" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6748821, 0, -0.7379256, 0, 1, 0, 0.7379256, 0, 0.6748821, 94.85985, -1.8159345, -58.465755)
+
+[node name="torch44" parent="NavigationRegion3D/Torches/MainBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.6748821, 0, -0.7379256, 0, 1, 0, 0.7379256, 0, 0.6748821, 109.79606, -1.8159345, -57.8863)
+
+[node name="ExtraBridge" type="Node3D" parent="NavigationRegion3D/Torches"]
+
+[node name="torch45" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5375645, 0, -0.8432226, 0, 1, 0, 0.8432226, 0, 0.5375645, 76.74815, -1.8159345, -128.83948)
+
+[node name="torch46" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5375645, 0, -0.8432226, 0, 1, 0, 0.8432226, 0, 0.5375645, 89.85705, -1.8159345, -125.63201)
+
+[node name="torch47" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5375645, 0, -0.8432226, 0, 1, 0, 0.8432226, 0, 0.5375645, 109.21586, -1.8159345, -123.1472)
+
+[node name="torch48" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5375645, 0, -0.8432226, 0, 1, 0, 0.8432226, 0, 0.5375645, 125.03323, -1.8159345, -119.85041)
+
+[node name="torch49" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5531734, 0, -0.8330661, 0, 1, 0, 0.8330661, 0, 0.5531734, 81.54779, -1.8159345, -151.46442)
+
+[node name="torch50" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5531734, 0, -0.8330661, 0, 1, 0, 0.8330661, 0, 0.5531734, 94.809296, -1.8159345, -148.47256)
+
+[node name="torch51" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5531734, 0, -0.8330661, 0, 1, 0, 0.8330661, 0, 0.5531734, 111.90703, -1.8159345, -146.62225)
+
+[node name="torch52" parent="NavigationRegion3D/Torches/ExtraBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(0.5531734, 0, -0.8330661, 0, 1, 0, 0.8330661, 0, 0.5531734, 126.57577, -1.8159345, -143.74924)
+
+[node name="BackBridge" type="Node3D" parent="NavigationRegion3D/Torches"]
+
+[node name="torch45" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.17186037, 0, -0.98512137, 0, 1, 0, 0.98512137, 0, -0.17186037, 241.26468, -1.8159345, -198.71915)
+
+[node name="torch46" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.17186037, 0, -0.98512137, 0, 1, 0, 0.98512137, 0, -0.17186037, 248.77948, -1.8159345, -187.50938)
+
+[node name="torch47" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.17186037, 0, -0.98512137, 0, 1, 0, 0.98512137, 0, -0.17186037, 261.39594, -1.8159345, -172.61768)
+
+[node name="torch48" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.17186037, 0, -0.98512137, 0, 1, 0, 0.98512137, 0, -0.17186037, 270.85013, -1.8159345, -159.51514)
+
+[node name="torch49" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.15348609, 0, -0.9881509, 0, 1, 0, 0.9881509, 0, -0.15348609, 260.06836, -1.8159345, -212.18564)
+
+[node name="torch50" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.15348609, 0, -0.9881509, 0, 1, 0, 0.9881509, 0, -0.15348609, 267.84125, -1.8159345, -201.03214)
+
+[node name="torch51" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.15348609, 0, -0.9881509, 0, 1, 0, 0.9881509, 0, -0.15348609, 279.2163, -1.8159345, -188.13394)
+
+[node name="torch52" parent="NavigationRegion3D/Torches/BackBridge" instance=ExtResource("47_2v7d2")]
+transform = Transform3D(-0.15348609, 0, -0.9881509, 0, 1, 0, 0.9881509, 0, -0.15348609, 288.1083, -1.8159345, -176.11902)
 
 [node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 height = 5.83
@@ -9463,6 +9813,7 @@ vertices = PackedVector3Array(-254.82181, 0, -199.7298, -226.2027, 0, -254.06729
 affect_navigation_mesh = true
 
 [node name="NavigationObstacle3D6" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.251608, 0, 0)
 vertices = PackedVector3Array(-42.881123, 0, -62.196354, 13.94706, 0, -53.16716, 10.63961, 0, -48.612553, 36.866726, 0, -55.48614, 80.79485, 0, -86.04005, 92.82941, 0, -113.91008, 118.80111, 0, -139.70422, 149.24971, 0, -99.52394, 159.01483, 0, -88.757195, 137.63895, 0, -66.926765, 98.08124, 0, -20.942446, 70.06806, 0, -8.24968, 24.561241, 0, 0.13692284, 1.0261812, 0, 0.5759144, -3.0430946, 0, 8.928876, -64.635735, 0, 8.741182, -59.084282, 0, -32.2026, -49.10487, 0, -60.8209)
 affect_navigation_mesh = true
 
