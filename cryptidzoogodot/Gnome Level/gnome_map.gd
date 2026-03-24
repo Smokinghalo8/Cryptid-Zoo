@@ -4,15 +4,33 @@ extends Node3D
 var MushroomQuest = false
 var ScavQuest = false
 var mazeQuest = false
+var isAnimationDone = false
 @onready var quest_hedge: Node3D = $quest_hedge
 @onready var bloogaragth: StaticBody3D = $bloogaragth
 @onready var bleafus_the_gnome: StaticBody3D = $Bleafus_the_gnome
 @onready var THE_KING: StaticBody3D = $GnomeKING
 @onready var playerZed = $Z
+@onready var playerZedCamera = $Z/Head
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var Cam1: Camera3D = $OverView1
+@onready var Cam2: Camera3D = $OverView2
+@onready var Cam3: Camera3D = $OverView3
+@onready var Cam4: Camera3D = $OverView4
+
+
 
 
 func _ready() -> void:
 	bloogaragth.visible = true
+	#TODO fix player being able to move during this cut scene?
+
+	await toggleAnimation(1)
+	await toggleAnimation(2)
+	#skip 3, not done yet
+	await toggleAnimation(4)
+	await toggleAnimation(5)
+	playerZed.position = Vector3(145, 100, 40)
+	playerZedCamera.make_current()
 	#TODO Apply new idea below!
 	#unless we tp the player to the KING which i think we should, we have to set visability on bleafus to false too
 	pass
@@ -42,6 +60,43 @@ func _process(delta: float) -> void:
 		togglePause()
 	
 	
+func toggleAnimation(animationNumber) -> int:
+	var animationNum = animationNumber
+	if(animationNum == 1):
+		#switchToFirstAniamtion
+		#andtoggleCamera
+		Cam1.make_current()
+		animation_player.play("MothmanBringingZedToGnomeLevel")
+		await animation_player.animation_finished#USE THIS KEYWORD
+		
+		#create an await function and wait out Zeds conversation with Mothman
+		#TODO after creating the second animation, set it to play RIGHT after this animation plays
+		#toggleAnimation(2)
+	elif(animationNum == 2):
+		#todo finish
+		Cam2.make_current()
+		animation_player.play("BulletHittingZedAndMothman")
+		await animation_player.animation_finished
+		#toggleAnimation(3)
+		#after this animation, add an animation of an explosion that happens where Mothman and Zed were
+	elif(animationNum == 3):
+		#in this one create explosion animaion, skipping for now
+		toggleAnimation(4)
+		pass
+	elif(animationNum == 4):
+		#Make Zed falling animation play
+		Cam3.make_current()
+		animation_player.play("ZedFalling")
+		await animation_player.animation_finished
+		#toggleAnimation(5)
+	elif(animationNum == 5):
+		#play camera pulling up into the sky after Zed falls animaion
+		Cam4.make_current()
+		animation_player.play("CameraFloatingAroundZedBeforeAwaking")
+		await animation_player.animation_finished
+		#TODO give player control after this animation plays
+		pass
+	return 3
 	
 func togglePause():
 	get_tree().paused = true

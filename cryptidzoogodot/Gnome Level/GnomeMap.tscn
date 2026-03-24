@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=66 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_kkme5"]
 [ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
 [ext_resource type="Texture2D" uid="uid://cfyvowei4twq7" path="res://Gnome Level/GnomeTerrainMap/Textures/flower1.png" id="12_pxd54"]
+[ext_resource type="PackedScene" uid="uid://w2ywjpapsxnh" path="res://CharacterModels/Mothman_GEO.fbx" id="13_j1uv7"]
 [ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
 [ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="17_i627o"]
@@ -45,11 +46,184 @@
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="42_taton"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="43_uc803"]
 [ext_resource type="PackedScene" uid="uid://gmvp7ejea7jk" path="res://Gnome Level/Assets/New_HedgeReward/new_hedge_dog.tscn" id="45_4oad2"]
+[ext_resource type="PackedScene" uid="uid://udyelh3w4fwi" path="res://Gnome Level/GnomeCharacters/the_unnamed_one.tscn" id="47_2iq4o"]
+[ext_resource type="PackedScene" uid="uid://18hanft1qa7h" path="res://Gnome Level/GnomeCharacters/tiny_bullet.tscn" id="48_ixyha"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
 mode = 0
 textures = [[ExtResource("5_vxnpk"), ExtResource("6_7oysy")], [ExtResource("7_bwcok"), ExtResource("8_87shl")]]
+
+[sub_resource type="Animation" id="Animation_i6n8p"]
+resource_name = "MothmanBringingZedToGnomeLevel"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mothman_GEO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(130.10245, 112.06569, 0.5947441), Vector3(130.10245, 112.06569, 19.232584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(130.53134, 112.48089, 1.3163711), Vector3(130.531, 112.481, 19.233)]
+}
+
+[sub_resource type="Animation" id="Animation_2iq4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Mothman_GEO:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(130.10245, 112.06569, 0.5947441)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(130.53134, 112.48089, 1.3163711)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("TinyBullet:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(258.65775, 53.243336, 112.53825)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5707964, -2.6179938, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("OverView4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(145.26268, 4.68912, 39.906727)]
+}
+
+[sub_resource type="Animation" id="Animation_ec0i6"]
+resource_name = "BulletHittingZedAndMothman"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TinyBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.0333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_ixyha"]
+resource_name = "ZedFalling"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(130.53134, 112.48089, 26.69009), Vector3(130.53134, 52.846237, 26.69009)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, -2.6179938, 0), Vector3(-1.5707964, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mgsad"]
+resource_name = "CameraFloatingAroundZedBeforeAwaking"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(145.26268, 0.26936293, 39.906727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OverView4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(145.26268, 0.31019878, 39.906727), Vector3(145.26268, 4.68912, 39.906727)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
+_data = {
+&"BulletHittingZedAndMothman": SubResource("Animation_ec0i6"),
+&"CameraFloatingAroundZedBeforeAwaking": SubResource("Animation_mgsad"),
+&"MothmanBringingZedToGnomeLevel": SubResource("Animation_i6n8p"),
+&"RESET": SubResource("Animation_2iq4o"),
+&"ZedFalling": SubResource("Animation_ixyha")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_jlxtx"]
 
@@ -80,148 +254,18 @@ fog_mode = 1
 fog_density = 1.0
 fog_depth_end = 2071.2
 
-[sub_resource type="Resource" id="Resource_dyhn3"]
+[sub_resource type="Resource" id="Resource_2iq4o"]
 resource_local_to_scene = true
 resource_name = "MMIOctreeNode"
 script = ExtResource("33_ifqdx")
-member_placeforms = [[Vector3(44.875473, 0, 48.100983), Vector3(0, 1, 0), Transform3D(-0.957534, 0, 0.28832033, 0, 1, 0, -0.28832033, 0, -0.957534, 44.875473, 0, 48.100983), 6], [Vector3(87.10699, 0, 106.564476), Vector3(0, 1, 0), Transform3D(-0.49285194, 0, -0.87011325, 0, 1, 0, 0.87011325, 0, -0.49285194, 87.10699, 0, 106.564476), 6], [Vector3(51.896225, 0, 61.898323), Vector3(0, 1, 0), Transform3D(0.9328362, 0, -0.36030075, 0, 1, 0, 0.36030075, 0, 0.9328362, 51.896225, 0, 61.898323), 6], [Vector3(27.123215, 0, 36.169067), Vector3(0, 1, 0), Transform3D(0.22160284, 0, -0.97513705, 0, 1, 0, 0.97513705, 0, 0.22160284, 27.123215, 0, 36.169067), 6], [Vector3(31.239365, 0, 101.419785), Vector3(0, 1, 0), Transform3D(-0.70307237, 0, 0.7111183, 0, 1, 0, -0.7111183, 0, -0.70307237, 31.239365, 0, 101.419785), 6], [Vector3(29.34636, 0, 235.14081), Vector3(0, 1, 0), Transform3D(0.9651866, 0, 0.2615623, 0, 1, 0, -0.2615623, 0, 0.9651866, 29.34636, 0, 235.14081), 7], [Vector3(110.343216, 0, 238.08536), Vector3(0, 1, 0), Transform3D(-0.87550735, 0, 0.4832048, 0, 1, 0, -0.4832048, 0, -0.87550735, 110.343216, 0, 238.08536), 7], [Vector3(89.321266, 0, 246.15764), Vector3(0, 1, 0), Transform3D(-0.94747293, 0, 0.31983596, 0, 1, 0, -0.31983596, 0, -0.94747293, 89.321266, 0, 246.15764), 7], [Vector3(105.225044, 0, 212.77664), Vector3(0, 1, 0), Transform3D(-0.7020929, 0, -0.71208537, 0, 1, 0, 0.71208537, 0, -0.7020929, 105.225044, 0, 212.77664), 7], [Vector3(91.47435, 0, 191.05753), Vector3(0, 1, 0), Transform3D(-0.82827806, 0, -0.5603173, 0, 1, 0, 0.5603173, 0, -0.82827806, 91.47435, 0, 191.05753), 7], [Vector3(89.83392, 9.536743e-07, 219.8746), Vector3(0, 1, 0), Transform3D(-0.9965217, 0, 0.08333368, 0, 1, 0, -0.08333368, 0, -0.9965217, 89.83392, 9.536743e-07, 219.8746), 7], [Vector3(24.187462, 0, 168.26091), Vector3(0, 1, 0), Transform3D(0.30198342, 0, 0.9533132, 0, 1, 0, -0.9533132, 0, 0.30198342, 24.187462, 0, 168.26091), 7], [Vector3(36.31201, 0, 164.6297), Vector3(0, 1, 0), Transform3D(0.4036182, 0, -0.91492754, 0, 1, 0, 0.91492754, 0, 0.4036182, 36.31201, 0, 164.6297), 7], [Vector3(21.49192, 0, 200.88849), Vector3(0, 1, 0), Transform3D(-0.46140796, 0, 0.8871881, 0, 1, 0, -0.8871881, 0, -0.46140796, 21.49192, 0, 200.88849), 7], [Vector3(114.53163, 0, 139.42903), Vector3(0, 1, 0), Transform3D(-0.21845658, 0, 0.97584665, 0, 1, 0, -0.97584665, 0, -0.21845658, 114.53163, 0, 139.42903), 7], [Vector3(109.68389, 0, 166.46852), Vector3(0, 1, 0), Transform3D(0.9954298, 0, 0.095496505, 0, 1, 0, -0.0954965, 0, 0.9954298, 109.68389, 0, 166.46852), 7], [Vector3(124.75665, 0, 185.14241), Vector3(0, 1, 0), Transform3D(0.20620492, 0, 0.97850883, 0, 1, 0, -0.97850883, 0, 0.20620492, 124.75665, 0, 185.14241), 7], [Vector3(120.116005, 0, 196.08727), Vector3(0, 1, 0), Transform3D(0.7599137, 0, -0.650024, 0, 1, 0, 0.650024, 0, 0.7599137, 120.116005, 0, 196.08727), 7]]
+member_placeforms = [[Vector3(138.38379, 0, 137.25299), Vector3(0, 1, 0), Transform3D(-0.554591, 0, 0.8321231, 0, 1, 0, -0.8321231, 0, -0.554591, 138.38379, 0, 137.25299), 5], [Vector3(135.06871, 0, 149.31866), Vector3(0, 1, 0), Transform3D(0.39915898, 0, -0.91688174, 0, 1, 0, 0.91688174, 0, 0.39915898, 135.06871, 0, 149.31866), 5], [Vector3(150.60042, 0, 156.71916), Vector3(0, 1, 0), Transform3D(-0.74375945, 0, 0.66844743, 0, 1, 0, -0.66844743, 0, -0.74375945, 150.60042, 0, 156.71916), 5], [Vector3(156.74498, 0, 135.57986), Vector3(0, 1, 0), Transform3D(0.5507025, 0, -0.8347016, 0, 1, 0, 0.8347016, 0, 0.5507025, 156.74498, 0, 135.57986), 5], [Vector3(193.12598, 0, 155.22183), Vector3(0, 1, 0), Transform3D(-0.9689563, 0, -0.24723226, 0, 1, 0, 0.24723226, 0, -0.9689563, 193.12598, 0, 155.22183), 5], [Vector3(150.94785, 0, 191.6878), Vector3(0, 1, 0), Transform3D(0.9967318, 0, -0.08078219, 0, 1, 0, 0.08078219, 0, 0.9967318, 150.94785, 0, 191.6878), 5], [Vector3(159.77573, 0, 185.07082), Vector3(0, 1, 0), Transform3D(0.99192774, 0, 0.12680456, 0, 1, 0, -0.12680456, 0, 0.99192774, 159.77573, 0, 185.07082), 5], [Vector3(167.05856, 0, 181.05138), Vector3(0, 1, 0), Transform3D(0.120817825, 0, -0.9926747, 0, 1, 0, 0.9926747, 0, 0.120817825, 167.05856, 0, 181.05138), 5], [Vector3(175.47076, 0, 190.61365), Vector3(0, 1, 0), Transform3D(-0.26599634, 0, 0.96397406, 0, 1, 0, -0.96397406, 0, -0.26599634, 175.47076, 0, 190.61365), 5], [Vector3(149.56755, 9.536743e-07, 182.38232), Vector3(0, 1, 0), Transform3D(0.10489733, 0, 0.99448305, 0, 1, 0, -0.99448305, 0, 0.10489733, 149.56755, 9.536743e-07, 182.38232), 5], [Vector3(136.89911, 0, 180.87738), Vector3(0, 1, 0), Transform3D(-0.8025849, 0, -0.5965379, 0, 1, 0, 0.5965379, 0, -0.8025849, 136.89911, 0, 180.87738), 5], [Vector3(139.22365, 0, 215.07065), Vector3(0, 1, 0), Transform3D(-0.9999409, 0, -0.010878094, 0, 1, 0, 0.010878093, 0, -0.9999409, 139.22365, 0, 215.07065), 5], [Vector3(151.55957, 0, 216.63228), Vector3(0, 1, 0), Transform3D(0.61836964, 0, -0.7858874, 0, 1, 0, 0.7858874, 0, 0.61836964, 151.55957, 0, 216.63228), 5], [Vector3(170.40015, 0, 216.56992), Vector3(0, 1, 0), Transform3D(0.7649748, 0, -0.64406025, 0, 1, 0, 0.64406025, 0, 0.7649748, 170.40015, 0, 216.56992), 5], [Vector3(183.20921, 0, 221.13893), Vector3(0, 1, 0), Transform3D(0.55160606, 0, 0.8341048, 0, 1, 0, -0.8341048, 0, 0.55160606, 183.20921, 0, 221.13893), 5], [Vector3(145.57925, 0, 233.77795), Vector3(0, 1, 0), Transform3D(-0.9970217, 0, -0.07712235, 0, 1, 0, 0.07712235, 0, -0.9970217, 145.57925, 0, 233.77795), 5], [Vector3(153.1318, 0, 238.68791), Vector3(0, 1, 0), Transform3D(-0.97836125, 0, -0.206904, 0, 1, 0, 0.206904, 0, -0.97836125, 153.1318, 0, 238.68791), 5], [Vector3(162.23679, 0, 235.0802), Vector3(0, 1, 0), Transform3D(0.8016248, 0, -0.5978275, 0, 1, 0, 0.5978275, 0, 0.8016248, 162.23679, 0, 235.0802), 5], [Vector3(175.35805, 0, 234.13455), Vector3(0, 1, 0), Transform3D(0.9134374, 0, 0.4069792, 0, 1, 0, -0.4069792, 0, 0.9134374, 175.35805, 0, 234.13455), 5], [Vector3(188.83138, 0, 234.10364), Vector3(0, 1, 0), Transform3D(-0.114493586, 0, -0.993424, 0, 1, 0, 0.993424, 0, -0.114493586, 188.83138, 0, 234.10364), 5], [Vector3(196.93239, 0, 235.83145), Vector3(0, 1, 0), Transform3D(-0.660575, 0, -0.7507601, 0, 1, 0, 0.7507601, 0, -0.660575, 196.93239, 0, 235.83145), 5], [Vector3(199.16573, 0, 222.98428), Vector3(0, 1, 0), Transform3D(-0.77754676, 0, 0.6288251, 0, 1, 0, -0.6288251, 0, -0.77754676, 199.16573, 0, 222.98428), 5], [Vector3(207.39648, 0, 238.16953), Vector3(0, 1, 0), Transform3D(0.48402405, 0, 0.8750547, 0, 1, 0, -0.8750547, 0, 0.48402405, 207.39648, 0, 238.16953), 5], [Vector3(218.27245, 0, 237.63635), Vector3(0, 1, 0), Transform3D(-0.97894055, 0, -0.20414563, 0, 1, 0, 0.20414563, 0, -0.97894055, 218.27245, 0, 237.63635), 5], [Vector3(223.65982, 0, 232.87274), Vector3(0, 1, 0), Transform3D(-0.31840864, 0, 0.9479536, 0, 1, 0, -0.9479536, 0, -0.31840864, 223.65982, 0, 232.87274), 5], [Vector3(230.94673, 0, 226.18063), Vector3(0, 1, 0), Transform3D(-0.42812887, 0, 0.9037177, 0, 1, 0, -0.9037177, 0, -0.42812887, 230.94673, 0, 226.18063), 5], [Vector3(231.7435, 0, 216.30132), Vector3(0, 1, 0), Transform3D(-0.967076, 0, -0.25448796, 0, 1, 0, 0.25448796, 0, -0.967076, 231.7435, 0, 216.30132), 5], [Vector3(223.52803, 0, 205.86719), Vector3(0, 1, 0), Transform3D(0.987014, 0, 0.16063452, 0, 1, 0, -0.16063452, 0, 0.987014, 223.52803, 0, 205.86719), 5], [Vector3(227.39012, 0, 196.33447), Vector3(0, 1, 0), Transform3D(0.5925404, 0, -0.80554074, 0, 1, 0, 0.80554074, 0, 0.5925404, 227.39012, 0, 196.33447), 5], [Vector3(212.91267, 0, 207.10599), Vector3(0, 1, 0), Transform3D(-0.85584664, 0, -0.5172297, 0, 1, 0, 0.5172297, 0, -0.85584664, 212.91267, 0, 207.10599), 5], [Vector3(206.00545, 9.536743e-07, 201.85167), Vector3(0, 1, 0), Transform3D(-0.30852374, 0, 0.95121664, 0, 1, 0, -0.95121664, 0, -0.30852374, 206.00545, 9.536743e-07, 201.85167), 5], [Vector3(205.63063, 9.536743e-07, 188.78635), Vector3(0, 1, 0), Transform3D(-0.67826873, 0, 0.7348139, 0, 1, 0, -0.7348139, 0, -0.67826873, 205.63063, 9.536743e-07, 188.78635), 5], [Vector3(205.66614, 0, 176.53412), Vector3(0, 1, 0), Transform3D(-0.19384807, 0, 0.9810316, 0, 1, 0, -0.9810316, 0, -0.19384807, 205.66614, 0, 176.53412), 5], [Vector3(218.28793, 0, 176.13307), Vector3(0, 1, 0), Transform3D(-0.7679203, 0, -0.64054537, 0, 1, 0, 0.64054537, 0, -0.7679203, 218.28793, 0, 176.13307), 5], [Vector3(229.89288, 9.536743e-07, 173.64336), Vector3(0, 1, 0), Transform3D(-0.9753406, 0, 0.22070509, 0, 1, 0, -0.22070509, 0, -0.9753406, 229.89288, 9.536743e-07, 173.64336), 5], [Vector3(184.58601, 0, 175.61478), Vector3(0, 1, 0), Transform3D(-0.8226984, 0, 0.56847805, 0, 1, 0, -0.56847805, 0, -0.8226984, 184.58601, 0, 175.61478), 5], [Vector3(184.48111, 0, 164.87303), Vector3(0, 1, 0), Transform3D(0.58939254, 0, -0.80784684, 0, 1, 0, 0.80784684, 0, 0.58939254, 184.48111, 0, 164.87303), 5], [Vector3(183.49818, 0, 150.89342), Vector3(0, 1, 0), Transform3D(0.17966451, 0, -0.983728, 0, 1, 0, 0.983728, 0, 0.17966451, 183.49818, 0, 150.89342), 5], [Vector3(175.36086, 0, 152.66423), Vector3(0, 1, 0), Transform3D(-0.45361832, 0, -0.8911961, 0, 1, 0, 0.8911961, 0, -0.45361832, 175.36086, 0, 152.66423), 5], [Vector3(201.83894, 0, 151.93803), Vector3(0, 1, 0), Transform3D(0.99315786, 0, 0.11677967, 0, 1, 0, -0.11677967, 0, 0.99315786, 201.83894, 0, 151.93803), 5], [Vector3(200.6025, 0, 138.62057), Vector3(0, 1, 0), Transform3D(-0.49406067, 0, -0.86942744, 0, 1, 0, 0.86942744, 0, -0.49406067, 200.6025, 0, 138.62057), 5], [Vector3(194.90987, 0, 124.5538), Vector3(0, 1, 0), Transform3D(-0.99783915, 0, 0.065704085, 0, 1, 0, -0.065704085, 0, -0.99783915, 194.90987, 0, 124.5538), 5], [Vector3(207.6051, 0, 136.77522), Vector3(0, 1, 0), Transform3D(0.16693327, 0, -0.98596823, 0, 1, 0, 0.98596823, 0, 0.16693328, 207.6051, 0, 136.77522), 5], [Vector3(221.7141, 9.536743e-07, 137.15718), Vector3(0, 1, 0), Transform3D(-0.9322904, 0, 0.36171076, 0, 1, 0, -0.36171076, 0, -0.9322904, 221.7141, 9.536743e-07, 137.15718), 5], [Vector3(227.00682, 0, 146.73412), Vector3(0, 1, 0), Transform3D(-0.9751213, 0, -0.22167185, 0, 1, 0, 0.22167185, 0, -0.9751213, 227.00682, 0, 146.73412), 5], [Vector3(230.59744, 0, 153.49414), Vector3(0, 1, 0), Transform3D(0.44024178, 0, 0.89787924, 0, 1, 0, -0.89787924, 0, 0.44024178, 230.59744, 0, 153.49414), 5], [Vector3(233.01184, 0, 165.03558), Vector3(0, 1, 0), Transform3D(-0.122881964, 0, 0.99242127, 0, 1, 0, -0.99242127, 0, -0.122881964, 233.01184, 0, 165.03558), 5], [Vector3(226.06703, 0, 159.64252), Vector3(0, 1, 0), Transform3D(-0.8773184, 0, 0.4799088, 0, 1, 0, -0.4799088, 0, -0.8773184, 226.06703, 0, 159.64252), 5], [Vector3(232.32913, 0, 183.07376), Vector3(0, 1, 0), Transform3D(-0.5877242, 0, -0.80906135, 0, 1, 0, 0.80906135, 0, -0.5877242, 232.32913, 0, 183.07376), 5], [Vector3(160.22993, 0, 89.30344), Vector3(0, 1, 0), Transform3D(0.99787647, 0, 0.065134786, 0, 1, 0, -0.065134786, 0, 0.99787647, 160.22993, 0, 89.30344), 5], [Vector3(161.20642, 9.536743e-07, 96.807686), Vector3(0, 1, 0), Transform3D(0.90590703, 0, -0.4234766, 0, 1, 0, 0.4234766, 0, 0.90590703, 161.20642, 9.536743e-07, 96.807686), 5], [Vector3(166.57574, 0, 105.26559), Vector3(0, 1, 0), Transform3D(0.3267428, 0, 0.9451133, 0, 1, 0, -0.9451133, 0, 0.3267428, 166.57574, 0, 105.26559), 5], [Vector3(174.43579, 0, 96.19045), Vector3(0, 1, 0), Transform3D(-0.45502427, 0, -0.8904791, 0, 1, 0, 0.8904791, 0, -0.45502427, 174.43579, 0, 96.19045), 5], [Vector3(172.87862, 9.536743e-07, 83.98107), Vector3(0, 1, 0), Transform3D(0.19284488, 0, 0.9812293, 0, 1, 0, -0.9812293, 0, 0.19284488, 172.87862, 9.536743e-07, 83.98107), 5], [Vector3(162.37135, 0, 74.00881), Vector3(0, 1, 0), Transform3D(-0.99537057, 0, 0.09611189, 0, 1, 0, -0.09611189, 0, -0.99537057, 162.37135, 0, 74.00881), 5], [Vector3(156.45328, 0, 66.907326), Vector3(0, 1, 0), Transform3D(0.9997279, 0, -0.023327531, 0, 1, 0, 0.023327531, 0, 0.9997279, 156.45328, 0, 66.907326), 5], [Vector3(149.0789, 0, 59.634094), Vector3(0, 1, 0), Transform3D(-0.8255608, 0, 0.5643132, 0, 1, 0, -0.5643132, 0, -0.8255608, 149.0789, 0, 59.634094), 5], [Vector3(143.04779, 9.536743e-07, 53.57158), Vector3(0, 1, 0), Transform3D(0.9826098, 0, 0.1856824, 0, 1, 0, -0.1856824, 0, 0.9826098, 143.04779, 9.536743e-07, 53.57158), 5], [Vector3(151.63719, 0, 48.377396), Vector3(0, 1, 0), Transform3D(0.88376415, 0, 0.46793264, 0, 1, 0, -0.46793264, 0, 0.88376415, 151.63719, 0, 48.377396), 5], [Vector3(161.11812, 0, 51.583946), Vector3(0, 1, 0), Transform3D(-0.54720056, 0, 0.83700156, 0, 1, 0, -0.83700156, 0, -0.54720056, 161.11812, 0, 51.583946), 5], [Vector3(169.74034, 0, 60.14926), Vector3(0, 1, 0), Transform3D(0.59350663, 0, 0.8048292, 0, 1, 0, -0.8048292, 0, 0.59350663, 169.74034, 0, 60.14926), 5], [Vector3(175.66103, 0, 67.66861), Vector3(0, 1, 0), Transform3D(0.451587, 0, -0.8922271, 0, 1, 0, 0.8922271, 0, 0.451587, 175.66103, 0, 67.66861), 5], [Vector3(187.90857, 0, 66.18998), Vector3(0, 1, 0), Transform3D(-0.21678832, 0, -0.97621864, 0, 1, 0, 0.97621864, 0, -0.21678832, 187.90857, 0, 66.18998), 5], [Vector3(187.52855, 9.536743e-07, 55.20733), Vector3(0, 1, 0), Transform3D(-0.79594564, 0, 0.6053681, 0, 1, 0, -0.6053681, 0, -0.79594564, 187.52855, 9.536743e-07, 55.20733), 5], [Vector3(179.05583, 0, 49.80458), Vector3(0, 1, 0), Transform3D(0.21934684, 0, -0.975647, 0, 1, 0, 0.975647, 0, 0.21934684, 179.05583, 0, 49.80458), 5], [Vector3(174.83353, 0, 38.209656), Vector3(0, 1, 0), Transform3D(-0.9995548, 0, 0.02983573, 0, 1, 0, -0.02983573, 0, -0.9995548, 174.83353, 0, 38.209656), 5], [Vector3(196.6464, 0, 62.14055), Vector3(0, 1, 0), Transform3D(0.9476343, 0, 0.31935754, 0, 1, 0, -0.31935754, 0, 0.9476343, 196.6464, 0, 62.14055), 5], [Vector3(222.80566, 0, 40.52852), Vector3(0, 1, 0), Transform3D(0.16808559, 0, -0.98577243, 0, 1, 0, 0.98577243, 0, 0.16808559, 222.80566, 0, 40.52852), 5], [Vector3(212.91138, 0, 37.465836), Vector3(0, 1, 0), Transform3D(-0.1693565, 0, -0.9855549, 0, 1, 0, 0.9855549, 0, -0.1693565, 212.91138, 0, 37.465836), 5], [Vector3(207.3956, 0, 43.57216), Vector3(0, 1, 0), Transform3D(0.9987246, 0, 0.05049027, 0, 1, 0, -0.05049027, 0, 0.9987246, 207.3956, 0, 43.57216), 5], [Vector3(210.94135, 0, 52.966278), Vector3(0, 1, 0), Transform3D(-0.9913428, 0, 0.13129948, 0, 1, 0, -0.13129947, 0, -0.9913428, 210.94135, 0, 52.966278), 5], [Vector3(221.27954, 0, 55.092598), Vector3(0, 1, 0), Transform3D(0.28102043, 0, -0.95970184, 0, 1, 0, 0.95970184, 0, 0.28102046, 221.27954, 0, 55.092598), 5], [Vector3(217.55804, 0, 62.76828), Vector3(0, 1, 0), Transform3D(0.11961, 0, 0.992821, 0, 1, 0, -0.992821, 0, 0.11961, 217.55804, 0, 62.76828), 5], [Vector3(194.84113, 0, 45.07521), Vector3(0, 1, 0), Transform3D(0.4714696, 0, 0.8818823, 0, 1, 0, -0.8818823, 0, 0.4714696, 194.84113, 0, 45.07521), 5], [Vector3(25.223923, 0, 31.543243), Vector3(0, 1, 0), Transform3D(0.9911536, 0, -0.13271983, 0, 1, 0, 0.13271983, 0, 0.9911536, 25.223923, 0, 31.543243), 1]]
 max_members = 75
 min_leaf_extent = 1.0
 octant = -1
 is_leaf = true
-center_pos = Vector3(-1, -43, 127)
-extent = 128.0
-bounds = AABB(-129, -171, -1, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_pcypi"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 1
-is_leaf = true
-center_pos = Vector3(-1, -43, 383)
-extent = 128.0
-bounds = AABB(-129, -171, 255, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_7ybnm"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 2
-is_leaf = true
-center_pos = Vector3(-1, 213, 127)
-extent = 128.0
-bounds = AABB(-129, 85, -1, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_p54lo"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 3
-is_leaf = true
-center_pos = Vector3(-1, 213, 383)
-extent = 128.0
-bounds = AABB(-129, 85, 255, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_hvxpa"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-member_placeforms = [[Vector3(138.38379, 0, 137.25299), Vector3(0, 1, 0), Transform3D(-0.554591, 0, 0.8321231, 0, 1, 0, -0.8321231, 0, -0.554591, 138.38379, 0, 137.25299), 3], [Vector3(135.06871, 0, 149.31866), Vector3(0, 1, 0), Transform3D(0.39915898, 0, -0.91688174, 0, 1, 0, 0.91688174, 0, 0.39915898, 135.06871, 0, 149.31866), 3], [Vector3(150.60042, 0, 156.71916), Vector3(0, 1, 0), Transform3D(-0.74375945, 0, 0.66844743, 0, 1, 0, -0.66844743, 0, -0.74375945, 150.60042, 0, 156.71916), 3], [Vector3(156.74498, 0, 135.57986), Vector3(0, 1, 0), Transform3D(0.5507025, 0, -0.8347016, 0, 1, 0, 0.8347016, 0, 0.5507025, 156.74498, 0, 135.57986), 3], [Vector3(193.12598, 0, 155.22183), Vector3(0, 1, 0), Transform3D(-0.9689563, 0, -0.24723226, 0, 1, 0, 0.24723226, 0, -0.9689563, 193.12598, 0, 155.22183), 3], [Vector3(150.94785, 0, 191.6878), Vector3(0, 1, 0), Transform3D(0.9967318, 0, -0.08078219, 0, 1, 0, 0.08078219, 0, 0.9967318, 150.94785, 0, 191.6878), 3], [Vector3(159.77573, 0, 185.07082), Vector3(0, 1, 0), Transform3D(0.99192774, 0, 0.12680456, 0, 1, 0, -0.12680456, 0, 0.99192774, 159.77573, 0, 185.07082), 3], [Vector3(167.05856, 0, 181.05138), Vector3(0, 1, 0), Transform3D(0.120817825, 0, -0.9926747, 0, 1, 0, 0.9926747, 0, 0.120817825, 167.05856, 0, 181.05138), 3], [Vector3(175.47076, 0, 190.61365), Vector3(0, 1, 0), Transform3D(-0.26599634, 0, 0.96397406, 0, 1, 0, -0.96397406, 0, -0.26599634, 175.47076, 0, 190.61365), 3], [Vector3(149.56755, 9.536743e-07, 182.38232), Vector3(0, 1, 0), Transform3D(0.10489733, 0, 0.99448305, 0, 1, 0, -0.99448305, 0, 0.10489733, 149.56755, 9.536743e-07, 182.38232), 3], [Vector3(136.89911, 0, 180.87738), Vector3(0, 1, 0), Transform3D(-0.8025849, 0, -0.5965379, 0, 1, 0, 0.5965379, 0, -0.8025849, 136.89911, 0, 180.87738), 3], [Vector3(139.22365, 0, 215.07065), Vector3(0, 1, 0), Transform3D(-0.9999409, 0, -0.010878094, 0, 1, 0, 0.010878093, 0, -0.9999409, 139.22365, 0, 215.07065), 3], [Vector3(151.55957, 0, 216.63228), Vector3(0, 1, 0), Transform3D(0.61836964, 0, -0.7858874, 0, 1, 0, 0.7858874, 0, 0.61836964, 151.55957, 0, 216.63228), 3], [Vector3(170.40015, 0, 216.56992), Vector3(0, 1, 0), Transform3D(0.7649748, 0, -0.64406025, 0, 1, 0, 0.64406025, 0, 0.7649748, 170.40015, 0, 216.56992), 3], [Vector3(183.20921, 0, 221.13893), Vector3(0, 1, 0), Transform3D(0.55160606, 0, 0.8341048, 0, 1, 0, -0.8341048, 0, 0.55160606, 183.20921, 0, 221.13893), 3], [Vector3(145.57925, 0, 233.77795), Vector3(0, 1, 0), Transform3D(-0.9970217, 0, -0.07712235, 0, 1, 0, 0.07712235, 0, -0.9970217, 145.57925, 0, 233.77795), 3], [Vector3(153.1318, 0, 238.68791), Vector3(0, 1, 0), Transform3D(-0.97836125, 0, -0.206904, 0, 1, 0, 0.206904, 0, -0.97836125, 153.1318, 0, 238.68791), 3], [Vector3(162.23679, 0, 235.0802), Vector3(0, 1, 0), Transform3D(0.8016248, 0, -0.5978275, 0, 1, 0, 0.5978275, 0, 0.8016248, 162.23679, 0, 235.0802), 3], [Vector3(175.35805, 0, 234.13455), Vector3(0, 1, 0), Transform3D(0.9134374, 0, 0.4069792, 0, 1, 0, -0.4069792, 0, 0.9134374, 175.35805, 0, 234.13455), 3], [Vector3(188.83138, 0, 234.10364), Vector3(0, 1, 0), Transform3D(-0.114493586, 0, -0.993424, 0, 1, 0, 0.993424, 0, -0.114493586, 188.83138, 0, 234.10364), 3], [Vector3(196.93239, 0, 235.83145), Vector3(0, 1, 0), Transform3D(-0.660575, 0, -0.7507601, 0, 1, 0, 0.7507601, 0, -0.660575, 196.93239, 0, 235.83145), 3], [Vector3(199.16573, 0, 222.98428), Vector3(0, 1, 0), Transform3D(-0.77754676, 0, 0.6288251, 0, 1, 0, -0.6288251, 0, -0.77754676, 199.16573, 0, 222.98428), 3], [Vector3(207.39648, 0, 238.16953), Vector3(0, 1, 0), Transform3D(0.48402405, 0, 0.8750547, 0, 1, 0, -0.8750547, 0, 0.48402405, 207.39648, 0, 238.16953), 3], [Vector3(218.27245, 0, 237.63635), Vector3(0, 1, 0), Transform3D(-0.97894055, 0, -0.20414563, 0, 1, 0, 0.20414563, 0, -0.97894055, 218.27245, 0, 237.63635), 3], [Vector3(223.65982, 0, 232.87274), Vector3(0, 1, 0), Transform3D(-0.31840864, 0, 0.9479536, 0, 1, 0, -0.9479536, 0, -0.31840864, 223.65982, 0, 232.87274), 3], [Vector3(230.94673, 0, 226.18063), Vector3(0, 1, 0), Transform3D(-0.42812887, 0, 0.9037177, 0, 1, 0, -0.9037177, 0, -0.42812887, 230.94673, 0, 226.18063), 3], [Vector3(231.7435, 0, 216.30132), Vector3(0, 1, 0), Transform3D(-0.967076, 0, -0.25448796, 0, 1, 0, 0.25448796, 0, -0.967076, 231.7435, 0, 216.30132), 3], [Vector3(223.52803, 0, 205.86719), Vector3(0, 1, 0), Transform3D(0.987014, 0, 0.16063452, 0, 1, 0, -0.16063452, 0, 0.987014, 223.52803, 0, 205.86719), 3], [Vector3(227.39012, 0, 196.33447), Vector3(0, 1, 0), Transform3D(0.5925404, 0, -0.80554074, 0, 1, 0, 0.80554074, 0, 0.5925404, 227.39012, 0, 196.33447), 3], [Vector3(212.91267, 0, 207.10599), Vector3(0, 1, 0), Transform3D(-0.85584664, 0, -0.5172297, 0, 1, 0, 0.5172297, 0, -0.85584664, 212.91267, 0, 207.10599), 3], [Vector3(206.00545, 9.536743e-07, 201.85167), Vector3(0, 1, 0), Transform3D(-0.30852374, 0, 0.95121664, 0, 1, 0, -0.95121664, 0, -0.30852374, 206.00545, 9.536743e-07, 201.85167), 3], [Vector3(205.63063, 9.536743e-07, 188.78635), Vector3(0, 1, 0), Transform3D(-0.67826873, 0, 0.7348139, 0, 1, 0, -0.7348139, 0, -0.67826873, 205.63063, 9.536743e-07, 188.78635), 3], [Vector3(205.66614, 0, 176.53412), Vector3(0, 1, 0), Transform3D(-0.19384807, 0, 0.9810316, 0, 1, 0, -0.9810316, 0, -0.19384807, 205.66614, 0, 176.53412), 3], [Vector3(218.28793, 0, 176.13307), Vector3(0, 1, 0), Transform3D(-0.7679203, 0, -0.64054537, 0, 1, 0, 0.64054537, 0, -0.7679203, 218.28793, 0, 176.13307), 3], [Vector3(229.89288, 9.536743e-07, 173.64336), Vector3(0, 1, 0), Transform3D(-0.9753406, 0, 0.22070509, 0, 1, 0, -0.22070509, 0, -0.9753406, 229.89288, 9.536743e-07, 173.64336), 3], [Vector3(184.58601, 0, 175.61478), Vector3(0, 1, 0), Transform3D(-0.8226984, 0, 0.56847805, 0, 1, 0, -0.56847805, 0, -0.8226984, 184.58601, 0, 175.61478), 3], [Vector3(184.48111, 0, 164.87303), Vector3(0, 1, 0), Transform3D(0.58939254, 0, -0.80784684, 0, 1, 0, 0.80784684, 0, 0.58939254, 184.48111, 0, 164.87303), 3], [Vector3(183.49818, 0, 150.89342), Vector3(0, 1, 0), Transform3D(0.17966451, 0, -0.983728, 0, 1, 0, 0.983728, 0, 0.17966451, 183.49818, 0, 150.89342), 3], [Vector3(175.36086, 0, 152.66423), Vector3(0, 1, 0), Transform3D(-0.45361832, 0, -0.8911961, 0, 1, 0, 0.8911961, 0, -0.45361832, 175.36086, 0, 152.66423), 3], [Vector3(201.83894, 0, 151.93803), Vector3(0, 1, 0), Transform3D(0.99315786, 0, 0.11677967, 0, 1, 0, -0.11677967, 0, 0.99315786, 201.83894, 0, 151.93803), 3], [Vector3(200.6025, 0, 138.62057), Vector3(0, 1, 0), Transform3D(-0.49406067, 0, -0.86942744, 0, 1, 0, 0.86942744, 0, -0.49406067, 200.6025, 0, 138.62057), 3], [Vector3(194.90987, 0, 124.5538), Vector3(0, 1, 0), Transform3D(-0.99783915, 0, 0.065704085, 0, 1, 0, -0.065704085, 0, -0.99783915, 194.90987, 0, 124.5538), 2], [Vector3(207.6051, 0, 136.77522), Vector3(0, 1, 0), Transform3D(0.16693327, 0, -0.98596823, 0, 1, 0, 0.98596823, 0, 0.16693328, 207.6051, 0, 136.77522), 3], [Vector3(221.7141, 9.536743e-07, 137.15718), Vector3(0, 1, 0), Transform3D(-0.9322904, 0, 0.36171076, 0, 1, 0, -0.36171076, 0, -0.9322904, 221.7141, 9.536743e-07, 137.15718), 3], [Vector3(227.00682, 0, 146.73412), Vector3(0, 1, 0), Transform3D(-0.9751213, 0, -0.22167185, 0, 1, 0, 0.22167185, 0, -0.9751213, 227.00682, 0, 146.73412), 3], [Vector3(230.59744, 0, 153.49414), Vector3(0, 1, 0), Transform3D(0.44024178, 0, 0.89787924, 0, 1, 0, -0.89787924, 0, 0.44024178, 230.59744, 0, 153.49414), 3], [Vector3(233.01184, 0, 165.03558), Vector3(0, 1, 0), Transform3D(-0.122881964, 0, 0.99242127, 0, 1, 0, -0.99242127, 0, -0.122881964, 233.01184, 0, 165.03558), 3], [Vector3(226.06703, 0, 159.64252), Vector3(0, 1, 0), Transform3D(-0.8773184, 0, 0.4799088, 0, 1, 0, -0.4799088, 0, -0.8773184, 226.06703, 0, 159.64252), 3], [Vector3(232.32913, 0, 183.07376), Vector3(0, 1, 0), Transform3D(-0.5877242, 0, -0.80906135, 0, 1, 0, 0.80906135, 0, -0.5877242, 232.32913, 0, 183.07376), 3], [Vector3(160.22993, 0, 89.30344), Vector3(0, 1, 0), Transform3D(0.99787647, 0, 0.065134786, 0, 1, 0, -0.065134786, 0, 0.99787647, 160.22993, 0, 89.30344), 2], [Vector3(161.20642, 9.536743e-07, 96.807686), Vector3(0, 1, 0), Transform3D(0.90590703, 0, -0.4234766, 0, 1, 0, 0.4234766, 0, 0.90590703, 161.20642, 9.536743e-07, 96.807686), 2], [Vector3(166.57574, 0, 105.26559), Vector3(0, 1, 0), Transform3D(0.3267428, 0, 0.9451133, 0, 1, 0, -0.9451133, 0, 0.3267428, 166.57574, 0, 105.26559), 2], [Vector3(174.43579, 0, 96.19045), Vector3(0, 1, 0), Transform3D(-0.45502427, 0, -0.8904791, 0, 1, 0, 0.8904791, 0, -0.45502427, 174.43579, 0, 96.19045), 2], [Vector3(172.87862, 9.536743e-07, 83.98107), Vector3(0, 1, 0), Transform3D(0.19284488, 0, 0.9812293, 0, 1, 0, -0.9812293, 0, 0.19284488, 172.87862, 9.536743e-07, 83.98107), 2], [Vector3(162.37135, 0, 74.00881), Vector3(0, 1, 0), Transform3D(-0.99537057, 0, 0.09611189, 0, 1, 0, -0.09611189, 0, -0.99537057, 162.37135, 0, 74.00881), 2], [Vector3(156.45328, 0, 66.907326), Vector3(0, 1, 0), Transform3D(0.9997279, 0, -0.023327531, 0, 1, 0, 0.023327531, 0, 0.9997279, 156.45328, 0, 66.907326), 2], [Vector3(149.0789, 0, 59.634094), Vector3(0, 1, 0), Transform3D(-0.8255608, 0, 0.5643132, 0, 1, 0, -0.5643132, 0, -0.8255608, 149.0789, 0, 59.634094), 2], [Vector3(143.04779, 9.536743e-07, 53.57158), Vector3(0, 1, 0), Transform3D(0.9826098, 0, 0.1856824, 0, 1, 0, -0.1856824, 0, 0.9826098, 143.04779, 9.536743e-07, 53.57158), 2], [Vector3(151.63719, 0, 48.377396), Vector3(0, 1, 0), Transform3D(0.88376415, 0, 0.46793264, 0, 1, 0, -0.46793264, 0, 0.88376415, 151.63719, 0, 48.377396), 2], [Vector3(161.11812, 0, 51.583946), Vector3(0, 1, 0), Transform3D(-0.54720056, 0, 0.83700156, 0, 1, 0, -0.83700156, 0, -0.54720056, 161.11812, 0, 51.583946), 2], [Vector3(169.74034, 0, 60.14926), Vector3(0, 1, 0), Transform3D(0.59350663, 0, 0.8048292, 0, 1, 0, -0.8048292, 0, 0.59350663, 169.74034, 0, 60.14926), 2], [Vector3(175.66103, 0, 67.66861), Vector3(0, 1, 0), Transform3D(0.451587, 0, -0.8922271, 0, 1, 0, 0.8922271, 0, 0.451587, 175.66103, 0, 67.66861), 2], [Vector3(187.90857, 0, 66.18998), Vector3(0, 1, 0), Transform3D(-0.21678832, 0, -0.97621864, 0, 1, 0, 0.97621864, 0, -0.21678832, 187.90857, 0, 66.18998), 2], [Vector3(187.52855, 9.536743e-07, 55.20733), Vector3(0, 1, 0), Transform3D(-0.79594564, 0, 0.6053681, 0, 1, 0, -0.6053681, 0, -0.79594564, 187.52855, 9.536743e-07, 55.20733), 2], [Vector3(179.05583, 0, 49.80458), Vector3(0, 1, 0), Transform3D(0.21934684, 0, -0.975647, 0, 1, 0, 0.975647, 0, 0.21934684, 179.05583, 0, 49.80458), 2], [Vector3(174.83353, 0, 38.209656), Vector3(0, 1, 0), Transform3D(-0.9995548, 0, 0.02983573, 0, 1, 0, -0.02983573, 0, -0.9995548, 174.83353, 0, 38.209656), 2], [Vector3(196.6464, 0, 62.14055), Vector3(0, 1, 0), Transform3D(0.9476343, 0, 0.31935754, 0, 1, 0, -0.31935754, 0, 0.9476343, 196.6464, 0, 62.14055), 2], [Vector3(222.80566, 0, 40.52852), Vector3(0, 1, 0), Transform3D(0.16808559, 0, -0.98577243, 0, 1, 0, 0.98577243, 0, 0.16808559, 222.80566, 0, 40.52852), 2], [Vector3(212.91138, 0, 37.465836), Vector3(0, 1, 0), Transform3D(-0.1693565, 0, -0.9855549, 0, 1, 0, 0.9855549, 0, -0.1693565, 212.91138, 0, 37.465836), 2], [Vector3(207.3956, 0, 43.57216), Vector3(0, 1, 0), Transform3D(0.9987246, 0, 0.05049027, 0, 1, 0, -0.05049027, 0, 0.9987246, 207.3956, 0, 43.57216), 2], [Vector3(210.94135, 0, 52.966278), Vector3(0, 1, 0), Transform3D(-0.9913428, 0, 0.13129948, 0, 1, 0, -0.13129947, 0, -0.9913428, 210.94135, 0, 52.966278), 2], [Vector3(221.27954, 0, 55.092598), Vector3(0, 1, 0), Transform3D(0.28102043, 0, -0.95970184, 0, 1, 0, 0.95970184, 0, 0.28102046, 221.27954, 0, 55.092598), 2], [Vector3(217.55804, 0, 62.76828), Vector3(0, 1, 0), Transform3D(0.11961, 0, 0.992821, 0, 1, 0, -0.992821, 0, 0.11961, 217.55804, 0, 62.76828), 2], [Vector3(194.84113, 0, 45.07521), Vector3(0, 1, 0), Transform3D(0.4714696, 0, 0.8818823, 0, 1, 0, -0.8818823, 0, 0.4714696, 194.84113, 0, 45.07521), 2]]
-max_members = 75
-min_leaf_extent = 1.0
-octant = 4
-is_leaf = true
-center_pos = Vector3(255, -43, 127)
-extent = 128.0
-bounds = AABB(127, -171, -1, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_4oad2"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 5
-is_leaf = true
-center_pos = Vector3(255, -43, 383)
-extent = 128.0
-bounds = AABB(127, -171, 255, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_j1uv7"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 6
-is_leaf = true
-center_pos = Vector3(255, 213, 127)
-extent = 128.0
-bounds = AABB(127, 85, -1, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_i6n8p"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-max_members = 75
-min_leaf_extent = 1.0
-octant = 7
-is_leaf = true
-center_pos = Vector3(255, 213, 383)
-extent = 128.0
-bounds = AABB(127, 85, 255, 256, 256, 256)
-max_bounds_to_center_dist = 221.70250336881628
-min_bounds_to_center_dist = 128.0
-active_LOD_index = 0
-metadata/class = "MMIOctreeNode"
-
-[sub_resource type="Resource" id="Resource_ehsa6"]
-resource_local_to_scene = true
-resource_name = "MMIOctreeNode"
-script = ExtResource("33_ifqdx")
-child_nodes = [SubResource("Resource_dyhn3"), SubResource("Resource_pcypi"), SubResource("Resource_7ybnm"), SubResource("Resource_p54lo"), SubResource("Resource_hvxpa"), SubResource("Resource_4oad2"), SubResource("Resource_j1uv7"), SubResource("Resource_i6n8p")]
-max_members = 75
-min_leaf_extent = 1.0
-octant = -1
-is_leaf = true
-center_pos = Vector3(127, 85, 255)
+center_pos = Vector3(127, 85, -1)
 extent = 256.0
-bounds = AABB(-129, -171, -1, 512, 512, 512)
+bounds = AABB(-129, -171, -257, 512, 512, 512)
 max_bounds_to_center_dist = 443.40500673763256
 min_bounds_to_center_dist = 256.0
 active_LOD_index = 0
@@ -231,7 +275,7 @@ metadata/class = "MMIOctreeNode"
 resource_local_to_scene = true
 resource_name = "MMIOctreeManager"
 script = ExtResource("34_7y28q")
-root_octree_node = SubResource("Resource_ehsa6")
+root_octree_node = SubResource("Resource_2iq4o")
 metadata/class = "MMIOctreeManager"
 
 [sub_resource type="Resource" id="Resource_ifqdx"]
@@ -311,8 +355,16 @@ shader_params/u_instance_scale = Vector3(1, 1, 1)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
+[node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
+transform = Transform3D(17.320507, 10.000001, -4.3711393e-07, 0, -8.742278e-07, -20, -10.000001, 17.320507, -7.5710346e-07, 130.10245, 112.06569, 0.5947441)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ixyha")
+}
+
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 130.53134, 2.3126001, 47.104347)
+transform = Transform3D(-0.8660254, 0.50000006, 2.1855696e-08, 0, -4.371139e-08, 1, 0.50000006, 0.8660254, 3.7855173e-08, 130.53134, 112.48089, 1.3163711)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
@@ -460,7 +512,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 37.557545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 31.27409)
 dialogue = ExtResource("17_i627o")
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
@@ -519,6 +571,24 @@ dialogue = ExtResource("17_i627o")
 
 [node name="NewHedgeDog" parent="." instance=ExtResource("45_4oad2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 227.19513, 1.9645767, 153.82436)
+
+[node name="OverView1" type="Camera3D" parent="."]
+transform = Transform3D(0.028705612, 0.92732763, -0.3731481, -0.07112751, 0.3742506, 0.9245958, 0.99705416, 5.5714744e-09, 0.0767016, 127.051384, 120.04188, 12.821926)
+
+[node name="OverView2" type="Camera3D" parent="."]
+transform = Transform3D(0.83718765, 0.065999955, 0.54291886, -0.011951463, 0.99466264, -0.102486886, -0.54678524, 0.079312086, 0.83350796, 259.0204, 53.86034, 117.24176)
+
+[node name="OverView3" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.46823, 76.00937, 44.21368)
+
+[node name="OverView4" type="Camera3D" parent="."]
+transform = Transform3D(-0.8660254, 0.50000006, 2.1855696e-08, 0, -4.371139e-08, 1, 0.50000006, 0.8660254, 3.7855173e-08, 145.26268, 4.68912, 39.906727)
+
+[node name="TheUnnamedOne" parent="." instance=ExtResource("47_2iq4o")]
+transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.9976902, -0.05836704, -0.8592458, 0, 0.511563, 259.0204, 52.042587, 114.053055)
+
+[node name="TinyBullet" parent="." instance=ExtResource("48_ixyha")]
+transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 258.65775, 53.243336, 112.53825)
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

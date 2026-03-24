@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://18hanft1qa7h"]
+
+[ext_resource type="PackedScene" uid="uid://dk61xqmrfnoxf" path="res://Gnome Level/GnomeCharacters/sketchfab_scene.tscn" id="1_oc6tk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yvlkc"]
+height = 2.7392578
+radius = 0.69628906
+
+[node name="TinyBullet" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_oc6tk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3196578, 0.8168974)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3339846, 0.43202126)
+shape = SubResource("CylinderShape3D_yvlkc")
