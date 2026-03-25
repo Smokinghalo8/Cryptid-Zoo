@@ -1,5 +1,12 @@
-~ introToGnomeLevel
+~ introTalkWithMothman
 #need to add both voicelines
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline1Use.mp3, next=auto] Gee, thanks again for aggreeing to fly me to Nessie, Mothman![#voice=uid://b2o70hbnlysnb]
+[color=#8E8E8E]Mothman[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline1Use.mp3, next=auto]I hate you[#voice=uid://b2o70hbnlysnb]
+=> END
+
+
+
+~ introToGnomeLevel
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline1Use.mp3, next=auto] Uhgg... what happened...[#voice=uid://b2o70hbnlysnb]
 [color=yellow]Random Gnome[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Buff-O/Buff-O_line1.mp3, next=auto] HALT! What are you doing in the Gnome Kings land??! Explain yourself human![#voice=uid://g1xtbugftnps]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline2.mp3, next=auto] W...What are you talking about- Gnome king? Why am I so small?[#voice=uid://olug2c37o56y]

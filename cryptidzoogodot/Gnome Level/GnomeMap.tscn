@@ -54,6 +54,50 @@ script = ExtResource("3_0qtbb")
 mode = 0
 textures = [[ExtResource("5_vxnpk"), ExtResource("6_7oysy")], [ExtResource("7_bwcok"), ExtResource("8_87shl")]]
 
+[sub_resource type="Animation" id="Animation_ec0i6"]
+resource_name = "BulletHittingZedAndMothman"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TinyBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.0333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_mgsad"]
+resource_name = "CameraFloatingAroundZedBeforeAwaking"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(145.26268, 0.26936293, 39.906727)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OverView4:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(145.26268, 0.31019878, 39.906727), Vector3(145.26268, 4.68912, 39.906727)]
+}
+
 [sub_resource type="Animation" id="Animation_i6n8p"]
 resource_name = "MothmanBringingZedToGnomeLevel"
 length = 8.0
@@ -145,22 +189,6 @@ tracks/4/keys = {
 "values": [Vector3(145.26268, 4.68912, 39.906727)]
 }
 
-[sub_resource type="Animation" id="Animation_ec0i6"]
-resource_name = "BulletHittingZedAndMothman"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TinyBullet:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.0333333, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
-}
-
 [sub_resource type="Animation" id="Animation_ixyha"]
 resource_name = "ZedFalling"
 tracks/0/type = "value"
@@ -186,34 +214,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-1.5707964, -2.6179938, 0), Vector3(-1.5707964, 6.2831855, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_mgsad"]
-resource_name = "CameraFloatingAroundZedBeforeAwaking"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Z:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(145.26268, 0.26936293, 39.906727)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OverView4:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(145.26268, 0.31019878, 39.906727), Vector3(145.26268, 4.68912, 39.906727)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
@@ -308,6 +308,7 @@ metadata/class = "Arborist"
 
 [node name="GnomeLevel" type="Node3D"]
 script = ExtResource("1_42gdw")
+dialogue = ExtResource("17_i627o")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_qqwwe")
@@ -544,6 +545,7 @@ transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 72.35481, 0, 94.54317)
 
 [node name="shroom1" parent="." instance=ExtResource("25_7oysy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.17012, 0.41318035, 77.1497)
+psychedelic = 1.0
 
 [node name="shroom2" parent="." instance=ExtResource("38_hvxpa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.74156, 0.8201132, 74.07087)

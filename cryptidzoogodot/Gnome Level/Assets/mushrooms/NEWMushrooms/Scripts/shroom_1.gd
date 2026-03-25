@@ -20,13 +20,7 @@ func _process(delta: float) -> void:
 		self.visible = false
 		Global.shroomsAte +=1
 		if psychedelic >= 1.0:
-			$"../../../Z/psychedelicCube".visible = true
-			eaten = true
-			await get_tree().create_timer(1.0).timeout
-			await get_tree().create_timer(10.0).timeout
-			$"../../../Z/psychedelicCube".visible = false
-			self.visible = false
-			psychedelic = 0.0
+			await enterPhyscoState()
 		if Global.shroomsAte == 2:
 			enough = true#stop plasyer from eating
 			#after eating 4 make gloabl 21 and send back to king
@@ -48,3 +42,13 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		pick_up_text.hide()
 		#can eat
 		pass # Replace with function body.
+
+func enterPhyscoState() -> int:
+	#set Visability of PhcysoCube to true, dont use await here, 
+	$"../Z/psychedelicCube".visible = true
+	eaten = true
+	self.visible = false	#why do we make this invisble instead of quese_free? I have no idea, ask Krista
+	await get_tree().create_timer(10.0).timeout
+	$"../Z/psychedelicCube".visible = false
+	
+	return 3#just a temp integer, so I cat use await

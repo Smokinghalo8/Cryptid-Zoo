@@ -16,6 +16,11 @@ var isAnimationDone = false
 @onready var Cam2: Camera3D = $OverView2
 @onready var Cam3: Camera3D = $OverView3
 @onready var Cam4: Camera3D = $OverView4
+@onready var MothmanModel: Node3D = $Mothman_GEO
+
+
+@export var dialogue : DialogueResource
+var dialogueLines 
 
 
 
@@ -29,7 +34,10 @@ func _ready() -> void:
 	#skip 3, not done yet
 	await toggleAnimation(4)
 	await toggleAnimation(5)
-	playerZed.position = Vector3(145, 100, 40)
+	playerZed.position = Vector3(145, 5, 40)#edit, might need to make a 1 or something Y value, that is
+	playerZed.rotation = Vector3(0,0,0)
+	playerZed.set_process_input(true)
+
 	playerZedCamera.make_current()
 	#TODO Apply new idea below!
 	#unless we tp the player to the KING which i think we should, we have to set visability on bleafus to false too
@@ -63,16 +71,19 @@ func _process(delta: float) -> void:
 func toggleAnimation(animationNumber) -> int:
 	var animationNum = animationNumber
 	if(animationNum == 1):
+		playerZed.set_process_input(false)
 		#switchToFirstAniamtion
 		#andtoggleCamera
 		Cam1.make_current()
 		animation_player.play("MothmanBringingZedToGnomeLevel")
-		await animation_player.animation_finished#USE THIS KEYWORD
-		
+		#await animation_player.animation_finished#USE THIS KEYWORD
+		await DialogueManager.show_dialogue_balloon(dialogue, "introTalkWithMothman").finished
 		#create an await function and wait out Zeds conversation with Mothman
 		#TODO after creating the second animation, set it to play RIGHT after this animation plays
 		#toggleAnimation(2)
 	elif(animationNum == 2):
+		playerZed.set_process_input(false)
+
 		#todo finish
 		Cam2.make_current()
 		animation_player.play("BulletHittingZedAndMothman")
@@ -80,21 +91,24 @@ func toggleAnimation(animationNumber) -> int:
 		#toggleAnimation(3)
 		#after this animation, add an animation of an explosion that happens where Mothman and Zed were
 	elif(animationNum == 3):
+		playerZed.set_process_input(false)
 		#in this one create explosion animaion, skipping for now
 		toggleAnimation(4)
 		pass
 	elif(animationNum == 4):
+		playerZed.set_process_input(false)
 		#Make Zed falling animation play
 		Cam3.make_current()
 		animation_player.play("ZedFalling")
 		await animation_player.animation_finished
 		#toggleAnimation(5)
 	elif(animationNum == 5):
+		playerZed.set_process_input(false)
 		#play camera pulling up into the sky after Zed falls animaion
 		Cam4.make_current()
 		animation_player.play("CameraFloatingAroundZedBeforeAwaking")
+		MothmanModel.visible = false
 		await animation_player.animation_finished
-		#TODO give player control after this animation plays
 		pass
 	return 3
 	
