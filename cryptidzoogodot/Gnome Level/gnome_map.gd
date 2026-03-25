@@ -16,6 +16,11 @@ var isAnimationDone = false
 @onready var Cam2: Camera3D = $OverView2
 @onready var Cam3: Camera3D = $OverView3
 @onready var Cam4: Camera3D = $OverView4
+@onready var Cam5: Camera3D = $OverView5
+@onready var Cam6: Camera3D = $OverView6
+
+
+@onready var TwinOfTheUnnamed: StaticBody3D = $TwinOfTheUnnamedOne
 @onready var MothmanModel: Node3D = $Mothman_GEO
 
 
@@ -32,10 +37,14 @@ func _ready() -> void:
 	await toggleAnimation(1)
 	await toggleAnimation(2)
 	#skip 3, not done yet
+	await toggleAnimation(3)
 	await toggleAnimation(4)
 	await toggleAnimation(5)
+	await toggleAnimation(6)
+	await toggleAnimation(7)
 	playerZed.position = Vector3(145, 5, 40)#edit, might need to make a 1 or something Y value, that is
 	playerZed.rotation = Vector3(0,0,0)
+	playerZed.scale = Vector3(1.0,1.0,1.0)
 	playerZed.set_process_input(true)
 
 	playerZedCamera.make_current()
@@ -93,7 +102,8 @@ func toggleAnimation(animationNumber) -> int:
 	elif(animationNum == 3):
 		playerZed.set_process_input(false)
 		#in this one create explosion animaion, skipping for now
-		toggleAnimation(4)
+		
+		MothmanModel.visible = false
 		pass
 	elif(animationNum == 4):
 		playerZed.set_process_input(false)
@@ -107,9 +117,18 @@ func toggleAnimation(animationNumber) -> int:
 		#play camera pulling up into the sky after Zed falls animaion
 		Cam4.make_current()
 		animation_player.play("CameraFloatingAroundZedBeforeAwaking")
-		MothmanModel.visible = false
 		await animation_player.animation_finished
-		pass
+	elif(animationNum == 6):
+		#camera on Zed landing on Gnome
+		Cam5.make_current()
+		animation_player.play("ZedLandingOnGnomeCloseup")
+		await animation_player.animation_finished
+	elif(animationNum == 7):
+		#camera on Zed shrinking
+		TwinOfTheUnnamed.visible = false
+		Cam6.make_current()
+		animation_player.play("ZedShrinking")
+		await animation_player.animation_finished
 	return 3
 	
 func togglePause():
