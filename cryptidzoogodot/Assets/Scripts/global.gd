@@ -5,6 +5,12 @@ var stamina = 0
 var walkingSound
 var character_position = Vector3(0,0,0)
 
+#Universal Character Controller
+var wendyPower = false
+var mothmanPower = false
+var gnomePower = false
+var nessiePower = false
+
 #Mothman Things
 var animNum = 1.0
 var plushCounter = 0
