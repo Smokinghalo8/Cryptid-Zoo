@@ -48,14 +48,7 @@ func _process(delta):
 	#sensing
 	#Sensing
 	
-	if Global.playerShouldBeMoving == false:
-		SPEED = 0.0
-		
-	if Global.playerShouldBeMoving == true:
-		SPEED = 5.0
-	
-	
-#	$"../Ui/WednigoHead/SenseBar".value = senseTime
+	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
 	if senseTime > 0:
 		senseTime -= senseDeplete * delta
@@ -65,7 +58,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("sense") && senseable == true:
 		var children = get_tree().current_scene.get_children()
 		for child in children:
-			if child.is_in_group("Living"):
+			if is_instance_valid(child) and child.is_in_group("Living"):
 				
 				child.highlight()
 				senseable = false
