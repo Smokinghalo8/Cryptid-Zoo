@@ -81,7 +81,7 @@ func _process(delta):
 	
 	if Global.mothmanPower == true && senseable == true:
 		if Input.is_action_just_pressed("sense") && self.is_on_floor():
-			velocity.y = 14
+			velocity.y = 18
 			senseable = false
 			$"../Ui/WednigoHead/SenseBar".visible = true
 			await get_tree().create_timer(3.0).timeout
@@ -111,10 +111,7 @@ func _process(delta):
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
-	
-	
-	
-	
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

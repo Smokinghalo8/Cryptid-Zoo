@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=61 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -35,6 +35,21 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
 [ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_i3gd2"]
+
+[sub_resource type="Sky" id="Sky_vrwf7"]
+sky_material = SubResource("PhysicalSkyMaterial_i3gd2")
+
+[sub_resource type="Environment" id="Environment_j41q2"]
+background_mode = 2
+sky = SubResource("Sky_vrwf7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
@@ -754,6 +769,9 @@ shader_parameter/blur_samples = 15
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
 dialogue_resource = ExtResource("2_iu74x")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j41q2")
 
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -7.6293945e-06, 2.3841858e-07, 1.4305115e-06)

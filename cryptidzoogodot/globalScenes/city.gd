@@ -11,6 +11,7 @@ var talking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.wendyPower = true
 	#SceneTransitionAnimation.play("fade_out")
 	objectiveArrow.visible = false
 	scaryNoiseFirstTime = false
@@ -116,6 +117,7 @@ func _on_cut_scene_collider_2_body_entered(body: Node3D) -> void:
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await $CutScene/CutSceneAnims.animation_finished
+			Global.wendyPower = false
 			get_tree().quit()
 
 
@@ -125,6 +127,7 @@ func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await($CutScene/CutSceneAnims.animation_finished)
+			Global.wendyPower = false
 			get_tree().quit()
 
 
