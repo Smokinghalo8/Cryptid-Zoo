@@ -4,6 +4,7 @@ extends Node
 var stamina = 0
 var walkingSound
 var character_position = Vector3(0,0,0)
+var wendigoLevel = false
 
 #Universal Character Controller
 var wendyPower = false

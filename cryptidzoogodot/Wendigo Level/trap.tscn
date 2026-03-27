@@ -25,6 +25,7 @@ script = ExtResource("1_q6m2y")
 [node name="InteractCol" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0408597, 0, -0.49161625)
 shape = SubResource("BoxShape3D_uyjqn")
+debug_color = Color(0.95686275, 0, 0, 1)
 
 [node name="Glow" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.5261493, 0, 0, 0, 1.066489, 0, 0, 0, 8.09673, 0, 0, 0)

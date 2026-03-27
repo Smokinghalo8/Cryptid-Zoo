@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://diyhjppamkeqi"]
+[gd_scene load_steps=16 format=3 uid="uid://diyhjppamkeqi"]
 
-[ext_resource type="PackedScene" uid="uid://c5yxmynte2o0d" path="res://Scenes/wendigo/wendigo/scene.gltf" id="1_2uqoh"]
 [ext_resource type="Script" uid="uid://d2klt8xfi3ohq" path="res://new_wendy.gd" id="1_hmsqo"]
 [ext_resource type="AudioStream" uid="uid://d4fbtn7mnohiw" path="res://Wendigo Level/assets/sfx/Wendigo sounds.mp3" id="2_hmsqo"]
+[ext_resource type="PackedScene" uid="uid://b2f1f5k2k6t17" path="res://Wendigo Level/WendigoCharacter/wendigoAnimated.tscn" id="2_jo68c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jo68c"]
 radius = 1.1210938
@@ -19,18 +19,6 @@ radius = 23.057617
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_khtfr"]
 size = Vector3(1.4180908, 3.5830688, 1.6816406)
-
-[sub_resource type="SphereMesh" id="SphereMesh_hmsqo"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo68c"]
-metallic = 1.0
-metallic_specular = 1.0
-roughness = 0.0
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 16.0
-refraction_enabled = true
-refraction_scale = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmsqo"]
 albedo_color = Color(11.152633, 0, 0, 0.3137255)
@@ -65,8 +53,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_hmsqo")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2uqoh")]
-transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, 0, 0.09778255, 0)
+[node name="wendigoWalk" parent="." instance=ExtResource("2_jo68c")]
+transform = Transform3D(-0.02, 0, 1.7484555e-09, 0, 0.02, 0, -1.7484555e-09, 0, -0.02, 0, 0, 0.32284653)
 
 [node name="MainCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.044404, 0)
@@ -109,11 +97,6 @@ debug_color = Color(0.5645416, 0.5586186, 0, 0.41960785)
 stream = ExtResource("2_hmsqo")
 autoplay = true
 max_distance = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.64, 0, 0, 0, 1.4587774, 0, 0, 0, 0.64, 0, 2.4600036, 0.09390521)
-mesh = SubResource("SphereMesh_hmsqo")
-surface_material_override/0 = SubResource("StandardMaterial3D_jo68c")
 
 [node name="SpookyParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1084423, 0)

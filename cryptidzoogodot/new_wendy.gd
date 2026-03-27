@@ -37,7 +37,6 @@ func _ready() -> void:
 	noiseMade = false
 	isInSoundDetector = false
 
-
 func _physics_process(delta):
 	
 	var bodies = soundDetector.get_overlapping_bodies()
@@ -66,6 +65,7 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direction * speed, delta * 10)
 	velocity += get_gravity() * delta
 	if Global.frozen == false:
+		$wendigoWalk/AnimationPlayer.play("Armature|mixamo_com|Layer0", 0)
 		move_and_slide()
 
 

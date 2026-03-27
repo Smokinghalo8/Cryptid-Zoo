@@ -12,11 +12,12 @@ extends Node3D
 var has_visited_forest = false
 
 func _ready() -> void:
+	Global.wendigoLevel = true
 	Global.frozen = true
 	minimap.arrow.visible = false
 	$MainLevelMusic.play(0.0)
 	if dialogue_resource:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
+		#await DialogueManager.show_dialogue_balloon(dialogue_resource, "BeginningOfLevel").finished
 		$PlayPenCarrier.queue_free()
 		minimap.arrow.visible = true
 	Global.frozen = false

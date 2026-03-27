@@ -58,8 +58,8 @@ func _input(event: InputEvent):
 
 func _process(delta):
 	#Cryptid Powers
-	
-	$"../Ui/WednigoHead/SenseBar".value = senseTime
+	if Global.wendigoLevel == false:
+		$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
 	if senseTime > 0:
 		senseTime -= senseDeplete * delta
