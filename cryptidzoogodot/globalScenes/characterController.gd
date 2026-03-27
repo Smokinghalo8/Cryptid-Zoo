@@ -1,32 +1,44 @@
 extends CharacterBody3D
 #@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
-@export var SPEED = 5.0
-const JUMP_VELOCITY = 7
-@export var lightOn = false
+#Animations
 @onready var animTree = $AnimationTree
 @export var walk = false
 @export var run = false
 @export var idle = true
-@export var glide = false
 @export var jump = false
-@export var senseable = true
+@onready var zedAnims = $ZColl/ZedAnims/AnimationPlayer
+@onready var zedAnimTree = $ZColl/ZedAnims/AnimationTree
+
+#sfx
+var playing = false
+
+#Controller
+@export var SPEED = 5.0
+const JUMP_VELOCITY = 7
+@export var lightOn = false
 var sprintSpeed = 10.0
 var maxStamina = 100.0
 var staminaDepletionRate = 30.0
 var staminaRecoveryRate = 40.0
 var sprintable = true
-var senseTimeMax = 5.0
-var senseTime = senseTimeMax
-var senseDeplete = 1.0
-var playing = false
 var currentVelocity = 0
 var previousVelocity = 0
 var velocityTolerance = 0.1
 var velocityDifference = 0
 @onready var objectiveArrow = get_node("/root/" + get_tree().current_scene.name + "/Ui/Minimap/SubViewportContainer/objective_arrow")
-@onready var zedAnims = $ZColl/ZedAnims/AnimationPlayer
-@onready var zedAnimTree = $ZColl/ZedAnims/AnimationTree
+
+#Cryptid Powers
+@export var senseable = true
+var senseTimeMax = 5.0
+var senseTime = senseTimeMax
+var senseDeplete = 1.0
+var shrunk = false
+var shrinkable = true
+
+
+
+
 
 #ethan make glide
 
@@ -45,8 +57,7 @@ func _input(event: InputEvent):
 
 
 func _process(delta):
-	#sensing
-	#Sensing
+	#Cryptid Powers
 	
 	$"../Ui/WednigoHead/SenseBar".value = senseTime
 	
@@ -54,30 +65,53 @@ func _process(delta):
 		senseTime -= senseDeplete * delta
 		senseTime = clamp(senseTime, 0.0, senseTimeMax)
 
+	if Global.wendyPower == true:
+		if Input.is_action_just_pressed("sense") && senseable == true:
+			var children = get_tree().current_scene.get_children()
+			for child in children:
+				if is_instance_valid(child) and child.is_in_group("Living"):
+					child.highlight()
+					senseable = false
+					$SenseTimer.start(0)
+					senseTime = 5.0
+					$"../Ui/WednigoHead/SenseBar".visible = true
+					objectiveArrow.visible = true
+					await get_tree().create_timer(3.0).timeout
+					objectiveArrow.visible = false
 	
-	if Input.is_action_just_pressed("sense") && senseable == true:
-		var children = get_tree().current_scene.get_children()
-		for child in children:
-			if is_instance_valid(child) and child.is_in_group("Living"):
-				
-				child.highlight()
-				senseable = false
-				$SenseTimer.start(0)
-				senseTime = 5.0
-				$"../Ui/WednigoHead/SenseBar".visible = true
-				objectiveArrow.visible = true
-				await get_tree().create_timer(3.0).timeout
-				objectiveArrow.visible = false
-				
+	if Global.mothmanPower == true && senseable == true:
+		if Input.is_action_just_pressed("sense") && self.is_on_floor():
+			velocity.y = 18
+			senseable = false
+			$"../Ui/WednigoHead/SenseBar".visible = true
+			await get_tree().create_timer(3.0).timeout
+			senseable = true
+	
+	if Global.gnomePower == true && senseable == true:
+		if shrunk == true:
+			getBig()
+			shrunk = false
+			senseable = false
+			$"../Ui/WednigoHead/SenseBar".visible = true
+			await get_tree().create_timer(3.0).timeout
+			senseable = true
 			
+		if shrunk == false:
+			getSmall()
+			shrunk = true
+			senseable = false
+			$"../Ui/WednigoHead/SenseBar".visible = true
+			await get_tree().create_timer(3.0).timeout
+			senseable = true
+	
+	if Global.nessiePower == true && senseable == true:
+		#insert Nessie powers here
+		pass
 	
 	#Flashlight
 	if Input.is_action_just_pressed("flashLight"):
 		$Head/FlashLight.visible = not $Head/FlashLight.visible
-	
-	
-	
-	
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -88,18 +122,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		
-	#if velocity.y < 0:
-		# Half gravity strength
-	#	velocity += get_gravity() * 0.5 * delta
-	#	# Apply slight downward velocity
-	#	velocity.y = -1
-	#	# Reduce speed while falling
-	#	SPEED = 9
-	#else:
-	#	# Normal gravity when rising or on ground
-	#	velocity += get_gravity() * delta
-		
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -215,31 +237,9 @@ func updateAnimationParameters():
 	zedAnimTree.set("parameters/conditions/walk", walk)
 	zedAnimTree.set("parameters/conditions/run", run)
 	zedAnimTree.set("parameters/conditions/jump", jump)
-	#if idle == true:
-		##stateMachine.travel("idle")
-		#print("Idle")
-		#zedAnimTree.set("parameters/conditions/idle", true)
-		#zedAnimTree.set("parameters/conditions/walk", false)
-		#zedAnimTree.set("parameters/conditions/run", false)
-		#zedAnimTree.set("parameters/conditions/jump", false)
-	#elif walk == true:
-		##stateMachine.travel("walk")
-		#print("Walk")
-		#zedAnimTree.set("parameters/conditions/idle", false)
-		#zedAnimTree.set("parameters/conditions/walk", true)
-		#zedAnimTree.set("parameters/conditions/run", false)
-		#zedAnimTree.set("parameters/conditions/jump", false)
-	#elif run == true:
-		##stateMachine.travel("run")
-		#print("Run")
-		#zedAnimTree.set("parameters/conditions/idle", false)
-		#zedAnimTree.set("parameters/conditions/walk", false)
-		#zedAnimTree.set("parameters/conditions/run", true)
-		#zedAnimTree.set("parameters/conditions/jump", false)
-	#elif jump == true:
-		##stateMachine.travel("jump")
-		#print("Jump")
-		#zedAnimTree.set("parameters/conditions/idle", false)
-		#zedAnimTree.set("parameters/conditions/walk", false)
-		#zedAnimTree.set("parameters/conditions/run", false)
-		#zedAnimTree.set("parameters/conditions/jump", true)
+
+func getBig():
+	self.scale = Vector3(1.0, 1.0, 1.0)
+	
+func getSmall():
+	self.scale = Vector3(10.0, 10.0, 10.0)

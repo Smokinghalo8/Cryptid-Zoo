@@ -12,6 +12,7 @@ var mazeQuest = false
 
 
 func _ready() -> void:
+	Global.mothmanPower = true
 	bloogaragth.visible = true
 	#TODO Apply new idea below!
 	#unless we tp the player to the KING which i think we should, we have to set visability on bleafus to false too
