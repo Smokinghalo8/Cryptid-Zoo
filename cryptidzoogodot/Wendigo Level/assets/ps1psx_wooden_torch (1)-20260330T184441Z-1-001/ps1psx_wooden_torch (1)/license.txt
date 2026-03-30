@@ -1,0 +1,11 @@
+Model Information:
+* title:	PS1/PSX Wooden Torch
+* source:	https://sketchfab.com/3d-models/ps1psx-wooden-torch-badf6a982a204366a63aa8d324dbd1df
+* author:	adamrobo86 (https://sketchfab.com/adamrobo86)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PS1/PSX Wooden Torch" (https://sketchfab.com/3d-models/ps1psx-wooden-torch-badf6a982a204366a63aa8d324dbd1df) by adamrobo86 (https://sketchfab.com/adamrobo86) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

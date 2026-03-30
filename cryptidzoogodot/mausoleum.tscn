@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccrn2gofhfpj5"]
+
+[ext_resource type="PackedScene" uid="uid://dh6aah0iddhb8" path="res://Wendigo Level/assets/ps1_style__lowpoly_mausoleum-20260330T184437Z-1-001/ps1_style__lowpoly_mausoleum/mausoleum.gltf" id="1_42aae"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_42aae")]

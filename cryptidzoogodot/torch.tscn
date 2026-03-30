@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tj8e88fpwsj"]
+
+[ext_resource type="PackedScene" uid="uid://b13rdxqyh73bl" path="res://Wendigo Level/assets/ps1psx_wooden_torch (1)-20260330T184441Z-1-001/ps1psx_wooden_torch (1)/torch.gltf" id="1_pa17o"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_pa17o")]
