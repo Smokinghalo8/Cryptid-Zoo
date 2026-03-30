@@ -119,6 +119,15 @@ mesh = SubResource("BoxMesh_scco8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_scco8")
 
+[node name="ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(47, 0, 0, 0, 0.09, 0, 0, 0, 47, -1.2315216, 8.102819, 0.033430576)
+mesh = SubResource("BoxMesh_scco8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling/StaticBody3D"]
+shape = SubResource("BoxShape3D_scco8")
+
 [node name="temporarygen" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.10859, 0, -18.005348)
 mesh = SubResource("BoxMesh_hyhvi")
