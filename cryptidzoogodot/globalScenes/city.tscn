@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=53 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -17,16 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="13_jceop"]
 [ext_resource type="Script" uid="uid://bcjreykocascj" path="res://Mothman Level/note_3.gd" id="13_uc6et"]
 [ext_resource type="PackedScene" uid="uid://ej1o1a6xmtlb" path="res://Mothman Level/Note4.tscn" id="14_0b0g1"]
-[ext_resource type="PackedScene" uid="uid://j8kfml0xyfpd" path="res://Main_Button.tscn" id="14_arc4g"]
-[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="14_wvpsq"]
 [ext_resource type="Script" uid="uid://b8vqgotq3llua" path="res://Mothman Level/note_4.gd" id="15_eb1mn"]
-[ext_resource type="PackedScene" uid="uid://dlwu484e63gpy" path="res://Resume_Button.tscn" id="15_ket5o"]
-[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="15_ryqhk"]
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
-[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
 [ext_resource type="AudioStream" uid="uid://cko6q5a2ql0h4" path="res://Assets/SFX/OverworldTheme.mp3" id="26_65jtr"]
+[ext_resource type="PackedScene" uid="uid://cbsqws0oy4dps" path="res://PauseMenu.tscn" id="30_jy33s"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="32_itr8c"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="42_ejm3s"]
@@ -1045,76 +1041,8 @@ nine_patch_stretch = true
 texture_under = ExtResource("12_4krsh")
 texture_progress = ExtResource("13_jceop")
 
-[node name="Pause Menu" type="Control" parent="Ui"]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 1
-script = ExtResource("14_wvpsq")
-
-[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
-process_mode = 3
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.3529412)
-
-[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 45.0
-offset_right = 348.0
-offset_bottom = 105.0
-scale = Vector2(1.15674, 1.8462)
-theme_override_fonts/font = ExtResource("15_ryqhk")
-theme_override_font_sizes/font_size = 94
-text = "Cryptid Zoo"
-
-[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
-process_mode = 3
-layout_mode = 0
-offset_left = 329.0
-offset_top = 200.0
-offset_right = 1053.0
-offset_bottom = 390.0
-min_value = -6.0
-max_value = 72.0
-step = 6.0
-value = 72.0
-
-[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 275.0
-offset_right = 332.0
-offset_bottom = 333.0
-theme_override_font_sizes/font_size = 42
-text = "Master Sound"
-
-[node name="mainMenuButton" parent="Ui/Pause Menu" instance=ExtResource("14_arc4g")]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 350.0
-offset_right = 868.0
-offset_bottom = 575.0
-button_mask = 3
-
-[node name="resumeButton" parent="Ui/Pause Menu" instance=ExtResource("15_ket5o")]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 425.0
-offset_right = 761.0
-offset_bottom = 647.0
-button_mask = 3
-
-[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
-stream = ExtResource("21_k8whp")
-volume_db = -15.0
-
 [node name="intText" type="Label" parent="Ui"]
+visible = false
 offset_left = 792.0
 offset_top = 722.0
 offset_right = 1145.0
@@ -1289,11 +1217,11 @@ material = SubResource("ShaderMaterial_arc4g")
 offset_right = 1926.0
 offset_bottom = 1087.0
 
+[node name="PauseMenu" parent="." instance=ExtResource("30_jy33s")]
+visible = false
+
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
-[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
-[connection signal="pressed" from="Ui/Pause Menu/mainMenuButton" to="Ui/Pause Menu" method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="Ui/Pause Menu/resumeButton" to="Ui/Pause Menu" method="_on_resume_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]

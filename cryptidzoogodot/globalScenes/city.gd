@@ -98,7 +98,7 @@ func _process(delta: float) -> void:
 	
 func togglePause():
 	get_tree().paused = true
-	$"Ui/Pause Menu".visible = true
+	$PauseMenu.visible = true
 
 
 func _on_big_body_entered(body: Node3D) -> void:

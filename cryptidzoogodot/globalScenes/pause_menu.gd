@@ -9,7 +9,7 @@ func _on_main_menu_button_pressed() -> void:
 	$ButtonPressNoise.play(0)
 	#await get_tree().create_timer($ButtonPressNoise.stream.get_length())
 	get_tree().paused = false
-	get_tree().change_scene_to_file("uid://ccfke0dy4rixg")
+	get_tree().change_scene_to_file("res://globalScenes/PreGameScene.tscn")
 
 
 func _on_resume_button_pressed() -> void:

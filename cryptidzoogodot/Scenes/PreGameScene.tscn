@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://h18ibekcbhtf"]
+[gd_scene load_steps=10 format=3 uid="uid://h18ibekcbhtf"]
 
 [ext_resource type="Script" uid="uid://bpgfntnl0gkye" path="res://Assets/Scripts/StartScreenControl.gd" id="1_8rc2e"]
 [ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_bu07y"]
+[ext_resource type="VideoStream" uid="uid://bai1hbkgqx764" path="res://wendigoTerrainMap/Background (2).ogv" id="2_u6d0b"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_xfyhq"]
 [ext_resource type="AudioStream" uid="uid://c88cyooobixa7" path="res://Assets/SFX/MenuMusic.mp3" id="4_ktaae"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="4_omnmj"]
@@ -18,7 +19,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_8rc2e")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ScreenControl"]
+layout_direction = 1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 4992.0
+offset_bottom = 1668.0
+scale = Vector2(7.7, 7.7)
+stream = ExtResource("2_u6d0b")
+autoplay = true
+
 [node name="Background" type="TextureRect" parent="ScreenControl"]
+visible = false
 layout_mode = 0
 offset_top = -2.0
 offset_right = 1937.0
@@ -27,10 +40,10 @@ texture = ExtResource("1_bu07y")
 
 [node name="Label" type="Label" parent="ScreenControl"]
 layout_mode = 0
-offset_left = 29.0
+offset_left = 122.0
 offset_top = 45.0
-offset_right = 520.0
-offset_bottom = 140.0
+offset_right = 789.0
+offset_bottom = 170.0
 scale = Vector2(1.15674, 1.8462)
 theme_override_fonts/font = ExtResource("2_xfyhq")
 theme_override_font_sizes/font_size = 94
@@ -47,10 +60,10 @@ autoplay = true
 parameters/looping = true
 
 [node name="StartButton" parent="." instance=ExtResource("5_7j548")]
-position = Vector2(-483, 359)
+position = Vector2(-431, 181)
 
 [node name="Settings Button" parent="." instance=ExtResource("6_j4tgo")]
-position = Vector2(-189, 411)
+position = Vector2(-137, 233)
 
 [node name="Exit Button" parent="." instance=ExtResource("7_jrnw4")]
-position = Vector2(80, 757)
+position = Vector2(132, 579)

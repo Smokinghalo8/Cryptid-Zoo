@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://b48yunvt8in8r"]
+
+[ext_resource type="Texture2D" uid="uid://crmyesn866bba" path="res://Assets/Materials/StartScreenAssets/City.png" id="1_0jr1g"]
+[ext_resource type="PackedScene" uid="uid://j8kfml0xyfpd" path="res://Main_Button.tscn" id="3_so0vj"]
+[ext_resource type="PackedScene" uid="uid://c3e4m55x4afd4" path="res://back_Button.tscn" id="4_yxb7f"]
+[ext_resource type="Texture2D" uid="uid://7smifl8xhckc" path="res://Assets/pictures/Orange_Gnome_Logo.png" id="5_e7ybb"]
+[ext_resource type="Texture2D" uid="uid://cp0aytri4hjcd" path="res://Assets/pictures/Nessie Logo.png" id="6_gf5ft"]
+[ext_resource type="Texture2D" uid="uid://wk63qivxqbxf" path="res://Assets/pictures/MothMan Logo.png" id="7_l5m20"]
+[ext_resource type="Texture2D" uid="uid://bykndq2bf7doy" path="res://Assets/pictures/Wendigo Logo.png" id="8_pcpxu"]
+[ext_resource type="Texture2D" uid="uid://bqtj44oalagnb" path="res://Assets/pictures/Zoo_Logo.png" id="9_so0vj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 1937.0
+offset_bottom = 1091.0
+texture = ExtResource("1_0jr1g")
+
+[node name="mainMenuButton" parent="Control/Background" instance=ExtResource("3_so0vj")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 868.0
+offset_bottom = 575.0
+button_mask = 3
+
+[node name="backButton2" parent="." instance=ExtResource("4_yxb7f")]
+position = Vector2(49, 433)
+scale = Vector2(0.635, 0.635)
+
+[node name="OrangeGnomeLogo" type="Sprite2D" parent="."]
+position = Vector2(472, 129)
+texture = ExtResource("5_e7ybb")
+
+[node name="NessieLogo" type="Sprite2D" parent="."]
+position = Vector2(469, 153)
+texture = ExtResource("6_gf5ft")
+
+[node name="MothManLogo" type="Sprite2D" parent="."]
+position = Vector2(456, 161)
+texture = ExtResource("7_l5m20")
+
+[node name="WendigoLogo" type="Sprite2D" parent="."]
+position = Vector2(482, 111)
+texture = ExtResource("8_pcpxu")
+
+[node name="ZooLogo" type="Sprite2D" parent="."]
+position = Vector2(436, 135)
+texture = ExtResource("9_so0vj")

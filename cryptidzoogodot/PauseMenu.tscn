@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbsqws0oy4dps"]
+
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="1_36k83"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="2_r2gvh"]
+[ext_resource type="PackedScene" uid="uid://j8kfml0xyfpd" path="res://Main_Button.tscn" id="3_sev4g"]
+[ext_resource type="PackedScene" uid="uid://dlwu484e63gpy" path="res://Resume_Button.tscn" id="4_04dm0"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="5_idhon"]
+
+[node name="Pause Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("1_36k83")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("2_r2gvh")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 329.0
+offset_top = 200.0
+offset_right = 1053.0
+offset_bottom = 390.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 275.0
+offset_right = 332.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="mainMenuButton" parent="." instance=ExtResource("3_sev4g")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 350.0
+offset_right = 868.0
+offset_bottom = 575.0
+button_mask = 3
+
+[node name="resumeButton" parent="." instance=ExtResource("4_04dm0")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 425.0
+offset_right = 761.0
+offset_bottom = 647.0
+button_mask = 3
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_idhon")
+volume_db = -15.0
+
+[node name="PauseMenu" type="Node2D" parent="."]
+
+[node name="intText" type="Label" parent="PauseMenu"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="PauseMenu"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="drag_ended" from="VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="mainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="resumeButton" to="." method="_on_resume_button_pressed"]
