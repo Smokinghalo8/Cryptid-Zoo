@@ -10,6 +10,10 @@ var isAnimationDone = false
 @onready var bleafus_the_gnome: StaticBody3D = $Bleafus_the_gnome
 @onready var THE_KING: StaticBody3D = $GnomeKING
 @onready var playerZed = $Z
+@onready var tinyBullet: StaticBody3D = $TinyBullet
+@onready var explostion: Sprite3D = $ExplosionGif
+
+
 @onready var playerZedCamera = $Z/Head
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var Cam1: Camera3D = $OverView1
@@ -18,6 +22,8 @@ var isAnimationDone = false
 @onready var Cam4: Camera3D = $OverView4
 @onready var Cam5: Camera3D = $OverView5
 @onready var Cam6: Camera3D = $OverView6
+@onready var Cam7: Camera3D = $OverView7
+
 
 
 @onready var TwinOfTheUnnamed: StaticBody3D = $TwinOfTheUnnamedOne
@@ -32,11 +38,12 @@ var dialogueLines
 
 func _ready() -> void:
 	bloogaragth.visible = true
+	explostion.visible = false
 	#TODO fix player being able to move during this cut scene?
 
 	await toggleAnimation(1)
 	await toggleAnimation(2)
-	#skip 3, not done yet
+
 	await toggleAnimation(3)
 	await toggleAnimation(4)
 	await toggleAnimation(5)
@@ -101,9 +108,13 @@ func toggleAnimation(animationNumber) -> int:
 		#after this animation, add an animation of an explosion that happens where Mothman and Zed were
 	elif(animationNum == 3):
 		playerZed.set_process_input(false)
-		#in this one create explosion animaion, skipping for now
 		
+		#use Cam7 for this one
+		Cam7.make_current()
+		animation_player.play("ZedAndMothmanEXPLODE")
+		await animation_player.animation_finished
 		MothmanModel.visible = false
+		tinyBullet.visible = false
 		pass
 	elif(animationNum == 4):
 		playerZed.set_process_input(false)

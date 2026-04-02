@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=74 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://gmvp7ejea7jk" path="res://Gnome Level/Assets/New_HedgeReward/new_hedge_dog.tscn" id="45_4oad2"]
 [ext_resource type="PackedScene" uid="uid://udyelh3w4fwi" path="res://Gnome Level/GnomeCharacters/the_unnamed_one.tscn" id="47_2iq4o"]
 [ext_resource type="PackedScene" uid="uid://18hanft1qa7h" path="res://Gnome Level/GnomeCharacters/tiny_bullet.tscn" id="48_ixyha"]
+[ext_resource type="Texture2D" uid="uid://udb85dt4mmcm" path="res://Gnome Level/Assets/exposionTemp.png" id="50_ec0i6"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
@@ -65,10 +66,10 @@ tracks/0/path = NodePath("TinyBullet:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.0333333, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.0333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
+"values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
 }
 
 [sub_resource type="Animation" id="Animation_mgsad"]
@@ -213,6 +214,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(10, 10, 10)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ExplosionGif:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Mothman_GEO:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 0.52359885, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ixyha"]
 resource_name = "ZedFalling"
@@ -309,12 +334,89 @@ tracks/2/keys = {
 "values": [Vector3(145.26268, 0.2693634, 39.906727)]
 }
 
+[sub_resource type="Animation" id="Animation_uc803"]
+resource_name = "ZedAndMothmanEXPLODE"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(130.53134, 112.48089, 1.3163711), Vector3(130.53134, 112.48089, 1.3163711), Vector3(130.53134, 48.448357, 1.3163711)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mothman_GEO:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(130.10245, 112.06569, 0.5947441), Vector3(130.10245, 112.06569, 0.5947441), Vector3(179.315, 64.79506, 0.5947441)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TinyBullet:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(150.0264, 100.16565, 30), Vector3(136.02638, 111.42671, 30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExplosionGif:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Z:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, -2.6179938, 0), Vector3(-1.5707964, 3.6651914, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Mothman_GEO:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0.52359885, 0), Vector3(1.5707964, 6.806784, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
 _data = {
 &"BulletHittingZedAndMothman": SubResource("Animation_ec0i6"),
 &"CameraFloatingAroundZedBeforeAwaking": SubResource("Animation_mgsad"),
 &"MothmanBringingZedToGnomeLevel": SubResource("Animation_i6n8p"),
 &"RESET": SubResource("Animation_2iq4o"),
+&"ZedAndMothmanEXPLODE": SubResource("Animation_uc803"),
 &"ZedFalling": SubResource("Animation_ixyha"),
 &"ZedLandingOnGnomeCloseup": SubResource("Animation_qsklv"),
 &"ZedShrinking": SubResource("Animation_taton")
@@ -464,7 +566,7 @@ shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
 [node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
-transform = Transform3D(173.20508, 100.000015, -4.3711393e-06, 0, -8.742278e-06, -200, -100.000015, 173.20508, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
+transform = Transform3D(173.2051, 100.00002, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00002, 173.2051, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -472,7 +574,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 145.26268, 0.2693634, 39.906727)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 130.53134, 112.48089, 1.3163711)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
@@ -699,6 +801,9 @@ transform = Transform3D(0.45000497, 0.73122907, -0.51263994, 1.776357e-15, 0.574
 [node name="OverView6" type="Camera3D" parent="."]
 transform = Transform3D(-0.5478407, -0.6322574, 0.54783314, 0, 0.6548464, 0.75576204, -0.83658266, 0.41403723, -0.3587515, 155.22209, 8.881181, 33.512836)
 
+[node name="OverView7" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.12886, 116.17247, 48.43111)
+
 [node name="TheUnnamedOne" parent="." instance=ExtResource("47_2iq4o")]
 transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.9976902, -0.05836704, -0.8592458, 0, 0.511563, 259.0204, 52.042587, 114.053055)
 
@@ -706,7 +811,12 @@ transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.99769
 transform = Transform3D(0.14132023, 0.97288, 0.18312034, -0.00453624, 0.1856112, -0.9826128, -0.98995346, 0.13803236, 0.030643838, 140.61182, 0.38971424, 39.65321)
 
 [node name="TinyBullet" parent="." instance=ExtResource("48_ixyha")]
-transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 258.65775, 53.243336, 112.53825)
+transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 150.0264, 100.16565, 30)
+
+[node name="ExplosionGif" type="Sprite3D" parent="."]
+transform = Transform3D(7.9285765, 0, 0, 0, 6.6958785, 0, 0, 0, 1, 134.02417, 112.69663, 18.961992)
+visible = false
+texture = ExtResource("50_ec0i6")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
