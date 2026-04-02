@@ -8550,7 +8550,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-116.01197, 3.082343, 128.4195)]
+"values": [Vector3(-147.37222, 3.082343, 157.11389)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -8562,7 +8562,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.5124812, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -8586,7 +8586,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.012217305, 0, -0.116937056)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -8599,6 +8599,95 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-0.18249512, 0.59762573, 1.5774384)]
+}
+
+[sub_resource type="Animation" id="Animation_q6kkp"]
+resource_name = "jumpScare"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BugFixWendy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-116.14483, 0.44655335, 128.33208)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BugFixWendy:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.0973134, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-116.01197, 3.082343, 128.4195)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5124812, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WendyJumpscareNoises:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_5mowj")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z/Head:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4000001, 1.6, 1.8000001, 2, 2.2, 2.4, 2.6000001, 2.8000002, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z/Head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1000001, 3.2, 3.3000002, 3.4, 3.5, 3.6, 3.7, 3.8000002, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577)]
 }
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
@@ -8721,95 +8810,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 1.5707964, 0), Vector3(0, -1.5707965, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_q6kkp"]
-resource_name = "jumpScare"
-length = 5.0
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BugFixWendy:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-116.14483, 0.44655335, 128.33208)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BugFixWendy:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 3.0973134, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Z:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-116.01197, 3.082343, 128.4195)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Z:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.5124812, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("WendyJumpscareNoises:stream")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("39_5mowj")]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Z/Head:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4000001, 1.6, 1.8000001, 2, 2.2, 2.4, 2.6000001, 2.8000002, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Z/Head:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1000001, 3.2, 3.3000002, 3.4, 3.5, 3.6, 3.7, 3.8000002, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
@@ -9123,6 +9123,18 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -0.31380546, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Z/Head:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_q35a6"]
@@ -10026,7 +10038,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Head" parent="Z" index="0"]
-transform = Transform3D(1.2414652, 0.14583847, 0, -0.14582776, 1.2413712, -0.015271272, -0.0017817109, 0.015166965, 1.2499083, -0.18249512, 0.59762573, 1.5774384)
+transform = Transform3D(1.2500019, 0, 0, 0, 1.2500005, 0, 0, 0, 1.2500017, -0.18249512, 0.59762573, 1.5774384)
 
 [node name="Loooky" parent="Z/Head" index="0"]
 collide_with_areas = true
@@ -10035,7 +10047,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.22216797, -0.126369, 1.7068634)
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686129, -0.03890353, 0.24551047, -0.040131792, 0.9991946, 9.297403e-09, -0.24531274, -0.009852773, -0.9693937, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.03890353, 0.24551046, -0.040131792, 0.9991946, 9.297402e-09, -0.24531274, -0.009852773, -0.9693936, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927

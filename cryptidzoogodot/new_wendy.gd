@@ -36,6 +36,7 @@ var wanderTimer : float = 60.0
 func _ready() -> void:
 	noiseMade = false
 	isInSoundDetector = false
+	$"WendyNoises".play(0.0)
 
 func _physics_process(delta):
 	
@@ -214,6 +215,7 @@ func _on_trap_4_activated() -> void:
 	activated4 = true
 
 func restart():
+	$"WendyNoises".play(0.0)
 	minimap.objective = $"../Trap5"
 	$"../LevelAnimations".play("RESET")
 	$"..".restart()
@@ -228,6 +230,7 @@ func restart():
 	Global.trapCounter = 1
 	
 func restartCheckpoint():
+	$"WendyNoises".play(0.0)
 	$"../LevelAnimations".play("reset_checkpoint")
 	Global.trapCounter = 5
 	isChasing = false
@@ -246,10 +249,14 @@ func restartCheckpoint():
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		if Global.checkpoint == false:
+			$"WendyNoises".stop()
+			$"WendyJumpscareNoises".play(0.0)
 			wendigoPlayer.play("jumpScare")
 			await wendigoPlayer.animation_finished
 			restart()
 		if Global.checkpoint == true:
+			$"WendyNoises".stop()
+			$"WendyJumpscareNoises".play(0.0)
 			wendigoPlayer.play("jumpScare")
 			await wendigoPlayer.animation_finished
 			restartCheckpoint()
