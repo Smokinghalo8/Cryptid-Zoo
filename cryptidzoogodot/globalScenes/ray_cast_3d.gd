@@ -10,7 +10,9 @@ func _ready():
 func _process(delta: float) -> void:
 	if is_colliding():
 		var target = get_collider()
+		print(target)
 		if target != null and target.has_method("interact"):
+			print("Should be interacting")
 			if target.is_in_group("Traps"):
 				return
 			intText.visible = true

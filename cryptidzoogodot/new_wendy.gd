@@ -37,7 +37,6 @@ func _ready() -> void:
 	noiseMade = false
 	isInSoundDetector = false
 
-
 func _physics_process(delta):
 	
 	var bodies = soundDetector.get_overlapping_bodies()
@@ -66,6 +65,7 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direction * speed, delta * 10)
 	velocity += get_gravity() * delta
 	if Global.frozen == false:
+		$wendigoWalk/AnimationPlayer.play("Armature|mixamo_com|Layer0", 0)
 		move_and_slide()
 
 
@@ -134,6 +134,7 @@ func _on_actual_trap_2_body_entered(body: Node3D) -> void:
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
+				player.turnOnHead()
 				$CutSceneCam.current = true
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
@@ -245,6 +246,10 @@ func restartCheckpoint():
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		if Global.checkpoint == false:
+			wendigoPlayer.play("jumpScare")
+			await wendigoPlayer.animation_finished
 			restart()
 		if Global.checkpoint == true:
+			wendigoPlayer.play("jumpScare")
+			await wendigoPlayer.animation_finished
 			restartCheckpoint()
