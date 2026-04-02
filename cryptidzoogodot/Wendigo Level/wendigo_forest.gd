@@ -101,10 +101,12 @@ func togglePause():
 
 
 func wendigoTrapped():
+	$Z.turnOnHead()
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "WendigoTrapped").finished
 
 func toWendigo():
 	await DialogueManager.show_dialogue_balloon(dialogue_resource, "ToWendigo").finished
+	get_tree().change
 
 func killWendyNoise():
 	$WendigoAi/AudioStreamPlayer3D.queue_free()

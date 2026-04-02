@@ -243,3 +243,31 @@ func getBig():
 	
 func getSmall():
 	self.scale = Vector3(10.0, 10.0, 10.0)
+
+func turnOnHead():
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Beanie_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Bang_LT_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Bang_RT_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Center_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_LT_01_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_LT_02_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_RT_01_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_RT_02_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Ear_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Eye_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_EyeBrows_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Face_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
+
+func turnOffHead():
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Beanie_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Bang_LT_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Bang_RT_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_Center_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_LT_01_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_LT_02_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_RT_01_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Dread_RT_02_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Ear_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Eye_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_EyeBrows_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	$ZColl/ZedAnims/Armature/Skeleton3D/Zed_Face_GEO.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY

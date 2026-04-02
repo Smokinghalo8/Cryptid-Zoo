@@ -8,6 +8,7 @@ var flyBack = true
 var cutScene = false
 var talking = false
 @onready var objectiveArrow = $"Ui/Minimap/SubViewportContainer/objective_arrow"
+@onready var player = $"Z"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -114,6 +115,7 @@ func _on_big_body_entered(body: Node3D) -> void:
 func _on_cut_scene_collider_2_body_entered(body: Node3D) -> void:
 	if cutScene == true:
 		if Global.animNum == 6:
+			player.turnOnHead()
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await $CutScene/CutSceneAnims.animation_finished
@@ -124,6 +126,7 @@ func _on_cut_scene_collider_2_body_entered(body: Node3D) -> void:
 func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 	if cutScene == true: 
 		if Global.animNum == 6:
+			player.turnOnHead()
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await($CutScene/CutSceneAnims.animation_finished)

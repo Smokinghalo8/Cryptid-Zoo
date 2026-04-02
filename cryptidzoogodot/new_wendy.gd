@@ -134,6 +134,7 @@ func _on_actual_trap_2_body_entered(body: Node3D) -> void:
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
+				player.turnOnHead()
 				$CutSceneCam.current = true
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
@@ -245,6 +246,10 @@ func restartCheckpoint():
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		if Global.checkpoint == false:
+			wendigoPlayer.play("jumpScare")
+			await wendigoPlayer.animation_finished
 			restart()
 		if Global.checkpoint == true:
+			wendigoPlayer.play("jumpScare")
+			await wendigoPlayer.animation_finished
 			restartCheckpoint()

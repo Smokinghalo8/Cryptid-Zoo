@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://diyhjppamkeqi"]
+[gd_scene load_steps=17 format=3 uid="uid://diyhjppamkeqi"]
 
 [ext_resource type="Script" uid="uid://d2klt8xfi3ohq" path="res://new_wendy.gd" id="1_hmsqo"]
 [ext_resource type="AudioStream" uid="uid://d4fbtn7mnohiw" path="res://Wendigo Level/assets/sfx/Wendigo sounds.mp3" id="2_hmsqo"]
 [ext_resource type="PackedScene" uid="uid://b2f1f5k2k6t17" path="res://Wendigo Level/WendigoCharacter/wendigoAnimated.tscn" id="2_jo68c"]
+[ext_resource type="AudioStream" uid="uid://cwhi5mlt158et" path="res://Wendigo Level/assets/sfx/modified-wendigo-sound-1-made-with-Voicemod.mp3" id="4_jo68c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jo68c"]
 radius = 1.1210938
@@ -101,11 +102,14 @@ max_distance = 50.0
 [node name="SpookyParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1084423, 0)
 material_override = SubResource("StandardMaterial3D_hmsqo")
-amount = 16
+amount = 30
 lifetime = 2.0
 randomness = 0.36
 process_material = SubResource("ParticleProcessMaterial_khtfr")
 draw_pass_1 = SubResource("BoxMesh_tf45f")
+
+[node name="WendyJumpscareNoises" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_jo68c")
 
 [connection signal="body_entered" from="InFrontDetect" to="." method="_on_in_front_detect_body_entered"]
 [connection signal="body_exited" from="InFrontDetect" to="." method="_on_in_front_detect_body_exited"]

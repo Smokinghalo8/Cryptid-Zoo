@@ -1,4 +1,4 @@
-[gd_scene load_steps=608 format=3 uid="uid://dxsurf27hc834"]
+[gd_scene load_steps=610 format=3 uid="uid://dxsurf27hc834"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_fa63b"]
 [ext_resource type="Script" uid="uid://boa8j2t61mjlg" path="res://Wendigo Level/wendigo_forest.gd" id="1_qv7kg"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b6pklxtwuhgii" path="res://Wendigo Level/assets/pineLeaves.jpg" id="35_wgjca"]
 [ext_resource type="Script" uid="uid://bk4gi4by788w1" path="res://Wendigo Level/actual_trap_2.gd" id="36_q35a6"]
 [ext_resource type="AudioStream" uid="uid://bmb36of1ca5go" path="res://Wendigo Level/assets/sfx/dbd-bear-trap-being-set-135906.mp3" id="38_a0ttt"]
+[ext_resource type="AudioStream" uid="uid://cwhi5mlt158et" path="res://Wendigo Level/assets/sfx/modified-wendigo-sound-1-made-with-Voicemod.mp3" id="39_5mowj"]
 [ext_resource type="AudioStream" uid="uid://bi2ba460tqw3d" path="res://Wendigo Level/assets/sfx/mystic-forest-ambient-23812.mp3" id="39_hxb2w"]
 [ext_resource type="AudioStream" uid="uid://t5ajif4huvb5" path="res://Wendigo Level/assets/sfx/rope-creak-01-sound-effect-340131.mp3" id="39_w1jcc"]
 [ext_resource type="AudioStream" uid="uid://crat63fkavecv" path="res://Wendigo Level/assets/sfx/rope-sound-65417-[AudioTrimmer.com].mp3" id="40_kbgbe"]
@@ -8539,6 +8540,66 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector3(0, 2.8890433, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-116.01197, 3.082343, 128.4195)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5124812, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WendyJumpscareNoises:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_5mowj")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Z/Head:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.012217305, 0, -0.116937056)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Z/Head:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.18249512, 0.59762573, 1.5774384)]
+}
 
 [sub_resource type="Animation" id="Animation_ly1ea"]
 resource_name = "wendTrap1"
@@ -8647,7 +8708,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.8, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(54.772064, 0.44655335, -150.74596), Vector3(53.28, -1.2290343, -150.74596), Vector3(51.855137, -3.2709155, -150.74596), Vector3(51.855133, -5.6958885, -150.74596)]
+"values": [Vector3(54.772064, 0.44655335, -150.74596), Vector3(53.28, -1.2290343, -150.74596), Vector3(51.855137, -3.2709155, -150.74596), Vector3(51.855133, -4.6970415, -150.74596)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -8659,12 +8720,102 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 1.5707964, 0), Vector3(0, -1.5707964, 0)]
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, -1.5707965, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q6kkp"]
+resource_name = "jumpScare"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BugFixWendy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-116.14483, 0.44655335, 128.33208)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BugFixWendy:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.0973134, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-116.01197, 3.082343, 128.4195)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Z:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.5124812, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WendyJumpscareNoises:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_5mowj")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Z/Head:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4000001, 1.6, 1.8000001, 2, 2.2, 2.4, 2.6000001, 2.8000002, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365), Vector3(0.012217305, 0, -0.3874631), Vector3(0.012217305, 0, -0.116937056), Vector3(0.012217305, 0, 0.15184365)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z/Head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1000001, 3.2, 3.3000002, 3.4, 3.5, 3.6, 3.7, 3.8000002, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577), Vector3(-0.18249512, 0.59762573, 1.5774384), Vector3(-0.112, 0.598, 1.577), Vector3(-0.422, 0.598, 1.577)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4f0m8"]
 _data = {
 &"RESET": SubResource("Animation_k4prm"),
+&"jumpScare": SubResource("Animation_q6kkp"),
 &"wendTrap1": SubResource("Animation_ly1ea"),
 &"wendTrap2": SubResource("Animation_4f0m8"),
 &"wendTrap3": SubResource("Animation_wgjca"),
@@ -8682,10 +8833,10 @@ tracks/0/path = NodePath("CutSceneCam:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 22.4, 22.5, 30.1, 30.2, 42.1, 42.100494, 59.6, 59.7, 66.1, 66.2, 74.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767)]
+"values": [Vector3(55.62169, 5.3216925, -142.14674), Vector3(55.954636, 7.893901, -141.90907), Vector3(55.954636, 7.893901, -141.90907), Vector3(59.601357, 1.1876884, -149.71767), Vector3(59.601357, 1.1876884, -149.71767), Vector3(39.015606, -0.6378207, -150.72153), Vector3(39.015606, -0.6378207, -154.682), Vector3(39.015606, 15.297748, -177.54497), Vector3(39.015606, 18.815968, -177.54497), Vector3(48.17717, 1.5370245, -173.2779), Vector3(48.17717, 1.5370245, -168.68507), Vector3(57.758385, 1.1127949, -152.72876), Vector3(57.758385, 1.1127949, -151.15938), Vector3(48.405243, 1.526926, -167.59084), Vector3(48.17717, 1.5370245, -164.62796)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -8694,10 +8845,10 @@ tracks/1/path = NodePath("CutSceneCam:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 15.4, 16, 22.4, 22.5, 30.1, 30.2, 42.1, 42.100494, 59.6, 59.7, 66.1, 66.2, 74.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0)]
+"values": [Vector3(-0.6310937, 0, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(-0.63109356, 0.32524213, 0), Vector3(0, 1.1703305, 0), Vector3(0, 1.1703305, 0), Vector3(0, -1.597779, 0), Vector3(0, -1.597779, 0), Vector3(-0.49465823, -3.104845, -0.01745129), Vector3(-0.49465823, -3.104845, -0.01745129), Vector3(-0.15469417, -3.1088605, -0.0050450284), Vector3(-0.15469417, -3.1088605, -0.0050450284), Vector3(-0.1546942, -1.4203941, -0.0050450284), Vector3(-0.1546942, -1.4203941, -0.0050450284), Vector3(-0.15469417, -3.1088605, -0.0050450284), Vector3(-0.15469417, -3.1088605, -0.0050450284)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -8723,10 +8874,10 @@ tracks/3/path = NodePath("BugFixWendy:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 75.6, 77),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 75.66046, 76.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(51.738, -1.8, -150.348), Vector3(41.454, -1.8, -152.791), Vector3(41.454, -1.8, -152.791), Vector3(41.454, -1.8, -152.791), Vector3(41.454, -1.8, -152.791), Vector3(41.454, -1.8, -152.791), Vector3(55.809, -1.8, -152.791)]
+"values": [Vector3(51.855133, -4.6970415, -150.74596), Vector3(41.453995, -3.8345277, -152.791), Vector3(41.453995, -3.8345277, -152.791), Vector3(53.77732, -4.5970864, -152.791)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -8738,7 +8889,57 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5, 15.4, 16, 18.2, 18.3, 75, 75.6, 77),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.11032527, 1.2125082, -0.041204154), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
+"values": [Vector3(0, -1.5707965, 0), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.1103253, -1.5503829, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032531, 2.0483463, -0.04120416), Vector3(0.11032532, -1.292685, -0.041204162), Vector3(0.110325314, -1.292685, -0.04120416)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("StuffForTraps/tarp:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(46.218, -4.9355783, -151.016)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Z:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.408546, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(59.14871, 0.7474973, -148.38092), Vector3(56.30253, 0.7474973, -148.3809), Vector3(56.30253, 0.7474973, -148.3809), Vector3(56.99686, 0.7474973, -152.02516)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Z:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 15.408546, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.0355959, 0), Vector3(0, 1.5898427, 0), Vector3(0, 1.5898427, 0), Vector3(0, 1.7573245, 0)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"turnOnHead"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_h6ks2"]
@@ -8899,6 +9100,30 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector3(-9.297405e-09, 2.8935463, -0.040142577)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Z:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-147.76479, 2.751033, 158.9853)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Z:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.31380546, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q35a6"]
 resource_name = "reset_checkpoint"
@@ -8915,6 +9140,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-122.87171, 0.44655335, 67.93898)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-147.76479, 2.751033, 158.9853)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.31380546, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hxb2w"]
@@ -9772,18 +10021,21 @@ vertices = PackedVector3Array(-42.881123, 0, -62.196354, 13.94706, 0, -53.16716,
 affect_navigation_mesh = true
 
 [node name="Z" parent="." instance=ExtResource("24_q35a6")]
-transform = Transform3D(-0.45004395, 0, -0.66140664, 0, 0.8, 0, 0.66140664, 0, -0.45004395, -147.76479, 2.751033, 158.9853)
+transform = Transform3D(0.7609315, 0, -0.24694408, 0, 0.7999997, 0, 0.24694401, 0, 0.76093173, -147.76479, 2.751033, 158.9853)
 collision_layer = 3
 collision_mask = 3
 
 [node name="Head" parent="Z" index="0"]
-transform = Transform3D(1.2500018, 0, 2.0954758e-09, 0, 1.25, 0, -2.0954758e-09, 0, 1.2500018, 0.0004272461, 0.59763217, -0.1578064)
+transform = Transform3D(1.2414652, 0.14583847, 0, -0.14582776, 1.2413712, -0.015271272, -0.0017817109, 0.015166965, 1.2499083, -0.18249512, 0.59762573, 1.5774384)
 
 [node name="Loooky" parent="Z/Head" index="0"]
 collide_with_areas = true
 
+[node name="ZColl" parent="Z" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.22216797, -0.126369, 1.7068634)
+
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686131, -0.038903527, 0.2455105, -0.0401318, 0.9991945, 9.297404e-09, -0.24531278, -0.009852771, -0.9693938, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.03890353, 0.24551047, -0.040131792, 0.9991946, 9.297403e-09, -0.24531274, -0.009852773, -0.9693937, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927
@@ -9928,10 +10180,12 @@ autostart = true
 
 [node name="ActualTrap2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.649906, 0.28725338, -154.08774)
+visible = false
 script = ExtResource("36_q35a6")
 
 [node name="Glow" type="MeshInstance3D" parent="ActualTrap2"]
 transform = Transform3D(17.315, 0, 0, 0, 0.27471685, 0, 0, 0, 17.315, 0.31147003, 0.4700899, 0)
+visible = false
 mesh = SubResource("CylinderMesh_rfgrx")
 surface_material_override/0 = SubResource("StandardMaterial3D_q35a6")
 
@@ -10052,7 +10306,7 @@ offset_right = 1926.0
 offset_bottom = 1087.0
 
 [node name="CutSceneCam" type="Camera3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.8073827, 0.590028, 0, -0.5900281, 0.8073826, 55.62169, 5.3216925, -142.14674)
+transform = Transform3D(1, 0, 0, 0, 0.8073827, 0.5900281, 0, -0.5900281, 0.8073827, 55.62169, 5.3216925, -142.14674)
 fov = 59.062492
 
 [node name="StopFromDying" type="Area3D" parent="."]
@@ -10203,6 +10457,9 @@ debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q35a6")
+
+[node name="WendyJumpscareNoises" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("39_5mowj")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
