@@ -1,26 +1,273 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=65 format=3 uid="uid://dfi6482kw0bq2"]
 
+[ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
-[ext_resource type="Resource" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
+[ext_resource type="Resource" uid="uid://dt06021osc2rp" path="res://Gnome Level/GnomeTerrainMap/data.hterrain" id="2_1bsc7"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_0qtbb"]
-[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="4_c327s"]
-[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="5_x0pif"]
+[ext_resource type="Texture2D" uid="uid://bvmui0g6idba4" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot0_albedo_bump.png" id="5_vxnpk"]
+[ext_resource type="Texture2D" uid="uid://sla7ogpnqa6f" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot1_albedo_bump.png" id="6_7oysy"]
+[ext_resource type="Texture2D" uid="uid://b6qnwc0pxj6h6" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot0_normal_roughness.png" id="7_bwcok"]
+[ext_resource type="Texture2D" uid="uid://cf3n3b8n56wxx" path="res://Gnome Level/GnomeTerrainMap/Textures/GnomeMap_slot1_normal_roughness.png" id="8_87shl"]
+[ext_resource type="Script" uid="uid://db4e531r2on67" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="9_87shl"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="10_mrlcg"]
+[ext_resource type="Texture2D" uid="uid://bkabbm4mj4f4m" path="res://Gnome Level/GnomeTerrainMap/Textures/grass.png" id="10_ujj1q"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_kkme5"]
+[ext_resource type="Script" uid="uid://cms2yqh0ddk0" path="res://Gnome Level/psychedelic_cube.gd" id="12_jlxtx"]
+[ext_resource type="Texture2D" uid="uid://cfyvowei4twq7" path="res://Gnome Level/GnomeTerrainMap/Textures/flower1.png" id="12_pxd54"]
+[ext_resource type="PackedScene" uid="uid://bqtym8i4ehudf" path="res://Gnome Level/door.tscn" id="16_csh1m"]
+[ext_resource type="PackedScene" uid="uid://b7dqa4rl3bh1d" path="res://Gnome Level/house_back.tscn" id="17_humbe"]
+[ext_resource type="Resource" uid="uid://cntmip7wepk2c" path="res://Gnome Level/GnomeCharacters/GnomeLevel.dialogue" id="17_i627o"]
+[ext_resource type="Shader" uid="uid://brl8xrq6axswu" path="res://Gnome Level/Assets/psychedelic.gdshader" id="17_p4eam"]
+[ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
+[ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
+[ext_resource type="PackedScene" uid="uid://bdgkeiq2feufc" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
+[ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
+[ext_resource type="PackedScene" uid="uid://b7qt40ivocetw" path="res://Gnome Level/GnomeCharacters/Gnome_buff_o.tscn" id="24_vxnpk"]
+[ext_resource type="PackedScene" uid="uid://cqnyuxynar2bn" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_1.tscn" id="25_7oysy"]
+[ext_resource type="PackedScene" uid="uid://c4mkoe3jb7kwe" path="res://Gnome Level/Assets/new_marble/new_marble.tscn" id="26_87shl"]
+[ext_resource type="PackedScene" uid="uid://vxwv46fcdxtw" path="res://Gnome Level/HedgeMaze/correctedSinglehedge.tscn" id="26_bwcok"]
+[ext_resource type="PackedScene" uid="uid://cin7f1iusttov" path="res://Gnome Level/Assets/new_sword/new_sword.tscn" id="26_ujj1q"]
+[ext_resource type="PackedScene" uid="uid://du6b7snsy0qiw" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
+[ext_resource type="PackedScene" uid="uid://biqahtdg3v85" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
+[ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
+[ext_resource type="PackedScene" uid="uid://bsdc15jgfb724" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
+[ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="32_ehsa6"]
+[ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="33_ifqdx"]
+[ext_resource type="Script" uid="uid://c4s4x5b27vdf6" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="34_7y28q"]
+[ext_resource type="Script" uid="uid://d1pavk3gl4atd" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="35_dyhn3"]
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="36_i6n8p"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="37_2iq4o"]
+[ext_resource type="PackedScene" uid="uid://8o4qodxewu80" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_2.tscn" id="38_hvxpa"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="38_ixyha"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="39_ec0i6"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="40_mgsad"]
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="41_qsklv"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="42_taton"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="43_uc803"]
+[ext_resource type="PackedScene" uid="uid://gmvp7ejea7jk" path="res://Gnome Level/Assets/New_HedgeReward/new_hedge_dog.tscn" id="45_4oad2"]
 
 [sub_resource type="Resource" id="Resource_mrlcg"]
 script = ExtResource("3_0qtbb")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("5_vxnpk"), ExtResource("6_7oysy")], [ExtResource("7_bwcok"), ExtResource("8_87shl")]]
 
-[sub_resource type="Resource" id="Resource_gbm7p"]
+[sub_resource type="BoxMesh" id="BoxMesh_jlxtx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csh1m"]
+render_priority = 0
+shader = ExtResource("17_p4eam")
+shader_parameter/strength = 0.400000019
+shader_parameter/speed = 0.333
+shader_parameter/transparency = 0.2000000095
+shader_parameter/screen_resolution = Vector2(1280, 720)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mrlcg"]
+sky_top_color = Color(0.30313703, 0.4960606, 0.41428924, 1)
+sky_horizon_color = Color(0.37034708, 0.68547153, 0.9296207, 1)
+sky_energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_gbm7p"]
+sky_material = SubResource("ProceduralSkyMaterial_mrlcg")
+
+[sub_resource type="Environment" id="Environment_mrlcg"]
+background_mode = 2
+background_color = Color(1, 0, 0, 1)
+sky = SubResource("Sky_gbm7p")
+ambient_light_source = 3
+ambient_light_color = Color(0.01851864, 0.012696141, 0.0004201017, 1)
+tonemap_mode = 3
+fog_mode = 1
+fog_density = 1.0
+fog_depth_end = 2071.2
+
+[sub_resource type="Resource" id="Resource_dyhn3"]
 resource_local_to_scene = true
-script = ExtResource("5_x0pif")
-octree_managers = []
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+member_placeforms = [[Vector3(44.875473, 0, 48.100983), Vector3(0, 1, 0), Transform3D(-0.957534, 0, 0.28832033, 0, 1, 0, -0.28832033, 0, -0.957534, 44.875473, 0, 48.100983), 6], [Vector3(87.10699, 0, 106.564476), Vector3(0, 1, 0), Transform3D(-0.49285194, 0, -0.87011325, 0, 1, 0, 0.87011325, 0, -0.49285194, 87.10699, 0, 106.564476), 6], [Vector3(51.896225, 0, 61.898323), Vector3(0, 1, 0), Transform3D(0.9328362, 0, -0.36030075, 0, 1, 0, 0.36030075, 0, 0.9328362, 51.896225, 0, 61.898323), 6], [Vector3(27.123215, 0, 36.169067), Vector3(0, 1, 0), Transform3D(0.22160284, 0, -0.97513705, 0, 1, 0, 0.97513705, 0, 0.22160284, 27.123215, 0, 36.169067), 6], [Vector3(31.239365, 0, 101.419785), Vector3(0, 1, 0), Transform3D(-0.70307237, 0, 0.7111183, 0, 1, 0, -0.7111183, 0, -0.70307237, 31.239365, 0, 101.419785), 6], [Vector3(29.34636, 0, 235.14081), Vector3(0, 1, 0), Transform3D(0.9651866, 0, 0.2615623, 0, 1, 0, -0.2615623, 0, 0.9651866, 29.34636, 0, 235.14081), 7], [Vector3(110.343216, 0, 238.08536), Vector3(0, 1, 0), Transform3D(-0.87550735, 0, 0.4832048, 0, 1, 0, -0.4832048, 0, -0.87550735, 110.343216, 0, 238.08536), 7], [Vector3(89.321266, 0, 246.15764), Vector3(0, 1, 0), Transform3D(-0.94747293, 0, 0.31983596, 0, 1, 0, -0.31983596, 0, -0.94747293, 89.321266, 0, 246.15764), 7], [Vector3(105.225044, 0, 212.77664), Vector3(0, 1, 0), Transform3D(-0.7020929, 0, -0.71208537, 0, 1, 0, 0.71208537, 0, -0.7020929, 105.225044, 0, 212.77664), 7], [Vector3(91.47435, 0, 191.05753), Vector3(0, 1, 0), Transform3D(-0.82827806, 0, -0.5603173, 0, 1, 0, 0.5603173, 0, -0.82827806, 91.47435, 0, 191.05753), 7], [Vector3(89.83392, 9.536743e-07, 219.8746), Vector3(0, 1, 0), Transform3D(-0.9965217, 0, 0.08333368, 0, 1, 0, -0.08333368, 0, -0.9965217, 89.83392, 9.536743e-07, 219.8746), 7], [Vector3(24.187462, 0, 168.26091), Vector3(0, 1, 0), Transform3D(0.30198342, 0, 0.9533132, 0, 1, 0, -0.9533132, 0, 0.30198342, 24.187462, 0, 168.26091), 7], [Vector3(36.31201, 0, 164.6297), Vector3(0, 1, 0), Transform3D(0.4036182, 0, -0.91492754, 0, 1, 0, 0.91492754, 0, 0.4036182, 36.31201, 0, 164.6297), 7], [Vector3(21.49192, 0, 200.88849), Vector3(0, 1, 0), Transform3D(-0.46140796, 0, 0.8871881, 0, 1, 0, -0.8871881, 0, -0.46140796, 21.49192, 0, 200.88849), 7], [Vector3(114.53163, 0, 139.42903), Vector3(0, 1, 0), Transform3D(-0.21845658, 0, 0.97584665, 0, 1, 0, -0.97584665, 0, -0.21845658, 114.53163, 0, 139.42903), 7], [Vector3(109.68389, 0, 166.46852), Vector3(0, 1, 0), Transform3D(0.9954298, 0, 0.095496505, 0, 1, 0, -0.0954965, 0, 0.9954298, 109.68389, 0, 166.46852), 7], [Vector3(124.75665, 0, 185.14241), Vector3(0, 1, 0), Transform3D(0.20620492, 0, 0.97850883, 0, 1, 0, -0.97850883, 0, 0.20620492, 124.75665, 0, 185.14241), 7], [Vector3(120.116005, 0, 196.08727), Vector3(0, 1, 0), Transform3D(0.7599137, 0, -0.650024, 0, 1, 0, 0.650024, 0, 0.7599137, 120.116005, 0, 196.08727), 7]]
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(-1, -43, 127)
+extent = 128.0
+bounds = AABB(-129, -171, -1, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_pcypi"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 1
+is_leaf = true
+center_pos = Vector3(-1, -43, 383)
+extent = 128.0
+bounds = AABB(-129, -171, 255, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_7ybnm"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 2
+is_leaf = true
+center_pos = Vector3(-1, 213, 127)
+extent = 128.0
+bounds = AABB(-129, 85, -1, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_p54lo"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 3
+is_leaf = true
+center_pos = Vector3(-1, 213, 383)
+extent = 128.0
+bounds = AABB(-129, 85, 255, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_hvxpa"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+member_placeforms = [[Vector3(138.38379, 0, 137.25299), Vector3(0, 1, 0), Transform3D(-0.554591, 0, 0.8321231, 0, 1, 0, -0.8321231, 0, -0.554591, 138.38379, 0, 137.25299), 3], [Vector3(135.06871, 0, 149.31866), Vector3(0, 1, 0), Transform3D(0.39915898, 0, -0.91688174, 0, 1, 0, 0.91688174, 0, 0.39915898, 135.06871, 0, 149.31866), 3], [Vector3(150.60042, 0, 156.71916), Vector3(0, 1, 0), Transform3D(-0.74375945, 0, 0.66844743, 0, 1, 0, -0.66844743, 0, -0.74375945, 150.60042, 0, 156.71916), 3], [Vector3(156.74498, 0, 135.57986), Vector3(0, 1, 0), Transform3D(0.5507025, 0, -0.8347016, 0, 1, 0, 0.8347016, 0, 0.5507025, 156.74498, 0, 135.57986), 3], [Vector3(193.12598, 0, 155.22183), Vector3(0, 1, 0), Transform3D(-0.9689563, 0, -0.24723226, 0, 1, 0, 0.24723226, 0, -0.9689563, 193.12598, 0, 155.22183), 3], [Vector3(150.94785, 0, 191.6878), Vector3(0, 1, 0), Transform3D(0.9967318, 0, -0.08078219, 0, 1, 0, 0.08078219, 0, 0.9967318, 150.94785, 0, 191.6878), 3], [Vector3(159.77573, 0, 185.07082), Vector3(0, 1, 0), Transform3D(0.99192774, 0, 0.12680456, 0, 1, 0, -0.12680456, 0, 0.99192774, 159.77573, 0, 185.07082), 3], [Vector3(167.05856, 0, 181.05138), Vector3(0, 1, 0), Transform3D(0.120817825, 0, -0.9926747, 0, 1, 0, 0.9926747, 0, 0.120817825, 167.05856, 0, 181.05138), 3], [Vector3(175.47076, 0, 190.61365), Vector3(0, 1, 0), Transform3D(-0.26599634, 0, 0.96397406, 0, 1, 0, -0.96397406, 0, -0.26599634, 175.47076, 0, 190.61365), 3], [Vector3(149.56755, 9.536743e-07, 182.38232), Vector3(0, 1, 0), Transform3D(0.10489733, 0, 0.99448305, 0, 1, 0, -0.99448305, 0, 0.10489733, 149.56755, 9.536743e-07, 182.38232), 3], [Vector3(136.89911, 0, 180.87738), Vector3(0, 1, 0), Transform3D(-0.8025849, 0, -0.5965379, 0, 1, 0, 0.5965379, 0, -0.8025849, 136.89911, 0, 180.87738), 3], [Vector3(139.22365, 0, 215.07065), Vector3(0, 1, 0), Transform3D(-0.9999409, 0, -0.010878094, 0, 1, 0, 0.010878093, 0, -0.9999409, 139.22365, 0, 215.07065), 3], [Vector3(151.55957, 0, 216.63228), Vector3(0, 1, 0), Transform3D(0.61836964, 0, -0.7858874, 0, 1, 0, 0.7858874, 0, 0.61836964, 151.55957, 0, 216.63228), 3], [Vector3(170.40015, 0, 216.56992), Vector3(0, 1, 0), Transform3D(0.7649748, 0, -0.64406025, 0, 1, 0, 0.64406025, 0, 0.7649748, 170.40015, 0, 216.56992), 3], [Vector3(183.20921, 0, 221.13893), Vector3(0, 1, 0), Transform3D(0.55160606, 0, 0.8341048, 0, 1, 0, -0.8341048, 0, 0.55160606, 183.20921, 0, 221.13893), 3], [Vector3(145.57925, 0, 233.77795), Vector3(0, 1, 0), Transform3D(-0.9970217, 0, -0.07712235, 0, 1, 0, 0.07712235, 0, -0.9970217, 145.57925, 0, 233.77795), 3], [Vector3(153.1318, 0, 238.68791), Vector3(0, 1, 0), Transform3D(-0.97836125, 0, -0.206904, 0, 1, 0, 0.206904, 0, -0.97836125, 153.1318, 0, 238.68791), 3], [Vector3(162.23679, 0, 235.0802), Vector3(0, 1, 0), Transform3D(0.8016248, 0, -0.5978275, 0, 1, 0, 0.5978275, 0, 0.8016248, 162.23679, 0, 235.0802), 3], [Vector3(175.35805, 0, 234.13455), Vector3(0, 1, 0), Transform3D(0.9134374, 0, 0.4069792, 0, 1, 0, -0.4069792, 0, 0.9134374, 175.35805, 0, 234.13455), 3], [Vector3(188.83138, 0, 234.10364), Vector3(0, 1, 0), Transform3D(-0.114493586, 0, -0.993424, 0, 1, 0, 0.993424, 0, -0.114493586, 188.83138, 0, 234.10364), 3], [Vector3(196.93239, 0, 235.83145), Vector3(0, 1, 0), Transform3D(-0.660575, 0, -0.7507601, 0, 1, 0, 0.7507601, 0, -0.660575, 196.93239, 0, 235.83145), 3], [Vector3(199.16573, 0, 222.98428), Vector3(0, 1, 0), Transform3D(-0.77754676, 0, 0.6288251, 0, 1, 0, -0.6288251, 0, -0.77754676, 199.16573, 0, 222.98428), 3], [Vector3(207.39648, 0, 238.16953), Vector3(0, 1, 0), Transform3D(0.48402405, 0, 0.8750547, 0, 1, 0, -0.8750547, 0, 0.48402405, 207.39648, 0, 238.16953), 3], [Vector3(218.27245, 0, 237.63635), Vector3(0, 1, 0), Transform3D(-0.97894055, 0, -0.20414563, 0, 1, 0, 0.20414563, 0, -0.97894055, 218.27245, 0, 237.63635), 3], [Vector3(223.65982, 0, 232.87274), Vector3(0, 1, 0), Transform3D(-0.31840864, 0, 0.9479536, 0, 1, 0, -0.9479536, 0, -0.31840864, 223.65982, 0, 232.87274), 3], [Vector3(230.94673, 0, 226.18063), Vector3(0, 1, 0), Transform3D(-0.42812887, 0, 0.9037177, 0, 1, 0, -0.9037177, 0, -0.42812887, 230.94673, 0, 226.18063), 3], [Vector3(231.7435, 0, 216.30132), Vector3(0, 1, 0), Transform3D(-0.967076, 0, -0.25448796, 0, 1, 0, 0.25448796, 0, -0.967076, 231.7435, 0, 216.30132), 3], [Vector3(223.52803, 0, 205.86719), Vector3(0, 1, 0), Transform3D(0.987014, 0, 0.16063452, 0, 1, 0, -0.16063452, 0, 0.987014, 223.52803, 0, 205.86719), 3], [Vector3(227.39012, 0, 196.33447), Vector3(0, 1, 0), Transform3D(0.5925404, 0, -0.80554074, 0, 1, 0, 0.80554074, 0, 0.5925404, 227.39012, 0, 196.33447), 3], [Vector3(212.91267, 0, 207.10599), Vector3(0, 1, 0), Transform3D(-0.85584664, 0, -0.5172297, 0, 1, 0, 0.5172297, 0, -0.85584664, 212.91267, 0, 207.10599), 3], [Vector3(206.00545, 9.536743e-07, 201.85167), Vector3(0, 1, 0), Transform3D(-0.30852374, 0, 0.95121664, 0, 1, 0, -0.95121664, 0, -0.30852374, 206.00545, 9.536743e-07, 201.85167), 3], [Vector3(205.63063, 9.536743e-07, 188.78635), Vector3(0, 1, 0), Transform3D(-0.67826873, 0, 0.7348139, 0, 1, 0, -0.7348139, 0, -0.67826873, 205.63063, 9.536743e-07, 188.78635), 3], [Vector3(205.66614, 0, 176.53412), Vector3(0, 1, 0), Transform3D(-0.19384807, 0, 0.9810316, 0, 1, 0, -0.9810316, 0, -0.19384807, 205.66614, 0, 176.53412), 3], [Vector3(218.28793, 0, 176.13307), Vector3(0, 1, 0), Transform3D(-0.7679203, 0, -0.64054537, 0, 1, 0, 0.64054537, 0, -0.7679203, 218.28793, 0, 176.13307), 3], [Vector3(229.89288, 9.536743e-07, 173.64336), Vector3(0, 1, 0), Transform3D(-0.9753406, 0, 0.22070509, 0, 1, 0, -0.22070509, 0, -0.9753406, 229.89288, 9.536743e-07, 173.64336), 3], [Vector3(184.58601, 0, 175.61478), Vector3(0, 1, 0), Transform3D(-0.8226984, 0, 0.56847805, 0, 1, 0, -0.56847805, 0, -0.8226984, 184.58601, 0, 175.61478), 3], [Vector3(184.48111, 0, 164.87303), Vector3(0, 1, 0), Transform3D(0.58939254, 0, -0.80784684, 0, 1, 0, 0.80784684, 0, 0.58939254, 184.48111, 0, 164.87303), 3], [Vector3(183.49818, 0, 150.89342), Vector3(0, 1, 0), Transform3D(0.17966451, 0, -0.983728, 0, 1, 0, 0.983728, 0, 0.17966451, 183.49818, 0, 150.89342), 3], [Vector3(175.36086, 0, 152.66423), Vector3(0, 1, 0), Transform3D(-0.45361832, 0, -0.8911961, 0, 1, 0, 0.8911961, 0, -0.45361832, 175.36086, 0, 152.66423), 3], [Vector3(201.83894, 0, 151.93803), Vector3(0, 1, 0), Transform3D(0.99315786, 0, 0.11677967, 0, 1, 0, -0.11677967, 0, 0.99315786, 201.83894, 0, 151.93803), 3], [Vector3(200.6025, 0, 138.62057), Vector3(0, 1, 0), Transform3D(-0.49406067, 0, -0.86942744, 0, 1, 0, 0.86942744, 0, -0.49406067, 200.6025, 0, 138.62057), 3], [Vector3(194.90987, 0, 124.5538), Vector3(0, 1, 0), Transform3D(-0.99783915, 0, 0.065704085, 0, 1, 0, -0.065704085, 0, -0.99783915, 194.90987, 0, 124.5538), 2], [Vector3(207.6051, 0, 136.77522), Vector3(0, 1, 0), Transform3D(0.16693327, 0, -0.98596823, 0, 1, 0, 0.98596823, 0, 0.16693328, 207.6051, 0, 136.77522), 3], [Vector3(221.7141, 9.536743e-07, 137.15718), Vector3(0, 1, 0), Transform3D(-0.9322904, 0, 0.36171076, 0, 1, 0, -0.36171076, 0, -0.9322904, 221.7141, 9.536743e-07, 137.15718), 3], [Vector3(227.00682, 0, 146.73412), Vector3(0, 1, 0), Transform3D(-0.9751213, 0, -0.22167185, 0, 1, 0, 0.22167185, 0, -0.9751213, 227.00682, 0, 146.73412), 3], [Vector3(230.59744, 0, 153.49414), Vector3(0, 1, 0), Transform3D(0.44024178, 0, 0.89787924, 0, 1, 0, -0.89787924, 0, 0.44024178, 230.59744, 0, 153.49414), 3], [Vector3(233.01184, 0, 165.03558), Vector3(0, 1, 0), Transform3D(-0.122881964, 0, 0.99242127, 0, 1, 0, -0.99242127, 0, -0.122881964, 233.01184, 0, 165.03558), 3], [Vector3(226.06703, 0, 159.64252), Vector3(0, 1, 0), Transform3D(-0.8773184, 0, 0.4799088, 0, 1, 0, -0.4799088, 0, -0.8773184, 226.06703, 0, 159.64252), 3], [Vector3(232.32913, 0, 183.07376), Vector3(0, 1, 0), Transform3D(-0.5877242, 0, -0.80906135, 0, 1, 0, 0.80906135, 0, -0.5877242, 232.32913, 0, 183.07376), 3], [Vector3(160.22993, 0, 89.30344), Vector3(0, 1, 0), Transform3D(0.99787647, 0, 0.065134786, 0, 1, 0, -0.065134786, 0, 0.99787647, 160.22993, 0, 89.30344), 2], [Vector3(161.20642, 9.536743e-07, 96.807686), Vector3(0, 1, 0), Transform3D(0.90590703, 0, -0.4234766, 0, 1, 0, 0.4234766, 0, 0.90590703, 161.20642, 9.536743e-07, 96.807686), 2], [Vector3(166.57574, 0, 105.26559), Vector3(0, 1, 0), Transform3D(0.3267428, 0, 0.9451133, 0, 1, 0, -0.9451133, 0, 0.3267428, 166.57574, 0, 105.26559), 2], [Vector3(174.43579, 0, 96.19045), Vector3(0, 1, 0), Transform3D(-0.45502427, 0, -0.8904791, 0, 1, 0, 0.8904791, 0, -0.45502427, 174.43579, 0, 96.19045), 2], [Vector3(172.87862, 9.536743e-07, 83.98107), Vector3(0, 1, 0), Transform3D(0.19284488, 0, 0.9812293, 0, 1, 0, -0.9812293, 0, 0.19284488, 172.87862, 9.536743e-07, 83.98107), 2], [Vector3(162.37135, 0, 74.00881), Vector3(0, 1, 0), Transform3D(-0.99537057, 0, 0.09611189, 0, 1, 0, -0.09611189, 0, -0.99537057, 162.37135, 0, 74.00881), 2], [Vector3(156.45328, 0, 66.907326), Vector3(0, 1, 0), Transform3D(0.9997279, 0, -0.023327531, 0, 1, 0, 0.023327531, 0, 0.9997279, 156.45328, 0, 66.907326), 2], [Vector3(149.0789, 0, 59.634094), Vector3(0, 1, 0), Transform3D(-0.8255608, 0, 0.5643132, 0, 1, 0, -0.5643132, 0, -0.8255608, 149.0789, 0, 59.634094), 2], [Vector3(143.04779, 9.536743e-07, 53.57158), Vector3(0, 1, 0), Transform3D(0.9826098, 0, 0.1856824, 0, 1, 0, -0.1856824, 0, 0.9826098, 143.04779, 9.536743e-07, 53.57158), 2], [Vector3(151.63719, 0, 48.377396), Vector3(0, 1, 0), Transform3D(0.88376415, 0, 0.46793264, 0, 1, 0, -0.46793264, 0, 0.88376415, 151.63719, 0, 48.377396), 2], [Vector3(161.11812, 0, 51.583946), Vector3(0, 1, 0), Transform3D(-0.54720056, 0, 0.83700156, 0, 1, 0, -0.83700156, 0, -0.54720056, 161.11812, 0, 51.583946), 2], [Vector3(169.74034, 0, 60.14926), Vector3(0, 1, 0), Transform3D(0.59350663, 0, 0.8048292, 0, 1, 0, -0.8048292, 0, 0.59350663, 169.74034, 0, 60.14926), 2], [Vector3(175.66103, 0, 67.66861), Vector3(0, 1, 0), Transform3D(0.451587, 0, -0.8922271, 0, 1, 0, 0.8922271, 0, 0.451587, 175.66103, 0, 67.66861), 2], [Vector3(187.90857, 0, 66.18998), Vector3(0, 1, 0), Transform3D(-0.21678832, 0, -0.97621864, 0, 1, 0, 0.97621864, 0, -0.21678832, 187.90857, 0, 66.18998), 2], [Vector3(187.52855, 9.536743e-07, 55.20733), Vector3(0, 1, 0), Transform3D(-0.79594564, 0, 0.6053681, 0, 1, 0, -0.6053681, 0, -0.79594564, 187.52855, 9.536743e-07, 55.20733), 2], [Vector3(179.05583, 0, 49.80458), Vector3(0, 1, 0), Transform3D(0.21934684, 0, -0.975647, 0, 1, 0, 0.975647, 0, 0.21934684, 179.05583, 0, 49.80458), 2], [Vector3(174.83353, 0, 38.209656), Vector3(0, 1, 0), Transform3D(-0.9995548, 0, 0.02983573, 0, 1, 0, -0.02983573, 0, -0.9995548, 174.83353, 0, 38.209656), 2], [Vector3(196.6464, 0, 62.14055), Vector3(0, 1, 0), Transform3D(0.9476343, 0, 0.31935754, 0, 1, 0, -0.31935754, 0, 0.9476343, 196.6464, 0, 62.14055), 2], [Vector3(222.80566, 0, 40.52852), Vector3(0, 1, 0), Transform3D(0.16808559, 0, -0.98577243, 0, 1, 0, 0.98577243, 0, 0.16808559, 222.80566, 0, 40.52852), 2], [Vector3(212.91138, 0, 37.465836), Vector3(0, 1, 0), Transform3D(-0.1693565, 0, -0.9855549, 0, 1, 0, 0.9855549, 0, -0.1693565, 212.91138, 0, 37.465836), 2], [Vector3(207.3956, 0, 43.57216), Vector3(0, 1, 0), Transform3D(0.9987246, 0, 0.05049027, 0, 1, 0, -0.05049027, 0, 0.9987246, 207.3956, 0, 43.57216), 2], [Vector3(210.94135, 0, 52.966278), Vector3(0, 1, 0), Transform3D(-0.9913428, 0, 0.13129948, 0, 1, 0, -0.13129947, 0, -0.9913428, 210.94135, 0, 52.966278), 2], [Vector3(221.27954, 0, 55.092598), Vector3(0, 1, 0), Transform3D(0.28102043, 0, -0.95970184, 0, 1, 0, 0.95970184, 0, 0.28102046, 221.27954, 0, 55.092598), 2], [Vector3(217.55804, 0, 62.76828), Vector3(0, 1, 0), Transform3D(0.11961, 0, 0.992821, 0, 1, 0, -0.992821, 0, 0.11961, 217.55804, 0, 62.76828), 2], [Vector3(194.84113, 0, 45.07521), Vector3(0, 1, 0), Transform3D(0.4714696, 0, 0.8818823, 0, 1, 0, -0.8818823, 0, 0.4714696, 194.84113, 0, 45.07521), 2]]
+max_members = 75
+min_leaf_extent = 1.0
+octant = 4
+is_leaf = true
+center_pos = Vector3(255, -43, 127)
+extent = 128.0
+bounds = AABB(127, -171, -1, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_4oad2"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 5
+is_leaf = true
+center_pos = Vector3(255, -43, 383)
+extent = 128.0
+bounds = AABB(127, -171, 255, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_j1uv7"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 6
+is_leaf = true
+center_pos = Vector3(255, 213, 127)
+extent = 128.0
+bounds = AABB(127, 85, -1, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_i6n8p"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = 7
+is_leaf = true
+center_pos = Vector3(255, 213, 383)
+extent = 128.0
+bounds = AABB(127, 85, 255, 256, 256, 256)
+max_bounds_to_center_dist = 221.70250336881628
+min_bounds_to_center_dist = 128.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_ehsa6"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+child_nodes = [SubResource("Resource_dyhn3"), SubResource("Resource_pcypi"), SubResource("Resource_7ybnm"), SubResource("Resource_p54lo"), SubResource("Resource_hvxpa"), SubResource("Resource_4oad2"), SubResource("Resource_j1uv7"), SubResource("Resource_i6n8p")]
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(127, 85, 255)
+extent = 256.0
+bounds = AABB(-129, -171, -1, 512, 512, 512)
+max_bounds_to_center_dist = 443.40500673763256
+min_bounds_to_center_dist = 256.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_v57qc"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("34_7y28q")
+root_octree_node = SubResource("Resource_ehsa6")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_ifqdx"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeNode"
+script = ExtResource("33_ifqdx")
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.7320508075688772
+min_bounds_to_center_dist = 1.0
+active_LOD_index = 0
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_7y28q"]
+resource_local_to_scene = true
+resource_name = "MMIOctreeManager"
+script = ExtResource("34_7y28q")
+root_octree_node = SubResource("Resource_ifqdx")
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_xukq4"]
+resource_local_to_scene = true
+script = ExtResource("35_dyhn3")
+octree_managers = [SubResource("Resource_v57qc"), SubResource("Resource_7y28q")]
 metadata/class = "Arborist"
 
-[node name="GnomeTerrain" type="Node3D"]
+[node name="GnomeLevel" type="Node3D"]
+script = ExtResource("1_42gdw")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_qqwwe")
+ambient_wind = 0.4
 map_scale = Vector3(0.5, 0.5, 0.5)
 _terrain_data = ExtResource("2_1bsc7")
 chunk_size = 32
@@ -36,15 +283,243 @@ cast_shadow = 1
 shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
-shader_params/u_tile_reduction = null
+shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
 metadata/_custom_type_script = "uid://dnrelw0fv4ou8"
 
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("9_87shl")
+texture = ExtResource("10_ujj1q")
+view_distance = 150.0
+density = 0.789
+shader_params/u_globalmap_tint_bottom = 0.3710000176225
+shader_params/u_globalmap_tint_top = 0.1450000068875
+shader_params/u_bottom_ao = 0.34400001634
+shader_params/u_instance_scale = Vector3(2, 2, 2)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_kkme5")
+
+[node name="@Node3D@75207" type="Node3D" parent="HTerrain"]
+script = ExtResource("9_87shl")
+layer_index = 1
+texture = ExtResource("12_pxd54")
+view_distance = 150.0
+density = 0.505
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(1, 1, 1)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_kkme5")
+
+[node name="Z" parent="." instance=ExtResource("10_mrlcg")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 130.53134, 2.3126001, 47.104347)
+
+[node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
+transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
+visible = false
+mesh = SubResource("BoxMesh_jlxtx")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_csh1m")
+script = ExtResource("12_jlxtx")
+
+[node name="Ui" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="SprintBar" type="TextureProgressBar" parent="Ui"]
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("36_i6n8p")
+texture_progress = ExtResource("37_2iq4o")
+
+[node name="WednigoHead" type="Sprite2D" parent="Ui"]
+visible = false
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
+texture = ExtResource("38_ixyha")
+
+[node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("39_ec0i6")
+texture_progress = ExtResource("40_mgsad")
+
+[node name="Pause Menu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("41_qsklv")
+
+[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("42_taton")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+min_value = -6.0
+max_value = 72.0
+step = 6.0
+value = 72.0
+
+[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 204.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 238.0
+offset_top = 992.0
+offset_right = 452.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Main Menu"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
+stream = ExtResource("43_uc803")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="Ui"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrlcg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0, 114, 0)
+light_volumetric_fog_energy = 0.0
+
 [node name="Gardener" type="Node3D" parent="."]
-script = ExtResource("4_c327s")
-file_management/garden_work_directory = "res://Gnome Level/GnomeGardenerMap/"
+script = ExtResource("32_ehsa6")
+file_management/garden_work_directory = "res://Gnome Level/gardener/"
 gardening/gardening_collision_mask = 1.0
-arborist = SubResource("Resource_gbm7p")
+arborist = SubResource("Resource_xukq4")
 plugin_version = "1.4.1"
 storage_version = 4
 metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
+
+[node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.90668, 3.8146973e-06, 37.557545)
+dialogue = ExtResource("17_i627o")
+
+[node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.00667, -0.786397, 131.6574)
+
+[node name="door" parent="." instance=ExtResource("16_csh1m")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 249.32649, 3.7640514, 66.210815)
+
+[node name="House_Back" parent="." instance=ExtResource("17_humbe")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 248.90517, 3.8994522, 66.26556)
+
+[node name="Windows" parent="." instance=ExtResource("18_csh1m")]
+transform = Transform3D(3.577464e-08, 0, -3, 0, 3, 0, 3, 0, 3.577464e-08, 248.47333, 5.0094376, 65.41658)
+
+[node name="BigTree" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 81.895706, 3.4961243, 126.16343)
+
+[node name="BigTree2" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(4.007147, 0, -3.523214, 0, 5.1072855, 0, 3.6332045, 0, 3.8858361, 54.73532, 1.9105072, 238.47241)
+
+[node name="BigTree3" parent="." instance=ExtResource("20_humbe")]
+transform = Transform3D(3.3997107, 0, -4.0074525, 0, 6.7889786, 0, 3.0824535, 0, 4.4199142, 189.70372, 1.9105072, 27.362526)
+
+[node name="Fences" parent="." instance=ExtResource("20_6pwx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.78351, 0, 0)
+
+[node name="Playset" parent="." instance=ExtResource("28_ujj1q")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 72.35481, 0, 94.54317)
+
+[node name="shroom1" parent="." instance=ExtResource("25_7oysy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.17012, 0.41318035, 77.1497)
+
+[node name="shroom2" parent="." instance=ExtResource("38_hvxpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.74156, 0.8201132, 74.07087)
+
+[node name="quest_hedge" parent="." instance=ExtResource("26_bwcok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.00264, -1.277019, 160.32022)
+
+[node name="new_marble" parent="." instance=ExtResource("26_87shl")]
+transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 176.23727, 0.8496541, 215.8356)
+
+[node name="sword" parent="." instance=ExtResource("26_ujj1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.91413, 10.606115, 86.813576)
+
+[node name="GnomeKING" parent="." instance=ExtResource("27_kkme5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 114.95887, 0.3991499, 129.23508)
+dialogue = ExtResource("17_i627o")
+
+[node name="bloogaragth" parent="." instance=ExtResource("28_pxd54")]
+transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 134.69148, 0.3218441, 92.12883)
+dialogue = ExtResource("17_i627o")
+
+[node name="Bleafus_the_gnome" parent="." instance=ExtResource("29_i627o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.24689, 0.3262241, 26.152647)
+dialogue = ExtResource("17_i627o")
+
+[node name="NewHedgeDog" parent="." instance=ExtResource("45_4oad2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 227.19513, 1.9645767, 153.82436)
+
+[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]

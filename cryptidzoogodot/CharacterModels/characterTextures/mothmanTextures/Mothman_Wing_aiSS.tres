@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bmg08m4bqwqpe"]
+
+[ext_resource type="Texture2D" uid="uid://btrrrnfc507hj" path="res://CharacterModels/characterTextures/mothmanTextures/WIngs/Mothman_Exploded_Mothman_WIngs_aiSS_BaseColor.png" id="1_lhshx"]
+[ext_resource type="Texture2D" uid="uid://b0sbhilixvam2" path="res://CharacterModels/characterTextures/mothmanTextures/WIngs/Mothman_Exploded_Mothman_WIngs_aiSS_Height.png" id="3_p4dbn"]
+[ext_resource type="Texture2D" uid="uid://4xchtw7dpvdd" path="res://CharacterModels/characterTextures/mothmanTextures/WIngs/Mothman_Exploded_Mothman_WIngs_aiSS_Normal.png" id="5_0wo54"]
+[ext_resource type="Texture2D" uid="uid://ou566l4yapn" path="res://CharacterModels/characterTextures/mothmanTextures/WIngs/Mothman_Exploded_Mothman_WIngs_aiSS_Roughness.png" id="6_821d3"]
+
+[resource]
+resource_name = "Mothman_Wing_aiSS"
+albedo_texture = ExtResource("1_lhshx")
+metallic = 1.0
+roughness_texture = ExtResource("6_821d3")
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("5_0wo54")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_p4dbn")

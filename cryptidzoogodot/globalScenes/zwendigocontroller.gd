@@ -1,8 +1,7 @@
 extends CharacterBody3D
-@onready var SceneTransitionAnimation = $"../SceneTransitionAnimation"
 
 @export var SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6.7
 @export var lightOn = false
 @onready var animTree = $AnimationTree
 @export var walk = false
@@ -68,8 +67,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-	if Global.frozen == false:
-		move_and_slide()
+	move_and_slide()
 	
 	#idle
 	if(velocity.length() <= 1 && is_on_floor()):
@@ -183,11 +181,3 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func disableLooker():
 	$Head/Loooky.process_mode = Node.PROCESS_MODE_DISABLED
-
-
-func _on_trap_2_activated() -> void:
-	pass # Replace with function body.
-
-
-func _on_trap_2_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.

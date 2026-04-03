@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqnyuxynar2bn"]
+
+[ext_resource type="Script" uid="uid://c0qyjv2803562" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/Scripts/shroom_1.gd" id="1_lblqw"]
+[ext_resource type="PackedScene" uid="uid://dl3asgoqqouqy" path="res://Gnome Level/Assets/mushrooms/chanterelle/scene.gltf" id="2_25hdd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ybw4e"]
+height = 2.3535156
+radius = 3.538086
+
+[node name="shroom1" type="Node3D"]
+script = ExtResource("1_lblqw")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_25hdd")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9576161, 0)
+shape = SubResource("CylinderShape3D_ybw4e")
+
+[node name="PickUpText" type="Label3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.007812679, 0.7183743, 0)
+text = "Press 'E' to eat!"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

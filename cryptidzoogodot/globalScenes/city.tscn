@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bf4vgu7u0t3ri"]
+[gd_scene load_steps=61 format=3 uid="uid://bf4vgu7u0t3ri"]
 
 [ext_resource type="Script" uid="uid://dhbotwbltu522" path="res://globalScenes/city.gd" id="1_8atto"]
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="1_lwvs2"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="7_hys3v"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="8_524on"]
 [ext_resource type="PackedScene" uid="uid://c2pyoowlngifw" path="res://Mothman Level/Note1.tscn" id="8_hln64"]
-[ext_resource type="Script" uid="uid://dq5us286hriqu" path="res://Mothman Level/note_1.gd" id="9_ni7w2"]
 [ext_resource type="PackedScene" uid="uid://b2h0jjqgk2q7j" path="res://Mothman Level/Note2.tscn" id="10_7ysn1"]
 [ext_resource type="Script" uid="uid://0e0nwk5g4k63" path="res://Mothman Level/note_2.gd" id="11_hambk"]
 [ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="11_havme"]
@@ -23,7 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://boajti1ft7mty" path="res://scene_transition_animation.tscn" id="16_xmauk"]
 [ext_resource type="Script" uid="uid://btf4rnns7gpro" path="res://globalScenes/Death_Bounds.gd" id="17_thvbw"]
 [ext_resource type="PackedScene" uid="uid://d3esotmtt2api" path="res://Mothman Level/mothmanPedestal.tscn" id="18_a85v4"]
+[ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="19_0i1hi"]
+[ext_resource type="Texture2D" uid="uid://cuj577svp8v5j" path="res://Assets/newspaper/NPMothman2.png" id="20_ket5o"]
+[ext_resource type="Texture2D" uid="uid://bmcdqkhy0vm3c" path="res://Assets/newspaper/NPMothman3.png" id="21_i3gd2"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="21_k8whp"]
+[ext_resource type="Texture2D" uid="uid://dbxvxcyyu31jl" path="res://Assets/newspaper/NPMothman4.png" id="22_vrwf7"]
 [ext_resource type="AudioStream" uid="uid://cko6q5a2ql0h4" path="res://Assets/SFX/OverworldTheme.mp3" id="26_65jtr"]
 [ext_resource type="Shader" uid="uid://tsgfh171hncc" path="res://Wendigo Level/WendigoTestMap/vhsflavor2.gdshader" id="32_itr8c"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="41_s1lhy"]
@@ -32,6 +35,21 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="54_h81f8"]
 [ext_resource type="PackedScene" uid="uid://b7y4d3iptqhor" path="res://Mothman Level/mothman_plush.tscn" id="55_78vex"]
 [ext_resource type="PackedScene" uid="uid://c1mi5nba5p3pi" path="res://Assets/CityFixed.tscn" id="56_4uavd"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_i3gd2"]
+
+[sub_resource type="Sky" id="Sky_vrwf7"]
+sky_material = SubResource("PhysicalSkyMaterial_i3gd2")
+
+[sub_resource type="Environment" id="Environment_j41q2"]
+background_mode = 2
+sky = SubResource("Sky_vrwf7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8ojvp"]
 radius = 15.3453
@@ -78,7 +96,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-64.366035, 2.0135589, 60.401386)]
+"values": [Vector3(-64.366035, 2.161198, 60.401386)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -752,6 +770,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31288)
 script = ExtResource("1_8atto")
 dialogue_resource = ExtResource("2_iu74x")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j41q2")
+
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -7.6293945e-06, 2.3841858e-07, 1.4305115e-06)
 
@@ -987,6 +1008,9 @@ position = Vector2(-38, -26)
 [node name="Z" parent="." instance=ExtResource("1_lwvs2")]
 transform = Transform3D(-0.45004395, 0, -0.66140664, 0, 0.8, 0, 0.66140664, 0, -0.45004395, 207.68576, 14.458996, 95.436325)
 
+[node name="Head" parent="Z" index="0"]
+transform = Transform3D(1.2500018, 0, 2.0954758e-09, 0, 1.25, 0, -2.0954758e-09, 0, 1.2500018, 0.0004272461, 0.59763217, -0.1578064)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.608512, -0.295031, -0.736661, 0.793545, 0.226238, 0.564892, 0, -0.928317, 0.371789, 0, 40.9059, 188.446)
 light_energy = 0.399
@@ -1011,6 +1035,7 @@ shape = SubResource("SphereShape3D_8ojvp")
 shape = SubResource("SphereShape3D_mrpgv")
 
 [node name="Ui" type="CanvasLayer" parent="."]
+process_mode = 3
 layer = 101
 
 [node name="SprintBar" type="TextureProgressBar" parent="Ui"]
@@ -1076,10 +1101,8 @@ offset_left = 357.0
 offset_top = 825.0
 offset_right = 1081.0
 offset_bottom = 1015.0
-min_value = -6.0
-max_value = 72.0
-step = 6.0
-value = 72.0
+max_value = 1.0
+step = 0.05
 
 [node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
 layout_mode = 0
@@ -1159,25 +1182,95 @@ target = NodePath("../../Z")
 camera_distance = 40
 objective_path = NodePath("../../FakeMothman")
 
-[node name="Note1" parent="." instance=ExtResource("8_hln64")]
-transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, -23.36352, 3.7309244, 80.20716)
-script = ExtResource("9_ni7w2")
-dialogue_resource = ExtResource("2_iu74x")
+[node name="Newspapers" type="Control" parent="Ui"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Note2" parent="." instance=ExtResource("10_7ysn1")]
-transform = Transform3D(0.469999, -0.0014752969, -1.162535e-05, -5.28082e-10, 0.15505098, -0.024396604, -0.0010007471, -0.6928614, -0.005459526, -55.033142, 2.1984098, 80.677635)
+[node name="NpMothman1" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("22_vrwf7")
+
+[node name="NpMothman1Button" type="Button" parent="Ui/Newspapers/NpMothman1"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman2" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("20_ket5o")
+
+[node name="NpMothman2Button" type="Button" parent="Ui/Newspapers/NpMothman2"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman3" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("21_i3gd2")
+
+[node name="NpMothman3Button" type="Button" parent="Ui/Newspapers/NpMothman3"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman4" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.79203725)
+texture = ExtResource("19_0i1hi")
+
+[node name="NpMothman4Button" type="Button" parent="Ui/Newspapers/NpMothman4"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="Note1" parent="." groups=["newspaper"] instance=ExtResource("8_hln64")]
+transform = Transform3D(-0.47, 0, 0, 0, 0.71, -2.1855695e-09, 0, 6.207017e-08, 0.025, -23.36352, 3.7309244, 80.20716)
+
+[node name="Note2" parent="." groups=["newspaper"] instance=ExtResource("10_7ysn1")]
+transform = Transform3D(-0.46999934, -0.0012093395, 9.518296e-06, 0, 0.15488169, 0.024397934, 0.0008203044, -0.69289976, 0.0054535763, -55.033142, 2.1984098, 80.677635)
 script = ExtResource("11_hambk")
-dialogue_resource = ExtResource("2_iu74x")
 
-[node name="Note3" parent="." instance=ExtResource("12_acp2a")]
-transform = Transform3D(0.47, 0, 0, 0, 0.70854896, -0.0015976299, 0, -0.045372963, -0.024948899, 18.935564, 2.833732, 56.743874)
+[node name="Note3" parent="." groups=["newspaper"] instance=ExtResource("12_acp2a")]
+transform = Transform3D(-0.47, 0, 0, 0, 0.7085203, 0.0016133094, 0, -0.045818, 0.02494789, 18.935564, 2.833732, 56.743874)
 script = ExtResource("13_uc6et")
-dialogue_resource = ExtResource("2_iu74x")
 
-[node name="Note4" parent="." instance=ExtResource("14_0b0g1")]
-transform = Transform3D(0.47, 0, 0, 0, 0.71, 0, 0, 0, -0.025, 90.26859, 3.424793, 81.65424)
+[node name="Note4" parent="." groups=["newspaper"] instance=ExtResource("14_0b0g1")]
+transform = Transform3D(-0.47, 0, 0, 0, 0.71, -2.1855695e-09, 0, 6.207017e-08, 0.025, 90.26859, 3.424793, 81.65424)
 script = ExtResource("15_eb1mn")
-dialogue_resource = ExtResource("2_iu74x")
 
 [node name="Water" type="Area3D" parent="."]
 transform = Transform3D(-4.6920023, 0, 0, 0, -0.108, 0, 0, 0, -4.759999, 112.374, 49.406, 93.4484)
@@ -1291,9 +1384,15 @@ offset_bottom = 1087.0
 
 [connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FakeMothman/Big" to="." method="_on_big_body_entered"]
-[connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
+[connection signal="value_changed" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman1/NpMothman1Button" to="Note1" method="_on_np_mothman_1_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman2/NpMothman2Button" to="Note2" method="_on_np_mothman_2_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman3/NpMothman3Button" to="Note3" method="_on_np_mothman_3_button_pressed"]
+[connection signal="pressed" from="Ui/Newspapers/NpMothman4/NpMothman4Button" to="Note4" method="_on_np_mothman_4_button_pressed"]
 [connection signal="body_entered" from="Water" to="Z" method="_on_water_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider" to="." method="_on_cut_scene_collider_body_entered"]
 [connection signal="body_entered" from="CutSceneCollider2" to="." method="_on_cut_scene_collider_2_body_entered"]
+
+[editable path="Z"]

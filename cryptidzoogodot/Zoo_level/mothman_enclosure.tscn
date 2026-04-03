@@ -1,4 +1,4 @@
-[gd_scene load_steps=450 format=4 uid="uid://1udmib64c74m"]
+[gd_scene load_steps=450 format=4 uid="uid://djmixn0kpg0ex"]
 
 [ext_resource type="Texture2D" uid="uid://bb4g2vvk45nsx" path="res://Assets/Buildings/MapExport_8.png" id="1_6mp8x"]
 [ext_resource type="Texture2D" uid="uid://0xhebp1m75kd" path="res://Assets/Materials/PNG/Red_lambert1_BaseColor.png" id="2_rrirn"]

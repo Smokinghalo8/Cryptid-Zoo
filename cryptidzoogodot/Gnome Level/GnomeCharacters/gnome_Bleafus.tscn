@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsdc15jgfb724"]
+
+[ext_resource type="Script" uid="uid://pfanfwqn5hja" path="res://Gnome Level/GnomeCharacters/Scripts/gnome_bleafus.gd" id="1_1ltpv"]
+[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/scene.gltf" id="1_sbyvo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ltpv"]
+radius = 0.8330078
+height = 3.1348877
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_33nxn"]
+radius = 5.6748047
+height = 13.6883545
+
+[node name="Bleafus_the_gnome" type="StaticBody3D"]
+script = ExtResource("1_1ltpv")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_sbyvo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1199341, 0.44155848)
+shape = SubResource("CapsuleShape3D_1ltpv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.68672025, 4.1797624)
+shape = SubResource("CapsuleShape3D_33nxn")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

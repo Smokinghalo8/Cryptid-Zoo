@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpegb8cjk0kly"
+path="res://.godot/imported/temp.mp3-f0291c726549ec3a1739233ee96e7508.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Bloogargth/temp.mp3"
+dest_files=["res://.godot/imported/temp.mp3-f0291c726549ec3a1739233ee96e7508.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

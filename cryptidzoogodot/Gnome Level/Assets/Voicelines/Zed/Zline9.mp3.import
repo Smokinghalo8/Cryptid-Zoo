@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b77dedh2p6b44"
+path="res://.godot/imported/Zline9.mp3-3cd9e2b5875458aad193eddd099c58f9.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Zed/Zline9.mp3"
+dest_files=["res://.godot/imported/Zline9.mp3-3cd9e2b5875458aad193eddd099c58f9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

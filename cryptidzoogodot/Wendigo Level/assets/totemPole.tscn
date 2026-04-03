@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6lggfcs4q5c0"]
+
+[ext_resource type="PackedScene" uid="uid://em8vodqswlmi" path="res://Wendigo Level/assets/wooden_totempole/totemPole.gltf" id="1_astc2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0t06r"]
+height = 24.063965
+radius = 1.5556641
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_astc2")]
+
+[node name="Object_2" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles" index="0"]
+transform = Transform3D(1.0000006, -2.2778818e-35, 5.169879e-26, 5.035656e-35, 1.0000006, 0, -5.169879e-25, -2.3161057e-23, 1, -10.050544, -10.46103, 12.252556)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles/Object_2" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" index="0"]
+transform = Transform3D(0.9999785, -3.1013042e-07, 0, 3.1013042e-07, 0.9999785, 0, 2.9571707e-23, 1.1117307e-21, 1, 9.874907, -11.113382, -0.41145372)
+shape = SubResource("CylinderShape3D_0t06r")
+
+[node name="Object_3" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles" index="1"]
+transform = Transform3D(1.0000006, -2.2778818e-35, 5.169879e-26, 5.035656e-35, 1.0000006, 0, -5.169879e-25, -2.3161057e-23, 1, -10.050544, -10.46103, 12.252556)
+
+[node name="Object_4" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles" index="2"]
+transform = Transform3D(1.0000006, -2.2778818e-35, 5.169879e-26, 5.035656e-35, 1.0000006, 0, -5.169879e-25, -2.3161057e-23, 1, -10.050544, -10.46103, 12.252556)
+
+[node name="Object_5" parent="Sketchfab_model/totem_obj_cleaner_materialmerger_gles" index="3"]
+transform = Transform3D(1.0000006, -2.2778818e-35, 5.169879e-26, 5.035656e-35, 1.0000006, 0, -5.169879e-25, -2.3161057e-23, 1, -10.050544, -10.46103, 12.252556)
