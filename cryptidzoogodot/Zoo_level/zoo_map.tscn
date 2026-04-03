@@ -4513,6 +4513,141 @@ transform = Transform3D(4.5268593, 0, 0, 0, 5.562967, 0, 0, 0, 5.192623, 83.6325
 operation = 2
 size = Vector3(7.4367676, 0.9857178, 6.3101807)
 
+[node name="GnomeEnclosure" type="Node3D" parent="."]
+
+[node name="ChainLinks3" type="Node3D" parent="GnomeEnclosure"]
+transform = Transform3D(-0.74999994, 0, 6.556708e-08, 0, 0.75, 0, -6.556708e-08, 0, -0.74999994, -18.60729, 0, -18.92939)
+
+[node name="ChainLinks" type="MeshInstance3D" parent="GnomeEnclosure/ChainLinks3"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 55.974277, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_juwcu")
+
+[node name="ChainLinks4" type="MeshInstance3D" parent="GnomeEnclosure/ChainLinks3"]
+transform = Transform3D(-3.3542426e-07, -0.99999976, 0, 7.6736126, -4.3711378e-08, 0, 0, 0, 12.243044, 77.25039, 7.4849224, 64.67739)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eli4a")
+
+[node name="ChainLinks2" type="MeshInstance3D" parent="GnomeEnclosure/ChainLinks3"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.858, 7.485, 52.404)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gprb7")
+
+[node name="ChainLinks3" type="MeshInstance3D" parent="GnomeEnclosure/ChainLinks3"]
+transform = Transform3D(1.4661857e-14, 4.3711374e-08, -10.870072, 7.6736116, -4.3711374e-08, 0, -3.354242e-07, -0.99999964, -4.7514595e-07, 66.34902, 7.485, 76.92273)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yyx32")
+
+[node name="ChainLinks5" type="MeshInstance3D" parent="GnomeEnclosure/ChainLinks3"]
+transform = Transform3D(5.3389414e-07, 3.82137e-15, -10.354923, 1.0677882e-06, -0.99999964, 0, -12.214072, -8.742275e-08, -4.5262811e-07, 66.47678, 15.574316, 64.76002)
+material_override = ExtResource("31_r1jwb")
+mesh = SubResource("PlaneMesh_w3hhf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/ChainLinks3/ChainLinks5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ckfc")
+
+[node name="Beams3" type="Node3D" parent="GnomeEnclosure"]
+transform = Transform3D(-0.74999994, 0, 6.556708e-08, 0, 0.75, 0, -6.556708e-08, 0, -0.74999994, -18.60729, 0, -18.92939)
+
+[node name="StandingBeam4" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 77.10789, 7.8704095, 52.51061)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r1jwb")
+
+[node name="StandingBeam5" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 76.895966, 7.782618, 76.94851)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_w3hhf")
+
+[node name="StandingBeam3" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(0.80830216, 0, 0, 0, 15.889688, 0, 0, 0, 0.6851994, 55.917267, 7.8704095, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pnutm")
+
+[node name="StandingBeam6" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 76.938126)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_t6vbc")
+
+[node name="StandingBeam9" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(-3.533201e-08, 21.48387, 0, -0.8083022, -9.3908983e-07, 0, 0, 0, 0.6851994, 66.56851, 15.392078, 52.54345)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gks62")
+
+[node name="StandingBeam7" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 77.013245, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chy36")
+
+[node name="StandingBeam8" type="MeshInstance3D" parent="GnomeEnclosure/Beams3"]
+transform = Transform3D(1.5444112e-15, -1.086955e-06, -0.6851994, -0.80830216, -1.086955e-06, 0, -3.533201e-08, 24.866632, -2.9951018e-08, 55.958725, 15.392078, 64.67397)
+material_override = ExtResource("30_6chjn")
+mesh = SubResource("BoxMesh_6chjn")
+skeleton = NodePath("../../../MothmanEcnlosureOverview")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GnomeEnclosure/Beams3/StandingBeam8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GnomeEnclosure/Beams3/StandingBeam8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_s0k0w")
+
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
