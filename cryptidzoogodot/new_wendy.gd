@@ -30,6 +30,8 @@ var lastPos
 var hasSeen: bool
 var wanderTimer : float = 60.0
 
+#Other Variables
+var isJumpscaring = false
 
 
 
@@ -248,15 +250,20 @@ func restartCheckpoint():
 
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
-		if Global.checkpoint == false:
-			$"WendyNoises".stop()
-			$"WendyJumpscareNoises".play(0.0)
-			wendigoPlayer.play("jumpScare")
-			await wendigoPlayer.animation_finished
-			restart()
-		if Global.checkpoint == true:
-			$"WendyNoises".stop()
-			$"WendyJumpscareNoises".play(0.0)
-			wendigoPlayer.play("jumpScare")
-			await wendigoPlayer.animation_finished
-			restartCheckpoint()
+		if isJumpscaring == false:
+			if Global.checkpoint == false:
+				isJumpscaring = true
+				$"WendyNoises".stop()
+				$"WendyJumpscareNoises".play(0.0)
+				wendigoPlayer.play("jumpScare")
+				await wendigoPlayer.animation_finished
+				isJumpscaring = false
+				restart()
+			if Global.checkpoint == true:
+				isJumpscaring = true
+				$"WendyNoises".stop()
+				$"WendyJumpscareNoises".play(0.0)
+				wendigoPlayer.play("jumpScare")
+				await wendigoPlayer.animation_finished
+				isJumpscaring = false
+				restartCheckpoint()
