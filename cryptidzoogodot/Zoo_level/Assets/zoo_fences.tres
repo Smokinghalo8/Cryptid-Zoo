@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cck41xc4f3v03"]
+
+[ext_resource type="Texture2D" uid="uid://brqt22r42oinm" path="res://Zoo_level/EnclosureTextures/vecteezy_close-up-of-a-metal-chain-link-fence-with-a-transparent_59588948.png" id="1_5t751"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_5t751")
+uv1_scale = Vector3(10, 10, 10)
