@@ -113,7 +113,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(130.10245, 112.06569, 0.5947441), Vector3(130.10245, 112.06569, 19.232584)]
+"values": [Vector3(130.10245, 112.06569, -5.9228263), Vector3(130.10245, 112.06569, 19.232584)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -125,7 +125,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(131.09709, 119.64412, 7.0702925), Vector3(131.3921, 119.644, 21.382532)]
+"values": [Vector3(133.25609, 114.36558, 0.552722), Vector3(131.392, 114.3, 24.46193)]
 }
 
 [sub_resource type="Animation" id="Animation_2iq4o"]
@@ -566,7 +566,7 @@ shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
 [node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
-transform = Transform3D(173.2051, 100.00002, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00002, 173.2051, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
+transform = Transform3D(173.20511, 100.00003, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00003, 173.20511, -7.5710345e-06, 130.10245, 112.06569, 19.232584)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -574,7 +574,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 130.53134, 112.48089, 1.3163711)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 131.392, 114.3, 24.46193)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
@@ -784,7 +784,7 @@ dialogue = ExtResource("17_i627o")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 227.19513, 1.9645767, 153.82436)
 
 [node name="OverView1" type="Camera3D" parent="."]
-transform = Transform3D(0.028705612, 0.92732763, -0.37314805, -0.07112751, 0.3742506, 0.9245958, 0.99705416, 5.6042513e-09, 0.0767016, 127.051384, 134.13571, 12.821926)
+transform = Transform3D(1, 0, 0, 0, 0.7951455, -0.6064187, 0, 0.6064187, 0.7951455, 129.21768, 102.7276, 40.96964)
 
 [node name="OverView2" type="Camera3D" parent="."]
 transform = Transform3D(0.83718765, 0.065999955, 0.54291886, -0.011951463, 0.99466264, -0.102486886, -0.54678524, 0.079312086, 0.83350796, 259.0204, 53.86034, 117.24176)
@@ -811,7 +811,7 @@ transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.99769
 transform = Transform3D(0.14132023, 0.97288, 0.18312034, -0.00453624, 0.1856112, -0.9826128, -0.98995346, 0.13803236, 0.030643838, 140.61182, 0.38971424, 39.65321)
 
 [node name="TinyBullet" parent="." instance=ExtResource("48_ixyha")]
-transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 150.0264, 100.16565, 30)
+transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 258.65775, 53.243336, 112.53825)
 
 [node name="ExplosionGif" type="Sprite3D" parent="."]
 transform = Transform3D(7.9285765, 0, 0, 0, 6.6958785, 0, 0, 0, 1, 134.02417, 112.69663, 18.961992)

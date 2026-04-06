@@ -12,6 +12,9 @@ var isAnimationDone = false
 @onready var playerZed = $Z
 @onready var tinyBullet: StaticBody3D = $TinyBullet
 @onready var explostion: Sprite3D = $ExplosionGif
+@onready var ENTIRE_UI_LAYER: CanvasLayer = $Ui
+@onready var sprintBar: TextureProgressBar = $Ui/SprintBar
+
 
 
 @onready var playerZedCamera = $Z/Head
@@ -88,6 +91,7 @@ func toggleAnimation(animationNumber) -> int:
 	var animationNum = animationNumber
 	if(animationNum == 1):
 		playerZed.set_process_input(false)
+		sprintBar.visible = false
 		#switchToFirstAniamtion
 		#andtoggleCamera
 		Cam1.make_current()
@@ -140,11 +144,23 @@ func toggleAnimation(animationNumber) -> int:
 		Cam6.make_current()
 		animation_player.play("ZedShrinking")
 		await animation_player.animation_finished
+		#at the very very end, give the UI back
+		sprintBar.visible = true
 	return 3
 	
 func togglePause():
 	get_tree().paused = true
 	$"Ui/Pause Menu".visible = true
+	
+	
+func toggleUIVisabiliy():
+	#fix to enable escape button
+	if ENTIRE_UI_LAYER.visible==true:
+		ENTIRE_UI_LAYER.visible=false
+	elif ENTIRE_UI_LAYER.visible==false:
+		ENTIRE_UI_LAYER.visible=true
+	
+	
 	
 func checkAndApplyGlobals():
 	#CHECK THINGSGATHERED
