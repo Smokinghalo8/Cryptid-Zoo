@@ -1,16 +1,19 @@
-[gd_scene load_steps=65 format=3 uid="uid://bmtvs30wt7joh"]
+[gd_scene load_steps=68 format=3 uid="uid://bmtvs30wt7joh"]
 
 [ext_resource type="Script" uid="uid://b1rb6x3spiedl" path="res://generator.gd" id="1_akfea"]
-[ext_resource type="PackedScene" uid="uid://bxe8vv8gsxci" path="res://globalScenes/zcity.tscn" id="1_e6181"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="2_qttuv"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="3_akfea"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="4_5a6nw"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="5_o5i1o"]
 [ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="5_rselu"]
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="6_6j8so"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="6_yojdv"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="7_n8otx"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="7_rt4mq"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="8_irpxo"]
 [ext_resource type="Texture2D" uid="uid://dmyweexb27tqc" path="res://Wendigo Level/pictures/WendigoPlushGraphic.png" id="9_to76m"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="10_o5i1o"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="11_akfea"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_scco8"]
 
@@ -139,16 +142,30 @@ mesh = SubResource("BoxMesh_scco8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ceiling/StaticBody3D"]
 shape = SubResource("BoxShape3D_scco8")
 
-[node name="temporarygen" type="MeshInstance3D" parent="."]
+[node name="temporarygen" type="MeshInstance3D" parent="." groups=["Living"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.10859, 0, -18.005348)
 mesh = SubResource("BoxMesh_hyhvi")
 script = ExtResource("1_akfea")
-player_node = NodePath("../Z")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="temporarygen"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="temporarygen/StaticBody3D"]
 shape = SubResource("BoxShape3D_d6iiu")
+
+[node name="Skybeam" type="SpotLight3D" parent="temporarygen"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
+light_color = Color(0, 1, 0.36862746, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 8.0
+spot_range = 1000.0
+spot_attenuation = 0.0
+spot_angle = 10.0
+spot_angle_attenuation = 1.2831112e-05
+
+[node name="HighlightTimer" type="Timer" parent="temporarygen"]
+wait_time = 3.0
+one_shot = true
 
 [node name="walls" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.15788, 0, 15.9239235)
@@ -683,9 +700,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="walls/wall53/StaticBody3D"]
 shape = SubResource("BoxShape3D_ablwg")
 
-[node name="Z" parent="." instance=ExtResource("1_e6181")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43293, 1.28263, 20.851822)
-
 [node name="Ui" type="CanvasLayer" parent="."]
 layer = 1000
 
@@ -803,15 +817,37 @@ scale = Vector2(0.54, 0.54)
 texture = ExtResource("9_to76m")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("10_o5i1o")]
+visible = false
 offset_left = 1619.0
 offset_top = 2.0
 offset_right = 1919.0
 offset_bottom = 302.0
-target = NodePath("../../Z")
 camera_distance = 40
 objective_path = NodePath("../../temporarygen")
 metadata/_edit_use_anchors_ = true
 
+[node name="WednigoHead" type="Sprite2D" parent="Ui"]
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
+texture = ExtResource("5_o5i1o")
+
+[node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("6_yojdv")
+texture_progress = ExtResource("7_n8otx")
+
+[node name="Z" parent="." instance=ExtResource("11_akfea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.464428, 1.28263, 21.694427)
+
+[connection signal="timeout" from="temporarygen/HighlightTimer" to="temporarygen" method="_on_highlight_timer_timeout"]
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]

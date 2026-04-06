@@ -217,11 +217,11 @@ func _on_water_body_entered(body: Node3D) -> void:
 	self.position.x -= 30
 	self.position.y += 20
 
-#func updateAnimationParameters():
-	#zedAnimTree.set("parameters/conditions/idle", idle)
-	#zedAnimTree.set("parameters/conditions/walk", walk)
-	#zedAnimTree.set("parameters/conditions/run", run)
-	#zedAnimTree.set("parameters/conditions/jump", jump)
+func updateAnimationParameters():
+	zedAnimTree.set("parameters/conditions/idle", idle)
+	zedAnimTree.set("parameters/conditions/walk", walk)
+	zedAnimTree.set("parameters/conditions/run", run)
+	zedAnimTree.set("parameters/conditions/jump", jump)
 	#if idle == true:
 		##stateMachine.travel("idle")
 		#print("Idle")
