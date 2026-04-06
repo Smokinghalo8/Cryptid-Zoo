@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://du6b7snsy0qiw"]
+[gd_scene load_steps=7 format=3 uid="uid://du6b7snsy0qiw"]
 
 [ext_resource type="Script" uid="uid://b4qcbbc1mp7d1" path="res://Gnome Level/GnomeCharacters/Scripts/gnome_king.gd" id="1_kd1pe"]
-[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/scene.gltf" id="2_ws4yr"]
+[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/gnome.gltf" id="2_ws4yr"]
+[ext_resource type="PackedScene" uid="uid://dklhi5mwhqp3i" path="res://Gnome Level/GnomeCharacters/crown.tscn" id="3_qiqb7"]
+[ext_resource type="PackedScene" uid="uid://duqwjoyrot738" path="res://Gnome Level/GnomeCharacters/scepter.tscn" id="4_bdipr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qiqb7"]
 radius = 1.0395508
@@ -14,7 +16,7 @@ height = 13.6883545
 [node name="GnomeKING" type="StaticBody3D"]
 script = ExtResource("1_kd1pe")
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_ws4yr")]
+[node name="Gnome" parent="." instance=ExtResource("2_ws4yr")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1662598, 0.3813095)
@@ -26,5 +28,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1662598, 0.3813095)
 [node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.68672025, 4.1797624)
 shape = SubResource("CapsuleShape3D_bdipr")
+
+[node name="Crown" parent="." instance=ExtResource("3_qiqb7")]
+transform = Transform3D(0.6, 0, 0, 0, 0.5709631, 0.18439403, 0, -0.18439403, 0.5709631, 0.0110268, 1.8024654, 0.22147751)
+
+[node name="Scepter" parent="." instance=ExtResource("4_bdipr")]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.07636946, -0.06455776, 0, 0.06455776, 0.07636946, 0.6374026, -0.22854355, 0.23889542)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

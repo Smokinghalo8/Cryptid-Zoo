@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnrscuydhhraj"]
+
+[ext_resource type="PackedScene" uid="uid://dl3asgoqqouqy" path="res://Gnome Level/Assets/mushrooms/chanterelle/scene.gltf" id="1_spr5t"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_spr5t")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7qt40ivocetw"]
 
 [ext_resource type="Script" uid="uid://djiq6rgj6bqc8" path="res://Gnome Level/GnomeCharacters/Scripts/Gnome_buff_o.gd" id="1_3p863"]
-[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/scene.gltf" id="2_4kysb"]
+[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/gnome.gltf" id="2_4kysb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jrs0f"]
 radius = 0.8769531

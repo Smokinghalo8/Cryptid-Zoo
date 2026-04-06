@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://biqahtdg3v85"]
 
-[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/scene.gltf" id="1_dqfth"]
+[ext_resource type="PackedScene" uid="uid://cfmxhv3xr25tj" path="res://Gnome Level/GnomeCharacters/gnome.gltf" id="1_dqfth"]
 [ext_resource type="Script" uid="uid://dhmy22k1wpkb7" path="res://Gnome Level/GnomeCharacters/Scripts/gnome_bloo.gd" id="1_ye6xy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ye6xy"]
