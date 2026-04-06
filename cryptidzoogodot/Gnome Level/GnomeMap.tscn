@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=76 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -410,10 +410,66 @@ tracks/2/keys = {
 "values": [Vector3(145.26268, 0.2693634, 39.906727)]
 }
 
+[sub_resource type="Animation" id="Animation_b0lgg"]
+resource_name = "GnomeKingThanksZedAndMothmanShowsUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mothman_GEO:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_f26lj"]
+resource_name = "GnomeKingGrowsZed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
 _data = {
 &"BulletHittingZedAndMothman": SubResource("Animation_ec0i6"),
 &"CameraFloatingAroundZedBeforeAwaking": SubResource("Animation_mgsad"),
+&"GnomeKingGrowsZed": SubResource("Animation_f26lj"),
+&"GnomeKingThanksZedAndMothmanShowsUp": SubResource("Animation_b0lgg"),
 &"MothmanBringingZedToGnomeLevel": SubResource("Animation_i6n8p"),
 &"RESET": SubResource("Animation_2iq4o"),
 &"ZedAndMothmanEXPLODE": SubResource("Animation_uc803"),
@@ -566,7 +622,7 @@ shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
 [node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
-transform = Transform3D(173.20511, 100.00003, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00003, 173.20511, -7.5710345e-06, 130.10245, 112.06569, 19.232584)
+transform = Transform3D(173.20511, 100.00003, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00003, 173.20511, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -574,7 +630,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 131.392, 114.3, 24.46193)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 130.53134, 112.48089, 1.3163711)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
