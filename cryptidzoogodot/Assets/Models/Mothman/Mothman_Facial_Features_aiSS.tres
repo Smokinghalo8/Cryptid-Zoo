@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bx13i1os11ky8"]
+
+[ext_resource type="Texture2D" uid="uid://dx8ouk40f1yfv" path="res://Assets/Models/Mothman/MothmanTextures/Facial Features/Mothman_Exploded_Mothman_Head_aiSS_BaseColor.png" id="1_wk51l"]
+[ext_resource type="Texture2D" uid="uid://b38qxys7tmkpi" path="res://Assets/Models/Mothman/MothmanTextures/Facial Features/Mothman_Exploded_Mothman_Head_aiSS_Metallic.png" id="2_nlgw2"]
+[ext_resource type="Texture2D" uid="uid://tl5ilupntbqg" path="res://Assets/Models/Mothman/MothmanTextures/Facial Features/Mothman_Exploded_Mothman_Head_aiSS_Roughness.png" id="3_67fjm"]
+
+[resource]
+resource_name = "Mothman_Facial_Features_aiSS"
+cull_mode = 2
+albedo_texture = ExtResource("1_wk51l")
+metallic = 1.0
+metallic_texture = ExtResource("2_nlgw2")
+roughness_texture = ExtResource("3_67fjm")
