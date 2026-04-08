@@ -146,11 +146,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.100000024, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"MothMan1"
+}, {
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
 }]
 }
 
@@ -180,6 +186,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.5708, 0), Vector3(0, -0.371668, 0), Vector3(-0.0218623, -1.58498, -0.995328), Vector3(-0.00497954, -0.733588, -0.192237), Vector3(-0.00523599, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_dxftt"]
@@ -217,11 +240,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"MothMan2"
+}, {
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
 }]
 }
 
@@ -251,6 +280,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.0521646, 2.33233, -0.544843), Vector3(-0.0380771, 2.30025, -0.890272), Vector3(-0.050326, 1.6064, -0.148712), Vector3(0, 1.5708, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_qes4m"]
@@ -288,11 +334,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"MothMan3"
+}, {
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
 }]
 }
 
@@ -322,6 +374,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 3.14159, 0), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0.00147641, 0.173099, -0.597654), Vector3(0, 0.593412, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ihdvq"]
@@ -359,11 +428,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.099999994, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"MothMan4"
+}, {
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
 }]
 }
 
@@ -394,6 +469,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.261799, 0), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0.0371001, 0.220741, -1.08233), Vector3(0, -0.329867, 0), Vector3(0, -0.512202, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"mothmanFly"
+}, {
+"args": [],
+"method": &"mothmanIdle"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cuvm8"]

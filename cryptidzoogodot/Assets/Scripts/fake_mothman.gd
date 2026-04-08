@@ -1,5 +1,10 @@
 extends RigidBody3D
 
+
+var wingMat = preload("uid://c3bmtkx415kd7")
+var bodyMat = preload("uid://choyex4eym2uc")
+var furMat = preload("uid://bupl7ucm0q2rd")
+var ffMat = preload("uid://bx13i1os11ky8")
 var naturalMat = preload("uid://c24ja6ql5sqp7");
 var highlightMat = preload("uid://diycl1rchl5ww")
 @onready var animPlayer = get_node("/root/" + get_tree().current_scene.name + "/MothmanAnims")
@@ -10,13 +15,27 @@ var highlightMat = preload("uid://diycl1rchl5ww")
 
 
 func _ready() -> void:
+	$MothmanNew/AnimationPlayer.play("idle")
 	$MothManNoises.play(0)
-	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/LeftWing.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/RightWing.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_001.set_surface_override_material(0, wingMat)
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_002.set_surface_override_material(0, wingMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Antenna_GEO.set_surface_override_material(0, ffMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Arm_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Eye_GEO.set_surface_override_material(0, ffMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_01_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_02_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_03_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_04_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_05_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_06_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_07_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO1.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Head_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Leg_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_001.set_surface_override_material(0, wingMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_002.set_surface_override_material(0, wingMat)
+	
 
 func _process(delta: float) -> void:
 	if Global.animNum <= 1.0:
@@ -24,23 +43,47 @@ func _process(delta: float) -> void:
 		$Small.monitoring = false
 
 func highlight():
-	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, highlightMat);
-	$MothmanFBX/Skeleton3D/LeftWing.set_surface_override_material(0, highlightMat);
-	$MothmanFBX/Skeleton3D/RightWing.set_surface_override_material(0, highlightMat);
-	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, highlightMat);
-	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, highlightMat);
-	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, highlightMat);
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_001.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_002.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Antenna_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Arm_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Eye_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_01_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_02_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_03_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_04_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_05_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_06_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_07_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO1.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Head_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Leg_GEO.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_001.set_surface_override_material(0, highlightMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_002.set_surface_override_material(0, highlightMat)
 	skybeam.visible = true
 	$HighlightTimer.start()
 	
 	
 func _on_highlight_timer_timeout() -> void:
-	$MothmanFBX/Skeleton3D/Body.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/LeftWing.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/RightWing.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/RLeg2.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/LLeg2.set_surface_override_material(0, naturalMat);
-	$MothmanFBX/Skeleton3D/Head.set_surface_override_material(0, naturalMat);
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_001.set_surface_override_material(0, wingMat);
+	$MothmanNew/metarig/Skeleton3D/Bone/Mothman_Lower_Wing_GEO_002.set_surface_override_material(0, wingMat);
+	$MothmanNew/metarig/Skeleton3D/Mothman_Antenna_GEO.set_surface_override_material(0, ffMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Arm_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Eye_GEO.set_surface_override_material(0, ffMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_01_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_02_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_03_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_04_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_05_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_06_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_07_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Fur_08_GEO1.set_surface_override_material(0, furMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Head_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Leg_GEO.set_surface_override_material(0, bodyMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_001.set_surface_override_material(0, wingMat)
+	$MothmanNew/metarig/Skeleton3D/Mothman_Upper_Wing_GEO_002.set_surface_override_material(0, wingMat)
 	skybeam.visible = false
 	
 func interact():
