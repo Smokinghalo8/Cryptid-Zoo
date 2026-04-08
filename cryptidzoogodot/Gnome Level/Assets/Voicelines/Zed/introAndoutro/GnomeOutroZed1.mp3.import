@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e7qa7fmbm8u8"
+path="res://.godot/imported/GnomeOutroZed1.mp3-64fb1ff4f9b3c0dd327f3ee39f091b26.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroZed1.mp3"
+dest_files=["res://.godot/imported/GnomeOutroZed1.mp3-64fb1ff4f9b3c0dd327f3ee39f091b26.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3grad0ify4fc"
+path="res://.godot/imported/GnomeOutroMothmanZed1.mp3-9895d04f016a1e05465ea4a902a23afc.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroMothmanZed1.mp3"
+dest_files=["res://.godot/imported/GnomeOutroMothmanZed1.mp3-9895d04f016a1e05465ea4a902a23afc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
