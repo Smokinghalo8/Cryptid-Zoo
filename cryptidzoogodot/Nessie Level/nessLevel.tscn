@@ -1,8 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://wx81ig6aeqdo"]
+[gd_scene load_steps=52 format=3 uid="uid://wx81ig6aeqdo"]
 
 [ext_resource type="Script" uid="uid://biryocr8gbvqs" path="res://Nessie Level/ness_level.gd" id="1_gdr6b"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_iiie1"]
-[ext_resource type="PackedScene" uid="uid://b3bljnyspp6m4" path="res://Nessie Level/Z_Ness.tscn" id="1_jpks3"]
 [ext_resource type="Resource" uid="uid://da00kmfp4upnr" path="res://Nessie Level/data.hterrain" id="2_5xobx"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_glbf2"]
 [ext_resource type="Texture2D" uid="uid://djxvlq4sydeml" path="res://Nessie Level/sky_20_2k.png" id="3_lrauw"]
@@ -17,6 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://coiwyjwegkuph" path="res://Nessie Level/fish_2.tscn" id="15_40yyd"]
 [ext_resource type="PackedScene" uid="uid://dbl0npfupvg8s" path="res://Nessie Level/bread.tscn" id="15_qqm1c"]
 [ext_resource type="PackedScene" uid="uid://bivt2hu3ycr4h" path="res://Nessie Level/pizza.fbx" id="17_181tc"]
+[ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="17_gxbah"]
+[ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="18_0vtau"]
+[ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="19_as0ij"]
+[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="20_v6yt0"]
+[ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="21_e0jkb"]
+[ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="22_x7gb3"]
+[ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="23_eans8"]
+[ext_resource type="FontFile" uid="uid://bmtr4hnwlwqdp" path="res://Assets/Materials/StartScreenAssets/BungeeFont/BungeeTint-Regular.ttf" id="24_ohy6a"]
+[ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="25_ei65a"]
+[ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="26_82483"]
+[ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="27_7ob0n"]
+[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="28_oc4po"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="29_i8aa5"]
+[ext_resource type="Texture2D" uid="uid://dbxvxcyyu31jl" path="res://Assets/newspaper/NPMothman4.png" id="30_5w8bj"]
+[ext_resource type="Texture2D" uid="uid://cuj577svp8v5j" path="res://Assets/newspaper/NPMothman2.png" id="31_6jjc7"]
+[ext_resource type="Texture2D" uid="uid://bmcdqkhy0vm3c" path="res://Assets/newspaper/NPMothman3.png" id="32_0mkii"]
+[ext_resource type="Texture2D" uid="uid://28hkwd87gj6k" path="res://Assets/newspaper/NPMothman1.png" id="33_ewqm6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iiie1"]
 panorama = ExtResource("3_lrauw")
@@ -99,25 +115,20 @@ tracks/0/path = NodePath("Boat")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -11.942199, -1.2588595, 48.30097)
-tracks/1/type = "value"
+tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Z:process_mode")
+tracks/1/path = NodePath("Ness/nessieblend")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+tracks/1/keys = PackedFloat32Array(0, 1, 0, -7.9970765, -23.383438)
 tracks/2/type = "position_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Ness/nessieblend")
+tracks/2/path = NodePath("Z2")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0, -7.9970765, -23.383438)
+tracks/2/keys = PackedFloat32Array(0, 1, -20.496925, 0.11759806, 49.528862)
 
 [sub_resource type="Animation" id="Animation_g5q0w"]
 resource_name = "boat_start"
@@ -136,32 +147,20 @@ tracks/1/path = NodePath("Boat")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1.6333333, 1, 0, 0, 0, 1, 2.6666667, 1, 0, -0.22547819, 0, 0.97424823, 5.133333, 1, 0, -0.0830517, 0, 0.99654526, 7.0416665, 1, 0, 0.07476117, 0, 0.9972015, 7.853333, 1, 0, 0.07476117, 0, 0.9972015)
-tracks/2/type = "value"
+tracks/2/type = "position_3d"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Z:process_mode")
+tracks/2/path = NodePath("Ness/nessieblend")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 11.933333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
+tracks/2/keys = PackedFloat32Array(0, 1, 0, -2.70092, -39.34516, 1.6333333, 1, 0, -2.70092, -15.175045, 2.6, 1, 6.205271, -2.70092, -5.878927, 3.1666667, 1, -17.425795, -2.70092, 15.863737, 5.1666665, 1, -17.425795, -2.70092, 1.5095654, 6.9666667, 1, -17.425795, -2.70092, 1.5095654, 7.9333334, 1, -2.4983282, -2.70092, 1.5095654, 9.066667, 1, -2.4983282, -2.70092, -7.170412, 10.933333, 1, 6.3069983, -3.8352547, -7.170412, 11.533334, 1, 6.3069983, -8.136393, -7.170412, 11.933333, 1, 6.3069983, -30.380775, -7.170412)
 tracks/3/type = "position_3d"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Z")
+tracks/3/path = NodePath("Z2")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -11.942199, 0.26813674, 49.083027, 1.7, 1, -11.942199, 0.26813674, 41.387268, 3.4666667, 1, -5.996979, 0.26813674, 33.891205, 5.133333, 1, 1.1240913, 0.26813674, 21.142765, 7.0333333, 1, 1.6034441, 0.26813674, 6.6835127, 7.6666665, 1, 1.6034441, 0.26813674, 6.6835127, 8.366667, 1, 4.2736206, 4.280196, 6.6835136, 10.5, 1, 6.9059544, 6.9370584, 6.6835136, 11.433333, 1, 20.982473, 0.57766104, 3.835958)
-tracks/4/type = "position_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Ness/nessieblend")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0, -2.70092, -39.34516, 1.6333333, 1, 0, -2.70092, -15.175045, 2.6, 1, 6.205271, -2.70092, -5.878927, 3.1666667, 1, -17.425795, -2.70092, 15.863737, 5.1666665, 1, -17.425795, -2.70092, 1.5095654, 6.9666667, 1, -17.425795, -2.70092, 1.5095654, 7.9333334, 1, -2.4983282, -2.70092, 1.5095654, 9.066667, 1, -2.4983282, -2.70092, -7.170412, 10.933333, 1, 6.3069983, -3.8352547, -7.170412, 11.533334, 1, 6.3069983, -8.136393, -7.170412, 11.933333, 1, 6.3069983, -30.380775, -7.170412)
+tracks/3/keys = PackedFloat32Array(0.033333335, 1, -11.878318, 0.11759806, 49.528862, 1.6333333, 1, -11.878318, 0.11759806, 41.947453, 2.7, 1, -8.692888, 0.11759806, 37.434246, 3.2666667, 1, -6.718726, 0.11759806, 35.043537, 5.133333, 1, 1.4672568, 0.11759806, 20.305758, 6.9333334, 1, 1.4672565, 0.11759806, 7.2299013, 9.166667, 1, 8.736368, 7.5269275, 7.2299004, 12, 1, 23.337175, 0.58883727, 3.0564716)
 
 [sub_resource type="Animation" id="Animation_8mi7u"]
 resource_name = "ness_idle"
@@ -274,11 +273,6 @@ lure_1_anim = "ness_lure1anm"
 lure_2_anim = "ness_lure2anm"
 lure_3_anim = "ness_lure3anm"
 boat_anm = "boat_start"
-
-[node name="Z" parent="." instance=ExtResource("1_jpks3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.853882, 0.26813674, 49.083027)
-collision_layer = 9
-collision_mask = 9
 
 [node name="Level" type="Node" parent="."]
 
@@ -535,4 +529,236 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.547927, 0, 49.621037)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1933346, 0.62786543, -0.9635353)
 shape = SubResource("BoxShape3D_o0t28")
 
+[node name="Z2" parent="." instance=ExtResource("17_gxbah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.496925, 0.11759806, 49.528862)
+collision_layer = 9
+collision_mask = 9
+
+[node name="Ui" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 101
+
+[node name="SprintBar" type="TextureProgressBar" parent="Ui"]
+visible = false
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 117.0
+offset_bottom = 873.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("18_0vtau")
+texture_progress = ExtResource("19_as0ij")
+
+[node name="WednigoHead" type="Sprite2D" parent="Ui"]
+position = Vector2(84, 100)
+scale = Vector2(0.391892, 0.362745)
+texture = ExtResource("20_v6yt0")
+
+[node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
+visible = false
+offset_left = -153.103
+offset_top = -96.4865
+offset_right = 145.897
+offset_bottom = 203.513
+max_value = 5.0
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("21_e0jkb")
+texture_progress = ExtResource("22_x7gb3")
+
+[node name="Pause Menu" type="Control" parent="Ui"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_eans8")
+
+[node name="ColorRect" type="ColorRect" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="GameTitle" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 45.0
+offset_right = 348.0
+offset_bottom = 105.0
+scale = Vector2(1.15674, 1.8462)
+theme_override_fonts/font = ExtResource("24_ohy6a")
+theme_override_font_sizes/font_size = 94
+text = "Cryptid Zoo"
+
+[node name="VolumeSlider" type="HSlider" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 357.0
+offset_top = 825.0
+offset_right = 1081.0
+offset_bottom = 1015.0
+max_value = 1.0
+step = 0.05
+
+[node name="SoundLabel" type="Label" parent="Ui/Pause Menu"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 893.0
+offset_right = 323.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 42
+text = "Master Sound"
+
+[node name="backButton" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 47.0
+offset_top = 992.0
+offset_right = 204.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Resume"
+
+[node name="mainMenu" type="Button" parent="Ui/Pause Menu"]
+process_mode = 3
+layout_mode = 0
+offset_left = 238.0
+offset_top = 992.0
+offset_right = 452.0
+offset_bottom = 1047.0
+theme_override_font_sizes/font_size = 34
+text = "Main Menu"
+
+[node name="ButtonPressNoise" type="AudioStreamPlayer" parent="Ui/Pause Menu"]
+stream = ExtResource("25_ei65a")
+volume_db = -15.0
+
+[node name="intText" type="Label" parent="Ui"]
+visible = false
+offset_left = 792.0
+offset_top = 722.0
+offset_right = 1145.0
+offset_bottom = 789.0
+theme_override_font_sizes/font_size = 48
+text = "Press E to interact"
+
+[node name="CutSceneRect" type="ColorRect" parent="Ui"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlushControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
+theme_override_fonts/font = ExtResource("26_82483")
+theme_override_font_sizes/font_size = 152
+text = "0/5"
+script = ExtResource("27_7ob0n")
+
+[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
+position = Vector2(1024, 165.40625)
+scale = Vector2(0.44570318, 0.45308372)
+texture = ExtResource("28_oc4po")
+
+[node name="Minimap" parent="Ui" instance=ExtResource("29_i8aa5")]
+offset_left = 1629.0
+offset_top = 2.0
+offset_right = 1929.0
+offset_bottom = 302.0
+target = NodePath("../../Z2")
+camera_distance = 40
+objective_path = NodePath("../../Ness/nessieblend")
+
+[node name="Newspapers" type="Control" parent="Ui"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NpMothman1" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("30_5w8bj")
+
+[node name="NpMothman1Button" type="Button" parent="Ui/Newspapers/NpMothman1"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman2" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("31_6jjc7")
+
+[node name="NpMothman2Button" type="Button" parent="Ui/Newspapers/NpMothman2"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman3" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.7920371)
+texture = ExtResource("32_0mkii")
+
+[node name="NpMothman3Button" type="Button" parent="Ui/Newspapers/NpMothman3"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
+[node name="NpMothman4" type="Sprite2D" parent="Ui/Newspapers"]
+visible = false
+position = Vector2(961, 536.99994)
+scale = Vector2(0.78113425, 0.79203725)
+texture = ExtResource("33_ewqm6")
+
+[node name="NpMothman4Button" type="Button" parent="Ui/Newspapers/NpMothman4"]
+offset_left = 448.06638
+offset_top = -672.9482
+offset_right = 478.06638
+offset_bottom = -616.9482
+scale = Vector2(3, 1.932)
+theme_override_colors/font_color = Color(0.99966663, 0.04368855, 0.024199178, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+text = "X"
+
 [connection signal="body_entered" from="BoatStartArea3D" to="." method="_on_boat_start_area_3d_body_entered"]
+[connection signal="value_changed" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]

@@ -91,10 +91,6 @@ func _show_children(area: Area3D):
 			child.show()
 
 
-
-
-
-
 func _on_boat_start_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
 		start_boat_anm()

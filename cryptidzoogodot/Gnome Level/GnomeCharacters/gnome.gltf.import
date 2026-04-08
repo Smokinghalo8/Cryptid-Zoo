@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cfmxhv3xr25tj"
-path="res://.godot/imported/gnome.gltf-fd6747f1982433d6ad2bf0f10c57137d.scn"
+valid=false
 
 [deps]
 
 source_file="res://Gnome Level/GnomeCharacters/gnome.gltf"
-dest_files=["res://.godot/imported/gnome.gltf-fd6747f1982433d6ad2bf0f10c57137d.scn"]
 
 [params]
 

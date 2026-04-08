@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d03ktk7ccpfga"
-path="res://.godot/imported/crown.gltf-ffed34af193fb6a1283a0fd80906108d.scn"
+valid=false
 
 [deps]
 
 source_file="res://Gnome Level/GnomeCharacters/crown.gltf"
-dest_files=["res://.godot/imported/crown.gltf-ffed34af193fb6a1283a0fd80906108d.scn"]
 
 [params]
 
