@@ -152,8 +152,7 @@ func toggleAnimation(animationNumber) -> int:
 		#This should be end game cutscene when GnomeKing grows Zed
 		Cam8.make_current()
 		animation_player.play("GnomeKingGrowsZed")
-		await animation_player.animation_finished
-		
+		await DialogueManager.show_dialogue_balloon(dialogue, "mazeGnomeEndScene1").finished
 		
 		#at the very very end, give the UI back
 		sprintBar.visible = true
@@ -161,7 +160,8 @@ func toggleAnimation(animationNumber) -> int:
 		#Cutscene where Mothman found Zed and comes to pick him and Gnome King up
 		Cam8.make_current()
 		animation_player.play("GnomeKingThanksZedAndMothmanShowsUp")
-		await animation_player.animation_finished
+		await DialogueManager.show_dialogue_balloon(dialogue, "mazeGnomeEndScene2").finished
+
 		pass
 		
 	return 3

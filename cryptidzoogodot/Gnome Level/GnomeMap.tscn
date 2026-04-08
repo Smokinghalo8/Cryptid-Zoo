@@ -450,6 +450,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector3(114.95887, 0.3991499, 129.23508)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OverView6:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(155.22209, 8.881181, 33.512836)]
+}
 
 [sub_resource type="Animation" id="Animation_uc803"]
 resource_name = "ZedAndMothmanEXPLODE"
@@ -592,10 +604,10 @@ tracks/0/path = NodePath("OverView6:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(155.22209, 8.881181, 33.512836)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -788,7 +800,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 133.25609, 114.36558, 0.552722)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 145.26268, 0.2693634, 39.906727)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
