@@ -49,16 +49,16 @@
 
 ~ rouletteGnomeGiveQuest
 #add both voicelines DO BLOOGARTH
-[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/temp.mp3, next=auto] Gahh! Why do you look like that?![#voice=uid://dpegb8cjk0kly]
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/Bloo1.mp3, next=auto] Gahh! Why do you look like that?! [#voice=uid://cqxg5lm0arn5h]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline5.mp3, next=auto] Rude. I’m here on behalf of the Gnome King, you asked for his help with something?[#voice=uid://boodjjuhu6rgs]
-[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/temp.mp3, next=auto] ...well yes I did... but do you think you can really help?[#voice=uid://dpegb8cjk0kly]
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/Bloo2.mp3, next=auto] ...well yes I did... but do you think you can really help? [#voice=uid://cbcukhw1dugyw]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline6.mp3, next=auto] Come on, I can at least try, what do you need help with?[#voice=uid://cx5vhgvuh332n]
-[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/temp.mp3, next=auto] so... I might've gotten my Food mushrooms with my Fun mushrooms, and I need a little help finding the Food ones, I’m starving...[#voice=uid://dpegb8cjk0kly]
+[color=blue]Bloogargth[/color]: [speed=0.4, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/Bloo3.mp3, next=auto] so... I might've gotten my Food mushrooms mixed with my Fun mushrooms, and I need a little help finding the Food ones, I’m starving... Can you help? [#voice=uid://kqulejl7hgi]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline7.mp3, next=auto] sigh... I really don’t have another choice...[#voice=uid://bp7doumbopn4o]
 => END 
 
 ~ rouletteGnomeEndQuest
-[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/temp.mp3, next=auto] Wow! You really did it! Thank you so much! I can finally eat my fill without seeing waves everywhere![#voice=uid://dpegb8cjk0kly]
+[color=blue]Bloogargth[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Bloogargth/EndBloo1.mp3, next=auto] Wow! You really did it! Thank you so much! I can finally eat my fill without seeing waves everywhere! [#voice=uid://bgmds4lehrgyw]
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/Zline8.mp3, next=auto] yeah, no problem...[#voice=uid://c6ldd6uo1ufi3]
 => END 
 
@@ -82,17 +82,16 @@
 		
 
 ~ mazeGnomeEndScene1
-TODO add in the KING OF GNOME LINES
 [color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroZed1.mp3, next=auto]There you go, can you maybe... change me back to my normal size..?[#voice=uid://e7qa7fmbm8u8]
 [color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/NewGnomeKing1.mp3, next=auto]...I guess, thanks for helping Zed, you don’t suppose.... There's a place you know of, that me and everyone might be able to migrate to?[#voice=uid://cw8mij5ml88p7]
 [color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/NewGnomeKing2.mp3, next=auto]This place feels... Barren, too barren for my liking...[#voice=uid://cqtbw7gjofsql]
-[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroZed2.mp3 next=auto]Well, you’re never gonna believe this, but-[#voice=uid://k8kgvwjybkjw]
+[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroZed2.mp3 next=auto]Well, you’re never gonna believe this, but-[#voice=uid://bf7gudf4keiyn]
 [color=red]The King Of Gnomes[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Gnomeking/NewGnomeKing3.mp3, next=auto]Hmm... not having a whole task board to do everyday does sound nice... I’m in![#voice=uid://cw2p2cbxowfaa]
 => END 
 
 ~ mazeGnomeEndScene2
 [color=#8E8E8E]Mothman[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Mothman/mothmanOutro1.mp3, next=auto]Zed! There you are, I’ve been looking for you all day! [#voice=uid://0s6ee87jk371]
-[color=#d950ff]Zed[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroMothmanZed1.mp3 next=auto]A whole bunch of stuff happened, but we’re gonna bring this little guy home with us, okay?[#voice=uid://b3grad0ify4fc]
+[color=#d950ff]Zed[/color]: [speed=0.7, voice=res://Gnome Level/Assets/Voicelines/Zed/introAndoutro/GnomeOutroMothmanZed1.mp3 next=auto]A whole bunch of stuff happened, but we’re gonna bring this little guy home with us, okay?[#voice=uid://b3grad0ify4fc]
 [color=#8E8E8E]Mothman[/color]: [speed=0.3, voice=res://Gnome Level/Assets/Voicelines/Mothman/mothmanOutro2.mp3, next=auto]I hesitate... but okay[#voice=uid://dyjsh0uxu6g24]
 => END
  

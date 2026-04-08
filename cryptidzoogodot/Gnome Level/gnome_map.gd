@@ -45,7 +45,7 @@ func _ready() -> void:
 	bloogaragth.visible = true
 	explostion.visible = false
 	#TODO movew this into the Shrooms scene, so we can enable these guys visabilty and enable/disable them for being high on shrroms
-	FunniFlowerNode.visible = false
+	#FunniFlowerNode.visible = false
 	#TODO fix player being able to move during this cut scene? - is this still an issue??
 
 	await toggleAnimation(1)
