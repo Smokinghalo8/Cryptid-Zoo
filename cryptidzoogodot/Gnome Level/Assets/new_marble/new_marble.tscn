@@ -40,6 +40,7 @@ shape = SubResource("SphereShape3D_r1srr")
 
 [node name="PickUpText" type="Label3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.007812679, 0.7183743, 0)
+billboard = 1
 text = "Press 'E' to pick up!"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

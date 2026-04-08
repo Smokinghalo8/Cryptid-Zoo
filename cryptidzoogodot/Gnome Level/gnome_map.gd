@@ -14,6 +14,7 @@ var isAnimationDone = false
 @onready var explostion: Sprite3D = $ExplosionGif
 @onready var ENTIRE_UI_LAYER: CanvasLayer = $Ui
 @onready var sprintBar: TextureProgressBar = $Ui/SprintBar
+@onready var FunniFlowerNode: Node3D = $"HTerrain/@Node3D@75207"
 
 
 
@@ -26,6 +27,7 @@ var isAnimationDone = false
 @onready var Cam5: Camera3D = $OverView5
 @onready var Cam6: Camera3D = $OverView6
 @onready var Cam7: Camera3D = $OverView7
+@onready var Cam8: Camera3D = $OverView8
 
 
 
@@ -42,7 +44,9 @@ var dialogueLines
 func _ready() -> void:
 	bloogaragth.visible = true
 	explostion.visible = false
-	#TODO fix player being able to move during this cut scene?
+	#TODO movew this into the Shrooms scene, so we can enable these guys visabilty and enable/disable them for being high on shrroms
+	FunniFlowerNode.visible = false
+	#TODO fix player being able to move during this cut scene? - is this still an issue??
 
 	await toggleAnimation(1)
 	await toggleAnimation(2)
@@ -144,8 +148,22 @@ func toggleAnimation(animationNumber) -> int:
 		Cam6.make_current()
 		animation_player.play("ZedShrinking")
 		await animation_player.animation_finished
+	elif(animationNum == 8):
+		#This should be end game cutscene when GnomeKing grows Zed
+		Cam8.make_current()
+		animation_player.play("GnomeKingGrowsZed")
+		await animation_player.animation_finished
+		
+		
 		#at the very very end, give the UI back
 		sprintBar.visible = true
+	elif(animationNum ==9):
+		#Cutscene where Mothman found Zed and comes to pick him and Gnome King up
+		Cam8.make_current()
+		animation_player.play("GnomeKingThanksZedAndMothmanShowsUp")
+		await animation_player.animation_finished
+		pass
+		
 	return 3
 	
 func togglePause():
