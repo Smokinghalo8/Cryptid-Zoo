@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://em8vodqswlmi"
-path="res://.godot/imported/totemPole.gltf-c95ffd58491076a432ea6ea4c31800ab.scn"
+valid=false
 
 [deps]
 
 source_file="res://Wendigo Level/assets/wooden_totempole/totemPole.gltf"
-dest_files=["res://.godot/imported/totemPole.gltf-c95ffd58491076a432ea6ea4c31800ab.scn"]
 
 [params]
 
