@@ -100,6 +100,170 @@ tracks/1/keys = {
 "values": [Vector3(144.47765, 2.7586894, 39.906727), Vector3(144.47765, 12.575111, 39.906727)]
 }
 
+[sub_resource type="Animation" id="Animation_f26lj"]
+resource_name = "GnomeKingGrowsZed"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(5, 5, 5), Vector3(10, 10, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(107.883, 1, 126.201805), Vector3(107.883, 4.852848, 126.201805), Vector3(107.883, 9.707165, 126.201805)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.8325957, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OverView8:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(109.47776, 4.3502555, 133.37883), Vector3(109.287766, 11.537523, 143.49239)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OverView8:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.48780206, -0.5235988, 0), Vector3(-0.22600268, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b0lgg"]
+resource_name = "GnomeKingThanksZedAndMothmanShowsUp"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Z:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(108, 10, 126.202), Vector3(108, 10, 126.202), Vector3(108, 10, 121.371086)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mothman_GEO:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(66.15952, 1, 161.28654), Vector3(98.61133, 1, 152.1832)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Z:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.8325957, 0), Vector3(0, -1.8325957, 0), Vector3(0, -3.1415927, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mothman_GEO:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.8723892, 0), Vector3(0, 2.8797932, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GnomeKING:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(114.95887, 0.3991499, 129.23508), Vector3(114.95887, 0.3991499, 129.23508)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GnomeKING:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(-0.24240333, -0.34164596, 0.066303164)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("OverView8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.1666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(109, 11.538, 143), Vector3(121.613815, 17.146545, 142.70427)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OverView8:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.22514747, 0, 0), Vector3(-0.54995316, 1.2114156, -2.6796867e-08)]
+}
+
 [sub_resource type="Animation" id="Animation_i6n8p"]
 resource_name = "MothmanBringingZedToGnomeLevel"
 length = 8.0
@@ -237,6 +401,54 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(1.5707964, 0.52359885, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("OverView8:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(109.287766, 11.537523, 143.49239)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("OverView8:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.22600268, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("GnomeKING:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("GnomeKING:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(114.95887, 0.3991499, 129.23508)]
 }
 
 [sub_resource type="Animation" id="Animation_uc803"]
@@ -410,60 +622,6 @@ tracks/2/keys = {
 "values": [Vector3(145.26268, 0.2693634, 39.906727)]
 }
 
-[sub_resource type="Animation" id="Animation_b0lgg"]
-resource_name = "GnomeKingThanksZedAndMothmanShowsUp"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Z:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mothman_GEO:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_f26lj"]
-resource_name = "GnomeKingGrowsZed"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Z:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Z:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
 _data = {
 &"BulletHittingZedAndMothman": SubResource("Animation_ec0i6"),
@@ -622,7 +780,7 @@ shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
 [node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
-transform = Transform3D(173.20511, 100.00003, -4.3711393e-06, 0, -8.742279e-06, -200, -100.00003, 173.20511, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
+transform = Transform3D(173.20512, 100.000046, -4.3711393e-06, 0, -8.74228e-06, -200, -100.000046, 173.20512, -7.5710345e-06, 130.10245, 112.06569, -5.9228263)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -630,7 +788,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 130.53134, 112.48089, 1.3163711)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 133.25609, 114.36558, 0.552722)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
@@ -778,7 +936,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.7961, 3.8146973e-06, 31.27409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.79117, 3.8146973e-06, 26.93179)
 dialogue = ExtResource("17_i627o")
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
@@ -813,7 +971,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.17012, 0.41318035, 77.149
 psychedelic = 1.0
 
 [node name="shroom2" parent="." instance=ExtResource("38_hvxpa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.74156, 0.8201132, 74.07087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.24156, 0.8201132, 75.87071)
 
 [node name="quest_hedge" parent="." instance=ExtResource("26_bwcok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.00264, -1.277019, 160.32022)
@@ -825,7 +983,7 @@ transform = Transform3D(1, 0, 0, 0, 1.1581838, 0, 0, 0, 1, 176.23727, 0.8496541,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.91413, 10.606115, 86.813576)
 
 [node name="GnomeKING" parent="." instance=ExtResource("27_kkme5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 114.95887, 0.3991499, 129.23508)
+transform = Transform3D(-4.371139e-08, 0, -1.0000001, 0, 1, 0, 1, 0, -4.3711392e-08, 114.95887, 0.3991499, 129.23508)
 dialogue = ExtResource("17_i627o")
 
 [node name="bloogaragth" parent="." instance=ExtResource("28_pxd54")]
@@ -859,6 +1017,9 @@ transform = Transform3D(-0.5478407, -0.6322574, 0.54783314, 0, 0.6548464, 0.7557
 
 [node name="OverView7" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.12886, 116.17247, 48.43111)
+
+[node name="OverView8" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9745699, 0.22408366, 0, -0.22408366, 0.9745699, 109.287766, 11.537523, 143.49239)
 
 [node name="TheUnnamedOne" parent="." instance=ExtResource("47_2iq4o")]
 transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.9976902, -0.05836704, -0.8592458, 0, 0.511563, 259.0204, 52.042587, 114.053055)
