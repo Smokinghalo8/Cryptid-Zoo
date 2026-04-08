@@ -1,20 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://drjilaesiq5nx"]
 
 [ext_resource type="Script" uid="uid://gjetv1h52mau" path="res://Assets/Scripts/fake_mothman.gd" id="1_3moqr"]
-[ext_resource type="PackedScene" uid="uid://cbw6jv845veio" path="res://Assets/Models/Mothman/MothmanFBX.fbx" id="2_uj7hj"]
+[ext_resource type="PackedScene" uid="uid://ogcguvt6l42m" path="res://Assets/Models/Mothman/mothman.tscn" id="3_3moqr"]
 [ext_resource type="AudioStream" uid="uid://fnaf25a1atlt" path="res://Assets/SFX/2025-04-10 11-41-52.mp3" id="3_75a1b"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66xu5"]
 height = 3.21092
+radius = 0.78515625
 
 [node name="FakeMothman" type="RigidBody3D" groups=["Living"]]
 script = ExtResource("1_3moqr")
 
-[node name="MothmanFBX" parent="." instance=ExtResource("2_uj7hj")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.10962, -0.288567, 0.280424)
-
 [node name="FakemothmanCol" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46045, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1921637, 1.46045, 0)
 shape = SubResource("CylinderShape3D_66xu5")
 
 [node name="HighlightTimer" type="Timer" parent="."]
@@ -37,5 +35,8 @@ spot_range = 1000.0
 spot_attenuation = 0.0
 spot_angle = 10.0
 spot_angle_attenuation = 1.2831112e-05
+
+[node name="MothmanNew" parent="." instance=ExtResource("3_3moqr")]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0, 0)
 
 [connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]

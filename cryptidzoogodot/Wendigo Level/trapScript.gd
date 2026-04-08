@@ -31,5 +31,3 @@ func reset():
 	$Glow.visible = true
 	interactable = true
 	$InteractCol.disabled = false
-	
-	

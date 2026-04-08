@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwqd117ianhrh"]
+[gd_scene load_steps=7 format=3 uid="uid://cwqd117ianhrh"]
 
 [ext_resource type="Script" uid="uid://b1w68g867f652" path="res://globalScenes/characterController.gd" id="1_6mksa"]
-[ext_resource type="Environment" uid="uid://cco3vk52mcosw" path="res://Assets/environmentForCamera.tres" id="2_0nw42"]
 [ext_resource type="Script" uid="uid://6qdlcyk8jlel" path="res://globalScenes/ControllerCamera.gd" id="2_1nxij"]
 [ext_resource type="ArrayMesh" uid="uid://d4m8yv7axmqxy" path="res://Assets/Models/Player/player.obj" id="2_2mclm"]
 [ext_resource type="Script" uid="uid://b3b22gjxryt33" path="res://globalScenes/ray_cast_3d.gd" id="3_wpofk"]
-[ext_resource type="PackedScene" uid="uid://dkv13pmtdbk5w" path="res://Assets/Models/Zed/zed.tscn" id="6_k2acy"]
+[ext_resource type="PackedScene" uid="uid://ebukh8bu3n7e" path="res://Assets/Models/Zed/zed_anims.tscn" id="6_k2acy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5e41"]
 radius = 0.333572
@@ -17,8 +16,7 @@ floor_max_angle = 1.0472
 script = ExtResource("1_6mksa")
 
 [node name="Head" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05431056, 0.6367415, -0.39504075)
-environment = ExtResource("2_0nw42")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05431056, 0.6367415, -0.09159762)
 script = ExtResource("2_1nxij")
 
 [node name="Loooky" type="RayCast3D" parent="Head" node_paths=PackedStringArray("inspect_anchor")]
@@ -27,7 +25,7 @@ script = ExtResource("3_wpofk")
 inspect_anchor = NodePath("../InspectAnchor")
 
 [node name="FlashLight" type="SpotLight3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 0.992399, -0.123065, 0, 0.123065, 0.992399, 0.186683, -0.556482, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9923986, -0.12306496, 0, 0.12306496, 0.9923986, 0.186683, -0.55648196, -0.3715688)
 visible = false
 light_energy = 8.415
 light_volumetric_fog_energy = 1.5
@@ -47,7 +45,7 @@ visible = false
 mesh = ExtResource("2_2mclm")
 
 [node name="ZedAnims" parent="ZColl" instance=ExtResource("6_k2acy")]
-transform = Transform3D(-20, 0, -3.019916e-06, 0, 20, 0, 3.019916e-06, 0, -20, 0, -0.89880633, 0)
+transform = Transform3D(-20, 0, 1.7484556e-06, 0, 20, 0, -1.7484556e-06, 0, -20, 0.0025590584, -0.9101498, 0.022732012)
 
 [node name="SenseTimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfmxhv3xr25tj"
-path="res://.godot/imported/scene.gltf-5593f20d4e3e93ec20d21e6cc776307f.scn"
+uid="uid://cko1bqodwine3"
+path="res://.godot/imported/scene.gltf-2771ff3a85113e6c40beb241df12d62d.scn"
 
 [deps]
 
-source_file="res://Gnome Level/GnomeCharacters/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-5593f20d4e3e93ec20d21e6cc776307f.scn"]
+source_file="res://Zoo_level/Assets/trees/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-2771ff3a85113e6c40beb241df12d62d.scn"]
 
 [params]
 

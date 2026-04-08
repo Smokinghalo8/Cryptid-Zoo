@@ -8,9 +8,12 @@ var flyBack = true
 var cutScene = false
 var talking = false
 @onready var objectiveArrow = $"Ui/Minimap/SubViewportContainer/objective_arrow"
+@onready var player = $"Z"
+@onready var mothmanAnimPlayer = $FakeMothman/MothmanNew/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.wendyPower = true
 	#SceneTransitionAnimation.play("fade_out")
 	objectiveArrow.visible = false
 	scaryNoiseFirstTime = false
@@ -19,8 +22,8 @@ func _ready() -> void:
 	$Ui/PlushControl.visible = false
 	$CutScene/CutSceneAnims.play("FadeIn")
 	await $CutScene/CutSceneAnims.animation_finished
-	if dialogue_resource:
-		await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
+#	if dialogue_resource:
+		#await DialogueManager.show_dialogue_balloon(dialogue_resource, "OldmanStart").finished
 	scaryNoiseFirstTime = true
 	cutScene = true
 	
@@ -113,20 +116,31 @@ func _on_big_body_entered(body: Node3D) -> void:
 func _on_cut_scene_collider_2_body_entered(body: Node3D) -> void:
 	if cutScene == true:
 		if Global.animNum == 6:
+			player.turnOnHead()
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await $CutScene/CutSceneAnims.animation_finished
+			Global.wendyPower = false
 			get_tree().quit()
 
 
 func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 	if cutScene == true: 
 		if Global.animNum == 6:
+			player.turnOnHead()
 			$CutScene/CutSceneCam.current = true
 			$CutScene/CutSceneAnims.play("mothMan")
 			await($CutScene/CutSceneAnims.animation_finished)
+			Global.wendyPower = false
 			get_tree().quit()
 
+func mothmanFly():
+	mothmanAnimPlayer.play("TakeOff")
+	await mothmanAnimPlayer.animation_finished
+	mothmanAnimPlayer.play("Fly")
+
+func mothmanIdle():
+	mothmanAnimPlayer.play("idle")
 
 func MothMan1():
 		await DialogueManager.show_dialogue_balloon(dialogue_resource, "GoAway").finished

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1fhsj6q0cj8d"]
+
+[ext_resource type="PackedScene" uid="uid://ifkkttsl0de8" path="res://Zoo_level/campfire.gltf" id="1_0kar5"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_0kar5")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02166766, 2.4010267, -0.32749128)
+light_color = Color(1, 0.784314, 0.541176, 1)
+light_energy = 6.0
+omni_range = 26.908392

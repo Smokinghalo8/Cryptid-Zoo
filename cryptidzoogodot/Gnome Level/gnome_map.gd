@@ -42,6 +42,7 @@ var dialogueLines
 
 
 func _ready() -> void:
+	Global.mothmanPower = true
 	bloogaragth.visible = true
 	explostion.visible = false
 	#TODO movew this into the Shrooms scene, so we can enable these guys visabilty and enable/disable them for being high on shrroms

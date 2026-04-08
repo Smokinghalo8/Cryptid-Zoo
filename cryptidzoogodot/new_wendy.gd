@@ -30,13 +30,16 @@ var lastPos
 var hasSeen: bool
 var wanderTimer : float = 60.0
 
+#Other Variables
+var isJumpscaring = false
 
 
 
 func _ready() -> void:
+	print(player)
 	noiseMade = false
 	isInSoundDetector = false
-
+	$"WendyNoises".play(0.0)
 
 func _physics_process(delta):
 	
@@ -66,6 +69,7 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direction * speed, delta * 10)
 	velocity += get_gravity() * delta
 	if Global.frozen == false:
+		$wendigoWalk/AnimationPlayer.play("Armature|mixamo_com|Layer0", 0)
 		move_and_slide()
 
 
@@ -134,6 +138,7 @@ func _on_actual_trap_2_body_entered(body: Node3D) -> void:
 				wendigoPlayer.play("wendTrap4")
 				await wendigoPlayer.animation_finished
 				activated2 = false
+				player.turnOnHead()
 				$CutSceneCam.current = true
 				Global.frozen = true
 				levelPlayer.play("FinalCutscene")
@@ -213,6 +218,7 @@ func _on_trap_4_activated() -> void:
 	activated4 = true
 
 func restart():
+	$"WendyNoises".play(0.0)
 	minimap.objective = $"../Trap5"
 	$"../LevelAnimations".play("RESET")
 	$"..".restart()
@@ -227,6 +233,7 @@ func restart():
 	Global.trapCounter = 1
 	
 func restartCheckpoint():
+	$"WendyNoises".play(0.0)
 	$"../LevelAnimations".play("reset_checkpoint")
 	Global.trapCounter = 5
 	isChasing = false
@@ -244,7 +251,20 @@ func restartCheckpoint():
 
 func _on_jump_scaries_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
-		if Global.checkpoint == false:
-			restart()
-		if Global.checkpoint == true:
-			restartCheckpoint()
+		if isJumpscaring == false:
+			if Global.checkpoint == false:
+				isJumpscaring = true
+				$"WendyNoises".stop()
+				$"WendyJumpscareNoises".play(0.0)
+				wendigoPlayer.play("jumpScare")
+				await wendigoPlayer.animation_finished
+				isJumpscaring = false
+				restart()
+			if Global.checkpoint == true:
+				isJumpscaring = true
+				$"WendyNoises".stop()
+				$"WendyJumpscareNoises".play(0.0)
+				wendigoPlayer.play("jumpScare")
+				await wendigoPlayer.animation_finished
+				isJumpscaring = false
+				restartCheckpoint()

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://c4dbp2ibs0d2e"]
+
+[ext_resource type="Texture2D" uid="uid://0qwrojp4fayn" path="res://Zoo_level/EnclosureTextures/textures/oak_veneer_01_diff_1k.jpg" id="1_7tv1u"]
+[ext_resource type="Texture2D" uid="uid://cdxsx5avt2mwh" path="res://Zoo_level/EnclosureTextures/textures/oak_veneer_01_arm_1k.jpg" id="2_xx5lx"]
+
+[resource]
+resource_name = "oak_veneer_01"
+cull_mode = 2
+albedo_texture = ExtResource("1_7tv1u")
+metallic_texture = ExtResource("2_xx5lx")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_xx5lx")
+roughness_texture_channel = 1
