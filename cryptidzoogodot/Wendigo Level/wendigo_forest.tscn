@@ -52,7 +52,7 @@
 [ext_resource type="Script" uid="uid://c0kj7adxddch3" path="res://Wendigo Level/stop_from_dying.gd" id="48_sy734"]
 [ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="49_ixmxt"]
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="50_jimfv"]
-[ext_resource type="PackedScene" uid="uid://bm6bobi4u2cgg" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
+[ext_resource type="PackedScene" uid="uid://oti4sa0npsal" path="res://Wendigo Level/assets/bearTrap.tscn" id="51_rfgrx"]
 
 [sub_resource type="Resource" id="Resource_1mri4"]
 script = ExtResource("2_05m3n")
@@ -10047,7 +10047,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.22216797, -0.126369, 1.7068634)
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686129, -0.03890353, 0.24551046, -0.040131792, 0.9991946, 9.297402e-09, -0.24531274, -0.009852773, -0.9693936, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.03890353, 0.24551044, -0.040131792, 0.9991946, 9.297401e-09, -0.24531274, -0.009852773, -0.96939355, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927

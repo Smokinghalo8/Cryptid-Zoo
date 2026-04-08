@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://cjxwb1jsf0v3c"]
+[gd_scene load_steps=138 format=3 uid="uid://cjxwb1jsf0v3c"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ln3a3"]
 [ext_resource type="Resource" uid="uid://d0ls5pv1ieo1b" path="res://Zoo_level/terrainForZoo/data.hterrain" id="2_ruine"]
@@ -1161,6 +1161,21 @@ shader_parameter/caustics_intensity = 15.0
 shader_parameter/num_caustic_layers = 16.0
 shader_parameter/caustic_distortion_strength = 0.001
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ahhe4"]
+
+[sub_resource type="Sky" id="Sky_vrwf7"]
+sky_material = SubResource("PhysicalSkyMaterial_ahhe4")
+
+[sub_resource type="Environment" id="Environment_11x55"]
+background_mode = 2
+sky = SubResource("Sky_vrwf7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+
 [node name="zoo_map" type="Node3D"]
 
 [node name="HTerrain" type="Node3D" parent="."]
@@ -2027,6 +2042,9 @@ transform = Transform3D(-3.6012862, 0, -6.002562, 0, 7, 0, 6.002562, 0, -3.60128
 
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("47_47nb7")]
 transform = Transform3D(-5.799161, 0, -3.9204268, 0, 6.9999995, 0, 3.9204268, 0, -5.799161, -33.50565, 6.212769e-17, -6.834097)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_11x55")
 
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]

@@ -36,6 +36,7 @@ var isJumpscaring = false
 
 
 func _ready() -> void:
+	print(player)
 	noiseMade = false
 	isInSoundDetector = false
 	$"WendyNoises".play(0.0)
