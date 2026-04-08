@@ -83,6 +83,8 @@ func _process(delta):
 		if Input.is_action_just_pressed("sense") && self.is_on_floor():
 			velocity.y = 18
 			senseable = false
+			$SenseTimer.start(0)
+			senseTime = 5.0
 			$"../Ui/WednigoHead/SenseBar".visible = true
 			await get_tree().create_timer(3.0).timeout
 			senseable = true
@@ -92,6 +94,8 @@ func _process(delta):
 			getBig()
 			shrunk = false
 			senseable = false
+			$SenseTimer.start(0)
+			senseTime = 5.0
 			$"../Ui/WednigoHead/SenseBar".visible = true
 			await get_tree().create_timer(3.0).timeout
 			senseable = true
@@ -100,6 +104,8 @@ func _process(delta):
 			getSmall()
 			shrunk = true
 			senseable = false
+			$SenseTimer.start(0)
+			senseTime = 5.0
 			$"../Ui/WednigoHead/SenseBar".visible = true
 			await get_tree().create_timer(3.0).timeout
 			senseable = true

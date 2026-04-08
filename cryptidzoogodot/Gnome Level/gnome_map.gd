@@ -42,13 +42,15 @@ var dialogueLines
 
 
 func _ready() -> void:
+	$Ui.visible = false
 	Global.mothmanPower = true
 	bloogaragth.visible = true
 	explostion.visible = false
 	#TODO movew this into the Shrooms scene, so we can enable these guys visabilty and enable/disable them for being high on shrroms
 	#FunniFlowerNode.visible = false
 	#TODO fix player being able to move during this cut scene? - is this still an issue??
-
+	playerZed.turnOnHead()
+	
 	await toggleAnimation(1)
 	await toggleAnimation(2)
 
@@ -61,8 +63,10 @@ func _ready() -> void:
 	playerZed.rotation = Vector3(0,0,0)
 	playerZed.scale = Vector3(1.0,1.0,1.0)
 	playerZed.set_process_input(true)
-
+	
+	playerZed.turnOffHead()
 	playerZedCamera.make_current()
+	$Ui.visible = true
 	#TODO Apply new idea below!
 	#unless we tp the player to the KING which i think we should, we have to set visability on bleafus to false too
 	pass
@@ -71,6 +75,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#TODO Create if statements to check if all the levelQuest booleans are true WHEN the player interacts with GnomeKing
 	checkAndApplyGlobals()
+	
+	$Ui/SprintBar.value = Global.stamina
+	
+	if Global.stamina < 100:
+		$Ui/SprintBar.visible = true
+	if Global.stamina == 100:
+		$Ui/SprintBar.visible = false
 
 
 	#if MushroomQuest and ScavQuest and mazeQuest:
@@ -102,7 +113,8 @@ func toggleAnimation(animationNumber) -> int:
 		Cam1.make_current()
 		animation_player.play("MothmanBringingZedToGnomeLevel")
 		#await animation_player.animation_finished#USE THIS KEYWORD
-		await DialogueManager.show_dialogue_balloon(dialogue, "introTalkWithMothman").finished
+		DialogueManager.show_dialogue_balloon(dialogue, "introTalkWithMothman").finished
+		await animation_player.animation_finished
 		#create an await function and wait out Zeds conversation with Mothman
 		#TODO after creating the second animation, set it to play RIGHT after this animation plays
 		#toggleAnimation(2)

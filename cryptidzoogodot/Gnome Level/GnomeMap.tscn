@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=77 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]
@@ -22,12 +22,14 @@
 [ext_resource type="PackedScene" uid="uid://peqwgbg0mdt" path="res://Gnome Level/windows.tscn" id="18_csh1m"]
 [ext_resource type="PackedScene" uid="uid://b44r1qts7g25d" path="res://Gnome Level/HedgeMaze/HedgeMaze.tscn" id="18_jlxtx"]
 [ext_resource type="PackedScene" uid="uid://bdgkeiq2feufc" path="res://Gnome Level/GnomeTerrainMap/Hedge/FenceBorder.tscn" id="20_6pwx4"]
+[ext_resource type="Texture2D" uid="uid://w2q1eiwan5ol" path="res://Assets/pictures/mothmanHead.png" id="20_ec0i6"]
 [ext_resource type="PackedScene" uid="uid://4yw03uolf1nx" path="res://Gnome Level/Assets/Big_Oak/Big_Oak_scene.tscn" id="20_humbe"]
 [ext_resource type="PackedScene" uid="uid://b7qt40ivocetw" path="res://Gnome Level/GnomeCharacters/Gnome_buff_o.tscn" id="24_vxnpk"]
 [ext_resource type="PackedScene" uid="uid://cqnyuxynar2bn" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_1.tscn" id="25_7oysy"]
 [ext_resource type="PackedScene" uid="uid://c4mkoe3jb7kwe" path="res://Gnome Level/Assets/new_marble/new_marble.tscn" id="26_87shl"]
 [ext_resource type="PackedScene" uid="uid://vxwv46fcdxtw" path="res://Gnome Level/HedgeMaze/correctedSinglehedge.tscn" id="26_bwcok"]
 [ext_resource type="Shader" uid="uid://bfchfeknopul6" path="res://Gnome Level/textures/sky.tres" id="26_ixyha"]
+[ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_mgsad"]
 [ext_resource type="PackedScene" uid="uid://cin7f1iusttov" path="res://Gnome Level/Assets/new_sword/new_sword.tscn" id="26_ujj1q"]
 [ext_resource type="PackedScene" uid="uid://du6b7snsy0qiw" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
 [ext_resource type="PackedScene" uid="uid://biqahtdg3v85" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
@@ -40,7 +42,6 @@
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="36_i6n8p"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="37_2iq4o"]
 [ext_resource type="PackedScene" uid="uid://8o4qodxewu80" path="res://Gnome Level/Assets/mushrooms/NEWMushrooms/shroom_2.tscn" id="38_hvxpa"]
-[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="38_ixyha"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="39_ec0i6"]
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="40_mgsad"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="41_qsklv"]
@@ -70,6 +71,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(258.65775, 53.243336, 112.53825), Vector3(258.65775, 53.243336, 112.53825), Vector3(130, 112, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Z:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(130.53134, 112.48089, 13.860226)]
 }
 
 [sub_resource type="Animation" id="Animation_mgsad"]
@@ -462,6 +475,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [Vector3(155.22209, 8.881181, 33.512836)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Buff-O:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(122.588844, 0.33332062, 21.312204)]
+}
 
 [sub_resource type="Animation" id="Animation_uc803"]
 resource_name = "ZedAndMothmanEXPLODE"
@@ -633,6 +658,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(145.26268, 0.2693634, 39.906727)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buff-O:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.6333334, 2.7333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(122.588844, 0.33332062, 21.312204), Vector3(141.82126, 0.33332062, 29.404306)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixyha"]
 _data = {
@@ -792,7 +829,7 @@ shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_kkme5")
 
 [node name="Mothman_GEO" parent="." instance=ExtResource("13_j1uv7")]
-transform = Transform3D(173.20512, 100.000046, -4.3711393e-06, 0, -8.74228e-06, -200, -100.000046, 173.20512, -7.5710345e-06, 130.10245, 112.06569, 0.5947441)
+transform = Transform3D(173.20512, 100.000046, -4.3711393e-06, 0, -8.74228e-06, -200, -100.000046, 173.20512, -7.5710345e-06, 130.10245, 112.06569, -5.9228263)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -800,7 +837,7 @@ libraries = {
 }
 
 [node name="Z" parent="." instance=ExtResource("10_mrlcg")]
-transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 130.53134, 112.48089, 1.3163711)
+transform = Transform3D(-8.660254, 5.0000005, 2.1855696e-07, 0, -4.371139e-07, 10, 5.0000005, 8.660254, 3.7855173e-07, 145.26268, 0.2693634, 39.906727)
 
 [node name="psychedelicCube" type="MeshInstance3D" parent="Z"]
 transform = Transform3D(2.6152215, 0, 0, 0, 2.7004147, 0, 0, 0, 2.3035183, 0.04864502, 0.42417908, -0.7513809)
@@ -825,10 +862,9 @@ texture_under = ExtResource("36_i6n8p")
 texture_progress = ExtResource("37_2iq4o")
 
 [node name="WednigoHead" type="Sprite2D" parent="Ui"]
-visible = false
 position = Vector2(84, 100)
 scale = Vector2(0.391892, 0.362745)
-texture = ExtResource("38_ixyha")
+texture = ExtResource("20_ec0i6")
 
 [node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
 visible = false
@@ -930,6 +966,15 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[node name="Minimap" parent="Ui" instance=ExtResource("26_mgsad")]
+offset_left = 1629.0
+offset_top = 2.0
+offset_right = 1929.0
+offset_bottom = 302.0
+target = NodePath("../../Z")
+camera_distance = 40
+objective_path = NodePath("../../Buff-O")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mrlcg")
 
@@ -948,7 +993,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Buff-O" parent="." instance=ExtResource("24_vxnpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.90555, 1.6000204, 26.93179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.588844, 0.33332062, 21.312204)
 dialogue = ExtResource("17_i627o")
 
 [node name="Maze" parent="." instance=ExtResource("18_jlxtx")]
@@ -1040,7 +1085,7 @@ transform = Transform3D(0.5103814, 0.067928225, 0.8572611, -0.034749568, 0.99769
 transform = Transform3D(0.14132023, 0.97288, 0.18312034, -0.00453624, 0.1856112, -0.9826128, -0.98995346, 0.13803236, 0.030643838, 140.61182, 0.38971424, 39.65321)
 
 [node name="TinyBullet" parent="." instance=ExtResource("48_ixyha")]
-transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 150.0264, 100.16565, 30)
+transform = Transform3D(0.49518353, -0.7981157, 0.34322822, 0.36780533, 0.5505, 0.7494465, -0.7870913, -0.24487238, 0.56614923, 258.65775, 53.243336, 112.53825)
 
 [node name="ExplosionGif" type="Sprite3D" parent="."]
 transform = Transform3D(7.9285765, 0, 0, 0, 6.6958785, 0, 0, 0, 1, 134.02417, 112.69663, 18.961992)
