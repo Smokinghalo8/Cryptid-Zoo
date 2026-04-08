@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://udyelh3w4fwi"]
+
+[ext_resource type="PackedScene" uid="uid://dk61xqmrfnoxf" path="res://Gnome Level/GnomeCharacters/sketchfab_scene.tscn" id="1_sks0e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ry03o"]
+height = 2.9941406
+radius = 1.1499023
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8ov7"]
+radius = 5.6748047
+height = 13.6883545
+
+[node name="TheUnnamedOne" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_sks0e")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.3196578, 0.8168974)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8310549, 0.43202126)
+shape = SubResource("CylinderShape3D_ry03o")
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3339846, 0.43202126)
+visible = false
+
+[node name="PlayerDetectionCollisionShape" type="CollisionShape3D" parent="PlayerDetectionArea"]
+transform = Transform3D(1, 0, 0, 0, -0.0062657, 0.99998033, 0, -0.99998033, -0.0062657, 0, 0.68672013, -3.6288543)
+shape = SubResource("CapsuleShape3D_u8ov7")

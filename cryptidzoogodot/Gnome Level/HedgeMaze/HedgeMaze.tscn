@@ -73,7 +73,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 103.
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 104.049355, 0, -33.66913)
 
 [node name="Hedge22" parent="." instance=ExtResource("1_00c2o")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 92.278404, 0, -65.56271)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.278404, 0, -80.78048)
 
 [node name="Hedge23" parent="." instance=ExtResource("1_00c2o")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 69.81607, 0, -80.54348)
@@ -82,7 +82,7 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 69.8
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 36.95588, 0, -73.9874)
 
 [node name="Hedge26" parent="." instance=ExtResource("1_00c2o")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 61.249306, 0, -43.667686)
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 61.249306, 0, -27.703018)
 
 [node name="Hedge27" parent="." instance=ExtResource("1_00c2o")]
 transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 95.702835, 0, -28.68692)

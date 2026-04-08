@@ -20,6 +20,7 @@ shape = SubResource("CylinderShape3D_xlrss")
 
 [node name="PickUpText" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007812679, 0.7183743, 0)
+billboard = 1
 text = "Press 'E' to pick up!"
 
 [connection signal="body_entered" from="Sketchfab_Scene/Area3D" to="." method="_on_area_3d_body_entered"]

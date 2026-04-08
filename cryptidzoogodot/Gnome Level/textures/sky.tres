@@ -1,0 +1,49 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://bfchfeknopul6"]
+
+[ext_resource type="Texture2D" uid="uid://bd7885uwigx8a" path="res://Zoo_level/Assets/Copper.jpg" id="1_bilum"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3vl6l"]
+source = 5
+texture = ExtResource("1_bilum")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_hkru0"]
+input_name = "sky_coords"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_7jvf0"]
+parameter_name = "tex"
+
+[resource]
+code = "shader_type sky;
+uniform sampler2D tex;
+
+
+
+void sky() {
+// Input:3
+	vec2 n_out3p0 = SKY_COORDS;
+
+
+	vec4 n_out2p0;
+// Texture2D:2
+	n_out2p0 = texture(tex, n_out3p0);
+
+
+// Output:0
+	COLOR = vec3(n_out2p0.xyz);
+
+
+}
+"
+mode = 3
+flags/use_half_res_pass = false
+flags/use_quarter_res_pass = false
+flags/disable_fog = false
+flags/use_debanding = false
+nodes/sky/0/position = Vector2(440, 140)
+nodes/sky/2/node = SubResource("VisualShaderNodeTexture_3vl6l")
+nodes/sky/2/position = Vector2(240, 40)
+nodes/sky/3/node = SubResource("VisualShaderNodeInput_hkru0")
+nodes/sky/3/position = Vector2(-180, 0)
+nodes/sky/4/node = SubResource("VisualShaderNodeTexture2DParameter_7jvf0")
+nodes/sky/4/position = Vector2(-180, 160)
+nodes/sky/connections = PackedInt32Array(4, 0, 2, 2, 3, 0, 2, 0, 2, 0, 0, 0)

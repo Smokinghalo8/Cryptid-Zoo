@@ -3,6 +3,8 @@ extends StaticBody3D
 
 @export var dialogue : DialogueResource
 var dialogueLines 
+#the whole level, see if you can access the script for animaitonplayer via this
+@onready var gnome_level: Node3D = $".."
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +21,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	#highest going down
 	if body.is_in_group("Character"):
 		if Global.gnomeState == 3:
-			print("THIS IS WHERE THE END SHOULD GO!")
+			#play animation, and end scene
+			Global.playerShouldBeMoving = false
+			#TODO add in the scripts supplied by everyone
+			#await gnome_level.toggleAnimation(8) #this should play the animation AND produce the text bubbles we need
+			#await gnome_level.toggleAnimation(9) #this should play the animation for the final final portation, when Mothman comes to pick up Zed after finding him
+			
+			Global.playerShouldBeMoving = true
 		elif Global.gnomeState == 2:
 			#back from scav hunt
 			#TODO work from here, coded in everything prior

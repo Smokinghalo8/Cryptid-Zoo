@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0s6ee87jk371"
+path="res://.godot/imported/mothmanOutro1.mp3-1c5cbf833a74e9f0ee911c985787ba1b.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/Voicelines/Mothman/mothmanOutro1.mp3"
+dest_files=["res://.godot/imported/mothmanOutro1.mp3-1c5cbf833a74e9f0ee911c985787ba1b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
