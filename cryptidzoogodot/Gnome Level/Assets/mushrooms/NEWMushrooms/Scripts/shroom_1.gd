@@ -44,11 +44,13 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		pass # Replace with function body.
 
 func enterPhyscoState() -> int:
-	#set Visability of PhcysoCube to true, dont use await here, 
+	#set Visability of PhcysoCube to true, dont use await here,  shroom2 DOES NOT have this
 	$"../Z/psychedelicCube".visible = true
+	$"../HTerrain/@Node3D@75207".visible = true
 	eaten = true
 	self.visible = false	#why do we make this invisble instead of quese_free? I have no idea, ask Krista
 	await get_tree().create_timer(10.0).timeout
 	$"../Z/psychedelicCube".visible = false
+	$"../HTerrain/@Node3D@75207".visible = false
 	
 	return 3#just a temp integer, so I cat use await

@@ -11,7 +11,7 @@ var isAnimationDone = false
 @onready var THE_KING: StaticBody3D = $GnomeKING
 @onready var playerZed = $Z
 @onready var tinyBullet: StaticBody3D = $TinyBullet
-@onready var explostion: Sprite3D = $ExplosionGif
+@onready var explostion: AnimatedSprite3D = $ExplosionGif
 @onready var ENTIRE_UI_LAYER: CanvasLayer = $Ui
 @onready var sprintBar: TextureProgressBar = $Ui/SprintBar
 @onready var FunniFlowerNode: Node3D = $"HTerrain/@Node3D@75207"
@@ -46,6 +46,7 @@ func _ready() -> void:
 	Global.mothmanPower = true
 	bloogaragth.visible = true
 	explostion.visible = false
+	FunniFlowerNode.visible = false
 	#TODO movew this into the Shrooms scene, so we can enable these guys visabilty and enable/disable them for being high on shrroms
 	#FunniFlowerNode.visible = false
 	#TODO fix player being able to move during this cut scene? - is this still an issue??
@@ -133,6 +134,7 @@ func toggleAnimation(animationNumber) -> int:
 		#use Cam7 for this one
 		Cam7.make_current()
 		animation_player.play("ZedAndMothmanEXPLODE")
+		explostion.play("Explode")
 		await animation_player.animation_finished
 		MothmanModel.visible = false
 		tinyBullet.visible = false

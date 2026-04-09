@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6j3a6b8wn51p"
-path="res://.godot/imported/spookyHouse.gltf-520724dad3e365f4dda9f4c0f4806c06.scn"
+valid=false
 
 [deps]
 
 source_file="res://Wendigo Level/assets/spookyHouse.gltf"
-dest_files=["res://.godot/imported/spookyHouse.gltf-520724dad3e365f4dda9f4c0f4806c06.scn"]
 
 [params]
 

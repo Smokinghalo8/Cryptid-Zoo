@@ -1,0 +1,8 @@
+Model Information:
+* title:	Gnome
+* source:	https://sketchfab.com/3d-models/gnome-3ead7adf42a84255b8dcb2c3565cdc0f
+* author:	L. (https://sketchfab.com/A2555)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://duqwjoyrot738"]
 
-[ext_resource type="PackedScene" uid="uid://c4upljh3hvsp" path="res://Gnome Level/GnomeCharacters/scepter.gltf" id="1_1tw8q"]
+[ext_resource type="PackedScene" uid="uid://5qp3rfais13w" path="res://Gnome Level/GnomeCharacters/scepter.gltf" id="1_1tw8q"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_1tw8q")]
