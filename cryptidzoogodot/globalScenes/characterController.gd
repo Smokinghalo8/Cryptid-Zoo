@@ -81,7 +81,7 @@ func _process(delta):
 	
 	if Global.mothmanPower == true && senseable == true:
 		if Input.is_action_just_pressed("sense") && self.is_on_floor():
-			velocity.y = 18
+			velocity.y = 15
 			senseable = false
 			$SenseTimer.start(0)
 			senseTime = 5.0
