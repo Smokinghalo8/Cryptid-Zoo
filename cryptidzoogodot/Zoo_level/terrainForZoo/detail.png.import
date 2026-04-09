@@ -2,37 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brj772l8u7484"
-path.s3tc="res://.godot/imported/beartrap_m_metallicRoughness.png-cf94ed4e358137628a43266cbf576b9c.s3tc.ctex"
+uid="uid://dobmv5y1drrpx"
+path="res://.godot/imported/detail.png-83abf7b1f3745855e2b5a99332f4467f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wendigo Level/assets/wooden_totempole/textures/beartrap_m_metallicRoughness.png"
-dest_files=["res://.godot/imported/beartrap_m_metallicRoughness.png-cf94ed4e358137628a43266cbf576b9c.s3tc.ctex"]
+source_file="res://Zoo_level/terrainForZoo/detail.png"
+dest_files=["res://.godot/imported/detail.png-83abf7b1f3745855e2b5a99332f4467f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
-compress/hdr_compression=1
+compress/hdr_compression=0
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
+mipmaps/generate=false
+mipmaps/limit=0
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
 process/channel_remap/alpha=3
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

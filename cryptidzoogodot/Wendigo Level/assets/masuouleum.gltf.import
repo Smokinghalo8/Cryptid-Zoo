@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bv6btfmy78kca"
-path="res://.godot/imported/scene.gltf-f22f7a14e490579fdbe1400965c5981d.scn"
+uid="uid://daywxrbxwga7l"
+path="res://.godot/imported/masuouleum.gltf-681292df409b4d68fb71a95a5a885c51.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/wooden_totempole/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-f22f7a14e490579fdbe1400965c5981d.scn"]
+source_file="res://Wendigo Level/assets/masuouleum.gltf"
+dest_files=["res://.godot/imported/masuouleum.gltf-681292df409b4d68fb71a95a5a885c51.scn"]
 
 [params]
 

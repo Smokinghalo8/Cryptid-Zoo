@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bmow0v5w3qiam"
-path="res://.godot/imported/masuoleum.gltf-ed9ed67100750899a2b6d53a3873aa23.scn"
+uid="uid://cqx3t8wg73obm"
+path="res://.godot/imported/totemPole.gltf-9612102ee75d43582fa83cd8b99262b8.scn"
 
 [deps]
 
-source_file="res://Wendigo Level/assets/masuoleum.gltf"
-dest_files=["res://.godot/imported/masuoleum.gltf-ed9ed67100750899a2b6d53a3873aa23.scn"]
+source_file="res://Wendigo Level/assets/totemPole.gltf"
+dest_files=["res://.godot/imported/totemPole.gltf-9612102ee75d43582fa83cd8b99262b8.scn"]
 
 [params]
 
