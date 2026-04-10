@@ -1,11 +1,38 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ wakingUp
+
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/what going on.wav, next=auto] Wh-what's going on?  Where am I? [#voice=uid://ck7bhgc2q6q1v]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Safe here.wav, next=auto] Don't worry, Zed, you're safe here [#voice=uid://b0fpagx6g20ks]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/what was that.wav, next=auto] What was that?!  How do you know my name?!  Who are you?! [#voice=uid://b8842fcuri85y]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Calm Down.wav, next=auto] Calm down, Zed, take deep breaths [#voice=uid://dcveoxf6xtlbr]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/dont tell me what to dot.wav, next=auto]  Don’t tell me what to do!  I have to get out of here!  I think I just have to use W A S and D and I can escape this place! [#voice=uid://b65p88w6tgrjx]
+
+=> END
+
+~ onExitHut
+
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/You have nothing.wav, next=auto] You have nothing to be scared of, Zed.  I will take care of you. [#voice=uid://n3i8kqt1ftg0]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/i dont know who you are.wav, next=auto]  I don’t even know who you are!  I don’t even know WHERE you are!!  Or where I am!!! How can I trust you?? [#voice=uid://ccmqotgtbrbuw]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Look at your map.wav, next=auto]  Look at your map and follow the arrow that appears to me, and we can talk.  I brought you here for safety. [#voice=uid://bh2hutvw68ubi]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/im not sure.wav, next=auto]  ...I'm still not sure... [#voice=uid://bh55fwxkgbq6n]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Trust me.wav, next=auto]  Trust me, Zed.  I'll explain it all once you get over here. [#voice=uid://dloosymas5jvu]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/okay.wav, next=auto]  Okay... [#voice=uid://c1abxfckj3gtg]
+
+=> END
+
+~ overToOldMan
+
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/See Zed!.wav, next=auto] See, Zed, I’m just an old man!  I found you all alone and confused, and decided to bring you back here to protect you! [#voice=uid://s2tmkiq7vtpi]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/where is here.wav, next=auto] Where is here? [#voice=uid://ld3gaa7k3rqv]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Oh right.wav, next=auto] Oh, right!  This is the Cryptid Zoo…or at least it will be!  [#voice=uid://dnhat28r22unm]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/what does that mean.wav, next=auto]  Huh?  What does that mean? [#voice=uid://bsrsvonrr55wj]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/I am a scientist.wav, next=auto]  I am a scientist who specializes in a very niche field - cryptozoology; the study of animals who may not be real.  But I have news for you, Zed:  cryptids are very real, and are on the verge of extinction!  Without our help, they will be eradicated! [#voice=uid://bfsi0a2ms3u4m]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/our help.wav, next=auto]  Our help? [#voice=uid://cev6grim7q7y2]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Yes our help.wav, next=auto] Yes!  OUR help!  You see, the cryptids are trained to not trust humans, especially older humans, but with kids, especially special kids like you, they are more likely to trust you.  And that’s what we need so we can get them here to protect them, we have to gain their trust! [#voice=uid://drqfm6emxgjix]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/you want to protect the cryptid.wav, next=auto]   Wait, so you want to protect these cryptids?  Like, like a sanctuary? [#voice=uid://vbfu7b4abss5]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Oh well yes.wav, next=auto]  Oh…well yes, I suppose Cryptid Sanctuary would’ve been a better name, but names aside my boy, do you understand our mission? [#voice=uid://4vgorab5q1y8]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/i guess so.wav, next=auto] I guess so, but I still don’t know if I can trust you.[#voice=uid://c5p8sp5syknbg]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/Zed I am the reason.wav, next=auto]  Zed, I am the reason you are alive right now.  I found you nearly dead in the middle of nowhere and brought you here and have been caring for you for the last several days just hoping you would wake up, and you did!  Would I have saved you if I wanted to do something bad to you? [#voice=uid://d2a15ycb8uyml]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/FirstLevel/Well I guess Not.wav, next=auto] Well…I guess not.  Okay Old Man, what’s our first mission?!  [#voice=uid://ba6vgt3vwvedf]
+[color=grey]Old Man[/color]: [speed=0.3, voice=res://zooLevels/FirstLevel/I'm so glad.wav, next=auto]  I'm so glad you asked! [#voice=uid://buk65qcmcdv33]
+
 => END

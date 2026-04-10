@@ -11,6 +11,7 @@ var afterWendy = false
 var afterMM = false
 var afterGnome = false
 var afterNess = false
+var firstLevel = true
 
 #Universal Character Controller
 var wendyPower = false
