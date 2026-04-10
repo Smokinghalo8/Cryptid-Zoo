@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqhoya8n6d7jh"
+path="res://.godot/imported/You heard the man.wav-cd915fdf741641e11ed6d62e860ce673.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterGnomes/You heard the man.wav"
+dest_files=["res://.godot/imported/You heard the man.wav-cd915fdf741641e11ed6d62e860ce673.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

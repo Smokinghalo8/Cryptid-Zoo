@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ld3gaa7k3rqv"
+path="res://.godot/imported/where is here.wav-296bed9cc89091cd48fdf28522448f70.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/where is here.wav"
+dest_files=["res://.godot/imported/where is here.wav-296bed9cc89091cd48fdf28522448f70.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

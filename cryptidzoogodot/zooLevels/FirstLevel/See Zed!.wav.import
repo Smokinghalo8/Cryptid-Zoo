@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s2tmkiq7vtpi"
+path="res://.godot/imported/See Zed!.wav-2a7a7ff37e0fd04cba737af57d3a3891.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/See Zed!.wav"
+dest_files=["res://.godot/imported/See Zed!.wav-2a7a7ff37e0fd04cba737af57d3a3891.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

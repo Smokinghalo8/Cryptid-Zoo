@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buk65qcmcdv33"
+path="res://.godot/imported/I’m so glad.wav-588abb9ab6fec365c97fc8788e213809.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/I’m so glad.wav"
+dest_files=["res://.godot/imported/I’m so glad.wav-588abb9ab6fec365c97fc8788e213809.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8i848h5thq0l"
+path="res://.godot/imported/ill take you.wav-ae88762ecc8be0a343e3bfd0021ef215.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterWendy/ill take you.wav"
+dest_files=["res://.godot/imported/ill take you.wav-ae88762ecc8be0a343e3bfd0021ef215.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

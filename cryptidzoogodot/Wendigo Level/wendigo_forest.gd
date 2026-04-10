@@ -25,6 +25,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	if $Z.is_on_floor():
+		Global.character_position = $Z.global_position
+	
 	$Ui/SprintBar.value = Global.stamina
 	
 	if Global.stamina < 100:

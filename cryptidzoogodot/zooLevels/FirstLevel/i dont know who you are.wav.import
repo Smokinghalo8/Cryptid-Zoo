@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccmqotgtbrbuw"
+path="res://.godot/imported/i dont know who you are.wav-0db96a812377dab02aade7a70c4d8e4f.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/i dont know who you are.wav"
+dest_files=["res://.godot/imported/i dont know who you are.wav-0db96a812377dab02aade7a70c4d8e4f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

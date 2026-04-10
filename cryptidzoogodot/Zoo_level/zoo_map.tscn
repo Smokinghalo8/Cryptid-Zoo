@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://cjxwb1jsf0v3c"]
+[gd_scene load_steps=144 format=3 uid="uid://cjxwb1jsf0v3c"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ln3a3"]
 [ext_resource type="Script" uid="uid://bi0e2wdptvewc" path="res://Zoo_level/zoo_map.gd" id="1_tlnf5"]
@@ -32,7 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://djmixn0kpg0ex" path="res://Zoo_level/mothman_enclosure.tscn" id="29_d11sa"]
 [ext_resource type="Material" uid="uid://c4dbp2ibs0d2e" path="res://Zoo_level/EnclosureTextures/oak_veneer_01.tres" id="30_6chjn"]
 [ext_resource type="Material" uid="uid://cck41xc4f3v03" path="res://Zoo_level/Assets/zoo_fences.tres" id="31_r1jwb"]
-[ext_resource type="Shader" uid="uid://dva3egef0tb68" path="res://wendigoTerrainMap/wengwater.gdshader" id="32_pnutm"]
 [ext_resource type="PackedScene" uid="uid://csdotxara00vn" path="res://wendigoTerrainMap/gardening/plants/tree/wendigo_tree.tscn" id="33_chy36"]
 [ext_resource type="PackedScene" uid="uid://dssvlbfbiv651" path="res://wendigo_walk.tscn" id="33_t6vbc"]
 [ext_resource type="PackedScene" uid="uid://c2e44furv4134" path="res://Wendigo Level/assets/tombstone.tscn" id="34_s0k0w"]
@@ -50,6 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://b1fhsj6q0cj8d" path="res://Zoo_level/campFire.tscn" id="46_alih0"]
 [ext_resource type="PackedScene" uid="uid://c70hmp247n38" path="res://Zoo_level/Assets/stump.tscn" id="47_47nb7"]
 [ext_resource type="Script" uid="uid://dokwmdfno0kqh" path="res://globalScenes/sun.gd" id="49_11x55"]
+[ext_resource type="Script" uid="uid://bx7qvrcrve1ik" path="res://Wendigo Level/water_detection.gd" id="51_q2y7y"]
+[ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="52_78qmm"]
+[ext_resource type="PackedScene" uid="uid://cmgbycsqo40xi" path="res://Assets/Models/OldMan/OldMan.tscn" id="52_q2y7y"]
+[ext_resource type="Script" uid="uid://yh6t0beswg2v" path="res://Assets/Models/OldMan/old_man.gd" id="53_78qmm"]
 
 [sub_resource type="Resource" id="Resource_53lb3"]
 script = ExtResource("3_4e4wp")
@@ -1188,42 +1191,25 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ckfc"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_juwcu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkyki"]
+size = Vector3(0.088974, 0.024963379, 0.033058167)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eli4a"]
-radius = 40.063965
-height = 195.23071
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ahhe4"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gks62"]
+[sub_resource type="Sky" id="Sky_vrwf7"]
+sky_material = SubResource("PhysicalSkyMaterial_ahhe4")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6jnv6"]
-noise = SubResource("FastNoiseLite_gks62")
+[sub_resource type="Environment" id="Environment_11x55"]
+background_mode = 2
+sky = SubResource("Sky_vrwf7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_chy36"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ly1ea"]
-noise = SubResource("FastNoiseLite_chy36")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0k0w"]
-render_priority = 0
-shader = ExtResource("32_pnutm")
-shader_parameter/time_speed = 0.05
-shader_parameter/surface_speed = 0.5
-shader_parameter/spin = 0.02
-shader_parameter/brightness = 0.6
-shader_parameter/color_intensity = 0.0
-shader_parameter/horizontal_frequency = 2.0
-shader_parameter/vertical_frequency = 2.0
-shader_parameter/size = 3.0
-shader_parameter/banding_bias = 0.6
-shader_parameter/wave_texture = SubResource("NoiseTexture2D_ly1ea")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_6jnv6")
-shader_parameter/wave_height = 0.5
-shader_parameter/texture_height = 0.5
-shader_parameter/color1 = Color(0.075589366, 0.6360646, 0.85156786, 1)
-shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
-shader_parameter/color3 = Color(0.0038730334, 0.10338446, 0.2717042, 1)
-shader_parameter/color4 = Color(0.48664838, 0.65490144, 1, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ru1g"]
+size = Vector3(4.235567, 1, 35.62136)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_11x55"]
 render_priority = 0
@@ -1273,21 +1259,6 @@ shader_parameter/caustics_intensity = 15.0
 shader_parameter/num_caustic_layers = 16.0
 shader_parameter/caustic_distortion_strength = 0.001
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ahhe4"]
-
-[sub_resource type="Sky" id="Sky_vrwf7"]
-sky_material = SubResource("PhysicalSkyMaterial_ahhe4")
-
-[sub_resource type="Environment" id="Environment_11x55"]
-background_mode = 2
-sky = SubResource("Sky_vrwf7")
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
-
 [node name="zoo_map" type="Node3D"]
 script = ExtResource("1_tlnf5")
 
@@ -1324,7 +1295,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Z" parent="." instance=ExtResource("12_s0k0w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0160532, 1.1814573, 39.851692)
+transform = Transform3D(-0.9157257, 0, 0.4018039, 0, 1, 0, -0.4018039, 0, -0.9157257, -36.20755, 1.4340277, 33.559883)
 
 [node name="Ui" type="CanvasLayer" parent="."]
 layer = 101
@@ -1472,6 +1443,7 @@ camera_distance = 40
 objective_path = NodePath("../../LevelScenery/Zed_Fort")
 
 [node name="MothmanEcnlosureOverview" type="Node3D" parent="."]
+visible = false
 
 [node name="MothmanEnclosure" parent="MothmanEcnlosureOverview" instance=ExtResource("29_d11sa")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 73.148254, 0.055880178, 65.54294)
@@ -1608,6 +1580,7 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [node name="WendyEnclosure" type="Node3D" parent="."]
+visible = false
 
 [node name="Beams" type="Node3D" parent="WendyEnclosure"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -1780,29 +1753,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2422, -0.023529053, 68.64
 [node name="wendigoWalk" parent="WendyEnclosure/Scenery" instance=ExtResource("33_t6vbc")]
 transform = Transform3D(-0.014216237, 0, 0.014067643, 0, 0.02, 0, -0.014067643, 0, -0.014216237, -61.655647, -0.14413548, 65.13446)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="WendyEnclosure/Scenery/wendigoWalk"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WendyEnclosure/Scenery/wendigoWalk/RigidBody3D"]
-transform = Transform3D(0.99999994, 0, -2.9802322e-08, 0, 0.9999999, 0, 2.9802322e-08, 0, 0.99999994, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_juwcu")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WendyEnclosure/Scenery/wendigoWalk/RigidBody3D"]
-transform = Transform3D(0.9999949, 0, -3.1292439e-06, 0, 0.99996555, 0, 3.1292439e-06, 0, 0.9999949, 2.7595215, 96.61477, 5.7753906)
-shape = SubResource("CapsuleShape3D_eli4a")
-
-[node name="Water" type="CSGCombiner3D" parent="WendyEnclosure/Scenery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.60083, -5.0824394, 14.741211)
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="WendyEnclosure/Scenery/Water"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.504803, 4.082282, 44.316357)
-use_collision = true
-size = Vector3(27.298988, 0.001, 38.469456)
-material = SubResource("ShaderMaterial_s0k0w")
-
 [node name="GnomeEnclosure" type="Node3D" parent="."]
+visible = false
 
 [node name="Beams2" type="Node3D" parent="GnomeEnclosure"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
@@ -1943,12 +1895,15 @@ shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [node name="GnomeKING" parent="GnomeEnclosure/Scenery/Gnomes" instance=ExtResource("36_juwcu")]
 transform = Transform3D(0.3716427, 0, 0.14792465, 0, 0.39999998, 0, -0.14792465, 0, 0.3716427, -61.457577, 0.16323638, -66.314575)
+script = null
 
 [node name="Bleafus_the_gnome" parent="GnomeEnclosure/Scenery/Gnomes" instance=ExtResource("37_eli4a")]
 transform = Transform3D(0.3987537, 0, 0.031550657, -0.013741246, 0.36006972, 0.17366906, -0.028401094, -0.17421183, 0.35894787, -67.97416, 0.09524262, -70.375656)
+script = null
 
 [node name="Bleafus_the_gnome2" parent="GnomeEnclosure/Scenery/Gnomes" instance=ExtResource("37_eli4a")]
 transform = Transform3D(0.39980978, 0, -0.012334071, 0, 0.4, 0, 0.012334071, 0, 0.39980978, -59.86459, 0.50930965, -74.24568)
+script = null
 
 [node name="SetPieces" type="Node3D" parent="GnomeEnclosure/Scenery"]
 
@@ -1976,13 +1931,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -73.61653, 0.13132599, 
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -73.483795, 0.13132599, -67.87902)
 
 [node name="NessieEnclosure" type="Node3D" parent="."]
+visible = false
 
 [node name="Scenery" type="Node3D" parent="NessieEnclosure"]
-
-[node name="Water" type="CSGBox3D" parent="NessieEnclosure/Scenery"]
-transform = Transform3D(0.9968667, -0.0014712515, 0.0021556206, 0.0014527967, 0.99683267, 0.008516417, -0.0021681106, -0.008513249, 0.9968314, 25.056984, -7.36524, -31.113794)
-size = Vector3(104.75582, 13.574829, 93.83789)
-material = SubResource("ShaderMaterial_11x55")
 
 [node name="nessieblend" parent="NessieEnclosure/Scenery" instance=ExtResource("43_alih0")]
 transform = Transform3D(0.57697314, 0, -0.55416787, 0, 0.8, 0, 0.55416787, 0, 0.57697314, 61.44076, -3.1076498, -67.81964)
@@ -2134,6 +2085,12 @@ transform = Transform3D(96.59258, 0, -25.881905, 0, 100, 0, 25.881905, 0, 96.592
 [node name="Zed_Fort" parent="LevelScenery" instance=ExtResource("14_eli4a")]
 transform = Transform3D(-60, 0, -5.2453665e-06, 0, 60, 0, 5.2453665e-06, 0, -60, 0.9978121, -0.0874995, 42.61855)
 
+[node name="Area3D" type="Area3D" parent="LevelScenery/Zed_Fort"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelScenery/Zed_Fort/Area3D"]
+transform = Transform3D(0.99999857, 0, 5.684342e-14, 0, 2.6659143, 0, -5.684342e-14, 0, 0.99999857, -0.0008773301, 0.032787338, -0.014561176)
+shape = SubResource("BoxShape3D_jkyki")
+
 [node name="Picnic" type="Node3D" parent="LevelScenery"]
 
 [node name="picnicTable" parent="LevelScenery/Picnic" instance=ExtResource("46_ahhe4")]
@@ -2177,7 +2134,32 @@ script = ExtResource("49_11x55")
 [node name="Timer" type="Timer" parent="Environment/DirectionalLight3D"]
 autostart = true
 
+[node name="WaterDetection" type="Area3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5550766, 0)
+script = ExtResource("51_q2y7y")
+
+[node name="WaterBig" type="CollisionShape3D" parent="Environment/WaterDetection"]
+transform = Transform3D(8.931402, 0, 0, 0, 1, 0, 0, 0, 1, 2.203186, 3.2600307, 0.53443146)
+shape = SubResource("BoxShape3D_3ru1g")
+debug_color = Color(0.84313726, 0, 0.91764706, 0.6784314)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/WaterDetection/WaterBig"]
+
+[node name="SplashByBlaukreuz6261" type="AudioStreamPlayer" parent="Environment/WaterDetection"]
+stream = ExtResource("52_78qmm")
+
+[node name="Water" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(0.9968667, -0.0014712515, 0.0021556206, 0.0014527967, 0.99683267, 0.008516417, -0.0021681106, -0.008513249, 0.9968314, -1.7544765, -7.6041937, -2.0050461)
+size = Vector3(158.67332, 13.574829, 152.12317)
+material = SubResource("ShaderMaterial_11x55")
+
+[node name="OldManAnims" parent="." instance=ExtResource("52_q2y7y")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, -27.776081)
+script = ExtResource("53_78qmm")
+
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
+[connection signal="body_entered" from="LevelScenery/Zed_Fort/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Environment/DirectionalLight3D/Timer" to="Environment/DirectionalLight3D" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Environment/WaterDetection" to="Environment/WaterDetection" method="_on_body_entered"]

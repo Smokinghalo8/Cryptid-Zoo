@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b81sqcg2ehyl6"
+path="res://.godot/imported/come on old man.wav-a0d91b401a91f3fbf2ba3e6176f914a6.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterGnomes/come on old man.wav"
+dest_files=["res://.godot/imported/come on old man.wav-a0d91b401a91f3fbf2ba3e6176f914a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
