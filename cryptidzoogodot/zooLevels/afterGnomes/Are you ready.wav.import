@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2bfltyx2v24r"
+path="res://.godot/imported/Are you ready.wav-7396aeef77ad220548dc82a5eea3eb2d.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterGnomes/Are you ready.wav"
+dest_files=["res://.godot/imported/Are you ready.wav-7396aeef77ad220548dc82a5eea3eb2d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

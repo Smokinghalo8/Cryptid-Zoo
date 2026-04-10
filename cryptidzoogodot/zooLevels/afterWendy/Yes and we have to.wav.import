@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbpx8g4dxc4fi"
+path="res://.godot/imported/Yes and we have to.wav-405b3ec8de29f7056a8d2d942de96ef8.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterWendy/Yes and we have to.wav"
+dest_files=["res://.godot/imported/Yes and we have to.wav-405b3ec8de29f7056a8d2d942de96ef8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=450 format=4 uid="uid://djmixn0kpg0ex"]
+[gd_scene load_steps=451 format=4 uid="uid://djmixn0kpg0ex"]
 
 [ext_resource type="Texture2D" uid="uid://bb4g2vvk45nsx" path="res://Assets/Buildings/MapExport_8.png" id="1_6mp8x"]
 [ext_resource type="Texture2D" uid="uid://0xhebp1m75kd" path="res://Assets/Materials/PNG/Red_lambert1_BaseColor.png" id="2_rrirn"]
@@ -16,7 +16,8 @@
 [ext_resource type="Material" uid="uid://u05wtrlca1jb" path="res://Assets/Materials/new_standard_material_3d.tres" id="14_ct434"]
 [ext_resource type="Texture2D" uid="uid://b1wjvcgcoad33" path="res://Assets/Materials/PNG/Metal_lambert1_BaseColor.png" id="15_vo67p"]
 [ext_resource type="Texture2D" uid="uid://dco44wgulriy6" path="res://Assets/Materials/PNG/Mossy_Stone_Floor_veilfjxn_4K_BaseColor.png" id="16_ct434"]
-[ext_resource type="PackedScene" path="res://Zoo_level/Assets/trees/large_tree.tscn" id="17_vo67p"]
+[ext_resource type="PackedScene" uid="uid://q3n1geadp8kl" path="res://Zoo_level/Assets/trees/large_tree.tscn" id="17_vo67p"]
+[ext_resource type="PackedScene" uid="uid://ogcguvt6l42m" path="res://Assets/Models/Mothman/mothman.tscn" id="18_twyyi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct434"]
 albedo_texture = ExtResource("11_tqvfr")
@@ -6441,3 +6442,6 @@ mesh = SubResource("BoxMesh_cy22w")
 
 [node name="LargeTree" parent="." instance=ExtResource("17_vo67p")]
 transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0.0185318, 0, 0.9017544)
+
+[node name="MothmanNew" parent="." instance=ExtResource("18_twyyi")]
+transform = Transform3D(-0.33454126, 0, -0.21927646, 0, 0.4, 0, 0.21927646, 0, -0.33454126, -1.9477847, 0, -1.2877169)

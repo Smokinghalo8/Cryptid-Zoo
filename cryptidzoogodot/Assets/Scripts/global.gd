@@ -6,6 +6,12 @@ var walkingSound
 var character_position = Vector3(0,0,0)
 var wendigoLevel = false
 
+#Zoo Things
+var afterWendy = false
+var afterMM = false
+var afterGnome = false
+var afterNess = false
+
 #Universal Character Controller
 var wendyPower = false
 var mothmanPower = false

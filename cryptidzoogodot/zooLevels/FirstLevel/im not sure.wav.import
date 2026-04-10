@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bh55fwxkgbq6n"
+path="res://.godot/imported/im not sure.wav-b8dcaa3cbb4b718ba28c0dc01af96ee2.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/im not sure.wav"
+dest_files=["res://.godot/imported/im not sure.wav-b8dcaa3cbb4b718ba28c0dc01af96ee2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

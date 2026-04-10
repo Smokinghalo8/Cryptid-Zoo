@@ -152,7 +152,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		Global.stamina += staminaRecoveryRate * delta
 		Global.stamina = min(Global.stamina, maxStamina)
-
+	
 	if Global.stamina < 1:
 		sprintable = false
 		SPEED = 5
@@ -162,12 +162,13 @@ func _physics_process(delta: float) -> void:
 
 	if Global.stamina == maxStamina:
 		sprintable = true
+	if Input.is_action_pressed("control") && self.is_on_floor():
+		SPEED = 2
 		
 	if Input.is_action_just_released("shift"):
 		SPEED = 5
 		
 	if Input.is_action_just_released("control"):
-		$ZColl.scale = Vector3(1, 1, 1)
 		SPEED = 5
 	
 	#Walk Sounds

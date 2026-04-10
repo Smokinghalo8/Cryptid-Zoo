@@ -10047,7 +10047,7 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.22216797, -0.126369, 1.7068634)
 
 [node name="BugFixWendy" parent="." groups=["Enemies"] instance=ExtResource("24_rfgrx")]
-transform = Transform3D(-0.9686129, -0.03890353, 0.24551044, -0.040131792, 0.9991946, 9.297401e-09, -0.24531274, -0.009852773, -0.96939355, -123.92911, 1.0211151, 100.80882)
+transform = Transform3D(-0.9686129, -0.03890353, 0.24551043, -0.040131792, 0.9991946, 9.297401e-09, -0.24531274, -0.009852773, -0.9693935, -123.92911, 1.0211151, 100.80882)
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 3.1415927

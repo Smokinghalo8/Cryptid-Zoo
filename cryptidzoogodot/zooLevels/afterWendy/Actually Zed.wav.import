@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcup6qb0aye88"
+path="res://.godot/imported/Actually Zed.wav-33e007e53b89a1a1dd952d91c642c47d.sample"
+
+[deps]
+
+source_file="res://zooLevels/afterWendy/Actually Zed.wav"
+dest_files=["res://.godot/imported/Actually Zed.wav-33e007e53b89a1a1dd952d91c642c47d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

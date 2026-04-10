@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsrsvonrr55wj"
+path="res://.godot/imported/what does that mean.wav-5ae65cd1d9cafd281ff1936e62669687.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/what does that mean.wav"
+dest_files=["res://.godot/imported/what does that mean.wav-5ae65cd1d9cafd281ff1936e62669687.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

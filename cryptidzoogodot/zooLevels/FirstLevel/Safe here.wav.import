@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0fpagx6g20ks"
+path="res://.godot/imported/Safe here.wav-d8bc1ad66edbfe362f66a56f05ccab7d.sample"
+
+[deps]
+
+source_file="res://zooLevels/FirstLevel/Safe here.wav"
+dest_files=["res://.godot/imported/Safe here.wav-d8bc1ad66edbfe362f66a56f05ccab7d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

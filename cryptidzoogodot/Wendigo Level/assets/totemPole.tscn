@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6lggfcs4q5c0"]
 
-[ext_resource type="PackedScene" uid="uid://em8vodqswlmi" path="res://Wendigo Level/assets/wooden_totempole/totemPole.gltf" id="1_astc2"]
+[ext_resource type="PackedScene" uid="uid://cqx3t8wg73obm" path="res://Wendigo Level/assets/totemPole.gltf" id="1_astc2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0t06r"]
 height = 24.063965
