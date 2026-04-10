@@ -144,7 +144,7 @@ func _on_actual_trap_2_body_entered(body: Node3D) -> void:
 				levelPlayer.play("FinalCutscene")
 				await levelPlayer.animation_finished
 				Global.plushCounter = 0
-				get_tree().change_scene_to_file("res://Cryptid_Zoo_Map.tscn")
+				get_tree().change_scene_to_file("uid://bf4vgu7u0t3ri")
 
 			
 ### Act trap 3

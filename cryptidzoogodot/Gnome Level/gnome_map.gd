@@ -166,6 +166,7 @@ func toggleAnimation(animationNumber) -> int:
 	elif(animationNum == 8):
 		#This should be end game cutscene when GnomeKing grows Zed
 		Cam8.make_current()
+		$Z.turnOnHead()
 		animation_player.play("GnomeKingGrowsZed")
 		await DialogueManager.show_dialogue_balloon(dialogue, "mazeGnomeEndScene1").finished
 		
@@ -174,8 +175,10 @@ func toggleAnimation(animationNumber) -> int:
 	elif(animationNum ==9):
 		#Cutscene where Mothman found Zed and comes to pick him and Gnome King up
 		Cam8.make_current()
+		$Z.turnOnHead()
 		animation_player.play("GnomeKingThanksZedAndMothmanShowsUp")
 		await DialogueManager.show_dialogue_balloon(dialogue, "mazeGnomeEndScene2").finished
+		get_tree().change_scene_to_file("uid://wx81ig6aeqdo")
 
 		pass
 		

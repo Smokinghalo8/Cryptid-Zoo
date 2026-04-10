@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://dfi6482kw0bq2"]
+[gd_scene load_steps=179 format=3 uid="uid://dfi6482kw0bq2"]
 
 [ext_resource type="Script" uid="uid://bawe4vopjtw5q" path="res://Gnome Level/gnome_map.gd" id="1_42gdw"]
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_qqwwe"]

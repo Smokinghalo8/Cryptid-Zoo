@@ -363,7 +363,7 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 [node name="Ness" type="Node" parent="."]
 
 [node name="nessieblend" parent="Ness" instance=ExtResource("13_40yyd")]
-transform = Transform3D(-0.9888176, 0.002116277, -0.1491115, -0.07786411, 0.8454499, 0.5283475, 0.12718442, 0.53404987, -0.8358316, 0, -7.9970765, -23.383438)
+transform = Transform3D(-0.9888175, 0.002116277, -0.14911148, -0.077864125, 0.8454498, 0.52834755, 0.1271844, 0.5340499, -0.8358315, 0, -7.9970765, -23.383438)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -11.942199, -1.2588595, 48.30097)

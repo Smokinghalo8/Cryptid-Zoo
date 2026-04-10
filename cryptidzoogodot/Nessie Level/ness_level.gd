@@ -56,7 +56,10 @@ func _on_animation_finished(anim_name: String):
 
 func start_boat_anm():
 	print("Starting Boat Anm...")
+	$Z.turnOnHead()
 	animation_player.play(boat_anm)
+	await animation_player.animation_finished
+	$Z.turnOffHead()
 	
 func action_lure_1():
 	print("Activating Lure 1")
@@ -100,4 +103,7 @@ func _show_children(area: Area3D):
 
 func _on_boat_start_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Character"):
+		$Z.turnOnHead()
 		start_boat_anm()
+		await animation_player.animation_finished
+		$Z.turnOffHead()

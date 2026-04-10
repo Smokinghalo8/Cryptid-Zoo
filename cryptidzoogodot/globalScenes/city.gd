@@ -132,7 +132,7 @@ func _on_cut_scene_collider_body_entered(body: Node3D) -> void:
 			$CutScene/CutSceneAnims.play("mothMan")
 			await($CutScene/CutSceneAnims.animation_finished)
 			Global.wendyPower = false
-			get_tree().quit()
+			get_tree().change_scene_to_file("uid://dfi6482kw0bq2")
 
 func mothmanFly():
 	mothmanAnimPlayer.play("TakeOff")

@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csno1qxlpvgen"
-valid=false
+uid="uid://qmqampcdm2bj"
+path="res://.godot/imported/bearTrap.gltf-d7373d0cbbd619b15d2d8e5539cbf439.scn"
 
 [deps]
 
 source_file="res://Wendigo Level/assets/bearTrap.gltf"
+dest_files=["res://.godot/imported/bearTrap.gltf-d7373d0cbbd619b15d2d8e5539cbf439.scn"]
 
 [params]
 
