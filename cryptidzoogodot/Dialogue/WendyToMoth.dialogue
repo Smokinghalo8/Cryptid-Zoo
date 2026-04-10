@@ -1,0 +1,18 @@
+~ start
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Welcome.wav, next=auto] Welcome to the zoo, Wendigo! [#voice=uid://bni5gb28lwf3p]
+[color=red]Wendigo[/color]:  [speed=0.3, voice=res://zooLevels/afterWendy/WendiNotSureAboutThis.wav, next=auto] I'm still not sure about this.. [#voice=uid://yqj0r0v3utee]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/come on wendy.wav, next=auto] Come on Wendy, I told you you were safe here! [#voice=uid://lw1fvlf10p6]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/It’s okay Zed.wav, next=auto] It's okay, Zed. If Wendy needs some time to settle in, that is perfectly fine. Your enclosure is going to be right over there inbetween Zed's hut and the campfire! [#voice=uid://d3wym7afcp2m7]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/ill take you.wav, next=auto] I'll take you, Wendy! [#voice=uid://c8i848h5thq0l]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Actually Zed.wav, next=auto] Actually, Zed, can you stay behind? I need to talk to you about something. [#voice=uid://dcup6qb0aye88]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/see you later.wav, next=auto] Oh.. okay. See you later, Wendy! What's up, Old Man? [#voice=uid://cwg2hfkerr3pl]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Well it appears.wav, next=auto] Well, it appears we already have another mission for you! [#voice=uid://c3xpvx5t8bek1]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/already.wav, next=auto] Already? [#voice=uid://eulaci62kuns]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Yes and we have to.wav, next=auto] Yes, and we have to move quickly! There's been a spotting of the Mothman, and he doesn't stay put for long. [#voice=uid://bbpx8g4dxc4fi]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/can i have a little time.wav, next=auto] Can I have at least a little time to relax? [#voice=uid://cy6vodadn76ux]
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Hmmmmmmm.wav, next=auto] Hmmmm.... I suppose you've earned it, but hurry! Mothman could leave at any moment! [#voice=uid://d2lpc4hm0258i]
+=> END
+
+~ leave
+[color=grey]Old Man[/color]: [speed=0.5, voice=res://zooLevels/afterWendy/Are you ready.wav, next=auto] Are you ready for your mission, Zed? [#voice=uid://d2qewdjqjcs3s]
+=> END
