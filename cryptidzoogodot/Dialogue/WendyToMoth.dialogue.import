@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dvnwks326j1ba"
+path="res://.godot/imported/WendyToMoth.dialogue-3324173f71c6449abb3400fc020841fb.tres"
+
+[deps]
+
+source_file="res://Dialogue/WendyToMoth.dialogue"
+dest_files=["res://.godot/imported/WendyToMoth.dialogue-3324173f71c6449abb3400fc020841fb.tres"]
+
+[params]
+
+defaults=true
