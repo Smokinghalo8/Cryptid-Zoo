@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ifkkttsl0de8"
-path="res://.godot/imported/campfire.gltf-6fd5202ced8ae4aac6d85ad40cbbd0e6.scn"
+valid=false
 
 [deps]
 
 source_file="res://Zoo_level/campfire.gltf"
-dest_files=["res://.godot/imported/campfire.gltf-6fd5202ced8ae4aac6d85ad40cbbd0e6.scn"]
 
 [params]
 

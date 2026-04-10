@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmaf2afvetgru"
+path="res://.godot/imported/GnomeMusicTEMP.mp3-c73264be7bb5aeb6c1073a631a9db857.mp3str"
+
+[deps]
+
+source_file="res://Gnome Level/Assets/SOUNDS/GnomeMusicTEMP.mp3"
+dest_files=["res://.godot/imported/GnomeMusicTEMP.mp3-c73264be7bb5aeb6c1073a631a9db857.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
