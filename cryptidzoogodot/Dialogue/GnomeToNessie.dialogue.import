@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://j7563acx50jj"
+path="res://.godot/imported/GnomeToNessie.dialogue-010cc192b65889c4edbb40dcb5f52611.tres"
+
+[deps]
+
+source_file="res://Dialogue/GnomeToNessie.dialogue"
+dest_files=["res://.godot/imported/GnomeToNessie.dialogue-010cc192b65889c4edbb40dcb5f52611.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,23 @@
+~ start
+[color=gold]Gnome King[/color]: [speed=0.3, voice=res://zooLevels/afterGnomes/Weeeee want to.wav, next=auto] Weeeee want to thank you for welcoming us into your kingdom! [#voice=uid://b2n4fovh40dil]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/Why of course.wav, next=auto] Why, of course! Anything to.. protect you. [#voice=uid://cayme0ou4uhgg]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterGnomes/yeah.wav, next=auto] Yeah! [#voice=uid://dbbdap35snpws]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/Your enclosure should be.wav, next=auto] Your enclosures should be right over here between my home and the campfire, if you want to bring your compatriots that way. [#voice=uid://d0aubgnyiyc0h]
+[color=gold]Gnome King[/color]: [speed=0.3, voice=res://zooLevels/afterGnomes/You heard the man.wav, next=auto] You heard the man! Forwaaaaard March! [#voice=uid://dqhoya8n6d7jh]
+=> END
+
+~ next
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/And thank you.wav, next=auto] And, thank you, Mothman, for transportation. [#voice=uid://bto3wet0lwqod]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterGnomes/sorry you got shot out of the sky.wav, next=auto] Yeah, sorry you got shot out of the sky. Are you okay? [#voice=uid://clr3qnbk281bk]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/MothmanLine3.wav, next=auto] [shake rate=20 level=10] Tis but a flesh wound, young one. [/shake][#voice=uid://gxq5ouckxaf]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterGnomes/idk what that means.wav, next=auto] I don't know what that means, but you should rest. I'll come with you. I need a nap after that whole thing. [#voice=uid://uh23vfhqnhjx]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/Actually Zed.wav, next=auto] Actually, Zed, we already have another mission... [#voice=uid://bslnxicykiaxg]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterGnomes/are you kidding me.wav, next=auto] Are you kidding me, Old Man?! [#voice=uid://hiwpfbbgbfec]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/I’m afraid not.wav, next=auto] I'm afraid not, and this one is important! The Loch Ness monster has resurfaced! [#voice=uid://cn21b32gxei2o]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterGnomes/come on old man.wav, next=auto] Come one, Old Man, there's not way I can relax for just a little bit? [#voice=uid://b81sqcg2ehyl6]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/Mmmm fine.wav, next=auto] Hmmm... fine. Go take a nap, but make sure you get to me by dusk! [#voice=uid://dvh0r0vixu3sq]
+=> END
+
+~ leave
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterGnomes/Are you ready.wav, next=auto] Are you ready for your mission, Zed? [#voice=uid://2bfltyx2v24r]
+=> END
