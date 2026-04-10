@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bpisqio8x703x"
+path="res://.godot/imported/MothToGnome.dialogue-0c3cbee33116958a367b39954db57bde.tres"
+
+[deps]
+
+source_file="res://Dialogue/MothToGnome.dialogue"
+dest_files=["res://.godot/imported/MothToGnome.dialogue-0c3cbee33116958a367b39954db57bde.tres"]
+
+[params]
+
+defaults=true

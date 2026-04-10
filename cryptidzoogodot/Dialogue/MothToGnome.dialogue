@@ -1,0 +1,12 @@
+~ start
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/Welcome home.wav, next=auto] Welcome home, Mothman! [#voice=uid://5qlcuok54ikt]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/MothmanLine1.wav, next=auto] [shake rate=20 level=10] Thank you. I am excited to meet any friend of Zed. [/shake][#voice=uid://dluktowd145x6]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/Yes yes friend.wav, next=auto] Yes, yes, friend of Zed... Now, go get comfortable in your enclosure. It should be between Zed's hut and the picnic benches! [#voice=uid://baaoe5a667oyr]
+[color=#7ece73]Mothman[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/MothmanLine2.wav, next=auto] [shake rate=20 level=10] Okay. [/shake][#voice=uid://c46vpuhrorbiu]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterMoth/can i go with him.wav, next=auto] Can I please go with him, Old Man? I want to hang out! [#voice=uid://bwbq264v8txo7]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/I’m afraid.wav, next=auto] I'm afraid not, Zed. You need to go and rest because we have a new mission bright and early tomorrow morning! [#voice=uid://dftc5augpkg1n]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterMoth/another one already.wav, next=auto] Another one already? This seems like a lot, Old Man. [#voice=uid://ddhlsoh7mvf5i]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/Don’t you want.wav, next=auto] Don't you want to help as many cryptids as possible? [#voice=uid://8iac7rbkag53]
+[color=#d950ff]Zed[/color]: [speed=0.5, voice=res://zooLevels/afterMoth/yeah i guess.wav, next=auto] ..yeah, I guess. [#voice=uid://uuaq0m1nyie8]
+[color=grey]Old Man[/color]: [speed=0.4, voice=res://zooLevels/afterMoth/Perfect!.wav, next=auto] Perfect! Then, you go rest up in your hut, and tomorrow, Mothman can take you out to the next mission! [#voice=uid://ddv84p0f3ej8u]
+=> END
