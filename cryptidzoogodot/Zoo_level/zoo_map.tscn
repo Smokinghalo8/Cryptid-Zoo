@@ -1,7 +1,8 @@
-[gd_scene load_steps=144 format=3 uid="uid://cjxwb1jsf0v3c"]
+[gd_scene load_steps=155 format=3 uid="uid://cjxwb1jsf0v3c"]
 
 [ext_resource type="Script" uid="uid://dnrelw0fv4ou8" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ln3a3"]
 [ext_resource type="Script" uid="uid://bi0e2wdptvewc" path="res://Zoo_level/zoo_map.gd" id="1_tlnf5"]
+[ext_resource type="Resource" uid="uid://b6u3xjpvm8nq1" path="res://zooLevels/FirstLevel/firstLevel.dialogue" id="2_3ru1g"]
 [ext_resource type="Resource" uid="uid://d0ls5pv1ieo1b" path="res://Zoo_level/terrainForZoo/data.hterrain" id="2_ruine"]
 [ext_resource type="Script" uid="uid://bijdjc8imckni" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_4e4wp"]
 [ext_resource type="Texture2D" uid="uid://ft30fhuimv4c" path="res://zooTerrainMap/Grass004_4K-PNG_Color.png" id="4_d11sa"]
@@ -53,6 +54,7 @@
 [ext_resource type="AudioStream" uid="uid://djubg7icvviex" path="res://Wendigo Level/assets/sfx/splash-by-blaukreuz-6261.mp3" id="52_78qmm"]
 [ext_resource type="PackedScene" uid="uid://cmgbycsqo40xi" path="res://Assets/Models/OldMan/OldMan.tscn" id="52_q2y7y"]
 [ext_resource type="Script" uid="uid://yh6t0beswg2v" path="res://Assets/Models/OldMan/old_man.gd" id="53_78qmm"]
+[ext_resource type="AudioStream" uid="uid://d4k8x0y3gfml3" path="res://zooLevels/freesound_community-forest-3-26722.mp3" id="55_hjpo3"]
 
 [sub_resource type="Resource" id="Resource_53lb3"]
 script = ExtResource("3_4e4wp")
@@ -65,6 +67,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(-191, -43, -257)
 extent = 128.0
@@ -145,6 +148,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(1, -107, -65)
 extent = 64.0
@@ -177,6 +181,7 @@ script = ExtResource("9_t6vbc")
 member_placeforms = [[Vector3(-1.2409604, 0, -67.67299), Vector3(0, 1, 0), Transform3D(-0.77286655, 0, 0.6345686, 0, 1, 0, -0.6345686, 0, -0.77286655, -1.2409604, 0, -67.67299), 7], [Vector3(-0.23867224, 0, -68.51539), Vector3(0, 1, 0), Transform3D(-0.78380656, 0, 0.62100506, 0, 1, 0, -0.62100506, 0, -0.78380656, -0.23867224, 0, -68.51539), 7], [Vector3(-4.0572166, 0, -67.66104), Vector3(0, 1, 0), Transform3D(-0.43896154, 0, 0.89850587, 0, 1, 0, -0.89850587, 0, -0.43896154, -4.0572166, 0, -67.66104), 7], [Vector3(-1.8986949, 0, -71.78205), Vector3(0, 1, 0), Transform3D(-0.9966552, 0, 0.08172114, 0, 1, 0, -0.08172114, 0, -0.9966552, -1.8986949, 0, -71.78205), 7], [Vector3(-6.359709, 0, -67.72819), Vector3(0, 1, 0), Transform3D(-0.80409414, 0, 0.59450203, 0, 1, 0, -0.59450203, 0, -0.80409414, -6.359709, 0, -67.72819), 7], [Vector3(-12.052022, 0, -69.77323), Vector3(0, 1, 0), Transform3D(-0.037620805, 0, -0.99929214, 0, 1, 0, 0.99929214, 0, -0.03762081, -12.052022, 0, -69.77323), 7], [Vector3(-18.436207, 0, -73.85613), Vector3(0, 1, 0), Transform3D(-0.9528895, 0, -0.3033177, 0, 1, 0, 0.3033177, 0, -0.9528895, -18.436207, 0, -73.85613), 7], [Vector3(-23.039375, 0, -75.18136), Vector3(0, 1, 0), Transform3D(-0.95490474, 0, -0.29691234, 0, 1, 0, 0.29691234, 0, -0.95490474, -23.039375, 0, -75.18136), 7], [Vector3(-25.43191, 1.7881394e-08, -69.64989), Vector3(0, 1, 0), Transform3D(0.78870183, 0, 0.614776, 0, 1, 0, -0.614776, 0, 0.78870183, -25.43191, 1.7881394e-08, -69.64989), 7], [Vector3(-27.699144, 0, -69.68545), Vector3(0, 1, 0), Transform3D(-0.12905523, 0, 0.9916374, 0, 1, 0, -0.9916374, 0, -0.12905523, -27.699144, 0, -69.68545), 7], [Vector3(-27.697514, 0, -74.03519), Vector3(0, 1, 0), Transform3D(-0.77369, 0, -0.6335644, 0, 1, 0, 0.6335644, 0, -0.77369, -27.697514, 0, -74.03519), 7], [Vector3(-34.329792, 0, -71.553375), Vector3(0, 1, 0), Transform3D(0.7130146, 0, -0.7011492, 0, 1, 0, 0.7011492, 0, 0.7130146, -34.329792, 0, -71.553375), 3], [Vector3(-34.456314, 0, -76.05232), Vector3(0, 1, 0), Transform3D(0.8615216, 0, -0.507721, 0, 1, 0, 0.507721, 0, 0.8615216, -34.456314, 0, -76.05232), 3], [Vector3(-40.21995, 0, -71.61025), Vector3(0, 1, 0), Transform3D(-0.9915025, 0, 0.13008755, 0, 1, 0, -0.13008755, 0, -0.9915025, -40.21995, 0, -71.61025), 3], [Vector3(-45.638374, 0, -72.554), Vector3(0, 1, 0), Transform3D(-0.09866001, 0, -0.99512124, 0, 1, 0, 0.99512124, 0, -0.09866001, -45.638374, 0, -72.554), 3], [Vector3(-48.279095, 0, -70.813446), Vector3(0, 1, 0), Transform3D(-0.9998348, 0, 0.01818057, 0, 1, 0, -0.018180568, 0, -0.9998348, -48.279095, 0, -70.813446), 3], [Vector3(-43.82981, 0, -65.1113), Vector3(0, 1, 0), Transform3D(0.043060623, 0, -0.9990725, 0, 1, 0, 0.9990725, 0, 0.043060623, -43.82981, 0, -65.1113), 3], [Vector3(-31.87309, 0, -65.12581), Vector3(0, 1, 0), Transform3D(-0.99325407, 0, -0.115958564, 0, 1, 0, 0.115958564, 0, -0.99325407, -31.87309, 0, -65.12581), 3]]
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(-31, -11, -97)
 extent = 32.0
@@ -192,6 +197,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(-47, -27, -49)
 extent = 16.0
@@ -325,6 +331,7 @@ child_nodes = [SubResource("Resource_68wab"), SubResource("Resource_6uqn0"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 1
+is_leaf = true
 center_pos = Vector3(-31, -11, -33)
 extent = 32.0
 bounds = AABB(-63, -43, -65, 64, 64, 64)
@@ -388,6 +395,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(17, -27, -49)
 extent = 16.0
@@ -521,6 +529,7 @@ child_nodes = [SubResource("Resource_wy8he"), SubResource("Resource_r8raf"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 5
+is_leaf = true
 center_pos = Vector3(33, -11, -33)
 extent = 32.0
 bounds = AABB(1, -43, -65, 64, 64, 64)
@@ -569,6 +578,7 @@ child_nodes = [SubResource("Resource_hjpo3"), SubResource("Resource_gdfsi"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 2
+is_leaf = true
 center_pos = Vector3(1, 21, -65)
 extent = 64.0
 bounds = AABB(-63, -43, -129, 128, 128, 128)
@@ -583,6 +593,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(-47, -27, 15)
 extent = 16.0
@@ -715,6 +726,8 @@ script = ExtResource("9_t6vbc")
 child_nodes = [SubResource("Resource_u0dxm"), SubResource("Resource_r28wx"), SubResource("Resource_caqkr"), SubResource("Resource_hp73y"), SubResource("Resource_or0tl"), SubResource("Resource_dskhx"), SubResource("Resource_qc56l"), SubResource("Resource_cuqub")]
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
 center_pos = Vector3(-31, -11, 31)
 extent = 32.0
 bounds = AABB(-63, -43, -1, 64, 64, 64)
@@ -778,6 +791,7 @@ resource_name = "MMIOctreeNode"
 script = ExtResource("9_t6vbc")
 max_members = 75
 min_leaf_extent = 1.0
+octant = -1
 is_leaf = true
 center_pos = Vector3(17, -27, 15)
 extent = 16.0
@@ -911,6 +925,7 @@ child_nodes = [SubResource("Resource_o7gqi"), SubResource("Resource_yrx5o"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 4
+is_leaf = true
 center_pos = Vector3(33, -11, 31)
 extent = 32.0
 bounds = AABB(1, -43, -1, 64, 64, 64)
@@ -976,6 +991,7 @@ child_nodes = [SubResource("Resource_r670m"), SubResource("Resource_geprt"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 3
+is_leaf = true
 center_pos = Vector3(1, 21, 63)
 extent = 64.0
 bounds = AABB(-63, -43, -1, 128, 128, 128)
@@ -1058,6 +1074,7 @@ child_nodes = [SubResource("Resource_78qmm"), SubResource("Resource_3ru1g"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = 5
+is_leaf = true
 center_pos = Vector3(65, -43, -1)
 extent = 128.0
 bounds = AABB(-63, -171, -129, 256, 256, 256)
@@ -1106,6 +1123,7 @@ child_nodes = [SubResource("Resource_ahhe4"), SubResource("Resource_11x55"), Sub
 max_members = 75
 min_leaf_extent = 1.0
 octant = -1
+is_leaf = true
 center_pos = Vector3(-63, 85, -129)
 extent = 256.0
 bounds = AABB(-319, -171, -385, 512, 512, 512)
@@ -1194,6 +1212,9 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_jkyki"]
 size = Vector3(0.088974, 0.024963379, 0.033058167)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjpo3"]
+size = Vector3(0.10180664, 0.16577148, 0.0052490234)
+
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ahhe4"]
 
 [sub_resource type="Sky" id="Sky_vrwf7"]
@@ -1207,6 +1228,8 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.085
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ru1g"]
 size = Vector3(4.235567, 1, 35.62136)
@@ -1259,8 +1282,144 @@ shader_parameter/caustics_intensity = 15.0
 shader_parameter/num_caustic_layers = 16.0
 shader_parameter/caustic_distortion_strength = 0.001
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ru1g"]
+radius = 0.029785156
+height = 0.09829712
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3ru1g"]
+radius = 0.18777621
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78qmm"]
+size = Vector3(1, 11.698242, 152.70172)
+
+[sub_resource type="Animation" id="Animation_78qmm"]
+resource_name = "wakingUp"
+length = 22.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ui/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 22.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"wakingUpDialogue"
+}, {
+"args": [],
+"method": &"killBarrier"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3ru1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ui/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ui/Minimap:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hjpo3"]
+resource_name = "onExitHut"
+length = 27.8
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"gainingTrustDialogue"
+}, {
+"args": [],
+"method": &"turnOnObjectiveArrow"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ui/Minimap:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(10.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_68wab"]
+resource_name = "explaining"
+length = 96.7
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 96.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"explainingDialogue"
+}, {
+"args": [],
+"method": &"wendigoLevel"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjpo3"]
+_data = {
+&"RESET": SubResource("Animation_3ru1g"),
+&"explaining": SubResource("Animation_68wab"),
+&"onExitHut": SubResource("Animation_hjpo3"),
+&"wakingUp": SubResource("Animation_78qmm")
+}
+
 [node name="zoo_map" type="Node3D"]
 script = ExtResource("1_tlnf5")
+dialogue_resource = ExtResource("2_3ru1g")
 
 [node name="HTerrain" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
@@ -1295,7 +1454,7 @@ metadata/class = "Gardener"
 metadata/_custom_type_script = "uid://bc7pailucq83t"
 
 [node name="Z" parent="." instance=ExtResource("12_s0k0w")]
-transform = Transform3D(-0.9157257, 0, 0.4018039, 0, 1, 0, -0.4018039, 0, -0.9157257, -36.20755, 1.4340277, 33.559883)
+transform = Transform3D(0.99998856, 0, 0.004817188, 0, 1, 0, -0.004817188, 0, 0.99998856, 0.7217054, 0.9962952, 47.171276)
 
 [node name="Ui" type="CanvasLayer" parent="."]
 layer = 101
@@ -1313,6 +1472,7 @@ texture_under = ExtResource("15_gprb7")
 texture_progress = ExtResource("16_yyx32")
 
 [node name="WednigoHead" type="Sprite2D" parent="Ui"]
+visible = false
 position = Vector2(84, 100)
 scale = Vector2(0.391892, 0.362745)
 texture = ExtResource("17_2ckfc")
@@ -1434,19 +1594,26 @@ scale = Vector2(0.44570318, 0.45308372)
 texture = ExtResource("25_tlnf5")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("26_jkyki")]
+visible = false
 offset_left = 1629.0
 offset_top = 2.0
 offset_right = 1929.0
 offset_bottom = 302.0
 target = NodePath("../../Z")
 camera_distance = 40
-objective_path = NodePath("../../LevelScenery/Zed_Fort")
+objective_path = NodePath("../../OldManAnims")
+
+[node name="ColorRect" type="ColorRect" parent="Ui"]
+visible = false
+offset_right = 1928.0
+offset_bottom = 1075.0
+color = Color(0, 0, 0, 1)
 
 [node name="MothmanEcnlosureOverview" type="Node3D" parent="."]
-visible = false
 
 [node name="MothmanEnclosure" parent="MothmanEcnlosureOverview" instance=ExtResource("29_d11sa")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 73.148254, 0.055880178, 65.54294)
+visible = false
 
 [node name="Beams" type="Node3D" parent="MothmanEcnlosureOverview"]
 
@@ -1580,7 +1747,6 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [node name="WendyEnclosure" type="Node3D" parent="."]
-visible = false
 
 [node name="Beams" type="Node3D" parent="WendyEnclosure"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -1716,6 +1882,7 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [node name="Scenery" type="Node3D" parent="WendyEnclosure"]
+visible = false
 
 [node name="Trees" type="Node3D" parent="WendyEnclosure/Scenery"]
 
@@ -1754,7 +1921,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.2422, -0.023529053, 68.64
 transform = Transform3D(-0.014216237, 0, 0.014067643, 0, 0.02, 0, -0.014067643, 0, -0.014216237, -61.655647, -0.14413548, 65.13446)
 
 [node name="GnomeEnclosure" type="Node3D" parent="."]
-visible = false
 
 [node name="Beams2" type="Node3D" parent="GnomeEnclosure"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
@@ -1890,6 +2056,7 @@ mesh = SubResource("PlaneMesh_w3hhf")
 shape = SubResource("ConcavePolygonShape3D_2ckfc")
 
 [node name="Scenery" type="Node3D" parent="GnomeEnclosure"]
+visible = false
 
 [node name="Gnomes" type="Node3D" parent="GnomeEnclosure/Scenery"]
 
@@ -1931,9 +2098,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -73.61653, 0.13132599, 
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -73.483795, 0.13132599, -67.87902)
 
 [node name="NessieEnclosure" type="Node3D" parent="."]
-visible = false
 
 [node name="Scenery" type="Node3D" parent="NessieEnclosure"]
+visible = false
 
 [node name="nessieblend" parent="NessieEnclosure/Scenery" instance=ExtResource("43_alih0")]
 transform = Transform3D(0.57697314, 0, -0.55416787, 0, 0.8, 0, 0.55416787, 0, 0.57697314, 61.44076, -3.1076498, -67.81964)
@@ -2083,13 +2250,22 @@ shape = SubResource("ConcavePolygonShape3D_2ckfc")
 transform = Transform3D(96.59258, 0, -25.881905, 0, 100, 0, 25.881905, 0, 96.59258, 1.2331524, -0.18563475, -42.849335)
 
 [node name="Zed_Fort" parent="LevelScenery" instance=ExtResource("14_eli4a")]
-transform = Transform3D(-60, 0, -5.2453665e-06, 0, 60, 0, 5.2453665e-06, 0, -60, 0.9978121, -0.0874995, 42.61855)
+transform = Transform3D(-63, 0, -9.512735e-06, 0, 63, 0, 9.512735e-06, 0, -63, 0.9978121, -0.0874995, 42.61855)
 
 [node name="Area3D" type="Area3D" parent="LevelScenery/Zed_Fort"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0.00640136)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelScenery/Zed_Fort/Area3D"]
 transform = Transform3D(0.99999857, 0, 5.684342e-14, 0, 2.6659143, 0, -5.684342e-14, 0, 0.99999857, -0.0008773301, 0.032787338, -0.014561176)
 shape = SubResource("BoxShape3D_jkyki")
+
+[node name="Barrier" type="StaticBody3D" parent="LevelScenery/Zed_Fort"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 3.7252903e-09, 0, -0.010933101)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelScenery/Zed_Fort/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002925532, -0.015258794, -0.016130567)
+shape = SubResource("BoxShape3D_hjpo3")
+debug_color = Color(0.91764706, 0, 0, 0.41960785)
 
 [node name="Picnic" type="Node3D" parent="LevelScenery"]
 
@@ -2157,9 +2333,63 @@ material = SubResource("ShaderMaterial_11x55")
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, -27.776081)
 script = ExtResource("53_78qmm")
 
+[node name="RigidBody3D" type="RigidBody3D" parent="OldManAnims"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OldManAnims/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012699962, 0.045913696, 0)
+shape = SubResource("CapsuleShape3D_3ru1g")
+
+[node name="OldManArea" type="Area3D" parent="OldManAnims"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OldManAnims/OldManArea"]
+shape = SubResource("SphereShape3D_3ru1g")
+
+[node name="Barriers" type="Node3D" parent="."]
+
+[node name="Barrier" type="StaticBody3D" parent="Barriers"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56795, 5.349121, -0.31576538)
+shape = SubResource("BoxShape3D_78qmm")
+debug_color = Color(0.8352941, 0, 0, 0.60784316)
+
+[node name="Barrier2" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.86287, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56795, 5.349121, -0.31576538)
+shape = SubResource("BoxShape3D_78qmm")
+debug_color = Color(0.8352941, 0, 0, 0.60784316)
+
+[node name="Barrier3" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5030441, 0, -1.11269)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56795, 5.349121, -0.31576538)
+shape = SubResource("BoxShape3D_78qmm")
+debug_color = Color(0.8352941, 0, 0, 0.60784316)
+
+[node name="Barrier4" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5030441, 0, -153.75636)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barriers/Barrier4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.56795, 5.349121, -0.31576538)
+shape = SubResource("BoxShape3D_78qmm")
+debug_color = Color(0.8352941, 0, 0, 0.60784316)
+
+[node name="CutSceneAnims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hjpo3")
+}
+
+[node name="FreesoundCommunityForest326722" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("55_hjpo3")
+autoplay = true
+
 [connection signal="drag_ended" from="Ui/Pause Menu/VolumeSlider" to="Ui/Pause Menu" method="_on_volume_slider_drag_ended"]
 [connection signal="pressed" from="Ui/Pause Menu/backButton" to="Ui/Pause Menu" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Ui/Pause Menu/mainMenu" to="Ui/Pause Menu" method="_on_main_menu_pressed"]
 [connection signal="body_entered" from="LevelScenery/Zed_Fort/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Environment/DirectionalLight3D/Timer" to="Environment/DirectionalLight3D" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Environment/WaterDetection" to="Environment/WaterDetection" method="_on_body_entered"]
+[connection signal="body_entered" from="OldManAnims/OldManArea" to="." method="_on_old_man_area_body_entered"]
