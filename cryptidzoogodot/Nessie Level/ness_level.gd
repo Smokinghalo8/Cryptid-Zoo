@@ -38,6 +38,13 @@ func _process(_delta: float) -> void:
 			1: action_lure_1()
 			2: action_lure_2()
 			3: action_lure_3()
+	
+	$Ui/SprintBar.value = Global.stamina	
+	if Global.stamina < 100:
+		$Ui/SprintBar.visible = true
+	if Global.stamina == 100:
+		$Ui/SprintBar.visible = false
+
 
 # This runs automatically whenever any animation finishes
 func _on_animation_finished(anim_name: String):

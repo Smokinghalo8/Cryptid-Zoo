@@ -32,8 +32,11 @@
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="26_mgsad"]
 [ext_resource type="PackedScene" uid="uid://cin7f1iusttov" path="res://Gnome Level/Assets/new_sword/new_sword.tscn" id="26_ujj1q"]
 [ext_resource type="PackedScene" uid="uid://du6b7snsy0qiw" path="res://Gnome Level/GnomeCharacters/gnome_king.tscn" id="27_kkme5"]
+[ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="27_uc803"]
+[ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="28_b0lgg"]
 [ext_resource type="PackedScene" uid="uid://biqahtdg3v85" path="res://Gnome Level/GnomeCharacters/gnome_bloo.tscn" id="28_pxd54"]
 [ext_resource type="PackedScene" uid="uid://b1nfx33n8ynsw" path="res://Gnome Level/playset.tscn" id="28_ujj1q"]
+[ext_resource type="Texture2D" uid="uid://dgsnj1r4kbuob" path="res://Assets/pictures/gnomeFull.png" id="29_f26lj"]
 [ext_resource type="PackedScene" uid="uid://bsdc15jgfb724" path="res://Gnome Level/GnomeCharacters/gnome_Bleafus.tscn" id="29_i627o"]
 [ext_resource type="Script" uid="uid://bc7pailucq83t" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="32_ehsa6"]
 [ext_resource type="Script" uid="uid://dieiojnt518h" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="33_ifqdx"]
@@ -1667,6 +1670,28 @@ offset_bottom = 302.0
 target = NodePath("../../Z")
 camera_distance = 40
 objective_path = NodePath("../../Buff-O")
+
+[node name="PlushControl" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MothmanPlushCounter" type="Label" parent="Ui/PlushControl"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 88.40631
+offset_right = 898.0
+offset_bottom = 241.40631
+theme_override_fonts/font = ExtResource("27_uc803")
+theme_override_font_sizes/font_size = 152
+text = "0/5"
+script = ExtResource("28_b0lgg")
+
+[node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
+position = Vector2(987, 166.00002)
+scale = Vector2(0.41421756, 0.35088053)
+texture = ExtResource("29_f26lj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mrlcg")

@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cwqd117ianhrh" path="res://globalScenes/z.tscn" id="17_gxbah"]
 [ext_resource type="Texture2D" uid="uid://bdnei7nra2707" path="res://Assets/Materials/ProgressUnder.png" id="18_0vtau"]
 [ext_resource type="Texture2D" uid="uid://3omsqjf7hpnp" path="res://Assets/Materials/ProgressBar.png" id="19_as0ij"]
-[ext_resource type="Texture2D" uid="uid://gm2t6bxbvv4r" path="res://Wendigo Level/image-removebg-preview (17).png" id="20_v6yt0"]
+[ext_resource type="Texture2D" uid="uid://cnxmtpp2psnib" path="res://Assets/pictures/gnomeHead.png" id="20_0vtau"]
 [ext_resource type="Texture2D" uid="uid://cu3bdq0raqx7" path="res://Wendigo Level/CircleProgressUnder.png" id="21_e0jkb"]
 [ext_resource type="Texture2D" uid="uid://wnu6owvew71m" path="res://Wendigo Level/CircleProgressReal.png" id="22_x7gb3"]
 [ext_resource type="Script" uid="uid://86qm0b5ja6rq" path="res://globalScenes/pause_menu.gd" id="23_eans8"]
@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://dcxd3btis03eu" path="res://Assets/SFX/buttonPressNoise.wav" id="25_ei65a"]
 [ext_resource type="FontFile" uid="uid://cx705ekmev8os" path="res://Assets/Jersey20-Regular.ttf" id="26_82483"]
 [ext_resource type="Script" uid="uid://bxfbjtc5mwqms" path="res://globalScenes/plusCounter.gd" id="27_7ob0n"]
-[ext_resource type="Texture2D" uid="uid://6664beu66w00" path="res://Assets/Materials/StartScreenAssets/MothmanPNG.png" id="28_oc4po"]
+[ext_resource type="Texture2D" uid="uid://dpx4c4f2u0ulv" path="res://Assets/pictures/NessieFull.png" id="28_as0ij"]
 [ext_resource type="PackedScene" uid="uid://2smdak6wypwq" path="res://minimap.tscn" id="29_i8aa5"]
 [ext_resource type="Texture2D" uid="uid://dbxvxcyyu31jl" path="res://Assets/newspaper/NPMothman4.png" id="30_5w8bj"]
 [ext_resource type="Texture2D" uid="uid://cuj577svp8v5j" path="res://Assets/newspaper/NPMothman2.png" id="31_6jjc7"]
@@ -363,7 +363,7 @@ transform = Transform3D(3.8024998, 0, 0, 0, 1, 0, 0, 0, 3.2399998, -25.635315, -
 [node name="Ness" type="Node" parent="."]
 
 [node name="nessieblend" parent="Ness" instance=ExtResource("13_40yyd")]
-transform = Transform3D(-0.98881763, 0.002116292, -0.1491115, -0.0778641, 0.84545, 0.52834743, 0.12718445, 0.5340498, -0.83583164, 0, -7.9970765, -23.383438)
+transform = Transform3D(-0.9888176, 0.002116277, -0.1491115, -0.07786411, 0.8454499, 0.5283475, 0.12718442, 0.53404987, -0.8358316, 0, -7.9970765, -23.383438)
 
 [node name="Boat" parent="." instance=ExtResource("12_g5q0w")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -11.942199, -1.2588595, 48.30097)
@@ -558,9 +558,9 @@ texture_under = ExtResource("18_0vtau")
 texture_progress = ExtResource("19_as0ij")
 
 [node name="WednigoHead" type="Sprite2D" parent="Ui"]
-position = Vector2(84, 100)
-scale = Vector2(0.391892, 0.362745)
-texture = ExtResource("20_v6yt0")
+position = Vector2(69, 78)
+scale = Vector2(0.31398606, 0.27669623)
+texture = ExtResource("20_0vtau")
 
 [node name="SenseBar" type="TextureProgressBar" parent="Ui/WednigoHead"]
 visible = false
@@ -677,9 +677,9 @@ text = "0/5"
 script = ExtResource("27_7ob0n")
 
 [node name="MothmanPlushCounterSprite" type="Sprite2D" parent="Ui/PlushControl"]
-position = Vector2(1024, 165.40625)
-scale = Vector2(0.44570318, 0.45308372)
-texture = ExtResource("28_oc4po")
+position = Vector2(1053, 170)
+scale = Vector2(0.3807463, 0.4616295)
+texture = ExtResource("28_as0ij")
 
 [node name="Minimap" parent="Ui" instance=ExtResource("29_i8aa5")]
 offset_left = 1629.0
