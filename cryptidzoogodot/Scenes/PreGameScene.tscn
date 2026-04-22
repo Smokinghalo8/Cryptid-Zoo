@@ -24,10 +24,10 @@ texture = ExtResource("1_bu07y")
 
 [node name="GameStartButton" type="Button" parent="ScreenControl"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 668.0
-offset_right = 132.0
-offset_bottom = 715.0
+offset_left = 50.000004
+offset_top = 530.0
+offset_right = 142.0
+offset_bottom = 577.0
 scale = Vector2(2.3017, 2.19952)
 theme_override_font_sizes/font_size = 28
 text = "Start!"
@@ -53,6 +53,16 @@ scale = Vector2(2.37084, 1.86669)
 theme_override_font_sizes/font_size = 28
 text = "Exit"
 
+[node name="LevelSelector" type="Button" parent="ScreenControl"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 671.0
+offset_right = 178.25597
+offset_bottom = 714.1912
+scale = Vector2(2.3017, 2.19952)
+theme_override_font_sizes/font_size = 23
+text = "Level Selector"
+
 [node name="Label" type="Label" parent="ScreenControl"]
 layout_mode = 0
 offset_left = 29.0
@@ -77,3 +87,4 @@ parameters/looping = true
 [connection signal="pressed" from="ScreenControl/GameStartButton" to="ScreenControl" method="_on_game_start_button_pressed"]
 [connection signal="pressed" from="ScreenControl/GameOptionsButton" to="ScreenControl" method="_on_game_options_button_pressed"]
 [connection signal="pressed" from="ScreenControl/GameExitButton" to="ScreenControl" method="_on_game_exit_button_pressed"]
+[connection signal="pressed" from="ScreenControl/LevelSelector" to="ScreenControl" method="_on_level_selector_pressed"]

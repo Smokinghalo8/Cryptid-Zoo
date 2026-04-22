@@ -78,3 +78,7 @@ func _on_nessie_button_pressed() -> void:
 
 func _on_wendigo_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Wendigo Level/wendigo_forest.tscn")
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/PreGameScene.tscn")

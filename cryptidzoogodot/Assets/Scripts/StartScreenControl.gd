@@ -21,3 +21,7 @@ func _on_game_exit_button_pressed() -> void: #Exit
 	await get_tree().create_timer($ButtonPressNoise.stream.get_length())
 	get_tree().quit()
 	pass # Replace with function body.
+
+
+func _on_level_selector_pressed() -> void:
+	get_tree().change_scene_to_file("res://level_selector.tscn")

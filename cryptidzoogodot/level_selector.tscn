@@ -90,8 +90,17 @@ offset_bottom = 1168.0
 theme_override_font_sizes/font_size = 96
 flat = true
 
+[node name="backButton" type="Button" parent="."]
+offset_left = 51.0
+offset_top = 932.0
+offset_right = 289.0
+offset_bottom = 1037.0
+theme_override_font_sizes/font_size = 34
+text = "Back"
+
 [connection signal="pressed" from="Forward" to="." method="_on_forward_pressed"]
 [connection signal="pressed" from="Backward" to="." method="_on_backward_pressed"]
 [connection signal="pressed" from="MothmanButton" to="." method="_on_mothman_button_pressed"]
 [connection signal="pressed" from="GnomeButton" to="." method="_on_gnome_button_pressed"]
 [connection signal="pressed" from="NessieButton" to="." method="_on_nessie_button_pressed"]
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
